@@ -21,14 +21,18 @@
 
 			fire_only_once = no
 
-			complete_effect = {
-				add_to_variable = { IRE_plebiscite_support = 12 }
-				if = {
-					limit = { NOT = { has_variable = IRE_unity_campaign_count } }
-					set_variable = { IRE_unity_campaign_count = 0 }
-				}
-				add_to_variable = { IRE_unity_campaign_count = 1 }
+		complete_effect = {
+			add_to_variable = { IRE_plebiscite_support = 12 }
+			if = {
+				limit = { check_variable = { IRE_plebiscite_support > 100 } }
+				set_variable = { IRE_plebiscite_support = 100 }
 			}
+			if = {
+				limit = { NOT = { has_variable = IRE_unity_campaign_count } }
+				set_variable = { IRE_unity_campaign_count = 0 }
+			}
+			add_to_variable = { IRE_unity_campaign_count = 1 }
+		}
 
 			ai_will_do = { base = 40 }
 		}
@@ -135,7 +139,7 @@
 			ai_will_do = { base = 30 }
 		}
 
-		# ---- 都柏林的秩序（《强硬整合》解锁）----
+		# ---- 都柏林的秩序（《强硬整合》解锁；仅在控制北爱领土后有意义）----
 		IRE_dublin_order = {
 			icon = generic_political_actions
 			cost = 50
@@ -143,27 +147,25 @@
 
 			available = {
 				has_completed_focus = IRE_A_firm_integration
+				any_state = {
+					state = 119
+					is_controlled_by = ROOT
+				}
 			}
 
 			visible = {
 				has_completed_focus = IRE_A_firm_integration
+				any_state = {
+					state = 119
+					is_controlled_by = ROOT
+				}
 			}
 
 			fire_only_once = no
 
 			complete_effect = {
 				add_stability = 0.03
-				every_state = {
-					limit = {
-						OR = {
-							state = 113
-							state = 114
-							state = 115
-							state = 116
-							state = 117
-							state = 118
-						}
-					}
+				119 = {
 					add_resistance = -5
 				}
 			}

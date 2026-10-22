@@ -1,7 +1,8 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			if = {
+			# on_startup 无国家作用域，需用 every_country 包裹
+			every_country = {
 				limit = { tag = IRE }
 				IRE_init_variables = yes
 			}
@@ -11,11 +12,13 @@ on_actions = {
 	on_daily = {
 		effect = {
 			if = {
-				limit = { tag = IRE }
+				limit = {
+					tag = IRE
+					has_variable = IRE_plebiscite_support
+				}
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
 				if = {
 					limit = {
-						has_variable = IRE_plebiscite_support
 						NOT = { has_country_flag = IRE_border_done }
 						has_stability > 0.6
 						NOT = { has_country_flag = IRE_stability_bonus_given }
@@ -24,11 +27,10 @@ on_actions = {
 					set_country_flag = IRE_stability_bonus_given
 				}
 
-				# ---- 圣帕特里克日：每年 3 月 17 日 ----
+				# ---- 圣帕特里克日：每 365 天一次（flag 过期后自动再触发）----
 				if = {
 					limit = {
 						date > 1936.3.16
-						date < 1936.3.18
 						NOT = { has_country_flag = IRE_st_patricks_year }
 					}
 					set_country_flag = { flag = IRE_st_patricks_year days = 365 value = 1 }
@@ -43,6 +45,18 @@ on_actions = {
 			if = {
 				limit = { tag = IRE has_idea = IRE_armed_neutrality_idea }
 				army_experience = 2
+			}
+			# ---- 紧急状态分级检查（1→2→3 随战局升降）----
+			if = {
+				limit = {
+					tag = IRE
+					OR = {
+						has_idea = IRE_emergency_powers
+						has_idea = IRE_emergency_powers_2
+						has_idea = IRE_emergency_powers_3
+					}
+				}
+				IRE_emergency_tier_check = yes
 			}
 		}
 	}

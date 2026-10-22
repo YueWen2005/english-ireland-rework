@@ -113,61 +113,69 @@ IRE_clamp_neutral_credibility = {
 	}
 }
 
-# 北爱尔兰核心化（按支持度分档）
+# 北爱尔兰结算（state 119 = 北爱尔兰；宣称→分档：英国承认 / 拒绝 / 公投失败）
+# 平衡原则：土地不是白给的——支持度不足时只有宣称，想要地要么刷到英国承认，要么自己承担对英战争
 IRE_core_northern_ireland = {
 	if = {
 		limit = { NOT = { has_variable = IRE_plebiscite_support } }
 		set_variable = { IRE_plebiscite_support = 45 }
 	}
 
-	# 六郡核心化（北爱 state 113-118）
-	113 = { add_core_of = ROOT }
-	114 = { add_core_of = ROOT }
-	115 = { add_core_of = ROOT }
-	116 = { add_core_of = ROOT }
-	117 = { add_core_of = ROOT }
-	118 = { add_core_of = ROOT }
+	# 无论结果如何，先获得北爱领土宣称（为正当化战争铺路）
+	119 = { add_claim_by = ROOT }
 
-	# 分档结算
+	# 支持度 ≥90 且英国深陷大战/已崩溃：伦敦被迫承认公投，和平移交北爱
+	# （平衡闸门：英国处于和平且强盛时绝不会吐出北爱，此时按"拒绝承认"处理）
 	if = {
-		limit = { check_variable = { IRE_plebiscite_support < 70 } }
-		add_ideas = IRE_north_unintegrated
-	}
-	else_if = {
-		limit = { check_variable = { IRE_plebiscite_support < 90 } }
-		add_stability = 0.10
-	}
-	else = {
-		add_stability = 0.15
-		random_owned_controlled_state = {
-			add_building_construction = { type = arms_factory level = 1 instant_build = yes }
-			add_building_construction = { type = dockyard level = 1 instant_build = yes }
+		limit = {
+			check_variable = { IRE_plebiscite_support > 89 }
+			OR = {
+				ENG = { has_war = yes }
+				ENG = { has_capitulated = yes }
+			}
 		}
+		if = {
+			limit = { 119 = { NOT = { is_owned_by = ROOT } } }
+			ROOT = { transfer_state = 119 }
+		}
+		119 = { add_core_of = ROOT }
+		add_stability = 0.10
+		add_political_power = 50
+	}
+	# 支持度 70-89：伦敦拒绝承认——拿到核心与宣称，但对英战争目标需自行正当化或等英国衰弱
+	else_if = {
+		limit = { check_variable = { IRE_plebiscite_support > 69 } }
+		119 = { add_core_of = ROOT }
+		add_stability = 0.05
+	}
+	# 支持度 <70：公投失败——什么也拿不到，仅保留宣称
+	else = {
+		add_stability = -0.05
+		add_political_power = -50
 	}
 }
 
-# 纽芬兰并入
-IRE_annex_newfoundland = {
-	# 纽芬兰在 HOI4 中由 ENG 控制，需先转移省份
+# B 线终局：北方和平统一（仅在国策 available 把英国打到衰弱后才可能触发）
+IRE_unify_north = {
 	if = {
-		limit = { NOT = { has_variable = IRE_annexed_newfoundland } }
-		set_variable = { IRE_annexed_newfoundland = 1 }
+		limit = { 119 = { NOT = { is_owned_by = ROOT } } }
+		ROOT = { transfer_state = 119 }
 	}
-	# 纽芬兰 state 331：若在 ENG 手中则和平转移，随后核心化
-	if = {
-		limit = { 331 = { NOT = { is_owned_by = ROOT } } }
-		ROOT = { transfer_state = 331 }
-	}
-	if = {
-		limit = { 331 = { is_owned_by = ROOT } }
-		331 = { add_core_of = ROOT }
-	}
-	add_stability = 0.05
+	119 = { add_core_of = ROOT }
 }
 
 # 紧急状态分级检查（1 → 2 → 3）
 # 二级：主要国家已开战，且 IRE 处于被威胁状态
 # 三级：IRE 自身已参战
+# 纽芬兰和平并入（仅公投通过后由国策调用：移交 + 核心化 state 331）
+IRE_annex_newfoundland = {
+	if = {
+		limit = { 331 = { NOT = { is_owned_by = ROOT } } }
+		ROOT = { transfer_state = 331 }
+	}
+	331 = { add_core_of = ROOT }
+}
+
 IRE_emergency_tier_check = {
 	# 一级 → 三级：直接开战（跳级）
 	if = {

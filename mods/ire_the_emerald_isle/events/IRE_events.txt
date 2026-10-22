@@ -1,7 +1,10 @@
 add_namespace = ire
 
 # ============================================================
-# ire.1 边境公投 - 北爱的选择
+# ire.1 边境公投 - 结果揭晓（支持度分档）
+# ≥90 英国被迫承认，和平移交六郡
+# 70-89 伦敦拒绝：拿到核心+宣称，对英战争需自行正当化
+# <70  公投失败：一无所获
 # ============================================================
 country_event = {
 	id = ire.1
@@ -18,22 +21,34 @@ country_event = {
 		}
 	}
 
+	# 公布结果，要求承认合并
 	option = {
 		name = ire.1.a
+		trigger = {
+			check_variable = { IRE_plebiscite_support > 69 }
+		}
 		IRE_core_northern_ireland = yes
-		country_event = { id = ire.2 days = 2 }
+		# 伦敦震怒：经济制裁（英国拒绝承认时）
+		if = {
+			limit = { check_variable = { IRE_plebiscite_support < 90 } }
+			country_event = { id = ire.2 days = 2 }
+		}
 	}
 
+	# 承认公投无效，维持现状
 	option = {
 		name = ire.1.b
-		IRE_core_northern_ireland = yes
-		add_stability = 0.03
-		country_event = { id = ire.2 days = 4 }
+		trigger = {
+			check_variable = { IRE_plebiscite_support < 70 }
+		}
+		add_political_power = 50
+		add_stability = -0.03
+		add_ideas = IRE_north_unintegrated
 	}
 }
 
 # ============================================================
-# ire.2 伦敦的抗议
+# ire.2 伦敦的抗议（仅公投通过且英国拒绝承认时）
 # ============================================================
 country_event = {
 	id = ire.2
@@ -50,7 +65,8 @@ country_event = {
 }
 
 # ============================================================
-# ire.10 纽芬兰公投
+# ire.10 纽芬兰公投（已删除"60% 概率英国随机宣战"——
+# 小国主动挑衅不应导致随机亡国；成败取决于支持度与英国是否忙于大战）
 # ============================================================
 country_event = {
 	id = ire.10
@@ -59,35 +75,38 @@ country_event = {
 	picture = GFX_report_event_generic_election
 	is_triggered_only = yes
 
-	immediate = {
-		if = {
-			limit = { ENG = { has_war = yes } }
-			set_variable = { IRE_nf_chance = 1 }
-		}
-		else = {
-			set_variable = { IRE_nf_chance = 0 }
-		}
-	}
-
+	# 稳妥路线：英国深陷大战自顾不暇，或支持度已臻成熟——公投必然通过
 	option = {
 		name = ire.10.a
 		trigger = {
-			check_variable = { IRE_nf_chance = 1 }
+			OR = {
+				ENG = { has_war = yes }
+				check_variable = { IRE_nf_support > 79 }
+			}
 		}
 		custom_effect_tooltip = ire.10.a_tt
-		add_political_power = 50
+		set_country_flag = IRE_nf_yes
+		add_political_power = 25
 	}
 
+	# 强行公投：条件不足时赌一把——50% 成功，失败则伦敦记恨
 	option = {
 		name = ire.10.b
 		trigger = {
-			check_variable = { IRE_nf_chance = 0 }
+			ENG = { has_war = no }
+			check_variable = { IRE_nf_support < 80 }
 		}
 		random_list = {
-			60 = {
-				ENG = { declare_war_on = { target = ROOT type = annex_everything } }
+			50 = {
+				custom_effect_tooltip = ire.10_success_tt
+				set_country_flag = IRE_nf_yes
 			}
-			40 = { add_political_power = 50 }
+			50 = {
+				custom_effect_tooltip = ire.10_fail_tt
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
+				add_stability = -0.03
+				set_country_flag = IRE_nf_failed
+			}
 		}
 	}
 }
@@ -110,7 +129,8 @@ country_event = {
 }
 
 # ============================================================
-# ire.30 北方的新黎明
+# ire.30 北方的新黎明（B 线终局——仅在国策把英国打到衰弱后触发，
+# 和平移交+核心化六郡；伦敦即便不满也已无力阻止）
 # ============================================================
 country_event = {
 	id = ire.30
@@ -120,8 +140,9 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		IRE_core_northern_ireland = yes
+		IRE_unify_north = yes
 		add_stability = 0.20
+		ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
 		random_owned_controlled_state = {
 			add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			add_building_construction = { type = dockyard level = 1 instant_build = yes }
