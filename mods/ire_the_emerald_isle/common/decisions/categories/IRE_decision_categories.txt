@@ -1,0 +1,36 @@
+### ============================================================
+### 翡翠岛的抉择 - 决议分类定义
+### （原 MOD 缺失此文件导致全部决议无法加载）
+### 注意：分类不加 visible 限制，由各决议自身的 visible 控制；
+### 无可用决议时分类自动隐藏。
+### ============================================================
+
+IRE_unity_campaign_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 90
+	allowed = { original_tag = IRE }
+}
+
+IRE_diaspora_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 85
+	allowed = { original_tag = IRE }
+}
+
+IRE_newfoundland_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 80
+	allowed = { original_tag = IRE }
+}
+
+IRE_neutral_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 90
+	allowed = { original_tag = IRE }
+}
+
+IRE_convoy_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 85
+	allowed = { original_tag = IRE }
+}

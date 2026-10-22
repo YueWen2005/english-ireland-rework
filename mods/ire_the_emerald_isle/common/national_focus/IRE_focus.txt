@@ -29,7 +29,7 @@ focus_tree = {
 		id = IRE_border_plebiscite
 		icon = GFX_goal_generic_demand_territory
 		cost = 5
-		x = 20
+		x = 10
 		y = 0
 		mutually_exclusive = { focus = IRE_consolidate_free_state }
 		ai_will_do = { base = 50 }
@@ -45,8 +45,8 @@ focus_tree = {
 		id = IRE_consolidate_free_state
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
-		x = 20
-		y = 1
+		x = 24
+		y = 0
 		mutually_exclusive = { focus = IRE_border_plebiscite }
 		ai_will_do = { base = 50 }
 
@@ -55,7 +55,7 @@ focus_tree = {
 			add_stability = 0.05
 			remove_ideas = IRE_treatys_scar
 			add_ideas = IRE_free_framework
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 		}
 	}
 
@@ -66,14 +66,10 @@ focus_tree = {
 		id = IRE_common_galway
 		icon = GFX_goal_generic_build_navy
 		cost = 10
-		prerequisite = {
-			OR = {
-				focus = IRE_border_plebiscite
-				focus = IRE_consolidate_free_state
-			}
-		}
-		x = 24
-		y = 0
+				prerequisite = { focus = IRE_border_plebiscite }
+		prerequisite = { focus = IRE_consolidate_free_state }
+		x = 16
+		y = 1
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -90,9 +86,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10
 		prerequisite = { focus = IRE_common_galway }
-		x = 24
-		y = 1
-		relative_position_id = IRE_common_galway
+		x = 16
+		y = 2
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -109,9 +104,8 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		cost = 10
 		prerequisite = { focus = IRE_common_rural }
-		x = 24
-		y = 2
-		relative_position_id = IRE_common_rural
+		x = 16
+		y = 3
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -127,9 +121,8 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_common_dublin_uni }
-		x = 24
-		y = 3
-		relative_position_id = IRE_common_dublin_uni
+		x = 16
+		y = 4
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -143,16 +136,15 @@ focus_tree = {
 
 	focus = {
 		id = IRE_common_signals
-		icon = GFX_goal_generic_intel_bonus
+		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
 		prerequisite = { focus = IRE_common_tobacco }
-		x = 24
-		y = 4
-		relative_position_id = IRE_common_tobacco
+		x = 16
+		y = 5
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
-			add_intel_agency_operative_slot = 1
+			add_political_power = 50
 			add_command_power = 25
 		}
 	}
@@ -162,9 +154,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
 		prerequisite = { focus = IRE_common_signals }
-		x = 24
-		y = 5
-		relative_position_id = IRE_common_signals
+		x = 16
+		y = 6
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -185,8 +176,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10
 		prerequisite = { focus = IRE_border_plebiscite }
-		relative_position_id = IRE_border_plebiscite
-		x = 8
+		x = 6
 		y = 1
 		ai_will_do = { base = 50 }
 
@@ -204,8 +194,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10
 		prerequisite = { focus = IRE_A_revitalise }
-		relative_position_id = IRE_A_revitalise
-		x = 8
+		x = 6
 		y = 2
 		ai_will_do = { base = 50 }
 
@@ -221,11 +210,10 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_reserves
-		icon = GFX_goal_generic_military_advisor
+		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_A_shannon }
-		relative_position_id = IRE_A_shannon
-		x = 8
+		x = 6
 		y = 3
 		ai_will_do = { base = 40 }
 
@@ -240,8 +228,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
 		prerequisite = { focus = IRE_A_reserves }
-		relative_position_id = IRE_A_reserves
-		x = 8
+		x = 6
 		y = 4
 		ai_will_do = { base = 60 }
 
@@ -264,11 +251,10 @@ focus_tree = {
 	# ---- 治理分支（互斥） ----
 	focus = {
 		id = IRE_A_reconciliation
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_A_belfast }
-		relative_position_id = IRE_A_belfast
-		x = 6
+		x = 4
 		y = 5
 		mutually_exclusive = { focus = IRE_A_firm_integration }
 		ai_will_do = { base = 40 }
@@ -276,7 +262,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.12
 			remove_ideas = IRE_civil_war_embers
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos20 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
 		}
 	}
 
@@ -285,8 +271,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_A_belfast }
-		relative_position_id = IRE_A_belfast
-		x = 10
+		x = 6
 		y = 5
 		mutually_exclusive = { focus = IRE_A_reconciliation }
 		ai_will_do = { base = 40 }
@@ -295,8 +280,8 @@ focus_tree = {
 			remove_ideas = IRE_north_unintegrated
 			add_ideas = IRE_sectarian_rift
 			add_war_support = 0.15
-			conscription = 0.05
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_neg30 } }
+			add_ideas = IRE_mobilisation_drive
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
 		}
 	}
 
@@ -306,24 +291,22 @@ focus_tree = {
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
 		prerequisite = { focus = IRE_A_belfast }
-		relative_position_id = IRE_A_belfast
-		x = 12
+		x = 8
 		y = 5
 		mutually_exclusive = { focus = IRE_A_newfoundland }
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_neg20 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg20 } }
 		}
 	}
 
 	focus = {
 		id = IRE_A_settle_treaty
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_A_london_note }
-		relative_position_id = IRE_A_london_note
-		x = 12
+		x = 8
 		y = 6
 		ai_will_do = { base = 40 }
 
@@ -340,8 +323,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 10
 		prerequisite = { focus = IRE_A_settle_treaty }
-		relative_position_id = IRE_A_settle_treaty
-		x = 12
+		x = 8
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -351,7 +333,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = naval_base level = 2 instant_build = yes }
 			}
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 			navy_experience = 100
 		}
 	}
@@ -362,7 +344,6 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 10
 		prerequisite = { focus = IRE_A_belfast }
-		relative_position_id = IRE_A_belfast
 		x = 2
 		y = 5
 		ai_will_do = { base = 60 }
@@ -380,7 +361,6 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_A_atlantic_call }
-		relative_position_id = IRE_A_atlantic_call
 		x = 2
 		y = 6
 		ai_will_do = { base = 60 }
@@ -402,11 +382,10 @@ focus_tree = {
 	# ---- 纽芬兰 ----
 	focus = {
 		id = IRE_A_newfoundland
-		icon = GFX_goal_generic_claim_territory
+		icon = GFX_goal_generic_demand_territory
 		cost = 10
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		relative_position_id = IRE_A_diaspora_legacy
-		x = -2
+		x = 0
 		y = 7
 		mutually_exclusive = { focus = IRE_A_london_note }
 		ai_will_do = { base = 50 }
@@ -427,8 +406,7 @@ focus_tree = {
 			focus = IRE_A_newfoundland
 			focus = IRE_nf_support_50
 		}
-		relative_position_id = IRE_A_newfoundland
-		x = -2
+		x = 0
 		y = 8
 		ai_will_do = { base = 60 }
 
@@ -439,11 +417,10 @@ focus_tree = {
 
 	focus = {
 		id = IRE_nf_support_50
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_A_newfoundland }
-		relative_position_id = IRE_A_newfoundland
-		x = 0
+		x = -2
 		y = 8
 		available = {
 			check_variable = { IRE_nf_support > 49 }
@@ -459,11 +436,10 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_nf_province
-		icon = GFX_goal_generic_claim_territory
+		icon = GFX_goal_generic_demand_territory
 		cost = 5
 		prerequisite = { focus = IRE_A_nf_plebiscite }
-		relative_position_id = IRE_A_nf_plebiscite
-		x = -2
+		x = 0
 		y = 9
 		ai_will_do = { base = 60 }
 
@@ -488,16 +464,15 @@ focus_tree = {
 	# ---- 美国线 ----
 	focus = {
 		id = IRE_A_boston
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		relative_position_id = IRE_A_diaspora_legacy
 		x = 2
 		y = 7
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
-			USA = { add_opinion = { target = IRE modifier = IRE_opinion_pos40 } }
+			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			IRE_add_diaspora_network = yes
 		}
 	}
@@ -507,9 +482,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_A_boston }
-		relative_position_id = IRE_A_boston
 		x = 2
-		y = 10
+		y = 8
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -517,7 +491,7 @@ focus_tree = {
 			add_ideas = IRE_washingtons_friend
 			IRE_add_diaspora_network = yes
 			random_list = {
-				35 = { add_equipment_to_stockpile = { type = industrial_equipment amount = 200 } }
+				35 = { add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 500 } }
 				65 = { }
 			}
 		}
@@ -525,12 +499,11 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_irish_division
-		icon = GFX_goal_generic_infantry_offensive
+		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_A_lobby }
-		relative_position_id = IRE_A_lobby
 		x = 2
-		y = 11
+		y = 9
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -548,16 +521,15 @@ focus_tree = {
 	# ---- 墨西哥线 ----
 	focus = {
 		id = IRE_A_san_patricio
-		icon = GFX_goal_generic_infantry_offensive
+		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		relative_position_id = IRE_A_diaspora_legacy
-		x = 5
+		x = 4
 		y = 7
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
-			MEX = { add_opinion = { target = IRE modifier = IRE_opinion_pos50 } }
+			MEX = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
 			army_experience = 200
 			IRE_add_diaspora_network = yes
 			# 文档「可将 2 个师改编为精英师」：HOI4 无「改编」效果，
@@ -572,11 +544,10 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_green_legion
-		icon = GFX_goal_generic_infantry_offensive
+		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_A_san_patricio }
-		relative_position_id = IRE_A_san_patricio
-		x = 5
+		x = 4
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -593,13 +564,12 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		relative_position_id = IRE_A_diaspora_legacy
-		x = 8
+		x = 6
 		y = 7
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
-			ARG = { add_opinion = { target = IRE modifier = IRE_opinion_pos50 } }
+			ARG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
 			add_stability = 0.05
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
@@ -615,8 +585,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_A_buenos_aires }
-		relative_position_id = IRE_A_buenos_aires
-		x = 8
+		x = 6
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -631,16 +600,11 @@ focus_tree = {
 		id = IRE_A_supply_web
 		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 10
-		prerequisite = {
-			OR = {
-				focus = IRE_A_irish_division
-				focus = IRE_A_green_legion
-				focus = IRE_A_southern_cone
-			}
-		}
-		relative_position_id = IRE_A_diaspora_legacy
-		x = 2
-		y = 8
+				prerequisite = { focus = IRE_A_irish_division }
+		prerequisite = { focus = IRE_A_green_legion }
+		prerequisite = { focus = IRE_A_southern_cone }
+		x = 4
+		y = 9
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -656,9 +620,8 @@ focus_tree = {
 			focus = IRE_A_supply_web
 			focus = IRE_A_nf_province
 		}
-		relative_position_id = IRE_A_supply_web
 		x = 2
-		y = 9
+		y = 10
 		available = {
 			check_variable = { IRE_diaspora_network > 99 }
 		}
@@ -676,9 +639,8 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		cost = 15
 		prerequisite = { focus = IRE_A_celtic_commonwealth }
-		relative_position_id = IRE_A_celtic_commonwealth
 		x = 2
-		y = 12
+		y = 11
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -695,8 +657,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_consolidate_free_state }
-		relative_position_id = IRE_consolidate_free_state
-		x = 30
+		x = 20
 		y = 1
 		ai_will_do = { base = 60 }
 
@@ -711,8 +672,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_B_civil_service }
-		relative_position_id = IRE_B_civil_service
-		x = 30
+		x = 20
 		y = 2
 		ai_will_do = { base = 60 }
 
@@ -727,8 +687,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_B_quell_embers }
-		relative_position_id = IRE_B_quell_embers
-		x = 28
+		x = 18
 		y = 3
 		mutually_exclusive = { focus = IRE_B_tolerate_ira }
 		ai_will_do = { base = 40 }
@@ -736,7 +695,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			army_experience = 50
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos25 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos25 } }
 		}
 	}
 
@@ -745,17 +704,16 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 10
 		prerequisite = { focus = IRE_B_quell_embers }
-		relative_position_id = IRE_B_quell_embers
-		x = 32
+		x = 22
 		y = 3
 		mutually_exclusive = { focus = IRE_B_outlaw_ira }
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
 			army_experience = 150
-			conscription = 0.05
+			add_ideas = IRE_mobilisation_drive
 			add_stability = -0.08
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_neg30 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
 			set_country_flag = IRE_ira_tolerated
 		}
 	}
@@ -763,11 +721,10 @@ focus_tree = {
 	# ---- 经济线 ----
 	focus = {
 		id = IRE_B_economic_war_end
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_consolidate_free_state }
-		relative_position_id = IRE_consolidate_free_state
-		x = 34
+		x = 26
 		y = 1
 		ai_will_do = { base = 60 }
 
@@ -775,7 +732,7 @@ focus_tree = {
 			# 文档「移除农业穷国的一半负面」：HOI4 无法做「一半」，用替换为削弱版精神实现
 			remove_ideas = IRE_agrarian_poverty
 			add_ideas = IRE_agrarian_poverty_lite
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos40 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			add_stability = 0.05
 		}
 	}
@@ -785,8 +742,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_B_economic_war_end }
-		relative_position_id = IRE_B_economic_war_end
-		x = 34
+		x = 26
 		y = 2
 		ai_will_do = { base = 60 }
 
@@ -797,7 +753,7 @@ focus_tree = {
 				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			}
 			add_ideas = IRE_anglo_irish_beef
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 		}
 	}
 
@@ -806,8 +762,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_B_trade_agreement }
-		relative_position_id = IRE_B_trade_agreement
-		x = 34
+		x = 26
 		y = 3
 		ai_will_do = { base = 50 }
 
@@ -822,8 +777,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 10
 		prerequisite = { focus = IRE_B_land_annuities }
-		relative_position_id = IRE_B_land_annuities
-		x = 34
+		x = 26
 		y = 4
 		ai_will_do = { base = 50 }
 
@@ -834,7 +788,7 @@ focus_tree = {
 				add_building_construction = { type = naval_base level = 2 instant_build = yes }
 			}
 			navy_experience = 150
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 		}
 	}
 
@@ -844,8 +798,7 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 10
 		prerequisite = { focus = IRE_B_treaty_ports }
-		relative_position_id = IRE_B_treaty_ports
-		x = 34
+		x = 26
 		y = 5
 		ai_will_do = { base = 60 }
 
@@ -861,8 +814,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = IRE_B_constitution_1937 }
-		relative_position_id = IRE_B_constitution_1937
-		x = 34
+		x = 26
 		y = 6
 		ai_will_do = { base = 50 }
 
@@ -875,11 +827,10 @@ focus_tree = {
 	# ---- 紧急状态线 ----
 	focus = {
 		id = IRE_B_emergency
-		icon = GFX_goal_generic_defensive_war
+		icon = GFX_goal_generic_defence
 		cost = 10
 		prerequisite = { focus = IRE_B_president_mace }
-		relative_position_id = IRE_B_president_mace
-		x = 34
+		x = 26
 		y = 7
 		available = {
 			OR = {
@@ -896,11 +847,10 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_coastal
-		icon = GFX_goal_generic_air_defense
+		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
 		prerequisite = { focus = IRE_B_emergency }
-		relative_position_id = IRE_B_emergency
-		x = 32
+		x = 24
 		y = 8
 		ai_will_do = { base = 50 }
 
@@ -917,16 +867,15 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_ldf
-		icon = GFX_goal_generic_infantry_offensive
+		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_B_emergency }
-		relative_position_id = IRE_B_emergency
-		x = 34
-		y = 9
+		x = 26
+		y = 8
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
-			conscription = 0.03
+			add_ideas = IRE_ldf_expansion
 			army_experience = 100
 			# 文档「+3 个民兵师（已部署于海岸）」：在沿海州各造一个 LDF 民兵师
 			every_owned_state = {
@@ -938,11 +887,10 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_plan_w
-		icon = GFX_goal_generic_land_grab
+		icon = GFX_goal_generic_occupy_start_war
 		cost = 10
 		prerequisite = { focus = IRE_B_emergency }
-		relative_position_id = IRE_B_emergency
-		x = 36
+		x = 28
 		y = 8
 		available = {
 			has_opinion = { target = ENG value > 49 }
@@ -953,25 +901,20 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 200
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos25 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos25 } }
 		}
 	}
 
 	# ---- 中立三分支 ----
 	focus = {
 		id = IRE_B_moral_neutrality
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
-		prerequisite = {
-			OR = {
-				focus = IRE_B_coastal
-				focus = IRE_B_ldf
-				focus = IRE_B_plan_w
-			}
-		}
-		relative_position_id = IRE_B_emergency
-		x = 30
-		y = 10
+				prerequisite = { focus = IRE_B_coastal }
+		prerequisite = { focus = IRE_B_ldf }
+		prerequisite = { focus = IRE_B_plan_w }
+		x = 22
+		y = 9
 		mutually_exclusive = { focus = IRE_B_absolute_neutrality focus = IRE_B_armed_neutrality }
 		ai_will_do = { base = 40 }
 
@@ -981,10 +924,10 @@ focus_tree = {
 			# 文档：与同盟国关系 +40，德国 −25
 			every_country = {
 				limit = { is_in_faction_with = ENG }
-				add_opinion = { target = ROOT modifier = IRE_opinion_pos40 }
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 }
 			}
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos40 } }
-			GER = { add_opinion = { target = IRE modifier = IRE_opinion_neg25 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg25 } }
 		}
 	}
 
@@ -992,16 +935,11 @@ focus_tree = {
 		id = IRE_B_absolute_neutrality
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 10
-		prerequisite = {
-			OR = {
-				focus = IRE_B_coastal
-				focus = IRE_B_ldf
-				focus = IRE_B_plan_w
-			}
-		}
-		relative_position_id = IRE_B_emergency
-		x = 34
-		y = 10
+				prerequisite = { focus = IRE_B_coastal }
+		prerequisite = { focus = IRE_B_ldf }
+		prerequisite = { focus = IRE_B_plan_w }
+		x = 26
+		y = 9
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_armed_neutrality }
 		ai_will_do = { base = 40 }
 
@@ -1009,25 +947,20 @@ focus_tree = {
 			add_ideas = IRE_absolute_neutrality_idea
 			add_political_power = 100
 			# 文档：两边关系各 +15
-			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos15 } }
-			GER = { add_opinion = { target = IRE modifier = IRE_opinion_pos15 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos15 } }
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos15 } }
 		}
 	}
 
 	focus = {
 		id = IRE_B_armed_neutrality
-		icon = GFX_goal_generic_defensive_war
+		icon = GFX_goal_generic_defence
 		cost = 10
-		prerequisite = {
-			OR = {
-				focus = IRE_B_coastal
-				focus = IRE_B_ldf
-				focus = IRE_B_plan_w
-			}
-		}
-		relative_position_id = IRE_B_emergency
-		x = 38
-		y = 10
+				prerequisite = { focus = IRE_B_coastal }
+		prerequisite = { focus = IRE_B_ldf }
+		prerequisite = { focus = IRE_B_plan_w }
+		x = 30
+		y = 9
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_absolute_neutrality }
 		ai_will_do = { base = 40 }
 
@@ -1039,12 +972,11 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_shannon_wayfarers
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_B_moral_neutrality }
-		relative_position_id = IRE_B_moral_neutrality
-		x = 30
-		y = 11
+		x = 22
+		y = 10
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1059,9 +991,8 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 10
 		prerequisite = { focus = IRE_B_absolute_neutrality }
-		relative_position_id = IRE_B_absolute_neutrality
-		x = 34
-		y = 12
+		x = 26
+		y = 10
 		available = {
 			any_country = { has_war = yes is_major = yes }
 		}
@@ -1077,17 +1008,16 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 10
 		prerequisite = { focus = IRE_B_absolute_neutrality }
-		relative_position_id = IRE_B_absolute_neutrality
-		x = 38
-		y = 11
+		x = 30
+		y = 10
 		available = {
 			has_country_flag = IRE_ira_tolerated
 		}
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
-			GER = { add_opinion = { target = IRE modifier = IRE_opinion_pos50 } }
-			USA = { add_opinion = { target = IRE modifier = IRE_opinion_neg40 } }
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
+			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg40 } }
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
 			random_list = {
 				50 = { ENG = { declare_war_on = { target = IRE type = annex_everything } } }
@@ -1102,14 +1032,13 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_B_dublin_choice }
-		relative_position_id = IRE_B_dublin_choice
-		x = 34
-		y = 13
+		x = 26
+		y = 11
 		available = { date > 1943.1.1 }
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
-			USA = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
@@ -1123,9 +1052,8 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 10
 		prerequisite = { focus = IRE_B_famine_echo }
-		relative_position_id = IRE_B_famine_echo
-		x = 34
-		y = 14
+		x = 26
+		y = 12
 		available = {
 			OR = {
 				date > 1948.1.1
@@ -1143,12 +1071,11 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_moral_authority
-		icon = GFX_goal_generic_diplomatic_treaty
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = IRE_B_republic_1949 }
-		relative_position_id = IRE_B_republic_1949
-		x = 38
-		y = 15
+		x = 28
+		y = 13
 		available = {
 			NOT = { any_country = { has_war = yes is_major = yes } }
 		}
@@ -1164,13 +1091,12 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 15
 		prerequisite = { focus = IRE_B_republic_1949 }
-		relative_position_id = IRE_B_republic_1949
-		x = 30
-		y = 15
+		x = 24
+		y = 13
 		available = {
 			OR = {
 				ENG = { has_capitulated = yes }
-				ENG = { war_support < 0.2 }
+				ENG = { has_war_support < 0.2 }
 				NOT = { ENG = { controls_state = 160 } }
 			}
 		}

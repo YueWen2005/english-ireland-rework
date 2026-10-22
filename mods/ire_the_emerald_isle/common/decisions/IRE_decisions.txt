@@ -1,4 +1,3 @@
-IRE_decisions = {
 
 	# ============================================================
 	# A 线：统一宣传运动（公投支持度）
@@ -305,9 +304,9 @@ IRE_decisions = {
 				add_political_power = 30
 				every_country = {
 					limit = { is_in_faction_with = ENG }
-					add_opinion = { target = ROOT modifier = IRE_opinion_pos25 }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos25 }
 				}
-				ENG = { add_opinion = { target = ROOT modifier = IRE_opinion_pos25 } }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos25 } }
 				IRE_add_neutral_credibility_2 = yes
 			}
 
@@ -419,7 +418,7 @@ IRE_decisions = {
 			complete_effect = {
 				army_experience = 25
 				add_war_support = 0.01
-				ENG = { add_opinion = { target = ROOT modifier = IRE_opinion_neg5 } }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
 				IRE_add_neutral_credibility_neg4 = yes
 			}
 
@@ -519,4 +518,3 @@ IRE_decisions = {
 			ai_will_do = { base = 20 }
 		}
 	}
-}

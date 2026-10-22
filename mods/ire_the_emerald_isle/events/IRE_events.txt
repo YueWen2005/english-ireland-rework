@@ -11,7 +11,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		ENG = { add_opinion = { target = ROOT modifier = IRE_opinion_neg40 } }
+		ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
 		if = {
 			limit = { NOT = { has_country_flag = IRE_border_done } }
 			set_country_flag = IRE_border_done
@@ -104,8 +104,8 @@ country_event = {
 
 	option = {
 		name = ire.20.a
-		add_equipment_to_stockpile = { type = fighter_equipment amount = 100 }
-		USA = { add_opinion = { target = ROOT modifier = IRE_opinion_pos20 } }
+		add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 100 }
+		USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
 	}
 }
 

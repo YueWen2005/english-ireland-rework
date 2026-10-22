@@ -17,7 +17,7 @@ on_actions = {
 					limit = {
 						has_variable = IRE_plebiscite_support
 						NOT = { has_country_flag = IRE_border_done }
-						stability > 0.6
+						has_stability > 0.6
 						NOT = { has_country_flag = IRE_stability_bonus_given }
 					}
 					add_to_variable = { IRE_plebiscite_support = 10 }
@@ -31,20 +31,9 @@ on_actions = {
 						date < 1936.3.18
 						NOT = { has_country_flag = IRE_st_patricks_year }
 					}
-					set_country_flag = IRE_st_patricks_year
+					set_country_flag = { flag = IRE_st_patricks_year days = 365 value = 1 }
 					country_event = { id = ire.50 days = 0 }
 				}
-				if = {
-					limit = {
-						month = 1
-						day = 1
-						has_country_flag = IRE_st_patricks_year
-					}
-					clr_country_flag = IRE_st_patricks_year
-				}
-
-				# ---- 紧急状态分级（1 → 2 → 3 自动升级）----
-				IRE_emergency_tier_check = yes
 			}
 		}
 	}

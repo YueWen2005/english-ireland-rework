@@ -28,7 +28,7 @@ ideas = {
 		}
 
 		IRE_agrarian_poverty = {
-			picture = generic_construction_effort
+			picture = generic_production_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -41,7 +41,7 @@ ideas = {
 		# 削弱版「农业穷国」：仅保留消费品 +5%，去掉军工 −15%
 		# 对应文档《经济战争的终结》「移除一半负面」（HOI4 无法做「一半」，用替换精神实现）
 		IRE_agrarian_poverty_lite = {
-			picture = generic_construction_effort
+			picture = generic_production_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -98,11 +98,11 @@ ideas = {
 
 		# ---------------- 工业 / 内政 ----------------
 		IRE_rural_electrification = {
-			picture = generic_construction_effort
+			picture = generic_production_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				construction_speed = 0.05
+				production_speed_buildings_factor = 0.05
 			}
 		}
 
@@ -111,7 +111,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				export_factor = 0.15
+				industrial_capacity_factory = 0.05
 				political_power_gain = 0.03
 			}
 		}
@@ -153,7 +153,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				export_factor = -0.15
+				industrial_capacity_factory = -0.10
 			}
 			removal_cost = -1
 		}
@@ -177,8 +177,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				navy_organisation_factor = 0.05
-				convoy_raiding_factor = 0.05
+				navy_org_factor = 0.05
+				convoy_raiding_efficiency_factor = 0.05
 			}
 		}
 
@@ -196,30 +196,30 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_experience_gain_factor = 0.05
+				experience_gain_army_factor = 0.05
 			}
 		}
 
 		IRE_saint_patrick_name = {
-			picture = generic_infantry_offensive
+			picture = generic_infantry_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				division_attack_factor = 0.05
-				division_defence_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
 			}
 		}
 
 		# 圣帕特里克营实战修正（文档 攻击+15% 防御+10% 组织度+15%）
 		# 负面项（人力需求+10%、补给+10%）做成国家级会波及全军，故不实现
 		IRE_san_patricio_elite = {
-			picture = generic_infantry_offensive
+			picture = generic_infantry_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				division_attack_factor = 0.15
-				division_defence_factor = 0.10
-				division_organisation_factor = 0.15
+				army_attack_factor = 0.15
+				army_defence_factor = 0.10
+				army_org_factor = 0.15
 			}
 		}
 
@@ -228,8 +228,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				import_cost_factor = -0.15
-				export_factor = 0.15
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
 			}
 		}
 
@@ -248,7 +248,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				export_factor = 0.20
+				trade_opinion_factor = 0.20
 			}
 		}
 
@@ -257,8 +257,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				supply_range_factor = 0.15
-				convoy_raiding_factor = -0.10
+				out_of_supply_factor = -0.15
+				convoy_raiding_efficiency_factor = -0.10
 			}
 		}
 
@@ -267,8 +267,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				supply_range_factor = 0.25
-				naval_repair_speed_factor = 0.10
+				out_of_supply_factor = -0.25
+				repair_speed_factor = 0.10
 			}
 		}
 
@@ -279,7 +279,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.15
 				conscription_factor = 0.10
-				volunteer_cap = 4
+				send_volunteer_factor = 0.5
 			}
 		}
 
@@ -290,7 +290,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.03
-				export_factor = 0.05
+				industrial_capacity_dockyard = 0.05
 			}
 		}
 
@@ -311,7 +311,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				export_factor = 0.08
+				industrial_capacity_factory = 0.05
 				consumer_goods_factor = -0.03
 			}
 		}
@@ -324,7 +324,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.10
 				conscription_factor = 0.05
-				defence_factor = 0.15
+				army_defence_factor = 0.15
 				consumer_goods_factor = 0.05
 			}
 			removal_cost = -1
@@ -337,7 +337,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.10
 				conscription_factor = 0.08
-				defence_factor = 0.20
+				army_defence_factor = 0.20
 				consumer_goods_factor = 0.05
 			}
 			removal_cost = -1
@@ -350,7 +350,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.10
 				conscription_factor = 0.10
-				defence_factor = 0.25
+				army_defence_factor = 0.25
 				consumer_goods_factor = 0.08
 			}
 			removal_cost = -1
@@ -361,28 +361,28 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				air_detection_factor = 0.10
-				navy_detection_factor = 0.10
+				air_detection = 0.10
+				naval_detection = 0.10
 			}
 		}
 
 		IRE_reserve_defence = {
-			picture = generic_infantry_offensive
+			picture = generic_infantry_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
 				conscription_factor = 0.02
-				division_organisation_factor = 0.05
+				army_org_factor = 0.05
 			}
 		}
 
 		# 联合防务协调（W 计划解锁的决议给）
 		IRE_joint_defence_idea = {
-			picture = generic_land_battle
+			picture = generic_infantry_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				defence_factor = 0.10
+				army_defence_factor = 0.10
 			}
 		}
 
@@ -392,18 +392,18 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				opinion_factor = 0.25
+				opinion_gain_monthly_factor = 0.25
 			}
 		}
 
 		IRE_armed_neutrality_idea = {
-			picture = generic_infantry_offensive
+			picture = generic_infantry_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
 				conscription_factor = 0.05
-				defence_factor = 0.20
-				army_experience_gain_factor = 0.10
+				army_defence_factor = 0.20
+				experience_gain_army_factor = 0.10
 				consumer_goods_factor = 0.10
 			}
 		}
@@ -413,7 +413,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				export_factor = 0.20
+				trade_opinion_factor = 0.20
 				political_power_gain = 0.07
 				consumer_goods_factor = -0.03
 			}
@@ -424,9 +424,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				opinion_factor = 0.25
+				opinion_gain_monthly_factor = 0.25
 				trade_opinion_factor = 0.15
-				diplomatic_relation_improvement = 0.10
+				improve_relations_maintain_cost_factor = -0.10
 			}
 		}
 	}
@@ -441,6 +441,24 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = { }
+		}
+
+		IRE_mobilisation_drive = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.05
+			}
+		}
+
+		IRE_ldf_expansion = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.03
+			}
 		}
 	}
 }

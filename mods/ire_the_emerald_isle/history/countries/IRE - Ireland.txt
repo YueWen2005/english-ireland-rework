@@ -14,23 +14,12 @@ set_technology = {
 	support_weapons = 1
 	tech_support = 1
 	engineer = 1
-	recon = 1
 	field_hospital = 1
-	trench_warfare = 1
 	artillery = 1
-	mot_r_art = 1
 	basic_machine_tools = 1
 	improved_machine_tools = 1
 
-	# 海军
-	basic_navy = 1
-	basic_light_hull = 1
-	basic_ship_hull_destroyer = 1
-
-	# 空军
-	basic_air = 1
 	early_fighter = 1
-	early_light_bomber = 1
 }
 
 # 开局科研槽（爱尔兰原版 2 个，给到 3 便于小国生存）

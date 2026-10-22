@@ -155,8 +155,8 @@ IRE_annex_newfoundland = {
 	}
 	# 纽芬兰 state 331：若在 ENG 手中则和平转移，随后核心化
 	if = {
-		limit = { 331 = { is_owned_by = ENG } }
-		331 = { transfer_state = ROOT }
+		limit = { 331 = { NOT = { is_owned_by = ROOT } } }
+		ROOT = { transfer_state = 331 }
 	}
 	if = {
 		limit = { 331 = { is_owned_by = ROOT } }
