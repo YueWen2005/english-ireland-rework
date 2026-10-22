@@ -429,6 +429,328 @@ ideas = {
 				improve_relations_maintain_cost_factor = -0.10
 			}
 		}
+
+		# ============================================================
+		# 经济区域精神
+		# ============================================================
+		IRE_shannon_grid = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		IRE_peat_energy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+
+		IRE_modern_agriculture = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		IRE_merchant_marine = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+
+		IRE_export_economy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				trade_opinion_factor = 0.15
+			}
+		}
+
+		IRE_dublin_finance = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.08
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		IRE_atlantic_economy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.15
+				consumer_goods_factor = -0.05
+				research_speed_factor = 0.03
+			}
+		}
+
+		# ============================================================
+		# 军事区域精神
+		# ============================================================
+		IRE_war_cabinet = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				conscription_factor = 0.03
+				army_defence_factor = 0.10
+			}
+		}
+
+		IRE_army_expansion = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+
+		IRE_officer_corps = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+				experience_gain_army_factor = 0.05
+			}
+		}
+
+		IRE_coastal_fortress = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.10
+				naval_detection = 0.10
+			}
+		}
+
+		IRE_submarine_war = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				convoy_raiding_efficiency_factor = 0.20
+				navy_org_factor = 0.05
+			}
+		}
+
+		IRE_convoy_escort = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				convoy_escort_efficiency = 0.15
+				naval_coordination = 0.05
+			}
+		}
+
+		IRE_maritime_patrol = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				air_detection = 0.10
+				naval_detection = 0.15
+				navy_submarine_detection_factor = 0.10
+			}
+		}
+
+		IRE_g2_intelligence = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				decryption_factor = 0.15
+				encryption_factor = 0.10
+			}
+		}
+
+		IRE_total_defence = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.15
+				industrial_capacity_factory = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		# ---------------- A 线：侧分支与紧急状态 ----------------
+		IRE_remittance_economy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.03
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		IRE_volunteer_corps = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.03
+				army_org_factor = 0.05
+			}
+		}
+
+		IRE_wartime_economy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		IRE_atlantic_wall = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.10
+				navy_submarine_detection_factor = 0.15
+				navy_org_factor = 0.05
+			}
+		}
+
+		IRE_ulster_bulwark = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.15
+				conscription_factor = 0.03
+			}
+		}
+
+		IRE_britain_war_plan = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				planning_speed = 0.10
+				army_attack_factor = 0.05
+			}
+		}
+
+		IRE_fortress_ireland = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.15
+				war_support_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		# ---------------- A 线外交（历史原型：多尼戈尔走廊、野鹅、港口换统一） ----------------
+		IRE_donegal_corridor = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				air_detection = 0.10
+				navy_submarine_detection_factor = 0.05
+				naval_detection = 0.05
+			}
+		}
+
+		IRE_wild_geese = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.03
+				army_org_factor = 0.05
+			}
+		}
+
+		IRE_unity_for_ports = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		# ---------------- 经济区域（医院彩票、战后香农自由区） ----------------
+		IRE_hospital_sweepstake = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.03
+				political_power_gain = 0.05
+			}
+		}
+
+		IRE_shannon_free_zone = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				trade_opinion_factor = 0.10
+				research_speed_factor = 0.03
+			}
+		}
+
+		# ---------------- 军事区域（海岸瞭望队、装甲车） ----------------
+		IRE_coast_watch = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				naval_detection = 0.10
+				air_detection = 0.05
+				navy_submarine_detection_factor = 0.10
+			}
+		}
+
+		IRE_armoured_cars = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_org_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
 	}
 
 	# ============================================================

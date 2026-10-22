@@ -12,10 +12,10 @@ on_actions = {
 	on_daily = {
 		effect = {
 			if = {
-				limit = {
-					tag = IRE
-					has_variable = IRE_plebiscite_support
-				}
+				limit = { tag = IRE }
+				# 紧急状态 1→2→3 级自动升级/降级
+				IRE_emergency_tier_check = yes
+
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
 				if = {
 					limit = {
@@ -46,17 +46,70 @@ on_actions = {
 				limit = { tag = IRE has_idea = IRE_armed_neutrality_idea }
 				army_experience = 2
 			}
-			# ---- 紧急状态分级检查（1→2→3 随战局升降）----
+
+			# ---- 1940 年 5 月：戈茨空降 ----
 			if = {
 				limit = {
 					tag = IRE
-					OR = {
-						has_idea = IRE_emergency_powers
-						has_idea = IRE_emergency_powers_2
-						has_idea = IRE_emergency_powers_3
-					}
+					date > 1940.4.30
+					date < 1940.9.1
+					NOT = { has_country_flag = IRE_goertz_done }
+					NOT = { has_war_with = GER }
 				}
-				IRE_emergency_tier_check = yes
+				set_country_flag = IRE_goertz_done
+				country_event = { id = ire.63 days = 0 }
+			}
+
+			# ---- 1941 年 4 月：贝尔法斯特大空袭 ----
+			if = {
+				limit = {
+					tag = IRE
+					date > 1941.3.31
+					date < 1941.9.1
+					NOT = { has_country_flag = IRE_belfast_blitz_done }
+					119 = { is_owned_by = ENG }
+					ENG = { has_war = yes }
+				}
+				set_country_flag = IRE_belfast_blitz_done
+				country_event = { id = ire.61 days = 0 }
+			}
+
+			# ---- 1941 年 5 月 31 日：北斯特兰德轰炸 ----
+			if = {
+				limit = {
+					tag = IRE
+					date > 1941.5.31
+					date < 1941.9.1
+					NOT = { has_country_flag = IRE_north_strand_done }
+					NOT = { has_war_with = GER }
+				}
+				set_country_flag = IRE_north_strand_done
+				country_event = { id = ire.62 days = 0 }
+			}
+
+			# ---- 1944 年 4 月：美国照会 ----
+			if = {
+				limit = {
+					tag = IRE
+					date > 1944.3.31
+					date < 1944.9.1
+					NOT = { has_country_flag = IRE_american_note_done }
+					NOT = { has_war_with = USA }
+				}
+				set_country_flag = IRE_american_note_done
+				country_event = { id = ire.64 days = 0 }
+			}
+
+			# ---- 1945 年 5 月：希特勒之死 ----
+			if = {
+				limit = {
+					tag = IRE
+					date > 1945.4.30
+					date < 1945.9.1
+					NOT = { has_country_flag = IRE_hitler_death_done }
+				}
+				set_country_flag = IRE_hitler_death_done
+				country_event = { id = ire.65 days = 0 }
 			}
 		}
 	}

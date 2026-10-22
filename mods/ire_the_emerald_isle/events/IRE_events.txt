@@ -187,3 +187,213 @@ country_event = {
 		add_stability = 0.03
 	}
 }
+
+# ============================================================
+# ire.60 1940 年 6 月：伦敦的统一提议
+# 历史原型：1940 年 6 月英国曾提出「统一换参战」，
+# 德瓦莱拉以「不能拿六郡换战争」为由拒绝。
+# ============================================================
+country_event = {
+	id = ire.60
+	title = ire.60.t
+	desc = ire.60.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	option = {
+		name = ire.60.a
+		custom_effect_tooltip = ire.60.a_tt
+		if = {
+			limit = { 119 = { is_owned_by = ENG } }
+			ENG = { transfer_state = 119 }
+		}
+		if = {
+			limit = { owns_state = 119 }
+			119 = { add_core_of = ROOT }
+		}
+		if = {
+			limit = { exists = ENG }
+			add_to_faction = ENG
+		}
+		add_ideas = IRE_unity_for_ports
+		add_war_support = 0.10
+		add_stability = -0.05
+	}
+
+	option = {
+		name = ire.60.b
+		add_political_power = 50
+		add_stability = 0.03
+	}
+}
+
+# ============================================================
+# ire.61 1941 年 4 月：贝尔法斯特大空袭
+# 历史：都柏林消防队曾北上支援，德瓦莱拉向柏林提出抗议。
+# ============================================================
+country_event = {
+	id = ire.61
+	title = ire.61.t
+	desc = ire.61.d
+	picture = GFX_report_event_generic_ruins
+	is_triggered_only = yes
+
+	option = {
+		name = ire.61.a
+		add_political_power = -20
+		add_stability = 0.03
+		if = {
+			limit = { exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	option = {
+		name = ire.61.b
+		add_political_power = 25
+	}
+}
+
+# ============================================================
+# ire.62 1941 年 5 月 31 日：北斯特兰德轰炸
+# 历史：德军误炸都柏林北斯特兰德，34 人死亡；德国战后赔偿。
+# ============================================================
+country_event = {
+	id = ire.62
+	title = ire.62.t
+	desc = ire.62.d
+	picture = GFX_report_event_generic_ruins
+	is_triggered_only = yes
+
+	option = {
+		name = ire.62.a
+		add_war_support = 0.05
+		add_stability = 0.02
+		if = {
+			limit = { exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 } }
+		}
+	}
+
+	option = {
+		name = ire.62.b
+		add_political_power = 30
+		add_stability = -0.02
+		if = {
+			limit = { exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+	}
+}
+
+# ============================================================
+# ire.63 1940 年 5 月：戈茨空降
+# 历史：德国间谍赫尔曼·戈茨空降爱尔兰，后被爱尔兰当局拘押。
+# ============================================================
+country_event = {
+	id = ire.63
+	title = ire.63.t
+	desc = ire.63.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+
+	option = {
+		name = ire.63.a
+		add_political_power = 25
+		add_stability = 0.03
+		if = {
+			limit = { exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+	}
+
+	option = {
+		name = ire.63.b
+		add_command_power = 25
+		army_experience = 25
+		add_stability = -0.03
+	}
+}
+
+# ============================================================
+# ire.64 1944 年 4 月：美国照会
+# 历史：美国要求爱尔兰关闭轴心国使馆，德瓦莱拉拒绝，引发危机。
+# ============================================================
+country_event = {
+	id = ire.64
+	title = ire.64.t
+	desc = ire.64.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+
+	option = {
+		name = ire.64.a
+		add_political_power = 25
+		add_stability = -0.03
+		if = {
+			limit = { exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		if = {
+			limit = { exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+	}
+
+	option = {
+		name = ire.64.b
+		add_political_power = 40
+		add_stability = 0.03
+		add_war_support = 0.03
+		if = {
+			limit = { exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+	}
+}
+
+# ============================================================
+# ire.65 1945 年 5 月：希特勒之死与丘吉尔的演说
+# 历史：德瓦莱拉向德国公使亨佩尔致哀，丘吉尔在下院抨击爱尔兰，
+# 德瓦莱拉随后发表著名的广播答辩。
+# ============================================================
+country_event = {
+	id = ire.65
+	title = ire.65.t
+	desc = ire.65.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+
+	option = {
+		name = ire.65.a
+		trigger = { NOT = { has_war_with = GER } }
+		add_political_power = 25
+		add_stability = 0.03
+		if = {
+			limit = { exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		if = {
+			limit = { exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 } }
+		}
+		if = {
+			limit = { exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+	}
+
+	option = {
+		name = ire.65.b
+		add_political_power = 20
+		add_stability = -0.02
+		if = {
+			limit = { exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+		}
+		if = {
+			limit = { exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+		}
+	}
+}
