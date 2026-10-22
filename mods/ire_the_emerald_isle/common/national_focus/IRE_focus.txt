@@ -956,6 +956,63 @@ focus_tree = {
 		}
 	}
 
+	# ---- 镇压线：消灭恐怖分子 → 拉塞尔之死 → 绞索收紧 ----
+	focus = {
+		id = IRE_B_crush_terror
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 5
+		prerequisite = { focus = IRE_B_outlaw_ira }
+		x = 18
+		y = 4
+		ai_will_do = { base = 45 }
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+			add_ideas = IRE_internment_camps
+			set_country_flag = IRE_ira_crushed
+		}
+	}
+
+	focus = {
+		id = IRE_B_russell_death
+		icon = GFX_goal_generic_military_deal
+		cost = 5
+		prerequisite = { focus = IRE_B_crush_terror }
+		available = {
+			date > 1940.8.10
+		}
+		x = 18
+		y = 5
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.02
+			country_event = { id = ire.66 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_B_noose_tightens
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		prerequisite = { focus = IRE_B_russell_death }
+		available = {
+			date > 1941.1.1
+		}
+		x = 18
+		y = 6
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			add_ideas = IRE_noose_years
+			country_event = { id = ire.67 days = 1 }
+		}
+	}
+
 	# ---- 经济线 ----
 	focus = {
 		id = IRE_B_economic_war_end

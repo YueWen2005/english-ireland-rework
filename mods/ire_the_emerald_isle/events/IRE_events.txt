@@ -1,4 +1,4 @@
-add_namespace = ire
+﻿add_namespace = ire
 
 # ============================================================
 # ire.1 边境公投 - 结果揭晓（支持度分档）
@@ -395,5 +395,60 @@ country_event = {
 			limit = { exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
 		}
+	}
+}
+
+# ============================================================
+# ire.66 1940 年 8 月：拉塞尔之死
+# 历史：IRA 总参谋长肖恩·拉塞尔在搭乘 U-65 潜艇返爱途中
+# 病死，尸体裹着万字旗海葬于大西洋。德国与本土 IRA 的
+# 联络线随之断绝——镇压的最后一环合上了。
+# ============================================================
+country_event = {
+	id = ire.66
+	title = ire.66.t
+	desc = ire.66.d
+	picture = GFX_report_event_generic_funeral
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire.66.a
+		# 公开通报：展示政府铁腕，进一步稳固后方
+		add_political_power = 50
+		add_stability = 0.02
+		custom_effect_tooltip = ire.66.a_tt
+	}
+	option = {
+		name = ire.66.b
+		# 低调处理：避免 martyrs（烈士）效应
+		add_stability = 0.04
+	}
+}
+
+# ============================================================
+# ire.67 1941 年：绞索收紧（蒙特乔伊监狱处决）
+# 历史：1940-41 年，德瓦莱拉政府处决了多名拒绝停止
+# 空袭行动的 IRA 成员（蒙特乔伊监狱绞刑）。组织彻底
+# 转入蛰伏，「紧急状态」下的爱尔兰熬过了最紧的岁月。
+# ============================================================
+country_event = {
+	id = ire.67
+	title = ire.67.t
+	desc = ire.67.d
+	picture = GFX_report_event_generic_military_parade
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire.67.a
+		# 依法严办：震慑残余分子
+		add_war_support = 0.02
+		custom_effect_tooltip = ire.67.a_tt
+	}
+	option = {
+		name = ire.67.b
+		# 刀下留人：改判苦役，换取人情
+		add_political_power = 25
 	}
 }

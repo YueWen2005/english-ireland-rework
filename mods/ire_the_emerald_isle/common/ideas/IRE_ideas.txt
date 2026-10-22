@@ -1,4 +1,4 @@
-ideas = {
+﻿ideas = {
 
 	# ============================================================
 	# 开局精神（两线共有）
@@ -780,6 +780,26 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				conscription_factor = 0.03
+			}
+		}
+
+		IRE_internment_camps = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		IRE_noose_years = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.03
 			}
 		}
 	}
