@@ -1,0 +1,211 @@
+### 爱尔兰 MOD 脚本效果
+
+# 增加凯尔特后裔网络值（+20），并检查阈值解锁精神
+IRE_add_diaspora_network = {
+	if = {
+		limit = { NOT = { has_variable = IRE_diaspora_network } }
+		set_variable = { IRE_diaspora_network = 0 }
+	}
+	add_to_variable = { IRE_diaspora_network = 20 }
+	IRE_diaspora_thresholds = yes
+}
+
+# 增加凯尔特后裔网络值（+5，供决议使用）
+IRE_add_diaspora_network_5 = {
+	if = {
+		limit = { NOT = { has_variable = IRE_diaspora_network } }
+		set_variable = { IRE_diaspora_network = 0 }
+	}
+	add_to_variable = { IRE_diaspora_network = 5 }
+	IRE_diaspora_thresholds = yes
+}
+
+# 网络值阈值检查（20/40/60/80/100 解锁对应精神）
+IRE_diaspora_thresholds = {
+	if = {
+		limit = {
+			check_variable = { IRE_diaspora_network > 19 }
+			NOT = { has_idea = IRE_green_flag_post }
+		}
+		add_ideas = IRE_green_flag_post
+	}
+	if = {
+		limit = {
+			check_variable = { IRE_diaspora_network > 39 }
+			NOT = { has_idea = IRE_diaspora_fund }
+		}
+		add_ideas = IRE_diaspora_fund
+	}
+	if = {
+		limit = {
+			check_variable = { IRE_diaspora_network > 59 }
+			NOT = { has_idea = IRE_saint_patrick_name }
+		}
+		add_ideas = IRE_saint_patrick_name
+		country_event = { id = ire.40 days = 1 }
+	}
+	if = {
+		limit = {
+			check_variable = { IRE_diaspora_network > 79 }
+			NOT = { has_idea = IRE_atlantic_bloodline_2 }
+		}
+		add_ideas = IRE_atlantic_bloodline_2
+	}
+	if = {
+		limit = {
+			check_variable = { IRE_diaspora_network > 99 }
+			NOT = { has_idea = IRE_celtic_world }
+		}
+		add_ideas = IRE_celtic_world
+	}
+	if = {
+		limit = { check_variable = { IRE_diaspora_network > 100 } }
+		set_variable = { IRE_diaspora_network = 100 }
+	}
+}
+
+# ---------------- 中立信誉（0-100）增量效果 ----------------
+# 正向增量
+IRE_add_neutral_credibility_1 = {
+	add_to_variable = { IRE_neutral_credibility = 1 }
+	IRE_clamp_neutral_credibility = yes
+}
+IRE_add_neutral_credibility_2 = {
+	add_to_variable = { IRE_neutral_credibility = 2 }
+	IRE_clamp_neutral_credibility = yes
+}
+IRE_add_neutral_credibility_5 = {
+	add_to_variable = { IRE_neutral_credibility = 5 }
+	IRE_clamp_neutral_credibility = yes
+}
+
+# 负向增量
+IRE_add_neutral_credibility_neg2 = {
+	add_to_variable = { IRE_neutral_credibility = -2 }
+	IRE_clamp_neutral_credibility = yes
+}
+IRE_add_neutral_credibility_neg3 = {
+	add_to_variable = { IRE_neutral_credibility = -3 }
+	IRE_clamp_neutral_credibility = yes
+}
+IRE_add_neutral_credibility_neg4 = {
+	add_to_variable = { IRE_neutral_credibility = -4 }
+	IRE_clamp_neutral_credibility = yes
+}
+IRE_add_neutral_credibility_neg5 = {
+	add_to_variable = { IRE_neutral_credibility = -5 }
+	IRE_clamp_neutral_credibility = yes
+}
+
+# 钳制在 0-100
+IRE_clamp_neutral_credibility = {
+	if = {
+		limit = { NOT = { has_variable = IRE_neutral_credibility } }
+		set_variable = { IRE_neutral_credibility = 50 }
+	}
+	if = {
+		limit = { check_variable = { IRE_neutral_credibility > 100 } }
+		set_variable = { IRE_neutral_credibility = 100 }
+	}
+	if = {
+		limit = { check_variable = { IRE_neutral_credibility < 0 } }
+		set_variable = { IRE_neutral_credibility = 0 }
+	}
+}
+
+# 北爱尔兰核心化（按支持度分档）
+IRE_core_northern_ireland = {
+	if = {
+		limit = { NOT = { has_variable = IRE_plebiscite_support } }
+		set_variable = { IRE_plebiscite_support = 45 }
+	}
+
+	# 六郡核心化（北爱 state 113-118）
+	113 = { add_core_of = ROOT }
+	114 = { add_core_of = ROOT }
+	115 = { add_core_of = ROOT }
+	116 = { add_core_of = ROOT }
+	117 = { add_core_of = ROOT }
+	118 = { add_core_of = ROOT }
+
+	# 分档结算
+	if = {
+		limit = { check_variable = { IRE_plebiscite_support < 70 } }
+		add_ideas = IRE_north_unintegrated
+	}
+	else_if = {
+		limit = { check_variable = { IRE_plebiscite_support < 90 } }
+		add_stability = 0.10
+	}
+	else = {
+		add_stability = 0.15
+		random_owned_controlled_state = {
+			add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			add_building_construction = { type = dockyard level = 1 instant_build = yes }
+		}
+	}
+}
+
+# 纽芬兰并入
+IRE_annex_newfoundland = {
+	# 纽芬兰在 HOI4 中由 ENG 控制，需先转移省份
+	if = {
+		limit = { NOT = { has_variable = IRE_annexed_newfoundland } }
+		set_variable = { IRE_annexed_newfoundland = 1 }
+	}
+	# 纽芬兰 state 331：若在 ENG 手中则和平转移，随后核心化
+	if = {
+		limit = { 331 = { is_owned_by = ENG } }
+		331 = { transfer_state = ROOT }
+	}
+	if = {
+		limit = { 331 = { is_owned_by = ROOT } }
+		331 = { add_core_of = ROOT }
+	}
+	add_stability = 0.05
+}
+
+# 紧急状态分级检查（1 → 2 → 3）
+# 二级：主要国家已开战，且 IRE 处于被威胁状态
+# 三级：IRE 自身已参战
+IRE_emergency_tier_check = {
+	# 一级 → 三级：直接开战（跳级）
+	if = {
+		limit = {
+			has_idea = IRE_emergency_powers
+			has_war = yes
+		}
+		remove_ideas = IRE_emergency_powers
+		add_ideas = IRE_emergency_powers_3
+	}
+	# 一级 → 二级：大战爆发但自己尚未参战
+	else_if = {
+		limit = {
+			has_idea = IRE_emergency_powers
+			has_war = no
+			any_other_country = { is_major = yes has_war = yes }
+			date > 1939.6.1
+		}
+		remove_ideas = IRE_emergency_powers
+		add_ideas = IRE_emergency_powers_2
+	}
+	# 二级 → 三级：参战
+	else_if = {
+		limit = {
+			has_idea = IRE_emergency_powers_2
+			has_war = yes
+		}
+		remove_ideas = IRE_emergency_powers_2
+		add_ideas = IRE_emergency_powers_3
+	}
+	# 三级 → 二级：战争结束后降级
+	else_if = {
+		limit = {
+			has_idea = IRE_emergency_powers_3
+			has_war = no
+			date > 1945.1.1
+		}
+		remove_ideas = IRE_emergency_powers_3
+		add_ideas = IRE_emergency_powers_2
+	}
+}

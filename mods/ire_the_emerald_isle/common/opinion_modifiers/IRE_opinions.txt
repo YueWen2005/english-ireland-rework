@@ -1,0 +1,73 @@
+### ============================================================
+### 爱尔兰 MOD - 观点修正定义
+### add_opinion 的 modifier 参数必须引用这里的 token，不能直接写数字
+### ============================================================
+
+opinion_modifiers = {
+
+	# ---------------- 正面 ----------------
+	IRE_opinion_pos5 = {
+		value = 5
+	}
+
+	IRE_opinion_pos10 = {
+		value = 10
+	}
+
+	IRE_opinion_pos15 = {
+		value = 15
+	}
+
+	IRE_opinion_pos20 = {
+		value = 20
+	}
+
+	IRE_opinion_pos25 = {
+		value = 25
+	}
+
+	IRE_opinion_pos30 = {
+		value = 30
+	}
+
+	IRE_opinion_pos40 = {
+		value = 40
+	}
+
+	IRE_opinion_pos50 = {
+		value = 50
+	}
+
+	IRE_opinion_pos60 = {
+		value = 60
+	}
+
+	# ---------------- 负面 ----------------
+	IRE_opinion_neg5 = {
+		value = -5
+	}
+
+	IRE_opinion_neg10 = {
+		value = -10
+	}
+
+	IRE_opinion_neg20 = {
+		value = -20
+	}
+
+	IRE_opinion_neg25 = {
+		value = -25
+	}
+
+	IRE_opinion_neg30 = {
+		value = -30
+	}
+
+	IRE_opinion_neg40 = {
+		value = -40
+	}
+
+	IRE_opinion_neg50 = {
+		value = -50
+	}
+}

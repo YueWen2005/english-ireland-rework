@@ -1,0 +1,446 @@
+ideas = {
+
+	# ============================================================
+	# 开局精神（两线共有）
+	# ============================================================
+	country = {
+
+		IRE_treatys_scar = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_diaspora = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.05
+				conscription_factor = 0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_agrarian_poverty = {
+			picture = generic_construction_effort
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_speed_arms_factory_factor = -0.15
+				consumer_goods_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		# 削弱版「农业穷国」：仅保留消费品 +5%，去掉军工 −15%
+		# 对应文档《经济战争的终结》「移除一半负面」（HOI4 无法做「一半」，用替换精神实现）
+		IRE_agrarian_poverty_lite = {
+			picture = generic_construction_effort
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_civil_war_embers = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+			removal_cost = -1
+		}
+
+		# ---------------- 起点衍生 ----------------
+		IRE_free_framework = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_north_unintegrated = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.05
+				local_resources_factor = -0.25
+			}
+			removal_cost = -1
+		}
+
+		IRE_sectarian_rift = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.08
+				resistance_target = 0.10
+			}
+			removal_cost = -1
+		}
+
+		# ---------------- 工业 / 内政 ----------------
+		IRE_rural_electrification = {
+			picture = generic_construction_effort
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				construction_speed = 0.05
+			}
+		}
+
+		IRE_anglo_irish_beef = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				export_factor = 0.15
+				political_power_gain = 0.03
+			}
+		}
+
+		IRE_republican_constitution = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.08
+				political_power_gain = 0.08
+			}
+		}
+
+		IRE_free_country = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.10
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		# 《清算条约》— 每日政治点数 +0.10（political_power_gain 单位是「每天固定点数」）
+		IRE_settled_treaty = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.10
+			}
+			removal_cost = -1
+		}
+
+		# 英国贸易制裁（ire.2 挂上，《清算条约》解除）
+		IRE_british_sanctions = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				export_factor = -0.15
+			}
+			removal_cost = -1
+		}
+
+		# ---------------- 哈兰德与沃尔夫船坞 ----------------
+		# 文档要求「特殊建筑」，HOI4 不能自定义建筑类型，用精神等价表达：
+		# 舰船建造速度 +10%、船坞产出 +10%
+		IRE_haaland_wolff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_speed_dockyard_factor = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+		}
+
+		# ---------------- A 线：跨海网络 ----------------
+		IRE_atlantic_bloodline = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				navy_organisation_factor = 0.05
+				convoy_raiding_factor = 0.05
+			}
+		}
+
+		IRE_green_flag_post = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.03
+			}
+		}
+
+		IRE_diaspora_fund = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_experience_gain_factor = 0.05
+			}
+		}
+
+		IRE_saint_patrick_name = {
+			picture = generic_infantry_offensive
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				division_attack_factor = 0.05
+				division_defence_factor = 0.05
+			}
+		}
+
+		# 圣帕特里克营实战修正（文档 攻击+15% 防御+10% 组织度+15%）
+		# 负面项（人力需求+10%、补给+10%）做成国家级会波及全军，故不实现
+		IRE_san_patricio_elite = {
+			picture = generic_infantry_offensive
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				division_attack_factor = 0.15
+				division_defence_factor = 0.10
+				division_organisation_factor = 0.15
+			}
+		}
+
+		IRE_atlantic_bloodline_2 = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				import_cost_factor = -0.15
+				export_factor = 0.15
+			}
+		}
+
+		IRE_celtic_world = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.05
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		IRE_washingtons_friend = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				export_factor = 0.20
+			}
+		}
+
+		IRE_southern_supply_line = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				supply_range_factor = 0.15
+				convoy_raiding_factor = -0.10
+			}
+		}
+
+		IRE_transatlantic_supply = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				supply_range_factor = 0.25
+				naval_repair_speed_factor = 0.10
+			}
+		}
+
+		IRE_final_ascension = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.15
+				conscription_factor = 0.10
+				volunteer_cap = 4
+			}
+		}
+
+		# 纽芬兰渔场：文档「+4 鱼类」「+8 鱼类」的替代（HOI4 无鱼类资源）
+		IRE_newfoundland_fisheries = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.03
+				export_factor = 0.05
+			}
+		}
+
+		# 渔民兄弟会：文档「每月 +0.05 政治点数」（每月约 30 天 → 每天 0.0017，
+		# 但 HOI4 最小粒度为每日点，取 0.02 使其体感接近文档的「少量持续收益」）
+		IRE_fisher_brotherhood_idea = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.02
+			}
+		}
+
+		# 南美农产品贸易：文档「牛肉 +8、小麦 +6」的替代（HOI4 无此资源）
+		IRE_south_american_trade = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				export_factor = 0.08
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		# ---------------- B 线：紧急状态三级 ----------------
+		IRE_emergency_powers = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.05
+				defence_factor = 0.15
+				consumer_goods_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_emergency_powers_2 = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.08
+				defence_factor = 0.20
+				consumer_goods_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_emergency_powers_3 = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.10
+				defence_factor = 0.25
+				consumer_goods_factor = 0.08
+			}
+			removal_cost = -1
+		}
+
+		IRE_lookout_post = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				air_detection_factor = 0.10
+				navy_detection_factor = 0.10
+			}
+		}
+
+		IRE_reserve_defence = {
+			picture = generic_infantry_offensive
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.02
+				division_organisation_factor = 0.05
+			}
+		}
+
+		# 联合防务协调（W 计划解锁的决议给）
+		IRE_joint_defence_idea = {
+			picture = generic_land_battle
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				defence_factor = 0.10
+			}
+		}
+
+		# ---------------- B 线：中立三分支 ----------------
+		IRE_moral_neutrality_idea = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				opinion_factor = 0.25
+			}
+		}
+
+		IRE_armed_neutrality_idea = {
+			picture = generic_infantry_offensive
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.05
+				defence_factor = 0.20
+				army_experience_gain_factor = 0.10
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		IRE_absolute_neutrality_idea = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				export_factor = 0.20
+				political_power_gain = 0.07
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		IRE_moral_arbiter = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				opinion_factor = 0.25
+				trade_opinion_factor = 0.15
+				diplomatic_relation_improvement = 0.10
+			}
+		}
+	}
+
+	# ============================================================
+	# 隐藏 / 内部精神
+	# ============================================================
+	hidden_ideas = {
+
+		IRE_border_plebiscite_support_1 = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = { }
+		}
+	}
+}

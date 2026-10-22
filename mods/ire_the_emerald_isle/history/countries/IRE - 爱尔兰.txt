@@ -1,0 +1,58 @@
+### ============================================================
+### 爱尔兰 1936 年开局设定（覆盖原版 history/countries/IRE - 爱尔兰.txt）
+### 只做加法：保留原版的开局政治/科技/建筑设定，仅追加自定义 oob
+### ============================================================
+
+capital = 113
+
+oob = "IRE_units"
+
+# 开局科技（基础工业与步兵装备，避免开局无法造兵）
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	support_weapons = 1
+	tech_support = 1
+	engineer = 1
+	recon = 1
+	field_hospital = 1
+	trench_warfare = 1
+	artillery = 1
+	mot_r_art = 1
+	basic_machine_tools = 1
+	improved_machine_tools = 1
+
+	# 海军
+	basic_navy = 1
+	basic_light_hull = 1
+	basic_ship_hull_destroyer = 1
+
+	# 空军
+	basic_air = 1
+	early_fighter = 1
+	early_light_bomber = 1
+}
+
+# 开局科研槽（爱尔兰原版 2 个，给到 3 便于小国生存）
+set_research_slots = 3
+
+# 开局政治点数
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = yes
+}
+
+set_popularities = {
+	neutrality = 56
+	democratic = 24
+	communism = 4
+	fascism = 16
+}
+
+# 开局国家精神
+add_ideas = {
+	IRE_treatys_scar
+	IRE_diaspora
+	IRE_agrarian_poverty
+	IRE_civil_war_embers
+}

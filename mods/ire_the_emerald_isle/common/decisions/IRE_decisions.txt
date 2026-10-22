@@ -1,0 +1,522 @@
+IRE_decisions = {
+
+	# ============================================================
+	# A 线：统一宣传运动（公投支持度）
+	# ============================================================
+	IRE_unity_campaign_cat = {
+
+		IRE_unity_campaign = {
+			icon = generic_political_actions
+			cost = 50
+			days_remove = 30
+
+			available = {
+				has_completed_focus = IRE_border_plebiscite
+				NOT = { has_country_flag = IRE_border_done }
+				check_variable = { IRE_unity_campaign_count < 5 }
+			}
+
+			visible = {
+				has_completed_focus = IRE_border_plebiscite
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_to_variable = { IRE_plebiscite_support = 12 }
+				if = {
+					limit = { NOT = { has_variable = IRE_unity_campaign_count } }
+					set_variable = { IRE_unity_campaign_count = 0 }
+				}
+				add_to_variable = { IRE_unity_campaign_count = 1 }
+			}
+
+			ai_will_do = { base = 40 }
+		}
+	}
+
+	# ============================================================
+	# A 线：海外网络
+	# ============================================================
+	IRE_diaspora_cat = {
+
+		IRE_overseas_promotion = {
+			icon = generic_political_actions
+			cost = 60
+			days_remove = 60
+
+			available = {
+				has_variable = IRE_diaspora_network
+			}
+
+			visible = {
+				has_variable = IRE_diaspora_network
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				IRE_add_diaspora_network_5 = yes
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 海外募兵 ----
+		IRE_overseas_recruit = {
+			icon = generic_infantry_offensive
+			cost = 60
+			days_remove = 60
+
+			available = {
+				has_completed_focus = IRE_A_diaspora_legacy
+			}
+
+			visible = {
+				has_completed_focus = IRE_A_diaspora_legacy
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_manpower = 5000
+				IRE_add_diaspora_network_5 = yes
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 海外募捐 ----
+		IRE_overseas_fundraising = {
+			icon = generic_production_bonus
+			cost = 40
+			days_remove = 45
+
+			available = {
+				has_completed_focus = IRE_A_diaspora_legacy
+			}
+
+			visible = {
+				has_completed_focus = IRE_A_diaspora_legacy
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_political_power = 50
+				add_to_variable = { IRE_diaspora_network = 3 }
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 跨教派对话（《和解政策》解锁）----
+		IRE_interfaith_dialogue = {
+			icon = generic_political_actions
+			cost = 40
+			days_remove = 60
+
+			available = {
+				has_completed_focus = IRE_A_reconciliation
+			}
+
+			visible = {
+				has_completed_focus = IRE_A_reconciliation
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_stability = 0.02
+				add_political_power = 10
+				add_to_variable = { IRE_plebiscite_support = 2 }
+				IRE_add_neutral_credibility_1 = yes
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 都柏林的秩序（《强硬整合》解锁）----
+		IRE_dublin_order = {
+			icon = generic_political_actions
+			cost = 50
+			days_remove = 30
+
+			available = {
+				has_completed_focus = IRE_A_firm_integration
+			}
+
+			visible = {
+				has_completed_focus = IRE_A_firm_integration
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_stability = 0.03
+				every_state = {
+					limit = {
+						OR = {
+							state = 113
+							state = 114
+							state = 115
+							state = 116
+							state = 117
+							state = 118
+						}
+					}
+					add_resistance = -5
+				}
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 南美采购（《南锥体补给线》解锁）----
+		IRE_south_america_purchase = {
+			icon = generic_production_bonus
+			cost = 50
+			days_remove = 90
+
+			available = {
+				has_completed_focus = IRE_A_southern_cone
+			}
+
+			visible = {
+				has_completed_focus = IRE_A_southern_cone
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
+				navy_experience = 10
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+		# ---- 跨大西洋远征（《新世界的主人》解锁）----
+		IRE_transatlantic_expedition = {
+			icon = generic_naval_actions
+			cost = 100
+
+			available = {
+				has_idea = IRE_final_ascension
+			}
+
+			visible = {
+				has_idea = IRE_final_ascension
+			}
+
+			fire_only_once = yes
+
+			complete_effect = {
+				add_war_support = 0.05
+				add_equipment_to_stockpile = { type = convoy amount = 30 }
+				navy_experience = 50
+			}
+
+			ai_will_do = { base = 40 }
+		}
+	}
+
+	# ============================================================
+	# A 线：纽芬兰事务
+	# ============================================================
+	IRE_newfoundland_cat = {
+
+		IRE_fisher_brotherhood = {
+			icon = generic_political_actions
+			cost = 30
+			days_remove = 60
+
+			available = {
+				has_completed_focus = IRE_A_newfoundland
+			}
+
+			visible = {
+				has_completed_focus = IRE_A_newfoundland
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				if = {
+					limit = { NOT = { has_variable = IRE_nf_support } }
+					set_variable = { IRE_nf_support = 0 }
+				}
+				add_to_variable = { IRE_nf_support = 8 }
+				if = {
+					limit = { check_variable = { IRE_nf_support > 100 } }
+					set_variable = { IRE_nf_support = 100 }
+				}
+			}
+
+			ai_will_do = { base = 40 }
+		}
+	}
+
+	# ============================================================
+	# B 线：中立事务
+	# ============================================================
+	IRE_neutral_cat = {
+
+		IRE_moral_appeal = {
+			icon = generic_political_actions
+			cost = 40
+			days_remove = 30
+
+			available = {
+				has_completed_focus = IRE_B_president_mace
+			}
+
+			visible = {
+				has_completed_focus = IRE_B_president_mace
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_political_power = 25
+				add_stability = 0.01
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 天气预报共享（道义中立解锁）----
+		IRE_weather_forecast = {
+			icon = generic_political_actions
+			cost = 30
+			days_remove = 30
+
+			available = {
+				has_completed_focus = IRE_B_moral_neutrality
+			}
+
+			visible = {
+				has_completed_focus = IRE_B_moral_neutrality
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_political_power = 30
+				every_country = {
+					limit = { is_in_faction_with = ENG }
+					add_opinion = { target = ROOT modifier = IRE_opinion_pos25 }
+				}
+				ENG = { add_opinion = { target = ROOT modifier = IRE_opinion_pos25 } }
+				IRE_add_neutral_credibility_2 = yes
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 走私贸易（绝对中立解锁）：收入随中立信誉分档 ----
+		IRE_smuggling = {
+			icon = generic_political_actions
+			cost = 20
+			days_remove = 30
+
+			available = {
+				has_completed_focus = IRE_B_absolute_neutrality
+			}
+
+			visible = {
+				has_completed_focus = IRE_B_absolute_neutrality
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				if = {
+					limit = { check_variable = { IRE_neutral_credibility > 74 } }
+					add_political_power = 80
+				}
+				else_if = {
+					limit = { check_variable = { IRE_neutral_credibility > 39 } }
+					add_political_power = 60
+				}
+				else = {
+					add_political_power = 40
+					add_stability = -0.01
+				}
+				IRE_add_neutral_credibility_neg2 = yes
+			}
+
+			ai_will_do = { base = 40 }
+		}
+
+		# ---- 联合防务协调（W 计划解锁）----
+		IRE_joint_defence = {
+			icon = generic_land_battle
+			cost = 40
+
+			available = {
+				has_completed_focus = IRE_B_plan_w
+			}
+
+			visible = {
+				has_completed_focus = IRE_B_plan_w
+			}
+
+			fire_only_once = yes
+
+			complete_effect = {
+				add_ideas = IRE_joint_defence_idea
+				army_experience = 50
+				IRE_add_neutral_credibility_neg3 = yes
+			}
+
+			ai_will_do = { base = 40 }
+		}
+
+		# ---- 紧急动员演习（紧急状态二级/三级解锁）----
+		IRE_emergency_drill = {
+			icon = generic_political_actions
+			cost = 30
+			days_remove = 60
+
+			available = {
+				OR = {
+					has_idea = IRE_emergency_powers_2
+					has_idea = IRE_emergency_powers_3
+				}
+			}
+
+			visible = {
+				has_idea = IRE_emergency_powers
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				add_war_support = 0.02
+				army_experience = 15
+			}
+
+			ai_will_do = { base = 30 }
+		}
+
+		# ---- 跨境行动（容忍 IRA 解锁）----
+		IRE_cross_border_ops = {
+			icon = generic_political_actions
+			cost = 50
+			days_remove = 30
+
+			available = {
+				has_country_flag = IRE_ira_tolerated
+			}
+
+			visible = {
+				has_country_flag = IRE_ira_tolerated
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				army_experience = 25
+				add_war_support = 0.01
+				ENG = { add_opinion = { target = ROOT modifier = IRE_opinion_neg5 } }
+				IRE_add_neutral_credibility_neg4 = yes
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+		# ---- 调停者（《道义的权威》解锁）：成功率随中立信誉变化 ----
+		IRE_mediator = {
+			icon = generic_political_actions
+			cost = 75
+			days_remove = 120
+
+			available = {
+				has_idea = IRE_moral_arbiter
+				any_other_country = { has_war = yes is_major = yes }
+			}
+
+			visible = {
+				has_idea = IRE_moral_arbiter
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				if = {
+					limit = { check_variable = { IRE_neutral_credibility > 79 } }
+					random_list = {
+						60 = {
+							add_political_power = 150
+							add_stability = 0.05
+							IRE_add_neutral_credibility_5 = yes
+						}
+						40 = {
+							add_political_power = -50
+							IRE_add_neutral_credibility_neg5 = yes
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { IRE_neutral_credibility > 39 } }
+					random_list = {
+						45 = {
+							add_political_power = 150
+							add_stability = 0.05
+							IRE_add_neutral_credibility_5 = yes
+						}
+						55 = {
+							add_political_power = -50
+							IRE_add_neutral_credibility_neg5 = yes
+						}
+					}
+				}
+				else = {
+					random_list = {
+						30 = {
+							add_political_power = 150
+							add_stability = 0.05
+							IRE_add_neutral_credibility_5 = yes
+						}
+						70 = {
+							add_political_power = -50
+							IRE_add_neutral_credibility_neg5 = yes
+						}
+					}
+				}
+			}
+
+			ai_will_do = { base = 20 }
+		}
+	}
+
+	# ============================================================
+	# 共通：跨大西洋护航
+	# ============================================================
+	IRE_convoy_cat = {
+
+		IRE_atlantic_convoy = {
+			icon = generic_naval_actions
+			cost = 40
+			days_remove = 30
+
+			available = {
+				has_idea = IRE_transatlantic_supply
+			}
+
+			visible = {
+				has_idea = IRE_transatlantic_supply
+			}
+
+			fire_only_once = no
+
+			complete_effect = {
+				navy_experience = 25
+				add_equipment_to_stockpile = { type = convoy amount = 20 }
+			}
+
+			ai_will_do = { base = 20 }
+		}
+	}
+}

@@ -1,0 +1,57 @@
+### ============================================================
+### 爱尔兰 MOD - 自定义师模板
+### 由 history/countries/IRE - 爱尔兰.txt 的数字 oob 字段加载
+### ============================================================
+
+### 圣帕特里克营：9 步 + 1 炮 + 支援（工兵 / 侦察 / 野战医院）
+### 对应文档「精英师模板『圣帕特里克营』」
+division_template = {
+	name = "San Patricio Battalion"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		field_hospital = { x = 0 y = 2 }
+	}
+}
+
+### 地方防卫军：3 步民兵
+### 对应文档「《地方防卫军》+3 个民兵师」
+division_template = {
+	name = "LDF Militia"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+### 标准步兵师：6 步（用于《租借的爱尔兰师》）
+division_template = {
+	name = "IRE_Infantry Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}

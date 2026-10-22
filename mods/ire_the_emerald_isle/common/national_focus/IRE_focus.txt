@@ -1,0 +1,1183 @@
+### ============================================================
+### 翡翠岛的抉择 - 爱尔兰国策树
+### 双主线：A《边境公投》 / B《自由邦的巩固》，起点互斥
+### ============================================================
+
+focus_tree = {
+	id = IRE_focus_tree
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = IRE
+		}
+		modifier = {
+			add = 50
+			original_tag = IRE
+		}
+	}
+
+	default = no
+	reset_on_civilwar = no
+	continuous_focus_position = { x = 1300 y = 1200 }
+
+	### ============================================================
+	### 起点：二选一（互斥）
+	### ============================================================
+	focus = {
+		id = IRE_border_plebiscite
+		icon = GFX_goal_generic_demand_territory
+		cost = 5
+		x = 20
+		y = 0
+		mutually_exclusive = { focus = IRE_consolidate_free_state }
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_political_power = -150
+			add_stability = -0.05
+			country_event = { id = ire.1 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_consolidate_free_state
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		x = 20
+		y = 1
+		mutually_exclusive = { focus = IRE_border_plebiscite }
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			remove_ideas = IRE_treatys_scar
+			add_ideas = IRE_free_framework
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	### ============================================================
+	### 共通底层线（从两个起点都可达）
+	### ============================================================
+	focus = {
+		id = IRE_common_galway
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = {
+			OR = {
+				focus = IRE_border_plebiscite
+				focus = IRE_consolidate_free_state
+			}
+		}
+		x = 24
+		y = 0
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = dockyard level = 1 instant_build = yes }
+			}
+			navy_experience = 50
+		}
+	}
+
+	focus = {
+		id = IRE_common_rural
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = { focus = IRE_common_galway }
+		x = 24
+		y = 1
+		relative_position_id = IRE_common_galway
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_ideas = IRE_rural_electrification
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_common_dublin_uni
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 10
+		prerequisite = { focus = IRE_common_rural }
+		x = 24
+		y = 2
+		relative_position_id = IRE_common_rural
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_research_slot = 1
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+		}
+	}
+
+	focus = {
+		id = IRE_common_tobacco
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = { focus = IRE_common_dublin_uni }
+		x = 24
+		y = 3
+		relative_position_id = IRE_common_dublin_uni
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = IRE_common_signals
+		icon = GFX_goal_generic_intel_bonus
+		cost = 10
+		prerequisite = { focus = IRE_common_tobacco }
+		x = 24
+		y = 4
+		relative_position_id = IRE_common_tobacco
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_intel_agency_operative_slot = 1
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = IRE_common_arms
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = { focus = IRE_common_signals }
+		x = 24
+		y = 5
+		relative_position_id = IRE_common_signals
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			remove_ideas = IRE_agrarian_poverty
+			remove_ideas = IRE_agrarian_poverty_lite
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	### ============================================================
+	### A 线：新世界爱尔兰
+	### ============================================================
+	focus = {
+		id = IRE_A_revitalise
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = { focus = IRE_border_plebiscite }
+		relative_position_id = IRE_border_plebiscite
+		x = 8
+		y = 1
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_ideas = IRE_rural_electrification
+		}
+	}
+
+	focus = {
+		id = IRE_A_shannon
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = { focus = IRE_A_revitalise }
+		relative_position_id = IRE_A_revitalise
+		x = 8
+		y = 2
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = IRE_A_reserves
+		icon = GFX_goal_generic_military_advisor
+		cost = 10
+		prerequisite = { focus = IRE_A_shannon }
+		relative_position_id = IRE_A_shannon
+		x = 8
+		y = 3
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			army_experience = 50
+			add_ideas = IRE_reserve_defence
+		}
+	}
+
+	focus = {
+		id = IRE_A_belfast
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = { focus = IRE_A_reserves }
+		relative_position_id = IRE_A_reserves
+		x = 8
+		y = 4
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			remove_ideas = IRE_north_unintegrated
+			add_ideas = IRE_haaland_wolff
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				add_building_construction = { type = dockyard level = 1 instant_build = yes }
+			}
+			# 公投在此正式举行（给玩家留出刷宣传与堆稳定度的时间窗）
+			if = {
+				limit = { NOT = { has_country_flag = IRE_border_done } }
+				country_event = { id = ire.1 days = 1 }
+			}
+		}
+	}
+
+	# ---- 治理分支（互斥） ----
+	focus = {
+		id = IRE_A_reconciliation
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_A_belfast }
+		relative_position_id = IRE_A_belfast
+		x = 6
+		y = 5
+		mutually_exclusive = { focus = IRE_A_firm_integration }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_stability = 0.12
+			remove_ideas = IRE_civil_war_embers
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos20 } }
+		}
+	}
+
+	focus = {
+		id = IRE_A_firm_integration
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_A_belfast }
+		relative_position_id = IRE_A_belfast
+		x = 10
+		y = 5
+		mutually_exclusive = { focus = IRE_A_reconciliation }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			remove_ideas = IRE_north_unintegrated
+			add_ideas = IRE_sectarian_rift
+			add_war_support = 0.15
+			conscription = 0.05
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_neg30 } }
+		}
+	}
+
+	# ---- 对英线（与纽芬兰互斥） ----
+	focus = {
+		id = IRE_A_london_note
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = { focus = IRE_A_belfast }
+		relative_position_id = IRE_A_belfast
+		x = 12
+		y = 5
+		mutually_exclusive = { focus = IRE_A_newfoundland }
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_neg20 } }
+		}
+	}
+
+	focus = {
+		id = IRE_A_settle_treaty
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_A_london_note }
+		relative_position_id = IRE_A_london_note
+		x = 12
+		y = 6
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			remove_ideas = IRE_treatys_scar
+			remove_ideas = IRE_british_sanctions
+			add_ideas = IRE_settled_treaty
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = IRE_A_treaty_ports
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = { focus = IRE_A_settle_treaty }
+		relative_position_id = IRE_A_settle_treaty
+		x = 12
+		y = 7
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = naval_base level = 2 instant_build = yes }
+			}
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			navy_experience = 100
+		}
+	}
+
+	# ---- 跨海主线 ----
+	focus = {
+		id = IRE_A_atlantic_call
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = { focus = IRE_A_belfast }
+		relative_position_id = IRE_A_belfast
+		x = 2
+		y = 5
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			random_owned_controlled_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+			navy_experience = 100
+			add_ideas = IRE_atlantic_bloodline
+			set_variable = { IRE_diaspora_network = 0 }
+		}
+	}
+
+	focus = {
+		id = IRE_A_diaspora_legacy
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_A_atlantic_call }
+		relative_position_id = IRE_A_atlantic_call
+		x = 2
+		y = 6
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_political_power = 150
+			# 文档：公投支持度 +20（已公投则改为稳定度 +8%）
+			if = {
+				limit = { NOT = { has_country_flag = IRE_border_done } }
+				add_to_variable = { IRE_plebiscite_support = 20 }
+			}
+			else = {
+				add_stability = 0.08
+			}
+			IRE_add_diaspora_network = yes
+		}
+	}
+
+	# ---- 纽芬兰 ----
+	focus = {
+		id = IRE_A_newfoundland
+		icon = GFX_goal_generic_claim_territory
+		cost = 10
+		prerequisite = { focus = IRE_A_diaspora_legacy }
+		relative_position_id = IRE_A_diaspora_legacy
+		x = -2
+		y = 7
+		mutually_exclusive = { focus = IRE_A_london_note }
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = IRE_fisher_brotherhood_idea
+			IRE_add_diaspora_network = yes
+			set_variable = { IRE_nf_support = 0 }
+		}
+	}
+
+	focus = {
+		id = IRE_A_nf_plebiscite
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = {
+			focus = IRE_A_newfoundland
+			focus = IRE_nf_support_50
+		}
+		relative_position_id = IRE_A_newfoundland
+		x = -2
+		y = 8
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			country_event = { id = ire.10 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_nf_support_50
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_A_newfoundland }
+		relative_position_id = IRE_A_newfoundland
+		x = 0
+		y = 8
+		available = {
+			check_variable = { IRE_nf_support > 49 }
+		}
+		ai_will_do = { base = 0 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = IRE_A_nf_province
+		icon = GFX_goal_generic_claim_territory
+		cost = 5
+		prerequisite = { focus = IRE_A_nf_plebiscite }
+		relative_position_id = IRE_A_nf_plebiscite
+		x = -2
+		y = 9
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			IRE_annex_newfoundland = yes
+			IRE_add_diaspora_network = yes
+			# 文档：+3 民用工厂、+1 船坞、+2 海军基地（落纽芬兰州 state 331）
+			random_owned_controlled_state = {
+				limit = { state = 331 }
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+				add_building_construction = { type = dockyard level = 1 instant_build = yes }
+				add_building_construction = { type = naval_base level = 2 instant_build = yes }
+			}
+			# 「鱼类 +8」→ HOI4 无鱼类资源，用精神表达
+			add_ideas = IRE_newfoundland_fisheries
+			# 「人力 +2%」→ 直接给绝对值（爱尔兰基数太小，百分比换算后约 2 万）
+			add_manpower = 20000
+		}
+	}
+
+	# ---- 美国线 ----
+	focus = {
+		id = IRE_A_boston
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_A_diaspora_legacy }
+		relative_position_id = IRE_A_diaspora_legacy
+		x = 2
+		y = 7
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			USA = { add_opinion = { target = IRE modifier = IRE_opinion_pos40 } }
+			IRE_add_diaspora_network = yes
+		}
+	}
+
+	focus = {
+		id = IRE_A_lobby
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_A_boston }
+		relative_position_id = IRE_A_boston
+		x = 2
+		y = 10
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = IRE_washingtons_friend
+			IRE_add_diaspora_network = yes
+			random_list = {
+				35 = { add_equipment_to_stockpile = { type = industrial_equipment amount = 200 } }
+				65 = { }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_irish_division
+		icon = GFX_goal_generic_infantry_offensive
+		cost = 10
+		prerequisite = { focus = IRE_A_lobby }
+		relative_position_id = IRE_A_lobby
+		x = 2
+		y = 11
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			IRE_add_diaspora_network = yes
+			army_experience = 50
+			# 3 个已训练完毕的步兵师（美洲爱尔兰裔志愿师）
+			capital_scope = {
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+			}
+		}
+	}
+
+	# ---- 墨西哥线 ----
+	focus = {
+		id = IRE_A_san_patricio
+		icon = GFX_goal_generic_infantry_offensive
+		cost = 10
+		prerequisite = { focus = IRE_A_diaspora_legacy }
+		relative_position_id = IRE_A_diaspora_legacy
+		x = 5
+		y = 7
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			MEX = { add_opinion = { target = IRE modifier = IRE_opinion_pos50 } }
+			army_experience = 200
+			IRE_add_diaspora_network = yes
+			# 文档「可将 2 个师改编为精英师」：HOI4 无「改编」效果，
+			# 替代为直接给予 2 个圣帕特里克营模板师 + 精英修正精神
+			add_ideas = IRE_san_patricio_elite
+			capital_scope = {
+				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_green_legion
+		icon = GFX_goal_generic_infantry_offensive
+		cost = 10
+		prerequisite = { focus = IRE_A_san_patricio }
+		relative_position_id = IRE_A_san_patricio
+		x = 5
+		y = 8
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			army_experience = 200
+			add_ideas = IRE_saint_patrick_name
+			IRE_add_diaspora_network = yes
+		}
+	}
+
+	# ---- 南美线 ----
+	focus = {
+		id = IRE_A_buenos_aires
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = { focus = IRE_A_diaspora_legacy }
+		relative_position_id = IRE_A_diaspora_legacy
+		x = 8
+		y = 7
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			ARG = { add_opinion = { target = IRE modifier = IRE_opinion_pos50 } }
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_ideas = IRE_south_american_trade
+			IRE_add_diaspora_network = yes
+		}
+	}
+
+	focus = {
+		id = IRE_A_southern_cone
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = { focus = IRE_A_buenos_aires }
+		relative_position_id = IRE_A_buenos_aires
+		x = 8
+		y = 8
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_southern_supply_line
+			IRE_add_diaspora_network = yes
+		}
+	}
+
+	# ---- 终局 ----
+	focus = {
+		id = IRE_A_supply_web
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10
+		prerequisite = {
+			OR = {
+				focus = IRE_A_irish_division
+				focus = IRE_A_green_legion
+				focus = IRE_A_southern_cone
+			}
+		}
+		relative_position_id = IRE_A_diaspora_legacy
+		x = 2
+		y = 8
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_transatlantic_supply
+		}
+	}
+
+	focus = {
+		id = IRE_A_celtic_commonwealth
+		icon = GFX_goal_generic_national_unity
+		cost = 15
+		prerequisite = {
+			focus = IRE_A_supply_web
+			focus = IRE_A_nf_province
+		}
+		relative_position_id = IRE_A_supply_web
+		x = 2
+		y = 9
+		available = {
+			check_variable = { IRE_diaspora_network > 99 }
+		}
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_ideas = IRE_celtic_world
+			add_stability = 0.15
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = IRE_A_masters_new_world
+		icon = GFX_goal_generic_major_war
+		cost = 15
+		prerequisite = { focus = IRE_A_celtic_commonwealth }
+		relative_position_id = IRE_A_celtic_commonwealth
+		x = 2
+		y = 12
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_ideas = IRE_final_ascension
+			add_war_support = 0.10
+		}
+	}
+
+	### ============================================================
+	### B 线：史实中立之路
+	### ============================================================
+	focus = {
+		id = IRE_B_civil_service
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_consolidate_free_state }
+		relative_position_id = IRE_consolidate_free_state
+		x = 30
+		y = 1
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = IRE_B_quell_embers
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_B_civil_service }
+		relative_position_id = IRE_B_civil_service
+		x = 30
+		y = 2
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			remove_ideas = IRE_civil_war_embers
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = IRE_B_outlaw_ira
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_B_quell_embers }
+		relative_position_id = IRE_B_quell_embers
+		x = 28
+		y = 3
+		mutually_exclusive = { focus = IRE_B_tolerate_ira }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_stability = 0.10
+			army_experience = 50
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos25 } }
+		}
+	}
+
+	focus = {
+		id = IRE_B_tolerate_ira
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = { focus = IRE_B_quell_embers }
+		relative_position_id = IRE_B_quell_embers
+		x = 32
+		y = 3
+		mutually_exclusive = { focus = IRE_B_outlaw_ira }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			army_experience = 150
+			conscription = 0.05
+			add_stability = -0.08
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_neg30 } }
+			set_country_flag = IRE_ira_tolerated
+		}
+	}
+
+	# ---- 经济线 ----
+	focus = {
+		id = IRE_B_economic_war_end
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_consolidate_free_state }
+		relative_position_id = IRE_consolidate_free_state
+		x = 34
+		y = 1
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			# 文档「移除农业穷国的一半负面」：HOI4 无法做「一半」，用替换为削弱版精神实现
+			remove_ideas = IRE_agrarian_poverty
+			add_ideas = IRE_agrarian_poverty_lite
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos40 } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = IRE_B_trade_agreement
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = { focus = IRE_B_economic_war_end }
+		relative_position_id = IRE_B_economic_war_end
+		x = 34
+		y = 2
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			add_ideas = IRE_anglo_irish_beef
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	focus = {
+		id = IRE_B_land_annuities
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_B_trade_agreement }
+		relative_position_id = IRE_B_trade_agreement
+		x = 34
+		y = 3
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.08
+		}
+	}
+
+	focus = {
+		id = IRE_B_treaty_ports
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = { focus = IRE_B_land_annuities }
+		relative_position_id = IRE_B_land_annuities
+		x = 34
+		y = 4
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = naval_base level = 2 instant_build = yes }
+			}
+			navy_experience = 150
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	# ---- 宪政线 ----
+	focus = {
+		id = IRE_B_constitution_1937
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = { focus = IRE_B_treaty_ports }
+		relative_position_id = IRE_B_treaty_ports
+		x = 34
+		y = 5
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			remove_ideas = IRE_treatys_scar
+			add_ideas = IRE_republican_constitution
+			add_stability = 0.12
+		}
+	}
+
+	focus = {
+		id = IRE_B_president_mace
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_B_constitution_1937 }
+		relative_position_id = IRE_B_constitution_1937
+		x = 34
+		y = 6
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	# ---- 紧急状态线 ----
+	focus = {
+		id = IRE_B_emergency
+		icon = GFX_goal_generic_defensive_war
+		cost = 10
+		prerequisite = { focus = IRE_B_president_mace }
+		relative_position_id = IRE_B_president_mace
+		x = 34
+		y = 7
+		available = {
+			OR = {
+				date > 1939.1.1
+				any_other_country = { is_major = yes has_war = yes }
+			}
+		}
+		ai_will_do = { base = 70 }
+
+		completion_reward = {
+			add_ideas = IRE_emergency_powers
+		}
+	}
+
+	focus = {
+		id = IRE_B_coastal
+		icon = GFX_goal_generic_air_defense
+		cost = 10
+		prerequisite = { focus = IRE_B_emergency }
+		relative_position_id = IRE_B_emergency
+		x = 32
+		y = 8
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = coastal_bunker level = 2 instant_build = yes }
+			}
+			army_experience = 100
+			add_ideas = IRE_lookout_post
+		}
+	}
+
+	focus = {
+		id = IRE_B_ldf
+		icon = GFX_goal_generic_infantry_offensive
+		cost = 10
+		prerequisite = { focus = IRE_B_emergency }
+		relative_position_id = IRE_B_emergency
+		x = 34
+		y = 9
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			conscription = 0.03
+			army_experience = 100
+			# 文档「+3 个民兵师（已部署于海岸）」：在沿海州各造一个 LDF 民兵师
+			every_owned_state = {
+				limit = { is_coastal = yes }
+				create_unit = { division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8" owner = IRE }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_B_plan_w
+		icon = GFX_goal_generic_land_grab
+		cost = 10
+		prerequisite = { focus = IRE_B_emergency }
+		relative_position_id = IRE_B_emergency
+		x = 36
+		y = 8
+		available = {
+			has_opinion = { target = ENG value > 49 }
+		}
+		# W 计划要求英爱关系 ≥ 50；若玩家此前把关系搞坏，可在下方决议「联合防务协调」处最终仍能解锁中立线。
+		# 注意：中立三分支已改为 OR 前置，不再被此门槛卡死。
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			army_experience = 200
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos25 } }
+		}
+	}
+
+	# ---- 中立三分支 ----
+	focus = {
+		id = IRE_B_moral_neutrality
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = {
+			OR = {
+				focus = IRE_B_coastal
+				focus = IRE_B_ldf
+				focus = IRE_B_plan_w
+			}
+		}
+		relative_position_id = IRE_B_emergency
+		x = 30
+		y = 10
+		mutually_exclusive = { focus = IRE_B_absolute_neutrality focus = IRE_B_armed_neutrality }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_moral_neutrality_idea
+			add_political_power = 50
+			# 文档：与同盟国关系 +40，德国 −25
+			every_country = {
+				limit = { is_in_faction_with = ENG }
+				add_opinion = { target = ROOT modifier = IRE_opinion_pos40 }
+			}
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos40 } }
+			GER = { add_opinion = { target = IRE modifier = IRE_opinion_neg25 } }
+		}
+	}
+
+	focus = {
+		id = IRE_B_absolute_neutrality
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = {
+			OR = {
+				focus = IRE_B_coastal
+				focus = IRE_B_ldf
+				focus = IRE_B_plan_w
+			}
+		}
+		relative_position_id = IRE_B_emergency
+		x = 34
+		y = 10
+		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_armed_neutrality }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_absolute_neutrality_idea
+			add_political_power = 100
+			# 文档：两边关系各 +15
+			ENG = { add_opinion = { target = IRE modifier = IRE_opinion_pos15 } }
+			GER = { add_opinion = { target = IRE modifier = IRE_opinion_pos15 } }
+		}
+	}
+
+	focus = {
+		id = IRE_B_armed_neutrality
+		icon = GFX_goal_generic_defensive_war
+		cost = 10
+		prerequisite = {
+			OR = {
+				focus = IRE_B_coastal
+				focus = IRE_B_ldf
+				focus = IRE_B_plan_w
+			}
+		}
+		relative_position_id = IRE_B_emergency
+		x = 38
+		y = 10
+		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_absolute_neutrality }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_armed_neutrality_idea
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = IRE_B_shannon_wayfarers
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_B_moral_neutrality }
+		relative_position_id = IRE_B_moral_neutrality
+		x = 30
+		y = 11
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			army_experience = 200
+			country_event = { id = ire.20 days = 1 }
+		}
+	}
+
+	# ---- 战时外交 ----
+	focus = {
+		id = IRE_B_dublin_choice
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = { focus = IRE_B_absolute_neutrality }
+		relative_position_id = IRE_B_absolute_neutrality
+		x = 34
+		y = 12
+		available = {
+			any_country = { has_war = yes is_major = yes }
+		}
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IRE_B_berlin_overture
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = { focus = IRE_B_absolute_neutrality }
+		relative_position_id = IRE_B_absolute_neutrality
+		x = 38
+		y = 11
+		available = {
+			has_country_flag = IRE_ira_tolerated
+		}
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			GER = { add_opinion = { target = IRE modifier = IRE_opinion_pos50 } }
+			USA = { add_opinion = { target = IRE modifier = IRE_opinion_neg40 } }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+			random_list = {
+				50 = { ENG = { declare_war_on = { target = IRE type = annex_everything } } }
+				50 = { }
+			}
+		}
+	}
+
+	# ---- 战后 ----
+	focus = {
+		id = IRE_B_famine_echo
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = { focus = IRE_B_dublin_choice }
+		relative_position_id = IRE_B_dublin_choice
+		x = 34
+		y = 13
+		available = { date > 1943.1.1 }
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			USA = { add_opinion = { target = IRE modifier = IRE_opinion_pos30 } }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = IRE_B_republic_1949
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = { focus = IRE_B_famine_echo }
+		relative_position_id = IRE_B_famine_echo
+		x = 34
+		y = 14
+		available = {
+			OR = {
+				date > 1948.1.1
+				any_country = { has_war = no is_major = yes }
+			}
+		}
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_ideas = IRE_free_country
+			add_stability = 0.15
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = IRE_B_moral_authority
+		icon = GFX_goal_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = { focus = IRE_B_republic_1949 }
+		relative_position_id = IRE_B_republic_1949
+		x = 38
+		y = 15
+		available = {
+			NOT = { any_country = { has_war = yes is_major = yes } }
+		}
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_moral_arbiter
+		}
+	}
+
+	focus = {
+		id = IRE_B_final_unification
+		icon = GFX_goal_generic_national_unity
+		cost = 15
+		prerequisite = { focus = IRE_B_republic_1949 }
+		relative_position_id = IRE_B_republic_1949
+		x = 30
+		y = 15
+		available = {
+			OR = {
+				ENG = { has_capitulated = yes }
+				ENG = { war_support < 0.2 }
+				NOT = { ENG = { controls_state = 160 } }
+			}
+		}
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			country_event = { id = ire.30 days = 1 }
+		}
+	}
+}

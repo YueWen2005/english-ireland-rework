@@ -1,0 +1,60 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = { tag = IRE }
+				IRE_init_variables = yes
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			if = {
+				limit = { tag = IRE }
+				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
+				if = {
+					limit = {
+						has_variable = IRE_plebiscite_support
+						NOT = { has_country_flag = IRE_border_done }
+						stability > 0.6
+						NOT = { has_country_flag = IRE_stability_bonus_given }
+					}
+					add_to_variable = { IRE_plebiscite_support = 10 }
+					set_country_flag = IRE_stability_bonus_given
+				}
+
+				# ---- 圣帕特里克日：每年 3 月 17 日 ----
+				if = {
+					limit = {
+						date > 1936.3.16
+						date < 1936.3.18
+						NOT = { has_country_flag = IRE_st_patricks_year }
+					}
+					set_country_flag = IRE_st_patricks_year
+					country_event = { id = ire.50 days = 0 }
+				}
+				if = {
+					limit = {
+						month = 1
+						day = 1
+						has_country_flag = IRE_st_patricks_year
+					}
+					clr_country_flag = IRE_st_patricks_year
+				}
+
+				# ---- 紧急状态分级（1 → 2 → 3 自动升级）----
+				IRE_emergency_tier_check = yes
+			}
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { tag = IRE has_idea = IRE_armed_neutrality_idea }
+				army_experience = 2
+			}
+		}
+	}
+}

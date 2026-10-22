@@ -1,0 +1,168 @@
+add_namespace = ire
+
+# ============================================================
+# ire.1 边境公投 - 北爱的选择
+# ============================================================
+country_event = {
+	id = ire.1
+	title = ire.1.t
+	desc = ire.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	immediate = {
+		ENG = { add_opinion = { target = ROOT modifier = IRE_opinion_neg40 } }
+		if = {
+			limit = { NOT = { has_country_flag = IRE_border_done } }
+			set_country_flag = IRE_border_done
+		}
+	}
+
+	option = {
+		name = ire.1.a
+		IRE_core_northern_ireland = yes
+		country_event = { id = ire.2 days = 2 }
+	}
+
+	option = {
+		name = ire.1.b
+		IRE_core_northern_ireland = yes
+		add_stability = 0.03
+		country_event = { id = ire.2 days = 4 }
+	}
+}
+
+# ============================================================
+# ire.2 伦敦的抗议
+# ============================================================
+country_event = {
+	id = ire.2
+	title = ire.2.t
+	desc = ire.2.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	option = {
+		name = ire.2.a
+		add_political_power = -30
+		add_ideas = IRE_british_sanctions
+	}
+}
+
+# ============================================================
+# ire.10 纽芬兰公投
+# ============================================================
+country_event = {
+	id = ire.10
+	title = ire.10.t
+	desc = ire.10.d
+	picture = GFX_report_event_generic_election
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { ENG = { has_war = yes } }
+			set_variable = { IRE_nf_chance = 1 }
+		}
+		else = {
+			set_variable = { IRE_nf_chance = 0 }
+		}
+	}
+
+	option = {
+		name = ire.10.a
+		trigger = {
+			check_variable = { IRE_nf_chance = 1 }
+		}
+		custom_effect_tooltip = ire.10.a_tt
+		add_political_power = 50
+	}
+
+	option = {
+		name = ire.10.b
+		trigger = {
+			check_variable = { IRE_nf_chance = 0 }
+		}
+		random_list = {
+			60 = {
+				ENG = { declare_war_on = { target = ROOT type = annex_everything } }
+			}
+			40 = { add_political_power = 50 }
+		}
+	}
+}
+
+# ============================================================
+# ire.20 一位飞行员的遣返
+# ============================================================
+country_event = {
+	id = ire.20
+	title = ire.20.t
+	desc = ire.20.d
+	picture = GFX_report_event_generic_air_doctrine
+	is_triggered_only = yes
+
+	option = {
+		name = ire.20.a
+		add_equipment_to_stockpile = { type = fighter_equipment amount = 100 }
+		USA = { add_opinion = { target = ROOT modifier = IRE_opinion_pos20 } }
+	}
+}
+
+# ============================================================
+# ire.30 北方的新黎明
+# ============================================================
+country_event = {
+	id = ire.30
+	title = ire.30.t
+	desc = ire.30.d
+	picture = GFX_report_event_generic_referendum
+	is_triggered_only = yes
+
+	immediate = {
+		IRE_core_northern_ireland = yes
+		add_stability = 0.20
+		random_owned_controlled_state = {
+			add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			add_building_construction = { type = dockyard level = 1 instant_build = yes }
+		}
+	}
+
+	option = {
+		name = ire.30.a
+	}
+}
+
+# ============================================================
+# ire.40 流散的回应
+# ============================================================
+country_event = {
+	id = ire.40
+	title = ire.40.t
+	desc = ire.40.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire.40.a
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 }
+	}
+}
+
+# ============================================================
+# ire.50 圣帕特里克日
+# ============================================================
+country_event = {
+	id = ire.50
+	title = ire.50.t
+	desc = ire.50.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = ire.50.a
+		add_political_power = 50
+		add_stability = 0.03
+	}
+}
