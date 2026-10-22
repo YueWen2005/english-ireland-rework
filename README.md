@@ -1,6 +1,10 @@
-# HOI4 MOD 合集
+# 英语爱尔兰重置 · English Ireland Rework
 
-存放《钢铁雄心 IV》自制 MOD 的仓库。
+> 《钢铁雄心 IV》爱尔兰国策树重制 MOD 仓库。
+
+# English Ireland Rework
+
+> A Hearts of Iron IV mod repository — reworking Ireland's national focus tree.
 
 ## MOD 列表
 
