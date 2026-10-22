@@ -155,14 +155,7 @@
 				add_stability = 0.03
 				every_state = {
 					limit = {
-						OR = {
-							state = 113
-							state = 114
-							state = 115
-							state = 116
-							state = 117
-							state = 118
-						}
+						state = 119
 					}
 					add_resistance = -5
 				}

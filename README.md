@@ -10,7 +10,7 @@
 
 | MOD | 版本 | 说明 |
 |---|---|---|
-| [翡翠岛的抉择 - 爱尔兰国策树](mods/ire_the_emerald_isle/) | 2.0.0 | 爱尔兰双主线国策树，57 国策 / 17 决议 / 40 精神 / 7 事件 |
+| [翡翠岛的抉择 - 爱尔兰国策树](mods/ire_the_emerald_isle/) | 2.2.0 | 爱尔兰双主线国策树，93 国策 / 17 决议 / 72 精神 / 13 事件 |
 
 ---
 
@@ -56,13 +56,13 @@ mod\
 mods/
 ├── ire_the_emerald_isle/           MOD 源码
 │   ├── common/
-│   │   ├── national_focus/         57 个国策
-│   │   ├── ideas/                  40 个国家精神
+│   │   ├── national_focus/         93 个国策
+│   │   ├── ideas/                  72 个国家精神
 │   │   ├── decisions/              17 个决议
 │   │   ├── opinion_modifiers/      16 个观点修正
 │   │   ├── scripted_effects/       脚本效果宏
 │   │   └── on_actions/             开局/每日/每月钩子
-│   ├── events/                     7 个剧情事件
+│   ├── events/                     13 个剧情事件
 │   ├── history/                    开局设定 + 师模板
 │   ├── localisation/               简体中文本地化
 │   └── README_爱尔兰MOD.md         详细的机制说明与已知限制
@@ -77,7 +77,7 @@ mods/
 
 **动态国名未实现**。Éire / 凯尔特联邦 / 爱尔兰共和国 / 爱尔兰-纽芬兰联邦这四个国名变化没有做，原因是需要覆盖整份 `common/country_tags/`（约 1.5 MB），与其他 MOD 一定冲突。阶段感通过国家精神体现。
 
-**state ID 需要按你的游戏版本核对**。脚本假设北爱尔兰是 113–118、纽芬兰是 331。如果你的游戏或地图 MOD 有偏移，进游戏后控制台输入 `tdebug`，鼠标悬停省份看左上角的 State ID，然后改：
+**state ID 需要按你的游戏版本核对**。脚本假设北爱尔兰是 119、纽芬兰是 331。如果你的游戏或地图 MOD 有偏移，进游戏后控制台输入 `tdebug`，鼠标悬停省份看左上角的 State ID，然后改：
 
 - `common/scripted_effects/IRE_effects.txt`
 - `common/decisions/IRE_decisions.txt`

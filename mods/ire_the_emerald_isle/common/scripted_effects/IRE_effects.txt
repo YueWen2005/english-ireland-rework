@@ -120,13 +120,13 @@ IRE_core_northern_ireland = {
 		set_variable = { IRE_plebiscite_support = 45 }
 	}
 
-	# 六郡核心化（北爱 state 113-118）
-	113 = { add_core_of = ROOT }
-	114 = { add_core_of = ROOT }
-	115 = { add_core_of = ROOT }
-	116 = { add_core_of = ROOT }
-	117 = { add_core_of = ROOT }
-	118 = { add_core_of = ROOT }
+	# 北爱尔兰 state 119（ENG 所有）：先和平转移到爱尔兰，再核心化
+	# 注意：113 是爱尔兰本土的伦斯特，114-118 是撒丁/西西里/马耳他/那不勒斯/直布罗陀，绝不能核心化
+	if = {
+		limit = { 119 = { NOT = { is_owned_by = ROOT } } }
+		ROOT = { transfer_state = 119 }
+	}
+	119 = { add_core_of = ROOT }
 
 	# 分档结算
 	if = {
