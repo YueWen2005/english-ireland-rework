@@ -1,0 +1,194 @@
+### ============================================================
+### A 线「新世界爱尔兰」扩展精神
+### 仅由 A 线国策 / 决议挂载；不修改 B 线
+### ============================================================
+
+ideas = {
+
+	country = {
+
+		# ---- 本土开发 ----
+		IRE_home_development = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.10
+				stability_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_diaspora_bond_drive = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+			}
+			removal_cost = -1
+		}
+
+		# ---- 海外团结 ----
+		IRE_world_congress = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_green_dollar = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				trade_opinion_factor = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_wild_geese_legion = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				send_volunteer_factor = 0.25
+			}
+			removal_cost = -1
+		}
+
+		IRE_atlantic_fleet = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				navy_org_factor = 0.10
+				convoy_escort_efficiency = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_air_bridge = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				air_range_factor = 0.10
+				naval_strike_attack_factor = 0.10
+				air_agility_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_green_international = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				conscription_factor = 0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_atlantic_charter = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				trade_opinion_factor = 0.20
+				consumer_goods_factor = -0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_new_world_expedition = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.10
+				army_attack_factor = 0.05
+				planning_speed = 0.10
+			}
+			removal_cost = -1
+		}
+
+		# ---- 给外国的限时精神 ----
+		IRE_eng_irish_question = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_gain = -0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_eng_dock_strike = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = -0.05
+				stability_factor = -0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_eng_ira_campaign = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				political_power_gain = -0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_usa_irish_lobby = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = 0.02
+				political_power_gain = 0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_fra_irish_sympathy = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.02
+				stability_factor = 0.02
+				political_power_gain = 0.02
+			}
+			removal_cost = -1
+		}
+	}
+}

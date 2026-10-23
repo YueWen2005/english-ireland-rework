@@ -1,0 +1,569 @@
+### ============================================================
+### A 线「新世界爱尔兰」决议
+### 本土开发 / 海外团结 / 英美法干涉
+### ============================================================
+
+# ============================================================
+# 本土开发
+# ============================================================
+IRE_home_cat = {
+
+	IRE_dev_leinster = {
+		icon = generic_factory
+		cost = 60
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_home_development
+			113 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_leinster_count }
+				check_variable = { IRE_dev_leinster_count < 2 }
+			}
+		}
+
+		visible = { has_idea = IRE_home_development }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_dev_leinster_count } }
+				set_variable = { IRE_dev_leinster_count = 0 }
+			}
+			add_to_variable = { IRE_dev_leinster_count = 1 }
+			if = {
+				limit = { 113 = { is_owned_by = ROOT } }
+				113 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = { base = 45 }
+	}
+
+	IRE_dev_munster = {
+		icon = generic_construction
+		cost = 60
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_home_development
+			135 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_munster_count }
+				check_variable = { IRE_dev_munster_count < 2 }
+			}
+		}
+
+		visible = { has_idea = IRE_home_development }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_dev_munster_count } }
+				set_variable = { IRE_dev_munster_count = 0 }
+			}
+			add_to_variable = { IRE_dev_munster_count = 1 }
+			if = {
+				limit = { 135 = { is_owned_by = ROOT } }
+				135 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = dockyard level = 1 instant_build = yes }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = { base = 45 }
+	}
+
+	IRE_dev_connaught = {
+		icon = generic_industry
+		cost = 60
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_home_development
+			134 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_connaught_count }
+				check_variable = { IRE_dev_connaught_count < 2 }
+			}
+		}
+
+		visible = { has_idea = IRE_home_development }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_dev_connaught_count } }
+				set_variable = { IRE_dev_connaught_count = 0 }
+			}
+			add_to_variable = { IRE_dev_connaught_count = 1 }
+			if = {
+				limit = { 134 = { is_owned_by = ROOT } }
+				134 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+					add_building_construction = { type = air_base level = 1 instant_build = yes }
+				}
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = { base = 45 }
+	}
+
+	IRE_national_mining = {
+		icon = generic_industry
+		cost = 75
+		days_remove = 120
+
+		available = {
+			has_idea = IRE_home_development
+			OR = {
+				113 = { is_owned_by = ROOT }
+				134 = { is_owned_by = ROOT }
+				135 = { is_owned_by = ROOT }
+			}
+		}
+
+		visible = { has_idea = IRE_home_development }
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = { 113 = { is_owned_by = ROOT } }
+				113 = {
+					add_resource = { type = coal amount = 2 }
+					add_resource = { type = steel amount = 2 }
+				}
+			}
+			if = {
+				limit = { 134 = { is_owned_by = ROOT } }
+				134 = {
+					add_resource = { type = steel amount = 2 }
+					add_resource = { type = tungsten amount = 2 }
+				}
+			}
+			if = {
+				limit = { 135 = { is_owned_by = ROOT } }
+				135 = {
+					add_resource = { type = coal amount = 2 }
+					add_resource = { type = steel amount = 1 }
+				}
+			}
+			add_political_power = 25
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_national_research = {
+		icon = generic_research
+		cost = 75
+		days_remove = 120
+
+		available = { has_idea = IRE_home_development }
+		visible = { has_idea = IRE_home_development }
+		fire_only_once = yes
+
+		complete_effect = {
+			add_research_slot = 1
+			add_tech_bonus = { name = IRE_home_research_bonus bonus = 0.3 uses = 2 category = industry }
+			add_stability = 0.02
+		}
+
+		ai_will_do = { base = 40 }
+	}
+}
+
+# ============================================================
+# 海外团结 / 世界爱尔兰大会
+# ============================================================
+IRE_congress_cat = {
+
+	IRE_diaspora_bonds = {
+		icon = generic_fundraising
+		cost = 75
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_green_dollar
+			OR = {
+				NOT = { has_variable = IRE_bonds_count }
+				check_variable = { IRE_bonds_count < 3 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_green_dollar }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_bonds_count } }
+				set_variable = { IRE_bonds_count = 0 }
+			}
+			add_to_variable = { IRE_bonds_count = 1 }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_timed_idea = { idea = IRE_diaspora_bond_drive days = 180 }
+			add_stability = 0.01
+		}
+
+		ai_will_do = { base = 45 }
+	}
+
+	IRE_call_wild_geese = {
+		icon = generic_military
+		cost = 50
+		days_remove = 60
+
+		available = {
+			has_completed_focus = IRE_A_wild_geese_legion
+			OR = {
+				NOT = { has_variable = IRE_wild_geese_calls }
+				check_variable = { IRE_wild_geese_calls < 3 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_wild_geese_legion }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_wild_geese_calls } }
+				set_variable = { IRE_wild_geese_calls = 0 }
+			}
+			add_to_variable = { IRE_wild_geese_calls = 1 }
+			add_manpower = 6000
+			capital_scope = {
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.6 start_equipment_factor = 0.9" owner = IRE }
+			}
+		}
+
+		ai_will_do = { base = 45 }
+	}
+
+	IRE_request_us_surplus = {
+		icon = generic_trucks
+		cost = 50
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_green_dollar
+			exists = USA
+			USA = { has_opinion = { target = ROOT value > 49 } }
+			OR = {
+				NOT = { has_variable = IRE_us_surplus_count }
+				check_variable = { IRE_us_surplus_count < 2 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_green_dollar }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_us_surplus_count } }
+				set_variable = { IRE_us_surplus_count = 0 }
+			}
+			add_to_variable = { IRE_us_surplus_count = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 50 }
+			add_political_power = 10
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_atlantic_escort = {
+		icon = generic_naval
+		cost = 75
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_atlantic_fleet
+			OR = {
+				NOT = { has_variable = IRE_escort_count }
+				check_variable = { IRE_escort_count < 2 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_atlantic_fleet }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_escort_count } }
+				set_variable = { IRE_escort_count = 0 }
+			}
+			add_to_variable = { IRE_escort_count = 1 }
+			add_equipment_to_stockpile = { type = convoy amount = 20 }
+			navy_experience = 100
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_ferry_command = {
+		icon = generic_air
+		cost = 75
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_air_bridge
+			OR = {
+				NOT = { has_variable = IRE_ferry_count }
+				check_variable = { IRE_ferry_count < 2 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_air_bridge }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_ferry_count } }
+				set_variable = { IRE_ferry_count = 0 }
+			}
+			add_to_variable = { IRE_ferry_count = 1 }
+			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 100 }
+			add_equipment_to_stockpile = { type = nav_bomber_equipment_1 amount = 50 }
+			air_experience = 100
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_green_international_congress = {
+		icon = generic_political_rally
+		cost = 150
+
+		available = { has_completed_focus = IRE_A_green_international }
+		visible = { has_completed_focus = IRE_A_green_international }
+		fire_only_once = yes
+
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = { tag = ENG tag = USA tag = FRA tag = MEX tag = ARG }
+					exists = yes
+				}
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+			}
+			add_political_power = 100
+			add_war_support = 0.05
+			add_to_variable = { IRE_diaspora_network = 10 }
+			IRE_diaspora_thresholds = yes
+		}
+
+		ai_will_do = { base = 50 }
+	}
+}
+
+# ============================================================
+# 英 / 美 / 法 干涉
+# ============================================================
+IRE_interference_cat = {
+
+	IRE_liverpool_strike = {
+		icon = generic_guerilla_base
+		cost = 75
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_irish_question
+			exists = ENG
+			OR = {
+				NOT = { has_variable = IRE_strike_count }
+				check_variable = { IRE_strike_count < 2 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_irish_question }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_strike_count } }
+				set_variable = { IRE_strike_count = 0 }
+			}
+			add_to_variable = { IRE_strike_count = 1 }
+			random_list = {
+				75 = {
+					ENG = {
+						add_timed_idea = { idea = IRE_eng_dock_strike days = 180 }
+						add_stability = -0.03
+						add_war_support = -0.03
+					}
+					add_political_power = 25
+				}
+				25 = {
+					ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
+					add_political_power = -25
+					add_stability = -0.02
+				}
+			}
+		}
+
+		ai_will_do = { base = 35 }
+	}
+
+	IRE_ira_infiltration = {
+		icon = generic_intelligence_operation
+		cost = 100
+
+		available = {
+			has_completed_focus = IRE_A_irish_question
+			exists = ENG
+		}
+
+		visible = { has_completed_focus = IRE_A_irish_question }
+		fire_only_once = yes
+
+		complete_effect = {
+			random_list = {
+				65 = {
+					ENG = {
+						add_timed_idea = { idea = IRE_eng_ira_campaign days = 365 }
+						add_stability = -0.05
+						add_war_support = -0.05
+					}
+					add_war_support = 0.03
+				}
+				35 = {
+					ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg50 } }
+					if = {
+						limit = { NOT = { has_idea = IRE_british_sanctions } }
+						add_ideas = IRE_british_sanctions
+					}
+					add_stability = -0.03
+				}
+			}
+		}
+
+		ai_will_do = { base = 30 }
+	}
+
+	IRE_american_volunteers = {
+		icon = generic_military
+		cost = 75
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_tammany_hall
+			exists = USA
+			USA = { has_opinion = { target = ROOT value > 49 } }
+			OR = {
+				NOT = { has_variable = IRE_us_volunteers_count }
+				check_variable = { IRE_us_volunteers_count < 3 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_tammany_hall }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_us_volunteers_count } }
+				set_variable = { IRE_us_volunteers_count = 0 }
+			}
+			add_to_variable = { IRE_us_volunteers_count = 1 }
+			add_manpower = 6000
+			capital_scope = {
+				create_unit = { division = "name = \"Irish-American Volunteers\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+			}
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_green_vote = {
+		icon = generic_political_rally
+		cost = 100
+
+		available = {
+			has_completed_focus = IRE_A_tammany_hall
+			exists = USA
+		}
+
+		visible = { has_completed_focus = IRE_A_tammany_hall }
+		fire_only_once = yes
+
+		complete_effect = {
+			USA = {
+				add_war_support = 0.05
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+				add_stability = -0.02
+			}
+			add_political_power = 50
+		}
+
+		ai_will_do = { base = 30 }
+	}
+
+	IRE_french_arms = {
+		icon = generic_trucks
+		cost = 50
+		days_remove = 90
+
+		available = {
+			has_completed_focus = IRE_A_wild_geese_paris
+			exists = FRA
+			NOT = { FRA = { has_capitulated = yes } }
+			OR = {
+				NOT = { has_variable = IRE_french_arms_count }
+				check_variable = { IRE_french_arms_count < 2 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_wild_geese_paris }
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_french_arms_count } }
+				set_variable = { IRE_french_arms_count = 0 }
+			}
+			add_to_variable = { IRE_french_arms_count = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 800 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 50 }
+			FRA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+
+		ai_will_do = { base = 35 }
+	}
+
+	IRE_irish_brigade = {
+		icon = generic_military
+		cost = 75
+
+		available = {
+			has_completed_focus = IRE_A_wild_geese_paris
+			exists = FRA
+			NOT = { FRA = { has_capitulated = yes } }
+		}
+
+		visible = { has_completed_focus = IRE_A_wild_geese_paris }
+		fire_only_once = yes
+
+		complete_effect = {
+			add_manpower = 5000
+			capital_scope = {
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+			}
+			FRA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+		}
+
+		ai_will_do = { base = 30 }
+	}
+}

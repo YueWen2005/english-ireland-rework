@@ -452,3 +452,20 @@ country_event = {
 		add_political_power = 25
 	}
 }
+
+# ============================================================
+# ire.70 绿色国际：新世界爱尔兰的政治宣言
+# ============================================================
+country_event = {
+	id = ire.70
+	title = ire.70.t
+	desc = ire.70.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire.70.a
+		add_political_power = 50
+		add_war_support = 0.03
+	}
+}
