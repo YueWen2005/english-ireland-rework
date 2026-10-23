@@ -376,7 +376,7 @@ focus_tree = {
 		}
 	}
 
-	# ---- 西班牙内战：康诺利纵队 ----
+	# ---- 西班牙内战：野鹅远征军 ----
 	focus = {
 		id = IRE_A_spanish_volunteers
 		icon = GFX_focus_intervention_spain_republic
