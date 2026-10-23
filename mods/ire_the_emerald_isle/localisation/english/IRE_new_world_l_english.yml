@@ -12,6 +12,10 @@
  IRE_A_green_dollar_desc:0 "Remittances are no longer just money orders. They are capital Dublin can direct."
  IRE_A_wild_geese_legion:0 "Wild Geese Legion"
  IRE_A_wild_geese_legion_desc:0 "The descendants of the Wild Geese come home with military experience and form a real expeditionary army."
+ IRE_A_spanish_volunteers:0 "Connolly Column"
+ IRE_A_spanish_volunteers_desc:0 "Franco's rebellion has torn Spain apart. Dublin sends the descendants of the Wild Geese to Iberia under the banner of volunteers. It is not a national war, but it will give Ireland a real expeditionary army."
+ IRE_A_canada_independence:0 "Inciting Canadian Independence"
+ IRE_A_canada_independence_desc:0 "The bond between Ottawa and London is loosening. Irish communities, unions and liberals work together to give Canada a place outside the British Empire, and a friendship with Dublin."
  IRE_A_atlantic_fleet:0 "Atlantic Fleet"
  IRE_A_atlantic_fleet_desc:0 "From Newfoundland to Cork, a small but sharp fleet begins to escort the Atlantic routes."
  IRE_A_air_bridge:0 "Transatlantic Air Bridge"
@@ -40,6 +44,10 @@
  IRE_green_dollar_desc:0 "Remittances, investment and trade are turning the Atlantic into a green artery of capital."
  IRE_wild_geese_legion:0 "Wild Geese Legion"
  IRE_wild_geese_legion_desc:0 "The descendants of exiled soldiers return to Ireland with experience, medals and a score to settle."
+ IRE_spanish_volunteers:0 "Connolly Column"
+ IRE_spanish_volunteers_desc:0 "Irish and Irish-American volunteers fight side by side in Spain. Dublin can send far more volunteer divisions abroad, and is no longer limited by the size of its standing army."
+ IRE_british_north_america:0 "British North America Reclaimed"
+ IRE_british_north_america_desc:0 "The Dominion of Canada is joined to New World Ireland. The factories and manpower of the St. Lawrence and the Great Lakes now serve Dublin."
  IRE_atlantic_fleet:0 "Atlantic Fleet"
  IRE_atlantic_fleet_desc:0 "A small navy built around escort and convoy raiding."
  IRE_air_bridge:0 "Transatlantic Air Bridge"
@@ -65,6 +73,7 @@
  IRE_home_cat:0 "Homeland Development"
  IRE_congress_cat:0 "World Irish Congress"
  IRE_interference_cat:0 "Overseas Interference"
+ IRE_america_cat:0 "North American Affairs"
 
  # ===== Homeland decisions =====
  IRE_dev_leinster:0 "Develop the Leinster Industrial Belt"
@@ -76,7 +85,7 @@
  IRE_national_mining:0 "National Mining Survey"
  IRE_national_mining_desc:0 "Coal, iron and tungsten deposits are written into the geological report."
  IRE_national_research:0 "National Research Institute"
- IRE_national_research_desc:0 "University College Dublin and the Shannon laboratories receive new funding."
+ IRE_national_research_desc:0 "University College Dublin and the Shannon laboratories receive new funding. The National Research Institute adds two research slots."
 
  # ===== Congress decisions =====
  IRE_diaspora_bonds:0 "Issue Diaspora Bonds"
@@ -106,10 +115,33 @@
  IRE_irish_brigade:0 "The Irish Brigade"
  IRE_irish_brigade_desc:0 "Raise an Irish volunteer brigade in France under the name of the Wild Geese."
 
+ # ===== North America decisions =====
+ IRE_canada_border_conflict:0 "Labrador Border Conflict"
+ IRE_canada_border_conflict_desc:0 "Use the disputed border between Labrador and the North Shore of Quebec as a pretext for a limited war. As long as Canada is independent, London has no reason to intervene."
+ IRE_canada_border_conflict_tt:0 "Start a border conflict against Canada (not a formal declaration; Britain will not join; deploy divisions to Labrador first). Victory annexes British North America."
+
  # ===== Event ire.70 =====
  ire.70.t:0 "The Green International"
  ire.70.d:0 "In the great hall of Dublin Castle, delegates from Liverpool, Boston, New York, Paris and Buenos Aires sit together for the first time. No crown, no empire, only sheets of paper bearing the same sentence: Ireland is no longer a problem of one island."
  ire.70.a:0 "Let the green flag rise on every continent."
+
+ # ===== Newfoundland referendum tooltips =====
+ ire.10_success_tt:0 "§GReferendum passed!§! Newfoundland will join Ireland."
+ ire.10_fail_tt:0 "§RReferendum failed.§! London protests sharply (UK opinion -40, stability -3%)."
+
+ # ===== Events ire.80-83: North American border conflict =====
+ ire.80.t:0 "British North America Reclaimed"
+ ire.80.d:0 "The ceasefire line in Labrador no longer matters. The old flag comes down over the Parliament Buildings in Ottawa, and the fleet on the St. Lawrence sounds its horns. New World Ireland now stretches from the western Atlantic to the Great Lakes."
+ ire.80.a:0 "From Dublin to Ottawa, there is only one Ireland."
+ ire.81.t:0 "The Labrador Winter"
+ ire.81.d:0 "The border conflict ends in a stalemate. Dublin's newspapers blame supply and weather, but Ottawa will remember the provocation."
+ ire.81.a:0 "It will not happen again."
+ ire.82.t:0 "Canada Holds the Border"
+ ire.82.d:0 "The North Shore line does not break. Canadian militia stop the attack from Labrador in the snow, and Ottawa breathes again."
+ ire.82.a:0 "The Empire is not finished yet."
+ ire.83.t:0 "The North Shore Falls"
+ ire.83.d:0 "Irish troops from Labrador break through the Canadian line. Ottawa mobilises, but the front can no longer be saved."
+ ire.83.a:0 "Let the St. Lawrence bear witness."
 
  # ===== Cosmetic tag =====
  IRE_new_world:0 "New World Ireland"

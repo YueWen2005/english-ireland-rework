@@ -376,6 +376,37 @@ focus_tree = {
 		}
 	}
 
+	# ---- 西班牙内战：康诺利纵队 ----
+	focus = {
+		id = IRE_A_spanish_volunteers
+		icon = GFX_focus_intervention_spain_republic
+		cost = 5
+		prerequisite = { focus = IRE_A_wild_geese }
+		x = 10
+		y = 4
+		available = {
+			date > 1936.7.17
+			date < 1939.4.1
+			country_exists = SPR
+			SPR = {
+				has_war = yes
+				NOT = { has_government = fascism }
+			}
+			NOT = { has_war_with = SPR }
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_spanish_volunteers
+			set_rule = { can_send_volunteers = yes }
+			SPR = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+			army_experience = 50
+			add_war_support = 0.03
+		}
+	}
+
 	focus = {
 		id = IRE_A_belfast
 		icon = GFX_focus_BEL_cockerill_shipyards
@@ -957,6 +988,53 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_transatlantic_supply
 			custom_effect_tooltip = IRE_effect_transatlantic_supply
+		}
+	}
+
+	focus = {
+		id = IRE_A_canada_independence
+		icon = GFX_focus_attack_canada
+		cost = 10
+		prerequisite = { focus = IRE_A_nf_province }
+		prerequisite = { focus = IRE_A_supply_web }
+		x = 0
+		y = 11
+		available = {
+			country_exists = CAN
+			331 = { is_owned_by = ROOT }
+			NOT = { ENG = { has_war_with = ROOT } }
+		}
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			if = {
+				limit = { country_exists = CAN }
+				# 让加拿大脱离英国自治领地位，且不触发英国参战
+				if = {
+					limit = { CAN = { is_subject_of = ENG } }
+					ENG = { set_autonomy = { target = CAN autonomy_state = autonomy_free } }
+				}
+				# 无论是否仍为自治领，都必须退出英国阵营，否则边境冲突会拖英国下水
+				if = {
+					limit = { CAN = { is_in_faction_with = ENG } }
+					ENG = { remove_from_faction = CAN }
+				}
+				CAN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } }
+				# 拉布拉多与纽芬兰同属一个自治领；旧存档若未一并移交则在此补齐
+				if = {
+					limit = {
+						331 = { is_owned_by = ROOT }
+						332 = { NOT = { is_owned_by = ROOT } }
+					}
+					ROOT = { transfer_state = 332 }
+				}
+			}
+			if = {
+				limit = { country_exists = ENG }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+			}
+			add_political_power = 50
+			add_war_support = 0.03
 		}
 	}
 

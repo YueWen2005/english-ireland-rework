@@ -18,12 +18,13 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 
 - **双主线起点（互斥）**：《边境公投》（架空，开局拿北爱）/《自由邦的巩固》（史实）
 - **A 线**：北爱整合 → 跨海网络 → 纽芬兰/美国/墨西哥/南美四支线 → 凯尔特联邦；另有独立紧急状态分支与外交线（多尼戈尔走廊、港口换统一）
+- **A 线强化**：西班牙内战「康诺利纵队」（额外志愿军上限，并解除现役师数量门槛）、国立研究院 +2 研究槽、策动加拿大独立后以拉布拉多边境冲突归并英属北美
 - **B 线**：内政巩固 → 英爱贸易 → 1937 宪法 → 紧急状态 → 中立三选一 → 1949 共和国 → 最后的统一
 - **经济区域**：香农水电、泥炭、科克港、福因斯飞艇港、中央银行、医院彩票、战后香农自由区
 - **军事区域**：需二战爆发 + 紧急状态完成后解锁；陆军 / 海军 / 空军 / 情报 / 海岸瞭望 / 装甲车
-- **110 个国策节点**
-- **13 个剧情事件**、**17 个决议**
-- **72 个国家精神**
+- **136 个国策节点**
+- **45 个剧情事件**、**38 个决议**
+- **101 个国家精神**
 - 完整简体中文本地化
 
 ### 三个核心变量机制
@@ -134,18 +135,24 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 ```
 ire_the_emerald_isle/
 ├── common/
-│   ├── national_focus/IRE_focus.txt          57 国策
-│   ├── ideas/IRE_ideas.txt                   40 精神
-│   ├── decisions/IRE_decisions.txt           34 决议
+│   ├── national_focus/IRE_focus.txt          136 国策
+│   ├── ideas/IRE_ideas.txt                   84 精神
+│   ├── ideas/IRE_new_world_ideas.txt         17 精神（A 线）
+│   ├── decisions/IRE_decisions.txt           20 决议
+│   ├── decisions/IRE_new_world_decisions.txt 18 决议（A 线）
 │   ├── opinion_modifiers/IRE_opinions.txt    16 观点修正
 │   ├── scripted_effects/
 │   │   ├── IRE_effects.txt                   效果宏（网络/信誉/核心化/紧急状态分级）
 │   │   └── IRE_init.txt                      变量初始化
 │   └── on_actions/IRE_on_actions.txt         开局/每日/每月钩子
-├── events/IRE_events.txt                     7 事件
+├── events/IRE_events.txt                     45 事件
 ├── history/
 │   ├── countries/IRE - 爱尔兰.txt            开局设定 + oob 引用
 │   └── units/IRE_units.txt                   3 个师模板
-├── localisation/english/IRE_l_english.yml    中文文本
+├── localisation/
+│   ├── english/IRE_l_english.yml             旧版文本
+│   ├── english/IRE_new_world_l_english.yml   A 线英文文本
+│   ├── simp_chinese/IRE_l_simp_chinese.yml   简体中文（主线）
+│   └── simp_chinese/IRE_new_world_l_simp_chinese.yml 简体中文（A 线）
 └── descriptor.mod
 ```

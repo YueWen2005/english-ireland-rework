@@ -183,7 +183,7 @@ IRE_home_cat = {
 
 		complete_effect = {
 			set_country_flag = IRE_national_research_done
-			add_research_slot = 1
+			add_research_slot = 2
 			add_tech_bonus = { name = IRE_home_research_bonus bonus = 0.3 uses = 2 category = industry }
 			add_stability = 0.02
 		}
@@ -573,5 +573,57 @@ IRE_interference_cat = {
 		}
 
 		ai_will_do = { base = 30 }
+	}
+}
+
+# ============================================================
+# 北美：策动加拿大与英属北美归并
+# ============================================================
+IRE_america_cat = {
+
+	IRE_canada_border_conflict = {
+		icon = border_war
+		cost = 100
+
+		available = {
+			has_completed_focus = IRE_A_canada_independence
+			country_exists = CAN
+			CAN = { is_subject = no }
+			NOT = { has_country_flag = IRE_canada_annexed }
+			NOT = { has_border_war_with = CAN }
+			NOT = { has_war_with = CAN }
+			332 = { is_owned_by = ROOT }
+			860 = { is_owned_by = CAN }
+		}
+
+		visible = { has_completed_focus = IRE_A_canada_independence }
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_canada_border_conflict_tt
+			# 有限边境冲突：只在拉布拉多与魁北克北岸之间开战，不触发对英宣战
+			start_border_war = {
+				change_state_after_war = no
+				combat_width = 120
+				minimum_duration_in_days = 30
+				attacker = {
+					state = 332
+					num_provinces = 3
+					on_win = ire.80
+					on_lose = ire.81
+					on_cancel = ire.81
+				}
+				defender = {
+					state = 860
+					num_provinces = 3
+					on_win = ire.82
+					on_lose = ire.83
+					on_cancel = ire.83
+				}
+			}
+			add_war_support = 0.03
+		}
+
+		ai_will_do = { base = 60 }
 	}
 }
