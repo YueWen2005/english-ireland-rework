@@ -2542,6 +2542,7 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		cost = 5
 		prerequisite = { focus = IRE_ira_arms_web focus = IRE_ira_camps focus = IRE_ira_infiltrate }
+		available = { has_civil_war = no }
 		x = 44
 		y = 2
 		ai_will_do = { base = 25 }
@@ -3039,8 +3040,9 @@ focus_tree = {
 		id = IRE_R_ind_expropriation
 		icon = GFX_goal_generic_national_unity
 		cost = 10
-		prerequisite = { focus = IRE_ira_power }
-		x = 52
+		prerequisite = { focus = IRE_R_red_turn }
+		mutually_exclusive = { focus = IRE_X_ind_cottage }
+		x = 39
 		y = 4
 		ai_will_do = { base = 30 }
 
@@ -3063,7 +3065,7 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_expropriation }
-		x = 52
+		x = 39
 		y = 5
 		ai_will_do = { base = 30 }
 
@@ -3073,12 +3075,12 @@ focus_tree = {
 				add_building_construction = { type = infrastructure level = 3 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
@@ -3098,7 +3100,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 52
+		x = 37
 		y = 6
 		ai_will_do = { base = 30 }
 
@@ -3108,7 +3110,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 4
 			}
 			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { state = 135 free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			add_stability = 0.02
@@ -3128,8 +3130,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 54
-		y = 5
+		x = 39
+		y = 6
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3153,8 +3155,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 54
-		y = 4
+		x = 41
+		y = 6
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3169,8 +3171,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_rural_electrification }
-		x = 54
-		y = 6
+		x = 39
+		y = 7
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3179,7 +3181,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 5
 			}
 			random_owned_controlled_state = {
-				limit = { state = 113 free_building_slots = { building = arms_factory levels > 4 include_locked = no } }
+				limit = { state = 113 free_building_slots = { building = arms_factory size > 4 include_locked = no } }
 				add_building_construction = { type = arms_factory level = 5 instant_build = yes }
 			}
 			add_timed_idea = { idea = IRE_R_ind_arms_eff days = 540 }
@@ -3199,8 +3201,8 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_shannon_belt }
-		x = 52
-		y = 8
+		x = 38
+		y = 7
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3209,7 +3211,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 			}
 			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = dockyard levels > 1 include_locked = no } }
+				limit = { state = 135 free_building_slots = { building = dockyard size > 1 include_locked = no } }
 				add_building_construction = { type = dockyard level = 2 instant_build = yes }
 			}
 			add_ideas = IRE_R_ind_limerick_eff
@@ -3230,13 +3232,13 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_limerick_yard }
-		x = 54
+		x = 38
 		y = 8
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
@@ -3260,8 +3262,8 @@ focus_tree = {
 		cost = 15
 		prerequisite = { focus = IRE_R_ind_arms_drive }
 		available = { check_variable = { IRE_red_unity > 59 } }
-		x = 52
-		y = 7
+		x = 39
+		y = 8
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3287,8 +3289,9 @@ focus_tree = {
 		id = IRE_X_ind_cottage
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 8
-		prerequisite = { focus = IRE_ira_power }
-		x = 56
+		prerequisite = { focus = IRE_X_shadow_arsenal }
+		mutually_exclusive = { focus = IRE_R_ind_expropriation }
+		x = 52
 		y = 4
 		ai_will_do = { base = 25 }
 
@@ -3311,8 +3314,8 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 58
-		y = 4
+		x = 54
+		y = 5
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3321,7 +3324,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 			}
 			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = dockyard levels > 1 include_locked = no } }
+				limit = { state = 135 free_building_slots = { building = dockyard size > 1 include_locked = no } }
 				add_building_construction = { type = dockyard level = 2 instant_build = yes }
 			}
 			add_ideas = IRE_X_ind_hidden_cove_eff
@@ -3343,7 +3346,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 56
+		x = 52
 		y = 5
 		ai_will_do = { base = 30 }
 
@@ -3370,7 +3373,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
-		x = 56
+		x = 52
 		y = 6
 		ai_will_do = { base = 25 }
 
@@ -3381,7 +3384,7 @@ focus_tree = {
 				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { state = 134 free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { state = 134 free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			add_to_variable = { IRE_exposure = 10 }
@@ -3400,7 +3403,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_border_route }
-		x = 54
+		x = 52
 		y = 7
 		ai_will_do = { base = 25 }
 
@@ -3432,8 +3435,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
 		prerequisite = { focus = IRE_X_abwehr_guests }
-		x = 58
-		y = 5
+		x = 50
+		y = 6
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3457,8 +3460,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_german_tech }
 		prerequisite = { focus = IRE_X_s_plan }
-		x = 58
-		y = 6
+		x = 50
+		y = 7
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3483,8 +3486,8 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_german_tech }
-		x = 58
-		y = 7
+		x = 52
+		y = 8
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3506,8 +3509,8 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 12
 		prerequisite = { focus = IRE_X_ind_s_plan_loot }
-		x = 56
-		y = 7
+		x = 54
+		y = 8
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
