@@ -1024,7 +1024,7 @@ focus_tree = {
 				if = {
 					limit = {
 						331 = { is_owned_by = ROOT }
-						332 = { NOT = { is_owned_by = ROOT } }
+						332 = { is_owned_by = ENG }
 					}
 					ROOT = { transfer_state = 332 }
 				}
