@@ -644,11 +644,25 @@ country_event = {
 			set_country_flag = IRE_purge_won
 		}
 		if = {
-			limit = { NOT = { has_country_flag = IRE_purge_won } }
-			# 失败：军中内战再起
+			limit = {
+				NOT = { has_country_flag = IRE_purge_won }
+				has_civil_war = no
+			}
+			# 失败：军中内战再起（叛军限定康诺特+芒斯特，首都科克，防止随机卷走都柏林导致秒投降）
 			add_stability = -0.10
-			start_civil_war = { ideology = democratic size = 0.35 }
+			start_civil_war = {
+				ideology = democratic
+				size = 0.35
+				states = { 134 135 }
+				capital = 7394
+			}
 			set_country_flag = IRE_purge_failed
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = IRE_purge_won } }
+			# 已在内战中：清洗失败只削弱政府
+			add_stability = -0.05
+			add_war_support = -0.05
 		}
 	}
 }

@@ -2452,6 +2452,7 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		cost = 5
 		prerequisite = { focus = IRE_ira_arms_web focus = IRE_ira_camps focus = IRE_ira_infiltrate }
+		available = { has_civil_war = no }
 		x = 44
 		y = 2
 		ai_will_do = { base = 25 }
@@ -2983,12 +2984,12 @@ focus_tree = {
 				add_building_construction = { type = infrastructure level = 3 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
@@ -3018,7 +3019,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 4
 			}
 			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { state = 135 free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			add_stability = 0.02
@@ -3089,7 +3090,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 5
 			}
 			random_owned_controlled_state = {
-				limit = { state = 113 free_building_slots = { building = arms_factory levels > 4 include_locked = no } }
+				limit = { state = 113 free_building_slots = { building = arms_factory size > 4 include_locked = no } }
 				add_building_construction = { type = arms_factory level = 5 instant_build = yes }
 			}
 			add_timed_idea = { idea = IRE_R_ind_arms_eff days = 540 }
@@ -3119,7 +3120,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 			}
 			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = dockyard levels > 1 include_locked = no } }
+				limit = { state = 135 free_building_slots = { building = dockyard size > 1 include_locked = no } }
 				add_building_construction = { type = dockyard level = 2 instant_build = yes }
 			}
 			add_ideas = IRE_R_ind_limerick_eff
@@ -3146,7 +3147,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
@@ -3231,7 +3232,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 			}
 			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = dockyard levels > 1 include_locked = no } }
+				limit = { state = 135 free_building_slots = { building = dockyard size > 1 include_locked = no } }
 				add_building_construction = { type = dockyard level = 2 instant_build = yes }
 			}
 			add_ideas = IRE_X_ind_hidden_cove_eff
@@ -3291,7 +3292,7 @@ focus_tree = {
 				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { state = 134 free_building_slots = { building = industrial_complex levels > 1 include_locked = no } }
+				limit = { state = 134 free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			add_to_variable = { IRE_exposure = 10 }
