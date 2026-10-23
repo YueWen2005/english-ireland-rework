@@ -1,0 +1,27 @@
+### 新世界爱尔兰 cosmetic tag 地图色
+### 只影响 A 线完成绿色国际后的国名/旗帜/地图色
+
+IRE_new_world = {
+	color = rgb { 18 112 92 }
+	color_ui = rgb { 24 138 112 }
+}
+
+IRE_new_world_democratic = {
+	color = rgb { 18 112 92 }
+	color_ui = rgb { 24 138 112 }
+}
+
+IRE_new_world_fascism = {
+	color = rgb { 18 112 92 }
+	color_ui = rgb { 24 138 112 }
+}
+
+IRE_new_world_communism = {
+	color = rgb { 18 112 92 }
+	color_ui = rgb { 24 138 112 }
+}
+
+IRE_new_world_neutrality = {
+	color = rgb { 18 112 92 }
+	color_ui = rgb { 24 138 112 }
+}

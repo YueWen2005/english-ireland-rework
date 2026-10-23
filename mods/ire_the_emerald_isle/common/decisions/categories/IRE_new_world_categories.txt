@@ -1,0 +1,21 @@
+### ============================================================
+### A 线「新世界爱尔兰」决议分类
+### ============================================================
+
+IRE_home_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 84
+	allowed = { original_tag = IRE }
+}
+
+IRE_congress_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 86
+	allowed = { original_tag = IRE }
+}
+
+IRE_interference_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 83
+	allowed = { original_tag = IRE }
+}

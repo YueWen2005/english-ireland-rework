@@ -20,7 +20,7 @@ focus_tree = {
 
 	default = no
 	reset_on_civilwar = no
-	continuous_focus_position = { x = 50 y = 2200 }
+	continuous_focus_position = { x = 50 y = 2600 }
 
 	### ============================================================
 	### 起点：二选一（互斥）
@@ -192,6 +192,100 @@ focus_tree = {
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			add_ideas = IRE_rural_electrification
+		}
+	}
+
+	# ---- 本土开发：国土开发委员会 ----
+	focus = {
+		id = IRE_A_home_development
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		prerequisite = { focus = IRE_A_revitalise }
+		x = 4
+		y = 2
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_home_development
+			add_political_power = 25
+			set_variable = { IRE_dev_leinster_count = 0 }
+			set_variable = { IRE_dev_munster_count = 0 }
+			set_variable = { IRE_dev_connaught_count = 0 }
+		}
+	}
+
+	focus = {
+		id = IRE_A_mineral_survey
+		icon = GFX_focus_generic_resource_extraction
+		cost = 5
+		prerequisite = { focus = IRE_A_home_development }
+		x = 4
+		y = 3
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			if = {
+				limit = { 113 = { is_owned_by = ROOT } }
+				113 = {
+					add_resource = { type = coal amount = 2 }
+					add_resource = { type = steel amount = 1 }
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			if = {
+				limit = { 134 = { is_owned_by = ROOT } }
+				134 = {
+					add_resource = { type = steel amount = 2 }
+					add_resource = { type = tungsten amount = 1 }
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			if = {
+				limit = { 135 = { is_owned_by = ROOT } }
+				135 = {
+					add_resource = { type = coal amount = 2 }
+					add_resource = { type = steel amount = 1 }
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = IRE_A_infrastructure_programme
+		icon = GFX_focus_generic_industry_2
+		cost = 10
+		prerequisite = { focus = IRE_A_mineral_survey }
+		x = 4
+		y = 4
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			if = {
+				limit = { 113 = { is_owned_by = ROOT } }
+				113 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			if = {
+				limit = { 134 = { is_owned_by = ROOT } }
+				134 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+					add_building_construction = { type = air_base level = 1 instant_build = yes }
+				}
+			}
+			if = {
+				limit = { 135 = { is_owned_by = ROOT } }
+				135 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			add_research_slot = 1
+			add_stability = 0.03
 		}
 	}
 
@@ -884,6 +978,291 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_final_ascension
 			add_war_support = 0.10
+		}
+	}
+
+	### ============================================================
+	### A 线：新世界爱尔兰 —— 海外团结 / 干涉 / 终局
+	### ============================================================
+
+	# ---- 世界爱尔兰大会：海外决议总闸 ----
+	focus = {
+		id = IRE_A_world_congress
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = { focus = IRE_A_supply_web }
+		x = 6
+		y = 10
+		available = {
+			check_variable = { IRE_diaspora_network > 59 }
+			date > 1940.6.1
+		}
+		ai_will_do = { base = 65 }
+
+		completion_reward = {
+			add_ideas = IRE_world_congress
+			add_to_variable = { IRE_diaspora_network = 10 }
+			IRE_diaspora_thresholds = yes
+			add_political_power = 50
+			add_war_support = 0.03
+		}
+	}
+
+	focus = {
+		id = IRE_A_green_dollar
+		icon = GFX_goal_generic_production
+		cost = 5
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_boston focus = IRE_A_buenos_aires }
+		x = 4
+		y = 11
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_green_dollar
+			set_variable = { IRE_bonds_count = 0 }
+			set_variable = { IRE_us_surplus_count = 0 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IRE_A_wild_geese_legion
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_wild_geese focus = IRE_A_irish_division focus = IRE_A_green_legion }
+		x = 6
+		y = 11
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_ideas = IRE_wild_geese_legion
+			add_manpower = 10000
+			set_variable = { IRE_wild_geese_calls = 0 }
+			capital_scope = {
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_atlantic_fleet
+		icon = GFX_goal_generic_build_navy
+		cost = 5
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_nf_province focus = IRE_A_treaty_ports }
+		x = 4
+		y = 12
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_atlantic_fleet
+			add_equipment_to_stockpile = { type = convoy amount = 40 }
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = naval_base level = 1 instant_build = yes }
+			}
+			set_variable = { IRE_escort_count = 0 }
+			navy_experience = 100
+		}
+	}
+
+	focus = {
+		id = IRE_A_air_bridge
+		icon = GFX_focus_generic_air_bases
+		cost = 5
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_nf_province focus = IRE_A_boston }
+		x = 6
+		y = 12
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_air_bridge
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = air_base level = 1 instant_build = yes }
+			}
+			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 100 }
+			add_equipment_to_stockpile = { type = nav_bomber_equipment_1 amount = 50 }
+			set_variable = { IRE_ferry_count = 0 }
+			air_experience = 100
+		}
+	}
+
+	# ---- 在英/美/法内部搞事情 ----
+	focus = {
+		id = IRE_A_irish_question
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_belfast }
+		x = 4
+		y = 13
+		available = { exists = ENG }
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			if = {
+				limit = { exists = ENG }
+				ENG = {
+					add_timed_idea = { idea = IRE_eng_irish_question days = 365 }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 }
+				}
+			}
+			set_variable = { IRE_strike_count = 0 }
+			add_political_power = 50
+			add_war_support = 0.03
+		}
+	}
+
+	focus = {
+		id = IRE_A_tammany_hall
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_boston }
+		x = 6
+		y = 13
+		available = { exists = USA }
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			if = {
+				limit = { exists = USA }
+				USA = {
+					add_timed_idea = { idea = IRE_usa_irish_lobby days = 365 }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 }
+				}
+			}
+			set_variable = { IRE_us_volunteers_count = 0 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IRE_A_wild_geese_paris
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_diaspora_legacy }
+		x = 8
+		y = 13
+		available = {
+			exists = FRA
+			NOT = { FRA = { has_capitulated = yes } }
+		}
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			if = {
+				limit = {
+					exists = FRA
+					NOT = { FRA = { has_capitulated = yes } }
+				}
+				FRA = {
+					add_timed_idea = { idea = IRE_fra_irish_sympathy days = 365 }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+				}
+			}
+			set_variable = { IRE_french_arms_count = 0 }
+			add_political_power = 50
+		}
+	}
+
+	# ---- 绿色国际：至少两国 ----
+	focus = {
+		id = IRE_A_green_international
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = { focus = IRE_A_world_congress }
+		prerequisite = { focus = IRE_A_irish_question focus = IRE_A_tammany_hall focus = IRE_A_wild_geese_paris }
+		x = 6
+		y = 14
+		available = {
+			OR = {
+				AND = { has_completed_focus = IRE_A_irish_question has_completed_focus = IRE_A_tammany_hall }
+				AND = { has_completed_focus = IRE_A_irish_question has_completed_focus = IRE_A_wild_geese_paris }
+				AND = { has_completed_focus = IRE_A_tammany_hall has_completed_focus = IRE_A_wild_geese_paris }
+			}
+		}
+		ai_will_do = { base = 70 }
+
+		completion_reward = {
+			add_ideas = IRE_green_international
+			add_to_variable = { IRE_diaspora_network = 10 }
+			IRE_diaspora_thresholds = yes
+			set_cosmetic_tag = IRE_new_world
+			add_political_power = 75
+			add_stability = 0.05
+			add_war_support = 0.05
+			country_event = { id = ire.70 days = 1 }
+		}
+	}
+
+	# ---- 软终局：大西洋宪章 ----
+	focus = {
+		id = IRE_A_atlantic_charter
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10
+		prerequisite = { focus = IRE_A_masters_new_world }
+		prerequisite = { focus = IRE_A_green_international }
+		prerequisite = { focus = IRE_A_green_dollar }
+		prerequisite = { focus = IRE_A_air_bridge }
+		mutually_exclusive = { focus = IRE_A_new_world_expedition }
+		x = 4
+		y = 15
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_ideas = IRE_atlantic_charter
+			every_country = {
+				limit = {
+					OR = { tag = USA tag = FRA tag = MEX tag = ARG }
+					exists = yes
+					NOT = { has_capitulated = yes }
+					has_opinion = { target = ROOT value > 49 }
+				}
+				give_guarantee = ROOT
+			}
+			add_stability = 0.10
+			add_political_power = 100
+		}
+	}
+
+	# ---- 硬终局：新世界远征 ----
+	focus = {
+		id = IRE_A_new_world_expedition
+		icon = GFX_goal_generic_major_war
+		cost = 10
+		prerequisite = { focus = IRE_A_masters_new_world }
+		prerequisite = { focus = IRE_A_green_international }
+		prerequisite = { focus = IRE_A_wild_geese_legion }
+		prerequisite = { focus = IRE_A_atlantic_fleet }
+		mutually_exclusive = { focus = IRE_A_atlantic_charter }
+		x = 8
+		y = 15
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			add_ideas = IRE_new_world_expedition
+			add_war_support = 0.10
+			add_manpower = 20000
+			capital_scope = {
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+			}
+			if = {
+				limit = {
+					exists = ENG
+					119 = { NOT = { is_owned_by = ROOT } }
+				}
+				create_wargoal = { type = take_state target = ENG generator = { 119 } }
+			}
 		}
 	}
 
