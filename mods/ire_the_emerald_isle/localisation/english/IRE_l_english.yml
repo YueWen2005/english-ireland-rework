@@ -335,7 +335,7 @@
 
  # ==================== Military Region ====================
  IRE_M_war_cabinet:0 "Wartime Cabinet"
- IRE_M_war_cabinet_desc:0 "The war has reached the Atlantic; Dublin finally turns the Emergency into a real wartime system."
+ IRE_M_war_cabinet_desc:0 "The war has reached the Atlantic; Dublin finally organizes a real wartime system."
  IRE_M_army_expansion:0 "Army Expansion"
  IRE_M_army_expansion_desc:0 "In 1940 the regular army expands from fewer than 10,000 to over 40,000, while the LDF and LSF recruit more than 100,000 volunteers. Ireland has a formed defence force at last."
  IRE_M_officer_corps:0 "Officer Corps and Staff"
@@ -360,7 +360,7 @@
  IRE_M_total_defence_desc:0 "Army, navy, air corps and intelligence become one system; the neutral small state finally has teeth."
 
  IRE_war_cabinet:0 "War Cabinet"
- IRE_war_cabinet_desc:0 "The Emergency is upgraded to a wartime system; cabinet, army and industry work to one timetable."
+ IRE_war_cabinet_desc:0 "The nation is placed on a wartime footing; cabinet, army and industry work to one timetable."
  IRE_army_expansion:0 "Army Expansion"
  IRE_army_expansion_desc:0 "Reservists and volunteers join the regular army; the Irish Army has scale for the first time."
  IRE_officer_corps:0 "Officer Corps"
@@ -724,9 +724,9 @@
  IRE_X_ind_black_market_eff_desc:0 "Consumer goods -6%, factory output +8%."
 
  IRE_offmap_civ:0 "Off-Map Civilian Industry"
- IRE_offmap_civ:1 "Civilian capacity too dispersed to show on the map - uses no building slots."
+ IRE_offmap_civ_desc:0 "Civilian capacity too dispersed to show on the map - uses no building slots."
  IRE_offmap_mil:0 "Off-Map Military Industry"
- IRE_offmap_mil:1 "Military capacity too dispersed to show on the map - uses no building slots."
+ IRE_offmap_mil_desc:0 "Military capacity too dispersed to show on the map - uses no building slots."
 
  ire.108.c:0 "Keep it in Dublin's vaults a while longer. Watch Moscow."
  ire.110.t:0 "The Odessa Bill"
