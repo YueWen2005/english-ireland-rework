@@ -1881,17 +1881,12 @@ focus_tree = {
 	}
 
 	### ============================================================
-	### 经济区域（独立分支，两个起点均可进入）
+	### 经济区域（独立通用分支，开局即可进入，不挂在任何主线上）
 	### ============================================================
 	focus = {
 		id = IRE_E_shannon_hub
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 5
-		# 同一 prerequisite 块内为 OR：任一主线起点均可进入经济区
-		prerequisite = {
-			focus = IRE_border_plebiscite
-			focus = IRE_consolidate_free_state
-		}
 		x = 11
 		y = 8
 		ai_will_do = { base = 55 }
@@ -2064,11 +2059,6 @@ focus_tree = {
 		id = IRE_E_hospital_sweepstake
 		icon = GFX_goal_generic_production
 		cost = 5
-		# 同一 prerequisite 块内为 OR：任一主线起点均可进入经济区
-		prerequisite = {
-			focus = IRE_border_plebiscite
-			focus = IRE_consolidate_free_state
-		}
 		x = 17
 		y = 8
 		ai_will_do = { base = 45 }
@@ -2104,18 +2094,13 @@ focus_tree = {
 	}
 
 	### ============================================================
-	### 军事区域（独立分支）
-	### 门禁：第二次世界大战已爆发 + 《紧急状态宣言》已完成
+	### 军事区域（独立通用分支）
+	### 门禁：第二次世界大战已爆发；不再要求任何主线的紧急状态国策
 	### ============================================================
 	focus = {
 		id = IRE_M_war_cabinet
 		icon = GFX_goal_generic_defence
 		cost = 5
-		# 同一 prerequisite 块内为 OR：A 线或 B 线任一条完成紧急状态即可进入军事区域
-		prerequisite = {
-			focus = IRE_B_emergency
-			focus = IRE_A_emergency
-		}
 		x = 36
 		y = 8
 		available = {
@@ -3035,7 +3020,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_R_ind_rural_electrification
-		icon = GFX_goal_generic_construct_infra
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
 		x = 54

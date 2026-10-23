@@ -337,7 +337,7 @@
 
  # ==================== 军事区域 ====================
  IRE_M_war_cabinet:0 "战时内阁"
- IRE_M_war_cabinet_desc:0 "战争已经烧到大西洋，都柏林终于把紧急状态变成了真正的战时体制。"
+ IRE_M_war_cabinet_desc:0 "战争已经烧到大西洋，都柏林终于把全国转入真正的战时体制。"
  IRE_M_army_expansion:0 "陆军扩充"
  IRE_M_army_expansion_desc:0 "1940年，正规军从不足一万人扩编到四万余人，地方防卫军与地方安全队又募集了十多万志愿者。爱尔兰第一次有了成建制的国防力量。"
  IRE_M_officer_corps:0 "军官团与参谋部"
@@ -362,7 +362,7 @@
  IRE_M_total_defence_desc:0 "陆海空与情报体系合为一体，这个中立小国终于有了自保的牙齿。"
 
  IRE_war_cabinet:0 "战时内阁"
- IRE_war_cabinet_desc:0 "紧急状态升格为战时体制，内阁、军队与工业开始按同一张时间表运转。"
+ IRE_war_cabinet_desc:0 "全国转入战时体制，内阁、军队与工业开始按同一张时间表运转。"
  IRE_army_expansion:0 "陆军扩充"
  IRE_army_expansion_desc:0 "后备役与志愿兵被编入正规军，爱尔兰的陆军第一次有了规模。"
  IRE_officer_corps:0 "军官团"
@@ -726,9 +726,9 @@
  IRE_X_ind_black_market_eff_desc:0 "消费品需求 −6%，工厂产出效率 +8%。"
 
  IRE_offmap_civ:0 "地图外民用工厂"
- IRE_offmap_civ:1 "分散在各地、无法在地图上逐一表示的民用产能——不占用建筑格。"
+ IRE_offmap_civ_desc:0 "分散在各地、无法在地图上逐一表示的民用产能——不占用建筑格。"
  IRE_offmap_mil:0 "地图外军用工厂"
- IRE_offmap_mil:1 "分散在各地、无法在地图上逐一表示的军用产能——不占用建筑格。"
+ IRE_offmap_mil_desc:0 "分散在各地、无法在地图上逐一表示的军用产能——不占用建筑格。"
 
  ire.108.c:0 "先扣着观望：让黄金睡在都柏林的金库里。"
  ire.110.t:0 "敖德萨的账单"

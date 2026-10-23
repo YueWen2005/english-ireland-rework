@@ -1038,7 +1038,7 @@ ideas = {
 		}
 
 		IRE_X_ind_smuggle_eff = {
-			picture = generic_supply_bonus
+			picture = generic_supply_line
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -1081,7 +1081,7 @@ ideas = {
 		}
 
 		IRE_X_ind_intel_eff = {
-			picture = generic_intelligence_bonus
+			picture = generic_intel_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {

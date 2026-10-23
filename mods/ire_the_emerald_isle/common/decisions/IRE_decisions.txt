@@ -67,7 +67,7 @@
 
 		# ---- 海外募兵 ----
 		IRE_overseas_recruit = {
-			icon = generic_infantry_offensive
+			icon = generic_army_support
 			cost = 60
 			days_remove = 60
 
@@ -91,7 +91,7 @@
 
 		# ---- 海外募捐 ----
 		IRE_overseas_fundraising = {
-			icon = generic_production_bonus
+			icon = generic_industry
 			cost = 40
 			days_remove = 45
 
@@ -175,7 +175,7 @@
 
 		# ---- 南美采购（《南锥体补给线》解锁）----
 		IRE_south_america_purchase = {
-			icon = generic_production_bonus
+			icon = generic_industry
 			cost = 50
 			days_remove = 90
 
@@ -199,7 +199,7 @@
 
 		# ---- 跨大西洋远征（《新世界的主人》解锁）----
 		IRE_transatlantic_expedition = {
-			icon = generic_naval_actions
+			icon = generic_naval
 			cost = 100
 
 			available = {
@@ -352,7 +352,7 @@
 
 		# ---- 联合防务协调（W 计划解锁）----
 		IRE_joint_defence = {
-			icon = generic_land_battle
+			icon = generic_military
 			cost = 40
 
 			available = {
@@ -498,7 +498,7 @@
 	IRE_convoy_cat = {
 
 		IRE_atlantic_convoy = {
-			icon = generic_naval_actions
+			icon = generic_naval
 			cost = 40
 			days_remove = 30
 
