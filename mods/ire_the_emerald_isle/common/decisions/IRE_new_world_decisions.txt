@@ -170,11 +170,19 @@ IRE_home_cat = {
 		cost = 75
 		days_remove = 120
 
-		available = { has_idea = IRE_home_development }
-		visible = { has_idea = IRE_home_development }
+		# 研究槽只给一次：fire_only_once + flag 双保险
+		available = {
+			has_idea = IRE_home_development
+			NOT = { has_country_flag = IRE_national_research_done }
+		}
+		visible = {
+			has_idea = IRE_home_development
+			NOT = { has_country_flag = IRE_national_research_done }
+		}
 		fire_only_once = yes
 
 		complete_effect = {
+			set_country_flag = IRE_national_research_done
 			add_research_slot = 1
 			add_tech_bonus = { name = IRE_home_research_bonus bonus = 0.3 uses = 2 category = industry }
 			add_stability = 0.02
