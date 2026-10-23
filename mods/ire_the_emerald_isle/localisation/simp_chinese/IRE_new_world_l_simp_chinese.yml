@@ -136,3 +136,10 @@
 
  IRE_effect_mineral_survey:0 "全国矿产勘探：伦斯特/蒙斯特/康诺特获得煤、钢、钨资源，并各增加 1 个建筑槽"
  IRE_effect_infrastructure_programme:0 "全国基础设施计划：三地各 +2 建筑槽、+1 基础设施；康诺特 +1 空军基地；研究槽 +1"
+
+ # ===== 人物姓名 =====
+ IRE_nw_tom_barry:0 "汤姆·巴里"
+ IRE_nw_sean_mac_eoin:0 "肖恩·麦克约恩"
+ IRE_nw_ernie_omalley:0 "厄尼·奥马利"
+ IRE_nw_hugo_macneill:0 "休戈·麦克尼尔"
+ IRE_nw_john_costello:0 "约翰·A·科斯特洛"
