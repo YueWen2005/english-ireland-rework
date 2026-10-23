@@ -249,6 +249,7 @@ focus_tree = {
 				}
 			}
 			add_stability = 0.03
+			custom_effect_tooltip = IRE_effect_mineral_survey
 		}
 	}
 
@@ -286,6 +287,7 @@ focus_tree = {
 			}
 			add_research_slot = 1
 			add_stability = 0.03
+			custom_effect_tooltip = IRE_effect_infrastructure_programme
 		}
 	}
 
@@ -556,6 +558,7 @@ focus_tree = {
 			add_ideas = IRE_sectarian_rift
 			add_war_support = 0.15
 			add_ideas = IRE_mobilisation_drive
+			custom_effect_tooltip = IRE_effect_mobilisation_drive
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
 		}
 	}
@@ -597,7 +600,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_donegal_corridor
 			if = {
-				limit = { exists = ENG }
+				limit = { country_exists = ENG }
 				ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 			}
 			air_experience = 50
@@ -699,6 +702,7 @@ focus_tree = {
 				add_stability = 0.08
 			}
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 		}
 	}
 
@@ -717,6 +721,7 @@ focus_tree = {
 			add_political_power = 50
 			add_ideas = IRE_fisher_brotherhood_idea
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 			set_variable = { IRE_nf_support = 0 }
 		}
 	}
@@ -767,6 +772,7 @@ focus_tree = {
 
 	completion_reward = {
 		IRE_add_diaspora_network = yes
+		custom_effect_tooltip = IRE_effect_diaspora_network_20
 		# 公投通过（英国承认）：和平并入+核心化+工厂基建；未通过：仅获得宣称与象征性精神
 		if = {
 			limit = { has_country_flag = IRE_nf_yes }
@@ -804,6 +810,7 @@ focus_tree = {
 		completion_reward = {
 			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 		}
 	}
 
@@ -820,6 +827,7 @@ focus_tree = {
 			add_political_power = 100
 			add_ideas = IRE_washingtons_friend
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 			random_list = {
 				35 = { add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 500 } }
 				65 = { }
@@ -838,6 +846,7 @@ focus_tree = {
 
 		completion_reward = {
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 			army_experience = 50
 			# 3 个已训练完毕的步兵师（美洲爱尔兰裔志愿师）
 			capital_scope = {
@@ -862,6 +871,7 @@ focus_tree = {
 			MEX = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
 			army_experience = 200
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 			# 文档「可将 2 个师改编为精英师」：HOI4 无「改编」效果，
 			# 替代为直接给予 2 个圣帕特里克营模板师 + 精英修正精神
 			add_ideas = IRE_san_patricio_elite
@@ -885,6 +895,7 @@ focus_tree = {
 			army_experience = 200
 			add_ideas = IRE_saint_patrick_name
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 		}
 	}
 
@@ -907,6 +918,7 @@ focus_tree = {
 			}
 			add_ideas = IRE_south_american_trade
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 		}
 	}
 
@@ -921,7 +933,9 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_southern_supply_line
+			custom_effect_tooltip = IRE_effect_southern_supply_line
 			IRE_add_diaspora_network = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_20
 		}
 	}
 
@@ -942,6 +956,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_transatlantic_supply
+			custom_effect_tooltip = IRE_effect_transatlantic_supply
 		}
 	}
 
@@ -1102,12 +1117,12 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_belfast }
 		x = 4
 		y = 13
-		available = { exists = ENG }
+		available = { country_exists = ENG }
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
 			if = {
-				limit = { exists = ENG }
+				limit = { country_exists = ENG }
 				ENG = {
 					add_timed_idea = { idea = IRE_eng_irish_question days = 365 }
 					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 }
@@ -1127,12 +1142,12 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_boston }
 		x = 6
 		y = 13
-		available = { exists = USA }
+		available = { country_exists = USA }
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
 			if = {
-				limit = { exists = USA }
+				limit = { country_exists = USA }
 				USA = {
 					add_timed_idea = { idea = IRE_usa_irish_lobby days = 365 }
 					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 }
@@ -1152,7 +1167,7 @@ focus_tree = {
 		x = 8
 		y = 13
 		available = {
-			exists = FRA
+			country_exists = FRA
 			NOT = { FRA = { has_capitulated = yes } }
 		}
 		ai_will_do = { base = 50 }
@@ -1160,7 +1175,7 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					exists = FRA
+					country_exists = FRA
 					NOT = { FRA = { has_capitulated = yes } }
 				}
 				FRA = {
@@ -1259,7 +1274,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					exists = ENG
+					country_exists = ENG
 					119 = { NOT = { is_owned_by = ROOT } }
 				}
 				create_wargoal = { type = take_state target = ENG generator = { 119 } }
@@ -2418,7 +2433,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_X_shadow_arsenal }
-		visible = { NOT = { has_country_flag = IRE_dark_path } }
+		available = { NOT = { has_country_flag = IRE_dark_path } }
 		x = 42
 		y = 4
 		ai_will_do = { base = 20 }
@@ -2551,36 +2566,36 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = arms_factory levels > 0 include_locked = no } }
-				add_building_construction = { type = arms_factory level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = arms_factory size > 0 include_locked = no } }
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			}
 			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = arms_factory levels > 0 include_locked = no } }
-				add_building_construction = { type = arms_factory level = 1 instant_allocation = yes }
+				limit = { free_building_slots = { building = arms_factory size > 0 include_locked = no } }
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			}
 			add_stability = 0.02
 			add_to_variable = { IRE_red_unity = 10 }
@@ -2629,7 +2644,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_R_red_turn }
-		visible = { NOT = { has_country_flag = IRE_red_path } }
+		available = { NOT = { has_country_flag = IRE_red_path } }
 		x = 46
 		y = 4
 		ai_will_do = { base = 20 }
@@ -2651,7 +2666,7 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 5
 		prerequisite = { focus = IRE_X_shadow_arsenal }
-		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = { NOT = { has_country_flag = IRE_dark_surrender } }
 		x = 46
 		y = 5
 		ai_will_do = { base = 35 }
@@ -2669,7 +2684,7 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_X_christmas_raid }
-		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = { NOT = { has_country_flag = IRE_dark_surrender } }
 		x = 46
 		y = 6
 		ai_will_do = { base = 35 }
@@ -2694,7 +2709,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
 		prerequisite = { focus = IRE_X_s_plan }
-		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = { NOT = { has_country_flag = IRE_dark_surrender } }
 		x = 46
 		y = 7
 		ai_will_do = { base = 30 }
@@ -2716,7 +2731,7 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
 		prerequisite = { focus = IRE_X_abwehr_guests }
-		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = { NOT = { has_country_flag = IRE_dark_surrender } }
 		x = 48
 		y = 8
 		ai_will_do = { base = 30 }
