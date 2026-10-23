@@ -1,4 +1,4 @@
-﻿on_actions = {
+on_actions = {
 	on_startup = {
 		effect = {
 			# on_startup 无国家作用域，需用 every_country 包裹
