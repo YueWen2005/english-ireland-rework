@@ -1,4 +1,4 @@
-﻿add_namespace = ire
+add_namespace = ire
 
 # ============================================================
 # ire.1 边境公投 - 结果揭晓（支持度分档）
@@ -212,7 +212,7 @@ country_event = {
 			119 = { add_core_of = ROOT }
 		}
 		if = {
-			limit = { exists = ENG }
+			limit = { country_exists = ENG }
 			add_to_faction = ENG
 		}
 		add_ideas = IRE_unity_for_ports
@@ -243,7 +243,7 @@ country_event = {
 		add_political_power = -20
 		add_stability = 0.03
 		if = {
-			limit = { exists = ENG }
+			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
 		}
 	}
@@ -270,7 +270,7 @@ country_event = {
 		add_war_support = 0.05
 		add_stability = 0.02
 		if = {
-			limit = { exists = GER }
+			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 } }
 		}
 	}
@@ -280,7 +280,7 @@ country_event = {
 		add_political_power = 30
 		add_stability = -0.02
 		if = {
-			limit = { exists = GER }
+			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
 		}
 	}
@@ -302,7 +302,7 @@ country_event = {
 		add_political_power = 25
 		add_stability = 0.03
 		if = {
-			limit = { exists = ENG }
+			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
 		}
 	}
@@ -331,11 +331,11 @@ country_event = {
 		add_political_power = 25
 		add_stability = -0.03
 		if = {
-			limit = { exists = USA }
+			limit = { country_exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
 		}
 		if = {
-			limit = { exists = GER }
+			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
 		}
 	}
@@ -346,7 +346,7 @@ country_event = {
 		add_stability = 0.03
 		add_war_support = 0.03
 		if = {
-			limit = { exists = USA }
+			limit = { country_exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
 		}
 	}
@@ -370,15 +370,15 @@ country_event = {
 		add_political_power = 25
 		add_stability = 0.03
 		if = {
-			limit = { exists = GER }
+			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
 		}
 		if = {
-			limit = { exists = ENG }
+			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 } }
 		}
 		if = {
-			limit = { exists = USA }
+			limit = { country_exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
 		}
 	}
@@ -388,11 +388,11 @@ country_event = {
 		add_political_power = 20
 		add_stability = -0.02
 		if = {
-			limit = { exists = ENG }
+			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
 		}
 		if = {
-			limit = { exists = USA }
+			limit = { country_exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
 		}
 	}
@@ -738,7 +738,7 @@ country_event = {
 		add_political_power = -100
 		ENG = {
 			add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg50 }
-			add_ai_strategy = { type = prepare_for_war country = IRE value = 100 }
+			add_ai_strategy = { type = prepare_for_war id = IRE value = 100 }
 		}
 	}
 }
@@ -976,8 +976,8 @@ country_event = {
 		add_political_power = 150
 		add_ideas = IRE_revolution_treasury
 		random_owned_controlled_state = {
-			limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
-			add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+			add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 		}
 		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
 	}
@@ -1012,7 +1012,7 @@ country_event = {
 	}
 }
 
-=======
+# ============================================================
 # ire.70 绿色国际：新世界爱尔兰的政治宣言
 # ============================================================
 country_event = {

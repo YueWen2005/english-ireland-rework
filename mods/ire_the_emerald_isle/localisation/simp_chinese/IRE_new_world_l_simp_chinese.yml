@@ -127,3 +127,12 @@
  IRE_new_world_neutrality:0 "新世界爱尔兰"
  IRE_new_world_neutrality_DEF:0 "新世界爱尔兰"
  IRE_new_world_neutrality_ADJ:0 "爱尔兰"
+
+ # ===== A 线效果提示 =====
+ IRE_effect_diaspora_network_20:0 "凯尔特后裔网络 +20（20/40/60/80/100 解锁对应精神）"
+ IRE_effect_transatlantic_supply:0 "跨大西洋补给网：补给消耗 −25%，维修速度 +10%"
+ IRE_effect_southern_supply_line:0 "南方补给线：补给消耗 −15%，护航效率 +10%"
+ IRE_effect_mobilisation_drive:0 "动员驱动：征兵 +5%"
+
+ IRE_effect_mineral_survey:0 "全国矿产勘探：伦斯特/蒙斯特/康诺特获得煤、钢、钨资源，并各增加 1 个建筑槽"
+ IRE_effect_infrastructure_programme:0 "全国基础设施计划：三地各 +2 建筑槽、+1 基础设施；康诺特 +1 空军基地；研究槽 +1"

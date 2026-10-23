@@ -260,7 +260,7 @@ IRE_congress_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_green_dollar
-			exists = USA
+			country_exists = USA
 			USA = { has_opinion = { target = ROOT value > 49 } }
 			OR = {
 				NOT = { has_variable = IRE_us_surplus_count }
@@ -382,7 +382,7 @@ IRE_interference_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_irish_question
-			exists = ENG
+			country_exists = ENG
 			OR = {
 				NOT = { has_variable = IRE_strike_count }
 				check_variable = { IRE_strike_count < 2 }
@@ -424,7 +424,7 @@ IRE_interference_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_irish_question
-			exists = ENG
+			country_exists = ENG
 		}
 
 		visible = { has_completed_focus = IRE_A_irish_question }
@@ -461,7 +461,7 @@ IRE_interference_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_tammany_hall
-			exists = USA
+			country_exists = USA
 			USA = { has_opinion = { target = ROOT value > 49 } }
 			OR = {
 				NOT = { has_variable = IRE_us_volunteers_count }
@@ -493,7 +493,7 @@ IRE_interference_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_tammany_hall
-			exists = USA
+			country_exists = USA
 		}
 
 		visible = { has_completed_focus = IRE_A_tammany_hall }
@@ -518,7 +518,7 @@ IRE_interference_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_wild_geese_paris
-			exists = FRA
+			country_exists = FRA
 			NOT = { FRA = { has_capitulated = yes } }
 			OR = {
 				NOT = { has_variable = IRE_french_arms_count }
@@ -549,7 +549,7 @@ IRE_interference_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_wild_geese_paris
-			exists = FRA
+			country_exists = FRA
 			NOT = { FRA = { has_capitulated = yes } }
 		}
 

@@ -1,4 +1,4 @@
-﻿ideas = {
+ideas = {
 
 	# ============================================================
 	# 开局精神（两线共有）
@@ -258,7 +258,7 @@
 			visible = { always = yes }
 			modifier = {
 				out_of_supply_factor = -0.15
-				convoy_raiding_efficiency_factor = -0.10
+				convoy_escort_efficiency = 0.10
 			}
 		}
 

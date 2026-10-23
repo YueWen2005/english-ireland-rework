@@ -127,3 +127,12 @@
  IRE_new_world_neutrality:0 "New World Ireland"
  IRE_new_world_neutrality_DEF:0 "New World Ireland"
  IRE_new_world_neutrality_ADJ:0 "Irish"
+
+ # ===== A-line effect tooltips =====
+ IRE_effect_diaspora_network_20:0 "Celtic diaspora network +20 (spirits unlock at 20/40/60/80/100)"
+ IRE_effect_transatlantic_supply:0 "Transatlantic Supply Network: -25% out-of-supply, +10% repair speed"
+ IRE_effect_southern_supply_line:0 "Southern Supply Line: -15% out-of-supply, +10% convoy escort efficiency"
+ IRE_effect_mobilisation_drive:0 "Mobilisation Drive: +5% conscription"
+
+ IRE_effect_mineral_survey:0 "National Mineral Survey: Leinster, Munster and Connaught gain coal, steel and tungsten, plus 1 building slot each"
+ IRE_effect_infrastructure_programme:0 "National Infrastructure Programme: +2 building slots and +1 infrastructure in all three states; +1 air base in Connaught; +1 research slot"
