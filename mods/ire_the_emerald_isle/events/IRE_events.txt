@@ -72,7 +72,7 @@ country_event = {
 	id = ire.10
 	title = ire.10.t
 	desc = ire.10.d
-	picture = GFX_report_event_generic_election
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	# 稳妥路线：英国深陷大战自顾不暇，或支持度已臻成熟——公投必然通过
@@ -118,7 +118,7 @@ country_event = {
 	id = ire.20
 	title = ire.20.t
 	desc = ire.20.d
-	picture = GFX_report_event_generic_air_doctrine
+	picture = GFX_report_event_generic_bombers
 	is_triggered_only = yes
 
 	option = {
@@ -136,7 +136,7 @@ country_event = {
 	id = ire.30
 	title = ire.30.t
 	desc = ire.30.d
-	picture = GFX_report_event_generic_referendum
+	picture = GFX_report_event_generic_handshake
 	is_triggered_only = yes
 
 	immediate = {
@@ -549,7 +549,7 @@ country_event = {
 	id = ire.92
 	title = ire.92.t
 	desc = ire.92.d
-	picture = GFX_report_event_generic_air_doctrine
+	picture = GFX_report_event_generic_bombers
 
 	is_triggered_only = yes
 
@@ -770,7 +770,7 @@ country_event = {
 	id = ire.100
 	title = ire.100.t
 	desc = ire.100.d
-	picture = GFX_report_event_generic_referendum
+	picture = GFX_report_event_generic_rally
 
 	is_triggered_only = yes
 
@@ -882,7 +882,7 @@ country_event = {
 	id = ire.105
 	title = ire.105.t
 	desc = ire.105.d
-	picture = GFX_report_event_generic_election
+	picture = GFX_report_event_generic_parliament
 
 	is_triggered_only = yes
 
@@ -1026,5 +1026,92 @@ country_event = {
 		name = ire.70.a
 		add_political_power = 50
 		add_war_support = 0.03
+	}
+}
+
+# ============================================================
+# ire.80 北美边境冲突：爱尔兰胜利，英属北美归并
+# ============================================================
+country_event = {
+	id = ire.80
+	title = ire.80.t
+	desc = ire.80.d
+	picture = GFX_report_event_generic_peaceful_annexation
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { country_exists = CAN }
+			ROOT = { annex_country = { target = CAN transfer_troops = yes } }
+			add_ideas = IRE_british_north_america
+			add_stability = 0.05
+			add_war_support = 0.05
+			set_country_flag = IRE_canada_annexed
+			if = {
+				limit = { country_exists = ENG }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
+			}
+			if = {
+				limit = { country_exists = USA }
+				USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 } }
+			}
+		}
+	}
+
+	option = {
+		name = ire.80.a
+		add_political_power = 100
+	}
+}
+
+# ============================================================
+# ire.81 北美边境冲突：爱尔兰失利/取消
+# ============================================================
+country_event = {
+	id = ire.81
+	title = ire.81.t
+	desc = ire.81.d
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+
+	option = {
+		name = ire.81.a
+		add_war_support = -0.03
+		add_political_power = -25
+		add_stability = -0.02
+	}
+}
+
+# ============================================================
+# ire.82 北美边境冲突：加拿大守住了边境
+# ============================================================
+country_event = {
+	id = ire.82
+	title = ire.82.t
+	desc = ire.82.d
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+
+	option = {
+		name = ire.82.a
+		add_stability = 0.02
+		add_war_support = 0.02
+	}
+}
+
+# ============================================================
+# ire.83 北美边境冲突：加拿大失去边境阵地
+# ============================================================
+country_event = {
+	id = ire.83
+	title = ire.83.t
+	desc = ire.83.d
+	picture = GFX_report_event_generic_battle
+	is_triggered_only = yes
+
+	option = {
+		name = ire.83.a
+		add_stability = -0.03
+		add_war_support = -0.02
 	}
 }
