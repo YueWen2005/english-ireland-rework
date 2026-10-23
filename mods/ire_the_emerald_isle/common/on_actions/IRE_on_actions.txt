@@ -1,4 +1,4 @@
-on_actions = {
+﻿on_actions = {
 	on_startup = {
 		effect = {
 			# on_startup 无国家作用域，需用 every_country 包裹
@@ -110,6 +110,104 @@ on_actions = {
 				}
 				set_country_flag = IRE_hitler_death_done
 				country_event = { id = ire.65 days = 0 }
+			}
+
+			# ---- 黑线：曝光度月增与阈值（IRA 内战线）----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					NOT = { has_country_flag = IRE_dark_surrender }
+				}
+				add_to_variable = { IRE_exposure = 5 }
+				if = {
+					limit = { check_variable = { IRE_exposure > 100 } }
+					set_variable = { IRE_exposure = 100 }
+				}
+				if = {
+					limit = {
+						check_variable = { IRE_exposure > 49 }
+						NOT = { has_country_flag = IRE_exposure_warned }
+					}
+					set_country_flag = IRE_exposure_warned
+					country_event = { id = ire.93 days = 0 }
+				}
+				if = {
+					limit = {
+						check_variable = { IRE_exposure > 89 }
+						NOT = { has_country_flag = IRE_exposure_crisis }
+					}
+					set_country_flag = IRE_exposure_crisis
+					country_event = { id = ire.95 days = 0 }
+				}
+			}
+
+			# ---- 黑线：1940.8.14 拉塞尔之死（史实锚点，不可跳过）----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					date > 1940.8.13
+					date < 1940.12.1
+					NOT = { has_country_flag = IRE_russell_dead }
+				}
+				set_country_flag = IRE_russell_dead
+				country_event = { id = ire.94 days = 0 }
+			}
+
+			# ---- 红线：团结值 40-70 区间的宗派危机（随机）----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_path
+					check_variable = { IRE_red_unity > 39 }
+					check_variable = { IRE_red_unity < 71 }
+					NOT = { has_country_flag = IRE_unity_crisis_done }
+				}
+				random = {
+					chance = 15
+					set_country_flag = IRE_unity_crisis_done
+					country_event = { id = ire.103 days = 0 }
+				}
+			}
+
+			# ---- 红线：1937.7 十字架与红旗 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_path
+					date > 1937.6.30
+					date < 1937.12.1
+					NOT = { has_country_flag = IRE_constitution_clash_done }
+				}
+				set_country_flag = IRE_constitution_clash_done
+				country_event = { id = ire.102 days = 0 }
+			}
+
+			# ---- 红线：1944.2 德累斯顿的幽灵 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_path
+					date > 1944.1.31
+					date < 1944.6.1
+					NOT = { has_country_flag = IRE_dresden_done }
+				}
+				set_country_flag = IRE_dresden_done
+				country_event = { id = ire.107 days = 0 }
+			}
+
+			# ---- 红线：西班牙黄金（1936.10 起比斯开湾航线，红线开局后触发）----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_path
+					date > 1936.10.14
+					date < 1939.1.1
+					NOT = { has_country_flag = IRE_gold_done }
+				}
+				set_country_flag = IRE_gold_done
+				country_event = { id = ire.108 days = 0 }
 			}
 		}
 	}

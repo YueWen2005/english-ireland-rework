@@ -802,5 +802,101 @@
 				stability_factor = 0.03
 			}
 		}
+		IRE_military_govt = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.03
+			}
+		}
+
+		IRE_ira_training_camps = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.02
+			}
+		}
+
+
+		IRE_red_militia = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_org_factor = 0.02
+			}
+		}
+
+		IRE_intl_solidarity = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.10
+				trade_opinion_factor = 0.10
+			}
+		}
+
+		IRE_tricolour_red = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.05
+			}
+		}
+
+		IRE_ira_shadow = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_org_factor = 0.02
+				political_power_gain = 0.05
+			}
+		}
+
+		IRE_martyrs = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.08
+			}
+		}
+
+		IRE_borrowed_knife = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.05
+			}
+		}
+		IRE_connolly_veterans = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				experience_gain_army_factor = 0.10
+				army_org_factor = 0.02
+			}
+		}
+
+		IRE_revolution_treasury = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = 0.10
+			}
+		}
 	}
 }

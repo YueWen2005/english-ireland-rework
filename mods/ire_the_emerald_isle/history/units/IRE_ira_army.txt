@@ -1,0 +1,54 @@
+### ============================================================
+### IRA 飞行纵队：国策《政变之夜》完成时经 load_oob 生成
+### 5 个游击师（6 步 + 1 炮 + 工兵/侦察），都柏林 x2 / 科克 / 利默里克
+### ============================================================
+
+division_template = {
+	name = "IRA Flying Column"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		location = 11293
+		division_template = "IRA Flying Column"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+	}
+	division = {
+		location = 11293
+		division_template = "IRA Flying Column"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+	}
+	division = {
+		location = 7394
+		division_template = "IRA Flying Column"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+	}
+	division = {
+		location = 6313
+		division_template = "IRA Flying Column"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+	}
+	division = {
+		location = 11293
+		division_template = "IRA Flying Column"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.6
+	}
+}

@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 翡翠岛的抉择 - 决议分类定义
 ### （原 MOD 缺失此文件导致全部决议无法加载）
 ### 注意：分类不加 visible 限制，由各决议自身的 visible 控制；
@@ -32,5 +32,23 @@ IRE_neutral_cat = {
 IRE_convoy_cat = {
 	icon = GFX_decision_category_generic_political_actions
 	priority = 85
+	allowed = { original_tag = IRE }
+}
+
+IRE_ira_logistics_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 82
+	allowed = { original_tag = IRE }
+}
+
+IRE_X_ops_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 82
+	allowed = { original_tag = IRE }
+}
+
+IRE_R_org_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 82
 	allowed = { original_tag = IRE }
 }

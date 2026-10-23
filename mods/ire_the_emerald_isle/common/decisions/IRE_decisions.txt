@@ -1,4 +1,4 @@
-
+﻿
 	# ============================================================
 	# A 线：统一宣传运动（公投支持度）
 	# ============================================================
@@ -518,5 +518,94 @@
 			}
 
 			ai_will_do = { base = 20 }
+		}
+	}
+
+	# ============================================================
+	# IRA 内战线决议
+	# ============================================================
+	IRE_ira_logistics_cat = {
+
+		IRE_dock_pickup = {
+			icon = generic_political_actions
+			cost = 20
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_docks_open
+			}
+
+			visible = {
+				has_country_flag = IRE_docks_open
+			}
+
+			complete_effect = {
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 100 producer = IRE }
+			}
+
+			ai_will_do = { base = 30 }
+		}
+	}
+
+	IRE_X_ops_cat = {
+
+		IRE_transport_cells = {
+			icon = generic_political_actions
+			cost = 50
+			days_remove = 30
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_transport_cells
+				NOT = { has_country_flag = IRE_dark_surrender }
+			}
+
+			visible = {
+				has_country_flag = IRE_transport_cells
+			}
+
+			complete_effect = {
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 200 producer = IRE }
+				add_to_variable = { IRE_exposure = 5 }
+			}
+
+			ai_will_do = { base = 30 }
+		}
+	}
+
+	IRE_R_org_cat = {
+
+		IRE_reading_classes = {
+			icon = generic_political_actions
+			cost = 50
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_reading_classes
+				OR = {
+					AND = {
+						has_country_flag = IRE_unity_cap_high
+						check_variable = { IRE_red_unity < 110 }
+					}
+					AND = {
+						NOT = { has_country_flag = IRE_unity_cap_high }
+						check_variable = { IRE_red_unity < 100 }
+					}
+				}
+			}
+
+			visible = {
+				has_country_flag = IRE_reading_classes
+			}
+
+			complete_effect = {
+				add_to_variable = { IRE_red_unity = 5 }
+				if = {
+					limit = { check_variable = { IRE_red_unity > 109 } }
+					set_variable = { IRE_red_unity = 110 }
+				}
+			}
+
+			ai_will_do = { base = 30 }
 		}
 	}

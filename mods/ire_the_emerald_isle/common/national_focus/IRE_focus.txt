@@ -31,7 +31,7 @@ focus_tree = {
 		cost = 5
 		x = 10
 		y = 0
-		mutually_exclusive = { focus = IRE_consolidate_free_state }
+		mutually_exclusive = { focus = IRE_consolidate_free_state focus = IRE_ira_council }
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -51,7 +51,7 @@ focus_tree = {
 		cost = 5
 		x = 24
 		y = 0
-		mutually_exclusive = { focus = IRE_border_plebiscite }
+		mutually_exclusive = { focus = IRE_border_plebiscite focus = IRE_ira_council }
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -1893,4 +1893,551 @@ focus_tree = {
 			add_stability = 0.03
 		}
 	}
+
+	# ============================================================
+	# IRA 内战线（第三起点，与 A/B 起点互斥）
+	# 参谋部重组 → 三路内战预备 → 政变之夜 → 都柏林易帜
+	# 之后分裂：红线【康诺利之路】(x=40-44) / 黑线【影子参谋部】(x=46-48)
+	# ============================================================
+
+	focus = {
+		id = IRE_ira_council
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 5
+		mutually_exclusive = {
+			focus = IRE_border_plebiscite
+			focus = IRE_consolidate_free_state
+		}
+		x = 44
+		y = 0
+		ai_will_do = { base = 15 }
+
+		completion_reward = {
+			add_political_power = 25
+			add_war_support = 0.02
+			set_country_flag = IRE_ira_path
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
+		}
+	}
+
+	focus = {
+		id = IRE_ira_arms_web
+		icon = GFX_goal_generic_production
+		cost = 5
+		prerequisite = { focus = IRE_ira_council }
+		x = 42
+		y = 1
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 150 producer = IRE }
+			army_experience = 40
+			set_country_flag = IRE_docks_open
+		}
+	}
+
+	focus = {
+		id = IRE_ira_camps
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		prerequisite = { focus = IRE_ira_council }
+		x = 44
+		y = 1
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			add_ideas = IRE_ira_training_camps
+			add_war_support = 0.05
+			add_manpower = 20000
+			army_experience = 40
+		}
+	}
+
+	focus = {
+		id = IRE_ira_infiltrate
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 5
+		prerequisite = { focus = IRE_ira_council }
+		x = 46
+		y = 1
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
+			add_war_support = 0.02
+			army_experience = 30
+		}
+	}
+
+	focus = {
+		id = IRE_ira_coup
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		prerequisite = { focus = IRE_ira_arms_web focus = IRE_ira_camps focus = IRE_ira_infiltrate }
+		x = 44
+		y = 2
+		ai_will_do = { base = 25 }
+
+		completion_reward = {
+			# 军政府接管：执政党转为中立，叛军为自由邦残部（民主）
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_country_flag = IRE_coup_started
+			# 叛军只拿康诺特+芒斯特（科克为叛军首都），玩家保住都柏林州 12/22 胜利点，
+			# 否则叛军随机卷走近半胜利点会导致开战瞬间投降
+			start_civil_war = {
+				ideology = democratic
+				size = 0.42
+				states = { 134 135 }
+				capital = 7394
+			}
+			# IRA 夺权方：爆出飞行纵队 + 改国名（玩家侧 IRA，叛军侧自由邦）
+			load_oob = "IRE_ira_army"
+			add_manpower = 10000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
+			add_war_support = 0.05
+			hidden_effect = {
+				set_cosmetic_tag = IRE_ira_neutrality
+				every_other_country = {
+					limit = {
+						has_civil_war = yes
+						original_tag = IRE
+					}
+					set_cosmetic_tag = IRE_free_state_democratic
+				}
+			}
+			country_event = { id = ire.68 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_ira_power
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5
+		prerequisite = { focus = IRE_ira_coup }
+		available = {
+			has_country_flag = IRE_coup_started
+			has_civil_war = no
+		}
+		x = 44
+		y = 3
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			set_country_flag = IRE_ira_in_power
+			add_ideas = IRE_military_govt
+			country_event = { id = ire.69 days = 1 }
+		}
+	}
+
+	# ---- 红线【康诺利之路】----
+	focus = {
+		id = IRE_R_red_turn
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		prerequisite = { focus = IRE_ira_power }
+		mutually_exclusive = { focus = IRE_X_shadow_arsenal }
+		visible = { NOT = { has_country_flag = IRE_dark_path } }
+		x = 42
+		y = 4
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			set_politics = { ruling_party = communism elections_allowed = no }
+			add_stability = 0.03
+			add_to_variable = { IRE_red_unity = 10 }
+			set_country_flag = IRE_red_path
+			if = {
+				limit = { NOT = { has_country_flag = IRE_farewell_done } }
+				set_country_flag = IRE_farewell_done
+				country_event = { id = ire.90 days = 1 }
+			}
+			country_event = { id = ire.100 days = 2 }
+		}
+	}
+
+	focus = {
+		id = IRE_R_connolly_column
+		icon = GFX_goal_generic_military_deal
+		cost = 5
+		prerequisite = { focus = IRE_R_red_turn }
+		x = 42
+		y = 5
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			army_experience = 50
+			add_manpower = 15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			set_rule = { can_send_volunteers = yes }
+			load_oob = "IRE_connolly_column"
+			add_ideas = IRE_connolly_veterans
+			add_ideas = IRE_red_militia
+			add_to_variable = { IRE_red_unity = 10 }
+			SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
+			country_event = { id = ire.101 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_R_republican_congress
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 5
+		prerequisite = { focus = IRE_R_connolly_column }
+		x = 42
+		y = 6
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			add_to_variable = { IRE_red_unity = 15 }
+			add_political_power = 50
+			add_stability = 0.02
+			set_country_flag = IRE_reading_classes
+		}
+	}
+
+	focus = {
+		id = IRE_R_split_1941
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 5
+		prerequisite = { focus = IRE_R_republican_congress }
+		available = { date > 1941.6.1 }
+		x = 42
+		y = 7
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			add_ideas = IRE_intl_solidarity
+			add_stability = 0.02
+			add_to_variable = { IRE_red_unity = 5 }
+		}
+	}
+
+	focus = {
+		id = IRE_R_neutral_labor
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		prerequisite = { focus = IRE_R_split_1941 }
+		mutually_exclusive = { focus = IRE_R_volunteer_line }
+		x = 40
+		y = 8
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_to_variable = { IRE_red_unity = 10 }
+			if = {
+				limit = { NOT = { has_variable = IRE_red_unity_cap } }
+				set_variable = { IRE_red_unity_cap = 100 }
+			}
+			add_to_variable = { IRE_red_unity_cap = 10 }
+			set_country_flag = IRE_unity_cap_high
+		}
+	}
+
+	focus = {
+		id = IRE_R_volunteer_line
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		prerequisite = { focus = IRE_R_split_1941 }
+		mutually_exclusive = { focus = IRE_R_neutral_labor }
+		x = 44
+		y = 8
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 25
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 producer = IRE }
+			add_to_variable = { IRE_red_unity = 5 }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
+			SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
+		}
+	}
+
+	focus = {
+		id = IRE_R_nationalize
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 5
+		prerequisite = {
+			focus = IRE_R_neutral_labor
+			focus = IRE_R_volunteer_line
+		}
+		x = 42
+		y = 9
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = industrial_complex levels > 0 include_locked = no } }
+				add_building_construction = { type = industrial_complex level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = arms_factory levels > 0 include_locked = no } }
+				add_building_construction = { type = arms_factory level = 1 instant_allocation = yes }
+			}
+			random_owned_controlled_state = {
+				limit = { free_building_slots = { building = arms_factory levels > 0 include_locked = no } }
+				add_building_construction = { type = arms_factory level = 1 instant_allocation = yes }
+			}
+			add_stability = 0.02
+			add_to_variable = { IRE_red_unity = 10 }
+			country_event = { id = ire.104 days = 2 }
+		}
+	}
+
+	focus = {
+		id = IRE_R_belfast_strike
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		prerequisite = { focus = IRE_R_nationalize }
+		available = { check_variable = { IRE_red_unity > 89 } }
+		x = 42
+		y = 10
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 50
+			country_event = { id = ire.105 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_R_workers_republic
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = { focus = IRE_R_belfast_strike }
+		available = { has_country_flag = IRE_strike_resolved }
+		x = 42
+		y = 11
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.05
+			add_ideas = IRE_tricolour_red
+		}
+	}
+
+	# ---- 黑线【影子参谋部】----
+	focus = {
+		id = IRE_X_shadow_arsenal
+		icon = GFX_goal_generic_production
+		cost = 5
+		prerequisite = { focus = IRE_ira_power }
+		mutually_exclusive = { focus = IRE_R_red_turn }
+		visible = { NOT = { has_country_flag = IRE_red_path } }
+		x = 46
+		y = 4
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
+			add_to_variable = { IRE_exposure = 10 }
+			set_country_flag = IRE_dark_path
+			if = {
+				limit = { NOT = { has_country_flag = IRE_farewell_done } }
+				set_country_flag = IRE_farewell_done
+				country_event = { id = ire.90 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_X_christmas_raid
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 5
+		prerequisite = { focus = IRE_X_shadow_arsenal }
+		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		x = 46
+		y = 5
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			army_experience = 50
+			add_to_variable = { IRE_exposure = 15 }
+			country_event = { id = ire.91 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_X_s_plan
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 5
+		prerequisite = { focus = IRE_X_christmas_raid }
+		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		x = 46
+		y = 6
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			ENG = {
+				add_war_support = -0.10
+				add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg50 }
+				add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 }
+			}
+			add_manpower = 15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
+			add_to_variable = { IRE_exposure = 20 }
+			add_ideas = IRE_martyrs
+			set_country_flag = IRE_transport_cells
+			country_event = { id = ire.92 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_X_abwehr_guests
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 5
+		prerequisite = { focus = IRE_X_s_plan }
+		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		x = 46
+		y = 7
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
+			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = IRE }
+			give_military_access = GER
+			add_manpower = 10000
+			add_to_variable = { IRE_exposure = 15 }
+			add_ideas = IRE_ira_shadow
+			country_event = { id = ire.96 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_X_green_action
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5
+		prerequisite = { focus = IRE_X_abwehr_guests }
+		visible = { NOT = { has_country_flag = IRE_dark_surrender } }
+		x = 48
+		y = 8
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			army_experience = 50
+			add_war_support = 0.10
+			give_military_access = GER
+			GER = { add_to_faction = IRE }
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
+			create_wargoal = { type = annex_everything target = ENG expire = 0 }
+			set_country_flag = IRE_green_action
+		}
+	}
+
+	focus = {
+		id = IRE_X_rising_gamble
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		prerequisite = { focus = IRE_X_green_action }
+		x = 46
+		y = 9
+		ai_will_do = { base = 10 }
+
+		completion_reward = {
+			add_to_variable = { IRE_exposure = 20 }
+			random = {
+				chance = 50
+				set_country_flag = IRE_rising_won
+			}
+			if = {
+				limit = { NOT = { has_country_flag = IRE_rising_won } }
+				set_country_flag = IRE_rising_lost
+			}
+			country_event = { id = ire.98 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_X_landing_assist
+		icon = GFX_goal_generic_build_navy
+		cost = 5
+		prerequisite = { focus = IRE_X_green_action }
+		x = 48
+		y = 9
+		ai_will_do = { base = 25 }
+
+		completion_reward = {
+			add_war_support = 0.05
+			navy_experience = 25
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
+			country_event = { id = ire.97 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_X_black_end
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = IRE_X_rising_gamble
+			focus = IRE_X_landing_assist
+		}
+		available = {
+			OR = {
+				has_country_flag = IRE_rising_won
+				has_country_flag = IRE_north_seized
+			}
+		}
+		x = 48
+		y = 10
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			add_ideas = IRE_borrowed_knife
+			country_event = { id = ire.99 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_X_crown_westminster
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = { focus = IRE_X_black_end }
+		available = {
+			OR = {
+				ENG = { has_capitulated = yes }
+				NOT = { country_exists = ENG }
+			}
+		}
+		x = 48
+		y = 11
+		ai_will_do = { base = 40 }
+
+		completion_reward = {
+			annex_country = { target = ENG transfer_troops = no }
+			add_political_power = 150
+			add_stability = 0.05
+			add_war_support = 0.05
+			country_event = { id = ire.109 days = 1 }
+		}
+	}
+
 }
