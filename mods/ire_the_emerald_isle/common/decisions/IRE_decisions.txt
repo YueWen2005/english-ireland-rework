@@ -1,11 +1,11 @@
-
+﻿
 	# ============================================================
 	# A 线：统一宣传运动（公投支持度）
 	# ============================================================
 	IRE_unity_campaign_cat = {
 
 		IRE_unity_campaign = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 50
 			days_remove = 30
 
@@ -44,7 +44,7 @@
 	IRE_diaspora_cat = {
 
 		IRE_overseas_promotion = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 60
 			days_remove = 60
 
@@ -115,7 +115,7 @@
 
 		# ---- 跨教派对话（《和解政策》解锁）----
 		IRE_interfaith_dialogue = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 40
 			days_remove = 60
 
@@ -141,7 +141,7 @@
 
 		# ---- 都柏林的秩序（《强硬整合》解锁；仅在控制北爱领土后有意义）----
 		IRE_dublin_order = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 50
 			days_remove = 30
 
@@ -228,7 +228,7 @@
 	IRE_newfoundland_cat = {
 
 		IRE_fisher_brotherhood = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 30
 			days_remove = 60
 
@@ -264,7 +264,7 @@
 	IRE_neutral_cat = {
 
 		IRE_moral_appeal = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 40
 			days_remove = 30
 
@@ -288,7 +288,7 @@
 
 		# ---- 天气预报共享（道义中立解锁）----
 		IRE_weather_forecast = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 30
 			days_remove = 30
 
@@ -317,7 +317,7 @@
 
 		# ---- 走私贸易（绝对中立解锁）：收入随中立信誉分档 ----
 		IRE_smuggling = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 20
 			days_remove = 30
 
@@ -376,7 +376,7 @@
 
 		# ---- 紧急动员演习（紧急状态二级/三级解锁）----
 		IRE_emergency_drill = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 30
 			days_remove = 60
 
@@ -403,7 +403,7 @@
 
 		# ---- 跨境行动（容忍 IRA 解锁）----
 		IRE_cross_border_ops = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 50
 			days_remove = 30
 
@@ -429,7 +429,7 @@
 
 		# ---- 调停者（《道义的权威》解锁）：成功率随中立信誉变化 ----
 		IRE_mediator = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 75
 			days_remove = 120
 
@@ -527,7 +527,7 @@
 	IRE_ira_logistics_cat = {
 
 		IRE_dock_pickup = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 20
 			fire_only_once = no
 
@@ -550,7 +550,7 @@
 	IRE_X_ops_cat = {
 
 		IRE_transport_cells = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 50
 			days_remove = 30
 			fire_only_once = no
@@ -576,7 +576,7 @@
 	IRE_R_org_cat = {
 
 		IRE_reading_classes = {
-			icon = generic_political_actions
+			icon = generic_political_rally
 			cost = 50
 			fire_only_once = no
 
