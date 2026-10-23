@@ -6,7 +6,8 @@
 characters = {
 
 	IRE_nw_tom_barry = {
-		name = "Tom Barry"
+		name = IRE_nw_tom_barry
+		female = no
 		portraits = {
 			army = {
 				large = GFX_portrait_IRE_nw_general_1
@@ -24,7 +25,8 @@ characters = {
 	}
 
 	IRE_nw_sean_mac_eoin = {
-		name = "Seán Mac Eoin"
+		name = IRE_nw_sean_mac_eoin
+		female = no
 		portraits = {
 			army = {
 				large = GFX_portrait_IRE_nw_general_2
@@ -42,7 +44,8 @@ characters = {
 	}
 
 	IRE_nw_ernie_omalley = {
-		name = "Ernie O'Malley"
+		name = IRE_nw_ernie_omalley
+		female = no
 		portraits = {
 			army = {
 				large = GFX_portrait_IRE_nw_general_3
@@ -60,7 +63,8 @@ characters = {
 	}
 
 	IRE_nw_hugo_macneill = {
-		name = "Hugo MacNeill"
+		name = IRE_nw_hugo_macneill
+		female = no
 		portraits = {
 			army = {
 				large = GFX_portrait_IRE_nw_general_4
@@ -78,7 +82,8 @@ characters = {
 	}
 
 	IRE_nw_john_costello = {
-		name = "John A. Costello"
+		name = IRE_nw_john_costello
+		female = no
 		portraits = {
 			civilian = {
 				large = GFX_portrait_IRE_nw_leader_costello

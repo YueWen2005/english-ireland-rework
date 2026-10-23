@@ -19,3 +19,9 @@ IRE_interference_cat = {
 	priority = 83
 	allowed = { original_tag = IRE }
 }
+
+IRE_america_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 82
+	allowed = { original_tag = IRE }
+}

@@ -113,40 +113,33 @@ IRE_clamp_neutral_credibility = {
 	}
 }
 
-# 北爱尔兰结算（state 119 = 北爱尔兰；宣称→分档：英国承认 / 拒绝 / 公投失败）
-# 平衡原则：土地不是白给的——支持度不足时只有宣称，想要地要么刷到英国承认，要么自己承担对英战争
+# 北爱尔兰结算（state 119 = 北爱尔兰）
+# IRE 开局就有 119 州核心：公投通过（>69）即直接移交，伦敦只保留抗议/制裁
 IRE_core_northern_ireland = {
 	if = {
 		limit = { NOT = { has_variable = IRE_plebiscite_support } }
 		set_variable = { IRE_plebiscite_support = 45 }
 	}
 
-	# 无论结果如何，先获得北爱领土宣称（为正当化战争铺路）
+	# 无论结果如何，先获得北爱领土宣称
 	119 = { add_claim_by = ROOT }
 
-	# 支持度 ≥90 且英国深陷大战/已崩溃：伦敦被迫承认公投，和平移交北爱
-	# （平衡闸门：英国处于和平且强盛时绝不会吐出北爱，此时按"拒绝承认"处理）
+	# 公投通过：直接移交六郡；支持度越高，伦敦越不敢阻拦
 	if = {
-		limit = {
-			check_variable = { IRE_plebiscite_support > 89 }
-			OR = {
-				ENG = { has_war = yes }
-				ENG = { has_capitulated = yes }
-			}
-		}
+		limit = { check_variable = { IRE_plebiscite_support > 69 } }
 		if = {
 			limit = { 119 = { NOT = { is_owned_by = ROOT } } }
 			ROOT = { transfer_state = 119 }
 		}
 		119 = { add_core_of = ROOT }
-		add_stability = 0.10
-		add_political_power = 50
-	}
-	# 支持度 70-89：伦敦拒绝承认——拿到核心与宣称，但对英战争目标需自行正当化或等英国衰弱
-	else_if = {
-		limit = { check_variable = { IRE_plebiscite_support > 69 } }
-		119 = { add_core_of = ROOT }
-		add_stability = 0.05
+		if = {
+			limit = { check_variable = { IRE_plebiscite_support > 89 } }
+			add_stability = 0.10
+			add_political_power = 50
+		}
+		else = {
+			add_stability = 0.05
+		}
 	}
 	# 支持度 <70：公投失败——什么也拿不到，仅保留宣称
 	else = {
@@ -174,6 +167,11 @@ IRE_annex_newfoundland = {
 		ROOT = { transfer_state = 331 }
 	}
 	331 = { add_core_of = ROOT }
+	# 拉布拉多同属纽芬兰自治领；取得它才能与加拿大本土接壤
+	if = {
+		limit = { 332 = { is_owned_by = ENG } }
+		ROOT = { transfer_state = 332 }
+	}
 }
 
 IRE_emergency_tier_check = {

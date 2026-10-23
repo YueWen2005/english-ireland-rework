@@ -69,6 +69,30 @@ ideas = {
 			removal_cost = -1
 		}
 
+		IRE_spanish_volunteers = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				send_volunteer_size = 8
+				send_volunteer_factor = 0.25
+				send_volunteer_divisions_required = -1
+			}
+			removal_cost = -1
+		}
+
+		IRE_british_north_america = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				conscription_factor = 0.05
+				stability_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
 		IRE_atlantic_fleet = {
 			picture = generic_navy_bonus
 			allowed = { always = yes }
