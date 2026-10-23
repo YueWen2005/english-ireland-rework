@@ -3037,7 +3037,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_R_ind_rural_electrification
-		icon = GFX_goal_generic_construct_infra
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
 		x = 39
