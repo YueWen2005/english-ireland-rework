@@ -136,3 +136,10 @@
 
  IRE_effect_mineral_survey:0 "National Mineral Survey: Leinster, Munster and Connaught gain coal, steel and tungsten, plus 1 building slot each"
  IRE_effect_infrastructure_programme:0 "National Infrastructure Programme: +2 building slots and +1 infrastructure in all three states; +1 air base in Connaught; +1 research slot"
+
+ # ===== Character names =====
+ IRE_nw_tom_barry:0 "Tom Barry"
+ IRE_nw_sean_mac_eoin:0 "Seán Mac Eoin"
+ IRE_nw_ernie_omalley:0 "Ernie O'Malley"
+ IRE_nw_hugo_macneill:0 "Hugo MacNeill"
+ IRE_nw_john_costello:0 "John A. Costello"
