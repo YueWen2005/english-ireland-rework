@@ -961,7 +961,7 @@ country_event = {
 	}
 }
 
-# ---- ire.108 比斯开湾的金库（红线：西班牙黄金）----
+# ---- ire.108 比斯开湾的金库（红线：西班牙黄金，三分支 + 后续追讨）----
 country_event = {
 	id = ire.108
 	title = ire.108.t
@@ -972,22 +972,65 @@ country_event = {
 
 	option = {
 		name = ire.108.a
-		# 扣押：充作革命资金
+		# 扣押：充作革命资金——收益最大，苏联与共产阵营永久受损
 		add_political_power = 150
 		add_ideas = IRE_revolution_treasury
-		random_owned_controlled_state = {
-			limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
-			add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
-		}
-		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
+		add_war_support = 0.02
+		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg50 } }
+		add_to_variable = { IRE_red_unity = 5 }
 	}
 	option = {
 		name = ire.108.b
-		# 护送到莫斯科：换苏联军火
+		# 护送去莫斯科：换苏联军火与友谊
 		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
 		add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
 		army_experience = 25
+		add_stability = 0.01
 		add_to_variable = { IRE_red_unity = 5 }
+	}
+	option = {
+		name = ire.108.c
+		# 先扣着观望：把黄金留在都柏林，看莫斯科的反应——三个月后他们一定会来要账
+		set_country_flag = IRE_gold_delayed
+		add_stability = 0.02
+		add_political_power = 50
+		hidden_effect = {
+			country_event = { id = ire.110 days = 120 }
+		}
+	}
+}
+
+# ---- ire.110 敖德萨的账单（黄金拖延分支的追讨事件）----
+country_event = {
+	id = ire.110
+	title = ire.110.t
+	desc = ire.110.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire.110.a
+		# 如数奉还：花政治点数保名誉
+		add_political_power = -100
+		add_stability = -0.01
+		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
+	}
+	option = {
+		name = ire.110.b
+		# 拒绝交还：强硬化国内立场，彻底得罪苏联
+		add_political_power = 50
+		add_stability = -0.02
+		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg50 } }
+		add_to_variable = { IRE_red_unity = -5 }
+	}
+	option = {
+		name = ire.110.c
+		# 折中：交还一半，剩下的"折成军火"
+		add_political_power = -25
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 producer = IRE }
+		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
 	}
 }
 

@@ -889,6 +889,219 @@ ideas = {
 			}
 		}
 
+		# ---- 修改意见 v2.5.0：康诺利纵队（红加拿大式志愿军）----
+		IRE_connolly_column_idea = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				send_volunteer_size = 8
+				send_volunteer_factor = 0.25
+				send_volunteer_divisions_required = -1
+			}
+			removal_cost = -1
+		}
+
+		# ---- 限时精神 ----
+		IRE_belfast_momentum = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_green_arms_speed = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+			}
+			removal_cost = -1
+		}
+
+		# ---- 红线工业线精神 ----
+		IRE_R_ind_expropriation_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.12
+				consumer_goods_factor = -0.04
+				local_resources_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_peat_eff = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				local_resources_factor = 0.15
+				max_fuel_factor = 0.15
+				fuel_gain_factor = 0.10
+				production_speed_infrastructure_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_shannon_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_speed_buildings_factor = 0.12
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_rural_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.08
+				consumer_goods_factor = -0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_cooperative_eff = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.06
+				local_resources_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_arms_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.15
+				stability_factor = -0.03
+				consumer_goods_factor = 0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_limerick_eff = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_ind_workers_eff = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.15
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.15
+				research_speed_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		# ---- 黑线工业线精神 ----
+		IRE_X_ind_cottage_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = -0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_X_ind_hidden_cove_eff = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_dockyard = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_X_ind_smuggle_eff = {
+			picture = generic_supply_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				supply_consumption_factor = -0.15
+				out_of_supply_factor = -0.25
+				max_fuel_factor = 0.20
+				army_speed_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_X_ind_german_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_X_ind_s_loot_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.08
+			}
+			removal_cost = -1
+		}
+
+		IRE_eng_s_plan_damage = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = -0.08
+			}
+			removal_cost = -1
+		}
+
+		IRE_X_ind_intel_eff = {
+			picture = generic_intelligence_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				decryption_factor = 0.15
+				encryption_factor = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_X_ind_black_market_eff = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.08
+			}
+			removal_cost = -1
+		}
+
 		IRE_revolution_treasury = {
 			picture = generic_political_advisor_europe_2
 			allowed = { always = yes }
