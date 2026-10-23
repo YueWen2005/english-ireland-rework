@@ -1,0 +1,94 @@
+### ============================================================
+### A 线「新世界爱尔兰」人物
+### 肖像借用原版通用欧洲将领/领袖图，不生成新美术
+### ============================================================
+
+characters = {
+
+	IRE_nw_tom_barry = {
+		name = "Tom Barry"
+		portraits = {
+			army = {
+				large = GFX_portrait_IRE_nw_general_1
+				small = GFX_portrait_IRE_nw_general_1_small
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	IRE_nw_sean_mac_eoin = {
+		name = "Seán Mac Eoin"
+		portraits = {
+			army = {
+				large = GFX_portrait_IRE_nw_general_2
+				small = GFX_portrait_IRE_nw_general_2_small
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	IRE_nw_ernie_omalley = {
+		name = "Ernie O'Malley"
+		portraits = {
+			army = {
+				large = GFX_portrait_IRE_nw_general_3
+				small = GFX_portrait_IRE_nw_general_3_small
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	IRE_nw_hugo_macneill = {
+		name = "Hugo MacNeill"
+		portraits = {
+			army = {
+				large = GFX_portrait_IRE_nw_general_4
+				small = GFX_portrait_IRE_nw_general_4_small
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	IRE_nw_john_costello = {
+		name = "John A. Costello"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_IRE_nw_leader_costello
+			}
+		}
+		country_leader = {
+			# 与 MOD 当前开局执政党 neutrality 对齐
+			ideology = neutrality
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}
