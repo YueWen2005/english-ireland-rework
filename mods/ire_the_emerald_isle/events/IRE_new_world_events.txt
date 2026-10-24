@@ -1,0 +1,1000 @@
+add_namespace = ire_nw
+
+# ============================================================
+# A 线事件包：新世界爱尔兰
+# 1-9    公投宣传期（1936-1938，IRE_campaign_started）
+# 10-12  流散网络里程碑（40/80/100）
+# 19-25  纽芬兰公投竞选
+# 30-34  加拿大独立 / 归并 / 新世界宣言
+# 40-43  北欧联盟
+# 50-52  西班牙野鹅远征军
+# 60-61  大西洋战争
+# ============================================================
+
+# ============================================================
+# ire_nw.1 香农的演讲
+# ============================================================
+country_event = {
+	id = ire_nw.1
+	title = ire_nw.1.t
+	desc = ire_nw.1.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.1.a
+		add_political_power = -25
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up6
+		add_stability = 0.01
+	}
+
+	option = {
+		name = ire_nw.1.b
+		add_political_power = 25
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 2 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up2
+	}
+}
+
+# ============================================================
+# ire_nw.2 橙色游行
+# ============================================================
+country_event = {
+	id = ire_nw.2
+	title = ire_nw.2.t
+	desc = ire_nw.2.d
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.2.a
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -4 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_down4
+		add_stability = 0.03
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.2.b
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 4 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up4
+		add_stability = -0.02
+		add_political_power = 15
+	}
+
+	option = {
+		name = ire_nw.2.c
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 8 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up8
+		add_stability = -0.04
+		add_war_support = 0.02
+	}
+}
+
+# ============================================================
+# ire_nw.3 波士顿的电汇
+# ============================================================
+country_event = {
+	id = ire_nw.3
+	title = ire_nw.3.t
+	desc = ire_nw.3.d
+	picture = GFX_report_event_generic_stock_traders
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.3.a
+		add_political_power = 40
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 5 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up5
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.3.b
+		add_stability = 0.03
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 2 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up2
+	}
+}
+
+# ============================================================
+# ire_nw.4 经济战
+# ============================================================
+country_event = {
+	id = ire_nw.4
+	title = ire_nw.4.t
+	desc = ire_nw.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.4.a
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 5 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up5
+		add_stability = -0.01
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.4.b
+		add_political_power = 30
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -3 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_down3
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.5 工人的请愿
+# ============================================================
+country_event = {
+	id = ire_nw.5
+	title = ire_nw.5.t
+	desc = ire_nw.5.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.5.a
+		add_political_power = -20
+		add_stability = 0.03
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 3 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up3
+	}
+
+	option = {
+		name = ire_nw.5.b
+		add_political_power = 20
+		add_stability = -0.04
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up6
+	}
+}
+
+# ============================================================
+# ire_nw.6 盖尔语复兴
+# ============================================================
+country_event = {
+	id = ire_nw.6
+	title = ire_nw.6.t
+	desc = ire_nw.6.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.6.a
+		add_political_power = -30
+		add_stability = 0.02
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 3 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up3
+	}
+
+	option = {
+		name = ire_nw.6.b
+		add_political_power = 20
+		add_stability = 0.01
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 1 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up1
+	}
+}
+
+# ============================================================
+# ire_nw.7 都柏林大会
+# ============================================================
+country_event = {
+	id = ire_nw.7
+	title = ire_nw.7.t
+	desc = ire_nw.7.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.7.a
+		add_political_power = -30
+		add_stability = 0.02
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 8 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up8
+		set_country_flag = IRE_nw_rally_broad
+		country_event = { id = ire_nw.8 days = 30 }
+	}
+
+	option = {
+		name = ire_nw.7.b
+		add_political_power = 50
+		add_stability = -0.02
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 4 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up4
+		set_country_flag = IRE_nw_rally_narrow
+		country_event = { id = ire_nw.8 days = 30 }
+	}
+}
+
+# ============================================================
+# ire_nw.8 贝尔法斯特的回答
+# ============================================================
+country_event = {
+	id = ire_nw.8
+	title = ire_nw.8.t
+	desc = ire_nw.8.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.8.a
+		trigger = { has_country_flag = IRE_nw_rally_broad }
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up6
+		add_stability = 0.03
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		country_event = { id = ire_nw.9 days = 45 }
+	}
+
+	option = {
+		name = ire_nw.8.b
+		trigger = { has_country_flag = IRE_nw_rally_narrow }
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -3 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_down3
+		add_stability = -0.02
+		country_event = { id = ire_nw.9 days = 45 }
+	}
+}
+
+# ============================================================
+# ire_nw.9 伦敦的照会
+# ============================================================
+country_event = {
+	id = ire_nw.9
+	title = ire_nw.9.t
+	desc = ire_nw.9.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.9.a
+		trigger = { check_variable = { IRE_plebiscite_support > 79 } }
+		add_political_power = 50
+		add_war_support = 0.01
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 2 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up2
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.9.b
+		trigger = { check_variable = { IRE_plebiscite_support > 79 } }
+		add_political_power = 25
+		add_stability = 0.05
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.9.c
+		trigger = { check_variable = { IRE_plebiscite_support < 80 } }
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_up6
+		add_war_support = 0.02
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.9.e
+		trigger = { check_variable = { IRE_plebiscite_support < 80 } }
+		add_stability = 0.02
+		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -4 } }
+		custom_effect_tooltip = IRE_nw_tt_pleb_down4
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.10 第五大道的绿旗（流散网络 40）
+# ============================================================
+country_event = {
+	id = ire_nw.10
+	title = ire_nw.10.t
+	desc = ire_nw.10.d
+	picture = GFX_report_event_generic_rally2
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.10.a
+		add_political_power = 75
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.10.b
+		add_stability = 0.03
+		add_political_power = 25
+		if = {
+			limit = { NOT = { has_country_flag = IRE_border_done } }
+			hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 3 } }
+			custom_effect_tooltip = IRE_nw_tt_pleb_up3
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.11 芝加哥的机器（流散网络 80）
+# ============================================================
+country_event = {
+	id = ire_nw.11
+	title = ire_nw.11.t
+	desc = ire_nw.11.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.11.a
+		add_political_power = 50
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		hidden_effect = { IRE_add_neutral_credibility_neg5 = yes }
+		custom_effect_tooltip = IRE_nw_tt_neutral_down5
+	}
+
+	option = {
+		name = ire_nw.11.b
+		add_stability = 0.03
+		hidden_effect = { IRE_add_neutral_credibility_5 = yes }
+		custom_effect_tooltip = IRE_nw_tt_neutral_up5
+	}
+}
+
+# ============================================================
+# ire_nw.12 世界爱尔兰大会（流散网络 100）
+# ============================================================
+country_event = {
+	id = ire_nw.12
+	title = ire_nw.12.t
+	desc = ire_nw.12.d
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.12.a
+		add_political_power = 100
+		add_stability = 0.05
+		add_offsite_building = { type = industrial_complex level = 1 }
+		if = {
+			limit = { NOT = { has_country_flag = IRE_border_done } }
+			hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 5 } }
+			custom_effect_tooltip = IRE_nw_tt_pleb_up5
+		}
+	}
+
+	option = {
+		name = ire_nw.12.b
+		add_political_power = 25
+		add_stability = 0.02
+	}
+}
+
+# ============================================================
+# ire_nw.19 渔业兄弟会（IRE_A_newfoundland 触发）
+# ============================================================
+country_event = {
+	id = ire_nw.19
+	title = ire_nw.19.t
+	desc = ire_nw.19.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.19.a
+		add_political_power = -20
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 5 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up5
+	}
+
+	option = {
+		name = ire_nw.19.b
+		add_political_power = 20
+		add_stability = 0.01
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 2 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up2
+	}
+}
+
+# ============================================================
+# ire_nw.20 鱼市集会
+# ============================================================
+country_event = {
+	id = ire_nw.20
+	title = ire_nw.20.t
+	desc = ire_nw.20.d
+	picture = GFX_report_event_generic_rally2
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.20.a
+		add_political_power = -25
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 10 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up10
+	}
+
+	option = {
+		name = ire_nw.20.b
+		add_political_power = 20
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 3 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up3
+	}
+}
+
+# ============================================================
+# ire_nw.21 天主教与橙带党
+# ============================================================
+country_event = {
+	id = ire_nw.21
+	title = ire_nw.21.t
+	desc = ire_nw.21.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.21.a
+		add_stability = 0.03
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 6 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up6
+	}
+
+	option = {
+		name = ire_nw.21.b
+		add_stability = -0.03
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 9 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up9
+	}
+}
+
+# ============================================================
+# ire_nw.22 伦敦的阻挠
+# ============================================================
+country_event = {
+	id = ire_nw.22
+	title = ire_nw.22.t
+	desc = ire_nw.22.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.22.a
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 8 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up8
+		add_war_support = 0.02
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.22.b
+		add_political_power = 30
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 3 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up3
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.23 请愿船队
+# ============================================================
+country_event = {
+	id = ire_nw.23
+	title = ire_nw.23.t
+	desc = ire_nw.23.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.23.a
+		add_political_power = -30
+		navy_experience = 50
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 12 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up12
+	}
+
+	option = {
+		name = ire_nw.23.b
+		add_political_power = 25
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 2 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up2
+	}
+}
+
+# ============================================================
+# ire_nw.24 电台之争
+# ============================================================
+country_event = {
+	id = ire_nw.24
+	title = ire_nw.24.t
+	desc = ire_nw.24.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.24.a
+		add_political_power = -20
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 7 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up7
+	}
+
+	option = {
+		name = ire_nw.24.b
+		add_political_power = 30
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = -5 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_down5
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.25 公投前夜
+# ============================================================
+country_event = {
+	id = ire_nw.25
+	title = ire_nw.25.t
+	desc = ire_nw.25.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.25.a
+		add_political_power = -50
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 12 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up12
+	}
+
+	option = {
+		name = ire_nw.25.b
+		add_political_power = -20
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = 8 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_up8
+	}
+
+	option = {
+		name = ire_nw.25.c
+		add_political_power = 50
+		hidden_effect = { IRE_nw_add_nf_support = { VAL = -2 } }
+		custom_effect_tooltip = IRE_nw_tt_nf_down2
+	}
+}
+
+# ============================================================
+# ire_nw.30 渥太华的午夜
+# ============================================================
+country_event = {
+	id = ire_nw.30
+	title = ire_nw.30.t
+	desc = ire_nw.30.d
+	picture = GFX_report_event_canada_patriation
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.30.a
+		add_political_power = 25
+		if = {
+			limit = { country_exists = CAN }
+			CAN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.30.b
+		add_political_power = -10
+		add_war_support = 0.03
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.31 魁北克的声音
+# ============================================================
+country_event = {
+	id = ire_nw.31
+	title = ire_nw.31.t
+	desc = ire_nw.31.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.31.a
+		add_stability = 0.03
+		add_political_power = 25
+	}
+
+	option = {
+		name = ire_nw.31.b
+		add_stability = -0.02
+		add_war_support = 0.03
+		add_political_power = 50
+	}
+}
+
+# ============================================================
+# ire_nw.32 华盛顿的警告
+# ============================================================
+country_event = {
+	id = ire_nw.32
+	title = ire_nw.32.t
+	desc = ire_nw.32.d
+	picture = GFX_report_event_generic_usa_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.32.a
+		add_political_power = -25
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.32.b
+		add_political_power = 25
+		add_war_support = 0.02
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.33 归并之后（IRE_A_canada_annex 触发）
+# ============================================================
+country_event = {
+	id = ire_nw.33
+	title = ire_nw.33.t
+	desc = ire_nw.33.d
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.33.a
+		add_stability = 0.05
+		add_political_power = -25
+	}
+
+	option = {
+		name = ire_nw.33.b
+		add_political_power = 75
+		add_stability = -0.03
+		add_war_support = 0.03
+		add_manpower = 15000
+	}
+}
+
+# ============================================================
+# ire_nw.34 新世界宣言（IRE_A_new_world_ireland 触发）
+# ============================================================
+country_event = {
+	id = ire_nw.34
+	title = ire_nw.34.t
+	desc = ire_nw.34.d
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.34.a
+		add_political_power = 100
+		add_stability = 0.05
+	}
+
+	option = {
+		name = ire_nw.34.b
+		add_political_power = 50
+		add_war_support = 0.05
+		army_experience = 50
+	}
+}
+
+# ============================================================
+# ire_nw.40 斯德哥尔摩的犹豫（IRE_A_nordic_bridge 后）
+# ============================================================
+country_event = {
+	id = ire_nw.40
+	title = ire_nw.40.t
+	desc = ire_nw.40.d
+	picture = GFX_report_event_SWE_riksdag
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.40.a
+		add_political_power = -50
+		if = {
+			limit = { country_exists = SWE }
+			SWE = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.40.b
+		add_political_power = 25
+		if = {
+			limit = { country_exists = SWE }
+			SWE = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.41 挪威商船（IRE_A_nordic_alliance 后）
+# ============================================================
+country_event = {
+	id = ire_nw.41
+	title = ire_nw.41.t
+	desc = ire_nw.41.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.41.a
+		add_political_power = -40
+		add_equipment_to_stockpile = { type = convoy_1 amount = 80 }
+	}
+
+	option = {
+		name = ire_nw.41.b
+		add_political_power = 20
+		add_equipment_to_stockpile = { type = convoy_1 amount = 40 }
+		if = {
+			limit = { country_exists = NOR }
+			NOR = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.42 芬兰的冬天（IRE_A_nordic_alliance 后，芬苏交战）
+# ============================================================
+country_event = {
+	id = ire_nw.42
+	title = ire_nw.42.t
+	desc = ire_nw.42.d
+	picture = GFX_report_event_FIN_heimosodat_volunteers
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.42.a
+		add_manpower = -5000
+		add_war_support = 0.03
+		if = {
+			limit = { country_exists = FIN }
+			FIN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.42.b
+		add_political_power = -25
+		if = {
+			limit = { country_exists = FIN }
+			FIN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.43 北方演习（1941 年后）
+# ============================================================
+country_event = {
+	id = ire_nw.43
+	title = ire_nw.43.t
+	desc = ire_nw.43.d
+	picture = GFX_report_event_baltic_entente
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.43.a
+		navy_experience = 50
+		army_experience = 25
+		if = {
+			limit = { country_exists = SWE }
+			SWE = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = NOR }
+			NOR = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = DEN }
+			DEN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = FIN }
+			FIN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.43.b
+		add_political_power = 50
+		add_stability = 0.02
+	}
+}
+
+# ============================================================
+# ire_nw.50 哈拉马的第一面绿旗
+# ============================================================
+country_event = {
+	id = ire_nw.50
+	title = ire_nw.50.t
+	desc = ire_nw.50.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.50.a
+		add_manpower = -3000
+		add_war_support = 0.03
+		army_experience = 50
+	}
+
+	option = {
+		name = ire_nw.50.b
+		add_political_power = 50
+		add_war_support = 0.01
+		if = {
+			limit = { country_exists = SPR }
+			SPR = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+	}
+}
+
+# ============================================================
+# ire_nw.51 战俘营的来信
+# ============================================================
+country_event = {
+	id = ire_nw.51
+	title = ire_nw.51.t
+	desc = ire_nw.51.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.51.a
+		add_political_power = -25
+		add_stability = 0.03
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+	}
+
+	option = {
+		name = ire_nw.51.b
+		add_political_power = 25
+		add_war_support = 0.03
+		add_stability = -0.02
+	}
+}
+
+# ============================================================
+# ire_nw.52 归来的野鹅
+# ============================================================
+country_event = {
+	id = ire_nw.52
+	title = ire_nw.52.t
+	desc = ire_nw.52.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.52.a
+		add_manpower = 8000
+		army_experience = 50
+	}
+
+	option = {
+		name = ire_nw.52.b
+		add_political_power = 75
+		add_stability = 0.03
+	}
+}
+
+# ============================================================
+# ire_nw.60 护航危机（可重复）
+# ============================================================
+country_event = {
+	id = ire_nw.60
+	title = ire_nw.60.t
+	desc = ire_nw.60.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.60.a
+		add_political_power = -25
+		add_war_support = 0.01
+		navy_experience = 25
+		add_equipment_to_stockpile = { type = convoy_1 amount = 60 }
+	}
+
+	option = {
+		name = ire_nw.60.b
+		add_political_power = 20
+		add_stability = 0.02
+	}
+}
+
+# ============================================================
+# ire_nw.61 驱逐舰交易
+# ============================================================
+country_event = {
+	id = ire_nw.61
+	title = ire_nw.61.t
+	desc = ire_nw.61.d
+	picture = GFX_report_event_generic_lend_lease
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.61.a
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		add_equipment_to_stockpile = { type = convoy_1 amount = 100 }
+		hidden_effect = { IRE_add_neutral_credibility_neg5 = yes }
+		custom_effect_tooltip = IRE_nw_tt_neutral_down5
+	}
+
+	option = {
+		name = ire_nw.61.b
+		add_political_power = 50
+		add_stability = 0.02
+		hidden_effect = { IRE_add_neutral_credibility_5 = yes }
+		custom_effect_tooltip = IRE_nw_tt_neutral_up5
+	}
+}

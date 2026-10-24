@@ -1,0 +1,502 @@
+### ============================================================
+### A 线事件包触发器（ire_nw.*）
+### 与 IRE_on_actions.txt 中的 on_monthly 合并生效
+### ============================================================
+
+on_actions = {
+	on_monthly = {
+		effect = {
+			# ============================================================
+			# 公投宣传期随机事件（1936-1938）
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_campaign_cd }
+					NOT = { has_country_flag = IRE_nw_p1_done }
+					date > 1936.4.1
+					date < 1939.1.1
+				}
+				random = {
+					chance = 8
+					set_country_flag = { flag = IRE_nw_campaign_cd days = 45 value = 1 }
+					set_country_flag = IRE_nw_p1_done
+					country_event = { id = ire_nw.1 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_campaign_cd }
+					NOT = { has_country_flag = IRE_nw_p2_done }
+					OR = {
+						AND = { date > 1936.7.1 date < 1936.8.20 }
+						AND = { date > 1937.7.1 date < 1937.8.20 }
+						AND = { date > 1938.7.1 date < 1938.8.20 }
+					}
+				}
+				random = {
+					chance = 8
+					set_country_flag = { flag = IRE_nw_campaign_cd days = 45 value = 1 }
+					set_country_flag = IRE_nw_p2_done
+					country_event = { id = ire_nw.2 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_campaign_cd }
+					NOT = { has_country_flag = IRE_nw_p3_done }
+					date > 1936.5.1
+					date < 1939.1.1
+				}
+				random = {
+					chance = 8
+					set_country_flag = { flag = IRE_nw_campaign_cd days = 45 value = 1 }
+					set_country_flag = IRE_nw_p3_done
+					country_event = { id = ire_nw.3 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_campaign_cd }
+					NOT = { has_country_flag = IRE_nw_p4_done }
+					date > 1936.9.1
+					date < 1939.1.1
+				}
+				random = {
+					chance = 8
+					set_country_flag = { flag = IRE_nw_campaign_cd days = 45 value = 1 }
+					set_country_flag = IRE_nw_p4_done
+					country_event = { id = ire_nw.4 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_campaign_cd }
+					NOT = { has_country_flag = IRE_nw_p5_done }
+					date > 1936.8.1
+					date < 1939.1.1
+				}
+				random = {
+					chance = 8
+					set_country_flag = { flag = IRE_nw_campaign_cd days = 45 value = 1 }
+					set_country_flag = IRE_nw_p5_done
+					country_event = { id = ire_nw.5 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_campaign_cd }
+					NOT = { has_country_flag = IRE_nw_p6_done }
+					date > 1937.1.1
+					date < 1939.1.1
+				}
+				random = {
+					chance = 8
+					set_country_flag = { flag = IRE_nw_campaign_cd days = 45 value = 1 }
+					set_country_flag = IRE_nw_p6_done
+					country_event = { id = ire_nw.6 days = 0 }
+				}
+			}
+
+			# 都柏林统一大会：支持度成型后触发一次
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_border_done }
+					NOT = { has_country_flag = IRE_nw_rally_started }
+					check_variable = { IRE_plebiscite_support > 59 }
+					date > 1936.6.1
+					date < 1939.1.1
+				}
+				set_country_flag = IRE_nw_rally_started
+				country_event = { id = ire_nw.7 days = 0 }
+			}
+
+			# ============================================================
+			# 流散网络里程碑
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_atlantic_call
+					has_variable = IRE_diaspora_network
+					check_variable = { IRE_diaspora_network > 39 }
+					NOT = { has_country_flag = IRE_nw_diaspora_40 }
+				}
+				set_country_flag = IRE_nw_diaspora_40
+				country_event = { id = ire_nw.10 days = 0 }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_atlantic_call
+					has_variable = IRE_diaspora_network
+					check_variable = { IRE_diaspora_network > 79 }
+					NOT = { has_country_flag = IRE_nw_diaspora_80 }
+				}
+				set_country_flag = IRE_nw_diaspora_80
+				country_event = { id = ire_nw.11 days = 0 }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_atlantic_call
+					has_variable = IRE_diaspora_network
+					check_variable = { IRE_diaspora_network > 99 }
+					NOT = { has_country_flag = IRE_nw_diaspora_100 }
+				}
+				set_country_flag = IRE_nw_diaspora_100
+				country_event = { id = ire_nw.12 days = 0 }
+			}
+
+			# ============================================================
+			# 纽芬兰公投竞选
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_newfoundland
+					has_variable = IRE_nf_support
+					NOT = { has_country_flag = IRE_nf_resolved }
+					NOT = { has_country_flag = IRE_nw_nf_cd }
+					NOT = { has_country_flag = IRE_nw_nf1_done }
+					date > 1936.1.1
+					date < 1949.1.1
+				}
+				random = {
+					chance = 10
+					set_country_flag = { flag = IRE_nw_nf_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_nf1_done
+					country_event = { id = ire_nw.20 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_newfoundland
+					has_variable = IRE_nf_support
+					NOT = { has_country_flag = IRE_nf_resolved }
+					NOT = { has_country_flag = IRE_nw_nf_cd }
+					NOT = { has_country_flag = IRE_nw_nf2_done }
+					date > 1936.1.1
+					date < 1949.1.1
+				}
+				random = {
+					chance = 10
+					set_country_flag = { flag = IRE_nw_nf_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_nf2_done
+					country_event = { id = ire_nw.21 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_newfoundland
+					has_variable = IRE_nf_support
+					NOT = { has_country_flag = IRE_nf_resolved }
+					NOT = { has_country_flag = IRE_nw_nf_cd }
+					NOT = { has_country_flag = IRE_nw_nf3_done }
+					date > 1937.1.1
+					date < 1949.1.1
+				}
+				random = {
+					chance = 10
+					set_country_flag = { flag = IRE_nw_nf_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_nf3_done
+					country_event = { id = ire_nw.22 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_newfoundland
+					has_variable = IRE_nf_support
+					NOT = { has_country_flag = IRE_nf_resolved }
+					NOT = { has_country_flag = IRE_nw_nf_cd }
+					NOT = { has_country_flag = IRE_nw_nf4_done }
+					date > 1937.6.1
+					date < 1949.1.1
+				}
+				random = {
+					chance = 10
+					set_country_flag = { flag = IRE_nw_nf_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_nf4_done
+					country_event = { id = ire_nw.23 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_newfoundland
+					has_variable = IRE_nf_support
+					NOT = { has_country_flag = IRE_nf_resolved }
+					NOT = { has_country_flag = IRE_nw_nf_cd }
+					NOT = { has_country_flag = IRE_nw_nf5_done }
+					date > 1937.1.1
+					date < 1949.1.1
+				}
+				random = {
+					chance = 10
+					set_country_flag = { flag = IRE_nw_nf_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_nf5_done
+					country_event = { id = ire_nw.24 days = 0 }
+				}
+			}
+
+			# 公投前夜：支持度过 60 后触发一次
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_newfoundland
+					has_variable = IRE_nf_support
+					NOT = { has_country_flag = IRE_nf_resolved }
+					NOT = { has_country_flag = IRE_nw_nf_cd }
+					NOT = { has_country_flag = IRE_nw_nf_eve_done }
+					check_variable = { IRE_nf_support > 59 }
+					date > 1937.1.1
+					date < 1949.1.1
+				}
+				set_country_flag = IRE_nw_nf_eve_done
+				country_event = { id = ire_nw.25 days = 0 }
+			}
+
+			# ============================================================
+			# 加拿大独立之后
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_canada_independence
+					NOT = { has_country_flag = IRE_canada_annexed }
+					NOT = { has_country_flag = IRE_nw_canada_cd }
+					NOT = { has_country_flag = IRE_nw_c30_done }
+					country_exists = CAN
+					date > 1939.1.1
+				}
+				random = {
+					chance = 12
+					set_country_flag = { flag = IRE_nw_canada_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_c30_done
+					country_event = { id = ire_nw.30 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_canada_independence
+					NOT = { has_country_flag = IRE_canada_annexed }
+					NOT = { has_country_flag = IRE_nw_canada_cd }
+					NOT = { has_country_flag = IRE_nw_c31_done }
+					country_exists = CAN
+					date > 1939.1.1
+				}
+				random = {
+					chance = 12
+					set_country_flag = { flag = IRE_nw_canada_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_c31_done
+					country_event = { id = ire_nw.31 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_canada_independence
+					NOT = { has_country_flag = IRE_canada_annexed }
+					NOT = { has_country_flag = IRE_nw_canada_cd }
+					NOT = { has_country_flag = IRE_nw_c32_done }
+					country_exists = CAN
+					country_exists = USA
+					NOT = { has_war_with = USA }
+					date > 1940.1.1
+				}
+				random = {
+					chance = 10
+					set_country_flag = { flag = IRE_nw_canada_cd days = 60 value = 1 }
+					set_country_flag = IRE_nw_c32_done
+					country_event = { id = ire_nw.32 days = 0 }
+				}
+			}
+
+			# ============================================================
+			# 北欧联盟
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_nordic_bridge
+					NOT = { has_country_flag = IRE_nw_nordic_40 }
+					country_exists = SWE
+					SWE = { is_subject = no }
+				}
+				set_country_flag = IRE_nw_nordic_40
+				country_event = { id = ire_nw.40 days = 0 }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_nordic_alliance
+					NOT = { has_country_flag = IRE_nw_nordic_41 }
+					country_exists = NOR
+					NOR = { is_subject = no }
+				}
+				set_country_flag = IRE_nw_nordic_41
+				country_event = { id = ire_nw.41 days = 0 }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_nordic_alliance
+					NOT = { has_country_flag = IRE_nw_nordic_42 }
+					country_exists = FIN
+					country_exists = SOV
+					FIN = { has_war_with = SOV }
+					date > 1940.6.1
+				}
+				set_country_flag = IRE_nw_nordic_42
+				country_event = { id = ire_nw.42 days = 0 }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_nordic_alliance
+					NOT = { has_country_flag = IRE_nw_nordic_43 }
+					date > 1941.1.1
+					any_country = {
+						OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+						is_in_faction_with = ROOT
+					}
+				}
+				set_country_flag = IRE_nw_nordic_43
+				country_event = { id = ire_nw.43 days = 0 }
+			}
+
+			# ============================================================
+			# 西班牙野鹅远征军
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_spanish_volunteers
+					NOT = { has_country_flag = IRE_nw_spain_50 }
+					country_exists = SPR
+					SPR = { has_war = yes }
+					date > 1936.7.18
+					date < 1939.6.1
+				}
+				set_country_flag = IRE_nw_spain_50
+				country_event = { id = ire_nw.50 days = 0 }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_spanish_volunteers
+					has_country_flag = IRE_nw_spain_50
+					NOT = { has_country_flag = IRE_nw_spain_51 }
+					country_exists = SPR
+					SPR = { has_war = yes }
+					date > 1937.1.1
+					date < 1939.6.1
+				}
+				random = {
+					chance = 15
+					set_country_flag = IRE_nw_spain_51
+					country_event = { id = ire_nw.51 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_spanish_volunteers
+					has_country_flag = IRE_nw_spain_50
+					NOT = { has_country_flag = IRE_nw_spain_52 }
+					OR = {
+						NOT = { country_exists = SPR }
+						AND = {
+							country_exists = SPR
+							SPR = { has_war = no }
+						}
+					}
+					date > 1938.6.1
+				}
+				set_country_flag = IRE_nw_spain_52
+				country_event = { id = ire_nw.52 days = 0 }
+			}
+
+			# ============================================================
+			# 大西洋战争
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_atlantic_fleet
+					NOT = { has_country_flag = IRE_nw_convoy_cd }
+					OR = {
+						has_war = yes
+						AND = {
+							country_exists = ENG
+							ENG = { has_war = yes }
+						}
+					}
+					date > 1939.9.1
+					date < 1947.1.1
+				}
+				random = {
+					chance = 35
+					set_country_flag = { flag = IRE_nw_convoy_cd days = 240 value = 1 }
+					country_event = { id = ire_nw.60 days = 0 }
+				}
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_completed_focus = IRE_A_boston
+					NOT = { has_country_flag = IRE_nw_convoy_61 }
+					country_exists = USA
+					country_exists = ENG
+					ENG = { has_war = yes }
+					NOT = { has_war_with = USA }
+					date > 1941.3.1
+				}
+				set_country_flag = IRE_nw_convoy_61
+				country_event = { id = ire_nw.61 days = 0 }
+			}
+		}
+	}
+}
