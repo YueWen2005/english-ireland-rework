@@ -75,7 +75,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_border_plebiscite }
-		x = 16
+		x = 11
 		y = 1
 		ai_will_do = { base = 40 }
 
@@ -96,7 +96,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_common_galway }
-		x = 16
+		x = 12
 		y = 2
 		ai_will_do = { base = 50 }
 
@@ -117,7 +117,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_common_rural }
-		x = 16
+		x = 13
 		y = 3
 		ai_will_do = { base = 50 }
 
@@ -136,7 +136,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_common_dublin_uni }
-		x = 16
+		x = 14
 		y = 4
 		ai_will_do = { base = 50 }
 
@@ -157,7 +157,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_common_tobacco }
-		x = 16
+		x = 15
 		y = 5
 		ai_will_do = { base = 40 }
 
