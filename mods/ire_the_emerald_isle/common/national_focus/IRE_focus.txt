@@ -2244,8 +2244,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_masters_new_world }
-		x = 10
-		y = 17
+		x = 9
+		y = 16
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2269,8 +2269,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_shannon_hub }
-		x = 10
-		y = 18
+		x = 5
+		y = 17
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2292,8 +2292,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_E_shannon_hub }
-		x = 14
-		y = 18
+		x = 13
+		y = 17
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2317,8 +2317,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_peat_fuel }
-		x = 10
-		y = 19
+		x = 5
+		y = 18
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2337,8 +2337,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 12
-		y = 19
+		x = 9
+		y = 18
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2361,8 +2361,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 14
-		y = 19
+		x = 13
+		y = 18
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2380,8 +2380,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNATIONAL_TRADE }
 		prerequisite = { focus = IRE_E_industrial_park }
-		x = 12
-		y = 20
+		x = 9
+		y = 19
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2403,8 +2403,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_merchant_marine }
-		x = 14
-		y = 20
+		x = 13
+		y = 19
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2424,8 +2424,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：出口枢纽与中央银行汇合后才有大西洋经济圈
 		prerequisite = { focus = IRE_E_export_hub }
 		prerequisite = { focus = IRE_E_financial_centre }
-		x = 14
-		y = 21
+		x = 11
+		y = 20
 		available = {
 			OR = {
 				NOT = { has_variable = IRE_neutral_credibility }
@@ -2454,8 +2454,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 16
-		y = 19
+		x = 17
+		y = 18
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2473,8 +2473,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
-		x = 16
-		y = 20
+		x = 15
+		y = 19
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2491,8 +2491,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
-		x = 18
-		y = 20
+		x = 17
+		y = 19
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2511,8 +2511,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：公共卫生与医学教育都完成后才成体系
 		prerequisite = { focus = IRE_E_public_health }
 		prerequisite = { focus = IRE_E_medical_schools }
-		x = 17
-		y = 21
+		x = 16
+		y = 20
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2531,7 +2531,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_E_atlantic_economy }
-		x = 12
+		x = 11
 		y = 21
 		available = {
 			date > 1958.1.1
