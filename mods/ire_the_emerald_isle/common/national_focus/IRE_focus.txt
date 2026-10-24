@@ -1988,8 +1988,8 @@ focus_tree = {
 		id = IRE_E_shannon_hub
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 5
-		x = 11
-		y = 8
+		x = 12
+		y = 9
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2009,8 +2009,8 @@ focus_tree = {
 		icon = GFX_focus_generic_resource_extraction
 		cost = 5
 		prerequisite = { focus = IRE_E_shannon_hub }
-		x = 9
-		y = 9
+		x = 10
+		y = 10
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2028,8 +2028,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 5
 		prerequisite = { focus = IRE_E_shannon_hub }
-		x = 13
-		y = 9
+		x = 14
+		y = 10
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2049,8 +2049,8 @@ focus_tree = {
 		icon = GFX_focus_generic_mass_production
 		cost = 5
 		prerequisite = { focus = IRE_E_peat_fuel }
-		x = 9
-		y = 10
+		x = 10
+		y = 11
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2066,8 +2066,8 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		cost = 5
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 11
-		y = 10
+		x = 12
+		y = 11
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2085,8 +2085,8 @@ focus_tree = {
 		icon = GFX_focus_generic_refit_civilian_ships
 		cost = 5
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 13
-		y = 10
+		x = 14
+		y = 11
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2101,8 +2101,8 @@ focus_tree = {
 		icon = GFX_focus_generic_british_trade
 		cost = 5
 		prerequisite = { focus = IRE_E_industrial_park }
-		x = 11
-		y = 11
+		x = 12
+		y = 12
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2120,8 +2120,8 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		cost = 5
 		prerequisite = { focus = IRE_E_merchant_marine }
-		x = 13
-		y = 11
+		x = 14
+		y = 12
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2138,8 +2138,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：出口枢纽与中央银行汇合后才有大西洋经济圈
 		prerequisite = { focus = IRE_E_export_hub }
 		prerequisite = { focus = IRE_E_financial_centre }
-		x = 13
-		y = 12
+		x = 14
+		y = 13
 		available = {
 			OR = {
 				NOT = { has_variable = IRE_neutral_credibility }
@@ -2161,8 +2161,8 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 5
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 15
-		y = 10
+		x = 16
+		y = 11
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2177,8 +2177,8 @@ focus_tree = {
 		icon = GFX_focus_generic_bad_medical
 		cost = 5
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
-		x = 15
-		y = 11
+		x = 16
+		y = 12
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2193,8 +2193,8 @@ focus_tree = {
 		icon = GFX_focus_INS_expand_batavia_med_school
 		cost = 5
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
-		x = 17
-		y = 11
+		x = 18
+		y = 12
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2210,8 +2210,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：公共卫生与医学教育都完成后才成体系
 		prerequisite = { focus = IRE_E_public_health }
 		prerequisite = { focus = IRE_E_medical_schools }
-		x = 16
-		y = 12
+		x = 17
+		y = 13
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2228,8 +2228,8 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		cost = 10
 		prerequisite = { focus = IRE_E_atlantic_economy }
-		x = 13
-		y = 13
+		x = 14
+		y = 14
 		available = {
 			date > 1958.1.1
 		}
@@ -2253,8 +2253,8 @@ focus_tree = {
 		id = IRE_M_war_cabinet
 		icon = GFX_goal_generic_defence
 		cost = 5
-		x = 36
-		y = 8
+		x = 24
+		y = 16
 		available = {
 			date > 1939.9.1
 			any_country = { is_major = yes has_war = yes }
@@ -2275,8 +2275,8 @@ focus_tree = {
 		icon = GFX_focus_generic_army_attack
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 32
-		y = 9
+		x = 20
+		y = 17
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2291,8 +2291,8 @@ focus_tree = {
 		icon = GFX_focus_generic_army_doctrines_2
 		cost = 5
 		prerequisite = { focus = IRE_M_army_expansion }
-		x = 32
-		y = 10
+		x = 20
+		y = 18
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2307,8 +2307,8 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_production
 		cost = 5
 		prerequisite = { focus = IRE_M_officer_corps }
-		x = 32
-		y = 11
+		x = 20
+		y = 19
 		available = {
 			date > 1940.1.1
 		}
@@ -2329,8 +2329,8 @@ focus_tree = {
 		icon = GFX_focus_generic_coastal_fort
 		cost = 5
 		prerequisite = { focus = IRE_M_army_expansion }
-		x = 34
-		y = 10
+		x = 22
+		y = 18
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2349,8 +2349,8 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 36
-		y = 9
+		x = 24
+		y = 17
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2370,8 +2370,8 @@ focus_tree = {
 		icon = GFX_focus_generic_cruiser_submarines
 		cost = 5
 		prerequisite = { focus = IRE_M_naval_expansion }
-		x = 36
-		y = 10
+		x = 24
+		y = 18
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2386,8 +2386,8 @@ focus_tree = {
 		icon = GFX_focus_generic_torpedo_production
 		cost = 5
 		prerequisite = { focus = IRE_M_submarine_war }
-		x = 37
-		y = 11
+		x = 25
+		y = 19
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2403,8 +2403,8 @@ focus_tree = {
 		icon = GFX_focus_generic_air_bases
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 38
-		y = 9
+		x = 26
+		y = 17
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2422,8 +2422,8 @@ focus_tree = {
 		icon = GFX_focus_generic_aircraft_production
 		cost = 5
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 38
-		y = 10
+		x = 26
+		y = 18
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2439,8 +2439,8 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 40
-		y = 9
+		x = 28
+		y = 17
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2456,8 +2456,8 @@ focus_tree = {
 		icon = GFX_goal_generic_defence
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 34
-		y = 9
+		x = 22
+		y = 17
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2473,8 +2473,8 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_production
 		cost = 5
 		prerequisite = { focus = IRE_M_armour }
-		x = 32
-		y = 12
+		x = 20
+		y = 20
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2493,8 +2493,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_M_officer_corps }
 		prerequisite = { focus = IRE_M_naval_expansion }
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 35
-		y = 12
+		x = 23
+		y = 20
 		ai_will_do = { base = 70 }
 
 		completion_reward = {
