@@ -2935,19 +2935,20 @@ focus_tree = {
 			# 否则叛军随机卷走近半胜利点会导致开战瞬间投降
 			start_civil_war = {
 				ideology = democratic
-				size = 0.18
+				size = 0.01
 				states = { 134 135 }
 				capital = 7394
 			}
-			# 叛军削弱（断粮断血）：人力清零、战支与稳定崩盘，等同清场但零解析风险
+			# 叛军象征性保留 3 个师（v2.8.0）：规模折算降到最低，由 OOB 补足 3 个师，
+			# 轻降战支稳定削弱但不清场
 			every_other_country = {
 				limit = {
 					has_civil_war = yes
 					original_tag = IRE
 				}
-				add_manpower = -500000
-				add_war_support = -0.5
-				add_stability = -0.4
+				add_war_support = -0.2
+				add_stability = -0.2
+				load_oob = "IRE_rebel_3div"
 			}
 			# IRA 夺权方：爆出飞行纵队 + 改国名（玩家侧 IRA，叛军侧自由邦）
 			load_oob = "IRE_ira_army"
@@ -3080,7 +3081,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_volunteer_line }
-		x = 40
+		x = 42
 		y = 8
 		ai_will_do = { base = 20 }
 
@@ -3321,109 +3322,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = IRE_X_rising_gamble
-		icon = GFX_goal_generic_major_war
-		cost = 5
-		prerequisite = { focus = IRE_X_green_action }
-		x = 46
-		y = 9
-		ai_will_do = { base = 10 }
-
-		completion_reward = {
-			add_to_variable = { IRE_exposure = 20 }
-			random = {
-				chance = 50
-				set_country_flag = IRE_rising_won
-			}
-			if = {
-				limit = { NOT = { has_country_flag = IRE_rising_won } }
-				set_country_flag = IRE_rising_lost
-			}
-			country_event = { id = ire.98 days = 1 }
-		}
-	}
-
-	focus = {
-		id = IRE_X_landing_assist
-		icon = GFX_goal_generic_build_navy
-		cost = 5
-		prerequisite = { focus = IRE_X_green_action }
-		x = 50
-		y = 9
-		ai_will_do = { base = 25 }
-
-		completion_reward = {
-			add_war_support = 0.05
-			navy_experience = 25
-			add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 producer = IRE }
-			add_equipment_to_stockpile = { type = medium_plane_airframe_1 amount = 30 producer = IRE }
-			country_event = { id = ire.97 days = 1 }
-		}
-	}
-
-	focus = {
-		id = IRE_X_black_end
-		icon = GFX_goal_generic_political_pressure
-		cost = 10
-		prerequisite = {
-			focus = IRE_X_rising_gamble
-			focus = IRE_X_landing_assist
-		}
-		available = {
-			OR = {
-				has_country_flag = IRE_rising_won
-				has_country_flag = IRE_north_seized
-			}
-		}
-		x = 48
-		y = 10
-		ai_will_do = { base = 40 }
-
-		completion_reward = {
-			add_ideas = IRE_borrowed_knife
-			country_event = { id = ire.99 days = 1 }
-		}
-	}
-
-	focus = {
-		id = IRE_X_crown_westminster
-		icon = GFX_goal_generic_demand_territory
-		cost = 10
-		prerequisite = { focus = IRE_X_black_end }
-		available = {
-			OR = {
-				ENG = { has_capitulated = yes }
-				NOT = { country_exists = ENG }
-			}
-		}
-		x = 48
-		y = 11
-		ai_will_do = { base = 40 }
-
-		completion_reward = {
-			annex_country = { target = ENG transfer_troops = no }
-			add_political_power = 150
-			add_stability = 0.05
-			add_war_support = 0.05
-			country_event = { id = ire.109 days = 1 }
-		}
-	}
-
-	# ============================================================
-	# 红黑线独立工业线（修改意见 v2.5.0 第三部分，x=52-58）
-	# 红线主题：国有化 → 能源自主 → 农村电气化 → 军工动员 → 工人委员会
-	# 黑线主题：隐蔽产能 → 走私补给网 → 德国技术 → 破坏敌方工业 → 战时黑市
-	# ============================================================
-
-	# ---- 红线工业线 ----
-	focus = {
 		id = IRE_R_ind_expropriation
 		icon = GFX_goal_generic_national_unity
 		cost = 10
 		prerequisite = { focus = IRE_R_red_turn }
-		mutually_exclusive = { focus = IRE_X_ind_cottage }
-		x = 39
-		y = 4
+		available = { NOT = { has_completed_focus = IRE_X_ind_cottage } }
+		x = 38
+		y = 5
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3445,8 +3350,8 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_expropriation }
-		x = 39
-		y = 5
+		x = 38
+		y = 6
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3454,23 +3359,13 @@ focus_tree = {
 				limit = { OR = { state = 134 state = 135 } }
 				add_building_construction = { type = infrastructure level = 3 instant_build = yes }
 			}
-			random_owned_controlled_state = {
-				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
-			}
-			random_owned_controlled_state = {
-				limit = { OR = { state = 134 state = 135 } free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
-			}
 			add_ideas = IRE_R_ind_peat_eff
 			hidden_effect = {
 				if = {
 					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
 					add_dynamic_modifier = { modifier = IRE_offmap_civ }
 				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
+				add_to_variable = { IRE_offmap_civ_n = 0.4 }
 			}
 		}
 	}
@@ -3480,19 +3375,11 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 37
-		y = 6
+		x = 36
+		y = 7
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { state = 135 }
-				add_extra_state_shared_building_slots = 4
-			}
-			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
-			}
 			add_stability = 0.02
 			add_ideas = IRE_R_ind_shannon_eff
 			hidden_effect = {
@@ -3500,7 +3387,7 @@ focus_tree = {
 					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
 					add_dynamic_modifier = { modifier = IRE_offmap_civ }
 				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
+				add_to_variable = { IRE_offmap_civ_n = 0.3 }
 			}
 		}
 	}
@@ -3510,15 +3397,11 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 39
-		y = 6
+		x = 38
+		y = 7
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
-			every_owned_state = {
-				limit = { OR = { state = 113 state = 134 state = 135 } }
-				add_extra_state_shared_building_slots = 1
-			}
 			add_ideas = IRE_R_ind_rural_eff
 			hidden_effect = {
 				if = {
@@ -3535,8 +3418,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 41
-		y = 6
+		x = 40
+		y = 7
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3547,85 +3430,16 @@ focus_tree = {
 	}
 
 	focus = {
-		id = IRE_R_ind_arms_drive
-		icon = GFX_goal_generic_construct_mil_factory
+		id = IRE_R_ind_steel_coop
+		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10
-		prerequisite = { focus = IRE_R_ind_rural_electrification }
-		x = 39
-		y = 7
-		ai_will_do = { base = 35 }
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { state = 113 }
-				add_extra_state_shared_building_slots = 5
-			}
-			random_owned_controlled_state = {
-				limit = { state = 113 free_building_slots = { building = arms_factory size > 4 include_locked = no } }
-				add_building_construction = { type = arms_factory level = 5 instant_build = yes }
-			}
-			add_timed_idea = { idea = IRE_R_ind_arms_eff days = 540 }
-			army_experience = 50
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.2 }
-			}
-		}
-	}
-
-	focus = {
-		id = IRE_R_ind_limerick_yard
-		icon = GFX_goal_generic_build_navy
-		cost = 10
-		prerequisite = { focus = IRE_R_ind_shannon_belt }
-		x = 38
-		y = 7
-		ai_will_do = { base = 25 }
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { state = 135 }
-				add_extra_state_shared_building_slots = 2
-			}
-			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = dockyard size > 1 include_locked = no } }
-				add_building_construction = { type = dockyard level = 2 instant_build = yes }
-			}
-			add_ideas = IRE_R_ind_limerick_eff
-			add_equipment_to_stockpile = { type = convoy amount = 20 }
-			navy_experience = 30
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
-		}
-	}
-
-	focus = {
-		id = IRE_R_ind_atlantic_trade
-		icon = GFX_goal_generic_production
-		cost = 10
-		prerequisite = { focus = IRE_R_ind_limerick_yard }
-		x = 38
+		prerequisite = { focus = IRE_R_ind_cooperative }
+		x = 40
 		y = 8
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
-			}
-			add_political_power = 60
-			add_equipment_to_stockpile = { type = convoy amount = 30 }
-			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
-			add_ideas = IRE_atlantic_charter
+			add_political_power = 30
 			hidden_effect = {
 				if = {
 					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
@@ -3637,13 +3451,108 @@ focus_tree = {
 	}
 
 	focus = {
+		id = IRE_R_ind_red_arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = { focus = IRE_R_ind_workers_council }
+		x = 38
+		y = 10
+		ai_will_do = { base = 30 }
+
+		completion_reward = {
+			army_experience = 30
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_mil }
+				}
+				add_to_variable = { IRE_offmap_mil_n = 0.3 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_R_ind_arms_drive
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = { focus = IRE_R_ind_rural_electrification }
+		x = 38
+		y = 8
+		ai_will_do = { base = 35 }
+
+		completion_reward = {
+			add_timed_idea = { idea = IRE_R_ind_arms_eff days = 540 }
+			army_experience = 50
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_mil }
+				}
+				add_to_variable = { IRE_offmap_mil_n = 0.7 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_R_ind_limerick_yard
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = { focus = IRE_R_ind_shannon_belt }
+		x = 36
+		y = 8
+		ai_will_do = { base = 25 }
+
+		completion_reward = {
+			add_ideas = IRE_R_ind_limerick_eff
+			add_equipment_to_stockpile = { type = convoy amount = 20 }
+			navy_experience = 30
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_civ }
+				}
+				add_to_variable = { IRE_offmap_civ_n = 0.1 }
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_dock } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_dock }
+				}
+				add_to_variable = { IRE_offmap_dock_n = 0.2 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_R_ind_atlantic_trade
+		icon = GFX_goal_generic_production
+		cost = 10
+		prerequisite = { focus = IRE_R_ind_limerick_yard }
+		x = 36
+		y = 9
+		ai_will_do = { base = 25 }
+
+		completion_reward = {
+			add_political_power = 60
+			add_equipment_to_stockpile = { type = convoy amount = 30 }
+			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
+			add_ideas = IRE_atlantic_charter
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_civ }
+				}
+				add_to_variable = { IRE_offmap_civ_n = 0.4 }
+			}
+		}
+	}
+
+	focus = {
 		id = IRE_R_ind_workers_council
 		icon = GFX_goal_generic_political_pressure
 		cost = 15
 		prerequisite = { focus = IRE_R_ind_arms_drive }
 		available = { check_variable = { IRE_red_unity > 59 } }
-		x = 39
-		y = 8
+		x = 38
+		y = 9
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3670,9 +3579,9 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 8
 		prerequisite = { focus = IRE_X_shadow_arsenal }
-		mutually_exclusive = { focus = IRE_R_ind_expropriation }
-		x = 54
-		y = 4
+		available = { NOT = { has_completed_focus = IRE_R_ind_expropriation } }
+		x = 52
+		y = 5
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3695,18 +3604,10 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
 		x = 56
-		y = 5
+		y = 6
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { state = 135 }
-				add_extra_state_shared_building_slots = 2
-			}
-			random_owned_controlled_state = {
-				limit = { state = 135 free_building_slots = { building = dockyard size > 1 include_locked = no } }
-				add_building_construction = { type = dockyard level = 2 instant_build = yes }
-			}
 			add_ideas = IRE_X_ind_hidden_cove_eff
 			add_equipment_to_stockpile = { type = convoy amount = 25 }
 			add_to_variable = { IRE_exposure = 10 }
@@ -3717,6 +3618,11 @@ focus_tree = {
 					add_dynamic_modifier = { modifier = IRE_offmap_civ }
 				}
 				add_to_variable = { IRE_offmap_civ_n = 0.1 }
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_dock } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_dock }
+				}
+				add_to_variable = { IRE_offmap_dock_n = 0.2 }
 			}
 		}
 	}
@@ -3726,8 +3632,8 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 54
-		y = 5
+		x = 52
+		y = 6
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3754,18 +3660,13 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
 		x = 54
-		y = 6
+		y = 7
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = { state = 134 }
-				add_extra_state_shared_building_slots = 5
 				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
-			}
-			random_owned_controlled_state = {
-				limit = { state = 134 free_building_slots = { building = industrial_complex size > 1 include_locked = no } }
-				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			add_to_variable = { IRE_exposure = 10 }
 			hidden_effect = {
@@ -3773,7 +3674,7 @@ focus_tree = {
 					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
 					add_dynamic_modifier = { modifier = IRE_offmap_civ }
 				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
+				add_to_variable = { IRE_offmap_civ_n = 0.3 }
 			}
 		}
 	}
@@ -3784,7 +3685,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_border_route }
 		x = 54
-		y = 7
+		y = 8
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3889,7 +3790,7 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 12
 		prerequisite = { focus = IRE_X_ind_s_plan_loot }
-		x = 54
+		x = 50
 		y = 9
 		ai_will_do = { base = 30 }
 
@@ -3904,6 +3805,50 @@ focus_tree = {
 					add_dynamic_modifier = { modifier = IRE_offmap_civ }
 				}
 				add_to_variable = { IRE_offmap_civ_n = 0.3 }
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_mil }
+				}
+				add_to_variable = { IRE_offmap_mil_n = 0.2 }
+			}
+		}
+	}
+
+
+	focus = {
+		id = IRE_X_ind_uboat_dock
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = { focus = IRE_X_ind_hidden_cove }
+		x = 56
+		y = 7
+		ai_will_do = { base = 25 }
+
+		completion_reward = {
+			add_equipment_to_stockpile = { type = convoy amount = 15 }
+			navy_experience = 20
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_dock } } }
+					add_dynamic_modifier = { modifier = IRE_offmap_dock }
+				}
+				add_to_variable = { IRE_offmap_dock_n = 0.2 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_X_ind_assembly
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = { focus = IRE_X_ind_dundalk_depot }
+		x = 54
+		y = 9
+		ai_will_do = { base = 25 }
+
+		completion_reward = {
+			add_to_variable = { IRE_exposure = 10 }
+			hidden_effect = {
 				if = {
 					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
 					add_dynamic_modifier = { modifier = IRE_offmap_mil }
@@ -4101,7 +4046,7 @@ focus_tree = {
 		available = {
 			FRA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 40
+		x = 39
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4158,7 +4103,7 @@ focus_tree = {
 			SPR = { exists = yes NOT = { has_government = communism } }
 			POR = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 42
+		x = 43
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4185,7 +4130,7 @@ focus_tree = {
 		available = {
 			ITA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 43
+		x = 45
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4218,7 +4163,7 @@ focus_tree = {
 			HUN = { exists = yes NOT = { has_government = communism } }
 			CZE = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 40
+		x = 39
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4307,7 +4252,7 @@ focus_tree = {
 			LIT = { exists = yes NOT = { has_government = communism } }
 			EST = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 42
+		x = 43
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4357,7 +4302,7 @@ focus_tree = {
 			DEN = { exists = yes NOT = { has_government = communism } }
 			FIN = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 43
+		x = 45
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4392,7 +4337,7 @@ focus_tree = {
 		available = {
 			RAJ = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 40
+		x = 39
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4450,7 +4395,7 @@ focus_tree = {
 			HOL = { exists = yes NOT = { has_government = communism } }
 			FRA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 42
+		x = 43
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4481,7 +4426,7 @@ focus_tree = {
 			IRQ = { exists = yes NOT = { has_government = communism } }
 			PER = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 43
+		x = 45
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4534,7 +4479,7 @@ focus_tree = {
 		available = {
 			USA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 41
+		x = 42
 		y = 25
 		ai_will_do = { base = 10 }
 
@@ -4559,7 +4504,7 @@ focus_tree = {
 			BRA = { exists = yes NOT = { has_government = communism } }
 			ARG = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 42
+		x = 44
 		y = 25
 		ai_will_do = { base = 10 }
 
@@ -4587,8 +4532,8 @@ focus_tree = {
 		icon = GFX_goal_generic_army_doctrines
 		cost = 10
 		prerequisite = { focus = IRE_X_green_action }
-		x = 50
-		y = 13
+		x = 48
+		y = 9
 		ai_will_do = { base = 20 }
 
 		completion_reward = {
@@ -4603,8 +4548,8 @@ focus_tree = {
 		icon = GFX_goal_generic_military_sphere
 		cost = 10
 		prerequisite = { focus = IRE_X_end_planning }
-		x = 50
-		y = 14
+		x = 48
+		y = 10
 		ai_will_do = { base = 20 }
 
 		completion_reward = {
@@ -4629,8 +4574,8 @@ focus_tree = {
 				any_country = { original_tag = ENG exists = yes }
 			}
 		}
-		x = 52
-		y = 15
+		x = 48
+		y = 11
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -4647,8 +4592,8 @@ focus_tree = {
 		available = {
 			any_country = { original_tag = ENG exists = yes has_capitulated = yes }
 		}
-		x = 52
-		y = 16
+		x = 48
+		y = 12
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -4666,8 +4611,8 @@ focus_tree = {
 		available = {
 			FRA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
-		y = 18
+		x = 46
+		y = 14
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4691,8 +4636,8 @@ focus_tree = {
 			BEL = { exists = yes NOT = { has_government = fascism } }
 			LUX = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 51
-		y = 18
+		x = 48
+		y = 14
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4723,8 +4668,8 @@ focus_tree = {
 			SPR = { exists = yes NOT = { has_government = fascism } }
 			POR = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
-		y = 18
+		x = 50
+		y = 14
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4750,8 +4695,8 @@ focus_tree = {
 		available = {
 			ITA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 53
-		y = 18
+		x = 52
+		y = 14
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4783,8 +4728,8 @@ focus_tree = {
 			HUN = { exists = yes NOT = { has_government = fascism } }
 			CZE = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
-		y = 19
+		x = 46
+		y = 15
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4825,8 +4770,8 @@ focus_tree = {
 			BUL = { exists = yes NOT = { has_government = fascism } }
 			GRE = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 51
-		y = 19
+		x = 48
+		y = 15
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4871,8 +4816,8 @@ focus_tree = {
 			LIT = { exists = yes NOT = { has_government = fascism } }
 			EST = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
-		y = 19
+		x = 50
+		y = 15
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4917,8 +4862,8 @@ focus_tree = {
 			DEN = { exists = yes NOT = { has_government = fascism } }
 			FIN = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 53
-		y = 19
+		x = 52
+		y = 15
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4952,8 +4897,8 @@ focus_tree = {
 		available = {
 			RAJ = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
-		y = 20
+		x = 46
+		y = 16
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4979,8 +4924,8 @@ focus_tree = {
 			ENG = { exists = yes NOT = { has_government = fascism } }
 			FRA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 51
-		y = 20
+		x = 48
+		y = 16
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5010,8 +4955,8 @@ focus_tree = {
 			HOL = { exists = yes NOT = { has_government = fascism } }
 			FRA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
-		y = 20
+		x = 50
+		y = 16
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5041,8 +4986,8 @@ focus_tree = {
 			IRQ = { exists = yes NOT = { has_government = fascism } }
 			PER = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 53
-		y = 20
+		x = 52
+		y = 16
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5068,8 +5013,8 @@ focus_tree = {
 		available = {
 			CAN = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
-		y = 21
+		x = 46
+		y = 17
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5094,8 +5039,8 @@ focus_tree = {
 		available = {
 			USA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 51
-		y = 21
+		x = 48
+		y = 17
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5119,8 +5064,8 @@ focus_tree = {
 			BRA = { exists = yes NOT = { has_government = fascism } }
 			ARG = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
-		y = 21
+		x = 50
+		y = 17
 		ai_will_do = { base = 10 }
 
 		completion_reward = {

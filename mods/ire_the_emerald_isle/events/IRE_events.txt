@@ -656,9 +656,19 @@ country_event = {
 			add_stability = -0.10
 			start_civil_war = {
 				ideology = democratic
-				size = 0.35
+				size = 0.01
 				states = { 134 135 }
 				capital = 7394
+			}
+			# 叛军象征性保留 3 个师（v2.8.0）
+			every_other_country = {
+				limit = {
+					has_civil_war = yes
+					original_tag = IRE
+				}
+				add_war_support = -0.2
+				add_stability = -0.2
+				load_oob = "IRE_rebel_3div"
 			}
 			set_country_flag = IRE_purge_failed
 		}
@@ -694,94 +704,8 @@ country_event = {
 	}
 }
 
-# ---- ire.97 奥兰治登陆之夜 ----
-country_event = {
-	id = ire.97
-	title = ire.97.t
-	desc = ire.97.d
-	picture = GFX_report_event_generic_sign_treaty1
 
-	is_triggered_only = yes
 
-	option = {
-		name = ire.97.a
-		# 请德军把北方移交给我们
-		if = {
-			limit = { 119 = { is_controlled_by = GER } }
-			transfer_state = 119
-			119 = { add_core_of = IRE }
-			set_country_flag = IRE_north_seized
-		}
-		else = {
-			119 = { add_claim_by = IRE }
-		}
-	}
-	option = {
-		name = ire.97.b
-		# 观望：先别趟这滩浑水
-		add_political_power = 25
-	}
-}
-
-# ---- ire.98 复活节暴动·成败 ----
-country_event = {
-	id = ire.98
-	title = ire.98.t
-	desc = ire.98.d
-	picture = GFX_report_event_generic_ruins
-
-	is_triggered_only = yes
-
-	option = {
-		name = ire.98.a
-		trigger = { has_country_flag = IRE_rising_won }
-		# 暴动得手：北方陷入瘫痪
-		add_stability = -0.05
-		add_war_support = 0.05
-		if = {
-			limit = { ENG = { has_war = yes } }
-			transfer_state = 119
-			119 = { add_core_of = IRE }
-			set_country_flag = IRE_north_seized
-		}
-		else = {
-			119 = { add_claim_by = IRE }
-		}
-	}
-	option = {
-		name = ire.98.b
-		trigger = { has_country_flag = IRE_rising_lost }
-		# 暴动惨败：英国怒火滔天
-		add_stability = -0.15
-		add_political_power = -100
-		ENG = {
-			add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg50 }
-			add_ai_strategy = { type = prepare_for_war id = IRE value = 100 }
-		}
-	}
-}
-
-# ---- ire.99 借刀者的账单（黑线终点）----
-country_event = {
-	id = ire.99
-	title = ire.99.t
-	desc = ire.99.d
-	picture = GFX_report_event_generic_conference
-
-	is_triggered_only = yes
-
-	option = {
-		name = ire.99.a
-		# 接受命运的账单
-		add_stability = 0.05
-	}
-	option = {
-		name = ire.99.b
-		# 焚毁所有与柏林往来的名册
-		add_political_power = 50
-		add_to_variable = { IRE_exposure = 10 }
-	}
-}
 
 # ---- ire.100 康诺利的旗帜 ----
 country_event = {
@@ -1052,26 +976,6 @@ country_event = {
 	}
 }
 
-# ---- ire.109 三色旗插上唐宁街（黑线终局：英国并入爱尔兰）----
-country_event = {
-	id = ire.109
-	title = ire.109.t
-	desc = ire.109.d
-	picture = GFX_report_event_generic_sign_treaty1
-
-	is_triggered_only = yes
-
-	option = {
-		name = ire.109.a
-		add_stability = 0.03
-		add_political_power = 100
-	}
-	option = {
-		name = ire.109.b
-		add_war_support = 0.03
-		add_political_power = 100
-	}
-}
 
 # ============================================================
 # ire.70 绿色国际：新世界爱尔兰的政治宣言
