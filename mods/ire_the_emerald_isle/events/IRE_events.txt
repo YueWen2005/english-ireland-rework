@@ -1172,3 +1172,126 @@ country_event = {
 		add_war_support = -0.02
 	}
 }
+
+	# ============================================================
+	# 第五部分：终局剧情线（v2.6.0）
+	# ============================================================
+
+	# ---- ire.111 北爱尔兰回归（红线 R-6 成功分支）----
+	country_event = {
+		id = ire.111
+		title = ire.111.t
+		desc = ire.111.d
+		picture = GFX_report_event_generic_sign_treaty2
+
+		is_triggered_only = yes
+
+		option = {
+			name = ire.111.a
+			add_stability = 0.02
+			add_political_power = 50
+		}
+		option = {
+			name = ire.111.b
+			add_manpower = 20000
+			add_stability = 0.01
+		}
+		option = {
+			name = ire.111.c
+			army_experience = 25
+			add_war_support = 0.02
+		}
+	}
+
+	# ---- ire.112 不列颠的寒冬（红线 R-8 触发英国内战后）----
+	country_event = {
+		id = ire.112
+		title = ire.112.t
+		desc = ire.112.d
+		picture = GFX_report_event_generic_riot
+
+		is_triggered_only = yes
+
+		option = {
+			name = ire.112.a
+			add_war_support = 0.05
+			army_experience = 25
+		}
+		option = {
+			name = ire.112.b
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			add_political_power = -25
+		}
+		option = {
+			name = ire.112.c
+			add_political_power = 50
+			add_stability = 0.01
+		}
+	}
+
+	# ---- ire.113 红旗与三色旗（红线 R-9 合并英伦）----
+	country_event = {
+		id = ire.113
+		title = ire.113.t
+		desc = ire.113.d
+		picture = GFX_report_event_generic_sign_treaty2
+
+		is_triggered_only = yes
+
+		option = {
+			name = ire.113.a
+			add_stability = 0.03
+			add_war_support = 0.03
+		}
+		option = {
+			name = ire.113.b
+			navy_experience = 50
+		}
+		option = {
+			name = ire.113.c
+			add_political_power = 100
+			add_manpower = 50000
+		}
+	}
+
+	# ---- ire.114 新秩序的西堡（黑线 X-4 分赃）----
+	country_event = {
+		id = ire.114
+		title = ire.114.t
+		desc = ire.114.d
+		picture = GFX_report_event_generic_sign_treaty2
+
+		is_triggered_only = yes
+
+		option = {
+			name = ire.114.a
+			# 全部本土归爱尔兰
+			every_country = {
+				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
+				IRE = { annex_country = { target = PREV transfer_troops = no } }
+			}
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
+			add_political_power = 30
+		}
+		option = {
+			name = ire.114.b
+			# 让出英格兰北部工业带换取柏林信任
+			every_country = {
+				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
+				IRE = { annex_country = { target = PREV transfer_troops = no } }
+			}
+			GER = { transfer_state = 131 }
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
+			add_stability = -0.02
+		}
+		option = {
+			name = ire.114.c
+			# 本土归我，海外归德国
+			every_country = {
+				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
+				IRE = { annex_country = { target = PREV transfer_troops = no } }
+			}
+			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
+			add_war_support = 0.03
+		}
+	}

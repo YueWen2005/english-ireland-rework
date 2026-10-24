@@ -1134,6 +1134,83 @@ ideas = {
 			removal_cost = -1
 		}
 
+		# ---- 第五部分：终局剧情线 ----
+		IRE_ENG_red_radio = {
+			picture = generic_spy_intel
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				communism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_ENG_red_strike = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				communism_drift = 0.05
+				industrial_capacity_factory = -0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_intel_network = {
+			picture = generic_spy_intel
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				decryption_factor = 0.15
+				encryption_factor = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_red_volunteers = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				send_volunteer_size = 2
+			}
+			removal_cost = -1
+		}
+
+		IRE_world_revolution_hq = {
+			picture = generic_political_advisor_europe_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_factor = 0.25
+				war_support_factor = 0.10
+				communism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_berlin_partner = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				political_power_factor = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_atlantic_fortress = {
+			picture = generic_coastal_navy
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
 		IRE_revolution_treasury = {
 			picture = generic_political_advisor_europe_2
 			allowed = { always = yes }
