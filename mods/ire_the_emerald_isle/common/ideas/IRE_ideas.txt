@@ -6,7 +6,7 @@ ideas = {
 	country = {
 
 		IRE_treatys_scar = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_the_london_naval_treaty
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -17,7 +17,7 @@ ideas = {
 		}
 
 		IRE_diaspora = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_immigration
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -28,7 +28,7 @@ ideas = {
 		}
 
 		IRE_agrarian_poverty = {
-			picture = generic_production_bonus
+			picture = gre_agricultural_communes
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -41,7 +41,7 @@ ideas = {
 		# 削弱版「农业穷国」：仅保留消费品 +5%，去掉军工 −15%
 		# 对应文档《经济战争的终结》「移除一半负面」（HOI4 无法做「一半」，用替换精神实现）
 		IRE_agrarian_poverty_lite = {
-			picture = generic_production_bonus
+			picture = gre_agricultural_communes2
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -51,7 +51,7 @@ ideas = {
 		}
 
 		IRE_civil_war_embers = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_political_advisor_europe_6
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -63,7 +63,7 @@ ideas = {
 
 		# ---------------- 起点衍生 ----------------
 		IRE_free_framework = {
-			picture = generic_political_advisor_europe_2
+			picture = POL_april_constitution
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -74,7 +74,7 @@ ideas = {
 		}
 
 		IRE_north_unintegrated = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_disjointed_gov
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -86,7 +86,7 @@ ideas = {
 		}
 
 		IRE_sectarian_rift = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_oppression
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -98,7 +98,7 @@ ideas = {
 
 		# ---------------- 工业 / 内政 ----------------
 		IRE_rural_electrification = {
-			picture = generic_production_bonus
+			picture = generic_build_infrastructure
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -107,7 +107,7 @@ ideas = {
 		}
 
 		IRE_anglo_irish_beef = {
-			picture = generic_production_bonus
+			picture = ARG_argentine_beef_trade
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -117,7 +117,7 @@ ideas = {
 		}
 
 		IRE_republican_constitution = {
-			picture = generic_political_advisor_europe_2
+			picture = SIA_constitutional_virtue
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -127,7 +127,7 @@ ideas = {
 		}
 
 		IRE_free_country = {
-			picture = generic_political_advisor_europe_2
+			picture = branch_independence_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -138,7 +138,7 @@ ideas = {
 
 		# 《清算条约》— 每日政治点数 +0.10（political_power_gain 单位是「每天固定点数」）
 		IRE_settled_treaty = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_constitutional_guarantees
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -149,7 +149,7 @@ ideas = {
 
 		# 英国贸易制裁（ire.2 挂上，《清算条约》解除）
 		IRE_british_sanctions = {
-			picture = generic_production_bonus
+			picture = generic_economic_crisis
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -162,7 +162,7 @@ ideas = {
 		# 文档要求「特殊建筑」，HOI4 不能自定义建筑类型，用精神等价表达：
 		# 舰船建造速度 +10%、船坞产出 +10%
 		IRE_haaland_wolff = {
-			picture = generic_production_bonus
+			picture = generic_naval_manufacturer_2
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -173,7 +173,7 @@ ideas = {
 
 		# ---------------- A 线：跨海网络 ----------------
 		IRE_atlantic_bloodline = {
-			picture = generic_navy_bonus
+			picture = generic_navy_europe_2
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -183,7 +183,7 @@ ideas = {
 		}
 
 		IRE_green_flag_post = {
-			picture = generic_political_advisor_europe_2
+			picture = home_of_revolution
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -192,7 +192,7 @@ ideas = {
 		}
 
 		IRE_diaspora_fund = {
-			picture = generic_production_bonus
+			picture = generic_mild_economic_recovery
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -201,7 +201,7 @@ ideas = {
 		}
 
 		IRE_saint_patrick_name = {
-			picture = generic_infantry_bonus
+			picture = generic_pp_unity_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -213,7 +213,7 @@ ideas = {
 		# 圣帕特里克营实战修正（文档 攻击+15% 防御+10% 组织度+15%）
 		# 负面项（人力需求+10%、补给+10%）做成国家级会波及全军，故不实现
 		IRE_san_patricio_elite = {
-			picture = generic_infantry_bonus
+			picture = generic_army_europe_6
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -224,7 +224,7 @@ ideas = {
 		}
 
 		IRE_atlantic_bloodline_2 = {
-			picture = generic_navy_bonus
+			picture = generic_navy_europe_3
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -234,7 +234,7 @@ ideas = {
 		}
 
 		IRE_celtic_world = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_political_advisor_europe_3
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -244,7 +244,7 @@ ideas = {
 		}
 
 		IRE_washingtons_friend = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_political_advisor_europe_4
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -253,7 +253,7 @@ ideas = {
 		}
 
 		IRE_southern_supply_line = {
-			picture = generic_production_bonus
+			picture = generic_supply_line
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -263,7 +263,7 @@ ideas = {
 		}
 
 		IRE_transatlantic_supply = {
-			picture = generic_production_bonus
+			picture = generic_logistics
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -273,7 +273,7 @@ ideas = {
 		}
 
 		IRE_final_ascension = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_victors_of_ww1
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -285,7 +285,7 @@ ideas = {
 
 		# 纽芬兰渔场：文档「+4 鱼类」「+8 鱼类」的替代（HOI4 无鱼类资源）
 		IRE_newfoundland_fisheries = {
-			picture = generic_production_bonus
+			picture = generic_agrarian_reform
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -297,7 +297,7 @@ ideas = {
 		# 渔民兄弟会：文档「每月 +0.05 政治点数」（每月约 30 天 → 每天 0.0017，
 		# 但 HOI4 最小粒度为每日点，取 0.02 使其体感接近文档的「少量持续收益」）
 		IRE_fisher_brotherhood_idea = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_agrarian_society
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -307,7 +307,7 @@ ideas = {
 
 		# 南美农产品贸易：文档「牛肉 +8、小麦 +6」的替代（HOI4 无此资源）
 		IRE_south_american_trade = {
-			picture = generic_production_bonus
+			picture = generic_economic_recovery
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -318,7 +318,7 @@ ideas = {
 
 		# ---------------- B 线：紧急状态三级 ----------------
 		IRE_emergency_powers = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_war_preparation
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -331,7 +331,7 @@ ideas = {
 		}
 
 		IRE_emergency_powers_2 = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_manpower_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -344,7 +344,7 @@ ideas = {
 		}
 
 		IRE_emergency_powers_3 = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_army_war_college
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -357,7 +357,7 @@ ideas = {
 		}
 
 		IRE_lookout_post = {
-			picture = generic_air_bonus
+			picture = long_range_patrol_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -367,7 +367,7 @@ ideas = {
 		}
 
 		IRE_reserve_defence = {
-			picture = generic_infantry_bonus
+			picture = generic_reserve_divisions
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -434,7 +434,7 @@ ideas = {
 		# 经济区域精神
 		# ============================================================
 		IRE_shannon_grid = {
-			picture = generic_production_bonus
+			picture = por_hydroelectric_power
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -444,7 +444,7 @@ ideas = {
 		}
 
 		IRE_peat_energy = {
-			picture = generic_production_bonus
+			picture = generic_energy_concern
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -454,7 +454,7 @@ ideas = {
 		}
 
 		IRE_modern_agriculture = {
-			picture = generic_production_bonus
+			picture = LIT_invested_in_farms
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -464,7 +464,7 @@ ideas = {
 		}
 
 		IRE_merchant_marine = {
-			picture = generic_navy_bonus
+			picture = merchant_mariners_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -474,7 +474,7 @@ ideas = {
 		}
 
 		IRE_export_economy = {
-			picture = generic_production_bonus
+			picture = export_focus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -484,7 +484,7 @@ ideas = {
 		}
 
 		IRE_dublin_finance = {
-			picture = generic_political_advisor_europe_2
+			picture = CZE_national_bank_of_czechoslovakia
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -494,7 +494,7 @@ ideas = {
 		}
 
 		IRE_atlantic_economy = {
-			picture = generic_production_bonus
+			picture = free_trade
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -508,7 +508,7 @@ ideas = {
 		# 军事区域精神
 		# ============================================================
 		IRE_war_cabinet = {
-			picture = generic_political_advisor_europe_2
+			picture = AST_cabinet_trust1_idea
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -519,7 +519,7 @@ ideas = {
 		}
 
 		IRE_army_expansion = {
-			picture = generic_infantry_bonus
+			picture = HUN_rapid_army_expansion
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -529,7 +529,7 @@ ideas = {
 		}
 
 		IRE_officer_corps = {
-			picture = generic_infantry_bonus
+			picture = professional_officer_corps_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -540,7 +540,7 @@ ideas = {
 		}
 
 		IRE_coastal_fortress = {
-			picture = generic_infantry_bonus
+			picture = FIN_coastal_batteries_effort
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -550,7 +550,7 @@ ideas = {
 		}
 
 		IRE_submarine_war = {
-			picture = generic_navy_bonus
+			picture = generic_navy_submarines
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -560,7 +560,7 @@ ideas = {
 		}
 
 		IRE_convoy_escort = {
-			picture = generic_navy_bonus
+			picture = escort_effort_focus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -570,7 +570,7 @@ ideas = {
 		}
 
 		IRE_maritime_patrol = {
-			picture = generic_air_bonus
+			picture = maritime_patrol_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -581,7 +581,7 @@ ideas = {
 		}
 
 		IRE_g2_intelligence = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_intel_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -591,7 +591,7 @@ ideas = {
 		}
 
 		IRE_total_defence = {
-			picture = generic_infantry_bonus
+			picture = all_arms_at_defense_army_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -603,7 +603,7 @@ ideas = {
 
 		# ---------------- A 线：侧分支与紧急状态 ----------------
 		IRE_remittance_economy = {
-			picture = generic_production_bonus
+			picture = generic_foreign_capital
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -613,7 +613,7 @@ ideas = {
 		}
 
 		IRE_volunteer_corps = {
-			picture = generic_infantry_bonus
+			picture = generic_volunteer_expedition_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -623,7 +623,7 @@ ideas = {
 		}
 
 		IRE_wartime_economy = {
-			picture = generic_production_bonus
+			picture = generic_central_management
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -634,7 +634,7 @@ ideas = {
 		}
 
 		IRE_atlantic_wall = {
-			picture = generic_navy_bonus
+			picture = generic_wall_line
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -645,7 +645,7 @@ ideas = {
 		}
 
 		IRE_ulster_bulwark = {
-			picture = generic_infantry_bonus
+			picture = generic_mountain_defensive_training
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -655,7 +655,7 @@ ideas = {
 		}
 
 		IRE_britain_war_plan = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_naval_invade_britain
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -665,7 +665,7 @@ ideas = {
 		}
 
 		IRE_fortress_ireland = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_fortify_the_borders
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -677,7 +677,7 @@ ideas = {
 
 		# ---------------- A 线外交（历史原型：多尼戈尔走廊、野鹅、港口换统一） ----------------
 		IRE_donegal_corridor = {
-			picture = generic_air_bonus
+			picture = generic_radar
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -688,7 +688,7 @@ ideas = {
 		}
 
 		IRE_wild_geese = {
-			picture = generic_infantry_bonus
+			picture = generic_army_europe_2
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -698,7 +698,7 @@ ideas = {
 		}
 
 		IRE_unity_for_ports = {
-			picture = generic_political_advisor_europe_2
+			picture = DEN_aalborg_portland
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -710,7 +710,7 @@ ideas = {
 
 		# ---------------- 经济区域（医院彩票、战后香农自由区） ----------------
 		IRE_hospital_sweepstake = {
-			picture = generic_production_bonus
+			picture = ARG_social_welfare_fund_ns
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -720,7 +720,7 @@ ideas = {
 		}
 
 		IRE_public_health = {
-			picture = generic_manpower_bonus
+			picture = FIN_socialist_welfare
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -740,7 +740,7 @@ ideas = {
 		}
 
 		IRE_national_health = {
-			picture = generic_pp_unity_bonus
+			picture = SIA_civillian_full_support
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -752,7 +752,7 @@ ideas = {
 		}
 
 		IRE_shannon_free_zone = {
-			picture = generic_production_bonus
+			picture = RAJ_special_economic_zones
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -764,7 +764,7 @@ ideas = {
 
 		# ---------------- 军事区域（海岸瞭望队、装甲车） ----------------
 		IRE_coast_watch = {
-			picture = generic_navy_bonus
+			picture = home_defence_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -775,7 +775,7 @@ ideas = {
 		}
 
 		IRE_armoured_cars = {
-			picture = generic_infantry_bonus
+			picture = generic_tank_manufacturer_1
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -791,14 +791,14 @@ ideas = {
 	hidden_ideas = {
 
 		IRE_border_plebiscite_support_1 = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_political_support
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = { }
 		}
 
 		IRE_mobilisation_drive = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_women_in_the_army
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {

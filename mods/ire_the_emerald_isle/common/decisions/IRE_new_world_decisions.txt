@@ -16,10 +16,6 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			113 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_leinster_count }
-				check_variable = { IRE_dev_leinster_count < 2 }
-			}
 		}
 
 		visible = { has_idea = IRE_home_development }
@@ -53,10 +49,6 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			135 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_munster_count }
-				check_variable = { IRE_dev_munster_count < 2 }
-			}
 		}
 
 		visible = { has_idea = IRE_home_development }
@@ -90,10 +82,6 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			134 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_connaught_count }
-				check_variable = { IRE_dev_connaught_count < 2 }
-			}
 		}
 
 		visible = { has_idea = IRE_home_development }
@@ -577,53 +565,142 @@ IRE_interference_cat = {
 }
 
 # ============================================================
-# 北美：策动加拿大与英属北美归并
+# 北欧：支持与入盟
 # ============================================================
-IRE_america_cat = {
+IRE_nordic_cat = {
 
-	IRE_canada_border_conflict = {
-		icon = border_war
-		cost = 100
+	IRE_nordic_aid = {
+		icon = generic_political_rally
+		cost = 50
+		days_remove = 60
 
 		available = {
-			has_completed_focus = IRE_A_canada_independence
-			country_exists = CAN
-			CAN = { is_subject = no }
-			NOT = { has_country_flag = IRE_canada_annexed }
-			NOT = { has_border_war_with = CAN }
-			NOT = { has_war_with = CAN }
-			332 = { is_owned_by = ROOT }
-			860 = { is_owned_by = CAN }
+			has_completed_focus = IRE_A_nordic_bridge
+			any_country = {
+				OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+				exists = yes
+			}
 		}
 
-		visible = { has_completed_focus = IRE_A_canada_independence }
+		visible = { has_completed_focus = IRE_A_nordic_bridge }
 		fire_only_once = no
 
 		complete_effect = {
-			custom_effect_tooltip = IRE_canada_border_conflict_tt
-			# 有限边境冲突：只在拉布拉多与魁北克北岸之间开战，不触发对英宣战
-			start_border_war = {
-				change_state_after_war = no
-				combat_width = 120
-				minimum_duration_in_days = 30
-				attacker = {
-					state = 332
-					num_provinces = 3
-					on_win = ire.80
-					on_lose = ire.81
-					on_cancel = ire.81
+			every_country = {
+				limit = {
+					OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+					exists = yes
+					is_subject = no
 				}
-				defender = {
-					state = 860
-					num_provinces = 3
-					on_win = ire.82
-					on_lose = ire.83
-					on_cancel = ire.83
-				}
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 }
 			}
-			add_war_support = 0.03
+			add_political_power = 10
 		}
 
-		ai_will_do = { base = 60 }
+		ai_will_do = { base = 35 }
+	}
+
+	IRE_invite_sweden = {
+		icon = generic_political_rally
+		cost = 25
+
+		available = {
+			has_completed_focus = IRE_A_nordic_alliance
+			is_faction_leader = yes
+			country_exists = SWE
+			SWE = {
+				is_subject = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 49 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_nordic_alliance }
+		fire_only_once = yes
+
+		complete_effect = {
+			add_to_faction = SWE
+			add_political_power = 10
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_invite_norway = {
+		icon = generic_political_rally
+		cost = 25
+
+		available = {
+			has_completed_focus = IRE_A_nordic_alliance
+			is_faction_leader = yes
+			country_exists = NOR
+			NOR = {
+				is_subject = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 49 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_nordic_alliance }
+		fire_only_once = yes
+
+		complete_effect = {
+			add_to_faction = NOR
+			add_political_power = 10
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_invite_denmark = {
+		icon = generic_political_rally
+		cost = 25
+
+		available = {
+			has_completed_focus = IRE_A_nordic_alliance
+			is_faction_leader = yes
+			country_exists = DEN
+			DEN = {
+				is_subject = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 49 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_nordic_alliance }
+		fire_only_once = yes
+
+		complete_effect = {
+			add_to_faction = DEN
+			add_political_power = 10
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_invite_finland = {
+		icon = generic_political_rally
+		cost = 25
+
+		available = {
+			has_completed_focus = IRE_A_nordic_alliance
+			is_faction_leader = yes
+			country_exists = FIN
+			FIN = {
+				is_subject = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 49 }
+			}
+		}
+
+		visible = { has_completed_focus = IRE_A_nordic_alliance }
+		fire_only_once = yes
+
+		complete_effect = {
+			add_to_faction = FIN
+			add_political_power = 10
+		}
+
+		ai_will_do = { base = 40 }
 	}
 }

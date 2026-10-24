@@ -121,10 +121,12 @@
 
 			available = {
 				has_completed_focus = IRE_A_reconciliation
+				NOT = { has_country_flag = IRE_border_done }
 			}
 
 			visible = {
 				has_completed_focus = IRE_A_reconciliation
+				NOT = { has_country_flag = IRE_border_done }
 			}
 
 			fire_only_once = no
@@ -161,12 +163,13 @@
 				}
 			}
 
-			fire_only_once = no
+			fire_only_once = yes
 
 			complete_effect = {
-				add_stability = 0.03
+				add_stability = 0.05
+				add_political_power = 25
 				119 = {
-					add_resistance = -5
+					add_resistance = -20
 				}
 			}
 
@@ -234,10 +237,12 @@
 
 			available = {
 				has_completed_focus = IRE_A_newfoundland
+				NOT = { has_country_flag = IRE_nf_resolved }
 			}
 
 			visible = {
 				has_completed_focus = IRE_A_newfoundland
+				NOT = { has_country_flag = IRE_nf_resolved }
 			}
 
 			fire_only_once = no

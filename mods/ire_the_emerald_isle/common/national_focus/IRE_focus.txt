@@ -29,7 +29,7 @@ focus_tree = {
 		id = IRE_border_plebiscite
 		icon = GFX_focus_AFG_pashtunistan_referendum
 		cost = 5
-		x = 10
+		x = 8
 		y = 0
 		mutually_exclusive = { focus = IRE_consolidate_free_state focus = IRE_ira_council }
 		ai_will_do = { base = 50 }
@@ -197,7 +197,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		cost = 5
 		prerequisite = { focus = IRE_A_revitalise }
-		x = 4
+		x = 2
 		y = 2
 		ai_will_do = { base = 55 }
 
@@ -207,13 +207,7 @@ focus_tree = {
 			set_variable = { IRE_dev_leinster_count = 0 }
 			set_variable = { IRE_dev_munster_count = 0 }
 			set_variable = { IRE_dev_connaught_count = 0 }
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -222,7 +216,7 @@ focus_tree = {
 		icon = GFX_focus_generic_resource_extraction
 		cost = 5
 		prerequisite = { focus = IRE_A_home_development }
-		x = 4
+		x = 2
 		y = 3
 		ai_will_do = { base = 50 }
 
@@ -261,7 +255,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		cost = 10
 		prerequisite = { focus = IRE_A_mineral_survey }
-		x = 4
+		x = 2
 		y = 4
 		ai_will_do = { base = 50 }
 
@@ -291,13 +285,7 @@ focus_tree = {
 			add_research_slot = 1
 			add_stability = 0.03
 			custom_effect_tooltip = IRE_effect_infrastructure_programme
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -307,7 +295,7 @@ focus_tree = {
 		icon = GFX_focus_AST_liberty_loans
 		cost = 5
 		prerequisite = { focus = IRE_A_revitalise }
-		x = 8
+		x = 4
 		y = 2
 		ai_will_do = { base = 40 }
 
@@ -315,13 +303,7 @@ focus_tree = {
 			add_ideas = IRE_remittance_economy
 			add_political_power = 25
 			add_stability = 0.03
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -390,6 +372,8 @@ focus_tree = {
 			add_ideas = IRE_wild_geese
 			add_manpower = 15000
 			army_experience = 50
+			# 野鹅传统：提前开放志愿军派遣，不必等到西班牙国策
+			set_rule = { can_send_volunteers = yes }
 		}
 	}
 
@@ -403,7 +387,6 @@ focus_tree = {
 		y = 4
 		available = {
 			date > 1936.7.17
-			date < 1939.4.1
 			country_exists = SPR
 			SPR = {
 				has_war = yes
@@ -456,7 +439,7 @@ focus_tree = {
 		icon = GFX_focus_PHI_declare_military_emergency
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 10
+		x = 8
 		y = 5
 		available = {
 			OR = {
@@ -480,7 +463,7 @@ focus_tree = {
 		icon = GFX_focus_SOV_mobilization_plan
 		cost = 5
 		prerequisite = { focus = IRE_A_emergency }
-		x = 10
+		x = 6
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -491,13 +474,7 @@ focus_tree = {
 				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			}
 			add_war_support = 0.05
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.2 }
-			}
+			add_offsite_building = { type = arms_factory level = 2 }
 		}
 	}
 
@@ -506,7 +483,7 @@ focus_tree = {
 		icon = GFX_focus_FIN_coastal_defense
 		cost = 5
 		prerequisite = { focus = IRE_A_emergency }
-		x = 12
+		x = 8
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -526,7 +503,7 @@ focus_tree = {
 		icon = GFX_focus_CZE_second_fortification_program
 		cost = 5
 		prerequisite = { focus = IRE_A_emergency }
-		x = 14
+		x = 10
 		y = 6
 		ai_will_do = { base = 50 }
 
@@ -549,7 +526,7 @@ focus_tree = {
 		icon = GFX_focus_attack_britain
 		cost = 5
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 15
+		x = 11
 		y = 7
 		ai_will_do = { base = 45 }
 
@@ -568,7 +545,7 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：必须同时完成大西洋防线与厄尔斯特壁垒
 		prerequisite = { focus = IRE_A_atlantic_wall }
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 13
+		x = 9
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -586,7 +563,7 @@ focus_tree = {
 		icon = GFX_focus_generic_world_peace
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 4
+		x = 2
 		y = 5
 		mutually_exclusive = { focus = IRE_A_firm_integration }
 		ai_will_do = { base = 40 }
@@ -603,7 +580,7 @@ focus_tree = {
 		icon = GFX_focus_generic_national_security
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 6
+		x = 4
 		y = 5
 		mutually_exclusive = { focus = IRE_A_reconciliation }
 		ai_will_do = { base = 40 }
@@ -624,7 +601,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_chilean_ultimatum
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 8
+		x = 6
 		y = 5
 		mutually_exclusive = { focus = IRE_A_newfoundland }
 		ai_will_do = { base = 30 }
@@ -642,7 +619,7 @@ focus_tree = {
 		icon = GFX_focus_generic_air_defense
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 12
+		x = 10
 		y = 5
 		available = {
 			OR = {
@@ -668,7 +645,7 @@ focus_tree = {
 		icon = GFX_focus_SOV_reinforce_western_naval_bases
 		cost = 10
 		prerequisite = { focus = IRE_A_london_note }
-		x = 10
+		x = 6
 		y = 7
 		available = {
 			date > 1940.6.1
@@ -687,7 +664,7 @@ focus_tree = {
 		icon = GFX_focus_generic_treaty
 		cost = 5
 		prerequisite = { focus = IRE_A_london_note }
-		x = 8
+		x = 4
 		y = 6
 		ai_will_do = { base = 40 }
 
@@ -704,7 +681,7 @@ focus_tree = {
 		icon = GFX_focus_SOV_reinforce_northern_naval_bases
 		cost = 5
 		prerequisite = { focus = IRE_A_settle_treaty }
-		x = 8
+		x = 4
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -725,7 +702,7 @@ focus_tree = {
 		icon = GFX_focus_generic_atlantic_coast
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 2
+		x = 12
 		y = 5
 		ai_will_do = { base = 60 }
 
@@ -742,7 +719,7 @@ focus_tree = {
 		icon = GFX_focus_generic_immigration
 		cost = 5
 		prerequisite = { focus = IRE_A_atlantic_call }
-		x = 2
+		x = 12
 		y = 6
 		ai_will_do = { base = 60 }
 
@@ -767,7 +744,7 @@ focus_tree = {
 		icon = GFX_focus_generic_atlantic_coast
 		cost = 5
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 0
+		x = 10
 		y = 7
 		mutually_exclusive = { focus = IRE_A_london_note }
 		ai_will_do = { base = 50 }
@@ -778,6 +755,7 @@ focus_tree = {
 			IRE_add_diaspora_network = yes
 			custom_effect_tooltip = IRE_effect_diaspora_network_20
 			set_variable = { IRE_nf_support = 0 }
+			country_event = { id = ire_nw.19 days = 1 }
 		}
 	}
 
@@ -788,8 +766,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：必须先完成支持度门槛
 		prerequisite = { focus = IRE_A_newfoundland }
 		prerequisite = { focus = IRE_nf_support_50 }
-		x = 0
-		y = 9
+		x = 10
+		y = 8
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -802,10 +780,13 @@ focus_tree = {
 		icon = GFX_focus_generic_public_meetings
 		cost = 5
 		prerequisite = { focus = IRE_A_newfoundland }
-		x = -2
+		x = 8
 		y = 8
 		available = {
-			check_variable = { IRE_nf_support > 49 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_nf_support_50
+				check_variable = { IRE_nf_support > 49 }
+			}
 		}
 		ai_will_do = { base = 0 }
 		cancel_if_invalid = yes
@@ -821,8 +802,8 @@ focus_tree = {
 		icon = GFX_focus_generic_annex_country
 		cost = 5
 		prerequisite = { focus = IRE_A_nf_plebiscite }
-		x = 0
-		y = 10
+		x = 10
+		y = 9
 		ai_will_do = { base = 60 }
 
 	completion_reward = {
@@ -858,7 +839,7 @@ focus_tree = {
 		icon = GFX_focus_USA_uncle_sam
 		cost = 5
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 2
+		x = 14
 		y = 7
 		ai_will_do = { base = 50 }
 
@@ -866,13 +847,7 @@ focus_tree = {
 			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			IRE_add_diaspora_network = yes
 			custom_effect_tooltip = IRE_effect_diaspora_network_20
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -881,7 +856,7 @@ focus_tree = {
 		icon = GFX_focus_GER_rally_the_industrialists
 		cost = 5
 		prerequisite = { focus = IRE_A_boston }
-		x = 2
+		x = 14
 		y = 8
 		ai_will_do = { base = 50 }
 
@@ -902,7 +877,7 @@ focus_tree = {
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		cost = 5
 		prerequisite = { focus = IRE_A_lobby }
-		x = 2
+		x = 14
 		y = 9
 		ai_will_do = { base = 50 }
 
@@ -925,7 +900,7 @@ focus_tree = {
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		cost = 5
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 4
+		x = 12
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -949,7 +924,7 @@ focus_tree = {
 		icon = GFX_focus_generic_army_attack
 		cost = 5
 		prerequisite = { focus = IRE_A_san_patricio }
-		x = 4
+		x = 12
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -967,7 +942,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_towards_a_greater_argentina
 		cost = 5
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 6
+		x = 16
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -981,13 +956,7 @@ focus_tree = {
 			add_ideas = IRE_south_american_trade
 			IRE_add_diaspora_network = yes
 			custom_effect_tooltip = IRE_effect_diaspora_network_20
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -996,7 +965,7 @@ focus_tree = {
 		icon = GFX_focus_generic_supply_line
 		cost = 5
 		prerequisite = { focus = IRE_A_buenos_aires }
-		x = 6
+		x = 16
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -1005,13 +974,7 @@ focus_tree = {
 			custom_effect_tooltip = IRE_effect_southern_supply_line
 			IRE_add_diaspora_network = yes
 			custom_effect_tooltip = IRE_effect_diaspora_network_20
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.1 }
-			}
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
@@ -1026,20 +989,14 @@ focus_tree = {
 			focus = IRE_A_green_legion
 			focus = IRE_A_southern_cone
 		}
-		x = 4
+		x = 12
 		y = 10
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
 			add_ideas = IRE_transatlantic_supply
 			custom_effect_tooltip = IRE_effect_transatlantic_supply
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.1 }
-			}
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
@@ -1047,13 +1004,13 @@ focus_tree = {
 		id = IRE_A_canada_independence
 		icon = GFX_focus_generic_phoenix
 		cost = 10
-		prerequisite = { focus = IRE_A_nf_province }
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 0
+		x = 8
 		y = 11
 		available = {
 			country_exists = CAN
-			331 = { is_owned_by = ROOT }
+			CAN = { is_subject = no }
+			NOT = { has_country_flag = IRE_canada_annexed }
 			NOT = { ENG = { has_war_with = ROOT } }
 		}
 		ai_will_do = { base = 50 }
@@ -1066,12 +1023,15 @@ focus_tree = {
 					limit = { CAN = { is_subject_of = ENG } }
 					ENG = { set_autonomy = { target = CAN autonomy_state = autonomy_free } }
 				}
-				# 无论是否仍为自治领，都必须退出英国阵营，否则边境冲突会拖英国下水
+				# 退出任何现有阵营，并禁止再加入英国阵营
 				if = {
-					limit = { CAN = { is_in_faction_with = ENG } }
-					ENG = { remove_from_faction = CAN }
+					limit = { CAN = { is_in_faction = yes } }
+					CAN = { leave_faction = yes }
 				}
-				CAN = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } }
+				CAN = {
+					set_rule = { can_join_factions = no }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 }
+				}
 				# 拉布拉多与纽芬兰同属一个自治领；旧存档若未一并移交则在此补齐
 				if = {
 					limit = {
@@ -1091,16 +1051,113 @@ focus_tree = {
 	}
 
 	focus = {
+		id = IRE_A_canada_annex
+		icon = GFX_focus_generic_annex_country_2
+		cost = 10
+		prerequisite = { focus = IRE_A_canada_independence }
+		x = 8
+		y = 12
+		available = {
+			country_exists = CAN
+			CAN = { is_subject = no NOT = { has_capitulated = yes } }
+			NOT = { has_country_flag = IRE_canada_annexed }
+			NOT = { has_war_with = CAN }
+		}
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			if = {
+				limit = { country_exists = CAN }
+				if = {
+					limit = { CAN = { is_in_faction = yes } }
+					CAN = { leave_faction = yes }
+				}
+				annex_country = { target = CAN transfer_troops = yes }
+				set_country_flag = IRE_canada_annexed
+				add_ideas = IRE_british_north_america
+				add_political_power = 100
+				add_stability = 0.05
+				add_war_support = 0.05
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory level = 2 }
+				add_offsite_building = { type = dockyard level = 1 }
+				country_event = { id = ire_nw.33 days = 1 }
+			}
+			if = {
+				limit = { country_exists = ENG }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg60 } }
+			}
+			if = {
+				limit = { country_exists = USA }
+				USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
+			}
+			custom_effect_tooltip = IRE_effect_canada_annex
+		}
+	}
+
+	focus = {
+		id = IRE_A_new_world_ireland
+		icon = GFX_focus_BRA_create_faction
+		cost = 10
+		prerequisite = { focus = IRE_A_canada_annex }
+		x = 8
+		y = 13
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_annexed
+				has_country_flag = IRE_canada_annexed
+			}
+		}
+		ai_will_do = { base = 70 }
+
+		completion_reward = {
+			# 新世界爱尔兰：把北美大陆纳入核心疆域
+			276 = { add_core_of = ROOT }
+			464 = { add_core_of = ROOT }
+			465 = { add_core_of = ROOT }
+			466 = { add_core_of = ROOT }
+			467 = { add_core_of = ROOT }
+			468 = { add_core_of = ROOT }
+			469 = { add_core_of = ROOT }
+			470 = { add_core_of = ROOT }
+			471 = { add_core_of = ROOT }
+			472 = { add_core_of = ROOT }
+			473 = { add_core_of = ROOT }
+			682 = { add_core_of = ROOT }
+			683 = { add_core_of = ROOT }
+			739 = { add_core_of = ROOT }
+			740 = { add_core_of = ROOT }
+			860 = { add_core_of = ROOT }
+			861 = { add_core_of = ROOT }
+			862 = { add_core_of = ROOT }
+			863 = { add_core_of = ROOT }
+			864 = { add_core_of = ROOT }
+			865 = { add_core_of = ROOT }
+			866 = { add_core_of = ROOT }
+			867 = { add_core_of = ROOT }
+			set_cosmetic_tag = IRE_new_world
+			add_manpower = 30000
+			add_political_power = 100
+			add_stability = 0.05
+			add_offsite_building = { type = industrial_complex level = 3 }
+			custom_effect_tooltip = IRE_effect_new_world_ireland
+			country_event = { id = ire_nw.34 days = 1 }
+		}
+	}
+
+	focus = {
 		id = IRE_A_celtic_commonwealth
 		icon = GFX_focus_generic_league_of_nations
 		cost = 10
-		# 两个 prerequisite 块之间为 AND：补给网与纽芬兰核心化都不可少
+		# 只要求跨大西洋补给网；走对英路线时不会被纽芬兰锁死
 		prerequisite = { focus = IRE_A_supply_web }
-		prerequisite = { focus = IRE_A_nf_province }
-		x = 2
+		x = 10
 		y = 11
 		available = {
-			check_variable = { IRE_diaspora_network > 99 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_diaspora_100
+				check_variable = { IRE_diaspora_network > 99 }
+			}
 		}
 		ai_will_do = { base = 60 }
 
@@ -1108,13 +1165,7 @@ focus_tree = {
 			add_ideas = IRE_celtic_world
 			add_stability = 0.15
 			add_war_support = 0.10
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.2 }
-			}
+			add_offsite_building = { type = industrial_complex level = 2 }
 		}
 	}
 
@@ -1123,7 +1174,7 @@ focus_tree = {
 		icon = GFX_focus_generic_democratic_europe
 		cost = 10
 		prerequisite = { focus = IRE_A_celtic_commonwealth }
-		x = 2
+		x = 10
 		y = 12
 		ai_will_do = { base = 60 }
 
@@ -1143,10 +1194,13 @@ focus_tree = {
 		icon = GFX_focus_generic_conference
 		cost = 10
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 6
-		y = 10
+		x = 14
+		y = 11
 		available = {
-			check_variable = { IRE_diaspora_network > 59 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_diaspora_60
+				check_variable = { IRE_diaspora_network > 59 }
+			}
 			date > 1940.6.1
 		}
 		ai_will_do = { base = 65 }
@@ -1157,13 +1211,7 @@ focus_tree = {
 			IRE_diaspora_thresholds = yes
 			add_political_power = 50
 			add_war_support = 0.03
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -1173,8 +1221,8 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_boston focus = IRE_A_buenos_aires }
-		x = 4
-		y = 11
+		x = 12
+		y = 12
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -1182,13 +1230,7 @@ focus_tree = {
 			set_variable = { IRE_bonds_count = 0 }
 			set_variable = { IRE_us_surplus_count = 0 }
 			add_political_power = 50
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.2 }
-			}
+			add_offsite_building = { type = industrial_complex level = 2 }
 		}
 	}
 
@@ -1198,8 +1240,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_wild_geese focus = IRE_A_irish_division focus = IRE_A_green_legion }
-		x = 6
-		y = 11
+		x = 14
+		y = 12
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1219,7 +1261,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_nf_province focus = IRE_A_treaty_ports }
-		x = 4
+		x = 16
 		y = 12
 		ai_will_do = { base = 55 }
 
@@ -1233,13 +1275,7 @@ focus_tree = {
 			}
 			set_variable = { IRE_escort_count = 0 }
 			navy_experience = 100
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.1 }
-			}
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
@@ -1249,8 +1285,8 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_nf_province focus = IRE_A_boston }
-		x = 6
-		y = 12
+		x = 12
+		y = 13
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -1263,13 +1299,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = nav_bomber_equipment_1 amount = 50 }
 			set_variable = { IRE_ferry_count = 0 }
 			air_experience = 100
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.1 }
-			}
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
@@ -1280,7 +1310,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 4
+		x = 10
 		y = 13
 		available = { country_exists = ENG }
 		ai_will_do = { base = 55 }
@@ -1305,7 +1335,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_boston }
-		x = 6
+		x = 15
 		y = 13
 		available = { country_exists = USA }
 		ai_will_do = { base = 55 }
@@ -1329,7 +1359,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 8
+		x = 16
 		y = 13
 		available = {
 			country_exists = FRA
@@ -1353,22 +1383,15 @@ focus_tree = {
 		}
 	}
 
-	# ---- 绿色国际：至少两国 ----
+	# ---- 绿色国际：任一海外支部 + 世界大会 ----
 	focus = {
 		id = IRE_A_green_international
 		icon = GFX_focus_BRA_ethical_internationalism
 		cost = 10
-		prerequisite = { focus = IRE_A_world_congress }
+		# 三个分支本身都已要求世界爱尔兰大会，故不再重复前置
 		prerequisite = { focus = IRE_A_irish_question focus = IRE_A_tammany_hall focus = IRE_A_wild_geese_paris }
-		x = 6
+		x = 13
 		y = 14
-		available = {
-			OR = {
-				AND = { has_completed_focus = IRE_A_irish_question has_completed_focus = IRE_A_tammany_hall }
-				AND = { has_completed_focus = IRE_A_irish_question has_completed_focus = IRE_A_wild_geese_paris }
-				AND = { has_completed_focus = IRE_A_tammany_hall has_completed_focus = IRE_A_wild_geese_paris }
-			}
-		}
 		ai_will_do = { base = 70 }
 
 		completion_reward = {
@@ -1391,10 +1414,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_green_international }
-		prerequisite = { focus = IRE_A_green_dollar }
-		prerequisite = { focus = IRE_A_air_bridge }
 		mutually_exclusive = { focus = IRE_A_new_world_expedition }
-		x = 4
+		x = 12
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -1411,13 +1432,7 @@ focus_tree = {
 			}
 			add_stability = 0.10
 			add_political_power = 100
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_civ } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_civ }
-				}
-				add_to_variable = { IRE_offmap_civ_n = 0.1 }
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -1426,12 +1441,11 @@ focus_tree = {
 		id = IRE_A_new_world_expedition
 		icon = GFX_focus_generic_naval_invasion
 		cost = 10
+		# 硬线必须先把加拿大并入新世界爱尔兰
 		prerequisite = { focus = IRE_A_masters_new_world }
-		prerequisite = { focus = IRE_A_green_international }
-		prerequisite = { focus = IRE_A_wild_geese_legion }
-		prerequisite = { focus = IRE_A_atlantic_fleet }
+		prerequisite = { focus = IRE_A_new_world_ireland }
 		mutually_exclusive = { focus = IRE_A_atlantic_charter }
-		x = 8
+		x = 14
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -1451,13 +1465,82 @@ focus_tree = {
 				}
 				create_wargoal = { type = take_state target = ENG generator = { 119 } }
 			}
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_dynamic_modifier = { modifier = IRE_offmap_mil } } }
-					add_dynamic_modifier = { modifier = IRE_offmap_mil }
-				}
-				add_to_variable = { IRE_offmap_mil_n = 0.1 }
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+	}
+
+	# ---- 北欧：桥梁与联盟 ----
+	focus = {
+		id = IRE_A_nordic_bridge
+		icon = GFX_focus_AUS_unexpected_alliances
+		cost = 10
+		prerequisite = { focus = IRE_A_green_international }
+		x = 16
+		y = 14
+		available = {
+			any_country = {
+				OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+				exists = yes
 			}
+		}
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+					exists = yes
+					is_subject = no
+				}
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 }
+			}
+			add_political_power = 75
+			add_stability = 0.03
+			custom_effect_tooltip = IRE_effect_nordic_bridge
+		}
+	}
+
+	focus = {
+		id = IRE_A_nordic_alliance
+		icon = GFX_focus_NORDIC_dem_form_alliance
+		cost = 10
+		prerequisite = { focus = IRE_A_nordic_bridge }
+		x = 16
+		y = 15
+		ai_will_do = { base = 60 }
+
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = IRE_new_world_alliance
+			}
+			# 友好且未入阵营的北欧国家直接加入；其余给予安全保证
+			if = {
+				limit = { is_faction_leader = yes }
+				every_country = {
+					limit = {
+						OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+						exists = yes
+						is_subject = no
+						NOT = { is_in_faction = yes }
+						has_opinion = { target = ROOT value > 39 }
+					}
+					ROOT = { add_to_faction = PREV }
+				}
+			}
+			every_country = {
+				limit = {
+					OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+					exists = yes
+					is_subject = no
+					NOT = { is_in_faction = yes }
+				}
+				ROOT = { give_guarantee = PREV }
+			}
+			add_political_power = 100
+			add_stability = 0.05
+			custom_effect_tooltip = IRE_effect_nordic_alliance
 		}
 	}
 
@@ -1989,7 +2072,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 5
 		x = 12
-		y = 9
+		y = 17
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2010,7 +2093,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_shannon_hub }
 		x = 10
-		y = 10
+		y = 18
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2029,7 +2112,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_shannon_hub }
 		x = 14
-		y = 10
+		y = 18
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2050,7 +2133,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_peat_fuel }
 		x = 10
-		y = 11
+		y = 19
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2067,7 +2150,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_cork_port }
 		x = 12
-		y = 11
+		y = 19
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2086,7 +2169,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_cork_port }
 		x = 14
-		y = 11
+		y = 19
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2102,7 +2185,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_industrial_park }
 		x = 12
-		y = 12
+		y = 20
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2121,7 +2204,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_merchant_marine }
 		x = 14
-		y = 12
+		y = 20
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2139,7 +2222,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_E_export_hub }
 		prerequisite = { focus = IRE_E_financial_centre }
 		x = 14
-		y = 13
+		y = 21
 		available = {
 			OR = {
 				NOT = { has_variable = IRE_neutral_credibility }
@@ -2162,7 +2245,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_cork_port }
 		x = 16
-		y = 11
+		y = 19
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2178,7 +2261,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
 		x = 16
-		y = 12
+		y = 20
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2194,7 +2277,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
 		x = 18
-		y = 12
+		y = 20
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2211,7 +2294,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_E_public_health }
 		prerequisite = { focus = IRE_E_medical_schools }
 		x = 17
-		y = 13
+		y = 21
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2229,7 +2312,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_E_atlantic_economy }
 		x = 14
-		y = 14
+		y = 22
 		available = {
 			date > 1958.1.1
 		}

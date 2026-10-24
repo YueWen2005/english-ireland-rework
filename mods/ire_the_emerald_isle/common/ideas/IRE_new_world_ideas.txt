@@ -9,7 +9,7 @@ ideas = {
 
 		# ---- 本土开发 ----
 		IRE_home_development = {
-			picture = generic_production_bonus
+			picture = generic_improved_industries
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -21,7 +21,7 @@ ideas = {
 		}
 
 		IRE_diaspora_bond_drive = {
-			picture = generic_production_bonus
+			picture = generic_devalue_currency
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -33,7 +33,7 @@ ideas = {
 
 		# ---- 海外团结 ----
 		IRE_world_congress = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_conference
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -45,7 +45,7 @@ ideas = {
 		}
 
 		IRE_green_dollar = {
-			picture = generic_production_bonus
+			picture = generic_economic_increase
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -57,7 +57,7 @@ ideas = {
 		}
 
 		IRE_wild_geese_legion = {
-			picture = generic_infantry_bonus
+			picture = generic_army_europe_3
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -70,7 +70,7 @@ ideas = {
 		}
 
 		IRE_spanish_volunteers = {
-			picture = generic_infantry_bonus
+			picture = generic_army_europe_5
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -82,7 +82,7 @@ ideas = {
 		}
 
 		IRE_british_north_america = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_industrial_concern_1
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -94,7 +94,7 @@ ideas = {
 		}
 
 		IRE_atlantic_fleet = {
-			picture = generic_navy_bonus
+			picture = generic_sea_focused_navy
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -106,7 +106,7 @@ ideas = {
 		}
 
 		IRE_air_bridge = {
-			picture = generic_air_bonus
+			picture = generic_air_europe_2
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -118,7 +118,7 @@ ideas = {
 		}
 
 		IRE_green_international = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_political_advisor_europe_1
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -131,7 +131,7 @@ ideas = {
 		}
 
 		IRE_atlantic_charter = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_flexible_foreign_policy2
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -144,7 +144,7 @@ ideas = {
 		}
 
 		IRE_new_world_expedition = {
-			picture = generic_infantry_bonus
+			picture = generic_naval_invasion
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -157,7 +157,7 @@ ideas = {
 
 		# ---- 给外国的限时精神 ----
 		IRE_eng_irish_question = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_democratic_opposition
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -169,7 +169,7 @@ ideas = {
 		}
 
 		IRE_eng_dock_strike = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_syndicalism
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -180,7 +180,7 @@ ideas = {
 		}
 
 		IRE_eng_ira_campaign = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_secret_police
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -192,7 +192,7 @@ ideas = {
 		}
 
 		IRE_usa_irish_lobby = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_flexible_foreign_policy
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -204,7 +204,7 @@ ideas = {
 		}
 
 		IRE_fra_irish_sympathy = {
-			picture = generic_political_advisor_europe_2
+			picture = generic_democratic_drift_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
