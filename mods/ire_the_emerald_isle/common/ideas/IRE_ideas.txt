@@ -902,15 +902,6 @@ ideas = {
 			}
 		}
 
-		IRE_borrowed_knife = {
-			picture = generic_political_advisor_europe_2
-			allowed = { always = yes }
-			visible = { always = yes }
-			modifier = {
-				stability_factor = 0.10
-				political_power_gain = 0.05
-			}
-		}
 		IRE_connolly_veterans = {
 			picture = generic_political_advisor_europe_2
 			allowed = { always = yes }
