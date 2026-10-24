@@ -29,6 +29,8 @@ focus_tree = {
 		id = IRE_border_plebiscite
 		icon = GFX_focus_AFG_pashtunistan_referendum
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		x = 8
 		y = 0
 		mutually_exclusive = { focus = IRE_consolidate_free_state focus = IRE_ira_council }
@@ -64,12 +66,15 @@ focus_tree = {
 	}
 
 	### ============================================================
-	### 独立共通线：三条主线均可进入
+	### 共通线：并入 A 线（新世界爱尔兰）的基础建设分支
 	### ============================================================
 	focus = {
 		id = IRE_common_galway
 		icon = GFX_goal_generic_build_navy
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+		prerequisite = { focus = IRE_border_plebiscite }
 		x = 16
 		y = 1
 		ai_will_do = { base = 40 }
@@ -79,14 +84,17 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = dockyard level = 1 instant_build = yes }
 			}
+			add_equipment_to_stockpile = { type = convoy amount = 10 }
 			navy_experience = 50
 		}
 	}
 
 	focus = {
 		id = IRE_common_rural
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_generic_electrification
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_common_galway }
 		x = 16
 		y = 2
@@ -98,6 +106,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -105,6 +114,8 @@ focus_tree = {
 		id = IRE_common_dublin_uni
 		icon = GFX_goal_generic_scientific_exchange
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_common_rural }
 		x = 16
 		y = 3
@@ -122,6 +133,8 @@ focus_tree = {
 		id = IRE_common_tobacco
 		icon = GFX_goal_generic_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_common_dublin_uni }
 		x = 16
 		y = 4
@@ -132,14 +145,17 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
+			add_manpower = 10000
 			add_stability = 0.03
 		}
 	}
 
 	focus = {
 		id = IRE_common_signals
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_generic_radio_communication
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_common_tobacco }
 		x = 16
 		y = 5
@@ -155,6 +171,8 @@ focus_tree = {
 		id = IRE_common_arms
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_common_signals }
 		x = 16
 		y = 6
@@ -167,6 +185,8 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
 			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = IRE }
 		}
 	}
 
@@ -177,6 +197,8 @@ focus_tree = {
 		id = IRE_A_revitalise
 		icon = GFX_focus_generic_industry_2
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_border_plebiscite }
 		x = 6
 		y = 1
@@ -187,7 +209,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
-			add_ideas = IRE_rural_electrification
+			# 农村电气化精神由共通线《农村电气化》提供，避免重复授予
 		}
 	}
 
@@ -196,6 +218,8 @@ focus_tree = {
 		id = IRE_A_home_development
 		icon = GFX_focus_generic_industry_1
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_revitalise }
 		x = 2
 		y = 2
@@ -215,6 +239,8 @@ focus_tree = {
 		id = IRE_A_mineral_survey
 		icon = GFX_focus_generic_resource_extraction
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_home_development }
 		x = 2
 		y = 3
@@ -254,6 +280,8 @@ focus_tree = {
 		id = IRE_A_infrastructure_programme
 		icon = GFX_focus_generic_industry_3
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_mineral_survey }
 		x = 2
 		y = 4
@@ -294,6 +322,8 @@ focus_tree = {
 		id = IRE_A_remittance
 		icon = GFX_focus_AST_liberty_loans
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_revitalise }
 		x = 4
 		y = 2
@@ -311,6 +341,8 @@ focus_tree = {
 		id = IRE_A_shannon
 		icon = GFX_focus_focus_generic_build_dam
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_revitalise }
 		x = 6
 		y = 2
@@ -330,6 +362,8 @@ focus_tree = {
 		id = IRE_A_reserves
 		icon = GFX_focus_generic_military_academy
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_shannon }
 		x = 6
 		y = 3
@@ -346,8 +380,10 @@ focus_tree = {
 		id = IRE_A_volunteer_corps
 		icon = GFX_focus_generic_soldier_salute
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_reserves }
-		x = 8
+		x = 9
 		y = 3
 		ai_will_do = { base = 45 }
 
@@ -363,8 +399,10 @@ focus_tree = {
 		id = IRE_A_wild_geese
 		icon = GFX_focus_AST_riling_veterans
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_volunteer_corps }
-		x = 8
+		x = 9
 		y = 4
 		ai_will_do = { base = 45 }
 
@@ -382,8 +420,10 @@ focus_tree = {
 		id = IRE_A_spanish_volunteers
 		icon = GFX_focus_intervention_spain_republic
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_wild_geese }
-		x = 10
+		x = 11
 		y = 4
 		available = {
 			date > 1936.7.17
@@ -412,6 +452,8 @@ focus_tree = {
 		icon = GFX_focus_BEL_cockerill_shipyards
 		# 保留 70 天：完成即开票，给「统一宣传运动」留足刷支持度的时间窗
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_reserves }
 		x = 6
 		y = 4
@@ -438,8 +480,10 @@ focus_tree = {
 		id = IRE_A_emergency
 		icon = GFX_focus_PHI_declare_military_emergency
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 7
+		x = 10
 		y = 5
 		available = {
 			OR = {
@@ -462,8 +506,10 @@ focus_tree = {
 		id = IRE_A_wartime_economy
 		icon = GFX_focus_SOV_mobilization_plan
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_emergency }
-		x = 7
+		x = 8
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -482,8 +528,10 @@ focus_tree = {
 		id = IRE_A_atlantic_wall
 		icon = GFX_focus_FIN_coastal_defense
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_emergency }
-		x = 8
+		x = 10
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -502,8 +550,10 @@ focus_tree = {
 		id = IRE_A_ulster_bulwark
 		icon = GFX_focus_CZE_second_fortification_program
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_emergency }
-		x = 9
+		x = 12
 		y = 6
 		ai_will_do = { base = 50 }
 
@@ -525,8 +575,10 @@ focus_tree = {
 		id = IRE_A_britain_war_plan
 		icon = GFX_focus_attack_britain
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 9
+		x = 10
 		y = 7
 		ai_will_do = { base = 45 }
 
@@ -542,6 +594,8 @@ focus_tree = {
 		id = IRE_A_fortress_ireland
 		icon = GFX_focus_generic_coastal_fort
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 		# 两个 prerequisite 块之间为 AND：必须同时完成大西洋防线与厄尔斯特壁垒
 		prerequisite = { focus = IRE_A_atlantic_wall }
 		prerequisite = { focus = IRE_A_ulster_bulwark }
@@ -562,8 +616,10 @@ focus_tree = {
 		id = IRE_A_reconciliation
 		icon = GFX_focus_generic_world_peace
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 2
+		x = 0
 		y = 5
 		mutually_exclusive = { focus = IRE_A_firm_integration }
 		ai_will_do = { base = 40 }
@@ -579,8 +635,10 @@ focus_tree = {
 		id = IRE_A_firm_integration
 		icon = GFX_focus_generic_national_security
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 4
+		x = 3
 		y = 5
 		mutually_exclusive = { focus = IRE_A_reconciliation }
 		ai_will_do = { base = 40 }
@@ -600,6 +658,8 @@ focus_tree = {
 		id = IRE_A_london_note
 		icon = GFX_focus_ARG_chilean_ultimatum
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
 		x = 5
 		y = 5
@@ -618,8 +678,10 @@ focus_tree = {
 		id = IRE_A_donegal_corridor
 		icon = GFX_focus_generic_air_defense
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 6
+		x = 7
 		y = 5
 		available = {
 			OR = {
@@ -644,8 +706,10 @@ focus_tree = {
 		id = IRE_A_unity_for_ports
 		icon = GFX_focus_SOV_reinforce_western_naval_bases
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 5
+		x = 4
 		y = 6
 		available = {
 			date > 1940.6.1
@@ -663,8 +727,10 @@ focus_tree = {
 		id = IRE_A_settle_treaty
 		icon = GFX_focus_generic_treaty
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 4
+		x = 1
 		y = 6
 		ai_will_do = { base = 40 }
 
@@ -680,8 +746,10 @@ focus_tree = {
 		id = IRE_A_treaty_ports
 		icon = GFX_focus_SOV_reinforce_northern_naval_bases
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_settle_treaty }
-		x = 4
+		x = 2
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -701,8 +769,10 @@ focus_tree = {
 		id = IRE_A_atlantic_call
 		icon = GFX_focus_generic_atlantic_coast
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 10
+		x = 13
 		y = 5
 		ai_will_do = { base = 60 }
 
@@ -718,9 +788,11 @@ focus_tree = {
 		id = IRE_A_diaspora_legacy
 		icon = GFX_focus_generic_immigration
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_atlantic_call }
-		x = 12
-		y = 6
+		x = 13
+		y = 7
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -743,9 +815,11 @@ focus_tree = {
 		id = IRE_A_newfoundland
 		icon = GFX_focus_generic_atlantic_coast
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 11
-		y = 7
+		x = 7
+		y = 8
 		mutually_exclusive = { focus = IRE_A_london_note }
 		ai_will_do = { base = 50 }
 
@@ -763,11 +837,13 @@ focus_tree = {
 		id = IRE_A_nf_plebiscite
 		icon = GFX_focus_generic_election
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		# 两个 prerequisite 块之间为 AND：必须先完成支持度门槛
 		prerequisite = { focus = IRE_A_newfoundland }
 		prerequisite = { focus = IRE_nf_support_50 }
-		x = 11
-		y = 8
+		x = 7
+		y = 10
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -779,9 +855,11 @@ focus_tree = {
 		id = IRE_nf_support_50
 		icon = GFX_focus_generic_public_meetings
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_newfoundland }
-		x = 10
-		y = 8
+		x = 5
+		y = 9
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_nf_support_50
@@ -801,9 +879,11 @@ focus_tree = {
 		id = IRE_A_nf_province
 		icon = GFX_focus_generic_annex_country
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_nf_plebiscite }
-		x = 11
-		y = 9
+		x = 7
+		y = 11
 		ai_will_do = { base = 60 }
 
 	completion_reward = {
@@ -838,9 +918,11 @@ focus_tree = {
 		id = IRE_A_boston
 		icon = GFX_focus_USA_uncle_sam
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 14
-		y = 7
+		x = 17
+		y = 8
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -855,9 +937,11 @@ focus_tree = {
 		id = IRE_A_lobby
 		icon = GFX_focus_GER_rally_the_industrialists
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_boston }
-		x = 14
-		y = 8
+		x = 17
+		y = 9
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -876,9 +960,11 @@ focus_tree = {
 		id = IRE_A_irish_division
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_lobby }
-		x = 14
-		y = 9
+		x = 17
+		y = 10
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -899,9 +985,11 @@ focus_tree = {
 		id = IRE_A_san_patricio
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 12
-		y = 7
+		x = 10
+		y = 8
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -923,9 +1011,11 @@ focus_tree = {
 		id = IRE_A_green_legion
 		icon = GFX_focus_generic_army_attack
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_san_patricio }
-		x = 12
-		y = 8
+		x = 10
+		y = 9
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -941,9 +1031,11 @@ focus_tree = {
 		id = IRE_A_buenos_aires
 		icon = GFX_focus_ARG_towards_a_greater_argentina
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
 		x = 13
-		y = 7
+		y = 8
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -964,9 +1056,11 @@ focus_tree = {
 		id = IRE_A_southern_cone
 		icon = GFX_focus_generic_supply_line
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_buenos_aires }
 		x = 13
-		y = 8
+		y = 9
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -983,14 +1077,16 @@ focus_tree = {
 		id = IRE_A_supply_web
 		icon = GFX_focus_generic_reinforcing_the_supply_network
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		# 三条美洲支线任一完成即可（同一 prerequisite 块内为 OR）
 		prerequisite = {
 			focus = IRE_A_irish_division
 			focus = IRE_A_green_legion
 			focus = IRE_A_southern_cone
 		}
-		x = 13
-		y = 10
+		x = 11
+		y = 11
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1004,9 +1100,11 @@ focus_tree = {
 		id = IRE_A_canada_independence
 		icon = GFX_focus_generic_phoenix
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 10
-		y = 11
+		x = 7
+		y = 12
 		available = {
 			country_exists = CAN
 			CAN = { is_subject = no }
@@ -1054,9 +1152,11 @@ focus_tree = {
 		id = IRE_A_canada_annex
 		icon = GFX_focus_generic_annex_country_2
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_canada_independence }
-		x = 10
-		y = 12
+		x = 6
+		y = 13
 		available = {
 			country_exists = CAN
 			CAN = { is_subject = no NOT = { has_capitulated = yes } }
@@ -1099,9 +1199,11 @@ focus_tree = {
 		id = IRE_A_new_world_ireland
 		icon = GFX_focus_BRA_create_faction
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_canada_annex }
-		x = 10
-		y = 13
+		x = 6
+		y = 14
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_canada_annexed
@@ -1149,10 +1251,12 @@ focus_tree = {
 		id = IRE_A_celtic_commonwealth
 		icon = GFX_focus_generic_league_of_nations
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		# 只要求跨大西洋补给网；走对英路线时不会被纽芬兰锁死
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 12
-		y = 11
+		x = 10
+		y = 12
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_diaspora_100
@@ -1173,9 +1277,11 @@ focus_tree = {
 		id = IRE_A_masters_new_world
 		icon = GFX_focus_generic_democratic_europe
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_celtic_commonwealth }
-		x = 12
-		y = 12
+		x = 9
+		y = 13
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1193,9 +1299,11 @@ focus_tree = {
 		id = IRE_A_world_congress
 		icon = GFX_focus_generic_conference
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_supply_web }
 		x = 15
-		y = 11
+		y = 12
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_diaspora_60
@@ -1220,8 +1328,10 @@ focus_tree = {
 		id = IRE_A_green_dollar
 		icon = GFX_focus_generic_american_investments
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 13
+		x = 12
 		y = 12
 		available = {
 			custom_trigger_tooltip = {
@@ -1247,8 +1357,10 @@ focus_tree = {
 		id = IRE_A_wild_geese_legion
 		icon = GFX_focus_generic_immigration
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 13
+		x = 11
 		y = 13
 		available = {
 			custom_trigger_tooltip = {
@@ -1277,8 +1389,10 @@ focus_tree = {
 		id = IRE_A_atlantic_fleet
 		icon = GFX_focus_generic_north_atlantic_fleet
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 17
+		x = 13
 		y = 13
 		available = {
 			custom_trigger_tooltip = {
@@ -1309,8 +1423,10 @@ focus_tree = {
 		id = IRE_A_air_bridge
 		icon = GFX_focus_generic_air_bases
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 17
+		x = 20
 		y = 12
 		available = {
 			custom_trigger_tooltip = {
@@ -1342,8 +1458,10 @@ focus_tree = {
 		id = IRE_A_irish_question
 		icon = GFX_focus_AST_the_irish_anti-britain_pact
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 14
+		x = 15
 		y = 13
 		available = { country_exists = ENG }
 		ai_will_do = { base = 55 }
@@ -1366,8 +1484,10 @@ focus_tree = {
 		id = IRE_A_tammany_hall
 		icon = GFX_focus_generic_election
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 15
+		x = 17
 		y = 13
 		available = {
 			country_exists = USA
@@ -1395,8 +1515,10 @@ focus_tree = {
 		id = IRE_A_wild_geese_paris
 		icon = GFX_focus_chi_reach_out_to_france
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 16
+		x = 19
 		y = 13
 		available = {
 			country_exists = FRA
@@ -1425,6 +1547,8 @@ focus_tree = {
 		id = IRE_A_green_international
 		icon = GFX_focus_BRA_ethical_internationalism
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		# 三个分支本身都已要求世界爱尔兰大会，故不再重复前置
 		prerequisite = { focus = IRE_A_irish_question focus = IRE_A_tammany_hall focus = IRE_A_wild_geese_paris }
 		x = 15
@@ -1449,6 +1573,8 @@ focus_tree = {
 		id = IRE_A_atlantic_charter
 		icon = GFX_focus_generic_anti_fascist_diplomacy
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_green_international }
 		mutually_exclusive = { focus = IRE_A_new_world_expedition }
@@ -1478,11 +1604,13 @@ focus_tree = {
 		id = IRE_A_new_world_expedition
 		icon = GFX_focus_generic_naval_invasion
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 		# 硬线必须先把加拿大并入新世界爱尔兰
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_new_world_ireland }
 		mutually_exclusive = { focus = IRE_A_atlantic_charter }
-		x = 11
+		x = 6
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -1511,9 +1639,11 @@ focus_tree = {
 		id = IRE_A_nordic_bridge
 		icon = GFX_focus_AUS_unexpected_alliances
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_green_international }
-		x = 16
-		y = 14
+		x = 15
+		y = 15
 		available = {
 			any_country = {
 				OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
@@ -1541,9 +1671,11 @@ focus_tree = {
 		id = IRE_A_nordic_alliance
 		icon = GFX_focus_NORDIC_dem_form_alliance
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_nordic_bridge }
-		x = 16
-		y = 15
+		x = 15
+		y = 16
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2102,13 +2234,17 @@ focus_tree = {
 	}
 
 	### ============================================================
-	### 经济区域（独立通用分支，开局即可进入，不挂在任何主线上）
+	### 经济区域：A 线（新世界爱尔兰）的经济分支
+	### 挂在新世界的纽带之下，与海外新世界线共用同一进度
 	### ============================================================
 	focus = {
 		id = IRE_E_shannon_hub
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_generic_hydroelectric_energy
 		cost = 5
-		x = 12
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_masters_new_world }
+		x = 10
 		y = 17
 		ai_will_do = { base = 55 }
 
@@ -2120,14 +2256,18 @@ focus_tree = {
 				add_building_construction = { type = dockyard level = 1 instant_build = yes }
 			}
 			add_ideas = IRE_shannon_grid
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_manpower = 10000
 			add_stability = 0.03
 		}
 	}
 
 	focus = {
 		id = IRE_E_peat_fuel
-		icon = GFX_focus_generic_resource_extraction
+		icon = GFX_focus_generic_coal_mining
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_shannon_hub }
 		x = 10
 		y = 18
@@ -2139,6 +2279,8 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_manpower = 10000
 			add_stability = 0.02
 		}
 	}
@@ -2147,6 +2289,8 @@ focus_tree = {
 		id = IRE_E_cork_port
 		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_E_shannon_hub }
 		x = 14
 		y = 18
@@ -2159,8 +2303,10 @@ focus_tree = {
 				add_building_construction = { type = dockyard level = 2 instant_build = yes }
 				add_building_construction = { type = naval_base level = 1 instant_build = yes }
 			}
+			add_offsite_building = { type = dockyard level = 1 }
+			add_equipment_to_stockpile = { type = convoy amount = 30 }
+			add_manpower = 10000
 			navy_experience = 75
-			add_equipment_to_stockpile = { type = convoy amount = 10 }
 		}
 	}
 
@@ -2168,6 +2314,8 @@ focus_tree = {
 		id = IRE_E_agri_modern
 		icon = GFX_focus_generic_mass_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_peat_fuel }
 		x = 10
 		y = 19
@@ -2177,14 +2325,17 @@ focus_tree = {
 			remove_ideas = IRE_agrarian_poverty
 			remove_ideas = IRE_agrarian_poverty_lite
 			add_ideas = IRE_modern_agriculture
+			add_manpower = 20000
 			add_stability = 0.04
 		}
 	}
 
 	focus = {
 		id = IRE_E_industrial_park
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_focus_generic_air_partners
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_E_cork_port }
 		x = 12
 		y = 19
@@ -2196,14 +2347,19 @@ focus_tree = {
 				add_building_construction = { type = air_base level = 2 instant_build = yes }
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = IRE }
 			add_tech_bonus = { name = IRE_econ_industry_bonus bonus = 0.5 uses = 1 category = industry }
 		}
 	}
 
 	focus = {
 		id = IRE_E_merchant_marine
-		icon = GFX_focus_generic_refit_civilian_ships
+		icon = GFX_focus_generic_merchant_fleet
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_cork_port }
 		x = 14
 		y = 19
@@ -2211,15 +2367,18 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_merchant_marine
-			add_equipment_to_stockpile = { type = convoy amount = 25 }
+			add_equipment_to_stockpile = { type = convoy amount = 50 }
+			add_manpower = 10000
 			navy_experience = 50
 		}
 	}
 
 	focus = {
 		id = IRE_E_export_hub
-		icon = GFX_focus_generic_british_trade
+		icon = GFX_goal_generic_positive_trade_relations
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNATIONAL_TRADE }
 		prerequisite = { focus = IRE_E_industrial_park }
 		x = 12
 		y = 20
@@ -2232,13 +2391,17 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_manpower = 10000
 		}
 	}
 
 	focus = {
 		id = IRE_E_financial_centre
-		icon = GFX_focus_generic_industry_3
+		icon = GFX_focus_generic_stockpile_currency
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_merchant_marine }
 		x = 14
 		y = 20
@@ -2247,14 +2410,17 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_dublin_finance
 			add_political_power = 100
+			add_offsite_building = { type = industrial_complex level = 1 }
 			add_stability = 0.03
 		}
 	}
 
 	focus = {
 		id = IRE_E_atlantic_economy
-		icon = GFX_focus_generic_industry_1
+		icon = GFX_focus_generic_economic_recovery
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
 		# 两个 prerequisite 块之间为 AND：出口枢纽与中央银行汇合后才有大西洋经济圈
 		prerequisite = { focus = IRE_E_export_hub }
 		prerequisite = { focus = IRE_E_financial_centre }
@@ -2271,6 +2437,11 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_atlantic_economy
 			add_research_slot = 1
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = IRE }
+			add_manpower = 25000
 			add_stability = 0.05
 		}
 	}
@@ -2278,8 +2449,10 @@ focus_tree = {
 	# ---- 经济区域：医院彩票（接在科克港之后的民生分支） ----
 	focus = {
 		id = IRE_E_hospital_sweepstake
-		icon = GFX_goal_generic_production
+		icon = GFX_focus_generic_money_for_equipment
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_E_cork_port }
 		x = 16
 		y = 19
@@ -2288,6 +2461,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_hospital_sweepstake
 			add_political_power = 75
+			add_manpower = 10000
 			add_stability = 0.03
 		}
 	}
@@ -2296,6 +2470,8 @@ focus_tree = {
 		id = IRE_E_public_health
 		icon = GFX_focus_generic_bad_medical
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
 		x = 16
 		y = 20
@@ -2304,7 +2480,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_public_health
 			add_stability = 0.02
-			add_manpower = 10000
+			add_manpower = 40000
 		}
 	}
 
@@ -2312,6 +2488,8 @@ focus_tree = {
 		id = IRE_E_medical_schools
 		icon = GFX_focus_INS_expand_batavia_med_school
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
 		x = 18
 		y = 20
@@ -2320,6 +2498,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_medical_schools
 			add_political_power = 50
+			add_manpower = 10000
 		}
 	}
 
@@ -2327,6 +2506,8 @@ focus_tree = {
 		id = IRE_E_national_health
 		icon = GFX_focus_generic_welfare
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 		# 两个 prerequisite 块之间为 AND：公共卫生与医学教育都完成后才成体系
 		prerequisite = { focus = IRE_E_public_health }
 		prerequisite = { focus = IRE_E_medical_schools }
@@ -2337,7 +2518,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_national_health
 			add_stability = 0.03
-			add_manpower = 20000
+			add_manpower = 60000
 			add_war_support = 0.03
 		}
 	}
@@ -2345,8 +2526,10 @@ focus_tree = {
 	# ---- 经济区域：战后香农自由区（1959，允许战后内容） ----
 	focus = {
 		id = IRE_E_shannon_free_zone
-		icon = GFX_focus_generic_industry_3
+		icon = GFX_focus_generic_industry_investment
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_E_atlantic_economy }
 		x = 12
 		y = 21
@@ -2362,6 +2545,8 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = IRE }
 		}
 	}
 
@@ -2373,6 +2558,8 @@ focus_tree = {
 		id = IRE_M_war_cabinet
 		icon = GFX_goal_generic_defence
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		x = 24
 		y = 17
 		available = {
@@ -2394,8 +2581,10 @@ focus_tree = {
 		id = IRE_M_army_expansion
 		icon = GFX_focus_generic_army_attack
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 20
+		x = 19
 		y = 18
 		ai_will_do = { base = 60 }
 
@@ -2410,8 +2599,10 @@ focus_tree = {
 		id = IRE_M_officer_corps
 		icon = GFX_focus_generic_army_doctrines_2
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_army_expansion }
-		x = 20
+		x = 19
 		y = 19
 		ai_will_do = { base = 55 }
 
@@ -2426,6 +2617,8 @@ focus_tree = {
 		id = IRE_M_armour
 		icon = GFX_focus_generic_tank_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_officer_corps }
 		x = 20
 		y = 20
@@ -2448,8 +2641,10 @@ focus_tree = {
 		id = IRE_M_coastal_fortress
 		icon = GFX_focus_generic_coastal_fort
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_M_army_expansion }
-		x = 22
+		x = 21
 		y = 19
 		ai_will_do = { base = 50 }
 
@@ -2466,8 +2661,10 @@ focus_tree = {
 	# ---- 海军支线 ----
 	focus = {
 		id = IRE_M_naval_expansion
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_focus_generic_large_navy
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 24
 		y = 18
@@ -2489,6 +2686,8 @@ focus_tree = {
 		id = IRE_M_submarine_war
 		icon = GFX_focus_generic_cruiser_submarines
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_naval_expansion }
 		x = 23
 		y = 19
@@ -2505,8 +2704,10 @@ focus_tree = {
 		id = IRE_M_escort
 		icon = GFX_focus_generic_torpedo_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_M_submarine_war }
-		x = 24
+		x = 23
 		y = 20
 		ai_will_do = { base = 50 }
 
@@ -2522,6 +2723,8 @@ focus_tree = {
 		id = IRE_M_air_corps
 		icon = GFX_focus_generic_air_bases
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 26
 		y = 18
@@ -2541,8 +2744,10 @@ focus_tree = {
 		id = IRE_M_maritime_patrol
 		icon = GFX_focus_generic_aircraft_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 25
+		x = 26
 		y = 19
 		ai_will_do = { base = 50 }
 
@@ -2558,6 +2763,8 @@ focus_tree = {
 		id = IRE_M_g2
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 28
 		y = 18
@@ -2575,6 +2782,8 @@ focus_tree = {
 		id = IRE_M_coast_watch
 		icon = GFX_goal_generic_defence
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 22
 		y = 18
@@ -2592,6 +2801,8 @@ focus_tree = {
 		id = IRE_M_armoured_cars
 		icon = GFX_focus_generic_tank_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_armour }
 		x = 20
 		y = 21
@@ -2609,11 +2820,13 @@ focus_tree = {
 		id = IRE_M_total_defence
 		icon = GFX_focus_generic_total_war
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		# 三个 prerequisite 块之间为 AND：军官团、海军、空军都要完成
 		prerequisite = { focus = IRE_M_officer_corps }
 		prerequisite = { focus = IRE_M_naval_expansion }
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 25
+		x = 24
 		y = 21
 		ai_will_do = { base = 70 }
 
