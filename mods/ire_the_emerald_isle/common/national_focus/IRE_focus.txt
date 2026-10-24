@@ -439,7 +439,7 @@ focus_tree = {
 		icon = GFX_focus_PHI_declare_military_emergency
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 8
+		x = 7
 		y = 5
 		available = {
 			OR = {
@@ -463,7 +463,7 @@ focus_tree = {
 		icon = GFX_focus_SOV_mobilization_plan
 		cost = 5
 		prerequisite = { focus = IRE_A_emergency }
-		x = 6
+		x = 7
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -503,7 +503,7 @@ focus_tree = {
 		icon = GFX_focus_CZE_second_fortification_program
 		cost = 5
 		prerequisite = { focus = IRE_A_emergency }
-		x = 10
+		x = 9
 		y = 6
 		ai_will_do = { base = 50 }
 
@@ -526,7 +526,7 @@ focus_tree = {
 		icon = GFX_focus_attack_britain
 		cost = 5
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 11
+		x = 9
 		y = 7
 		ai_will_do = { base = 45 }
 
@@ -545,7 +545,7 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：必须同时完成大西洋防线与厄尔斯特壁垒
 		prerequisite = { focus = IRE_A_atlantic_wall }
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 9
+		x = 8
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -601,7 +601,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_chilean_ultimatum
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 6
+		x = 5
 		y = 5
 		mutually_exclusive = { focus = IRE_A_newfoundland }
 		ai_will_do = { base = 30 }
@@ -619,7 +619,7 @@ focus_tree = {
 		icon = GFX_focus_generic_air_defense
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 10
+		x = 6
 		y = 5
 		available = {
 			OR = {
@@ -645,8 +645,8 @@ focus_tree = {
 		icon = GFX_focus_SOV_reinforce_western_naval_bases
 		cost = 10
 		prerequisite = { focus = IRE_A_london_note }
-		x = 6
-		y = 7
+		x = 5
+		y = 6
 		available = {
 			date > 1940.6.1
 			any_country = { is_major = yes has_war = yes }
@@ -702,7 +702,7 @@ focus_tree = {
 		icon = GFX_focus_generic_atlantic_coast
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
-		x = 12
+		x = 10
 		y = 5
 		ai_will_do = { base = 60 }
 
@@ -744,7 +744,7 @@ focus_tree = {
 		icon = GFX_focus_generic_atlantic_coast
 		cost = 5
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 10
+		x = 11
 		y = 7
 		mutually_exclusive = { focus = IRE_A_london_note }
 		ai_will_do = { base = 50 }
@@ -766,7 +766,7 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：必须先完成支持度门槛
 		prerequisite = { focus = IRE_A_newfoundland }
 		prerequisite = { focus = IRE_nf_support_50 }
-		x = 10
+		x = 11
 		y = 8
 		ai_will_do = { base = 60 }
 
@@ -780,7 +780,7 @@ focus_tree = {
 		icon = GFX_focus_generic_public_meetings
 		cost = 5
 		prerequisite = { focus = IRE_A_newfoundland }
-		x = 8
+		x = 10
 		y = 8
 		available = {
 			custom_trigger_tooltip = {
@@ -802,7 +802,7 @@ focus_tree = {
 		icon = GFX_focus_generic_annex_country
 		cost = 5
 		prerequisite = { focus = IRE_A_nf_plebiscite }
-		x = 10
+		x = 11
 		y = 9
 		ai_will_do = { base = 60 }
 
@@ -942,7 +942,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_towards_a_greater_argentina
 		cost = 5
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 16
+		x = 13
 		y = 7
 		ai_will_do = { base = 40 }
 
@@ -965,7 +965,7 @@ focus_tree = {
 		icon = GFX_focus_generic_supply_line
 		cost = 5
 		prerequisite = { focus = IRE_A_buenos_aires }
-		x = 16
+		x = 13
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -989,7 +989,7 @@ focus_tree = {
 			focus = IRE_A_green_legion
 			focus = IRE_A_southern_cone
 		}
-		x = 12
+		x = 13
 		y = 10
 		ai_will_do = { base = 40 }
 
@@ -1005,7 +1005,7 @@ focus_tree = {
 		icon = GFX_focus_generic_phoenix
 		cost = 10
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 8
+		x = 10
 		y = 11
 		available = {
 			country_exists = CAN
@@ -1055,7 +1055,7 @@ focus_tree = {
 		icon = GFX_focus_generic_annex_country_2
 		cost = 10
 		prerequisite = { focus = IRE_A_canada_independence }
-		x = 8
+		x = 10
 		y = 12
 		available = {
 			country_exists = CAN
@@ -1100,7 +1100,7 @@ focus_tree = {
 		icon = GFX_focus_BRA_create_faction
 		cost = 10
 		prerequisite = { focus = IRE_A_canada_annex }
-		x = 8
+		x = 10
 		y = 13
 		available = {
 			custom_trigger_tooltip = {
@@ -1151,7 +1151,7 @@ focus_tree = {
 		cost = 10
 		# 只要求跨大西洋补给网；走对英路线时不会被纽芬兰锁死
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 10
+		x = 12
 		y = 11
 		available = {
 			custom_trigger_tooltip = {
@@ -1174,7 +1174,7 @@ focus_tree = {
 		icon = GFX_focus_generic_democratic_europe
 		cost = 10
 		prerequisite = { focus = IRE_A_celtic_commonwealth }
-		x = 10
+		x = 12
 		y = 12
 		ai_will_do = { base = 60 }
 
@@ -1194,7 +1194,7 @@ focus_tree = {
 		icon = GFX_focus_generic_conference
 		cost = 10
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 14
+		x = 15
 		y = 11
 		available = {
 			custom_trigger_tooltip = {
@@ -1215,14 +1215,23 @@ focus_tree = {
 		}
 	}
 
+	# 海外支部的第二门槛写在 available 中：玩法等价，但避免拉出横穿全树的长连线
 	focus = {
 		id = IRE_A_green_dollar
 		icon = GFX_focus_generic_american_investments
 		cost = 5
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_boston focus = IRE_A_buenos_aires }
-		x = 12
+		x = 13
 		y = 12
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_green_dollar_partner
+				OR = {
+					has_completed_focus = IRE_A_boston
+					has_completed_focus = IRE_A_buenos_aires
+				}
+			}
+		}
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -1239,9 +1248,18 @@ focus_tree = {
 		icon = GFX_focus_generic_immigration
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_wild_geese focus = IRE_A_irish_division focus = IRE_A_green_legion }
-		x = 14
-		y = 12
+		x = 13
+		y = 13
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_wild_geese_source
+				OR = {
+					has_completed_focus = IRE_A_wild_geese
+					has_completed_focus = IRE_A_irish_division
+					has_completed_focus = IRE_A_green_legion
+				}
+			}
+		}
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1260,9 +1278,17 @@ focus_tree = {
 		icon = GFX_focus_generic_north_atlantic_fleet
 		cost = 5
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_nf_province focus = IRE_A_treaty_ports }
-		x = 16
-		y = 12
+		x = 17
+		y = 13
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_atlantic_fleet_ports
+				OR = {
+					has_completed_focus = IRE_A_nf_province
+					has_completed_focus = IRE_A_treaty_ports
+				}
+			}
+		}
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -1284,9 +1310,17 @@ focus_tree = {
 		icon = GFX_focus_generic_air_bases
 		cost = 5
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_nf_province focus = IRE_A_boston }
-		x = 12
-		y = 13
+		x = 17
+		y = 12
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_air_bridge_partner
+				OR = {
+					has_completed_focus = IRE_A_nf_province
+					has_completed_focus = IRE_A_boston
+				}
+			}
+		}
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -1309,8 +1343,7 @@ focus_tree = {
 		icon = GFX_focus_AST_the_irish_anti-britain_pact
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_belfast }
-		x = 10
+		x = 14
 		y = 13
 		available = { country_exists = ENG }
 		ai_will_do = { base = 55 }
@@ -1334,10 +1367,15 @@ focus_tree = {
 		icon = GFX_focus_generic_election
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_boston }
 		x = 15
 		y = 13
-		available = { country_exists = USA }
+		available = {
+			country_exists = USA
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_tammany_partner
+				has_completed_focus = IRE_A_boston
+			}
+		}
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -1358,7 +1396,6 @@ focus_tree = {
 		icon = GFX_focus_chi_reach_out_to_france
 		cost = 10
 		prerequisite = { focus = IRE_A_world_congress }
-		prerequisite = { focus = IRE_A_diaspora_legacy }
 		x = 16
 		y = 13
 		available = {
@@ -1390,7 +1427,7 @@ focus_tree = {
 		cost = 10
 		# 三个分支本身都已要求世界爱尔兰大会，故不再重复前置
 		prerequisite = { focus = IRE_A_irish_question focus = IRE_A_tammany_hall focus = IRE_A_wild_geese_paris }
-		x = 13
+		x = 15
 		y = 14
 		ai_will_do = { base = 70 }
 
@@ -1415,7 +1452,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_green_international }
 		mutually_exclusive = { focus = IRE_A_new_world_expedition }
-		x = 12
+		x = 13
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -1445,7 +1482,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_new_world_ireland }
 		mutually_exclusive = { focus = IRE_A_atlantic_charter }
-		x = 14
+		x = 11
 		y = 15
 		ai_will_do = { base = 60 }
 

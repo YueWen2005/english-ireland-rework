@@ -173,6 +173,11 @@
  IRE_tt_diaspora_60:0 "Celtic diaspora network above 59"
  IRE_tt_diaspora_100:0 "Celtic diaspora network above 99"
  IRE_tt_canada_annexed:0 "British North America has been annexed"
+ IRE_tt_green_dollar_partner:0 "Requires the Boston or Buenos Aires branch"
+ IRE_tt_wild_geese_source:0 "Requires the Wild Geese, Irish Division or Green Legion branch"
+ IRE_tt_atlantic_fleet_ports:0 "Requires Newfoundland or the Treaty Ports"
+ IRE_tt_air_bridge_partner:0 "Requires Newfoundland or the Boston branch"
+ IRE_tt_tammany_partner:0 "Requires the Boston branch"
 
  # ===== New focus effect tooltips =====
  IRE_effect_canada_annex:0 "Canada is annexed together with its army: 2 off-map civilian factories, 2 off-map military factories and 1 off-map dockyard. Britain and the USA are angered."

@@ -169,6 +169,11 @@
  IRE_tt_diaspora_60:0 "凯尔特后裔网络高于 59"
  IRE_tt_diaspora_100:0 "凯尔特后裔网络高于 99"
  IRE_tt_canada_annexed:0 "已完成英属北美归并"
+ IRE_tt_green_dollar_partner:0 "需完成波士顿线或布宜诺斯艾利斯线"
+ IRE_tt_wild_geese_source:0 "需完成野鹅志愿军、爱尔兰旅或绿色军团中的任一线"
+ IRE_tt_atlantic_fleet_ports:0 "需取得纽芬兰或完成条约港口"
+ IRE_tt_air_bridge_partner:0 "需取得纽芬兰或完成波士顿线"
+ IRE_tt_tammany_partner:0 "需完成波士顿线"
 
  # ===== 新国策效果提示 =====
  IRE_effect_canada_annex:0 "加拿大及其军队整体并入：获得 2 座地图外民用工厂、2 座地图外军用工厂、1 座地图外船坞。英国与美国将记恨我国。"
