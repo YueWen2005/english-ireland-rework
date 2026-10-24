@@ -346,7 +346,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_reserves
-		icon = GFX_focus_AUS_properly_trained_militias
+		icon = GFX_focus_generic_military_academy
 		cost = 5
 		prerequisite = { focus = IRE_A_shannon }
 		x = 6
@@ -362,7 +362,7 @@ focus_tree = {
 	# ---- 早期侧分支：志愿军团 ----
 	focus = {
 		id = IRE_A_volunteer_corps
-		icon = GFX_focus_JAP_korean_volunteer_army
+		icon = GFX_focus_generic_soldier_salute
 		cost = 5
 		prerequisite = { focus = IRE_A_reserves }
 		x = 8
@@ -600,7 +600,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_firm_integration
-		icon = GFX_focus_SIA_order_discipline_and_unity
+		icon = GFX_focus_generic_national_security
 		cost = 5
 		prerequisite = { focus = IRE_A_belfast }
 		x = 6
@@ -684,7 +684,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_settle_treaty
-		icon = GFX_focus_IRQ_discuss_a_new_treaty
+		icon = GFX_focus_generic_treaty
 		cost = 5
 		prerequisite = { focus = IRE_A_london_note }
 		x = 8
@@ -799,7 +799,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_nf_support_50
-		icon = GFX_focus_BRA_department_of_propaganda
+		icon = GFX_focus_generic_public_meetings
 		cost = 5
 		prerequisite = { focus = IRE_A_newfoundland }
 		x = -2
@@ -878,7 +878,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_lobby
-		icon = GFX_focus_BRA_department_of_propaganda
+		icon = GFX_focus_GER_rally_the_industrialists
 		cost = 5
 		prerequisite = { focus = IRE_A_boston }
 		x = 2
@@ -1045,7 +1045,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_canada_independence
-		icon = GFX_focus_attack_canada
+		icon = GFX_focus_generic_phoenix
 		cost = 10
 		prerequisite = { focus = IRE_A_nf_province }
 		prerequisite = { focus = IRE_A_supply_web }
@@ -1092,7 +1092,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_celtic_commonwealth
-		icon = GFX_focus_AST_the_australian_commonwealth
+		icon = GFX_focus_generic_league_of_nations
 		cost = 10
 		# 两个 prerequisite 块之间为 AND：补给网与纽芬兰核心化都不可少
 		prerequisite = { focus = IRE_A_supply_web }
@@ -1120,7 +1120,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_masters_new_world
-		icon = GFX_focus_DEN_national_unity
+		icon = GFX_focus_generic_democratic_europe
 		cost = 10
 		prerequisite = { focus = IRE_A_celtic_commonwealth }
 		x = 2
@@ -1424,7 +1424,7 @@ focus_tree = {
 	# ---- 硬终局：新世界远征 ----
 	focus = {
 		id = IRE_A_new_world_expedition
-		icon = GFX_focus_attack_britain
+		icon = GFX_focus_generic_naval_invasion
 		cost = 10
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_green_international }
