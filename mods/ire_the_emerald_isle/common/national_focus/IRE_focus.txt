@@ -3113,7 +3113,7 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 10
 		prerequisite = { focus = IRE_R_red_turn }
-		mutually_exclusive = { focus = IRE_X_ind_cottage }
+		available = { NOT = { has_completed_focus = IRE_X_ind_cottage } }
 		x = 38
 		y = 5
 		ai_will_do = { base = 30 }
@@ -3366,7 +3366,7 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 8
 		prerequisite = { focus = IRE_X_shadow_arsenal }
-		mutually_exclusive = { focus = IRE_R_ind_expropriation }
+		available = { NOT = { has_completed_focus = IRE_R_ind_expropriation } }
 		x = 52
 		y = 5
 		ai_will_do = { base = 25 }
