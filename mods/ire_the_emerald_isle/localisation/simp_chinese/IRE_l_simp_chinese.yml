@@ -1,4 +1,4 @@
-﻿﻿l_simp_chinese:
+﻿l_simp_chinese:
  IRE_communism:0 "爱尔兰社会主义共和国"
  IRE_communism_ADJ:0 "爱尔兰"
  IRE_fascism:0 "爱尔兰共和军临时政府"
@@ -718,7 +718,7 @@
  IRE_offmap_civ:0 "地图外民用工厂"
  IRE_offmap_civ_desc:0 "分散在各地、无法在地图上逐一表示的民用产能——不占用建筑格。"
  IRE_offmap_mil:0 "地图外军用工厂"
- IRE_offmap_mil_desc:0
+ IRE_offmap_mil_desc:0 "分散在各地、无法在地图上逐一表示的军用产能——不占用建筑格。"
  IRE_offmap_dock:0 "地图外海军工厂"
  IRE_offmap_dock_desc:0 "分散在各地、无法在地图上逐一表示的造船产能——不占用建筑格。"
  IRE_R_ind_steel_coop:0 "钢铁合作社"
@@ -728,7 +728,7 @@
  IRE_X_ind_uboat_dock:0 "潜艇补给坞"
  IRE_X_ind_uboat_dock_desc:0 "隐蔽的潜艇补给船坞，为穿越大西洋的舰队提供燃料与鱼雷。"
  IRE_X_ind_assembly:0 "德械组装厂"
- IRE_X_ind_assembly_desc:0 "用德械零件运转的维修与总装车间，边境仓库里的枪械重新焕发生机。" "分散在各地、无法在地图上逐一表示的军用产能——不占用建筑格。"
+ IRE_X_ind_assembly_desc:0 "用德械零件运转的维修与总装车间，边境仓库里的枪械重新焕发生机。"
 
  ire.108.c:0 "先扣着观望：让黄金睡在都柏林的金库里。"
  ire.110.t:0 "敖德萨的账单"
