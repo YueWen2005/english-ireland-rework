@@ -2348,8 +2348,8 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		cost = 10
 		prerequisite = { focus = IRE_E_atlantic_economy }
-		x = 14
-		y = 22
+		x = 12
+		y = 21
 		available = {
 			date > 1958.1.1
 		}
@@ -2374,7 +2374,7 @@ focus_tree = {
 		icon = GFX_goal_generic_defence
 		cost = 5
 		x = 24
-		y = 16
+		y = 17
 		available = {
 			date > 1939.9.1
 			any_country = { is_major = yes has_war = yes }
@@ -2396,7 +2396,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 20
-		y = 17
+		y = 18
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2412,7 +2412,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_army_expansion }
 		x = 20
-		y = 18
+		y = 19
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2428,7 +2428,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_officer_corps }
 		x = 20
-		y = 19
+		y = 20
 		available = {
 			date > 1940.1.1
 		}
@@ -2450,7 +2450,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_army_expansion }
 		x = 22
-		y = 18
+		y = 19
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2470,7 +2470,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 24
-		y = 17
+		y = 18
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2490,8 +2490,8 @@ focus_tree = {
 		icon = GFX_focus_generic_cruiser_submarines
 		cost = 5
 		prerequisite = { focus = IRE_M_naval_expansion }
-		x = 24
-		y = 18
+		x = 23
+		y = 19
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2506,8 +2506,8 @@ focus_tree = {
 		icon = GFX_focus_generic_torpedo_production
 		cost = 5
 		prerequisite = { focus = IRE_M_submarine_war }
-		x = 25
-		y = 19
+		x = 24
+		y = 20
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2524,7 +2524,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 26
-		y = 17
+		y = 18
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2542,8 +2542,8 @@ focus_tree = {
 		icon = GFX_focus_generic_aircraft_production
 		cost = 5
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 26
-		y = 18
+		x = 25
+		y = 19
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2560,7 +2560,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 28
-		y = 17
+		y = 18
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2577,7 +2577,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_war_cabinet }
 		x = 22
-		y = 17
+		y = 18
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2594,7 +2594,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_M_armour }
 		x = 20
-		y = 20
+		y = 21
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2613,8 +2613,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_M_officer_corps }
 		prerequisite = { focus = IRE_M_naval_expansion }
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 23
-		y = 20
+		x = 25
+		y = 21
 		ai_will_do = { base = 70 }
 
 		completion_reward = {
