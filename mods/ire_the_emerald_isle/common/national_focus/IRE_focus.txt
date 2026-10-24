@@ -64,16 +64,12 @@ focus_tree = {
 	}
 
 	### ============================================================
-	### 共通底层线（从两个起点都可达）
+	### 独立共通线：三条主线均可进入
 	### ============================================================
 	focus = {
 		id = IRE_common_galway
 		icon = GFX_goal_generic_build_navy
 		cost = 5
-		prerequisite = {
-			focus = IRE_border_plebiscite
-			focus = IRE_consolidate_free_state
-		}
 		x = 16
 		y = 1
 		ai_will_do = { base = 40 }
@@ -2159,19 +2155,70 @@ focus_tree = {
 		}
 	}
 
-	# ---- 经济区域：医院彩票（1930 年代的真实财源） ----
+	# ---- 经济区域：医院彩票（接在科克港之后的民生分支） ----
 	focus = {
 		id = IRE_E_hospital_sweepstake
 		icon = GFX_goal_generic_production
 		cost = 5
-		x = 17
-		y = 8
+		prerequisite = { focus = IRE_E_cork_port }
+		x = 15
+		y = 10
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
 			add_ideas = IRE_hospital_sweepstake
 			add_political_power = 75
 			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = IRE_E_public_health
+		icon = GFX_focus_generic_bad_medical
+		cost = 5
+		prerequisite = { focus = IRE_E_hospital_sweepstake }
+		x = 15
+		y = 11
+		ai_will_do = { base = 50 }
+
+		completion_reward = {
+			add_ideas = IRE_public_health
+			add_stability = 0.02
+			add_manpower = 10000
+		}
+	}
+
+	focus = {
+		id = IRE_E_medical_schools
+		icon = GFX_focus_INS_expand_batavia_med_school
+		cost = 5
+		prerequisite = { focus = IRE_E_hospital_sweepstake }
+		x = 17
+		y = 11
+		ai_will_do = { base = 45 }
+
+		completion_reward = {
+			add_ideas = IRE_medical_schools
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IRE_E_national_health
+		icon = GFX_focus_generic_welfare
+		cost = 10
+		# 两个 prerequisite 块之间为 AND：公共卫生与医学教育都完成后才成体系
+		prerequisite = { focus = IRE_E_public_health }
+		prerequisite = { focus = IRE_E_medical_schools }
+		x = 16
+		y = 12
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_national_health
+			add_stability = 0.03
+			add_manpower = 20000
+			add_war_support = 0.03
 		}
 	}
 

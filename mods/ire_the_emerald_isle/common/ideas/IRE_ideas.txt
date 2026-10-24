@@ -719,6 +719,38 @@ ideas = {
 			}
 		}
 
+		IRE_public_health = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				monthly_population = 0.05
+				conscription_factor = 0.03
+			}
+		}
+
+		IRE_medical_schools = {
+			picture = generic_research_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				research_speed_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		IRE_national_health = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				monthly_population = 0.10
+				conscription_factor = 0.05
+				research_speed_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
 		IRE_shannon_free_zone = {
 			picture = generic_production_bonus
 			allowed = { always = yes }
