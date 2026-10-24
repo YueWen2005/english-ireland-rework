@@ -3209,8 +3209,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_red_turn }
 		mutually_exclusive = { focus = IRE_X_ind_cottage }
-		x = 39
-		y = 4
+		x = 40
+		y = 5
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3232,8 +3232,8 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_expropriation }
-		x = 39
-		y = 5
+		x = 40
+		y = 6
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3267,8 +3267,8 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 37
-		y = 6
+		x = 38
+		y = 7
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3298,7 +3298,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
 		x = 39
-		y = 6
+		y = 7
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3322,8 +3322,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 41
-		y = 6
+		x = 40
+		y = 7
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3339,7 +3339,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_rural_electrification }
 		x = 39
-		y = 7
+		y = 8
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3369,7 +3369,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_shannon_belt }
 		x = 38
-		y = 7
+		y = 8
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3400,7 +3400,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_limerick_yard }
 		x = 38
-		y = 8
+		y = 9
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3430,7 +3430,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_R_ind_arms_drive }
 		available = { check_variable = { IRE_red_unity > 59 } }
 		x = 39
-		y = 8
+		y = 9
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3458,8 +3458,8 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = IRE_X_shadow_arsenal }
 		mutually_exclusive = { focus = IRE_R_ind_expropriation }
-		x = 54
-		y = 4
+		x = 52
+		y = 5
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3481,8 +3481,8 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 56
-		y = 5
+		x = 54
+		y = 6
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3513,8 +3513,8 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 54
-		y = 5
+		x = 52
+		y = 6
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
@@ -3540,8 +3540,8 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
-		x = 54
-		y = 6
+		x = 52
+		y = 7
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3570,8 +3570,8 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_border_route }
-		x = 54
-		y = 7
+		x = 52
+		y = 8
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
@@ -3602,7 +3602,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
 		prerequisite = { focus = IRE_X_abwehr_guests }
-		x = 52
+		x = 50
 		y = 7
 		ai_will_do = { base = 25 }
 
@@ -3627,7 +3627,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_german_tech }
 		prerequisite = { focus = IRE_X_s_plan }
-		x = 50
+		x = 49
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3653,7 +3653,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_german_tech }
-		x = 52
+		x = 50
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3676,7 +3676,7 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 12
 		prerequisite = { focus = IRE_X_ind_s_plan_loot }
-		x = 54
+		x = 49
 		y = 9
 		ai_will_do = { base = 30 }
 
