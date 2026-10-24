@@ -14,3 +14,12 @@ IRE_offmap_mil = {
 	icon = GFX_idea_unknown
 	industrial_capacity_factory = IRE_offmap_mil_n
 }
+
+### ------------------------------------------------------------
+### 地图外海军工厂（v2.8.0）：海军产能不占建筑格，
+### 每 1 座船坞等价 +10% 船坞产出效率，经变量累计，永久生效。
+### ------------------------------------------------------------
+IRE_offmap_dock = {
+	icon = GFX_idea_unknown
+	industrial_capacity_dockyard = IRE_offmap_dock_n
+}

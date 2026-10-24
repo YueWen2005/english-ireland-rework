@@ -656,9 +656,19 @@ country_event = {
 			add_stability = -0.10
 			start_civil_war = {
 				ideology = democratic
-				size = 0.35
+				size = 0.01
 				states = { 134 135 }
 				capital = 7394
+			}
+			# 叛军象征性保留 3 个师（v2.8.0）
+			every_other_country = {
+				limit = {
+					has_civil_war = yes
+					original_tag = IRE
+				}
+				add_war_support = -0.2
+				add_stability = -0.2
+				load_oob = "IRE_rebel_3div"
 			}
 			set_country_flag = IRE_purge_failed
 		}
