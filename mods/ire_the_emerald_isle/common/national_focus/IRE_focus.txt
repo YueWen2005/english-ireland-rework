@@ -1721,7 +1721,7 @@ focus_tree = {
 	### ============================================================
 	focus = {
 		id = IRE_B_civil_service
-		icon = GFX_focus_AFG_parliamentary_democracy
+		icon = GFX_focus_generic_improve_the_administration
 		cost = 5
 		prerequisite = { focus = IRE_consolidate_free_state }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -1914,7 +1914,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_land_annuities
-		icon = GFX_focus_PER_national_bank
+		icon = GFX_focus_generic_stockpile_currency
 		cost = 5
 		prerequisite = { focus = IRE_B_trade_agreement }
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
@@ -1932,7 +1932,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_treaty_ports
-		icon = GFX_focus_IRQ_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 5
 		prerequisite = { focus = IRE_B_land_annuities }
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
@@ -1957,7 +1957,7 @@ focus_tree = {
 	# ---- 宪政线 ----
 	focus = {
 		id = IRE_B_constitution_1937
-		icon = GFX_focus_AFG_revive_the_1923_constitution
+		icon = GFX_focus_generic_treaty
 		cost = 5
 		prerequisite = { focus = IRE_B_treaty_ports }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -1977,7 +1977,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_president_mace
-		icon = GFX_focus_LAT_merge_presidential_titles
+		icon = GFX_focus_generic_improve_the_administration_2
 		cost = 5
 		prerequisite = { focus = IRE_B_constitution_1937 }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -2021,7 +2021,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_coastal
-		icon = GFX_focus_PHI_beach_defense_strategy
+		icon = GFX_focus_generic_coastal_fort
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP }
@@ -2098,7 +2098,7 @@ focus_tree = {
 	# ---- 中立三分支 ----
 	focus = {
 		id = IRE_B_moral_neutrality
-		icon = GFX_focus_FIN_finnish_neutrality
+		icon = GFX_goal_generic_major_alliance
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
 		prerequisite = { focus = IRE_B_ldf }
@@ -2125,7 +2125,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_absolute_neutrality
-		icon = GFX_focus_BEL_independent_neutral_and_loyal
+		icon = GFX_goal_generic_trade
 		cost = 5
 			prerequisite = { focus = IRE_B_ldf }
 		prerequisite = { focus = IRE_B_plan_w }
@@ -2148,7 +2148,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_armed_neutrality
-		icon = GFX_focus_BEL_defensive_neutrality
+		icon = GFX_goal_generic_defence
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
 		prerequisite = { focus = IRE_B_plan_w }
@@ -2188,7 +2188,7 @@ focus_tree = {
 	# ---- 战时外交 ----
 	focus = {
 		id = IRE_B_dublin_choice
-		icon = GFX_focus_AUS_diplomatic_effort
+		icon = GFX_goal_generic_neutrality_focus
 		cost = 5
 		prerequisite = { focus = IRE_B_absolute_neutrality }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -2264,7 +2264,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_republic_1949
-		icon = GFX_focus_DEN_national_unity
+		icon = GFX_focus_generic_election
 		cost = 5
 		prerequisite = { focus = IRE_B_famine_echo }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -2290,7 +2290,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_moral_authority
-		icon = GFX_focus_BRA_jaguar_diplomacy
+		icon = GFX_focus_generic_diplomatic_treaty
 		cost = 5
 		prerequisite = { focus = IRE_B_republic_1949 }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -2311,7 +2311,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_final_unification
-		icon = GFX_focus_ETH_unification_of_the_habesha
+		icon = GFX_goal_generic_national_unity
 		cost = 10
 		prerequisite = { focus = IRE_B_republic_1949 }
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
@@ -2417,7 +2417,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_national_army
-		icon = GFX_focus_CZE_army_reform
+		icon = GFX_focus_generic_military_academy
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }

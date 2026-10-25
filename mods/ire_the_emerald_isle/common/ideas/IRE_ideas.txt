@@ -63,7 +63,7 @@ ideas = {
 
 		# ---------------- 起点衍生 ----------------
 		IRE_free_framework = {
-			picture = POL_april_constitution
+			picture = generic_political_support
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -107,7 +107,7 @@ ideas = {
 		}
 
 		IRE_anglo_irish_beef = {
-			picture = ARG_argentine_beef_trade
+			picture = generic_production_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -117,7 +117,7 @@ ideas = {
 		}
 
 		IRE_republican_constitution = {
-			picture = SIA_constitutional_virtue
+			picture = generic_constitutional_guarantees
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
