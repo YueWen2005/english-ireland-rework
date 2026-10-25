@@ -1740,7 +1740,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_quell_embers
-		icon = GFX_focus_PRC_peaceful_reunification
+		icon = GFX_goal_generic_national_unity
 		cost = 5
 		prerequisite = { focus = IRE_B_civil_service }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
