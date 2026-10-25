@@ -34,6 +34,14 @@ IRE_canada_cat = {
 	visible = { has_country_flag = IRE_canada_annexed }
 }
 
+### 工业效率：三级永久工厂改造
+IRE_eff_cat = {
+	icon = GFX_decision_category_generic_industry
+	priority = 88
+	allowed = { original_tag = IRE }
+	visible = { has_idea = IRE_home_development }
+}
+
 ### 保卫爱尔兰：投降度 1-5 级决议分类
 IRE_defend_cat = {
 	icon = GFX_decision_category_army_reform
