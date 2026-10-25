@@ -375,14 +375,14 @@
  # ===== Canadian development after annexation =====
  IRE_canada_cat:0 "Canadian Development"
  IRE_canada_development_plan:0 "Canadian Land Development Plan"
- IRE_canada_development_plan_desc:0 "Railways, ports, and public utilities from Toronto and Montreal to Winnipeg and Vancouver are folded into Dublin's development plan. Each stage covers all 14 developable Canadian states: +1 building slot and +1 infrastructure in each, +1 civilian factory in a random state, +1 off-map civilian factory, and 10,000 manpower. Up to 3 stages; the third stage also grants 1 off-map military factory and 15,000 manpower. A state can have at most 25 shared building slots; excess industry is represented by off-map factories."
+ IRE_canada_development_plan_desc:0 "Railways, ports, and public utilities from Toronto and Montreal to Winnipeg and Vancouver are folded into Dublin's development plan. Each stage covers all 19 developable Canadian states: +1 building slot and +1 infrastructure in each, +1 civilian factory in a random state, +1 off-map civilian factory, and 10,000 manpower. Up to 3 stages; the third stage also grants 1 off-map military factory and 15,000 manpower. A state can have at most 25 shared building slots; excess industry is represented by off-map factories."
  IRE_canada_resource_plan:0 "Canadian Resource Survey"
  IRE_canada_resource_plan_desc:0 "Survey teams enter the Nova Scotia coalfields, the Alberta oil sands, the Quebec and Nunavut aluminium belts, and the Northern Ontario steel and chromite range. Each stage adds coal +6, steel +7, aluminium +7, oil +5, tungsten +1, and chromium +2 across the provinces, plus 20 political power. Up to 3 stages; the third stage also grants 1 off-map civilian factory."
  IRE_canada_smelting_plan:0 "Canadian Industrial Smelting Plan"
  IRE_canada_smelting_plan_desc:0 "Special steel, aluminium, and ferrochrome combines are built in Ontario and Quebec, turning ore, power, and ports into artillery, aircraft, and armour steel. Each stage grants chromium +3, steel +4, aluminium +4, 1 off-map military factory, and 15 political power. The first stage unlocks the Canadian Smelting Industry spirit. Up to 3 stages; the third stage also grants 1 off-map civilian factory."
  IRE_canada_smelting:0 "Canadian Smelting Industry"
  IRE_canada_smelting_desc:0 "The special steel, aluminium, and ferrochrome combines of Ontario and Quebec turn Canadian ore and power into precision components for Ireland's war machine."
- IRE_tt_canada_development:0 "All 14 developable Canadian states: +1 building slot and +1 infrastructure each; +1 civilian factory in a random state."
+ IRE_tt_canada_development:0 "All 19 developable Canadian states: +1 building slot and +1 infrastructure each; +1 civilian factory in a random state."
  IRE_tt_canada_development_offsite:0 "Off-map civilian factory +1; manpower +10,000; stability +2%."
  IRE_tt_canada_development_final:0 "Third stage completed: additional off-map military factory +1; manpower +15,000."
  IRE_tt_canada_resources:0 "Province-based gains: coal +6, steel +7, aluminium +7, oil +5, tungsten +1, chromium +2; political power +20."
@@ -421,3 +421,5 @@
  IRE_train_production:0 "Railway Rolling Stock Programme"
  IRE_train_production_desc:0 "The locomotive and carriage works of Dublin, Cork, and Belfast move to war production, delivering 10 trains every 120 days. Requires Basic Train technology."
  IRE_tt_train_production_repeat:0 "Repeatable: delivers 10 trains; available again after 120 days."
+ # ===== Complete Canadian annexation check =====
+ IRE_tt_canada_fully_owned:0 "Requires the complete annexation of Canada: all 23 starting states owned by Ireland."

@@ -21,6 +21,11 @@ IRE_canada_cat = {
 
 		available = {
 			has_country_flag = IRE_canada_annexed
+			NOT = { country_exists = CAN }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_fully_owned
+				IRE_canada_annex_complete = yes
+			}
 			any_owned_state = { IRE_canadian_developable_state = yes }
 			OR = {
 				NOT = { has_variable = IRE_canada_dev_count }
@@ -83,6 +88,11 @@ IRE_canada_cat = {
 
 		available = {
 			has_country_flag = IRE_canada_annexed
+			NOT = { country_exists = CAN }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_fully_owned
+				IRE_canada_annex_complete = yes
+			}
 			any_owned_state = { IRE_canadian_state = yes }
 			OR = {
 				NOT = { has_variable = IRE_canada_resource_count }
@@ -251,6 +261,11 @@ IRE_canada_cat = {
 
 		available = {
 			has_country_flag = IRE_canada_annexed
+			NOT = { country_exists = CAN }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_fully_owned
+				IRE_canada_annex_complete = yes
+			}
 			any_owned_state = { IRE_canadian_state = yes }
 			OR = {
 				NOT = { has_variable = IRE_canada_smelt_count }

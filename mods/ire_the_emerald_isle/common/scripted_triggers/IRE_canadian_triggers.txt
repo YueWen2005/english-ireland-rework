@@ -1,5 +1,6 @@
 ### ============================================================
 ### 加拿大州判定（A 线归并加拿大后使用）
+### 加拿大开局 23 州：276、464-473、682-683、739-740、860-867
 ### ============================================================
 
 IRE_canadian_state = {
@@ -17,20 +18,52 @@ IRE_canadian_state = {
 		state = 473
 		state = 682
 		state = 683
+		state = 739
+		state = 740
+		state = 860
+		state = 861
 		state = 862
+		state = 863
+		state = 864
 		state = 865
 		state = 866
 		state = 867
 	}
 }
 
-### 可进行基建开发的省份；排除三处荒地州
+### 可进行基建开发的省份；排除四处荒地州
 IRE_canadian_developable_state = {
 	IRE_canadian_state = yes
 	is_controlled_by = ROOT
-	NOR = {
-		state = 471
-		state = 472
-		state = 683
-	}
+	NOT = { state = 471 }
+	NOT = { state = 472 }
+	NOT = { state = 683 }
+	NOT = { state = 864 }
+}
+
+### 完全吞并加拿大：23 个开局州全部归爱尔兰所有
+IRE_canada_annex_complete = {
+	276 = { is_owned_by = ROOT }
+	464 = { is_owned_by = ROOT }
+	465 = { is_owned_by = ROOT }
+	466 = { is_owned_by = ROOT }
+	467 = { is_owned_by = ROOT }
+	468 = { is_owned_by = ROOT }
+	469 = { is_owned_by = ROOT }
+	470 = { is_owned_by = ROOT }
+	471 = { is_owned_by = ROOT }
+	472 = { is_owned_by = ROOT }
+	473 = { is_owned_by = ROOT }
+	682 = { is_owned_by = ROOT }
+	683 = { is_owned_by = ROOT }
+	739 = { is_owned_by = ROOT }
+	740 = { is_owned_by = ROOT }
+	860 = { is_owned_by = ROOT }
+	861 = { is_owned_by = ROOT }
+	862 = { is_owned_by = ROOT }
+	863 = { is_owned_by = ROOT }
+	864 = { is_owned_by = ROOT }
+	865 = { is_owned_by = ROOT }
+	866 = { is_owned_by = ROOT }
+	867 = { is_owned_by = ROOT }
 }
