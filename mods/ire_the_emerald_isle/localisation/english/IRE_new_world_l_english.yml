@@ -390,3 +390,13 @@
  IRE_tt_canada_smelting:0 "Support equipment +1,500 (ball bearings and precision components); steel +4, aluminium +4; off-map military factory +1; political power +15."
  IRE_tt_canada_smelting_idea:0 "Unlocks the national spirit Canadian Smelting Industry: factory output +5%, military production speed +10%, civilian industrial production speed +5%, consumer goods -2%."
  IRE_tt_canada_smelting_final:0 "Third stage completed: additional off-map civilian factory +1."
+ # ===== Per-state steel and aluminium plans =====
+ IRE_mining_leinster:0 "Leinster Steel and Aluminium Plan"
+ IRE_mining_leinster_desc:0 "Expand steel rolling, aluminium processing, and supporting power across the Dublin-Drogheda-Wexford corridor. Repeatable every 150 days."
+ IRE_mining_munster:0 "Munster Steel and Aluminium Plan"
+ IRE_mining_munster_desc:0 "Cork Harbour and the Shannon estuary import bauxite and power alumina refining, aluminium rolling, and steel rolling. Repeatable every 150 days."
+ IRE_mining_connaught:0 "Connacht Steel and Aluminium Plan"
+ IRE_mining_connaught_desc:0 "Shannon hydro power supports alloy steel and aluminium processing, while tungsten mining continues. Repeatable every 150 days."
+ IRE_mining_ulster:0 "Ulster Steel and Aluminium Plan"
+ IRE_mining_ulster_desc:0 "Belfast's shipyards, steelworks, aluminium processing, and coalfields are folded back into the development plan. Repeatable every 150 days."
+ IRE_tt_state_mining_repeat:0 "Repeatable: adds steel, aluminium, and other resources to this state; available again after 150 days."

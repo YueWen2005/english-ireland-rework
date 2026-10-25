@@ -200,6 +200,121 @@ IRE_home_cat = {
 		ai_will_do = { base = 40 }
 	}
 
+	# 四州各自的钢铝开发计划：可重复，150 天冷却
+	IRE_mining_leinster = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			113 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			113 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			113 = {
+				add_resource = { type = steel amount = 1 }
+				add_resource = { type = aluminium amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_mining_munster = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			135 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			135 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			135 = {
+				add_resource = { type = steel amount = 1 }
+				add_resource = { type = aluminium amount = 2 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_mining_connaught = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			134 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			134 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			134 = {
+				add_resource = { type = steel amount = 1 }
+				add_resource = { type = aluminium amount = 1 }
+				add_resource = { type = tungsten amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_mining_ulster = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			119 = {
+				add_resource = { type = steel amount = 2 }
+				add_resource = { type = aluminium amount = 1 }
+				add_resource = { type = coal amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
 	IRE_national_research = {
 		icon = generic_research
 		cost = 75

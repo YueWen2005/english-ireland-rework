@@ -386,3 +386,13 @@
  IRE_tt_canada_smelting:0 "支援装备 +1500（滚珠轴承与精密部件）；钢 +4、铝 +4；地图外 +1 军用工厂；政治点数 +15。"
  IRE_tt_canada_smelting_idea:0 "解锁国家精神「加拿大冶炼工业」：工厂产出 +5%、军工生产速度 +10%、民用工业生产速度 +5%、消费品 -2%。"
  IRE_tt_canada_smelting_final:0 "第三期完成：额外地图外 +1 民用工厂。"
+ # ===== 四州钢铝开发计划 =====
+ IRE_mining_leinster:0 "伦斯特钢铝开发计划"
+ IRE_mining_leinster_desc:0 "在都柏林—德罗赫达—韦克斯福德一线扩建轧钢、铝材加工与配套电力；每 150 天可再次实施。"
+ IRE_mining_munster:0 "蒙斯特钢铝开发计划"
+ IRE_mining_munster_desc:0 "利用科克港与香农河口的进口铝土和电力，扩建氧化铝精炼、轧铝与轧钢；每 150 天可再次实施。"
+ IRE_mining_connaught:0 "康诺特钢铝开发计划"
+ IRE_mining_connaught_desc:0 "以香农河水电为依托发展合金钢与铝材加工，并继续开采钨矿；每 150 天可再次实施。"
+ IRE_mining_ulster:0 "阿尔斯特钢铝开发计划"
+ IRE_mining_ulster_desc:0 "把贝尔法斯特的船厂、钢厂、铝材加工与煤矿重新编入开发计划；每 150 天可再次实施。"
+ IRE_tt_state_mining_repeat:0 "可重复实施：增加本州钢、铝等资源，150 天后可再次执行。"
