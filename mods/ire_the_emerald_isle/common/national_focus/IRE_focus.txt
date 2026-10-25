@@ -425,21 +425,16 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_wild_geese }
 		x = 28
 		y = 5
-		available = {			country_exists = SPR
-			SPR = {
-				has_war = yes
-				NOT = { has_government = fascism }
-			}
-			NOT = { has_war_with = SPR }
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
+
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
 			add_ideas = IRE_spanish_volunteers
 			set_rule = { can_send_volunteers = yes }
-			SPR = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+			if = {
+				limit = { country_exists = SPR }
+				SPR = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+			}
 			army_experience = 50
 			add_war_support = 0.03
 		}
