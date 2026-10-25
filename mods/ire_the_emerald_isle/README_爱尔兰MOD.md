@@ -59,11 +59,13 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 
 ## 需要注意 / 待核对
 
-### 1. 北爱尔兰六郡 state ID
+### 1. 北爱尔兰 state ID
 
-脚本假设 **113–118**。核对方法：开档后控制台输入 `tdebug`，鼠标悬停北爱各省份，左上角显示 `State ID`。
-如需修改，改这两处：
+脚本使用 **119**（Northern Ireland，含贝尔法斯特、伦敦德里等六郡）。核对方法：开档后控制台输入 `tdebug`，鼠标悬停北爱省份，左上角显示 `State ID`。
+注意：**113 是伦斯特（都柏林所在州）**，134 是康诺特，135 是芒斯特；不要再把 113–118 当作北爱。
+如需修改，改这三处：
 - `common/scripted_effects/IRE_effects.txt` → `IRE_core_northern_ireland`
+- `common/decisions/IRE_new_world_decisions.txt` → `IRE_dev_ulster`、`IRE_national_mining`
 - `common/decisions/IRE_decisions.txt` → `IRE_dublin_order`
 
 ### 2. 纽芬兰 state ID
