@@ -1136,7 +1136,13 @@ focus_tree = {
 		y = 12
 		available = {
 			country_exists = CAN
-			CAN = { is_subject = no }
+			CAN = {
+				NOT = { has_capitulated = yes }
+				OR = {
+					is_subject = no
+					is_subject_of = ENG
+				}
+			}
 			NOT = { has_country_flag = IRE_canada_annexed }
 			NOT = { ENG = { has_war_with = ROOT } }
 		}
