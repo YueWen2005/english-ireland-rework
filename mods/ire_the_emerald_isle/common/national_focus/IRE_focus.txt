@@ -3212,6 +3212,10 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = IRE_ira_in_power
 			add_ideas = IRE_military_govt
+			add_ideas = IRE_flying_columns
+			add_ideas = IRE_nation_in_arms
+			add_ideas = IRE_veterans_network
+			add_ideas = IRE_pariah_republic
 			country_event = { id = ire.69 days = 1 }
 		}
 	}
@@ -3229,7 +3233,15 @@ focus_tree = {
 		ai_will_do = { base = 20 }
 
 		completion_reward = {
+			# 上台即恢复意识形态默认旗/名（清除政变夜的 IRE_ira_neutrality 军装标识）
+			clear_cosmetic_tag = yes
 			set_politics = { ruling_party = communism elections_allowed = no }
+			add_ideas = IRE_connolly_road
+			add_ideas = IRE_workers_militia
+			add_ideas = IRE_collective_farms
+			add_ideas = IRE_capital_flight
+			# 上台获得承认，解除政变后的孤立
+			remove_ideas = IRE_pariah_republic
 			add_stability = 0.03
 			add_to_variable = { IRE_red_unity = 10 }
 			set_country_flag = IRE_red_path
@@ -3247,7 +3259,8 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 5
 		prerequisite = { focus = IRE_R_red_turn }
-		x = 58
+		available = { SPA = { has_civil_war = yes } }
+		x = 60
 		y = 5
 		ai_will_do = { base = 35 }
 
@@ -3271,9 +3284,9 @@ focus_tree = {
 		id = IRE_R_republican_congress
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
-		prerequisite = { focus = IRE_R_connolly_column }
+		prerequisite = { focus = IRE_R_red_turn }
 		x = 58
-		y = 6
+		y = 5
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3289,9 +3302,8 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_R_republican_congress }
-		available = { date > 1941.6.1 }
 		x = 58
-		y = 7
+		y = 6
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3308,7 +3320,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_volunteer_line }
 		x = 58
-		y = 8
+		y = 7
 		ai_will_do = { base = 20 }
 
 		completion_reward = {
@@ -3330,7 +3342,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_neutral_labor }
 		x = 60
-		y = 8
+		y = 7
 		ai_will_do = { base = 20 }
 
 		completion_reward = {
@@ -3353,7 +3365,7 @@ focus_tree = {
 			focus = IRE_R_volunteer_line
 		}
 		x = 58
-		y = 9
+		y = 8
 		ai_will_do = { base = 35 }
 
 		completion_reward = {
@@ -3402,7 +3414,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_R_nationalize }
 		available = { check_variable = { IRE_red_unity > 89 } }
 		x = 58
-		y = 10
+		y = 9
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -3420,7 +3432,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_R_belfast_strike }
 		available = { has_country_flag = IRE_strike_resolved }
 		x = 58
-		y = 11
+		y = 10
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -3444,6 +3456,15 @@ focus_tree = {
 		ai_will_do = { base = 20 }
 
 		completion_reward = {
+			# 上台即转为法西斯（IRA 临时政府）并恢复默认旗/名
+			clear_cosmetic_tag = yes
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			add_ideas = IRE_shadow_arsenal_idea
+			add_ideas = IRE_abwehr_links
+			add_ideas = IRE_smuggling_fleet
+			add_ideas = IRE_london_sanctions
+			# 上台获得承认，解除政变后的孤立
+			remove_ideas = IRE_pariah_republic
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 2500 producer = IRE }
 			add_equipment_to_stockpile = { type = support_equipment amount = 250 producer = IRE }
 			add_to_variable = { IRE_exposure = 10 }
