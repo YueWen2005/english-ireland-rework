@@ -31,7 +31,7 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-		x = 8
+		x = 20
 		y = 0
 		mutually_exclusive = { focus = IRE_consolidate_free_state focus = IRE_ira_council }
 		ai_will_do = { base = 50 }
@@ -51,8 +51,8 @@ focus_tree = {
 		id = IRE_consolidate_free_state
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
-		x = 30
-		y = 0
+		x = 6
+		y = 12
 		mutually_exclusive = { focus = IRE_border_plebiscite focus = IRE_ira_council }
 		ai_will_do = { base = 50 }
 
@@ -74,9 +74,9 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
-		prerequisite = { focus = IRE_border_plebiscite }
-		x = 11
-		y = 1
+		prerequisite = { focus = IRE_A_home_development }
+		x = 8
+		y = 3
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -96,8 +96,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_common_galway }
-		x = 12
-		y = 2
+		x = 8
+		y = 4
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -117,8 +117,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_common_rural }
-		x = 13
-		y = 3
+		x = 9
+		y = 5
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -136,8 +136,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_common_dublin_uni }
-		x = 14
-		y = 4
+		x = 9
+		y = 6
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -157,8 +157,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_common_tobacco }
-		x = 15
-		y = 5
+		x = 10
+		y = 7
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -174,8 +174,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_common_signals }
-		x = 16
-		y = 6
+		x = 10
+		y = 8
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -200,7 +200,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_border_plebiscite }
-		x = 6
+		x = 20
 		y = 1
 		ai_will_do = { base = 50 }
 
@@ -221,7 +221,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_revitalise }
-		x = 2
+		x = 12
 		y = 2
 		ai_will_do = { base = 55 }
 
@@ -242,7 +242,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_home_development }
-		x = 2
+		x = 12
 		y = 3
 		ai_will_do = { base = 50 }
 
@@ -283,7 +283,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_mineral_survey }
-		x = 2
+		x = 12
 		y = 4
 		ai_will_do = { base = 50 }
 
@@ -325,7 +325,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_revitalise }
-		x = 4
+		x = 16
 		y = 2
 		ai_will_do = { base = 40 }
 
@@ -344,7 +344,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_revitalise }
-		x = 6
+		x = 19
 		y = 2
 		ai_will_do = { base = 50 }
 
@@ -364,9 +364,9 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
-		prerequisite = { focus = IRE_A_shannon }
-		x = 6
-		y = 3
+		prerequisite = { focus = IRE_A_revitalise }
+		x = 28
+		y = 2
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -383,7 +383,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_reserves }
-		x = 9
+		x = 28
 		y = 3
 		ai_will_do = { base = 45 }
 
@@ -402,7 +402,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_volunteer_corps }
-		x = 9
+		x = 28
 		y = 4
 		ai_will_do = { base = 45 }
 
@@ -423,8 +423,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_wild_geese }
-		x = 11
-		y = 4
+		x = 28
+		y = 5
 		available = {
 			date > 1936.7.17
 			country_exists = SPR
@@ -455,8 +455,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_reserves }
-		x = 6
-		y = 4
+		x = 34
+		y = 3
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -483,8 +483,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 10
-		y = 5
+		x = 38
+		y = 4
 		available = {
 			OR = {
 				date > 1939.9.1
@@ -509,8 +509,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_emergency }
-		x = 8
-		y = 6
+		x = 36
+		y = 5
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -531,8 +531,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_emergency }
-		x = 10
-		y = 6
+		x = 38
+		y = 5
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -553,8 +553,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_emergency }
-		x = 12
-		y = 6
+		x = 40
+		y = 5
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -578,8 +578,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 10
-		y = 7
+		x = 40
+		y = 6
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -599,8 +599,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：必须同时完成大西洋防线与厄尔斯特壁垒
 		prerequisite = { focus = IRE_A_atlantic_wall }
 		prerequisite = { focus = IRE_A_ulster_bulwark }
-		x = 8
-		y = 7
+		x = 38
+		y = 6
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -619,8 +619,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 0
-		y = 5
+		x = 30
+		y = 4
 		mutually_exclusive = { focus = IRE_A_firm_integration }
 		ai_will_do = { base = 40 }
 
@@ -638,8 +638,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 3
-		y = 5
+		x = 32
+		y = 4
 		mutually_exclusive = { focus = IRE_A_reconciliation }
 		ai_will_do = { base = 40 }
 
@@ -661,8 +661,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 5
-		y = 5
+		x = 34
+		y = 4
 		mutually_exclusive = { focus = IRE_A_newfoundland }
 		ai_will_do = { base = 30 }
 
@@ -681,8 +681,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 7
-		y = 5
+		x = 36
+		y = 4
 		available = {
 			OR = {
 				has_completed_focus = IRE_A_london_note
@@ -709,8 +709,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 4
-		y = 6
+		x = 34
+		y = 5
 		available = {
 			date > 1940.6.1
 			any_country = { is_major = yes has_war = yes }
@@ -730,8 +730,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 1
-		y = 6
+		x = 32
+		y = 5
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -749,8 +749,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_settle_treaty }
-		x = 2
-		y = 7
+		x = 32
+		y = 6
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -772,8 +772,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 13
-		y = 5
+		x = 42
+		y = 4
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -791,8 +791,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_atlantic_call }
-		x = 13
-		y = 7
+		x = 42
+		y = 6
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -818,7 +818,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 7
+		x = 36
 		y = 8
 		mutually_exclusive = { focus = IRE_A_london_note }
 		ai_will_do = { base = 50 }
@@ -842,7 +842,7 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：必须先完成支持度门槛
 		prerequisite = { focus = IRE_A_newfoundland }
 		prerequisite = { focus = IRE_nf_support_50 }
-		x = 7
+		x = 36
 		y = 10
 		ai_will_do = { base = 60 }
 
@@ -858,7 +858,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_newfoundland }
-		x = 5
+		x = 34
 		y = 9
 		available = {
 			custom_trigger_tooltip = {
@@ -882,7 +882,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_nf_plebiscite }
-		x = 7
+		x = 36
 		y = 11
 		ai_will_do = { base = 60 }
 
@@ -921,7 +921,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 17
+		x = 46
 		y = 8
 		ai_will_do = { base = 50 }
 
@@ -940,7 +940,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_boston }
-		x = 17
+		x = 46
 		y = 9
 		ai_will_do = { base = 50 }
 
@@ -963,7 +963,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_lobby }
-		x = 17
+		x = 46
 		y = 10
 		ai_will_do = { base = 50 }
 
@@ -988,7 +988,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 10
+		x = 39
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -1014,7 +1014,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_san_patricio }
-		x = 10
+		x = 39
 		y = 9
 		ai_will_do = { base = 40 }
 
@@ -1034,7 +1034,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_diaspora_legacy }
-		x = 13
+		x = 42
 		y = 8
 		ai_will_do = { base = 40 }
 
@@ -1059,7 +1059,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_buenos_aires }
-		x = 13
+		x = 42
 		y = 9
 		ai_will_do = { base = 40 }
 
@@ -1085,7 +1085,7 @@ focus_tree = {
 			focus = IRE_A_green_legion
 			focus = IRE_A_southern_cone
 		}
-		x = 11
+		x = 40
 		y = 11
 		ai_will_do = { base = 40 }
 
@@ -1103,7 +1103,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 7
+		x = 36
 		y = 12
 		available = {
 			country_exists = CAN
@@ -1155,7 +1155,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_canada_independence }
-		x = 6
+		x = 35
 		y = 13
 		available = {
 			country_exists = CAN
@@ -1202,7 +1202,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_canada_annex }
-		x = 6
+		x = 35
 		y = 14
 		available = {
 			custom_trigger_tooltip = {
@@ -1255,7 +1255,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		# 只要求跨大西洋补给网；走对英路线时不会被纽芬兰锁死
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 10
+		x = 39
 		y = 12
 		available = {
 			custom_trigger_tooltip = {
@@ -1280,7 +1280,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_celtic_commonwealth }
-		x = 9
+		x = 38
 		y = 13
 		ai_will_do = { base = 60 }
 
@@ -1302,7 +1302,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_supply_web }
-		x = 15
+		x = 44
 		y = 12
 		available = {
 			custom_trigger_tooltip = {
@@ -1331,7 +1331,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 12
+		x = 41
 		y = 12
 		available = {
 			custom_trigger_tooltip = {
@@ -1360,7 +1360,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 11
+		x = 40
 		y = 13
 		available = {
 			custom_trigger_tooltip = {
@@ -1392,7 +1392,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 13
+		x = 42
 		y = 13
 		available = {
 			custom_trigger_tooltip = {
@@ -1426,7 +1426,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 20
+		x = 49
 		y = 12
 		available = {
 			custom_trigger_tooltip = {
@@ -1461,7 +1461,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 15
+		x = 44
 		y = 13
 		available = { country_exists = ENG }
 		ai_will_do = { base = 55 }
@@ -1487,7 +1487,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 17
+		x = 46
 		y = 13
 		available = {
 			country_exists = USA
@@ -1518,7 +1518,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 19
+		x = 48
 		y = 13
 		available = {
 			country_exists = FRA
@@ -1551,7 +1551,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		# 三个分支本身都已要求世界爱尔兰大会，故不再重复前置
 		prerequisite = { focus = IRE_A_irish_question focus = IRE_A_tammany_hall focus = IRE_A_wild_geese_paris }
-		x = 15
+		x = 44
 		y = 14
 		ai_will_do = { base = 70 }
 
@@ -1578,7 +1578,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_green_international }
 		mutually_exclusive = { focus = IRE_A_new_world_expedition }
-		x = 13
+		x = 42
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -1610,7 +1610,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_new_world_ireland }
 		mutually_exclusive = { focus = IRE_A_atlantic_charter }
-		x = 6
+		x = 35
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -1642,7 +1642,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_green_international }
-		x = 15
+		x = 44
 		y = 15
 		available = {
 			any_country = {
@@ -1674,7 +1674,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_nordic_bridge }
-		x = 15
+		x = 44
 		y = 16
 		ai_will_do = { base = 60 }
 
@@ -1721,8 +1721,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_consolidate_free_state }
-		x = 26
-		y = 1
+		x = 2
+		y = 13
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1736,8 +1736,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_B_civil_service }
-		x = 26
-		y = 2
+		x = 2
+		y = 14
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1751,8 +1751,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_B_quell_embers }
-		x = 24
-		y = 3
+		x = 0
+		y = 15
 		mutually_exclusive = { focus = IRE_B_tolerate_ira }
 		ai_will_do = { base = 40 }
 
@@ -1768,8 +1768,8 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_B_quell_embers }
-		x = 28
-		y = 3
+		x = 4
+		y = 15
 		mutually_exclusive = { focus = IRE_B_outlaw_ira }
 		ai_will_do = { base = 40 }
 
@@ -1788,8 +1788,8 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
 		prerequisite = { focus = IRE_B_outlaw_ira }
-		x = 24
-		y = 4
+		x = 0
+		y = 16
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -1808,8 +1808,8 @@ focus_tree = {
 		available = {
 			date > 1940.8.10
 		}
-		x = 24
-		y = 5
+		x = 0
+		y = 17
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1827,8 +1827,8 @@ focus_tree = {
 		available = {
 			date > 1941.1.1
 		}
-		x = 24
-		y = 6
+		x = 0
+		y = 18
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1845,8 +1845,8 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
 		prerequisite = { focus = IRE_consolidate_free_state }
-		x = 32
-		y = 1
+		x = 8
+		y = 13
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1863,8 +1863,8 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 5
 		prerequisite = { focus = IRE_B_economic_war_end }
-		x = 32
-		y = 2
+		x = 8
+		y = 14
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1883,8 +1883,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_B_trade_agreement }
-		x = 32
-		y = 3
+		x = 8
+		y = 15
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -1898,8 +1898,8 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 5
 		prerequisite = { focus = IRE_B_land_annuities }
-		x = 32
-		y = 4
+		x = 8
+		y = 16
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -1919,8 +1919,8 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 5
 		prerequisite = { focus = IRE_B_treaty_ports }
-		x = 32
-		y = 5
+		x = 8
+		y = 17
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -1935,8 +1935,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_B_constitution_1937 }
-		x = 32
-		y = 6
+		x = 8
+		y = 18
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -1951,8 +1951,8 @@ focus_tree = {
 		icon = GFX_goal_generic_defence
 		cost = 5
 		prerequisite = { focus = IRE_B_president_mace }
-		x = 32
-		y = 7
+		x = 8
+		y = 19
 		available = {
 			OR = {
 				date > 1939.9.1
@@ -1971,8 +1971,8 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
-		x = 30
-		y = 8
+		x = 6
+		y = 20
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -1991,8 +1991,8 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
-		x = 32
-		y = 8
+		x = 8
+		y = 20
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2011,8 +2011,8 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
-		x = 34
-		y = 8
+		x = 10
+		y = 20
 		available = {
 			OR = {
 				has_opinion = { target = ENG value > 24 }
@@ -2037,8 +2037,8 @@ focus_tree = {
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
 			prerequisite = { focus = IRE_B_ldf focus = IRE_B_plan_w }
-		x = 28
-		y = 9
+		x = 4
+		y = 21
 		mutually_exclusive = { focus = IRE_B_absolute_neutrality focus = IRE_B_armed_neutrality }
 		ai_will_do = { base = 40 }
 
@@ -2061,8 +2061,8 @@ focus_tree = {
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
 			prerequisite = { focus = IRE_B_ldf focus = IRE_B_plan_w }
-		x = 32
-		y = 9
+		x = 8
+		y = 21
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_armed_neutrality }
 		ai_will_do = { base = 40 }
 
@@ -2081,8 +2081,8 @@ focus_tree = {
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
 			prerequisite = { focus = IRE_B_ldf focus = IRE_B_plan_w }
-		x = 36
-		y = 9
+		x = 12
+		y = 21
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_absolute_neutrality }
 		ai_will_do = { base = 40 }
 
@@ -2097,8 +2097,8 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
 		prerequisite = { focus = IRE_B_moral_neutrality }
-		x = 28
-		y = 10
+		x = 4
+		y = 22
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2113,8 +2113,8 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_B_absolute_neutrality }
-		x = 32
-		y = 10
+		x = 8
+		y = 22
 		available = {
 			any_country = { has_war = yes is_major = yes }
 		}
@@ -2130,8 +2130,8 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_B_absolute_neutrality }
-		x = 36
-		y = 10
+		x = 12
+		y = 22
 		available = {
 			has_country_flag = IRE_ira_tolerated
 		}
@@ -2158,8 +2158,8 @@ focus_tree = {
 			focus = IRE_B_shannon_wayfarers
 			focus = IRE_B_armed_neutrality
 		}
-		x = 32
-		y = 11
+		x = 8
+		y = 23
 		available = { date > 1943.1.1 }
 		ai_will_do = { base = 40 }
 
@@ -2178,8 +2178,8 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 5
 		prerequisite = { focus = IRE_B_famine_echo }
-		x = 32
-		y = 12
+		x = 8
+		y = 24
 		available = {
 			OR = {
 				date > 1948.1.1
@@ -2200,8 +2200,8 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
 		prerequisite = { focus = IRE_B_republic_1949 }
-		x = 34
-		y = 13
+		x = 10
+		y = 25
 		available = {
 			NOT = { any_country = { has_war = yes is_major = yes } }
 		}
@@ -2217,8 +2217,8 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		cost = 10
 		prerequisite = { focus = IRE_B_republic_1949 }
-		x = 30
-		y = 13
+		x = 6
+		y = 25
 		available = {
 			OR = {
 				ENG = { has_capitulated = yes }
@@ -2243,9 +2243,9 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-		prerequisite = { focus = IRE_A_masters_new_world }
-		x = 9
-		y = 16
+		prerequisite = { focus = IRE_A_shannon }
+		x = 19
+		y = 3
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2269,8 +2269,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_shannon_hub }
-		x = 5
-		y = 17
+		x = 14
+		y = 4
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2292,8 +2292,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_E_shannon_hub }
-		x = 13
-		y = 17
+		x = 22
+		y = 4
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2317,8 +2317,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_peat_fuel }
-		x = 5
-		y = 18
+		x = 14
+		y = 5
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2337,8 +2337,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 9
-		y = 18
+		x = 18
+		y = 5
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2361,8 +2361,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 13
-		y = 18
+		x = 22
+		y = 5
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2380,8 +2380,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNATIONAL_TRADE }
 		prerequisite = { focus = IRE_E_industrial_park }
-		x = 9
-		y = 19
+		x = 18
+		y = 6
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2403,8 +2403,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_merchant_marine }
-		x = 13
-		y = 19
+		x = 22
+		y = 6
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -2424,8 +2424,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：出口枢纽与中央银行汇合后才有大西洋经济圈
 		prerequisite = { focus = IRE_E_export_hub }
 		prerequisite = { focus = IRE_E_financial_centre }
-		x = 11
-		y = 20
+		x = 20
+		y = 7
 		available = {
 			OR = {
 				NOT = { has_variable = IRE_neutral_credibility }
@@ -2454,8 +2454,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_E_cork_port }
-		x = 17
-		y = 18
+		x = 26
+		y = 5
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2473,8 +2473,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
-		x = 15
-		y = 19
+		x = 24
+		y = 6
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2491,8 +2491,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_E_hospital_sweepstake }
-		x = 17
-		y = 19
+		x = 26
+		y = 6
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2511,8 +2511,8 @@ focus_tree = {
 		# 两个 prerequisite 块之间为 AND：公共卫生与医学教育都完成后才成体系
 		prerequisite = { focus = IRE_E_public_health }
 		prerequisite = { focus = IRE_E_medical_schools }
-		x = 16
-		y = 20
+		x = 25
+		y = 7
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2531,8 +2531,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_E_atlantic_economy }
-		x = 11
-		y = 21
+		x = 20
+		y = 8
 		available = {
 			date > 1958.1.1
 		}
@@ -2560,8 +2560,8 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
-		x = 30
-		y = 15
+		x = 21
+		y = 12
 		available = {
 			date > 1939.9.1
 			any_country = { is_major = yes has_war = yes }
@@ -2584,8 +2584,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 26
-		y = 16
+		x = 17
+		y = 13
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2602,8 +2602,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_army_expansion }
-		x = 26
-		y = 17
+		x = 17
+		y = 14
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2620,8 +2620,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_officer_corps }
-		x = 26
-		y = 18
+		x = 17
+		y = 15
 		available = {
 			date > 1940.1.1
 		}
@@ -2644,8 +2644,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_M_army_expansion }
-		x = 24
-		y = 17
+		x = 15
+		y = 14
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2666,8 +2666,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 30
-		y = 16
+		x = 21
+		y = 13
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
@@ -2689,8 +2689,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_naval_expansion }
-		x = 29
-		y = 17
+		x = 20
+		y = 14
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2707,8 +2707,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_M_submarine_war }
-		x = 30
-		y = 18
+		x = 21
+		y = 15
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2726,8 +2726,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 32
-		y = 16
+		x = 23
+		y = 13
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2747,8 +2747,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 33
-		y = 17
+		x = 24
+		y = 14
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2766,8 +2766,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 34
-		y = 16
+		x = 25
+		y = 13
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
@@ -2785,8 +2785,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_M_war_cabinet }
-		x = 28
-		y = 16
+		x = 19
+		y = 13
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2804,8 +2804,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_M_armour }
-		x = 26
-		y = 19
+		x = 17
+		y = 16
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
@@ -2826,8 +2826,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_M_officer_corps }
 		prerequisite = { focus = IRE_M_naval_expansion }
 		prerequisite = { focus = IRE_M_air_corps }
-		x = 31
-		y = 19
+		x = 22
+		y = 16
 		ai_will_do = { base = 70 }
 
 		completion_reward = {
@@ -2851,7 +2851,7 @@ focus_tree = {
 			focus = IRE_border_plebiscite
 			focus = IRE_consolidate_free_state
 		}
-		x = 48
+		x = 60
 		y = 0
 		ai_will_do = { base = 15 }
 
@@ -2868,7 +2868,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 5
 		prerequisite = { focus = IRE_ira_council }
-		x = 46
+		x = 58
 		y = 1
 		ai_will_do = { base = 30 }
 
@@ -2885,7 +2885,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		prerequisite = { focus = IRE_ira_council }
-		x = 48
+		x = 60
 		y = 1
 		ai_will_do = { base = 30 }
 
@@ -2904,7 +2904,7 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_ira_council }
-		x = 50
+		x = 62
 		y = 1
 		ai_will_do = { base = 30 }
 
@@ -2923,7 +2923,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_ira_arms_web focus = IRE_ira_camps focus = IRE_ira_infiltrate }
 		available = { has_civil_war = no }
-		x = 48
+		x = 60
 		y = 2
 		ai_will_do = { base = 25 }
 
@@ -2979,7 +2979,7 @@ focus_tree = {
 			has_country_flag = IRE_coup_started
 			has_civil_war = no
 		}
-		x = 48
+		x = 60
 		y = 3
 		ai_will_do = { base = 30 }
 
@@ -2998,7 +2998,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_X_shadow_arsenal }
 		available = { NOT = { has_country_flag = IRE_dark_path } }
-		x = 46
+		x = 58
 		y = 4
 		ai_will_do = { base = 20 }
 
@@ -3021,7 +3021,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 5
 		prerequisite = { focus = IRE_R_red_turn }
-		x = 46
+		x = 58
 		y = 5
 		ai_will_do = { base = 35 }
 
@@ -3046,7 +3046,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
 		prerequisite = { focus = IRE_R_connolly_column }
-		x = 46
+		x = 58
 		y = 6
 		ai_will_do = { base = 35 }
 
@@ -3064,7 +3064,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_republican_congress }
 		available = { date > 1941.6.1 }
-		x = 46
+		x = 58
 		y = 7
 		ai_will_do = { base = 35 }
 
@@ -3081,7 +3081,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_volunteer_line }
-		x = 46
+		x = 58
 		y = 8
 		ai_will_do = { base = 20 }
 
@@ -3103,7 +3103,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_neutral_labor }
-		x = 48
+		x = 60
 		y = 8
 		ai_will_do = { base = 20 }
 
@@ -3126,7 +3126,7 @@ focus_tree = {
 			focus = IRE_R_neutral_labor
 			focus = IRE_R_volunteer_line
 		}
-		x = 46
+		x = 58
 		y = 9
 		ai_will_do = { base = 35 }
 
@@ -3175,7 +3175,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_nationalize }
 		available = { check_variable = { IRE_red_unity > 89 } }
-		x = 46
+		x = 58
 		y = 10
 		ai_will_do = { base = 40 }
 
@@ -3193,7 +3193,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_belfast_strike }
 		available = { has_country_flag = IRE_strike_resolved }
-		x = 46
+		x = 58
 		y = 11
 		ai_will_do = { base = 40 }
 
@@ -3213,7 +3213,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_R_red_turn }
 		available = { NOT = { has_country_flag = IRE_red_path } }
-		x = 52
+		x = 64
 		y = 4
 		ai_will_do = { base = 20 }
 
@@ -3236,7 +3236,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_shadow_arsenal }
 		available = { NOT = { has_country_flag = IRE_dark_surrender } }
-		x = 52
+		x = 64
 		y = 5
 		ai_will_do = { base = 35 }
 
@@ -3255,7 +3255,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_christmas_raid }
 		available = { NOT = { has_country_flag = IRE_dark_surrender } }
-		x = 52
+		x = 64
 		y = 6
 		ai_will_do = { base = 35 }
 
@@ -3281,7 +3281,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_s_plan }
 		available = { NOT = { has_country_flag = IRE_dark_surrender } }
-		x = 52
+		x = 64
 		y = 7
 		ai_will_do = { base = 30 }
 
@@ -3305,7 +3305,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_abwehr_guests }
 		available = { NOT = { has_country_flag = IRE_dark_surrender } }
-		x = 52
+		x = 64
 		y = 8
 		ai_will_do = { base = 30 }
 
@@ -3327,7 +3327,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_red_turn }
 		available = { NOT = { has_completed_focus = IRE_X_ind_cottage } }
-		x = 42
+		x = 54
 		y = 5
 		ai_will_do = { base = 30 }
 
@@ -3350,7 +3350,7 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_expropriation }
-		x = 42
+		x = 54
 		y = 6
 		ai_will_do = { base = 30 }
 
@@ -3375,7 +3375,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 40
+		x = 52
 		y = 7
 		ai_will_do = { base = 30 }
 
@@ -3397,7 +3397,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 42
+		x = 54
 		y = 7
 		ai_will_do = { base = 30 }
 
@@ -3418,7 +3418,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
-		x = 44
+		x = 56
 		y = 7
 		ai_will_do = { base = 25 }
 
@@ -3434,7 +3434,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_cooperative }
-		x = 44
+		x = 56
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3455,7 +3455,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_workers_council }
-		x = 42
+		x = 54
 		y = 10
 		ai_will_do = { base = 30 }
 
@@ -3476,7 +3476,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_rural_electrification }
-		x = 42
+		x = 54
 		y = 8
 		ai_will_do = { base = 35 }
 
@@ -3498,7 +3498,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_shannon_belt }
-		x = 40
+		x = 52
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3526,7 +3526,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_R_ind_limerick_yard }
-		x = 40
+		x = 52
 		y = 9
 		ai_will_do = { base = 25 }
 
@@ -3551,7 +3551,7 @@ focus_tree = {
 		cost = 15
 		prerequisite = { focus = IRE_R_ind_arms_drive }
 		available = { check_variable = { IRE_red_unity > 59 } }
-		x = 42
+		x = 54
 		y = 9
 		ai_will_do = { base = 35 }
 
@@ -3580,7 +3580,7 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = IRE_X_shadow_arsenal }
 		available = { NOT = { has_completed_focus = IRE_R_ind_expropriation } }
-		x = 56
+		x = 68
 		y = 5
 		ai_will_do = { base = 25 }
 
@@ -3603,7 +3603,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 60
+		x = 72
 		y = 6
 		ai_will_do = { base = 25 }
 
@@ -3632,7 +3632,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_cottage }
-		x = 56
+		x = 68
 		y = 6
 		ai_will_do = { base = 30 }
 
@@ -3659,7 +3659,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 8
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
-		x = 58
+		x = 70
 		y = 7
 		ai_will_do = { base = 25 }
 
@@ -3684,7 +3684,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_border_route }
-		x = 58
+		x = 70
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3716,7 +3716,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
 		prerequisite = { focus = IRE_X_abwehr_guests }
-		x = 56
+		x = 68
 		y = 7
 		ai_will_do = { base = 25 }
 
@@ -3741,7 +3741,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_german_tech }
 		prerequisite = { focus = IRE_X_s_plan }
-		x = 54
+		x = 66
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3767,7 +3767,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_german_tech }
-		x = 56
+		x = 68
 		y = 8
 		ai_will_do = { base = 25 }
 
@@ -3790,7 +3790,7 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 12
 		prerequisite = { focus = IRE_X_ind_s_plan_loot }
-		x = 54
+		x = 66
 		y = 9
 		ai_will_do = { base = 30 }
 
@@ -3820,7 +3820,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_hidden_cove }
-		x = 60
+		x = 72
 		y = 7
 		ai_will_do = { base = 25 }
 
@@ -3842,7 +3842,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
 		prerequisite = { focus = IRE_X_ind_dundalk_depot }
-		x = 58
+		x = 70
 		y = 9
 		ai_will_do = { base = 25 }
 
@@ -3867,7 +3867,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
 		prerequisite = { focus = IRE_R_workers_republic }
-		x = 46
+		x = 58
 		y = 13
 		ai_will_do = { base = 20 }
 
@@ -3885,7 +3885,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		cost = 10
 		prerequisite = { focus = IRE_R_end_trinity }
-		x = 44
+		x = 56
 		y = 14
 		ai_will_do = { base = 20 }
 
@@ -3900,7 +3900,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		cost = 10
 		prerequisite = { focus = IRE_R_end_trinity }
-		x = 48
+		x = 60
 		y = 14
 		ai_will_do = { base = 20 }
 
@@ -3920,7 +3920,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_R_end_trinity }
 		prerequisite = { focus = IRE_R_end_radio }
 		prerequisite = { focus = IRE_R_end_birmingham }
-		x = 46
+		x = 58
 		y = 15
 		ai_will_do = { base = 25 }
 
@@ -3935,7 +3935,7 @@ focus_tree = {
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
 		prerequisite = { focus = IRE_R_end_red_britain }
-		x = 46
+		x = 58
 		y = 16
 		ai_will_do = { base = 25 }
 
@@ -3951,7 +3951,7 @@ focus_tree = {
 		icon = GFX_goal_generic_more_territorial_claims
 		cost = 15
 		prerequisite = { focus = IRE_R_end_spark }
-		x = 46
+		x = 58
 		y = 17
 		ai_will_do = { base = 30 }
 
@@ -3976,7 +3976,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 10
 		prerequisite = { focus = IRE_R_end_ulster }
-		x = 46
+		x = 58
 		y = 18
 		ai_will_do = { base = 25 }
 
@@ -3995,7 +3995,7 @@ focus_tree = {
 			ENG = { exists = yes NOT = { has_government = communism } }
 			NOT = { has_civil_war = yes }
 		}
-		x = 46
+		x = 58
 		y = 19
 		ai_will_do = { base = 25 }
 
@@ -4023,7 +4023,7 @@ focus_tree = {
 		available = {
 			any_country = { original_tag = ENG has_government = communism has_civil_war = no }
 		}
-		x = 46
+		x = 58
 		y = 20
 		ai_will_do = { base = 30 }
 
@@ -4046,7 +4046,7 @@ focus_tree = {
 		available = {
 			FRA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 43
+		x = 55
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4071,7 +4071,7 @@ focus_tree = {
 			BEL = { exists = yes NOT = { has_government = communism } }
 			LUX = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 45
+		x = 57
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4103,7 +4103,7 @@ focus_tree = {
 			SPR = { exists = yes NOT = { has_government = communism } }
 			POR = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 47
+		x = 59
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4130,7 +4130,7 @@ focus_tree = {
 		available = {
 			ITA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 49
+		x = 61
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4163,7 +4163,7 @@ focus_tree = {
 			HUN = { exists = yes NOT = { has_government = communism } }
 			CZE = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 43
+		x = 55
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4205,7 +4205,7 @@ focus_tree = {
 			BUL = { exists = yes NOT = { has_government = communism } }
 			GRE = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 45
+		x = 57
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4252,7 +4252,7 @@ focus_tree = {
 			LIT = { exists = yes NOT = { has_government = communism } }
 			EST = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 47
+		x = 59
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4302,7 +4302,7 @@ focus_tree = {
 			DEN = { exists = yes NOT = { has_government = communism } }
 			FIN = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 49
+		x = 61
 		y = 23
 		ai_will_do = { base = 10 }
 
@@ -4337,7 +4337,7 @@ focus_tree = {
 		available = {
 			RAJ = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 43
+		x = 55
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4364,7 +4364,7 @@ focus_tree = {
 			ENG = { exists = yes NOT = { has_government = communism } }
 			FRA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 45
+		x = 57
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4395,7 +4395,7 @@ focus_tree = {
 			HOL = { exists = yes NOT = { has_government = communism } }
 			FRA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 47
+		x = 59
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4426,7 +4426,7 @@ focus_tree = {
 			IRQ = { exists = yes NOT = { has_government = communism } }
 			PER = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 49
+		x = 61
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4453,7 +4453,7 @@ focus_tree = {
 		available = {
 			CAN = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 44
+		x = 56
 		y = 25
 		ai_will_do = { base = 10 }
 
@@ -4479,7 +4479,7 @@ focus_tree = {
 		available = {
 			USA = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 46
+		x = 58
 		y = 25
 		ai_will_do = { base = 10 }
 
@@ -4504,7 +4504,7 @@ focus_tree = {
 			BRA = { exists = yes NOT = { has_government = communism } }
 			ARG = { exists = yes NOT = { has_government = communism } }
 		}
-		x = 48
+		x = 60
 		y = 25
 		ai_will_do = { base = 10 }
 
@@ -4532,7 +4532,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_doctrines
 		cost = 10
 		prerequisite = { focus = IRE_X_green_action }
-		x = 52
+		x = 64
 		y = 9
 		ai_will_do = { base = 20 }
 
@@ -4548,7 +4548,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_sphere
 		cost = 10
 		prerequisite = { focus = IRE_X_end_planning }
-		x = 52
+		x = 64
 		y = 10
 		ai_will_do = { base = 20 }
 
@@ -4574,7 +4574,7 @@ focus_tree = {
 				any_country = { original_tag = ENG exists = yes }
 			}
 		}
-		x = 52
+		x = 64
 		y = 11
 		ai_will_do = { base = 25 }
 
@@ -4592,7 +4592,7 @@ focus_tree = {
 		available = {
 			any_country = { original_tag = ENG exists = yes has_capitulated = yes }
 		}
-		x = 52
+		x = 64
 		y = 12
 		ai_will_do = { base = 30 }
 
@@ -4611,7 +4611,7 @@ focus_tree = {
 		available = {
 			FRA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
+		x = 62
 		y = 14
 		ai_will_do = { base = 10 }
 
@@ -4636,7 +4636,7 @@ focus_tree = {
 			BEL = { exists = yes NOT = { has_government = fascism } }
 			LUX = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
+		x = 64
 		y = 14
 		ai_will_do = { base = 10 }
 
@@ -4668,7 +4668,7 @@ focus_tree = {
 			SPR = { exists = yes NOT = { has_government = fascism } }
 			POR = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 54
+		x = 66
 		y = 14
 		ai_will_do = { base = 10 }
 
@@ -4695,7 +4695,7 @@ focus_tree = {
 		available = {
 			ITA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 56
+		x = 68
 		y = 14
 		ai_will_do = { base = 10 }
 
@@ -4728,7 +4728,7 @@ focus_tree = {
 			HUN = { exists = yes NOT = { has_government = fascism } }
 			CZE = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
+		x = 62
 		y = 15
 		ai_will_do = { base = 10 }
 
@@ -4770,7 +4770,7 @@ focus_tree = {
 			BUL = { exists = yes NOT = { has_government = fascism } }
 			GRE = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
+		x = 64
 		y = 15
 		ai_will_do = { base = 10 }
 
@@ -4816,7 +4816,7 @@ focus_tree = {
 			LIT = { exists = yes NOT = { has_government = fascism } }
 			EST = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 54
+		x = 66
 		y = 15
 		ai_will_do = { base = 10 }
 
@@ -4862,7 +4862,7 @@ focus_tree = {
 			DEN = { exists = yes NOT = { has_government = fascism } }
 			FIN = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 56
+		x = 68
 		y = 15
 		ai_will_do = { base = 10 }
 
@@ -4897,7 +4897,7 @@ focus_tree = {
 		available = {
 			RAJ = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
+		x = 62
 		y = 16
 		ai_will_do = { base = 10 }
 
@@ -4924,7 +4924,7 @@ focus_tree = {
 			ENG = { exists = yes NOT = { has_government = fascism } }
 			FRA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
+		x = 64
 		y = 16
 		ai_will_do = { base = 10 }
 
@@ -4955,7 +4955,7 @@ focus_tree = {
 			HOL = { exists = yes NOT = { has_government = fascism } }
 			FRA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 54
+		x = 66
 		y = 16
 		ai_will_do = { base = 10 }
 
@@ -4986,7 +4986,7 @@ focus_tree = {
 			IRQ = { exists = yes NOT = { has_government = fascism } }
 			PER = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 56
+		x = 68
 		y = 16
 		ai_will_do = { base = 10 }
 
@@ -5013,7 +5013,7 @@ focus_tree = {
 		available = {
 			CAN = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 50
+		x = 62
 		y = 17
 		ai_will_do = { base = 10 }
 
@@ -5039,7 +5039,7 @@ focus_tree = {
 		available = {
 			USA = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 52
+		x = 64
 		y = 17
 		ai_will_do = { base = 10 }
 
@@ -5064,7 +5064,7 @@ focus_tree = {
 			BRA = { exists = yes NOT = { has_government = fascism } }
 			ARG = { exists = yes NOT = { has_government = fascism } }
 		}
-		x = 54
+		x = 66
 		y = 17
 		ai_will_do = { base = 10 }
 
