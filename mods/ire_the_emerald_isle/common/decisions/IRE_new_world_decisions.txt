@@ -108,10 +108,47 @@ IRE_home_cat = {
 		ai_will_do = { base = 45 }
 	}
 
+	IRE_dev_ulster = {
+		icon = generic_industry
+		cost = 60
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_dev_ulster_count } }
+				set_variable = { IRE_dev_ulster_count = 0 }
+			}
+			add_to_variable = { IRE_dev_ulster_count = 1 }
+			if = {
+				limit = { 119 = { is_owned_by = ROOT } }
+				119 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = dockyard level = 1 instant_build = yes }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = { base = 50 }
+	}
+
 	IRE_national_mining = {
 		icon = generic_industry
 		cost = 75
-		days_remove = 120
+		days_remove = 180
 
 		available = {
 			has_idea = IRE_home_development
@@ -119,11 +156,12 @@ IRE_home_cat = {
 				113 = { is_owned_by = ROOT }
 				134 = { is_owned_by = ROOT }
 				135 = { is_owned_by = ROOT }
+				119 = { is_owned_by = ROOT }
 			}
 		}
 
 		visible = { has_idea = IRE_home_development }
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			if = {
@@ -147,7 +185,16 @@ IRE_home_cat = {
 					add_resource = { type = steel amount = 1 }
 				}
 			}
+			if = {
+				limit = { 119 = { is_owned_by = ROOT } }
+				119 = {
+					add_resource = { type = coal amount = 2 }
+					add_resource = { type = steel amount = 2 }
+					add_resource = { type = aluminium amount = 1 }
+				}
+			}
 			add_political_power = 25
+			custom_effect_tooltip = IRE_tt_national_mining_repeat
 		}
 
 		ai_will_do = { base = 40 }

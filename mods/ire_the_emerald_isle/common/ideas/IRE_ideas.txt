@@ -442,6 +442,30 @@ ideas = {
 			}
 		}
 
+		# ---------------- A 线：北爱政治路线 ----------------
+		IRE_civic_republic = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.10
+				research_speed_factor = 0.03
+			}
+		}
+
+		IRE_centralised_republic = {
+			picture = generic_war_preparation
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.10
+				conscription_factor = 0.05
+				industrial_capacity_factory = 0.05
+				stability_factor = -0.03
+			}
+		}
+
 		# ---------------- B 线：史实产业与战时能力 ----------------
 		IRE_bord_na_mona = {
 			picture = generic_energy_concern

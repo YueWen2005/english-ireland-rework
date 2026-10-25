@@ -90,8 +90,8 @@ characters = {
 			}
 		}
 		country_leader = {
-			# 领导人的 ideology 要填 neutrality 组内的子意识形态，不能用组名
-			ideology = centrism
+			# 新世界线走民主共和路线：科斯特洛是民主派领袖，而非中立派
+			ideology = conservatism
 			expire = "1965.1.1.1"
 			id = -1
 		}

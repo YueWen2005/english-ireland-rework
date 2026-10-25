@@ -402,7 +402,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_A_volunteer_corps }
-		x = 28
+		x = 27
 		y = 4
 		ai_will_do = { base = 45 }
 
@@ -455,7 +455,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_reserves }
-		x = 34
+		x = 36
 		y = 3
 		ai_will_do = { base = 60 }
 
@@ -619,7 +619,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 30
+		x = 29
 		y = 4
 		mutually_exclusive = { focus = IRE_A_firm_integration }
 		ai_will_do = { base = 40 }
@@ -650,6 +650,45 @@ focus_tree = {
 			add_ideas = IRE_mobilisation_drive
 			custom_effect_tooltip = IRE_effect_mobilisation_drive
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
+		}
+	}
+
+	# ---- 北爱政治路线：和解后的公民共和国 / 强硬整合后的中央集权共和国 ----
+	focus = {
+		id = IRE_A_civic_republic
+		icon = GFX_focus_generic_election
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = IRE_A_reconciliation }
+		x = 28
+		y = 6
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_civic_republic
+			add_political_power = 100
+			add_stability = 0.05
+			add_tech_bonus = { name = IRE_civic_research_bonus bonus = 0.3 uses = 1 category = industry }
+		}
+	}
+
+	focus = {
+		id = IRE_A_centralised_republic
+		icon = GFX_goal_generic_defence
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
+		prerequisite = { focus = IRE_A_firm_integration }
+		x = 30
+		y = 6
+		ai_will_do = { base = 55 }
+
+		completion_reward = {
+			add_ideas = IRE_centralised_republic
+			add_war_support = 0.05
+			add_manpower = 10000
+			army_experience = 50
 		}
 	}
 
@@ -1332,8 +1371,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 41
-		y = 12
+		x = 42
+		y = 14
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_green_dollar_partner
@@ -1427,8 +1466,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 49
-		y = 12
+		x = 51
+		y = 13
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_air_bridge_partner
@@ -1562,7 +1601,9 @@ focus_tree = {
 			IRE_diaspora_thresholds = yes
 			custom_effect_tooltip = IRE_effect_diaspora_network_10
 			set_cosmetic_tag = IRE_new_world
-			promote_character = IRE_nw_john_costello
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			IRE_nw_john_costello = { promote_leader = yes }
+			hidden_effect = { retire_country_leader = yes }
 			custom_effect_tooltip = IRE_effect_green_international_tag
 			add_political_power = 75
 			add_stability = 0.05
@@ -2361,8 +2402,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_B_trade_agreement }
-		x = 92
-		y = 2
+		x = 90
+		y = 3
 		ai_will_do = { base = 125 }
 
 		completion_reward = {
@@ -2384,7 +2425,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_B_land_annuities }
 		x = 92
-		y = 3
+		y = 4
 		ai_will_do = { base = 140 }
 
 		completion_reward = {
@@ -2403,7 +2444,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_B_treaty_ports }
 		x = 84
-		y = 4
+		y = 5
 		ai_will_do = { base = 125 }
 
 		completion_reward = {
@@ -2446,8 +2487,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_B_emergency }
-		x = 92
-		y = 7
+		x = 90
+		y = 8
 		ai_will_do = { base = 135 }
 
 		completion_reward = {

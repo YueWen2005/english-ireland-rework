@@ -52,15 +52,15 @@ set_technology = {
 # 开局科研槽（爱尔兰原版 2 个，给到 3 便于小国生存）
 set_research_slots = 3
 
-# 开局政治点数
+# 开局政治：爱尔兰是议会民主国，中立是外交政策而非执政意识形态
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	elections_allowed = yes
 }
 
 set_popularities = {
-	neutrality = 56
-	democratic = 24
+	democratic = 56
+	neutrality = 24
 	communism = 4
 	fascism = 16
 }
