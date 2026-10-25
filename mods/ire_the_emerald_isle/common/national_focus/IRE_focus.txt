@@ -1,4 +1,4 @@
-### ============================================================
+﻿### ============================================================
 ### 翡翠岛的抉择 - 爱尔兰国策树
 ### 双主线：A《边境公投》 / B《自由邦的巩固》，起点互斥
 ### ============================================================
@@ -742,7 +742,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_london_note }
 		x = 34
 		y = 5
-		available = {			any_country = { is_major = yes has_war = yes }
+		available = {
+			any_country = { is_major = yes has_war = yes }
 		}
 		ai_will_do = { base = 40 }
 
@@ -1343,7 +1344,8 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_diaspora_60
 				check_variable = { IRE_diaspora_network > 59 }
-			}		}
+			}
+		}
 		ai_will_do = { base = 65 }
 
 		completion_reward = {
@@ -2804,7 +2806,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		x = 21
 		y = 12
-		available = {			any_country = { is_major = yes has_war = yes }
+		available = {
+			any_country = { is_major = yes has_war = yes }
 		}
 		ai_will_do = { base = 80 }
 
