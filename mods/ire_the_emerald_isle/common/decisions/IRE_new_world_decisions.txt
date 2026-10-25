@@ -16,9 +16,19 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			113 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_leinster_count }
+				check_variable = { IRE_dev_leinster_count < 7 }
+			}
 		}
 
-		visible = { has_idea = IRE_home_development }
+		visible = {
+			has_idea = IRE_home_development
+			OR = {
+				NOT = { has_variable = IRE_dev_leinster_count }
+				check_variable = { IRE_dev_leinster_count < 7 }
+			}
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -49,9 +59,19 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			135 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_munster_count }
+				check_variable = { IRE_dev_munster_count < 7 }
+			}
 		}
 
-		visible = { has_idea = IRE_home_development }
+		visible = {
+			has_idea = IRE_home_development
+			OR = {
+				NOT = { has_variable = IRE_dev_munster_count }
+				check_variable = { IRE_dev_munster_count < 7 }
+			}
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -82,9 +102,19 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			134 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_connaught_count }
+				check_variable = { IRE_dev_connaught_count < 7 }
+			}
 		}
 
-		visible = { has_idea = IRE_home_development }
+		visible = {
+			has_idea = IRE_home_development
+			OR = {
+				NOT = { has_variable = IRE_dev_connaught_count }
+				check_variable = { IRE_dev_connaught_count < 7 }
+			}
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -108,10 +138,55 @@ IRE_home_cat = {
 		ai_will_do = { base = 45 }
 	}
 
+	IRE_dev_ulster = {
+		icon = generic_industry
+		cost = 60
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_ulster_count }
+				check_variable = { IRE_dev_ulster_count < 7 }
+			}
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+			OR = {
+				NOT = { has_variable = IRE_dev_ulster_count }
+				check_variable = { IRE_dev_ulster_count < 7 }
+			}
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_dev_ulster_count } }
+				set_variable = { IRE_dev_ulster_count = 0 }
+			}
+			add_to_variable = { IRE_dev_ulster_count = 1 }
+			if = {
+				limit = { 119 = { is_owned_by = ROOT } }
+				119 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = dockyard level = 1 instant_build = yes }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = { base = 50 }
+	}
+
 	IRE_national_mining = {
 		icon = generic_industry
 		cost = 75
-		days_remove = 120
+		days_remove = 180
 
 		available = {
 			has_idea = IRE_home_development
@@ -119,11 +194,12 @@ IRE_home_cat = {
 				113 = { is_owned_by = ROOT }
 				134 = { is_owned_by = ROOT }
 				135 = { is_owned_by = ROOT }
+				119 = { is_owned_by = ROOT }
 			}
 		}
 
 		visible = { has_idea = IRE_home_development }
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			if = {
@@ -147,10 +223,190 @@ IRE_home_cat = {
 					add_resource = { type = steel amount = 1 }
 				}
 			}
+			if = {
+				limit = { 119 = { is_owned_by = ROOT } }
+				119 = {
+					add_resource = { type = coal amount = 2 }
+					add_resource = { type = steel amount = 2 }
+					add_resource = { type = aluminium amount = 1 }
+				}
+			}
 			add_political_power = 25
+			custom_effect_tooltip = IRE_tt_national_mining_repeat
 		}
 
 		ai_will_do = { base = 40 }
+	}
+
+	# 四州各自的钢铝开发计划：可重复，150 天冷却
+	IRE_mining_leinster = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			113 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			113 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			113 = {
+				add_resource = { type = steel amount = 1 }
+				add_resource = { type = aluminium amount = 1 }
+				add_resource = { type = chromium amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_mining_munster = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			135 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			135 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			135 = {
+				add_resource = { type = steel amount = 1 }
+				add_resource = { type = aluminium amount = 2 }
+				add_resource = { type = chromium amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_mining_connaught = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			134 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			134 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			134 = {
+				add_resource = { type = steel amount = 1 }
+				add_resource = { type = aluminium amount = 1 }
+				add_resource = { type = tungsten amount = 1 }
+				add_resource = { type = chromium amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	IRE_mining_ulster = {
+		icon = generic_industry
+		cost = 55
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			119 = {
+				add_resource = { type = steel amount = 2 }
+				add_resource = { type = aluminium amount = 1 }
+				add_resource = { type = coal amount = 1 }
+				add_resource = { type = chromium amount = 1 }
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = IRE_tt_state_mining_repeat
+		}
+
+		ai_will_do = { base = 40 }
+	}
+
+	# 本土开发接近饱和后，转向地图外工业
+	IRE_unity_plan = {
+		icon = generic_industry
+		cost = 150
+		days_remove = 240
+
+		available = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			119 = { is_owned_by = ROOT }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			hidden_effect = {
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_offsite_building = { type = arms_factory level = 2 }
+			}
+			custom_effect_tooltip = IRE_tt_unity_plan_repeat
+		}
+
+		ai_will_do = { base = 55 }
+	}
+
+	# 铁路车辆：可重复补充火车
+	IRE_train_production = {
+		icon = generic_train
+		cost = 50
+		days_remove = 120
+
+		visible = { has_idea = IRE_home_development }
+		available = {
+			has_idea = IRE_home_development
+			has_tech = basic_train
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 10
+			}
+			custom_effect_tooltip = IRE_tt_train_production_repeat
+		}
+
+		ai_will_do = { base = 35 }
 	}
 
 	IRE_national_research = {
@@ -177,6 +433,84 @@ IRE_home_cat = {
 		}
 
 		ai_will_do = { base = 40 }
+	}
+}
+
+# ============================================================
+# 工业效率：三级永久工厂效率改造
+# ============================================================
+IRE_eff_cat = {
+
+	IRE_eff_standardisation = {
+		icon = generic_industry
+		cost = 75
+		days_remove = 120
+
+		available = {
+			has_idea = IRE_home_development
+			NOT = { has_idea = IRE_industrial_standardisation }
+		}
+
+		visible = {
+			has_idea = IRE_home_development
+			NOT = { has_idea = IRE_industrial_standardisation }
+		}
+		fire_only_once = yes
+
+		complete_effect = {
+			add_ideas = IRE_industrial_standardisation
+			add_stability = 0.01
+		}
+
+		ai_will_do = { base = 45 }
+	}
+
+	IRE_eff_assembly_line = {
+		icon = generic_factory
+		cost = 100
+		days_remove = 150
+
+		available = {
+			has_idea = IRE_industrial_standardisation
+			NOT = { has_idea = IRE_assembly_line }
+		}
+
+		visible = {
+			has_idea = IRE_industrial_standardisation
+			NOT = { has_idea = IRE_assembly_line }
+		}
+		fire_only_once = yes
+
+		complete_effect = {
+			add_ideas = IRE_assembly_line
+			add_stability = 0.01
+		}
+
+		ai_will_do = { base = 50 }
+	}
+
+	IRE_eff_total_mobilisation = {
+		icon = generic_construction
+		cost = 150
+		days_remove = 180
+
+		available = {
+			has_idea = IRE_assembly_line
+			NOT = { has_idea = IRE_total_industrial_mobilisation }
+		}
+
+		visible = {
+			has_idea = IRE_assembly_line
+			NOT = { has_idea = IRE_total_industrial_mobilisation }
+		}
+		fire_only_once = yes
+
+		complete_effect = {
+			add_ideas = IRE_total_industrial_mobilisation
+			add_stability = 0.01
+		}
+
+		ai_will_do = { base = 55 }
 	}
 }
 

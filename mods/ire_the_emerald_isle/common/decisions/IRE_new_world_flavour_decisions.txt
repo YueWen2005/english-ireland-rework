@@ -38,14 +38,10 @@ IRE_memoir_cat = {
 		fire_only_once = yes
 
 		visible = {
-			has_completed_focus = IRE_E_shannon_hub
-			date > 1943.1.1
-			country_exists = USA
+			has_completed_focus = IRE_E_shannon_hub			country_exists = USA
 		}
 		available = {
-			has_completed_focus = IRE_E_shannon_hub
-			date > 1943.1.1
-			country_exists = USA
+			has_completed_focus = IRE_E_shannon_hub			country_exists = USA
 		}
 
 		complete_effect = {
@@ -61,14 +57,10 @@ IRE_memoir_cat = {
 		fire_only_once = yes
 
 		visible = {
-			has_completed_focus = IRE_E_shannon_hub
-			date > 1945.1.1
-			has_war = no
+			has_completed_focus = IRE_E_shannon_hub			has_war = no
 		}
 		available = {
-			has_completed_focus = IRE_E_shannon_hub
-			date > 1945.1.1
-			has_war = no
+			has_completed_focus = IRE_E_shannon_hub			has_war = no
 		}
 
 		complete_effect = {
@@ -84,14 +76,10 @@ IRE_memoir_cat = {
 		fire_only_once = yes
 
 		visible = {
-			has_completed_focus = IRE_A_supply_web
-			date > 1951.1.1
-			has_war = no
+			has_completed_focus = IRE_A_supply_web			has_war = no
 		}
 		available = {
-			has_completed_focus = IRE_A_supply_web
-			date > 1951.1.1
-			has_war = no
+			has_completed_focus = IRE_A_supply_web			has_war = no
 		}
 
 		complete_effect = {
@@ -107,14 +95,10 @@ IRE_memoir_cat = {
 		fire_only_once = yes
 
 		visible = {
-			has_completed_focus = IRE_E_shannon_free_zone
-			date > 1958.1.1
-			has_war = no
+			has_completed_focus = IRE_E_shannon_free_zone			has_war = no
 		}
 		available = {
-			has_completed_focus = IRE_E_shannon_free_zone
-			date > 1958.1.1
-			has_war = no
+			has_completed_focus = IRE_E_shannon_free_zone			has_war = no
 		}
 
 		complete_effect = {

@@ -1,0 +1,323 @@
+### ============================================================
+### 加拿大归并后的国土开发 / 资源勘探 / 工业冶炼
+### 需完成 A 线《归并加拿大》，三套计划各最多实施 3 期
+### ============================================================
+
+IRE_canada_cat = {
+
+	# ------------------------------------------------------------
+	# 国土开发：每期覆盖全部可开发省份
+	# ------------------------------------------------------------
+	IRE_canada_development_plan = {
+		icon = generic_construction
+		cost = 75
+		days_remove = 150
+		fire_only_once = no
+
+		visible = {
+			has_country_flag = IRE_canada_annexed
+			any_owned_state = { IRE_canadian_state = yes }
+		}
+
+		available = {
+			has_country_flag = IRE_canada_annexed
+			any_owned_state = { IRE_canadian_developable_state = yes }
+			OR = {
+				NOT = { has_variable = IRE_canada_dev_count }
+				check_variable = { IRE_canada_dev_count < 3 }
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_canada_dev_count } }
+				set_variable = { IRE_canada_dev_count = 0 }
+			}
+			add_to_variable = { IRE_canada_dev_count = 1 }
+			hidden_effect = {
+				every_owned_state = {
+					limit = { IRE_canadian_developable_state = yes }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+				if = {
+					limit = { any_owned_state = { IRE_canadian_developable_state = yes } }
+					random_owned_controlled_state = {
+						limit = { IRE_canadian_developable_state = yes }
+						add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					}
+				}
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_manpower = 10000
+				add_stability = 0.02
+				if = {
+					limit = { check_variable = { IRE_canada_dev_count = 3 } }
+					add_offsite_building = { type = arms_factory level = 1 }
+					add_manpower = 15000
+				}
+			}
+			custom_effect_tooltip = IRE_tt_canada_development
+			custom_effect_tooltip = IRE_tt_canada_development_offsite
+			if = {
+				limit = { check_variable = { IRE_canada_dev_count = 3 } }
+				custom_effect_tooltip = IRE_tt_canada_development_final
+			}
+		}
+
+		ai_will_do = { base = 60 }
+	}
+
+	# ------------------------------------------------------------
+	# 资源勘探：按省份资源禀赋增加煤、钢、铝、石油、钨
+	# ------------------------------------------------------------
+	IRE_canada_resource_plan = {
+		icon = generic_industry
+		cost = 70
+		days_remove = 180
+		fire_only_once = no
+
+		visible = {
+			has_country_flag = IRE_canada_annexed
+			any_owned_state = { IRE_canadian_state = yes }
+		}
+
+		available = {
+			has_country_flag = IRE_canada_annexed
+			any_owned_state = { IRE_canadian_state = yes }
+			OR = {
+				NOT = { has_variable = IRE_canada_resource_count }
+				check_variable = { IRE_canada_resource_count < 3 }
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_canada_resource_count } }
+				set_variable = { IRE_canada_resource_count = 0 }
+			}
+			add_to_variable = { IRE_canada_resource_count = 1 }
+			hidden_effect = {
+				every_owned_state = {
+					limit = { IRE_canadian_state = yes }
+
+					# 煤
+					if = {
+						limit = { state = 464 }
+						add_resource = { type = coal amount = 1 }
+					}
+					if = {
+						limit = { state = 465 }
+						add_resource = { type = coal amount = 1 }
+					}
+					if = {
+						limit = { state = 470 }
+						add_resource = { type = coal amount = 1 }
+					}
+					if = {
+						limit = { state = 471 }
+						add_resource = { type = coal amount = 1 }
+					}
+					if = {
+						limit = { state = 473 }
+						add_resource = { type = coal amount = 1 }
+					}
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = coal amount = 1 }
+					}
+
+					# 钢
+					if = {
+						limit = { state = 276 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 465 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 467 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 862 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 865 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 866 }
+						add_resource = { type = steel amount = 1 }
+					}
+
+					# 铝
+					if = {
+						limit = { state = 466 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 468 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 683 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 862 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 866 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 867 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+
+					# 石油与钨
+					if = {
+						limit = { state = 467 }
+						add_resource = { type = oil amount = 1 }
+					}
+					if = {
+						limit = { state = 469 }
+						add_resource = { type = oil amount = 1 }
+					}
+					if = {
+						limit = { state = 470 }
+						add_resource = { type = oil amount = 1 }
+					}
+					if = {
+						limit = { state = 472 }
+						add_resource = { type = oil amount = 1 }
+						add_resource = { type = tungsten amount = 1 }
+					}
+					if = {
+						limit = { state = 473 }
+						add_resource = { type = oil amount = 1 }
+					}
+
+					# 铬：与钢同批产出
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = chromium amount = 1 }
+					}
+					if = {
+						limit = { state = 683 }
+						add_resource = { type = chromium amount = 1 }
+					}
+				}
+				if = {
+					limit = { check_variable = { IRE_canada_resource_count = 3 } }
+					add_offsite_building = { type = industrial_complex level = 1 }
+				}
+				add_political_power = 20
+			}
+			custom_effect_tooltip = IRE_tt_canada_resources
+			if = {
+				limit = { check_variable = { IRE_canada_resource_count = 3 } }
+				custom_effect_tooltip = IRE_tt_canada_resources_final
+			}
+		}
+
+		ai_will_do = { base = 55 }
+	}
+
+	# ------------------------------------------------------------
+	# 工业冶炼：铬 + 钢铝 + 地图外军工
+	# ------------------------------------------------------------
+	IRE_canada_smelting_plan = {
+		icon = generic_factory
+		cost = 90
+		days_remove = 180
+		fire_only_once = no
+
+		visible = {
+			has_country_flag = IRE_canada_annexed
+			any_owned_state = { IRE_canadian_state = yes }
+		}
+
+		available = {
+			has_country_flag = IRE_canada_annexed
+			any_owned_state = { IRE_canadian_state = yes }
+			OR = {
+				NOT = { has_variable = IRE_canada_smelt_count }
+				check_variable = { IRE_canada_smelt_count < 3 }
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_canada_smelt_count } }
+				set_variable = { IRE_canada_smelt_count = 0 }
+			}
+			add_to_variable = { IRE_canada_smelt_count = 1 }
+			if = {
+				limit = { NOT = { has_idea = IRE_canada_smelting } }
+				hidden_effect = { add_ideas = IRE_canada_smelting }
+				custom_effect_tooltip = IRE_tt_canada_smelting_idea
+			}
+			hidden_effect = {
+				every_owned_state = {
+					limit = { IRE_canadian_state = yes }
+					if = {
+						limit = { state = 276 }
+						add_resource = { type = steel amount = 1 }
+						add_resource = { type = chromium amount = 1 }
+					}
+					if = {
+						limit = { state = 466 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 468 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = steel amount = 1 }
+						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = chromium amount = 2 }
+					}
+					if = {
+						limit = { state = 683 }
+						add_resource = { type = aluminium amount = 1 }
+					}
+					if = {
+						limit = { state = 866 }
+						add_resource = { type = steel amount = 1 }
+					}
+					if = {
+						limit = { state = 867 }
+						add_resource = { type = steel amount = 1 }
+					}
+				}
+				add_offsite_building = { type = arms_factory level = 1 }
+				if = {
+					limit = { check_variable = { IRE_canada_smelt_count = 3 } }
+					add_offsite_building = { type = industrial_complex level = 1 }
+				}
+				add_political_power = 15
+			}
+			custom_effect_tooltip = IRE_tt_canada_smelting
+			if = {
+				limit = { check_variable = { IRE_canada_smelt_count = 3 } }
+				custom_effect_tooltip = IRE_tt_canada_smelting_final
+			}
+		}
+
+		ai_will_do = { base = 60 }
+	}
+}

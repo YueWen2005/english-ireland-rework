@@ -5,6 +5,8 @@ on_actions = {
 			every_country = {
 				limit = { tag = IRE }
 				IRE_init_variables = yes
+				# 民主议会制开局：确保德·瓦莱拉是执政领袖
+				IRE_Éamon_de_valera = { promote_leader = yes }
 			}
 		}
 	}
