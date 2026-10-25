@@ -28,7 +28,7 @@ ideas = {
 		}
 
 		IRE_agrarian_poverty = {
-			picture = gre_agricultural_communes
+			picture = generic_economic_crisis
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -41,7 +41,7 @@ ideas = {
 		# 削弱版「农业穷国」：仅保留消费品 +5%，去掉军工 −15%
 		# 对应文档《经济战争的终结》「移除一半负面」（HOI4 无法做「一半」，用替换精神实现）
 		IRE_agrarian_poverty_lite = {
-			picture = gre_agricultural_communes2
+			picture = generic_economic_crisis
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -532,7 +532,7 @@ ideas = {
 		}
 
 		IRE_modern_agriculture = {
-			picture = LIT_invested_in_farms
+			picture = generic_production_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -562,7 +562,7 @@ ideas = {
 		}
 
 		IRE_dublin_finance = {
-			picture = CZE_national_bank_of_czechoslovakia
+			picture = generic_foreign_capital
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -586,7 +586,7 @@ ideas = {
 		# 军事区域精神
 		# ============================================================
 		IRE_war_cabinet = {
-			picture = AST_cabinet_trust1_idea
+			picture = generic_war_preparation
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -597,7 +597,7 @@ ideas = {
 		}
 
 		IRE_army_expansion = {
-			picture = HUN_rapid_army_expansion
+			picture = generic_reserve_divisions
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -776,7 +776,7 @@ ideas = {
 		}
 
 		IRE_unity_for_ports = {
-			picture = DEN_aalborg_portland
+			picture = generic_coastal_navy
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -798,7 +798,7 @@ ideas = {
 		}
 
 		IRE_public_health = {
-			picture = FIN_socialist_welfare
+			picture = generic_manpower_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -818,7 +818,7 @@ ideas = {
 		}
 
 		IRE_national_health = {
-			picture = SIA_civillian_full_support
+			picture = generic_manpower_bonus
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
@@ -873,66 +873,75 @@ ideas = {
 			modifier = {
 				stability_factor = 0.05
 				war_support_factor = 0.05
-				army_defence_factor = 0.10
+				army_defence_factor = 0.15
+				industrial_capacity_factory = 0.03
+				conscription_factor = 0.02
 			}
 			removal_cost = -1
 		}
 
 		IRE_defend_ireland_2 = {
-			picture = generic_war_preparation
+			picture = home_defence_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
 				stability_factor = 0.08
 				war_support_factor = 0.10
-				army_defence_factor = 0.20
+				army_defence_factor = 0.25
+				industrial_capacity_factory = 0.06
 				conscription_factor = 0.05
-				industrial_capacity_factory = 0.05
+				army_attack_factor = 0.05
 			}
 			removal_cost = -1
 		}
 
 		IRE_defend_ireland_3 = {
-			picture = generic_manpower_bonus
+			picture = home_defence_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
 				stability_factor = 0.10
 				war_support_factor = 0.15
-				army_defence_factor = 0.30
+				army_defence_factor = 0.35
+				industrial_capacity_factory = 0.10
 				conscription_factor = 0.10
-				industrial_capacity_factory = 0.08
+				army_attack_factor = 0.10
+				army_org_factor = 0.05
 			}
 			removal_cost = -1
 		}
 
 		IRE_defend_ireland_4 = {
-			picture = generic_army_war_college
+			picture = home_defence_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
 				stability_factor = 0.12
 				war_support_factor = 0.20
-				army_defence_factor = 0.45
-				army_attack_factor = 0.10
+				army_defence_factor = 0.50
+				industrial_capacity_factory = 0.15
 				conscription_factor = 0.20
-				industrial_capacity_factory = 0.10
+				army_attack_factor = 0.15
+				army_org_factor = 0.05
+				surrender_limit = 0.20
 			}
 			removal_cost = -1
 		}
 
 		IRE_defend_ireland_5 = {
-			picture = generic_fortify_the_borders
+			picture = home_defence_spirit
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
 				stability_factor = 0.15
 				war_support_factor = 0.30
-				army_defence_factor = 0.60
-				army_attack_factor = 0.20
+				army_defence_factor = 0.65
+				industrial_capacity_factory = 0.20
 				conscription_factor = 0.40
-				industrial_capacity_factory = 0.15
+				army_attack_factor = 0.25
+				army_org_factor = 0.10
 				surrender_limit = 0.50
+				consumer_goods_factor = -0.05
 			}
 			removal_cost = -1
 		}

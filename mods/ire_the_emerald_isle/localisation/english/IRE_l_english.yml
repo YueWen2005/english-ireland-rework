@@ -943,3 +943,6 @@
  ire_nw.74.t:0 "Celtic Tiger"
  ire_nw.74.d:0 "The lights of the Shannon Free Zone burn all night, and foreign factories rise on the outskirts of Dublin. Economists begin to use a new phrase for Ireland: the Celtic Tiger."
  ire_nw.74.a:0 "Let the Celtic Tiger run."
+
+ IRE_defend_factory_tt:0 "Adds 1 off-map civilian factory in Dublin."
+ IRE_defend_factory_arms_tt:0 "Adds 1 off-map civilian factory and 1 off-map military factory in Dublin."
