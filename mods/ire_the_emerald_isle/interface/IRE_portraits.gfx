@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_IRE_frank_ryan"
+		texturefile = "gfx/leaders/IRE/Portrait_Ireland_Frank_Ryan.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_IRE_sean_russell"
+		texturefile = "gfx/leaders/IRE/Portrait_Ireland_Sean_Russell.dds"
+	}
+}

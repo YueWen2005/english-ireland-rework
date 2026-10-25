@@ -528,6 +528,8 @@
  IRE_flying_columns_desc:0 "Light columns from the hills and the bogs: they need no supply line, for the whole country is their supply line."
  IRE_connolly_road:0 "The Connolly Road"
  IRE_connolly_road_desc:0 "The slogan of 1916 is painted on every wall again: neither King nor Kaiser. Every week another workers' club raises the red flag."
+ POLITICS_FRANK_RYAN_DESC:0 "Frank Ryan, commander of the Connolly Column. He learned in the trenches of Jarama how a small band of determined people can hold down an army - now he teaches it to the whole Republic."
+ POLITICS_SEAN_RUSSELL_DESC:0 "Sean Russell, Chief of Staff of the IRA. Silent, precise, unsmiling - no one in the corridors of Berlin knows better what Ireland needs."
  IRE_shadow_arsenal_idea:0 "Shadow Arsenal"
  IRE_shadow_arsenal_idea_desc:0 "Rifle workshops under barns, disguised gun mounts behind farm tractors - none of it appears in the official production figures."
  IRE_veterans_network:0 "Veterans' Network"
@@ -737,12 +739,6 @@
  IRE_X_ind_black_market_eff:0 "Black Market Economy"
  IRE_X_ind_black_market_eff_desc:0 "Consumer goods -6%, factory output +8%."
 
- IRE_offmap_civ:0 "Off-Map Civilian Industry"
- IRE_offmap_civ_desc:0 "Civilian capacity too dispersed to show on the map - uses no building slots."
- IRE_offmap_mil:0 "Off-Map Military Industry"
- IRE_offmap_mil_desc:0 "Military capacity too dispersed to show on the map - uses no building slots."
- IRE_offmap_dock:0 "Off-Map Naval Industry"
- IRE_offmap_dock_desc:0 "Shipbuilding capacity too dispersed to show on the map - uses no building slots."
  IRE_R_ind_steel_coop:0 "Steel Cooperatives"
  IRE_R_ind_steel_coop_desc:0 "Worker-run steel combines feed girders and rails to every worksite."
  IRE_R_ind_red_arsenal:0 "Red Arsenal"
@@ -970,7 +966,7 @@
 
  IRE_defend_factory_tt:0 "Adds 1 off-map civilian factory in Dublin."
  IRE_defend_factory_arms_tt:0 "Adds 1 off-map civilian factory and 1 off-map military factory in Dublin."
-
+ IRE_threat_focus:0 "Irish Military Action"
  IRE_opinion_pos5:0 "Mild goodwill"
  IRE_opinion_pos10:0 "Diplomatic goodwill"
  IRE_opinion_pos15:0 "Friendly posture"

@@ -207,6 +207,8 @@ on_actions = {
 				limit = {
 					tag = IRE
 					has_country_flag = IRE_red_path
+					has_completed_focus = IRE_R_connolly_column
+					SPA = { has_volunteers_amount_from = { tag = ROOT count > 0 } }
 					date > 1936.10.14
 					date < 1939.1.1
 					NOT = { has_country_flag = IRE_gold_done }

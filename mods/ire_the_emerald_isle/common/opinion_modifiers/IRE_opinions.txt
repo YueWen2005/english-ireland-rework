@@ -70,4 +70,7 @@ opinion_modifiers = {
 	IRE_opinion_neg50 = {
 		value = -50
 	}
+	IRE_opinion_neg60 = {
+		value = -60
+	}
 }
