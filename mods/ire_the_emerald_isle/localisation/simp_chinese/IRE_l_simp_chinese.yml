@@ -530,6 +530,8 @@
  IRE_flying_columns_desc:0 "来自山地与沼泽的轻装分队：他们不需要补给线，因为整个国家就是他们的补给线。"
  IRE_connolly_road:0 "康诺利之路"
  IRE_connolly_road_desc:0 "1916 年的口号重新写在每一面墙上：既不为国王，也不为凯撒。每周都有新的工人俱乐部升起红旗。"
+ POLITICS_FRANK_RYAN_DESC:0 "弗兰克·瑞安，康诺利纵队的指挥官。他在哈拉马的战壕里学会了怎样用一小群坚定的人拖住一支军队——现在，他把这些教给整个共和国。"
+ POLITICS_SEAN_RUSSELL_DESC:0 "肖恩·拉塞尔，共和军参谋长。沉默、精确、不苟言笑——柏林的走廊里没人比他更熟悉爱尔兰需要什么。"
  IRE_shadow_arsenal_idea:0 "影子兵工厂"
  IRE_shadow_arsenal_idea_desc:0 "谷仓下的步枪作坊、农用拖拉机后面的伪装炮架——正式的产能统计表从来不包括这些。"
  IRE_veterans_network:0 "老兵网络"
@@ -739,12 +741,6 @@
  IRE_X_ind_black_market_eff:0 "黑市经济"
  IRE_X_ind_black_market_eff_desc:0 "消费品需求 −6%，工厂产出效率 +8%。"
 
- IRE_offmap_civ:0 "地图外民用工厂"
- IRE_offmap_civ_desc:0 "分散在各地、无法在地图上逐一表示的民用产能——不占用建筑格。"
- IRE_offmap_mil:0 "地图外军用工厂"
- IRE_offmap_mil_desc:0 "分散在各地、无法在地图上逐一表示的军用产能——不占用建筑格。"
- IRE_offmap_dock:0 "地图外海军工厂"
- IRE_offmap_dock_desc:0 "分散在各地、无法在地图上逐一表示的造船产能——不占用建筑格。"
  IRE_R_ind_steel_coop:0 "钢铁合作社"
  IRE_R_ind_steel_coop_desc:0 "工人合作社管理的钢铁联合体，铸铁与钢梁源源输往各个工地。"
  IRE_R_ind_red_arsenal:0 "红色兵工厂"
@@ -972,3 +968,4 @@
 
  IRE_defend_factory_tt:0 "在都柏林新增 1 座地图外民用工厂。"
  IRE_defend_factory_arms_tt:0 "在都柏林新增 1 座地图外民用工厂和 1 座地图外军工厂。"
+ IRE_threat_focus:0 "爱尔兰的军事动员"

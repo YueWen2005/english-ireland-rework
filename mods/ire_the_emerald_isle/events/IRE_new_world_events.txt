@@ -24,7 +24,7 @@ country_event = {
 	option = {
 		name = ire_nw.1.a
 		add_political_power = -25
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 6 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up6
 		add_stability = 0.01
 	}
@@ -32,7 +32,7 @@ country_event = {
 	option = {
 		name = ire_nw.1.b
 		add_political_power = 25
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 2 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 2 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up2
 	}
 }
@@ -49,7 +49,7 @@ country_event = {
 
 	option = {
 		name = ire_nw.2.a
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -4 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = -4 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_down4
 		add_stability = 0.03
 		if = {
@@ -60,7 +60,7 @@ country_event = {
 
 	option = {
 		name = ire_nw.2.b
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 4 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 4 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up4
 		add_stability = -0.02
 		add_political_power = 15
@@ -68,7 +68,7 @@ country_event = {
 
 	option = {
 		name = ire_nw.2.c
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 8 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 8 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up8
 		add_stability = -0.04
 		add_war_support = 0.02
@@ -88,7 +88,7 @@ country_event = {
 	option = {
 		name = ire_nw.3.a
 		add_political_power = 40
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 5 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 5 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up5
 		if = {
 			limit = { country_exists = ENG }
@@ -99,7 +99,7 @@ country_event = {
 	option = {
 		name = ire_nw.3.b
 		add_stability = 0.03
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 2 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 2 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up2
 	}
 }
@@ -116,7 +116,7 @@ country_event = {
 
 	option = {
 		name = ire_nw.4.a
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 5 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 5 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up5
 		add_stability = -0.01
 		if = {
@@ -128,7 +128,7 @@ country_event = {
 	option = {
 		name = ire_nw.4.b
 		add_political_power = 30
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -3 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = -3 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_down3
 		if = {
 			limit = { country_exists = ENG }
@@ -151,7 +151,7 @@ country_event = {
 		name = ire_nw.5.a
 		add_political_power = -20
 		add_stability = 0.03
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 3 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 3 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up3
 	}
 
@@ -159,7 +159,7 @@ country_event = {
 		name = ire_nw.5.b
 		add_political_power = 20
 		add_stability = -0.04
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 6 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up6
 	}
 }
@@ -178,7 +178,7 @@ country_event = {
 		name = ire_nw.6.a
 		add_political_power = -30
 		add_stability = 0.02
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 3 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 3 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up3
 	}
 
@@ -186,7 +186,7 @@ country_event = {
 		name = ire_nw.6.b
 		add_political_power = 20
 		add_stability = 0.01
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 1 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 1 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up1
 	}
 }
@@ -205,7 +205,7 @@ country_event = {
 		name = ire_nw.7.a
 		add_political_power = -30
 		add_stability = 0.02
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 8 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 8 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up8
 		set_country_flag = IRE_nw_rally_broad
 		country_event = { id = ire_nw.8 days = 30 }
@@ -215,7 +215,7 @@ country_event = {
 		name = ire_nw.7.b
 		add_political_power = 50
 		add_stability = -0.02
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 4 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 4 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up4
 		set_country_flag = IRE_nw_rally_narrow
 		country_event = { id = ire_nw.8 days = 30 }
@@ -235,7 +235,7 @@ country_event = {
 	option = {
 		name = ire_nw.8.a
 		trigger = { has_country_flag = IRE_nw_rally_broad }
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 6 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up6
 		add_stability = 0.03
 		if = {
@@ -248,7 +248,7 @@ country_event = {
 	option = {
 		name = ire_nw.8.b
 		trigger = { has_country_flag = IRE_nw_rally_narrow }
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -3 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = -3 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_down3
 		add_stability = -0.02
 		country_event = { id = ire_nw.9 days = 45 }
@@ -270,7 +270,7 @@ country_event = {
 		trigger = { check_variable = { IRE_plebiscite_support > 79 } }
 		add_political_power = 50
 		add_war_support = 0.01
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 2 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 2 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up2
 		if = {
 			limit = { country_exists = ENG }
@@ -292,12 +292,12 @@ country_event = {
 	option = {
 		name = ire_nw.9.c
 		trigger = { check_variable = { IRE_plebiscite_support < 80 } }
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 6 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = 6 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_up6
 		add_war_support = 0.02
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
 		}
 	}
 
@@ -305,7 +305,7 @@ country_event = {
 		name = ire_nw.9.e
 		trigger = { check_variable = { IRE_plebiscite_support < 80 } }
 		add_stability = 0.02
-		hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = -4 } }
+		hidden_effect = { add_to_variable = { IRE_plebiscite_support = -4 } IRE_nw_add_plebiscite_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_pleb_down4
 		if = {
 			limit = { country_exists = ENG }
@@ -339,7 +339,7 @@ country_event = {
 		add_political_power = 25
 		if = {
 			limit = { NOT = { has_country_flag = IRE_border_done } }
-			hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 3 } }
+			hidden_effect = { add_to_variable = { IRE_plebiscite_support = 3 } IRE_nw_add_plebiscite_support = yes }
 			custom_effect_tooltip = IRE_nw_tt_pleb_up3
 		}
 	}
@@ -391,7 +391,7 @@ country_event = {
 		add_offsite_building = { type = industrial_complex level = 1 }
 		if = {
 			limit = { NOT = { has_country_flag = IRE_border_done } }
-			hidden_effect = { IRE_nw_add_plebiscite_support = { VAL = 5 } }
+			hidden_effect = { add_to_variable = { IRE_plebiscite_support = 5 } IRE_nw_add_plebiscite_support = yes }
 			custom_effect_tooltip = IRE_nw_tt_pleb_up5
 		}
 	}
@@ -416,7 +416,7 @@ country_event = {
 	option = {
 		name = ire_nw.19.a
 		add_political_power = -20
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 5 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 5 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up5
 	}
 
@@ -424,7 +424,7 @@ country_event = {
 		name = ire_nw.19.b
 		add_political_power = 20
 		add_stability = 0.01
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 2 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 2 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up2
 	}
 }
@@ -442,14 +442,14 @@ country_event = {
 	option = {
 		name = ire_nw.20.a
 		add_political_power = -25
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 10 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 10 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up10
 	}
 
 	option = {
 		name = ire_nw.20.b
 		add_political_power = 20
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 3 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 3 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up3
 	}
 }
@@ -467,14 +467,14 @@ country_event = {
 	option = {
 		name = ire_nw.21.a
 		add_stability = 0.03
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 6 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 6 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up6
 	}
 
 	option = {
 		name = ire_nw.21.b
 		add_stability = -0.03
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 9 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 9 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up9
 	}
 }
@@ -491,19 +491,19 @@ country_event = {
 
 	option = {
 		name = ire_nw.22.a
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 8 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 8 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up8
 		add_war_support = 0.02
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
 		}
 	}
 
 	option = {
 		name = ire_nw.22.b
 		add_political_power = 30
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 3 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 3 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up3
 		if = {
 			limit = { country_exists = ENG }
@@ -526,14 +526,14 @@ country_event = {
 		name = ire_nw.23.a
 		add_political_power = -30
 		navy_experience = 50
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 12 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 12 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up12
 	}
 
 	option = {
 		name = ire_nw.23.b
 		add_political_power = 25
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 2 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 2 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up2
 	}
 }
@@ -551,14 +551,14 @@ country_event = {
 	option = {
 		name = ire_nw.24.a
 		add_political_power = -20
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 7 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 7 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up7
 	}
 
 	option = {
 		name = ire_nw.24.b
 		add_political_power = 30
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = -5 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = -5 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_down5
 		if = {
 			limit = { country_exists = ENG }
@@ -580,21 +580,21 @@ country_event = {
 	option = {
 		name = ire_nw.25.a
 		add_political_power = -50
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 12 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 12 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up12
 	}
 
 	option = {
 		name = ire_nw.25.b
 		add_political_power = -20
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = 8 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = 8 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_up8
 	}
 
 	option = {
 		name = ire_nw.25.c
 		add_political_power = 50
-		hidden_effect = { IRE_nw_add_nf_support = { VAL = -2 } }
+		hidden_effect = { add_to_variable = { IRE_nf_support = -2 } IRE_nw_add_nf_support = yes }
 		custom_effect_tooltip = IRE_nw_tt_nf_down2
 	}
 }
@@ -1082,7 +1082,7 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = GER }
-			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
 		}
 		air_experience = 100
 		add_offsite_building = { type = industrial_complex level = 1 }

@@ -218,7 +218,6 @@ IRE_emergency_tier_check = {
 
 # ---------------- A 线事件：公投 / 纽芬兰支持度增减（0-100 钳制） ----------------
 IRE_nw_add_plebiscite_support = {
-	add_to_variable = { IRE_plebiscite_support = $VAL$ }
 	if = {
 		limit = { check_variable = { IRE_plebiscite_support > 100 } }
 		set_variable = { IRE_plebiscite_support = 100 }
@@ -230,7 +229,6 @@ IRE_nw_add_plebiscite_support = {
 }
 
 IRE_nw_add_nf_support = {
-	add_to_variable = { IRE_nf_support = $VAL$ }
 	if = {
 		limit = { check_variable = { IRE_nf_support > 100 } }
 		set_variable = { IRE_nf_support = 100 }
