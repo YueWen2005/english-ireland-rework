@@ -425,9 +425,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_wild_geese }
 		x = 28
 		y = 5
-		available = {
-			date > 1936.7.17
-			country_exists = SPR
+		available = {			country_exists = SPR
 			SPR = {
 				has_war = yes
 				NOT = { has_government = fascism }
@@ -485,11 +483,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_belfast }
 		x = 38
 		y = 4
-		available = {
-			OR = {
-				date > 1939.9.1
-				any_other_country = { is_major = yes has_war = yes }
-			}
+				available = {
+			any_other_country = { is_major = yes has_war = yes }
 		}
 		ai_will_do = { base = 60 }
 
@@ -750,9 +745,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_london_note }
 		x = 34
 		y = 5
-		available = {
-			date > 1940.6.1
-			any_country = { is_major = yes has_war = yes }
+		available = {			any_country = { is_major = yes has_war = yes }
 		}
 		ai_will_do = { base = 40 }
 
@@ -1347,9 +1340,7 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_diaspora_60
 				check_variable = { IRE_diaspora_network > 59 }
-			}
-			date > 1940.6.1
-		}
+			}		}
 		ai_will_do = { base = 65 }
 
 		completion_reward = {
@@ -1868,9 +1859,6 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 5
 		prerequisite = { focus = IRE_B_crush_terror }
-		available = {
-			date > 1940.8.10
-		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 
 		x = 78
@@ -1889,9 +1877,6 @@ focus_tree = {
 		icon = GFX_focus_generic_military_dictatorship
 		cost = 5
 		prerequisite = { focus = IRE_B_russell_death }
-		available = {
-			date > 1941.1.1
-		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 
 		x = 78
@@ -2045,11 +2030,8 @@ focus_tree = {
 
 		x = 88
 		y = 7
-		available = {
-			OR = {
-				date > 1939.9.1
-				any_other_country = { is_major = yes has_war = yes }
-			}
+				available = {
+			any_other_country = { is_major = yes has_war = yes }
 		}
 		ai_will_do = { base = 120 }
 
@@ -2288,7 +2270,6 @@ focus_tree = {
 
 		x = 88
 		y = 11
-		available = { date > 1943.1.1 }
 		ai_will_do = { base = 120 }
 
 		completion_reward = {
@@ -2312,12 +2293,6 @@ focus_tree = {
 
 		x = 88
 		y = 12
-		available = {
-			OR = {
-				date > 1948.1.1
-				NOT = { any_country = { has_war = yes is_major = yes } }
-			}
-		}
 		ai_will_do = { base = 120 }
 
 		completion_reward = {
@@ -2800,9 +2775,6 @@ focus_tree = {
 		prerequisite = { focus = IRE_E_atlantic_economy }
 		x = 20
 		y = 8
-		available = {
-			date > 1958.1.1
-		}
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -2829,9 +2801,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		x = 21
 		y = 12
-		available = {
-			date > 1939.9.1
-			any_country = { is_major = yes has_war = yes }
+		available = {			any_country = { is_major = yes has_war = yes }
 		}
 		ai_will_do = { base = 80 }
 
@@ -2889,9 +2859,6 @@ focus_tree = {
 		prerequisite = { focus = IRE_M_officer_corps }
 		x = 17
 		y = 15
-		available = {
-			date > 1940.1.1
-		}
 		ai_will_do = { base = 45 }
 
 		completion_reward = {
