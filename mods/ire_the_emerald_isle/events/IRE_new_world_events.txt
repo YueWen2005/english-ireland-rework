@@ -998,3 +998,144 @@ country_event = {
 		custom_effect_tooltip = IRE_nw_tt_neutral_up5
 	}
 }
+
+# ============================================================
+# ire_nw.70 吉尼斯的琥珀色
+# ============================================================
+country_event = {
+	id = ire_nw.70
+	title = ire_nw.70.t
+	desc = ire_nw.70.d
+	picture = GFX_report_event_generic_stock_traders
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.70.a
+		add_political_power = 50
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+
+	option = {
+		name = ire_nw.70.b
+		add_stability = 0.03
+		add_war_support = 0.02
+		add_political_power = 25
+	}
+}
+
+# ============================================================
+# ire_nw.71 福因斯的第一杯爱尔兰咖啡
+# ============================================================
+country_event = {
+	id = ire_nw.71
+	title = ire_nw.71.t
+	desc = ire_nw.71.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.71.a
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		air_experience = 50
+		add_stability = 0.02
+	}
+
+	option = {
+		name = ire_nw.71.b
+		add_political_power = 50
+		add_stability = 0.03
+		hidden_effect = { IRE_add_neutral_credibility_5 = yes }
+		custom_effect_tooltip = IRE_nw_tt_neutral_up5
+	}
+}
+
+# ============================================================
+# ire_nw.72 香农的过境权
+# ============================================================
+country_event = {
+	id = ire_nw.72
+	title = ire_nw.72.t
+	desc = ire_nw.72.d
+	picture = GFX_report_event_generic_construction_site
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.72.a
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+		}
+		air_experience = 100
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+
+	option = {
+		name = ire_nw.72.b
+		add_political_power = 75
+		add_stability = 0.03
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+
+# ============================================================
+# ire_nw.73 好莱坞来到梅奥
+# ============================================================
+country_event = {
+	id = ire_nw.73
+	title = ire_nw.73.t
+	desc = ire_nw.73.d
+	picture = GFX_report_event_generic_dancing
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.73.a
+		add_political_power = 100
+		add_stability = 0.05
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+
+	option = {
+		name = ire_nw.73.b
+		add_stability = 0.02
+		add_political_power = 25
+	}
+}
+
+# ============================================================
+# ire_nw.74 凯尔特之虎
+# ============================================================
+country_event = {
+	id = ire_nw.74
+	title = ire_nw.74.t
+	desc = ire_nw.74.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.74.a
+		add_ideas = IRE_celtic_tiger
+		add_offsite_building = { type = industrial_complex level = 2 }
+		add_research_slot = 1
+		add_political_power = 100
+		add_stability = 0.05
+	}
+}

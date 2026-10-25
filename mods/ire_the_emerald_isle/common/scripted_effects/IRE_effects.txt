@@ -240,3 +240,74 @@ IRE_nw_add_nf_support = {
 		set_variable = { IRE_nf_support = 0 }
 	}
 }
+
+# ============================================================
+# 保卫爱尔兰：按投降进度自动升级/降级（每日）
+# 1 级：开战；2 级 >15%；3 级 >30%；4 级 >50%；5 级 >75%
+# ============================================================
+IRE_defend_ireland_check = {
+	if = {
+		limit = { has_war = yes }
+		if = {
+			limit = { surrender_progress > 0.74 }
+			if = {
+				limit = { NOT = { has_idea = IRE_defend_ireland_5 } }
+				remove_ideas = IRE_defend_ireland_1
+				remove_ideas = IRE_defend_ireland_2
+				remove_ideas = IRE_defend_ireland_3
+				remove_ideas = IRE_defend_ireland_4
+				add_ideas = IRE_defend_ireland_5
+			}
+		}
+		else_if = {
+			limit = { surrender_progress > 0.49 }
+			if = {
+				limit = { NOT = { has_idea = IRE_defend_ireland_4 } }
+				remove_ideas = IRE_defend_ireland_1
+				remove_ideas = IRE_defend_ireland_2
+				remove_ideas = IRE_defend_ireland_3
+				remove_ideas = IRE_defend_ireland_5
+				add_ideas = IRE_defend_ireland_4
+			}
+		}
+		else_if = {
+			limit = { surrender_progress > 0.29 }
+			if = {
+				limit = { NOT = { has_idea = IRE_defend_ireland_3 } }
+				remove_ideas = IRE_defend_ireland_1
+				remove_ideas = IRE_defend_ireland_2
+				remove_ideas = IRE_defend_ireland_4
+				remove_ideas = IRE_defend_ireland_5
+				add_ideas = IRE_defend_ireland_3
+			}
+		}
+		else_if = {
+			limit = { surrender_progress > 0.14 }
+			if = {
+				limit = { NOT = { has_idea = IRE_defend_ireland_2 } }
+				remove_ideas = IRE_defend_ireland_1
+				remove_ideas = IRE_defend_ireland_3
+				remove_ideas = IRE_defend_ireland_4
+				remove_ideas = IRE_defend_ireland_5
+				add_ideas = IRE_defend_ireland_2
+			}
+		}
+		else = {
+			if = {
+				limit = { NOT = { has_idea = IRE_defend_ireland_1 } }
+				remove_ideas = IRE_defend_ireland_2
+				remove_ideas = IRE_defend_ireland_3
+				remove_ideas = IRE_defend_ireland_4
+				remove_ideas = IRE_defend_ireland_5
+				add_ideas = IRE_defend_ireland_1
+			}
+		}
+	}
+	else = {
+		remove_ideas = IRE_defend_ireland_1
+		remove_ideas = IRE_defend_ireland_2
+		remove_ideas = IRE_defend_ireland_3
+		remove_ideas = IRE_defend_ireland_4
+		remove_ideas = IRE_defend_ireland_5
+	}
+}

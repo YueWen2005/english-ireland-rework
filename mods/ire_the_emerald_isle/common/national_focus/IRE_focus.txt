@@ -51,10 +51,10 @@ focus_tree = {
 		id = IRE_consolidate_free_state
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
-		x = 6
-		y = 12
+		x = 88
+		y = 0
 		mutually_exclusive = { focus = IRE_border_plebiscite focus = IRE_ira_council }
-		ai_will_do = { base = 50 }
+		ai_will_do = { base = 500 }
 
 		completion_reward = {
 			add_political_power = 100
@@ -1718,48 +1718,60 @@ focus_tree = {
 	### ============================================================
 	focus = {
 		id = IRE_B_civil_service
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_AFG_parliamentary_democracy
 		cost = 5
 		prerequisite = { focus = IRE_consolidate_free_state }
-		x = 2
-		y = 13
-		ai_will_do = { base = 60 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 80
+		y = 1
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_political_power = 50
 			add_stability = 0.05
+					add_research_slot = 1
+			add_war_support = 0.03
 		}
 	}
 
 	focus = {
 		id = IRE_B_quell_embers
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_PRC_peaceful_reunification
 		cost = 5
 		prerequisite = { focus = IRE_B_civil_service }
-		x = 2
-		y = 14
-		ai_will_do = { base = 60 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 80
+		y = 2
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			remove_ideas = IRE_civil_war_embers
 			add_stability = 0.10
+					add_manpower = 10000
+			add_war_support = 0.03
 		}
 	}
 
 	focus = {
 		id = IRE_B_outlaw_ira
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_generic_crush_the_military
 		cost = 5
 		prerequisite = { focus = IRE_B_quell_embers }
-		x = 0
-		y = 15
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 78
+		y = 3
 		mutually_exclusive = { focus = IRE_B_tolerate_ira }
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_stability = 0.10
 			army_experience = 50
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos25 } }
+					add_political_power = 50
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
 		}
 	}
 
@@ -1768,10 +1780,12 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_B_quell_embers }
-		x = 4
-		y = 15
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
+
+		x = 82
+		y = 3
 		mutually_exclusive = { focus = IRE_B_outlaw_ira }
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			army_experience = 150
@@ -1779,24 +1793,29 @@ focus_tree = {
 			add_stability = -0.08
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
 			set_country_flag = IRE_ira_tolerated
+					add_manpower = 15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = IRE }
 		}
 	}
 
 	# ---- 镇压线：消灭恐怖分子 → 拉塞尔之死 → 绞索收紧 ----
 	focus = {
 		id = IRE_B_crush_terror
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_generic_military_mission
 		cost = 5
 		prerequisite = { focus = IRE_B_outlaw_ira }
-		x = 0
-		y = 16
-		ai_will_do = { base = 45 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY_XP }
+
+		x = 78
+		y = 4
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_political_power = -50
 			add_stability = 0.05
 			add_ideas = IRE_internment_camps
 			set_country_flag = IRE_ira_crushed
+					add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = IRE }
 		}
 	}
 
@@ -1808,8 +1827,10 @@ focus_tree = {
 		available = {
 			date > 1940.8.10
 		}
-		x = 0
-		y = 17
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 78
+		y = 5
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1821,14 +1842,16 @@ focus_tree = {
 
 	focus = {
 		id = IRE_B_noose_tightens
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_generic_military_dictatorship
 		cost = 5
 		prerequisite = { focus = IRE_B_russell_death }
 		available = {
 			date > 1941.1.1
 		}
-		x = 0
-		y = 18
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 78
+		y = 6
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1842,12 +1865,14 @@ focus_tree = {
 	# ---- 经济线 ----
 	focus = {
 		id = IRE_B_economic_war_end
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_expropriate_industrialist
 		cost = 5
 		prerequisite = { focus = IRE_consolidate_free_state }
-		x = 8
-		y = 13
-		ai_will_do = { base = 60 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNATIONAL_TRADE }
+
+		x = 88
+		y = 1
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			# 文档「移除农业穷国的一半负面」：HOI4 无法做「一半」，用替换为削弱版精神实现
@@ -1855,17 +1880,21 @@ focus_tree = {
 			add_ideas = IRE_agrarian_poverty_lite
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			add_stability = 0.05
+					add_offsite_building = { type = industrial_complex level = 1 }
+			add_political_power = 75
 		}
 	}
 
 	focus = {
 		id = IRE_B_trade_agreement
-		icon = GFX_goal_generic_production
+		icon = GFX_focus_generic_british_trade
 		cost = 5
 		prerequisite = { focus = IRE_B_economic_war_end }
-		x = 8
-		y = 14
-		ai_will_do = { base = 60 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNATIONAL_TRADE }
+
+		x = 88
+		y = 2
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1875,32 +1904,39 @@ focus_tree = {
 			}
 			add_ideas = IRE_anglo_irish_beef
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
+					add_offsite_building = { type = industrial_complex level = 1 }
+			add_tech_bonus = { name = IRE_econ_industry_bonus bonus = 0.5 uses = 1 category = industry }
 		}
 	}
 
 	focus = {
 		id = IRE_B_land_annuities
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_PER_national_bank
 		cost = 5
 		prerequisite = { focus = IRE_B_trade_agreement }
-		x = 8
-		y = 15
-		ai_will_do = { base = 50 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
+		x = 88
+		y = 3
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_political_power = 150
 			add_stability = 0.08
+					add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_treaty_ports
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_focus_IRQ_navy
 		cost = 5
 		prerequisite = { focus = IRE_B_land_annuities }
-		x = 8
-		y = 16
-		ai_will_do = { base = 50 }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
+
+		x = 88
+		y = 4
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1910,70 +1946,86 @@ focus_tree = {
 			}
 			navy_experience = 150
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
+					add_offsite_building = { type = dockyard level = 1 }
+			add_equipment_to_stockpile = { type = convoy amount = 20 }
 		}
 	}
 
 	# ---- 宪政线 ----
 	focus = {
 		id = IRE_B_constitution_1937
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_AFG_revive_the_1923_constitution
 		cost = 5
 		prerequisite = { focus = IRE_B_treaty_ports }
-		x = 8
-		y = 17
-		ai_will_do = { base = 60 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 88
+		y = 5
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			remove_ideas = IRE_treatys_scar
 			add_ideas = IRE_republican_constitution
 			add_stability = 0.12
+					add_political_power = 100
+			add_war_support = 0.03
 		}
 	}
 
 	focus = {
 		id = IRE_B_president_mace
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_LAT_merge_presidential_titles
 		cost = 5
 		prerequisite = { focus = IRE_B_constitution_1937 }
-		x = 8
-		y = 18
-		ai_will_do = { base = 50 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 88
+		y = 6
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.05
+					add_war_support = 0.03
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
 	# ---- 紧急状态线 ----
 	focus = {
 		id = IRE_B_emergency
-		icon = GFX_goal_generic_defence
+		icon = GFX_focus_generic_home_defense
 		cost = 5
 		prerequisite = { focus = IRE_B_president_mace }
-		x = 8
-		y = 19
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+
+		x = 88
+		y = 7
 		available = {
 			OR = {
 				date > 1939.9.1
 				any_other_country = { is_major = yes has_war = yes }
 			}
 		}
-		ai_will_do = { base = 70 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_emergency_powers
+					add_offsite_building = { type = arms_factory level = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
 		}
 	}
 
 	focus = {
 		id = IRE_B_coastal
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_PHI_beach_defense_strategy
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
-		x = 6
-		y = 20
-		ai_will_do = { base = 50 }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP }
+
+		x = 84
+		y = 8
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1983,17 +2035,21 @@ focus_tree = {
 			}
 			army_experience = 100
 			add_ideas = IRE_lookout_post
+					add_offsite_building = { type = dockyard level = 1 }
+			add_equipment_to_stockpile = { type = convoy amount = 10 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_ldf
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_focus_generic_diverse_army
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
-		x = 8
-		y = 20
-		ai_will_do = { base = 50 }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP }
+
+		x = 88
+		y = 8
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_ldf_expansion
@@ -2003,16 +2059,20 @@ focus_tree = {
 				limit = { is_coastal = yes }
 				create_unit = { division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8" owner = IRE }
 			}
+					add_manpower = 15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
 		}
 	}
 
 	focus = {
 		id = IRE_B_plan_w
-		icon = GFX_goal_generic_occupy_start_war
+		icon = GFX_focus_generic_advanced_military_studies
 		cost = 5
 		prerequisite = { focus = IRE_B_emergency }
-		x = 10
-		y = 20
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL }
+
+		x = 92
+		y = 8
 		available = {
 			OR = {
 				has_opinion = { target = ENG value > 24 }
@@ -2021,26 +2081,30 @@ focus_tree = {
 		}
 		# 中立三分支的前置为「海岸监视 AND（民防队 OR W计划）」，
 		# 不走 W 计划也能靠民防队解锁中立线，此门槛不会卡死 B 线主线。
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			army_experience = 200
 			add_ideas = IRE_joint_defence_idea
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos25 } }
+					add_offsite_building = { type = arms_factory level = 1 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = IRE }
 		}
 	}
 
 	# ---- 中立三分支 ----
 	focus = {
 		id = IRE_B_moral_neutrality
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_FIN_finnish_neutrality
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
-			prerequisite = { focus = IRE_B_ldf focus = IRE_B_plan_w }
-		x = 4
-		y = 21
+		prerequisite = { focus = IRE_B_ldf }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 80
+		y = 9
 		mutually_exclusive = { focus = IRE_B_absolute_neutrality focus = IRE_B_armed_neutrality }
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_moral_neutrality_idea
@@ -2052,19 +2116,22 @@ focus_tree = {
 			}
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg25 } }
+					add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_absolute_neutrality
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_focus_BEL_independent_neutral_and_loyal
 		cost = 5
-			prerequisite = { focus = IRE_B_coastal }
-			prerequisite = { focus = IRE_B_ldf focus = IRE_B_plan_w }
-		x = 8
-		y = 21
+			prerequisite = { focus = IRE_B_ldf }
+		prerequisite = { focus = IRE_B_plan_w }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
+
+		x = 88
+		y = 9
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_armed_neutrality }
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_absolute_neutrality_idea
@@ -2072,70 +2139,84 @@ focus_tree = {
 			# 文档：两边关系各 +15
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos15 } }
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos15 } }
+					add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_armed_neutrality
-		icon = GFX_goal_generic_defence
+		icon = GFX_focus_BEL_defensive_neutrality
 		cost = 5
 			prerequisite = { focus = IRE_B_coastal }
-			prerequisite = { focus = IRE_B_ldf focus = IRE_B_plan_w }
-		x = 12
-		y = 21
+		prerequisite = { focus = IRE_B_plan_w }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+
+		x = 96
+		y = 9
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_absolute_neutrality }
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_armed_neutrality_idea
 			add_war_support = 0.05
+					add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_shannon_wayfarers
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_generic_multi_role_aircraft
 		cost = 5
 		prerequisite = { focus = IRE_B_moral_neutrality }
-		x = 4
-		y = 22
-		ai_will_do = { base = 40 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
+
+		x = 80
+		y = 10
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			army_experience = 200
 			country_event = { id = ire.20 days = 1 }
+					add_offsite_building = { type = industrial_complex level = 1 }
+			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 		}
 	}
 
 	# ---- 战时外交 ----
 	focus = {
 		id = IRE_B_dublin_choice
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_focus_AUS_diplomatic_effort
 		cost = 5
 		prerequisite = { focus = IRE_B_absolute_neutrality }
-		x = 8
-		y = 22
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		x = 88
+		y = 10
 		available = {
 			any_country = { has_war = yes is_major = yes }
 		}
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_political_power = 50
+					add_political_power = 50
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_berlin_overture
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_focus_generic_german_trade
 		cost = 5
 		prerequisite = { focus = IRE_B_absolute_neutrality }
-		x = 12
-		y = 22
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		x = 96
+		y = 10
 		available = {
 			has_country_flag = IRE_ira_tolerated
 		}
-		ai_will_do = { base = 30 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
@@ -2145,23 +2226,26 @@ focus_tree = {
 			# 但不会凭空随机宣战，战争风险取决于英国自身战局与玩家后续抉择
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg50 } }
 			add_stability = -0.05
+					add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
 	# ---- 战后 ----
 	focus = {
 		id = IRE_B_famine_echo
-		icon = GFX_goal_generic_production
+		icon = GFX_goal_generic_construction
 		cost = 5
 		prerequisite = {
 			focus = IRE_B_dublin_choice
 			focus = IRE_B_shannon_wayfarers
 			focus = IRE_B_armed_neutrality
 		}
-		x = 8
-		y = 23
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+
+		x = 88
+		y = 11
 		available = { date > 1943.1.1 }
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
@@ -2170,55 +2254,67 @@ focus_tree = {
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			add_stability = 0.05
+					add_offsite_building = { type = industrial_complex level = 1 }
+			add_manpower = 20000
 		}
 	}
 
 	focus = {
 		id = IRE_B_republic_1949
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_DEN_national_unity
 		cost = 5
 		prerequisite = { focus = IRE_B_famine_echo }
-		x = 8
-		y = 24
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+		x = 88
+		y = 12
 		available = {
 			OR = {
 				date > 1948.1.1
 				NOT = { any_country = { has_war = yes is_major = yes } }
 			}
 		}
-		ai_will_do = { base = 60 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_free_country
 			add_stability = 0.15
 			add_war_support = 0.10
+					add_offsite_building = { type = industrial_complex level = 2 }
+			add_political_power = 100
 		}
 	}
 
 	focus = {
 		id = IRE_B_moral_authority
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_BRA_jaguar_diplomacy
 		cost = 5
 		prerequisite = { focus = IRE_B_republic_1949 }
-		x = 10
-		y = 25
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		x = 90
+		y = 13
 		available = {
 			NOT = { any_country = { has_war = yes is_major = yes } }
 		}
-		ai_will_do = { base = 40 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			add_ideas = IRE_moral_arbiter
+					add_political_power = 150
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
 	focus = {
 		id = IRE_B_final_unification
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_ETH_unification_of_the_habesha
 		cost = 10
 		prerequisite = { focus = IRE_B_republic_1949 }
-		x = 6
-		y = 25
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
+
+		x = 86
+		y = 13
 		available = {
 			OR = {
 				ENG = { has_capitulated = yes }
@@ -2226,10 +2322,137 @@ focus_tree = {
 				NOT = { ENG = { controls_state = 126 } }
 			}
 		}
-		ai_will_do = { base = 60 }
+		ai_will_do = { base = 120 }
 
 		completion_reward = {
 			country_event = { id = ire.30 days = 1 }
+					add_manpower = 50000
+			add_stability = 0.10
+		}
+	}
+
+	# ---- B 线扩充：史实产业与战时能力 ----
+	focus = {
+		id = IRE_B_bord_na_mona
+		icon = GFX_focus_generic_energy
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_B_economic_war_end }
+		x = 84
+		y = 2
+		ai_will_do = { base = 130 }
+
+		completion_reward = {
+			add_ideas = IRE_bord_na_mona
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_manpower = 10000
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = IRE_B_aer_lingus
+		icon = GFX_focus_generic_long_range_aircraft
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = IRE_B_trade_agreement }
+		x = 92
+		y = 2
+		ai_will_do = { base = 125 }
+
+		completion_reward = {
+			add_ideas = IRE_aer_lingus
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = air_base level = 1 instant_build = yes }
+			}
+			air_experience = 100
+			add_tech_bonus = { name = IRE_B_air_bonus bonus = 0.5 uses = 1 category = air_equipment }
+		}
+	}
+
+	focus = {
+		id = IRE_B_ida
+		icon = GFX_focus_generic_industrial_experts
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = IRE_B_land_annuities }
+		x = 92
+		y = 3
+		ai_will_do = { base = 140 }
+
+		completion_reward = {
+			add_ideas = IRE_ida
+			add_research_slot = 1
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IRE_B_irish_shipping
+		icon = GFX_focus_generic_refit_civilian_ships
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_B_treaty_ports }
+		x = 84
+		y = 4
+		ai_will_do = { base = 125 }
+
+		completion_reward = {
+			add_ideas = IRE_irish_shipping
+			add_offsite_building = { type = dockyard level = 1 }
+			add_equipment_to_stockpile = { type = convoy amount = 30 }
+			add_manpower = 5000
+			navy_experience = 100
+		}
+	}
+
+	focus = {
+		id = IRE_B_national_army
+		icon = GFX_focus_CZE_army_reform
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
+		prerequisite = { focus = IRE_B_ldf }
+		x = 86
+		y = 9
+		ai_will_do = { base = 140 }
+
+		completion_reward = {
+			add_ideas = IRE_national_army
+			army_experience = 150
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			create_unit = {
+				division = "name = \"National Army\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 2
+				prioritize_location = 11293
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_B_diaspora_bonds
+		icon = GFX_focus_generic_arms_trade
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_B_emergency }
+		x = 92
+		y = 7
+		ai_will_do = { base = 135 }
+
+		completion_reward = {
+			add_ideas = IRE_diaspora_bonds
+			add_manpower = 25000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = IRE }
+			USA = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
+			add_stability = 0.03
 		}
 	}
 

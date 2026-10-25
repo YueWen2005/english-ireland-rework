@@ -430,6 +430,84 @@ ideas = {
 			}
 		}
 
+		# ---------------- A 线：战后经济奇迹 ----------------
+		IRE_celtic_tiger = {
+			picture = generic_industrial_concern_2
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				research_speed_factor = 0.03
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		# ---------------- B 线：史实产业与战时能力 ----------------
+		IRE_bord_na_mona = {
+			picture = generic_energy_concern
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.04
+				production_speed_industrial_complex_factor = 0.08
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		IRE_aer_lingus = {
+			picture = generic_air_research
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				research_speed_factor = 0.03
+				air_detection = 0.05
+				industrial_capacity_factory = 0.03
+			}
+		}
+
+		IRE_ida = {
+			picture = generic_industrial_concern_1
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+
+		IRE_irish_shipping = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_dockyard = 0.10
+				naval_detection = 0.05
+			}
+		}
+
+		IRE_national_army = {
+			picture = generic_army_war_college
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_org_factor = 0.05
+				army_defence_factor = 0.10
+				conscription_factor = 0.03
+			}
+		}
+
+		IRE_diaspora_bonds = {
+			picture = generic_foreign_capital
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.03
+				industrial_capacity_factory = 0.05
+				political_power_gain = 0.03
+			}
+		}
+
 		# ============================================================
 		# 经济区域精神
 		# ============================================================
@@ -782,6 +860,81 @@ ideas = {
 				army_org_factor = 0.05
 				army_defence_factor = 0.05
 			}
+		}
+
+		# ============================================================
+		# 保卫爱尔兰：投降度越高，精神等级越高
+		# 战争期间由 IRE_defend_ireland_check 每日检查
+		# ============================================================
+		IRE_defend_ireland_1 = {
+			picture = home_defence_spirit
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				army_defence_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_defend_ireland_2 = {
+			picture = generic_war_preparation
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.08
+				war_support_factor = 0.10
+				army_defence_factor = 0.20
+				conscription_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_defend_ireland_3 = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.15
+				army_defence_factor = 0.30
+				conscription_factor = 0.10
+				industrial_capacity_factory = 0.08
+			}
+			removal_cost = -1
+		}
+
+		IRE_defend_ireland_4 = {
+			picture = generic_army_war_college
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.12
+				war_support_factor = 0.20
+				army_defence_factor = 0.45
+				army_attack_factor = 0.10
+				conscription_factor = 0.20
+				industrial_capacity_factory = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_defend_ireland_5 = {
+			picture = generic_fortify_the_borders
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.30
+				army_defence_factor = 0.60
+				army_attack_factor = 0.20
+				conscription_factor = 0.40
+				industrial_capacity_factory = 0.15
+				surrender_limit = 0.50
+			}
+			removal_cost = -1
 		}
 	}
 

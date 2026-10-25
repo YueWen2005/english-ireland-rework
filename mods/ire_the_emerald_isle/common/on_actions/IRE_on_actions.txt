@@ -16,6 +16,9 @@ on_actions = {
 				# 紧急状态 1→2→3 级自动升级/降级
 				IRE_emergency_tier_check = yes
 
+				# 保卫爱尔兰：按投降进度维护 1-5 级精神
+				IRE_defend_ireland_check = yes
+
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
 				if = {
 					limit = {

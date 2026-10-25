@@ -19,13 +19,15 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **双主线起点（互斥）**：《边境公投》（架空，开局拿北爱）/《自由邦的巩固》（史实）
 - **A 线**：北爱整合 → 跨海网络 → 纽芬兰/美国/墨西哥/南美四支线 → 凯尔特联邦；另有独立紧急状态分支与外交线（多尼戈尔走廊、港口换统一）
 - **A 线强化**：西班牙内战「野鹅远征军」（额外志愿军上限，并解除现役师数量门槛）、国立研究院 +2 研究槽、策动加拿大独立后以拉布拉多边境冲突归并英属北美；本土开发、侨汇与美洲网络国策会持续累积地图外工厂（+工厂产出，不占建筑格）
-- **B 线**：内政巩固 → 英爱贸易 → 1937 宪法 → 紧急状态 → 中立三选一 → 1949 共和国 → 最后的统一
+- **新世界轶事**：吉尼斯出口、福因斯爱尔兰咖啡、香农跨大西洋中转、好莱坞《蓬门今始为君开》、凯尔特之虎等史实梗决议/事件，效果与战争、外交和战后局势挂钩
+- **B 线（史实/自由邦）**：内政巩固 → 英爱贸易 → 1937 宪法 → 紧急状态 → 中立三选一 → 1949 共和国 → 最后的统一；**AI 默认走这条线**。扩充博德纳莫纳泥炭局、爱尔兰航空、工业发展局、爱尔兰航运、国民军、侨民战争公债，并重选图标、强化史实产业与防务能力
+- **保卫爱尔兰**：战争期间按投降进度自动升到 1–5 级国家精神，越接近投降越强；每级解锁一次「原地刷兵」动员决议（都柏林集结），五级可逆转战局
 - **共通线**：戈尔韦船坞 → 农村电气化 → 都柏林大学 → 烟草 → 情报 → 军工初创；现已并入 A 线，挂在《国土开发委员会》之后
 - **经济区域**：A 线分支，挂在《香农河水电》之后，走本土经济/民生路线（泥炭、科克港 → 医院彩票 → 公共卫生 / 医学院 / 国民健康体系、福因斯飞艇港、中央银行、战后香农自由区）；提供地图外工厂、人力与装备，与海外新世界终局分开排布
 - **军事区域**：独立分支，需二战爆发解锁，不依赖任何主线的紧急状态国策；陆军 / 海军 / 空军 / 情报 / 海岸瞭望 / 装甲车
-- **204 个国策节点**
-- **43 个剧情事件**、**38 个决议**
-- **89 个国家精神**（另有 34 个隐藏修正）
+- **210 个国策节点**
+- **77 个剧情事件**、**53 个决议**
+- **141 个国家精神**（含隐藏修正）
 - 完整简体中文本地化
 
 ### 三个核心变量机制
@@ -136,17 +138,20 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 ```
 ire_the_emerald_isle/
 ├── common/
-│   ├── national_focus/IRE_focus.txt          136 国策
-│   ├── ideas/IRE_ideas.txt                   84 精神
+│   ├── national_focus/IRE_focus.txt          210 国策
+│   ├── ideas/IRE_ideas.txt                   124 精神
 │   ├── ideas/IRE_new_world_ideas.txt         17 精神（A 线）
 │   ├── decisions/IRE_decisions.txt           20 决议
-│   ├── decisions/IRE_new_world_decisions.txt 18 决议（A 线）
+│   ├── decisions/IRE_new_world_decisions.txt 22 决议（A 线）
+│   ├── decisions/IRE_defend_ireland_decisions.txt 6 决议（保卫爱尔兰）
+│   ├── decisions/IRE_new_world_flavour_decisions.txt 5 决议（新世界轶事）
 │   ├── opinion_modifiers/IRE_opinions.txt    16 观点修正
 │   ├── scripted_effects/
-│   │   ├── IRE_effects.txt                   效果宏（网络/信誉/核心化/紧急状态分级）
+│   │   ├── IRE_effects.txt                   效果宏（网络/信誉/核心化/紧急状态/保卫爱尔兰分级）
 │   │   └── IRE_init.txt                      变量初始化
 │   └── on_actions/IRE_on_actions.txt         开局/每日/每月钩子
-├── events/IRE_events.txt                     45 事件
+├── events/IRE_events.txt                     35 事件
+├── events/IRE_new_world_events.txt           38 事件（A 线）
 ├── history/
 │   ├── countries/IRE - 爱尔兰.txt            开局设定 + oob 引用
 │   └── units/IRE_units.txt                   3 个师模板

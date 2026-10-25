@@ -1,0 +1,170 @@
+### ============================================================
+### 保卫爱尔兰：五级投降精神对应的动员决议
+### 每个等级一次，可在都柏林原地拉起部队
+### ============================================================
+
+IRE_defend_cat = {
+
+	IRE_defend_levy_1 = {
+		icon = generic_army_support
+		cost = 50
+		fire_only_once = yes
+
+		visible = { has_idea = IRE_defend_ireland_1 }
+		available = { has_war = yes }
+
+		complete_effect = {
+			create_unit = {
+				division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
+				owner = IRE
+				count = 2
+				prioritize_location = 11293
+			}
+			add_manpower = 5000
+			add_war_support = 0.02
+		}
+
+		ai_will_do = { base = 120 }
+	}
+
+	IRE_defend_levy_2 = {
+		icon = generic_military
+		cost = 75
+		fire_only_once = yes
+
+		visible = { has_idea = IRE_defend_ireland_2 }
+		available = { has_war = yes }
+
+		complete_effect = {
+			create_unit = {
+				division = "name = \"National Army\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 3
+				prioritize_location = 11293
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
+			add_manpower = 5000
+		}
+
+		ai_will_do = { base = 120 }
+	}
+
+	IRE_defend_levy_3 = {
+		icon = generic_guerilla_base
+		cost = 100
+		fire_only_once = yes
+
+		visible = { has_idea = IRE_defend_ireland_3 }
+		available = { has_war = yes }
+
+		complete_effect = {
+			create_unit = {
+				division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+				owner = IRE
+				count = 4
+				prioritize_location = 11293
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = IRE }
+			add_manpower = 10000
+			add_war_support = 0.03
+		}
+
+		ai_will_do = { base = 120 }
+	}
+
+	IRE_defend_levy_4 = {
+		icon = generic_construction
+		cost = 125
+		fire_only_once = yes
+
+		visible = { has_idea = IRE_defend_ireland_4 }
+		available = { has_war = yes }
+
+		complete_effect = {
+			create_unit = {
+				division = "name = \"National Army\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 4
+				prioritize_location = 11293
+			}
+			create_unit = {
+				division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 1
+				prioritize_location = 11293
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = IRE }
+			add_manpower = 10000
+		}
+
+		ai_will_do = { base = 120 }
+	}
+
+	IRE_defend_levy_5 = {
+		icon = generic_fundraising
+		cost = 150
+		fire_only_once = yes
+
+		visible = { has_idea = IRE_defend_ireland_5 }
+		available = { has_war = yes }
+
+		complete_effect = {
+			create_unit = {
+				division = "name = \"National Army\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 6
+				prioritize_location = 11293
+			}
+			create_unit = {
+				division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 4
+				prioritize_location = 11293
+			}
+			create_unit = {
+				division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 1
+				prioritize_location = 11293
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 1000 producer = IRE }
+			add_manpower = 30000
+			add_war_support = 0.05
+		}
+
+		ai_will_do = { base = 120 }
+	}
+
+	# 五级之后仍可反复补充兵员，但有冷却
+	IRE_defend_last_levy = {
+		icon = generic_army_support
+		cost = 100
+		days_remove = 120
+		fire_only_once = no
+
+		visible = { has_idea = IRE_defend_ireland_5 }
+		available = { has_war = yes }
+
+		complete_effect = {
+			create_unit = {
+				division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 2
+				prioritize_location = 11293
+			}
+			create_unit = {
+				division = "name = \"National Army\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+				owner = IRE
+				count = 1
+				prioritize_location = 11293
+			}
+			add_manpower = 5000
+			add_war_support = 0.02
+		}
+
+		ai_will_do = { base = 100 }
+	}
+}
