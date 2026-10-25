@@ -21,6 +21,7 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **A 线政治**：民主共和路线。开局由德·瓦莱拉领导；《绿色国际》后科斯特洛接任总统。和解线通向《公民共和国》，强硬整合线通向《中央集权共和国》
 - **A 线强化**：西班牙内战「野鹅远征军」（额外志愿军上限，并解除现役师数量门槛）、国立研究院 +2 研究槽、策动加拿大独立后以拉布拉多边境冲突归并英属北美；本土开发、侨汇与美洲网络国策会持续累积地图外工厂（+工厂产出，不占建筑格）
 - **本土开发**：北爱回归后解锁《开发北爱尔兰》决议；《全国矿脉勘察》改为可重复（180 天冷却），配合原有三州开发决议持续种田
+- **加拿大开发**：归并加拿大后解锁《加拿大国土开发计划》《加拿大资源勘探计划》《加拿大工业冶炼计划》；每期覆盖全部加拿大省份，提供建筑格、基础设施、煤/钢/铝/石油/钨、滚珠轴承（支援装备）与地图外工厂，三套计划各限 3 期
 - **无时间门槛**：A/E/B/M 国策与决议不再要求 1948/1958 等年份，只保留战争、外交、前置等状态条件；历史事件仍按史实日期触发
 - **新世界轶事**：吉尼斯出口、福因斯爱尔兰咖啡、香农跨大西洋中转、好莱坞《蓬门今始为君开》、凯尔特之虎等史实梗决议/事件，效果与战争、外交和战后局势挂钩
 - **B 线（史实/自由邦）**：内政巩固 → 英爱贸易 → 1937 宪法 → 紧急状态 → 中立三选一 → 1949 共和国 → 最后的统一；**AI 默认走这条线**。扩充博德纳莫纳泥炭局、爱尔兰航空、工业发展局、爱尔兰航运、国民军、侨民战争公债，并重选图标、强化史实产业与防务能力
@@ -29,8 +30,8 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **经济区域**：A 线分支，挂在《香农河水电》之后，走本土经济/民生路线（泥炭、科克港 → 医院彩票 → 公共卫生 / 医学院 / 国民健康体系、福因斯飞艇港、中央银行、战后香农自由区）；提供地图外工厂、人力与装备，与海外新世界终局分开排布
 - **军事区域**：独立分支，需二战爆发解锁，不依赖任何主线的紧急状态国策；陆军 / 海军 / 空军 / 情报 / 海岸瞭望 / 装甲车
 - **212 个国策节点**
-- **77 个剧情事件**、**54 个决议**
-- **143 个国家精神**（含隐藏修正）
+- **77 个剧情事件**、**57 个决议**
+- **156 个国家精神**（含隐藏修正）
 - 完整简体中文本地化
 
 ### 三个核心变量机制
@@ -144,18 +145,20 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 ire_the_emerald_isle/
 ├── common/
 │   ├── national_focus/IRE_focus.txt          212 国策
-│   ├── ideas/IRE_ideas.txt                   126 精神
-│   ├── ideas/IRE_new_world_ideas.txt         17 精神（A 线）
+│   ├── ideas/IRE_ideas.txt                   138 精神
+│   ├── ideas/IRE_new_world_ideas.txt         18 精神（A 线）
 │   ├── decisions/IRE_decisions.txt           20 决议
 │   ├── decisions/IRE_new_world_decisions.txt 23 决议（A 线）
 │   ├── decisions/IRE_defend_ireland_decisions.txt 6 决议（保卫爱尔兰）
 │   ├── decisions/IRE_new_world_flavour_decisions.txt 5 决议（新世界轶事）
+│   ├── decisions/IRE_canada_decisions.txt    3 决议（加拿大开发）
 │   ├── opinion_modifiers/IRE_opinions.txt    16 观点修正
 │   ├── scripted_effects/
 │   │   ├── IRE_effects.txt                   效果宏（网络/信誉/核心化/紧急状态/保卫爱尔兰分级）
 │   │   └── IRE_init.txt                      变量初始化
+│   ├── scripted_triggers/IRE_canadian_triggers.txt 加拿大州判定
 │   └── on_actions/IRE_on_actions.txt         开局/每日/每月钩子
-├── events/IRE_events.txt                     35 事件
+├── events/IRE_events.txt                     39 事件
 ├── events/IRE_new_world_events.txt           38 事件（A 线）
 ├── history/
 │   ├── countries/IRE - 爱尔兰.txt            开局设定 + oob 引用

@@ -1,0 +1,36 @@
+### ============================================================
+### 加拿大州判定（A 线归并加拿大后使用）
+### ============================================================
+
+IRE_canadian_state = {
+	OR = {
+		state = 276
+		state = 464
+		state = 465
+		state = 466
+		state = 467
+		state = 468
+		state = 469
+		state = 470
+		state = 471
+		state = 472
+		state = 473
+		state = 682
+		state = 683
+		state = 862
+		state = 865
+		state = 866
+		state = 867
+	}
+}
+
+### 可进行基建开发的省份；排除三处荒地州
+IRE_canadian_developable_state = {
+	IRE_canadian_state = yes
+	is_controlled_by = ROOT
+	NOT = {
+		state = 471
+		state = 472
+		state = 683
+	}
+}

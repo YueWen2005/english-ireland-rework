@@ -93,6 +93,19 @@ ideas = {
 			removal_cost = -1
 		}
 
+		IRE_canada_smelting = {
+			picture = generic_industrial_concern_3
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
 		IRE_atlantic_fleet = {
 			picture = generic_sea_focused_navy
 			allowed = { always = yes }
