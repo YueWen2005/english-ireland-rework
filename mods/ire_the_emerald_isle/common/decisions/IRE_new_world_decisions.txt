@@ -259,6 +259,7 @@ IRE_home_cat = {
 			113 = {
 				add_resource = { type = steel amount = 1 }
 				add_resource = { type = aluminium amount = 1 }
+				add_resource = { type = chromium amount = 1 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -287,6 +288,7 @@ IRE_home_cat = {
 			135 = {
 				add_resource = { type = steel amount = 1 }
 				add_resource = { type = aluminium amount = 2 }
+				add_resource = { type = chromium amount = 1 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -316,6 +318,7 @@ IRE_home_cat = {
 				add_resource = { type = steel amount = 1 }
 				add_resource = { type = aluminium amount = 1 }
 				add_resource = { type = tungsten amount = 1 }
+				add_resource = { type = chromium amount = 1 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -345,6 +348,7 @@ IRE_home_cat = {
 				add_resource = { type = steel amount = 2 }
 				add_resource = { type = aluminium amount = 1 }
 				add_resource = { type = coal amount = 1 }
+				add_resource = { type = chromium amount = 1 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -379,6 +383,30 @@ IRE_home_cat = {
 		}
 
 		ai_will_do = { base = 55 }
+	}
+
+	# 铁路车辆：可重复补充火车
+	IRE_train_production = {
+		icon = generic_train
+		cost = 50
+		days_remove = 120
+
+		visible = { has_idea = IRE_home_development }
+		available = {
+			has_idea = IRE_home_development
+			has_tech = basic_train
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 10
+			}
+			custom_effect_tooltip = IRE_tt_train_production_repeat
+		}
+
+		ai_will_do = { base = 35 }
 	}
 
 	IRE_national_research = {
