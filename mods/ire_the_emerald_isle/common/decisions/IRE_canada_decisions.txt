@@ -208,6 +208,16 @@ IRE_canada_cat = {
 						limit = { state = 473 }
 						add_resource = { type = oil amount = 1 }
 					}
+
+					# 铬：与钢同批产出
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = chromium amount = 1 }
+					}
+					if = {
+						limit = { state = 683 }
+						add_resource = { type = chromium amount = 1 }
+					}
 				}
 				if = {
 					limit = { check_variable = { IRE_canada_resource_count = 3 } }
@@ -226,7 +236,7 @@ IRE_canada_cat = {
 	}
 
 	# ------------------------------------------------------------
-	# 工业冶炼：支援装备（滚珠轴承/精密部件）+ 钢铝 + 地图外军工
+	# 工业冶炼：铬 + 钢铝 + 地图外军工
 	# ------------------------------------------------------------
 	IRE_canada_smelting_plan = {
 		icon = generic_factory
@@ -260,16 +270,12 @@ IRE_canada_cat = {
 				custom_effect_tooltip = IRE_tt_canada_smelting_idea
 			}
 			hidden_effect = {
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 1500
-					producer = IRE
-				}
 				every_owned_state = {
 					limit = { IRE_canadian_state = yes }
 					if = {
 						limit = { state = 276 }
 						add_resource = { type = steel amount = 1 }
+						add_resource = { type = chromium amount = 1 }
 					}
 					if = {
 						limit = { state = 466 }
@@ -283,6 +289,7 @@ IRE_canada_cat = {
 						limit = { state = 682 }
 						add_resource = { type = steel amount = 1 }
 						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = chromium amount = 2 }
 					}
 					if = {
 						limit = { state = 683 }
