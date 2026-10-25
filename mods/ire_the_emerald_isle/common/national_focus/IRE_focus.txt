@@ -651,6 +651,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_reconciliation }
+		prerequisite = { focus = IRE_A_spanish_volunteers }
 		x = 28
 		y = 6
 		ai_will_do = { base = 55 }
@@ -672,6 +673,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_firm_integration }
 		x = 30
 		y = 6
+		available = { has_completed_focus = IRE_A_spanish_volunteers }
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
