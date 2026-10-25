@@ -521,7 +521,7 @@ ideas = {
 			}
 		}
 
-		IRE_diaspora_bonds = {
+		IRE_B_diaspora_bonds_idea = {
 			picture = generic_foreign_capital
 			allowed = { always = yes }
 			visible = { always = yes }
@@ -1095,6 +1095,122 @@ ideas = {
 			modifier = {
 				experience_gain_army_factor = 0.10
 				army_org_factor = 0.02
+			}
+		}
+
+		# ---- v2.9.1：三条上台路线的国家精神 ----
+		# IRA 线（共和军掌权）
+		IRE_flying_columns = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.10
+				supply_consumption_factor = -0.10
+			}
+		}
+		# 红线（康诺利的旗帜上台）
+		IRE_connolly_road = {
+			picture = home_of_revolution
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				communism_drift = 0.1
+				political_power_factor = 0.05
+			}
+		}
+		# 黑线（影子兵工厂上台）
+		IRE_shadow_arsenal_idea = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				war_support_factor = 0.05
+			}
+		}
+
+		# ---- v2.9.1 补充：IRA 线凑满 3 正 1 负 ----
+		IRE_veterans_network = {
+			picture = generic_war_preparation
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				experience_gain_army_factor = 0.10
+				max_planning = 0.05
+			}
+		}
+		IRE_nation_in_arms = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription = 0.01
+				war_support_factor = 0.05
+			}
+		}
+		IRE_pariah_republic = {
+			picture = generic_disjointed_gov
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_factor = -0.10
+			}
+		}
+
+		# ---- v2.9.1 补充：红线凑满 3 正 1 负 ----
+		IRE_workers_militia = {
+			picture = generic_infantry_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription = 0.01
+				army_org_factor = 0.02
+			}
+		}
+		IRE_collective_farms = {
+			picture = generic_agrarian_reform
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		IRE_capital_flight = {
+			picture = generic_economic_crisis
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		# ---- v2.9.1 补充：黑线凑满 3 正 1 负 ----
+		IRE_abwehr_links = {
+			picture = generic_spy_intel
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				experience_gain_army_factor = 0.10
+				land_doctrine_cost_factor = -0.10
+			}
+		}
+		IRE_smuggling_fleet = {
+			picture = generic_convoys
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		IRE_london_sanctions = {
+			picture = generic_economic_crisis
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_factor = -0.05
 			}
 		}
 
