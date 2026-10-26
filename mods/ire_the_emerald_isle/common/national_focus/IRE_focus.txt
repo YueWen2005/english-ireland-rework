@@ -4187,13 +4187,12 @@ focus_tree = {
 		cost = 15
 		prerequisite = { focus = IRE_R_end_eve }
 		available = {
-			OR = {
-				AND = {
-					ENG = { exists = yes NOT = { has_government = communism } }
-					NOT = { has_civil_war = yes }
-				}
-				ENG = { exists = yes has_government = communism }
-			}
+			ENG = { exists = yes NOT = { has_government = communism } }
+			NOT = { ENG = { has_civil_war = yes } }
+		}
+		bypass = {
+			has_completed_focus = IRE_R_end_eve
+			ENG = { exists = yes has_government = communism }
 		}
 		x = 58
 		y = 19
@@ -4211,10 +4210,10 @@ focus_tree = {
 						start_civil_war = { ideology = communism size = 0.35 }
 					}
 				}
+				country_event = { id = ire.112 days = 2 }
 			}
 			set_rule = { can_send_volunteers = yes }
 			add_war_support = 0.05
-			country_event = { id = ire.112 days = 2 }
 		}
 	}
 
@@ -4226,18 +4225,16 @@ focus_tree = {
 		available = {
 			any_country = { original_tag = ENG has_government = communism has_civil_war = no }
 		}
+		bypass = {
+			has_completed_focus = IRE_R_end_ignite
+			any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+		}
 		x = 58
 		y = 20
 		ai_will_do = { base = 30 }
 
 		completion_reward = {
-			every_country = {
-				limit = { original_tag = ENG has_government = communism has_civil_war = no NOT = { tag = IRE } }
-				IRE = { annex_country = { target = PREV transfer_troops = yes } }
-			}
-			add_ideas = IRE_world_revolution_hq
-			add_named_threat = { threat = 10 name = IRE_threat_focus }
-			country_event = { id = ire.113 days = 1 }
+			IRE_R_merge_red_britain = yes
 		}
 	}
 

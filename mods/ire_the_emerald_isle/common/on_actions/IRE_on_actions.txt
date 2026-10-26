@@ -21,6 +21,29 @@ on_actions = {
 				# 保卫爱尔兰：按投降进度维护 1-5 级精神
 				IRE_defend_ireland_check = yes
 
+				# ---- C红线：英国已社会主义时跳过内战并合并 ----
+				if = {
+					limit = {
+						has_country_flag = IRE_red_path
+						has_completed_focus = IRE_R_end_eve
+						country_exists = ENG
+						ENG = { has_government = communism }
+						NOT = { has_country_flag = IRE_red_britain_merged }
+					}
+					if = {
+						limit = { NOT = { has_completed_focus = IRE_R_end_ignite } }
+						complete_national_focus = IRE_R_end_ignite
+					}
+					if = {
+						limit = { ENG = { has_civil_war = no } }
+						if = {
+							limit = { NOT = { has_completed_focus = IRE_R_end_union } }
+							complete_national_focus = IRE_R_end_union
+						}
+						IRE_R_merge_red_britain = yes
+					}
+				}
+
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
 				if = {
 					limit = {
