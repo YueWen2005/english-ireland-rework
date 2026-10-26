@@ -241,12 +241,17 @@ IRE_nw_add_nf_support = {
 
 # ============================================================
 # 保卫爱尔兰：按投降进度自动升级/降级（每日）
-# 仅 A 线「新世界的主人」精神持有者生效
+# 仅 A 线「大西洋紧急状态」授予的「大西洋防卫体制」精神持有者生效
+# 旧存档若已完成该焦点但缺新精神，每日检查会自动补授
 # 1 级：开战；2 级 >15%；3 级 >30%；4 级 >50%；5 级 >75%
 # ============================================================
 IRE_defend_ireland_check = {
 	if = {
-		limit = { has_idea = IRE_final_ascension }
+		limit = { has_completed_focus = IRE_A_emergency NOT = { has_idea = IRE_atlantic_emergency } }
+		add_ideas = IRE_atlantic_emergency
+	}
+	if = {
+		limit = { has_idea = IRE_atlantic_emergency }
 		if = {
 			limit = { has_war = yes }
 			if = {

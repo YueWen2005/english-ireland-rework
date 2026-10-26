@@ -192,6 +192,18 @@ ideas = {
 			removal_cost = -1
 		}
 
+		IRE_atlantic_emergency = {
+			picture = generic_war_preparation
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.05
+				war_support_factor = 0.03
+				stability_factor = 0.02
+			}
+			removal_cost = -1
+		}
+
 		IRE_new_world_expedition = {
 			picture = generic_naval_invasion
 			allowed = { always = yes }
