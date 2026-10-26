@@ -1,0 +1,5 @@
+### C 红线：英国已社会主义时的英爱合并国名颜色
+IRE_anglo_irish_union = {
+	color = rgb { 140 24 32 }
+	color_ui = rgb { 178 38 48 }
+}

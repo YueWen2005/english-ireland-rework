@@ -325,3 +325,34 @@ IRE_defend_ireland_check = {
 		remove_ideas = IRE_defend_ireland_5
 	}
 }
+
+# ============================================================
+# C 红线：英国已社会主义时，英爱合并为新国家
+# ============================================================
+IRE_R_merge_red_britain = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = IRE_red_britain_merged }
+			any_country = {
+				original_tag = ENG
+				has_government = communism
+				has_civil_war = no
+				NOT = { tag = IRE }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = ENG
+				has_government = communism
+				has_civil_war = no
+				NOT = { tag = IRE }
+			}
+			IRE = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+		set_cosmetic_tag = IRE_anglo_irish_union
+		add_ideas = IRE_world_revolution_hq
+		add_named_threat = { threat = 10 name = IRE_threat_focus }
+		set_country_flag = IRE_red_britain_merged
+		country_event = { id = ire.113 days = 1 }
+	}
+}
