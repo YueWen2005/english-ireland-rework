@@ -216,6 +216,98 @@ on_actions = {
 				set_country_flag = IRE_gold_done
 				country_event = { id = ire.108 days = 0 }
 			}
+
+			# ---- A线外交环境：美国租借与爱尔兰游说 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					country_exists = USA
+					USA = { has_war = yes }
+					has_variable = IRE_diaspora_network
+					check_variable = { IRE_diaspora_network > 39 }
+					NOT = { has_country_flag = IRE_env_us_lobby_done }
+				}
+				set_country_flag = IRE_env_us_lobby_done
+				country_event = { id = ire_nw.80 days = 0 }
+			}
+
+			# ---- A线外交环境：加拿大归并后的英联邦裂痕 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					has_country_flag = IRE_canada_annexed
+					country_exists = ENG
+					any_country = {
+						OR = { tag = AST tag = NZL tag = SAF tag = RAJ }
+						exists = yes
+					}
+					NOT = { has_country_flag = IRE_env_commonwealth_done }
+				}
+				set_country_flag = IRE_env_commonwealth_done
+				country_event = { id = ire_nw.81 days = 0 }
+			}
+
+			# ---- A线外交环境：法国沦陷与自由法国请求 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					country_exists = FRA
+					FRA = { has_capitulated = yes }
+					NOT = { has_country_flag = IRE_env_free_france_done }
+				}
+				set_country_flag = IRE_env_free_france_done
+				country_event = { id = ire_nw.82 days = 0 }
+			}
+
+			# ---- A线外交环境：东线志愿医疗队 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					country_exists = SOV
+					country_exists = GER
+					SOV = { has_war_with = GER }
+					has_variable = IRE_diaspora_network
+					check_variable = { IRE_diaspora_network > 39 }
+					NOT = { has_country_flag = IRE_env_eastern_front_done }
+				}
+				set_country_flag = IRE_env_eastern_front_done
+				country_event = { id = ire_nw.83 days = 0 }
+			}
+
+			# ---- A线外交环境：美国参战后的安全保障 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					country_exists = USA
+					USA = { has_war = yes }
+					OR = {
+						has_completed_focus = IRE_A_tammany_hall
+						has_completed_focus = IRE_A_green_dollar
+					}
+					NOT = { has_country_flag = IRE_env_us_guarantee_done }
+				}
+				set_country_flag = IRE_env_us_guarantee_done
+				country_event = { id = ire_nw.84 days = 0 }
+			}
+
+			# ---- A线外交环境：战后欧洲秩序 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					has_completed_focus = IRE_A_green_international
+					date > 1944.1.1
+					NOT = { any_country = { has_war = yes is_major = yes } }
+					NOT = { has_country_flag = IRE_env_postwar_done }
+				}
+				set_country_flag = IRE_env_postwar_done
+				country_event = { id = ire_nw.85 days = 0 }
+			}
 		}
 	}
 }
