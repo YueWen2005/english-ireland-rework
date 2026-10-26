@@ -486,6 +486,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_emergency_powers
+			add_ideas = IRE_atlantic_emergency
 			add_political_power = 25
 			add_war_support = 0.05
 			army_experience = 50

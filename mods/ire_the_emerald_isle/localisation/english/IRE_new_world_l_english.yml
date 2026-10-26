@@ -64,6 +64,8 @@
  IRE_green_international_desc:0 "An Irish political network spanning Britain and America."
  IRE_atlantic_charter:0 "Atlantic Charter"
  IRE_atlantic_charter_desc:0 "A political charter signed by the Irish on both sides of the Atlantic."
+ IRE_atlantic_emergency:0 "Atlantic Defence Regime"
+ IRE_atlantic_emergency_desc:0 "With war reaching the Atlantic, Dublin folds home defence, coastal watch, and national mobilisation into a single emergency regime."
  IRE_new_world_expedition:0 "New World Expedition"
  IRE_new_world_expedition_desc:0 "Ireland is no longer content to defend."
  IRE_eng_irish_question:0 "The Irish Question"
