@@ -2159,7 +2159,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_B_plan_w }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
 
-		x = 88
+		x = 96
 		y = 9
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_armed_neutrality }
 		ai_will_do = { base = 120 }
@@ -2182,8 +2182,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_B_plan_w }
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 
-		x = 96
-		y = 9
+		x = 88
+		y = 10
 		mutually_exclusive = { focus = IRE_B_moral_neutrality focus = IRE_B_absolute_neutrality }
 		ai_will_do = { base = 120 }
 
@@ -2221,7 +2221,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_B_absolute_neutrality }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		x = 88
+		x = 96
 		y = 10
 		available = {
 			any_country = { has_war = yes is_major = yes }
@@ -2242,7 +2242,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_B_absolute_neutrality }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		x = 96
+		x = 100
 		y = 10
 		available = {
 			has_country_flag = IRE_ira_tolerated
@@ -2443,7 +2443,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_B_ldf }
-		x = 86
+		x = 88
 		y = 9
 		ai_will_do = { base = 140 }
 
@@ -2467,7 +2467,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_B_emergency }
-		x = 90
+		x = 94
 		y = 8
 		ai_will_do = { base = 135 }
 
