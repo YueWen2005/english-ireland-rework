@@ -3448,7 +3448,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_R_nationalize }
-		available = { check_variable = { IRE_red_unity > 60 } }
+		available = { check_variable = { IRE_red_unity > 50 } }
 		x = 58
 		y = 9
 		ai_will_do = { base = 40 }
@@ -3810,7 +3810,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 6
 		prerequisite = { focus = IRE_R_ind_arms_drive }
-		available = { check_variable = { IRE_red_unity > 59 } }
+		available = { check_variable = { IRE_red_unity > 50 } }
 		x = 54
 		y = 9
 		ai_will_do = { base = 35 }
@@ -4186,21 +4186,29 @@ focus_tree = {
 		cost = 15
 		prerequisite = { focus = IRE_R_end_eve }
 		available = {
-			ENG = { exists = yes NOT = { has_government = communism } }
-			NOT = { has_civil_war = yes }
+			OR = {
+				AND = {
+					ENG = { exists = yes NOT = { has_government = communism } }
+					NOT = { has_civil_war = yes }
+				}
+				ENG = { exists = yes has_government = communism }
+			}
 		}
 		x = 58
 		y = 19
 		ai_will_do = { base = 25 }
 
 		completion_reward = {
-			ENG = {
-				if = {
-					limit = { communism > 0.5 }
-					start_civil_war = { ideology = communism size = 0.55 }
-				}
-				else = {
-					start_civil_war = { ideology = communism size = 0.35 }
+			if = {
+				limit = { ENG = { exists = yes NOT = { has_government = communism } } }
+				ENG = {
+					if = {
+						limit = { communism > 0.5 }
+						start_civil_war = { ideology = communism size = 0.55 }
+					}
+					else = {
+						start_civil_war = { ideology = communism size = 0.35 }
+					}
 				}
 			}
 			set_rule = { can_send_volunteers = yes }
@@ -4238,7 +4246,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			FRA = { exists = yes NOT = { has_government = communism } }
+			FRA = { exists = yes }
 		}
 		x = 55
 		y = 22
@@ -4261,9 +4269,11 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			HOL = { exists = yes NOT = { has_government = communism } }
-			BEL = { exists = yes NOT = { has_government = communism } }
-			LUX = { exists = yes NOT = { has_government = communism } }
+OR = {
+			HOL = { exists = yes }
+			BEL = { exists = yes }
+			LUX = { exists = yes }
+			}
 		}
 		x = 57
 		y = 22
@@ -4294,8 +4304,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			SPR = { exists = yes NOT = { has_government = communism } }
-			POR = { exists = yes NOT = { has_government = communism } }
+OR = {
+			SPR = { exists = yes }
+			POR = { exists = yes }
+			}
 		}
 		x = 59
 		y = 22
@@ -4322,7 +4334,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			ITA = { exists = yes NOT = { has_government = communism } }
+			ITA = { exists = yes }
 		}
 		x = 61
 		y = 22
@@ -4353,9 +4365,11 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_R_lib_lowlands has_completed_focus = IRE_R_lib_italy }
 			AND = { has_completed_focus = IRE_R_lib_iberia has_completed_focus = IRE_R_lib_italy }
 			}
-			AUS = { exists = yes NOT = { has_government = communism } }
-			HUN = { exists = yes NOT = { has_government = communism } }
-			CZE = { exists = yes NOT = { has_government = communism } }
+OR = {
+			AUS = { exists = yes }
+			HUN = { exists = yes }
+			CZE = { exists = yes }
+			}
 		}
 		x = 55
 		y = 23
@@ -4394,10 +4408,12 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_R_lib_lowlands has_completed_focus = IRE_R_lib_italy }
 			AND = { has_completed_focus = IRE_R_lib_iberia has_completed_focus = IRE_R_lib_italy }
 			}
-			YUG = { exists = yes NOT = { has_government = communism } }
-			ROM = { exists = yes NOT = { has_government = communism } }
-			BUL = { exists = yes NOT = { has_government = communism } }
-			GRE = { exists = yes NOT = { has_government = communism } }
+OR = {
+			YUG = { exists = yes }
+			ROM = { exists = yes }
+			BUL = { exists = yes }
+			GRE = { exists = yes }
+			}
 		}
 		x = 57
 		y = 23
@@ -4440,11 +4456,13 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_R_lib_lowlands has_completed_focus = IRE_R_lib_italy }
 			AND = { has_completed_focus = IRE_R_lib_iberia has_completed_focus = IRE_R_lib_italy }
 			}
-			GER = { exists = yes NOT = { has_government = communism } }
-			POL = { exists = yes NOT = { has_government = communism } }
-			LAT = { exists = yes NOT = { has_government = communism } }
-			LIT = { exists = yes NOT = { has_government = communism } }
-			EST = { exists = yes NOT = { has_government = communism } }
+OR = {
+			GER = { exists = yes }
+			POL = { exists = yes }
+			LAT = { exists = yes }
+			LIT = { exists = yes }
+			EST = { exists = yes }
+			}
 		}
 		x = 59
 		y = 23
@@ -4491,10 +4509,12 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_R_lib_lowlands has_completed_focus = IRE_R_lib_italy }
 			AND = { has_completed_focus = IRE_R_lib_iberia has_completed_focus = IRE_R_lib_italy }
 			}
-			NOR = { exists = yes NOT = { has_government = communism } }
-			SWE = { exists = yes NOT = { has_government = communism } }
-			DEN = { exists = yes NOT = { has_government = communism } }
-			FIN = { exists = yes NOT = { has_government = communism } }
+OR = {
+			NOR = { exists = yes }
+			SWE = { exists = yes }
+			DEN = { exists = yes }
+			FIN = { exists = yes }
+			}
 		}
 		x = 61
 		y = 23
@@ -4529,7 +4549,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			RAJ = { exists = yes NOT = { has_government = communism } }
+			RAJ = { exists = yes }
 		}
 		x = 55
 		y = 24
@@ -4542,7 +4562,10 @@ focus_tree = {
 				add_to_faction = RAJ
 			}
 			else = {
-				create_wargoal = { type = annex_everything target = RAJ expire = 0 }
+				if = {
+					limit = { RAJ = { exists = yes NOT = { has_government = communism } } }
+					create_wargoal = { type = annex_everything target = RAJ expire = 0 }
+				}
 			}
 			add_political_power = 20
 		}
@@ -4555,8 +4578,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			ENG = { exists = yes NOT = { has_government = communism } }
-			FRA = { exists = yes NOT = { has_government = communism } }
+OR = {
+			ENG = { exists = yes }
+			FRA = { exists = yes }
+			}
 		}
 		x = 57
 		y = 24
@@ -4586,8 +4611,10 @@ focus_tree = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_india has_completed_focus = IRE_R_lib_africa }
 			}
-			HOL = { exists = yes NOT = { has_government = communism } }
-			FRA = { exists = yes NOT = { has_government = communism } }
+OR = {
+			HOL = { exists = yes }
+			FRA = { exists = yes }
+			}
 		}
 		x = 59
 		y = 24
@@ -4617,8 +4644,10 @@ focus_tree = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_india has_completed_focus = IRE_R_lib_africa }
 			}
-			IRQ = { exists = yes NOT = { has_government = communism } }
-			PER = { exists = yes NOT = { has_government = communism } }
+OR = {
+			IRQ = { exists = yes }
+			PER = { exists = yes }
+			}
 		}
 		x = 61
 		y = 24
@@ -4645,7 +4674,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			CAN = { exists = yes NOT = { has_government = communism } }
+			CAN = { exists = yes }
 		}
 		x = 56
 		y = 25
@@ -4658,7 +4687,10 @@ focus_tree = {
 				add_to_faction = CAN
 			}
 			else = {
-				create_wargoal = { type = annex_everything target = CAN expire = 0 }
+				if = {
+					limit = { CAN = { exists = yes NOT = { has_government = communism } } }
+					create_wargoal = { type = annex_everything target = CAN expire = 0 }
+				}
 			}
 			add_political_power = 20
 		}
@@ -4671,7 +4703,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			USA = { exists = yes NOT = { has_government = communism } }
+			USA = { exists = yes }
 		}
 		x = 58
 		y = 25
@@ -4694,9 +4726,11 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
-			MEX = { exists = yes NOT = { has_government = communism } }
-			BRA = { exists = yes NOT = { has_government = communism } }
-			ARG = { exists = yes NOT = { has_government = communism } }
+OR = {
+			MEX = { exists = yes }
+			BRA = { exists = yes }
+			ARG = { exists = yes }
+			}
 		}
 		x = 60
 		y = 25
@@ -4803,7 +4837,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			FRA = { exists = yes NOT = { has_government = fascism } }
+			FRA = { exists = yes }
 		}
 		x = 62
 		y = 14
@@ -4826,9 +4860,11 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			HOL = { exists = yes NOT = { has_government = fascism } }
-			BEL = { exists = yes NOT = { has_government = fascism } }
-			LUX = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			HOL = { exists = yes }
+			BEL = { exists = yes }
+			LUX = { exists = yes }
+			}
 		}
 		x = 64
 		y = 14
@@ -4859,8 +4895,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			SPR = { exists = yes NOT = { has_government = fascism } }
-			POR = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			SPR = { exists = yes }
+			POR = { exists = yes }
+			}
 		}
 		x = 66
 		y = 14
@@ -4887,7 +4925,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			ITA = { exists = yes NOT = { has_government = fascism } }
+			ITA = { exists = yes }
 		}
 		x = 68
 		y = 14
@@ -4918,9 +4956,11 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_X_ord_lowlands has_completed_focus = IRE_X_ord_italy }
 			AND = { has_completed_focus = IRE_X_ord_iberia has_completed_focus = IRE_X_ord_italy }
 			}
-			AUS = { exists = yes NOT = { has_government = fascism } }
-			HUN = { exists = yes NOT = { has_government = fascism } }
-			CZE = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			AUS = { exists = yes }
+			HUN = { exists = yes }
+			CZE = { exists = yes }
+			}
 		}
 		x = 62
 		y = 15
@@ -4959,10 +4999,12 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_X_ord_lowlands has_completed_focus = IRE_X_ord_italy }
 			AND = { has_completed_focus = IRE_X_ord_iberia has_completed_focus = IRE_X_ord_italy }
 			}
-			YUG = { exists = yes NOT = { has_government = fascism } }
-			ROM = { exists = yes NOT = { has_government = fascism } }
-			BUL = { exists = yes NOT = { has_government = fascism } }
-			GRE = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			YUG = { exists = yes }
+			ROM = { exists = yes }
+			BUL = { exists = yes }
+			GRE = { exists = yes }
+			}
 		}
 		x = 64
 		y = 15
@@ -5005,10 +5047,12 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_X_ord_lowlands has_completed_focus = IRE_X_ord_italy }
 			AND = { has_completed_focus = IRE_X_ord_iberia has_completed_focus = IRE_X_ord_italy }
 			}
-			POL = { exists = yes NOT = { has_government = fascism } }
-			LAT = { exists = yes NOT = { has_government = fascism } }
-			LIT = { exists = yes NOT = { has_government = fascism } }
-			EST = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			POL = { exists = yes }
+			LAT = { exists = yes }
+			LIT = { exists = yes }
+			EST = { exists = yes }
+			}
 		}
 		x = 66
 		y = 15
@@ -5051,10 +5095,12 @@ focus_tree = {
 			AND = { has_completed_focus = IRE_X_ord_lowlands has_completed_focus = IRE_X_ord_italy }
 			AND = { has_completed_focus = IRE_X_ord_iberia has_completed_focus = IRE_X_ord_italy }
 			}
-			NOR = { exists = yes NOT = { has_government = fascism } }
-			SWE = { exists = yes NOT = { has_government = fascism } }
-			DEN = { exists = yes NOT = { has_government = fascism } }
-			FIN = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			NOR = { exists = yes }
+			SWE = { exists = yes }
+			DEN = { exists = yes }
+			FIN = { exists = yes }
+			}
 		}
 		x = 68
 		y = 15
@@ -5089,7 +5135,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			RAJ = { exists = yes NOT = { has_government = fascism } }
+			RAJ = { exists = yes }
 		}
 		x = 62
 		y = 16
@@ -5102,7 +5148,10 @@ focus_tree = {
 				add_to_faction = RAJ
 			}
 			else = {
-				create_wargoal = { type = annex_everything target = RAJ expire = 0 }
+				if = {
+					limit = { RAJ = { exists = yes NOT = { has_government = fascism } } }
+					create_wargoal = { type = annex_everything target = RAJ expire = 0 }
+				}
 			}
 			add_political_power = 20
 		}
@@ -5115,8 +5164,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			ENG = { exists = yes NOT = { has_government = fascism } }
-			FRA = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			ENG = { exists = yes }
+			FRA = { exists = yes }
+			}
 		}
 		x = 64
 		y = 16
@@ -5146,8 +5197,10 @@ focus_tree = {
 			OR = {
 			AND = { has_completed_focus = IRE_X_ord_india has_completed_focus = IRE_X_ord_africa }
 			}
-			HOL = { exists = yes NOT = { has_government = fascism } }
-			FRA = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			HOL = { exists = yes }
+			FRA = { exists = yes }
+			}
 		}
 		x = 66
 		y = 16
@@ -5177,8 +5230,10 @@ focus_tree = {
 			OR = {
 			AND = { has_completed_focus = IRE_X_ord_india has_completed_focus = IRE_X_ord_africa }
 			}
-			IRQ = { exists = yes NOT = { has_government = fascism } }
-			PER = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			IRQ = { exists = yes }
+			PER = { exists = yes }
+			}
 		}
 		x = 68
 		y = 16
@@ -5205,7 +5260,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			CAN = { exists = yes NOT = { has_government = fascism } }
+			CAN = { exists = yes }
 		}
 		x = 62
 		y = 17
@@ -5218,7 +5273,10 @@ focus_tree = {
 				add_to_faction = CAN
 			}
 			else = {
-				create_wargoal = { type = annex_everything target = CAN expire = 0 }
+				if = {
+					limit = { CAN = { exists = yes NOT = { has_government = fascism } } }
+					create_wargoal = { type = annex_everything target = CAN expire = 0 }
+				}
 			}
 			add_political_power = 20
 		}
@@ -5231,7 +5289,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			USA = { exists = yes NOT = { has_government = fascism } }
+			USA = { exists = yes }
 		}
 		x = 64
 		y = 17
@@ -5254,9 +5312,11 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
-			MEX = { exists = yes NOT = { has_government = fascism } }
-			BRA = { exists = yes NOT = { has_government = fascism } }
-			ARG = { exists = yes NOT = { has_government = fascism } }
+OR = {
+			MEX = { exists = yes }
+			BRA = { exists = yes }
+			ARG = { exists = yes }
+			}
 		}
 		x = 66
 		y = 17
