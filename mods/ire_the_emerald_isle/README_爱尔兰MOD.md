@@ -31,7 +31,8 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **经济区域**：A 线分支，挂在《香农河水电》之后，走本土经济/民生路线（泥炭、科克港 → 医院彩票 → 公共卫生 / 医学院 / 国民健康体系、福因斯飞艇港、中央银行、战后香农自由区）；提供地图外工厂、人力与装备，与海外新世界终局分开排布
 - **军事区域**：独立分支，需二战爆发解锁，不依赖任何主线的紧急状态国策；陆军 / 海军 / 空军 / 情报 / 海岸瞭望 / 装甲车
 - **212 个国策节点**
-- **77 个剧情事件**、**66 个决议**
+- **A 线外交环境事件**：美国租借与爱尔兰游说、加拿大归并后的英联邦裂痕、自由法国请求、东线医疗队、美国安全保障、战后欧洲秩序等 6 组事件，会改变美/英/法/苏/德及自治领的态度与外交环境，而不只是给爱尔兰加数值
+- **83 个剧情事件**、**66 个决议**
 - **160 个国家精神**（含隐藏修正）
 - 完整简体中文本地化
 
@@ -161,7 +162,7 @@ ire_the_emerald_isle/
 │   ├── scripted_triggers/IRE_canadian_triggers.txt 加拿大州判定
 │   └── on_actions/IRE_on_actions.txt         开局/每日/每月钩子
 ├── events/IRE_events.txt                     39 事件
-├── events/IRE_new_world_events.txt           38 事件（A 线）
+├── events/IRE_new_world_events.txt           44 事件（A 线）
 ├── history/
 │   ├── countries/IRE - 爱尔兰.txt            开局设定 + oob 引用
 │   └── units/IRE_units.txt                   3 个师模板

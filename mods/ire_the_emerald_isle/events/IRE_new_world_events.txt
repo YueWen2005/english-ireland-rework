@@ -1139,3 +1139,387 @@ country_event = {
 		add_stability = 0.05
 	}
 }
+
+# ============================================================
+# A 线外交环境事件：外部世界对爱尔兰路线的反应
+# 80 美国租借/爱尔兰游说；81 加拿大归并后的英联邦裂痕
+# 82 法国沦陷后的自由法国请求；83 东线志愿医疗队
+# 84 美国参战后的安全保障；85 战后欧洲秩序
+# ============================================================
+country_event = {
+	id = ire_nw.80
+	title = ire_nw.80.t
+	desc = ire_nw.80.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.80.a
+		if = {
+			limit = { country_exists = USA }
+			USA = {
+				add_war_support = 0.02
+				add_stability = -0.01
+				add_timed_idea = { idea = IRE_usa_irish_lobby days = 365 }
+			}
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+		add_political_power = 25
+		custom_effect_tooltip = IRE_tt_env_80a
+	}
+
+	option = {
+		name = ire_nw.80.b
+		if = {
+			limit = { country_exists = USA }
+			USA = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 }
+				add_stability = 0.01
+			}
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 } }
+		}
+		add_stability = 0.02
+		custom_effect_tooltip = IRE_tt_env_80b
+	}
+
+	option = {
+		name = ire_nw.80.c
+		if = {
+			limit = { country_exists = USA }
+			USA = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 }
+				add_war_support = -0.01
+			}
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+		add_stability = 0.01
+		custom_effect_tooltip = IRE_tt_env_80c
+	}
+}
+
+country_event = {
+	id = ire_nw.81
+	title = ire_nw.81.t
+	desc = ire_nw.81.d
+	picture = GFX_report_event_baltic_entente
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.81.a
+		every_country = {
+			limit = {
+				OR = { tag = AST tag = NZL tag = SAF tag = RAJ }
+				exists = yes
+			}
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 }
+				add_stability = -0.02
+			}
+		}
+		add_political_power = 25
+		custom_effect_tooltip = IRE_tt_env_81a
+	}
+
+	option = {
+		name = ire_nw.81.b
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+		}
+		every_country = {
+			limit = {
+				OR = { tag = AST tag = NZL tag = SAF tag = RAJ }
+				exists = yes
+			}
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 }
+		}
+		add_stability = 0.01
+		custom_effect_tooltip = IRE_tt_env_81b
+	}
+
+	option = {
+		name = ire_nw.81.c
+		every_country = {
+			limit = {
+				OR = { tag = AST tag = NZL tag = SAF tag = RAJ }
+				exists = yes
+			}
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 }
+				add_stability = -0.03
+			}
+		}
+		add_war_support = 0.02
+		custom_effect_tooltip = IRE_tt_env_81c
+	}
+}
+
+country_event = {
+	id = ire_nw.82
+	title = ire_nw.82.t
+	desc = ire_nw.82.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.82.a
+		if = {
+			limit = { country_exists = FRA }
+			FRA = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+				add_war_support = 0.02
+				add_timed_idea = { idea = IRE_fra_irish_sympathy days = 365 }
+			}
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+		add_stability = -0.02
+		custom_effect_tooltip = IRE_tt_env_82a
+	}
+
+	option = {
+		name = ire_nw.82.b
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 } }
+		}
+		add_stability = 0.01
+		custom_effect_tooltip = IRE_tt_env_82b
+	}
+
+	option = {
+		name = ire_nw.82.c
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+		add_stability = 0.02
+		custom_effect_tooltip = IRE_tt_env_82c
+	}
+}
+
+country_event = {
+	id = ire_nw.83
+	title = ire_nw.83.t
+	desc = ire_nw.83.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.83.a
+		if = {
+			limit = { country_exists = SOV }
+			SOV = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+				add_war_support = 0.02
+				add_manpower = 5000
+			}
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+		army_experience = 25
+		custom_effect_tooltip = IRE_tt_env_83a
+	}
+
+	option = {
+		name = ire_nw.83.b
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+		add_stability = 0.01
+		custom_effect_tooltip = IRE_tt_env_83b
+	}
+
+	option = {
+		name = ire_nw.83.c
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos5 } }
+		}
+		add_stability = 0.02
+		custom_effect_tooltip = IRE_tt_env_83c
+	}
+}
+
+country_event = {
+	id = ire_nw.84
+	title = ire_nw.84.t
+	desc = ire_nw.84.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.84.a
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+			if = {
+				limit = { NOT = { USA = { has_guaranteed = ROOT } } }
+				USA = { give_guarantee = ROOT }
+			}
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+		add_stability = 0.03
+		custom_effect_tooltip = IRE_tt_env_84a
+	}
+
+	option = {
+		name = ire_nw.84.b
+		if = {
+			limit = { country_exists = USA }
+			USA = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 }
+				add_stability = 0.01
+			}
+		}
+		add_political_power = 25
+		add_stability = 0.01
+		custom_effect_tooltip = IRE_tt_env_84b
+	}
+
+	option = {
+		name = ire_nw.84.c
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		add_stability = 0.02
+		add_war_support = 0.02
+		custom_effect_tooltip = IRE_tt_env_84c
+	}
+}
+
+country_event = {
+	id = ire_nw.85
+	title = ire_nw.85.t
+	desc = ire_nw.85.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.85.a
+		every_country = {
+			limit = {
+				OR = { tag = SWE tag = NOR tag = DEN tag = FIN tag = HOL tag = BEL tag = LUX }
+				exists = yes
+			}
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 }
+		}
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		add_stability = 0.03
+		custom_effect_tooltip = IRE_tt_env_85a
+	}
+
+	option = {
+		name = ire_nw.85.b
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+			if = {
+				limit = { NOT = { USA = { has_guaranteed = ROOT } } }
+				USA = { give_guarantee = ROOT }
+			}
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+		}
+		if = {
+			limit = { country_exists = GER }
+			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		add_stability = 0.02
+		custom_effect_tooltip = IRE_tt_env_85b
+	}
+
+	option = {
+		name = ire_nw.85.c
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
+		}
+		add_war_support = 0.03
+		add_stability = 0.02
+		custom_effect_tooltip = IRE_tt_env_85c
+	}
+}
