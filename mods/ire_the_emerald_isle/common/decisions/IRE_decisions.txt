@@ -584,6 +584,7 @@
 			complete_effect = {
 				add_equipment_to_stockpile = { type = infantry_equipment amount = 200 producer = IRE }
 				add_to_variable = { IRE_exposure = 5 }
+				custom_effect_tooltip = IRE_effect_exposure_5
 			}
 
 			ai_will_do = { base = 30 }
@@ -621,6 +622,7 @@
 					limit = { check_variable = { IRE_red_unity > 109 } }
 					set_variable = { IRE_red_unity = 110 }
 				}
+				custom_effect_tooltip = IRE_effect_red_unity_5
 			}
 
 			ai_will_do = { base = 30 }

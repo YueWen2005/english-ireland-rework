@@ -436,3 +436,11 @@
  IRE_tt_mediator_credibility:0 "调停成功：中立信誉 +5；失败：中立信誉 -5"
  IRE_tt_unity_campaign:0 "边境公投支持度 +12（上限 100，最多 5 次）"
  IRE_tt_fisher_brotherhood:0 "纽芬兰亲爱派支持度 +8（上限 100）"
+ # ===== C 线变量效果提示 =====
+ IRE_effect_red_unity_5:0 "红色团结 +5"
+ IRE_effect_red_unity_10:0 "红色团结 +10"
+ IRE_effect_red_unity_15:0 "红色团结 +15"
+ IRE_effect_exposure_5:0 "暴露度 +5"
+ IRE_effect_exposure_10:0 "暴露度 +10"
+ IRE_effect_exposure_15:0 "暴露度 +15"
+ IRE_effect_exposure_20:0 "暴露度 +20"

@@ -440,3 +440,11 @@
  IRE_tt_mediator_credibility:0 "Successful mediation: neutrality credibility +5; failure: -5"
  IRE_tt_unity_campaign:0 "Border plebiscite support +12 (cap 100, maximum 5 times)"
  IRE_tt_fisher_brotherhood:0 "Newfoundland pro-Irish support +8 (cap 100)"
+ # ===== C line variable effect tooltips =====
+ IRE_effect_red_unity_5:0 "Red unity +5"
+ IRE_effect_red_unity_10:0 "Red unity +10"
+ IRE_effect_red_unity_15:0 "Red unity +15"
+ IRE_effect_exposure_5:0 "Exposure +5"
+ IRE_effect_exposure_10:0 "Exposure +10"
+ IRE_effect_exposure_15:0 "Exposure +15"
+ IRE_effect_exposure_20:0 "Exposure +20"

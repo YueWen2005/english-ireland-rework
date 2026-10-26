@@ -3277,6 +3277,7 @@ focus_tree = {
 				country_event = { id = ire.90 days = 1 }
 			}
 			country_event = { id = ire.100 days = 2 }
+			custom_effect_tooltip = IRE_effect_red_unity_10
 		}
 	}
 
@@ -3303,6 +3304,7 @@ focus_tree = {
 			SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
 			country_event = { id = ire.101 days = 1 }
+			custom_effect_tooltip = IRE_effect_red_unity_10
 		}
 	}
 
@@ -3321,6 +3323,7 @@ focus_tree = {
 			add_political_power = 50
 			add_stability = 0.02
 			set_country_flag = IRE_reading_classes
+			custom_effect_tooltip = IRE_effect_red_unity_15
 		}
 	}
 
@@ -3338,6 +3341,7 @@ focus_tree = {
 			add_stability = 0.02
 			add_to_variable = { IRE_red_unity = 5 }
 			add_popularity = { ideology = communism popularity = 0.05 }
+			custom_effect_tooltip = IRE_effect_red_unity_5
 		}
 	}
 
@@ -3360,6 +3364,7 @@ focus_tree = {
 			}
 			add_to_variable = { IRE_red_unity_cap = 10 }
 			set_country_flag = IRE_unity_cap_high
+			custom_effect_tooltip = IRE_effect_red_unity_10
 		}
 	}
 
@@ -3381,6 +3386,7 @@ focus_tree = {
 			add_to_variable = { IRE_red_unity = 5 }
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
 			SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
+			custom_effect_tooltip = IRE_effect_red_unity_5
 		}
 	}
 
@@ -3433,6 +3439,7 @@ focus_tree = {
 			add_stability = 0.02
 			add_to_variable = { IRE_red_unity = 10 }
 			country_event = { id = ire.104 days = 2 }
+			custom_effect_tooltip = IRE_effect_red_unity_10
 		}
 	}
 
@@ -3514,6 +3521,7 @@ focus_tree = {
 				set_country_flag = IRE_farewell_done
 				country_event = { id = ire.90 days = 1 }
 			}
+			custom_effect_tooltip = IRE_effect_exposure_10
 		}
 	}
 
@@ -3534,6 +3542,7 @@ focus_tree = {
 			add_to_variable = { IRE_exposure = 15 }
 			add_popularity = { ideology = fascism popularity = 0.05 }
 			country_event = { id = ire.91 days = 1 }
+			custom_effect_tooltip = IRE_effect_exposure_15
 		}
 	}
 
@@ -3561,6 +3570,7 @@ focus_tree = {
 			add_ideas = IRE_martyrs
 			set_country_flag = IRE_transport_cells
 			country_event = { id = ire.92 days = 1 }
+			custom_effect_tooltip = IRE_effect_exposure_20
 		}
 	}
 
@@ -3586,6 +3596,7 @@ focus_tree = {
 			add_to_variable = { IRE_exposure = 15 }
 			add_ideas = IRE_ira_shadow
 			country_event = { id = ire.96 days = 1 }
+			custom_effect_tooltip = IRE_effect_exposure_15
 		}
 	}
 
@@ -3831,6 +3842,7 @@ focus_tree = {
 			army_experience = 30
 			add_to_variable = { IRE_exposure = 10 }
 			add_ideas = IRE_X_ind_cottage_eff
+			custom_effect_tooltip = IRE_effect_exposure_10
 		}
 	}
 
@@ -3850,6 +3862,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = convoy amount = 25 }
 			add_to_variable = { IRE_exposure = 10 }
 			navy_experience = 20
+			custom_effect_tooltip = IRE_effect_exposure_10
 		}
 	}
 
@@ -3868,6 +3881,7 @@ focus_tree = {
 			add_offsite_building = { type = arms_factory level = 1 }
 			add_ideas = IRE_X_ind_smuggle_eff
 			add_to_variable = { IRE_exposure = 10 }
+			custom_effect_tooltip = IRE_effect_exposure_10
 		}
 	}
 
@@ -3889,6 +3903,7 @@ focus_tree = {
 				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
 			}
 			add_to_variable = { IRE_exposure = 10 }
+			custom_effect_tooltip = IRE_effect_exposure_10
 		}
 	}
 
@@ -3911,6 +3926,7 @@ focus_tree = {
 			}
 			add_equipment_to_stockpile = { type = convoy amount = 20 }
 			add_to_variable = { IRE_exposure = 15 }
+			custom_effect_tooltip = IRE_effect_exposure_15
 		}
 	}
 
@@ -3931,6 +3947,7 @@ focus_tree = {
 			add_timed_idea = { idea = IRE_X_ind_german_eff days = 730 }
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
 			add_to_variable = { IRE_exposure = 15 }
+			custom_effect_tooltip = IRE_effect_exposure_15
 		}
 	}
 
@@ -3953,6 +3970,7 @@ focus_tree = {
 			add_ideas = IRE_X_ind_s_loot_eff
 			army_experience = 60
 			add_to_variable = { IRE_exposure = 20 }
+			custom_effect_tooltip = IRE_effect_exposure_20
 		}
 	}
 
@@ -3971,6 +3989,7 @@ focus_tree = {
 			add_ideas = IRE_X_ind_intel_eff
 			add_political_power = 80
 			add_to_variable = { IRE_exposure = 15 }
+			custom_effect_tooltip = IRE_effect_exposure_15
 		}
 	}
 
@@ -3992,6 +4011,7 @@ focus_tree = {
 			add_stability = -0.05
 			add_ideas = IRE_X_ind_black_market_eff
 			add_to_variable = { IRE_exposure = 15 }
+			custom_effect_tooltip = IRE_effect_exposure_15
 		}
 	}
 
@@ -4028,6 +4048,7 @@ focus_tree = {
 			add_offsite_building = { type = arms_factory level = 1 }
 			add_offsite_building = { type = arms_factory level = 1 }
 			add_to_variable = { IRE_exposure = 10 }
+			custom_effect_tooltip = IRE_effect_exposure_10
 		}
 	}
 
@@ -4236,7 +4257,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_R_lib_lowlands
-		icon = GFX_goal_generic_territory_or_war
+		icon = GFX_goal_generic_major_war
 		cost = 5
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
@@ -4801,7 +4822,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_X_ord_lowlands
-		icon = GFX_goal_generic_territory_or_war
+		icon = GFX_goal_generic_major_war
 		cost = 5
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
