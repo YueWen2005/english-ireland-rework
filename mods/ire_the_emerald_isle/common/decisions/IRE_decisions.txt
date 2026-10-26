@@ -17,6 +17,8 @@
 
 			visible = {
 				has_completed_focus = IRE_border_plebiscite
+				NOT = { has_country_flag = IRE_border_done }
+				check_variable = { IRE_unity_campaign_count < 5 }
 			}
 
 			fire_only_once = no
