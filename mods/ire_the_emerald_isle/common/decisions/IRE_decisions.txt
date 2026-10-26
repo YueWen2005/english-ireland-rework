@@ -32,6 +32,7 @@
 				set_variable = { IRE_unity_campaign_count = 0 }
 			}
 			add_to_variable = { IRE_unity_campaign_count = 1 }
+			custom_effect_tooltip = IRE_tt_unity_campaign
 		}
 
 			ai_will_do = { base = 40 }
@@ -60,6 +61,7 @@
 
 			complete_effect = {
 				IRE_add_diaspora_network_5 = yes
+				custom_effect_tooltip = IRE_effect_diaspora_network_5
 			}
 
 			ai_will_do = { base = 30 }
@@ -84,6 +86,7 @@
 			complete_effect = {
 				add_manpower = 5000
 				IRE_add_diaspora_network_5 = yes
+				custom_effect_tooltip = IRE_effect_diaspora_network_5
 			}
 
 			ai_will_do = { base = 30 }
@@ -108,6 +111,7 @@
 			complete_effect = {
 				add_political_power = 50
 				add_to_variable = { IRE_diaspora_network = 3 }
+				custom_effect_tooltip = IRE_effect_diaspora_network_3
 			}
 
 			ai_will_do = { base = 30 }
@@ -136,6 +140,8 @@
 				add_political_power = 10
 				add_to_variable = { IRE_plebiscite_support = 2 }
 				IRE_add_neutral_credibility_1 = yes
+				custom_effect_tooltip = IRE_effect_plebiscite_support_2
+				custom_effect_tooltip = IRE_effect_neutral_credibility_1
 			}
 
 			ai_will_do = { base = 30 }
@@ -257,6 +263,7 @@
 					limit = { check_variable = { IRE_nf_support > 100 } }
 					set_variable = { IRE_nf_support = 100 }
 				}
+				custom_effect_tooltip = IRE_tt_fisher_brotherhood
 			}
 
 			ai_will_do = { base = 40 }
@@ -315,6 +322,7 @@
 				}
 				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos25 } }
 				IRE_add_neutral_credibility_2 = yes
+				custom_effect_tooltip = IRE_effect_neutral_credibility_2
 			}
 
 			ai_will_do = { base = 30 }
@@ -350,6 +358,7 @@
 					add_stability = -0.01
 				}
 				IRE_add_neutral_credibility_neg2 = yes
+				custom_effect_tooltip = IRE_effect_neutral_credibility_neg2
 			}
 
 			ai_will_do = { base = 40 }
@@ -374,6 +383,7 @@
 				add_ideas = IRE_joint_defence_idea
 				army_experience = 50
 				IRE_add_neutral_credibility_neg3 = yes
+				custom_effect_tooltip = IRE_effect_neutral_credibility_neg3
 			}
 
 			ai_will_do = { base = 40 }
@@ -427,6 +437,7 @@
 				add_war_support = 0.01
 				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
 				IRE_add_neutral_credibility_neg4 = yes
+				custom_effect_tooltip = IRE_effect_neutral_credibility_neg4
 			}
 
 			ai_will_do = { base = 25 }
@@ -491,6 +502,7 @@
 						}
 					}
 				}
+				custom_effect_tooltip = IRE_tt_mediator_credibility
 			}
 
 			ai_will_do = { base = 20 }

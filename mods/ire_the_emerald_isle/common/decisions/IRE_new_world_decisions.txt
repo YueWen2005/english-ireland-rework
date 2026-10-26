@@ -694,6 +694,7 @@ IRE_congress_cat = {
 			add_war_support = 0.05
 			add_to_variable = { IRE_diaspora_network = 10 }
 			IRE_diaspora_thresholds = yes
+			custom_effect_tooltip = IRE_effect_diaspora_network_10
 		}
 
 		ai_will_do = { base = 50 }

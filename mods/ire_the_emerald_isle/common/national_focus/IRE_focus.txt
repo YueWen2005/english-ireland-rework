@@ -44,6 +44,7 @@ focus_tree = {
 			add_war_support = 0.05
 			set_variable = { IRE_plebiscite_support = 45 }
 			set_country_flag = IRE_campaign_started
+			custom_effect_tooltip = IRE_effect_plebiscite_support_45
 		}
 	}
 
@@ -494,7 +495,7 @@ focus_tree = {
 	# ---- A 线紧急状态：战时经济 / 对轴心防御 / 对英防御 ----
 	focus = {
 		id = IRE_A_wartime_economy
-		icon = GFX_focus_SOV_mobilization_plan
+		icon = GFX_focus_generic_mass_production
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
@@ -735,7 +736,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_unity_for_ports
-		icon = GFX_focus_SOV_reinforce_western_naval_bases
+		icon = GFX_focus_generic_diplomatic_treaty
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -774,7 +775,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_treaty_ports
-		icon = GFX_focus_SOV_reinforce_northern_naval_bases
+		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
@@ -831,9 +832,11 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = IRE_border_done } }
 				add_to_variable = { IRE_plebiscite_support = 20 }
+				custom_effect_tooltip = IRE_effect_plebiscite_support_20
 			}
 			else = {
 				add_stability = 0.08
+				custom_effect_tooltip = IRE_effect_stability_8
 			}
 			IRE_add_diaspora_network = yes
 			custom_effect_tooltip = IRE_effect_diaspora_network_20
@@ -1285,7 +1288,7 @@ focus_tree = {
 
 	focus = {
 		id = IRE_A_celtic_commonwealth
-		icon = GFX_focus_generic_league_of_nations
+		icon = GFX_goal_generic_major_alliance
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
@@ -1581,7 +1584,7 @@ focus_tree = {
 	# ---- 绿色国际：任一海外支部 + 世界大会 ----
 	focus = {
 		id = IRE_A_green_international
-		icon = GFX_focus_generic_anti_fascist_diplomacy
+		icon = GFX_focus_generic_conference
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
@@ -2028,7 +2031,7 @@ focus_tree = {
 	# ---- 紧急状态线 ----
 	focus = {
 		id = IRE_B_emergency
-		icon = GFX_focus_generic_home_defense
+		icon = GFX_goal_generic_defence
 		cost = 5
 		prerequisite = { focus = IRE_B_president_mace }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
@@ -2901,7 +2904,7 @@ focus_tree = {
 	# ---- 海军支线 ----
 	focus = {
 		id = IRE_M_naval_expansion
-		icon = GFX_focus_generic_large_navy
+		icon = GFX_focus_generic_cruiser_submarines
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
