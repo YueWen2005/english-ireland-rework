@@ -15,6 +15,8 @@ characters = {
 			}
 		}
 		corps_commander = {
+			# 独立战争西科克第三旅指挥官，游击战出身
+			traits = { guerilla_fighter ambusher }
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2
@@ -34,6 +36,8 @@ characters = {
 			}
 		}
 		corps_commander = {
+			# 朗福德旅指挥官，擅长小规模突击与伏击
+			traits = { infantry_officer trickster }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 3
@@ -53,6 +57,8 @@ characters = {
 			}
 		}
 		corps_commander = {
+			# 独立战争期间负责组织与训练，偏参谋型
+			traits = { organizer guerilla_fighter }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -72,6 +78,8 @@ characters = {
 			}
 		}
 		corps_commander = {
+			# 正规军出身，1939 年任爱尔兰陆军参谋长，防御派
+			traits = { infantry_officer defensive_doctrine }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2

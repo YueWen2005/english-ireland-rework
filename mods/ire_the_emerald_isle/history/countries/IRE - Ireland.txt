@@ -37,10 +37,19 @@ recruit_character = IRE_nw_john_costello
 
 oob = "IRE_units"
 
-# 开局科技（基础工业与步兵装备，避免开局无法造兵）
+# 开局科技
+# 原版给的四项（infantry_weapons / tech_trucks / fuel_silos / basic_train）必须保留：
+#   tech_trucks  —— 没有它开局不能造卡车，摩托化完全无从谈起
+#   fuel_silos   —— 没有它无燃油储备，飞机与机械化部队直接趴窝
+#   basic_train  —— 《铁路车辆生产计划》决议的 has_tech 门槛就是它
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	tech_trucks = 1
+	fuel_silos = 1
+	basic_train = 1
+
+	# MOD 追加：支援武器与工业工具，避免开局造不出师
 	support_weapons = 1
 	tech_support = 1
 	basic_machine_tools = 1
@@ -52,9 +61,17 @@ set_technology = {
 # 开局科研槽（爱尔兰原版 2 个，给到 3 便于小国生存）
 set_research_slots = 3
 
+# 开局运输船
+# 原版 10 艘。MOD 的 A 线有大量跨大西洋内容（商船队精神、南锥体补给线、
+# 新世界远征、跨大西洋空桥），10 艘不够周转，给到 20 艘
+set_convoys = 20
+
 # 开局政治：爱尔兰是议会民主国，中立是外交政策而非执政意识形态
+# last_election / election_frequency 沿用原版，否则选举周期会退回默认值
 set_politics = {
 	ruling_party = democratic
+	last_election = "1933.1.24"
+	election_frequency = 48
 	elections_allowed = yes
 }
 

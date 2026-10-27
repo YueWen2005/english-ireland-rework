@@ -3024,6 +3024,12 @@ focus_tree = {
 		ai_will_do = { base = 50 }
 
 		completion_reward = {
+			# G2 是爱尔兰陆军的军事情报处：点出它就应该能建立情报局
+			# 原版只有红线的《三位一体》会建局，A/B/黑线玩家全程没有特工可用
+			if = {
+				limit = { has_intelligence_agency = no }
+				create_intelligence_agency = yes
+			}
 			add_ideas = IRE_g2_intelligence
 			add_tech_bonus = { name = IRE_mil_decryption_bonus bonus = 0.5 uses = 1 category = decryption_tech }
 			army_experience = 50
