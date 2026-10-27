@@ -44,6 +44,27 @@ on_actions = {
 					}
 				}
 
+				# ---- C红线：吹红途中英国提前对爱宣战 → 英国爆发低强度内战 ----
+				if = {
+					limit = {
+						has_country_flag = IRE_red_path
+						has_completed_focus = IRE_R_end_red_britain
+						NOT = { has_completed_focus = IRE_R_end_ulster }
+						NOT = { has_country_flag = IRE_eng_early_revolution }
+						country_exists = ENG
+						ENG = {
+							exists = yes
+							NOT = { has_government = communism }
+							has_civil_war = no
+							has_war_with = IRE
+						}
+					}
+					set_country_flag = IRE_eng_early_revolution
+					ENG = {
+						start_civil_war = { ideology = communism size = 0.25 }
+					}
+				}
+
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
 				if = {
 					limit = {
