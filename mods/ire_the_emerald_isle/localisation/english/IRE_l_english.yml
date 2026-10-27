@@ -1035,3 +1035,24 @@
  ire.121.b:0 "Secure the home front first"
  ire.121.c:0 "Strip the spoils for our arsenals"
 
+ IRE_R_stage_land:0 "Land Redistribution"
+ IRE_R_stage_land_desc:0 "Landlords' deeds burn in the county hall stoves. District committees hand the soil to those who actually work it - the first receipt the Republican Congress gives the farmers."
+ IRE_R_stage_women:0 "Mobilise Women's Labour"
+ IRE_R_stage_women_desc:0 "For the first time the factory notices are open to every woman. Crèches, canteens, night rosters - bring half the population out of the kitchen and onto the shop floor."
+ IRE_R_stage_north:0 "Belfast Workers' Unity"
+ IRE_R_stage_north_desc:0 "Catholic and Protestant union men at the same table. So long as they work for the same boss, sectarian division remains the boss's best weapon."
+
+ IRE_X_stage_youth:0 "Youth League Drills"
+ IRE_X_stage_youth_desc:0 "In the wet valleys at weekends the youth league forms ranks. They learn not only to march, but who is to blame for the country's poverty."
+ IRE_X_stage_blackmarket:0 "Run the Black Market"
+ IRE_X_stage_blackmarket_desc:0 "From Cork to Derry the smuggling routes are only a list of fishing-boat numbers in a ledger. Keep the books clean and the ports are ours."
+ IRE_X_stage_police:0 "Reorganise the Police Directorate"
+ IRE_X_stage_police_desc:0 "Remove from Dublin Castle those who believe order means London's order, and replace them with men who know whose order the new one is."
+
+ IRE_tt_R_stage_land:0 "Stability +3%, war support +2%, communist support +1%"
+ IRE_tt_R_stage_women:0 "Gain 6,000 manpower and 1 off-map civilian factory"
+ IRE_tt_R_stage_north:0 "Northern Ireland compliance +20, stability +2%, war support +2%"
+ IRE_tt_X_stage_youth:0 "Gain 5,000 manpower, 10 army experience, war support +2%"
+ IRE_tt_X_stage_blackmarket:0 "Gain 1 off-map civilian factory, 40 political power, exposure +3"
+ IRE_tt_X_stage_police:0 "Stability +4%, may send volunteers"
+

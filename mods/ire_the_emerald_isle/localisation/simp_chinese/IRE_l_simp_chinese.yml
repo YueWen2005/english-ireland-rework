@@ -1037,3 +1037,24 @@
  ire.121.b:0 "先固内政"
  ire.121.c:0 "掠夺战利品，充实军械库"
 
+ IRE_R_stage_land:0 "土地再分配"
+ IRE_R_stage_land_desc:0 "地主的地契在县政厅的火炉里烧掉。分区委员会把土地分给真正耕种它的人——这是共和国大会给农民的第一张收据。"
+ IRE_R_stage_women:0 "妇女劳动动员"
+ IRE_R_stage_women_desc:0 "工厂的招工启事第一次对所有女性敞开。托儿所、食堂、夜班轮值表——让一半的人口从厨房走进车间。"
+ IRE_R_stage_north:0 "贝尔法斯特工人联合"
+ IRE_R_stage_north_desc:0 "把天主教徒和新教徒的工会代表请到同一张桌子前。只要他们还为同一个老板干活，分裂就是老板最好的武器。"
+
+ IRE_X_stage_youth:0 "青年团操练"
+ IRE_X_stage_youth_desc:0 "周末的山谷里，青年团在雨里列队。他们学的不只是行军，还有谁该为这个国家的贫困负责。"
+ IRE_X_stage_blackmarket:0 "黑市网络经营"
+ IRE_X_stage_blackmarket_desc:0 "从科克到德里，走私路线在账本上只是一串渔船编号。只要账目干净，港口就是我们的。"
+ IRE_X_stage_police:0 "警察总局改组"
+ IRE_X_stage_police_desc:0 "把认为「秩序就是伦敦的秩序」的人从都柏林堡里请出去，换上知道新秩序属于谁的人。"
+
+ IRE_tt_R_stage_land:0 "稳定度 +3%、战争支持 +2%、共产主义支持度 +1%"
+ IRE_tt_R_stage_women:0 "获得 6000 人力、1 座离图民用工厂"
+ IRE_tt_R_stage_north:0 "北爱尔兰顺从度 +20、稳定度 +2%、战争支持 +2%"
+ IRE_tt_X_stage_youth:0 "获得 5000 人力、10 陆军经验、战争支持 +2%"
+ IRE_tt_X_stage_blackmarket:0 "获得 1 座离图民用工厂、40 政治点数、暴露度 +3"
+ IRE_tt_X_stage_police:0 "稳定度 +4%，允许派遣志愿军"
+

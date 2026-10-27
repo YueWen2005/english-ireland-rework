@@ -34,6 +34,85 @@
 			ai_will_do = { base = 25 }
 		}
 
+
+		# ---- 阶段一·五：土地分配（共和国大会后） ----
+		IRE_R_stage_land = {
+			icon = generic_construction
+			cost = 80
+			days_re_enable = 200
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_red_path
+				has_completed_focus = IRE_R_republican_congress
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+			}
+
+			complete_effect = {
+				add_stability = 0.03
+				add_war_support = 0.02
+				add_popularity = { ideology = communism popularity = 0.01 }
+				custom_effect_tooltip = IRE_tt_R_stage_land
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+		# ---- 阶段二·五：妇女劳动动员（工人共和国后） ----
+		IRE_R_stage_women = {
+			icon = generic_industry
+			cost = 100
+			days_re_enable = 240
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_red_path
+				has_completed_focus = IRE_R_workers_republic
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+			}
+
+			complete_effect = {
+				add_manpower = 6000
+				add_offsite_building = { type = industrial_complex level = 1 }
+				custom_effect_tooltip = IRE_tt_R_stage_women
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+		# ---- 阶段二·六：贝尔法斯特工人联合（北爱罢工后） ----
+		IRE_R_stage_north = {
+			icon = generic_civil_support
+			cost = 120
+			days_re_enable = 180
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_red_path
+				has_completed_focus = IRE_R_belfast_strike
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+				has_completed_focus = IRE_R_belfast_strike
+			}
+
+			complete_effect = {
+				119 = { add_compliance = 20 }
+				add_stability = 0.02
+				add_war_support = 0.02
+				custom_effect_tooltip = IRE_tt_R_stage_north
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
 		# ---- 阶段二：工人纠察队整编（国有化后） ----
 		IRE_R_stage_militia = {
 			icon = generic_army_support
@@ -144,6 +223,86 @@
 				add_war_support = 0.03
 				add_stability = 0.01
 				custom_effect_tooltip = IRE_tt_X_stage_rally
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+
+		# ---- 阶段一·五：青年团操练（圣诞突袭后） ----
+		IRE_X_stage_youth = {
+			icon = generic_military
+			cost = 80
+			days_re_enable = 200
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_dark_path
+				has_completed_focus = IRE_X_christmas_raid
+			}
+
+			visible = {
+				has_country_flag = IRE_dark_path
+			}
+
+			complete_effect = {
+				add_manpower = 5000
+				army_experience = 10
+				add_war_support = 0.02
+				custom_effect_tooltip = IRE_tt_X_stage_youth
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+		# ---- 阶段二·五：黑市网络（走私网后） ----
+		IRE_X_stage_blackmarket = {
+			icon = generic_fundraising
+			cost = 100
+			days_re_enable = 240
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_dark_path
+				has_completed_focus = IRE_X_ind_smuggle_net
+				NOT = { has_country_flag = IRE_dark_surrender }
+			}
+
+			visible = {
+				has_country_flag = IRE_dark_path
+				has_completed_focus = IRE_X_ind_smuggle_net
+			}
+
+			complete_effect = {
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_political_power = 40
+				add_to_variable = { IRE_exposure = 3 }
+				custom_effect_tooltip = IRE_tt_X_stage_blackmarket
+			}
+
+			ai_will_do = { base = 25 }
+		}
+
+		# ---- 阶段二·六：警察总局改组（影子军械库后） ----
+		IRE_X_stage_police = {
+			icon = generic_intelligence_operation
+			cost = 100
+			days_re_enable = 240
+			fire_only_once = no
+
+			available = {
+				has_country_flag = IRE_dark_path
+				has_completed_focus = IRE_X_shadow_arsenal
+			}
+
+			visible = {
+				has_country_flag = IRE_dark_path
+			}
+
+			complete_effect = {
+				add_stability = 0.04
+				set_rule = { can_send_volunteers = yes }
+				custom_effect_tooltip = IRE_tt_X_stage_police
 			}
 
 			ai_will_do = { base = 25 }
