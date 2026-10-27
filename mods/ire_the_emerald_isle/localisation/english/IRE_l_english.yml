@@ -986,3 +986,11 @@
  IRE_anglo_irish_union:0 "British-Irish Socialist Federation"
  IRE_anglo_irish_union_DEF:0 "British-Irish Socialist Federation"
  IRE_anglo_irish_union_ADJ:0 "British-Irish"
+
+ IRE_tt_strike_resolved:0 "The Belfast strike has been resolved: the outcome event arrives 15-60 days after completing 'Belfast General Strike', unlocking this focus"
+ IRE_tt_canada_not_annexed:0 "Canada has not been annexed yet"
+ IRE_tt_ira_tolerated:0 "The 'Tolerate the IRA' path has been chosen (mutually exclusive with 'Outlaw the IRA')"
+ IRE_tt_coup_started:0 "The IRA coup has been launched"
+ IRE_tt_dark_path_free:0 "The Red path has not been chosen (Red and Black paths are mutually exclusive)"
+ IRE_tt_red_path_free:0 "The Black path has not been chosen (Red and Black paths are mutually exclusive)"
+ IRE_tt_dark_surrender_free:0 "Did not yield to London during the Mutiny Crisis (Black military expansion ends otherwise)

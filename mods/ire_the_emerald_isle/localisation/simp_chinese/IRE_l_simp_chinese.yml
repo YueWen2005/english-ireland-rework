@@ -988,3 +988,11 @@
  IRE_anglo_irish_union:0 "不列颠爱尔兰社会主义联邦"
  IRE_anglo_irish_union_DEF:0 "不列颠爱尔兰社会主义联邦"
  IRE_anglo_irish_union_ADJ:0 "英爱"
+
+ IRE_tt_strike_resolved:0 "北爱大罢工已收场：完成「北爱大罢工」后，罢工结局事件将在15-60天内到来，届时本国策解锁"
+ IRE_tt_canada_not_annexed:0 "尚未吞并加拿大"
+ IRE_tt_ira_tolerated:0 "已选择「容忍IRA」路线（与「取缔IRA」互斥）"
+ IRE_tt_coup_started:0 "IRA政变已经发动"
+ IRE_tt_dark_path_free:0 "尚未选择红色路线（红黑两条路线互斥）"
+ IRE_tt_red_path_free:0 "尚未选择黑色路线（红黑两条路线互斥）"
+ IRE_tt_dark_surrender_free:0 "兵变危机中未选择向伦敦屈服（屈服后黑线军事扩张终止）

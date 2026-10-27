@@ -1148,7 +1148,10 @@ focus_tree = {
 					is_subject_of = ENG
 				}
 			}
-			NOT = { has_country_flag = IRE_canada_annexed }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_not_annexed
+				NOT = { has_country_flag = IRE_canada_annexed }
+			}
 			NOT = { ENG = { has_war_with = ROOT } }
 		}
 		ai_will_do = { base = 50 }
@@ -1200,7 +1203,10 @@ focus_tree = {
 		available = {
 			country_exists = CAN
 			CAN = { is_subject = no NOT = { has_capitulated = yes } }
-			NOT = { has_country_flag = IRE_canada_annexed }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_not_annexed
+				NOT = { has_country_flag = IRE_canada_annexed }
+			}
 			NOT = { has_war_with = CAN }
 		}
 		ai_will_do = { base = 60 }
@@ -2249,7 +2255,10 @@ focus_tree = {
 		x = 100
 		y = 10
 		available = {
-			has_country_flag = IRE_ira_tolerated
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_ira_tolerated
+				has_country_flag = IRE_ira_tolerated
+			}
 		}
 		ai_will_do = { base = 120 }
 
@@ -3220,7 +3229,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_ira_coup }
 		available = {
-			has_country_flag = IRE_coup_started
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_coup_started
+				has_country_flag = IRE_coup_started
+			}
 			has_civil_war = no
 		}
 		x = 60
@@ -3245,7 +3257,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_X_shadow_arsenal }
-		available = { NOT = { has_country_flag = IRE_dark_path } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_dark_path_free
+				NOT = { has_country_flag = IRE_dark_path }
+			}
+		}
 		x = 58
 		y = 4
 		ai_will_do = { base = 20 }
@@ -3468,7 +3485,12 @@ focus_tree = {
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
 		prerequisite = { focus = IRE_R_belfast_strike }
-		available = { has_country_flag = IRE_strike_resolved }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_strike_resolved
+				has_country_flag = IRE_strike_resolved
+			}
+		}
 		x = 58
 		y = 10
 		ai_will_do = { base = 40 }
@@ -3488,7 +3510,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_R_red_turn }
-		available = { NOT = { has_country_flag = IRE_red_path } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_red_path_free
+				NOT = { has_country_flag = IRE_red_path }
+			}
+		}
 		x = 64
 		y = 4
 		ai_will_do = { base = 20 }
@@ -3531,7 +3558,12 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 5
 		prerequisite = { focus = IRE_X_shadow_arsenal }
-		available = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_dark_surrender_free
+				NOT = { has_country_flag = IRE_dark_surrender }
+			}
+		}
 		x = 64
 		y = 5
 		ai_will_do = { base = 35 }
@@ -3552,7 +3584,12 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
 		prerequisite = { focus = IRE_X_christmas_raid }
-		available = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_dark_surrender_free
+				NOT = { has_country_flag = IRE_dark_surrender }
+			}
+		}
 		x = 64
 		y = 6
 		ai_will_do = { base = 35 }
@@ -3580,7 +3617,12 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
 		prerequisite = { focus = IRE_X_s_plan }
-		available = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_dark_surrender_free
+				NOT = { has_country_flag = IRE_dark_surrender }
+			}
+		}
 		x = 64
 		y = 7
 		ai_will_do = { base = 30 }
@@ -3606,7 +3648,12 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
 		prerequisite = { focus = IRE_X_abwehr_guests }
-		available = { NOT = { has_country_flag = IRE_dark_surrender } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_dark_surrender_free
+				NOT = { has_country_flag = IRE_dark_surrender }
+			}
+		}
 		x = 64
 		y = 8
 		ai_will_do = { base = 30 }
