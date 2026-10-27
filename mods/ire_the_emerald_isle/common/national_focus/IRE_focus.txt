@@ -4158,7 +4158,7 @@ focus_tree = {
 	focus = {
 		id = IRE_R_end_red_britain
 		icon = GFX_goal_generic_national_unity
-		cost = 15
+		cost = 10
 		prerequisite = { focus = IRE_R_end_trinity }
 		prerequisite = { focus = IRE_R_end_radio }
 		prerequisite = { focus = IRE_R_end_birmingham }
@@ -4191,7 +4191,7 @@ focus_tree = {
 	focus = {
 		id = IRE_R_end_ulster
 		icon = GFX_goal_generic_more_territorial_claims
-		cost = 15
+		cost = 10
 		prerequisite = { focus = IRE_R_end_spark }
 		x = 58
 		y = 17
@@ -4231,7 +4231,7 @@ focus_tree = {
 	focus = {
 		id = IRE_R_end_ignite
 		icon = GFX_focus_generic_strike_at_democracy1
-		cost = 15
+		cost = 10
 		prerequisite = { focus = IRE_R_end_eve }
 		available = {
 			ENG = { exists = yes NOT = { has_government = communism } }
@@ -4251,10 +4251,10 @@ focus_tree = {
 				ENG = {
 					if = {
 						limit = { communism > 0.5 }
-						start_civil_war = { ideology = communism size = 0.55 }
+						start_civil_war = { ideology = communism size = 0.65 }
 					}
 					else = {
-						start_civil_war = { ideology = communism size = 0.35 }
+						start_civil_war = { ideology = communism size = 0.45 }
 					}
 				}
 				country_event = { id = ire.112 days = 2 }
@@ -4267,7 +4267,7 @@ focus_tree = {
 	focus = {
 		id = IRE_R_end_union
 		icon = GFX_goal_generic_major_alliance
-		cost = 15
+		cost = 10
 		prerequisite = { focus = IRE_R_end_ignite }
 		available = {
 			any_country = { original_tag = ENG has_government = communism has_civil_war = no }
