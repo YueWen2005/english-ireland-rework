@@ -10,15 +10,15 @@
 
 | MOD | 版本 | 说明 |
 |---|---|---|
-| [翡翠岛的抉择 - 爱尔兰国策树](mods/ire_the_emerald_isle/) | 2.3.0 | 爱尔兰双主线国策树，110 国策 / 34 决议 / 89 精神 / 16 事件 |
+| [翡翠岛的抉择 - 爱尔兰国策树](mods/ire_the_emerald_isle/) | 2.10.0 | 爱尔兰双主线国策树，212 国策 / 66 决议 / 160 精神 / 83 事件 |
 
 ---
 
 ## 安装方法
 
-### 方式一：用压缩包（推荐）
+### 方式一：用发布包（推荐）
 
-1. 下载 [`mods/翡翠岛的抉择_爱尔兰MOD.zip`](mods/翡翠岛的抉择_爱尔兰MOD.zip)
+1. 从 [GitHub Releases](https://github.com/YueWen2005/english-ireland-rework/releases/latest) 下载最新分发包（zip）
 2. 解压到：
    ```
    C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
@@ -46,7 +46,7 @@ mod\
 
 - **钢铁雄心 IV 1.19.\***
 - 不需要任何前置 MOD（无 DLC 依赖）
-- 整个 MOD 只用原版美术资源，不含自定义图片/模型/音乐，体积约 100 KB
+- 整个 MOD 只用原版美术资源，不含自定义图片/模型/音乐，压缩包约 380 KB
 
 ---
 
@@ -56,20 +56,21 @@ mod\
 mods/
 ├── ire_the_emerald_isle/           MOD 源码
 │   ├── common/
-│   │   ├── national_focus/         110 个国策
-│   │   ├── ideas/                  72 个国家精神
-│   │   ├── decisions/              17 个决议
+│   │   ├── national_focus/         212 个国策
+│   │   ├── ideas/                  160 个国家精神
+│   │   ├── decisions/              66 个决议
 │   │   ├── opinion_modifiers/      16 个观点修正
 │   │   ├── scripted_effects/       脚本效果宏
 │   │   └── on_actions/             开局/每日/每月钩子
-│   ├── events/                     13 个剧情事件
+│   ├── events/                     83 个剧情事件
 │   ├── history/                    开局设定 + 师模板
-│   ├── localisation/               简体中文本地化
+│   ├── localisation/               简体中文 / 英文本地化
 │   └── README_爱尔兰MOD.md         详细的机制说明与已知限制
 ├── ire_the_emerald_isle.mod        启动器识别文件
-├── 差异对照表.md                    设计文档 → 实际实现 的逐条对照
-└── 翡翠岛的抉择_爱尔兰MOD.zip       打包版（内容同上）
+└── 差异对照表.md                    设计文档 → 实际实现 的逐条对照
 ```
+
+分发包 zip 不再提交到源码，统一由 [GitHub Releases](https://github.com/YueWen2005/english-ireland-rework/releases) 提供。
 
 ---
 

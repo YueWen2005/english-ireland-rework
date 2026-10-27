@@ -11,3 +11,6 @@ desktop.ini
 # HOI4 运行时
 *.log
 logs/
+
+# 分发包（由 GitHub Releases 提供）
+mods/*.zip
