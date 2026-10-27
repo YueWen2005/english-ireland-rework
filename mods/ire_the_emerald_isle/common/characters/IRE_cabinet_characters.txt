@@ -19,7 +19,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_generic_political_advisor_europe_2
+				small = GFX_idea_IRE_cab_sean_mac_entee
 			}
 		}
 		advisor = {
@@ -38,7 +38,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_generic_political_advisor_europe_1
+				small = GFX_idea_IRE_cab_patrick_mcgilligan
 			}
 		}
 		advisor = {
@@ -57,7 +57,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_generic_political_advisor_europe_6
+				small = GFX_idea_IRE_cab_frank_aiken
 			}
 		}
 		advisor = {
@@ -76,7 +76,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_generic_political_advisor_europe_3
+				small = GFX_idea_IRE_cab_james_dillon
 			}
 		}
 		advisor = {
@@ -95,7 +95,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_generic_political_advisor_europe_4
+				small = GFX_idea_IRE_cab_thomas_oconnell
 			}
 		}
 		advisor = {
@@ -115,7 +115,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_generic_head_of_intelligence_western_european_2
+				small = GFX_idea_IRE_cab_dan_bryan
 			}
 		}
 		advisor = {
@@ -148,6 +148,76 @@ characters = {
 			traits = { air_chief_ground_support_3 }
 			cost = 150
 			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# ------------------------------------------------------------
+	# 高级指挥官
+	# ------------------------------------------------------------
+
+	# 菲茨杰拉德：1927-32 年国防部长，主张以炮兵与工事为核心的防御体系
+	IRE_cab_desmond_fitzgerald = {
+		name = IRE_cab_desmond_fitzgerald
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_army_europe_5
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = IRE_cab_desmond_fitzgerald
+			allowed = { original_tag = IRE }
+			traits = { army_artillery_2 }
+			cost = 100
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# 奥希金斯：1924-27 年国防部长，任内整编国民军、建立宪兵体系
+	IRE_cab_thomas_ohiggins = {
+		name = IRE_cab_thomas_ohiggins
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_army_europe_6
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = IRE_cab_thomas_ohiggins
+			allowed = { original_tag = IRE }
+			traits = { army_radio_intelligence_2 }
+			cost = 100
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# ------------------------------------------------------------
+	# 将领
+	# ------------------------------------------------------------
+
+	# 麦克马洪：1924-27 年国民军总参谋长，后任国防部秘书长。
+	# 放在共通军事线《军官团》解锁，保证 B 线 / 黑线也有第二名将领可用
+	# （A 线的四名将领已改为 A 线国策专属）。
+	IRE_M_peadar_macmahon = {
+		name = IRE_M_peadar_macmahon
+		gender = male
+		portraits = {
+			army = {
+				large = GFX_portrait_IRE_M_peadar_macmahon
+				small = GFX_portrait_IRE_M_peadar_macmahon_small
+			}
+		}
+		corps_commander = {
+			# 正规军建设的推动者，长于组织与参谋作业
+			traits = { career_officer organisational_leader skilled_staffer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
 		}
 	}
 }

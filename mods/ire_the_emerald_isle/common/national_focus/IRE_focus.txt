@@ -373,6 +373,8 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 50
 			add_ideas = IRE_reserve_defence
+			# A 线专属将领：正规军出身，1939 年任陆军参谋长
+			recruit_character = IRE_nw_hugo_macneill
 		}
 	}
 
@@ -392,6 +394,8 @@ focus_tree = {
 			add_ideas = IRE_volunteer_corps
 			add_manpower = 10000
 			army_experience = 50
+			# A 线专属将领：西科克第三旅，游击战出身
+			recruit_character = IRE_nw_tom_barry
 		}
 	}
 
@@ -413,6 +417,8 @@ focus_tree = {
 			army_experience = 50
 			# 野鹅传统：提前开放志愿军派遣，不必等到西班牙国策
 			set_rule = { can_send_volunteers = yes }
+			# A 线专属将领：朗福德旅指挥官，随野鹅归国
+			recruit_character = IRE_nw_sean_mac_eoin
 		}
 	}
 
@@ -490,6 +496,8 @@ focus_tree = {
 			add_political_power = 25
 			add_war_support = 0.05
 			army_experience = 50
+			# A 线专属将领：独立战争期间负责组织与训练，动员体系靠他
+			recruit_character = IRE_nw_ernie_omalley
 		}
 	}
 
@@ -1608,6 +1616,8 @@ focus_tree = {
 			custom_effect_tooltip = IRE_effect_diaspora_network_10
 			set_cosmetic_tag = IRE_new_world
 			set_politics = { ruling_party = democratic elections_allowed = yes }
+			# A 线专属领袖：先招募再晋升，否则 promote_leader 找不到人
+			recruit_character = IRE_nw_john_costello
 			IRE_nw_john_costello = { promote_leader = yes }
 			hidden_effect = { retire_country_leader = yes }
 			custom_effect_tooltip = IRE_effect_green_international_tag
@@ -2866,6 +2876,8 @@ focus_tree = {
 			add_ideas = IRE_officer_corps
 			add_tech_bonus = { name = IRE_mil_land_doctrine_bonus bonus = 0.5 uses = 1 category = land_doctrine }
 			army_experience = 100
+			# 共通将领：任何路线都能拿到，避免 A 线将领改为专属后其他路线只剩一名将
+			recruit_character = IRE_M_peadar_macmahon
 		}
 	}
 

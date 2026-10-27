@@ -7,3 +7,11 @@
  IRE_cab_thomas_oconnell:0 "Thomas J. O'Connell"
  IRE_cab_dan_bryan:0 "Dan Bryan"
  IRE_cab_james_fitzmaurice:0 "James Fitzmaurice"
+ IRE_cab_desmond_fitzgerald:0 "Desmond FitzGerald"
+ IRE_cab_thomas_ohiggins:0 "Thomas F. O'Higgins"
+ IRE_M_peadar_macmahon:0 "Peadar MacMahon"
+ # ===== A-line generals, theorist entries (same person, dual slot) =====
+ IRE_nw_tom_barry_theorist:0 "Tom Barry"
+ IRE_nw_sean_mac_eoin_theorist:0 "Seán Mac Eoin"
+ IRE_nw_ernie_omalley_theorist:0 "Ernie O'Malley"
+ IRE_nw_hugo_macneill_theorist:0 "Hugo MacNeill"

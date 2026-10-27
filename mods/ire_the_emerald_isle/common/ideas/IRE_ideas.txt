@@ -689,6 +689,8 @@ ideas = {
 			modifier = {
 				decryption_factor = 0.15
 				encryption_factor = 0.10
+				# G2 是常设机构，不只是密码班：点出它就该多一名特工
+				operative_slot = 1
 			}
 		}
 
