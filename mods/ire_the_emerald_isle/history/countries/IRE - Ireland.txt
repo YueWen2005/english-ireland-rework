@@ -65,6 +65,13 @@ set_technology = {
 	basic_machine_tools = 1
 	improved_machine_tools = 1
 
+	# MOD 追加：火炮。
+	# 《圣帕特里克营》《野鹅军团》两个师模板都带 1 个炮兵营，
+	# 但 gw_artillery 才是解锁 artillery_equipment_1 与 field_guns 兵种的科技。
+	# 没有它，这些「精锐师」的炮兵营永远补不满，爱尔兰也造不出任何火炮。
+	# 历史上爱尔兰陆军自内战起就保有 18 磅野战炮，1936 年给这一项是合理的。
+	gw_artillery = 1
+
 	early_fighter = 1
 }
 
