@@ -1,41 +1,10 @@
 spriteTypes = {
 
 	# ============================================================
-	# 内阁扩展：政治顾问图标
-	# 版式沿用原版 idea_generic_political_advisor_europe_* 的「档案卡片」样式
-	# （相框 + 便签），只把卡片里的照片换成不同人物的肖像。
-	# 目的是让 9 名政治顾问不再共用 6 张通用图出现重复脸。
-	#
-	# 想换成真人照片：把同名 dds 按 65x67 覆盖掉即可，本文件与人物定义都不用改。
-	# ============================================================
-	spriteType = {
-		name = "GFX_idea_IRE_cab_sean_mac_entee"
-		texturefile = "gfx/interface/ideas/IRE_cab_sean_mac_entee.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_IRE_cab_patrick_mcgilligan"
-		texturefile = "gfx/interface/ideas/IRE_cab_patrick_mcgilligan.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_IRE_cab_frank_aiken"
-		texturefile = "gfx/interface/ideas/IRE_cab_frank_aiken.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_IRE_cab_james_dillon"
-		texturefile = "gfx/interface/ideas/IRE_cab_james_dillon.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_IRE_cab_thomas_oconnell"
-		texturefile = "gfx/interface/ideas/IRE_cab_thomas_oconnell.dds"
-	}
-	spriteType = {
-		name = "GFX_idea_IRE_cab_dan_bryan"
-		texturefile = "gfx/interface/ideas/IRE_cab_dan_bryan.dds"
-	}
-
-	# ============================================================
 	# 共通将领：皮达·麦克马洪
-	# 大图沿用原版通用欧洲将领肖像（与原版爱尔兰顾问做法一致）
+	# 大图 / 小图都直接指向原版通用欧洲将领肖像，不新增美术资源。
+	# 原版没有给 Portrait_Europe_Generic_land_5 起通用精灵名
+	# （它只被几个波兰将领的精灵引用），所以在这里做一个别名。
 	# ============================================================
 	spriteType = {
 		name = "GFX_portrait_IRE_M_peadar_macmahon"

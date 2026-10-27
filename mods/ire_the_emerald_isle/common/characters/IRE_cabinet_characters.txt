@@ -19,7 +19,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_IRE_cab_sean_mac_entee
+				small = GFX_idea_generic_political_advisor_europe_1
 			}
 		}
 		advisor = {
@@ -38,7 +38,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_IRE_cab_patrick_mcgilligan
+				small = GFX_idea_generic_political_advisor_europe_2
 			}
 		}
 		advisor = {
@@ -57,7 +57,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_IRE_cab_frank_aiken
+				small = GFX_idea_generic_political_advisor_europe_6
 			}
 		}
 		advisor = {
@@ -76,7 +76,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_IRE_cab_james_dillon
+				small = GFX_idea_generic_political_advisor_europe_3
 			}
 		}
 		advisor = {
@@ -95,7 +95,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_IRE_cab_thomas_oconnell
+				small = GFX_idea_generic_political_advisor_europe_5
 			}
 		}
 		advisor = {
@@ -115,7 +115,7 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				small = GFX_idea_IRE_cab_dan_bryan
+				small = GFX_idea_generic_head_of_intelligence_western_european_2d
 			}
 		}
 		advisor = {
