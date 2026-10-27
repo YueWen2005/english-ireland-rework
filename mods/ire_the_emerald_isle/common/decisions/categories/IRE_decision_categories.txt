@@ -52,3 +52,18 @@ IRE_R_org_cat = {
 	priority = 82
 	allowed = { original_tag = IRE }
 }
+
+### ============================================================
+### 红黑线阶段决议分类
+### ============================================================
+IRE_R_stage_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 88
+	allowed = { original_tag = IRE }
+}
+
+IRE_X_stage_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 88
+	allowed = { original_tag = IRE }
+}

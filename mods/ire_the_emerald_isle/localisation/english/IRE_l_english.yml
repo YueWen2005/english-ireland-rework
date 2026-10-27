@@ -993,4 +993,45 @@
  IRE_tt_coup_started:0 "The IRA coup has been launched"
  IRE_tt_dark_path_free:0 "The Red path has not been chosen (Red and Black paths are mutually exclusive)"
  IRE_tt_red_path_free:0 "The Black path has not been chosen (Red and Black paths are mutually exclusive)"
- IRE_tt_dark_surrender_free:0 "Did not yield to London during the Mutiny Crisis (Black military expansion ends otherwise)
+ IRE_tt_dark_surrender_free:0 "Did not yield to London during the Mutiny Crisis (Black military expansion ends otherwise)"
+
+ IRE_R_stage_cat:0 "Red Path: Organisational Work"
+ IRE_X_stage_cat:0 "Black Path: Secret Work"
+
+ IRE_R_stage_rally:0 "General Union Mobilisation"
+ IRE_R_stage_rally_desc:0 "Fill the union halls of Dublin again. Dockers, railwaymen, tram drivers - everyone who can still be organised must enter this net."
+ IRE_R_stage_militia:0 "Workers' Militia Enrolment"
+ IRE_R_stage_militia_desc:0 "The pickets at the nationalised factories no longer just guard the gates. Give them rifles, ranks and pay, and let the workers defend their own workshops."
+ IRE_R_stage_radio:0 "Broadcasting Offensive against Britain"
+ IRE_R_stage_radio_desc:0 "A high-power transmitter reaching across the Irish Sea, so that workers in Liverpool and Glasgow hear another possibility on the wireless. Up to three times."
+ IRE_R_stage_internationale:0 "Convene the World Revolutionary Congress"
+ IRE_R_stage_internationale_desc:0 "Britain and Ireland are one. Now invite the fraternal parties of Europe to Dublin and show them what a country truly owned by its workers looks like."
+
+ IRE_X_stage_rally:0 "Nationalist Mass Rally"
+ IRE_X_stage_rally_desc:0 "Gather the disappointed and tell them poverty is not fate but someone else's doing. The grander the rally, the more the streets belong to us."
+ IRE_X_stage_smuggle:0 "Land the Arms Cache"
+ IRE_X_stage_smuggle_desc:0 "Fishing boats ride low in Kinsale harbour at night. The men unloading are reliable, and the ledger is kept only in memory."
+ IRE_X_stage_tech:0 "German Technical Mission"
+ IRE_X_stage_tech_desc:0 "Instructors from Berlin speak not of politics but of tactics and equipment. They bring Europe's finest military science - at the price of seeing everything we have. Up to three times."
+ IRE_X_stage_neworder:0 "Declaration of the New Order"
+ IRE_X_stage_neworder_desc:0 "London has fallen silent. Now Dublin declares to the continent: this side of the Atlantic has new masters."
+
+ IRE_tt_R_stage_rally:0 "War support +3%, stability +2%, Red Unity +5"
+ IRE_tt_R_stage_militia:0 "Gain 8,000 manpower, 15 army experience, war support +2%"
+ IRE_tt_R_stage_radio:0 "British communist support +5%, stability +1% (up to 3 times)"
+ IRE_tt_X_stage_rally:0 "Fascist support +3%, war support +3%, stability +1%"
+ IRE_tt_X_stage_smuggle:0 "Gain 600 infantry equipment, 150 support equipment, exposure +5"
+ IRE_tt_X_stage_tech:0 "Gain one 20% land doctrine research bonus, 20 army experience, exposure +5 (up to 3 times)"
+
+ ire.120.t:0 "The Dublin Congress"
+ ire.120.d:0 "Delegates from twelve countries sit in Dublin City Hall. Some still carry the smell of prison; some already govern their own nations.\n\nIreland has spent twenty years proving one thing: a poor island, once its workers truly own their fate, can erase an empire from the map. The question now is whether the lesson can be repeated."
+ ire.120.a:0 "Aid every fraternal party"
+ ire.120.b:0 "Build Ireland into the model first"
+ ire.120.c:0 "Prioritise the army for the next war"
+
+ ire.121.t:0 "Declaration of the New Order"
+ ire.121.d:0 "The fleet rides at anchor off the Thames, and for the first time London's lights are not lit from Whitehall.\n\nFrom the Atlantic to the Urals the old order is collapsing, and Dublin must decide its place on the new map - march on the continent, or first digest what it has taken."
+ ire.121.a:0 "March on the continent"
+ ire.121.b:0 "Secure the home front first"
+ ire.121.c:0 "Strip the spoils for our arsenals"
+
