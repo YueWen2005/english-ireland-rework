@@ -28,6 +28,16 @@ recruit_character = IRE_douglas_hyde
 recruit_character = IRE_sean_ceallaigh
 recruit_character = IRE_ernest_walton
 
+# 内阁扩展（见 common/characters/IRE_cabinet_characters.txt）
+# 原版政治顾问只有 3 人，其中经济类只有《工业巨擘》一位，撑不起 212 个国策的经济内容
+recruit_character = IRE_cab_sean_mac_entee
+recruit_character = IRE_cab_patrick_mcgilligan
+recruit_character = IRE_cab_frank_aiken
+recruit_character = IRE_cab_james_dillon
+recruit_character = IRE_cab_thomas_oconnell
+recruit_character = IRE_cab_dan_bryan
+recruit_character = IRE_cab_james_fitzmaurice
+
 # 新世界爱尔兰人物
 recruit_character = IRE_nw_tom_barry
 recruit_character = IRE_nw_sean_mac_eoin
@@ -58,7 +68,7 @@ set_technology = {
 	early_fighter = 1
 }
 
-# 开局科研槽（爱尔兰原版 2 个，给到 3 便于小国生存）
+# 开局科研槽：原版就是 3 个，这里显式写出以免日后漏改
 set_research_slots = 3
 
 # 开局运输船
