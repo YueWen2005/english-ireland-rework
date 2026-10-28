@@ -1190,3 +1190,27 @@ country_event = {
 		}
 	}
 
+
+	# 银行国有化风波（红线经济决议触发）
+	country_event = {
+		id = ire.122
+		title = ire.122.t
+		desc = ire.122.d
+		picture = GFX_report_event_generic_factory
+
+		is_triggered_only = yes
+
+		option = {
+			name = ire.122.a
+			# 强硬接管：工厂直接充公
+			add_political_power = 50
+			add_stability = -0.02
+			add_popularity = { ideology = communism popularity = 0.03 }
+		}
+		option = {
+			name = ire.122.b
+			# 温和赎买：花钱买稳定
+			add_political_power = -50
+			add_stability = 0.03
+		}
+	}

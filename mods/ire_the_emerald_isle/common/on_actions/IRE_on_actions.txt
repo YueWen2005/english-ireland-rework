@@ -44,11 +44,11 @@ on_actions = {
 					}
 				}
 
-				# ---- C红线：吹红途中英国提前对爱宣战 → 英国爆发低强度内战 ----
+				# ---- C红线：吹红途中（三位一体情报网建成后）英国提前对爱宣战 → 英国爆发低强度内战 ----
 				if = {
 					limit = {
 						has_country_flag = IRE_red_path
-						has_completed_focus = IRE_R_end_red_britain
+						has_completed_focus = IRE_R_end_trinity
 						NOT = { has_completed_focus = IRE_R_end_ulster }
 						NOT = { has_country_flag = IRE_eng_early_revolution }
 						country_exists = ENG

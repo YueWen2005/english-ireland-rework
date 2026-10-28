@@ -2697,9 +2697,12 @@ focus_tree = {
 		x = 20
 		y = 7
 		available = {
-			OR = {
-				NOT = { has_variable = IRE_neutral_credibility }
-				check_variable = { IRE_neutral_credibility > 39 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_neutral_cred_40
+							OR = {
+								NOT = { has_variable = IRE_neutral_credibility }
+								check_variable = { IRE_neutral_credibility > 39 }
+							}
 			}
 		}
 		ai_will_do = { base = 50 }
@@ -3484,7 +3487,10 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		prerequisite = { focus = IRE_R_nationalize }
-		available = { check_variable = { IRE_red_unity > 50 } }
+		available = { 			custom_trigger_tooltip = {
+						tooltip = IRE_tt_red_unity_50
+						check_variable = { IRE_red_unity > 50 }
+					} }
 		x = 58
 		y = 9
 		ai_will_do = { base = 40 }
@@ -3876,7 +3882,10 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 6
 		prerequisite = { focus = IRE_R_ind_arms_drive }
-		available = { check_variable = { IRE_red_unity > 50 } }
+		available = { 			custom_trigger_tooltip = {
+						tooltip = IRE_tt_red_unity_50
+						check_variable = { IRE_red_unity > 50 }
+					} }
 		x = 54
 		y = 9
 		ai_will_do = { base = 35 }
