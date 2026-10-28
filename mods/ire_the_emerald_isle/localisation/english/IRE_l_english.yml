@@ -1056,3 +1056,5 @@
  IRE_tt_X_stage_blackmarket:0 "Gain 1 off-map civilian factory, 40 political power, exposure +3"
  IRE_tt_X_stage_police:0 "Stability +4%, may send volunteers"
 
+ ire.10_success_tt:0 "§GReferendum passed!§! Newfoundland will join Ireland."
+ ire.10_fail_tt:0 "§RReferendum failed.§! London issued a strong note of protest to Dublin (UK opinion -40, stability -3%)."
