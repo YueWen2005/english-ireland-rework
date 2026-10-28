@@ -1,0 +1,223 @@
+### ============================================================
+### 内阁扩展：新增顾问
+### 原版爱尔兰的顾问池对 212 个国策的体量来说太薄：
+###   政治顾问 3 人（其中经济类只有《工业巨擘》一位）
+###   陆军总长 2 / 海军总长 2 / 空军总长 2 / 高级指挥官 4 / 理论家 2
+### 本文件只做加法，不覆盖原版任何人物，全部使用新的 idea_token。
+### 肖像沿用原版通用顾问图（与原版爱尔兰顾问做法一致），不新增美术资源。
+### ============================================================
+
+characters = {
+
+	# ------------------------------------------------------------
+	# 政治顾问
+	# ------------------------------------------------------------
+
+	# 麦肯蒂：1932-39 年工业与商务部长，1939 年起财政部长，共和党内的保护主义工业化推手
+	IRE_cab_sean_mac_entee = {
+		name = IRE_cab_sean_mac_entee
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_cab_sean_mac_entee
+			allowed = { original_tag = IRE }
+			traits = { war_industrialist }
+			cost = 150
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	# 麦吉利根：1924-32 年工业与商务部长，自由党内最懂经济的自由贸易派
+	IRE_cab_patrick_mcgilligan = {
+		name = IRE_cab_patrick_mcgilligan
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_2
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_cab_patrick_mcgilligan
+			allowed = { original_tag = IRE }
+			traits = { liberal_economist }
+			cost = 150
+			ai_will_do = { factor = 1.2 }
+		}
+	}
+
+	# 艾肯：1932-39 年国防部长，独立战争时期共和军总参谋长，谈判桌上的硬骨头
+	IRE_cab_frank_aiken = {
+		name = IRE_cab_frank_aiken
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_6
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_cab_frank_aiken
+			allowed = { original_tag = IRE }
+			traits = { tenacious_negotiator }
+			cost = 150
+			ai_will_do = { factor = 1.2 }
+		}
+	}
+
+	# 狄龙：1930 年代最坚定的反中立派议员，主张爱尔兰站到英美一边
+	IRE_cab_james_dillon = {
+		name = IRE_cab_james_dillon
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_3
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_cab_james_dillon
+			allowed = { original_tag = IRE }
+			traits = { democratic_crusader }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# 奥康奈尔：1931-42 年爱尔兰运输与普通工人工会总书记，工党核心
+	IRE_cab_thomas_oconnell = {
+		name = IRE_cab_thomas_oconnell
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_5
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_cab_thomas_oconnell
+			allowed = { original_tag = IRE }
+			traits = { veteran_trade_unionist }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# 丹·布赖恩：1927-52 年任 G2（军事情报处）处长，爱尔兰情报体系的奠基人。
+	# 间谍线的关键人物：任命他即可多出一个特工槽，并大幅加快情报局升级。
+	IRE_cab_dan_bryan = {
+		name = IRE_cab_dan_bryan
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_head_of_intelligence_western_european_2d
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRE_cab_dan_bryan
+			allowed = { original_tag = IRE }
+			traits = { spymaster }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# ------------------------------------------------------------
+	# 空军总长
+	# ------------------------------------------------------------
+
+	# 菲茨莫里斯：1928 年首次由东向西飞越大西洋的机组成员，爱尔兰空军少数有实战声望的人物
+	IRE_cab_james_fitzmaurice = {
+		name = IRE_cab_james_fitzmaurice
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_air_europe_3
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = IRE_cab_james_fitzmaurice
+			allowed = { original_tag = IRE }
+			traits = { air_chief_ground_support_3 }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# ------------------------------------------------------------
+	# 高级指挥官
+	# ------------------------------------------------------------
+
+	# 菲茨杰拉德：1927-32 年国防部长，主张以炮兵与工事为核心的防御体系
+	IRE_cab_desmond_fitzgerald = {
+		name = IRE_cab_desmond_fitzgerald
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_army_europe_5
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = IRE_cab_desmond_fitzgerald
+			allowed = { original_tag = IRE }
+			traits = { army_artillery_2 }
+			cost = 100
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# 奥希金斯：1924-27 年国防部长，任内整编国民军、建立宪兵体系
+	IRE_cab_thomas_ohiggins = {
+		name = IRE_cab_thomas_ohiggins
+		gender = male
+		portraits = {
+			army = {
+				small = GFX_idea_generic_army_europe_6
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = IRE_cab_thomas_ohiggins
+			allowed = { original_tag = IRE }
+			traits = { army_radio_intelligence_2 }
+			cost = 100
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	# ------------------------------------------------------------
+	# 将领
+	# ------------------------------------------------------------
+
+	# 麦克马洪：1924-27 年国民军总参谋长，后任国防部秘书长。
+	# 放在共通军事线《军官团》解锁，保证 B 线 / 黑线也有第二名将领可用
+	# （A 线的四名将领已改为 A 线国策专属）。
+	IRE_M_peadar_macmahon = {
+		name = IRE_M_peadar_macmahon
+		gender = male
+		portraits = {
+			army = {
+				large = GFX_portrait_IRE_M_peadar_macmahon
+				small = GFX_portrait_IRE_M_peadar_macmahon_small
+			}
+		}
+		corps_commander = {
+			# 正规军建设的推动者，长于组织与参谋作业
+			traits = { career_officer organisational_leader skilled_staffer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+}

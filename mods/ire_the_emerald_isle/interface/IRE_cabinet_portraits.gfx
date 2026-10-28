@@ -1,0 +1,17 @@
+spriteTypes = {
+
+	# ============================================================
+	# 共通将领：皮达·麦克马洪
+	# 大图 / 小图都直接指向原版通用欧洲将领肖像，不新增美术资源。
+	# 原版没有给 Portrait_Europe_Generic_land_5 起通用精灵名
+	# （它只被几个波兰将领的精灵引用），所以在这里做一个别名。
+	# ============================================================
+	spriteType = {
+		name = "GFX_portrait_IRE_M_peadar_macmahon"
+		texturefile = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_IRE_M_peadar_macmahon_small"
+		texturefile = "gfx/interface/ideas/idea_generic_army_europe_5.dds"
+	}
+}

@@ -28,33 +28,78 @@ recruit_character = IRE_douglas_hyde
 recruit_character = IRE_sean_ceallaigh
 recruit_character = IRE_ernest_walton
 
+# 内阁扩展（见 common/characters/IRE_cabinet_characters.txt）
+# 原版政治顾问只有 3 人，其中经济类只有《工业巨擘》一位，撑不起 212 个国策的经济内容
+recruit_character = IRE_cab_sean_mac_entee
+recruit_character = IRE_cab_patrick_mcgilligan
+recruit_character = IRE_cab_frank_aiken
+recruit_character = IRE_cab_james_dillon
+recruit_character = IRE_cab_thomas_oconnell
+recruit_character = IRE_cab_dan_bryan
+recruit_character = IRE_cab_james_fitzmaurice
+recruit_character = IRE_cab_desmond_fitzgerald
+recruit_character = IRE_cab_thomas_ohiggins
+
 # 新世界爱尔兰人物
-recruit_character = IRE_nw_tom_barry
-recruit_character = IRE_nw_sean_mac_eoin
-recruit_character = IRE_nw_ernie_omalley
-recruit_character = IRE_nw_hugo_macneill
-recruit_character = IRE_nw_john_costello
+# 这 5 位属于 A 线专属，改为由 A 线国策 recruit_character 解锁：
+#   汤姆·巴里     → 《志愿军团》
+#   肖恩·麦克约恩 → 《野鹅》
+#   厄尼·奥马利   → 《紧急状态》
+#   休戈·麦克尼尔 → 《后备役与军事学院》
+#   约翰·科斯特洛 → 《绿色国际》（同一条国策里紧接着 promote_leader）
+# 以前在这里无条件招募，等于 B 线 / 黑线玩家开局白拿 A 线的 4 个将领与 1 个潜在领袖。
 
 oob = "IRE_units"
 
-# 开局科技（基础工业与步兵装备，避免开局无法造兵）
+# 开局科技
+# 原版给的四项（infantry_weapons / tech_trucks / fuel_silos / basic_train）必须保留：
+#   tech_trucks  —— 没有它开局不能造卡车，摩托化完全无从谈起
+#   fuel_silos   —— 没有它无燃油储备，飞机与机械化部队直接趴窝
+#   basic_train  —— 《铁路车辆生产计划》决议的 has_tech 门槛就是它
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	tech_trucks = 1
+	fuel_silos = 1
+	basic_train = 1
+
+	# MOD 追加：支援武器与工业工具，避免开局造不出师
 	support_weapons = 1
 	tech_support = 1
 	basic_machine_tools = 1
 	improved_machine_tools = 1
 
+	# MOD 追加：火炮。
+	# 《圣帕特里克营》《野鹅军团》两个师模板都带 1 个炮兵营，
+	# 但 gw_artillery 才是解锁 artillery_equipment_1 与 field_guns 兵种的科技。
+	# 没有它，这些「精锐师」的炮兵营永远补不满，爱尔兰也造不出任何火炮。
+	# 历史上爱尔兰陆军自内战起就保有 18 磅野战炮，1936 年给这一项是合理的。
+	gw_artillery = 1
+
 	early_fighter = 1
 }
 
-# 开局科研槽（爱尔兰原版 2 个，给到 3 便于小国生存）
+# 开局科研槽：原版就是 3 个，这里显式写出以免日后漏改
 set_research_slots = 3
 
+# 开局运输船
+# 原版 10 艘。MOD 的 A 线有大量跨大西洋内容（商船队精神、南锥体补给线、
+# 新世界远征、跨大西洋空桥），10 艘不够周转，给到 20 艘
+set_convoys = 20
+
+# 开局装备库存
+# 两个开局师是 50% 装备率；火炮库存是为了让《圣帕特里克营》《野鹅军团》
+# 这类带炮兵营的精锐师模板在 create_unit 时能真正拿到炮，而不是空着编制。
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 400 }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 200 }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 }
+
 # 开局政治：爱尔兰是议会民主国，中立是外交政策而非执政意识形态
+# last_election / election_frequency 沿用原版，否则选举周期会退回默认值
 set_politics = {
 	ruling_party = democratic
+	last_election = "1933.1.24"
+	election_frequency = 48
 	elections_allowed = yes
 }
 

@@ -78,3 +78,42 @@ division_template = {
 		field_hospital = { x = 0 y = 2 }
 	}
 }
+
+### ============================================================
+### 开局编成
+### 原版 IRE_1936 给 1 个「Army High Command」师（代表四个军区）
+### 这里给 2 个正规步兵师，都驻都柏林（省份 11293 / 州 113 伦斯特）
+### 装备率 0.5、经验 0.1 —— 高于原版的 0.3/0.2 一点，符合「加强爱尔兰」的定位
+### ============================================================
+units = {
+	division = {
+		name = "1st Division"
+		location = 11293
+		division_template = "IRE_Infantry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+
+	division = {
+		name = "2nd Division"
+		location = 11293
+		division_template = "IRE_Infantry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+}
+
+### 开局生产线
+### 注意：爱尔兰开局只有 1 个军工厂（州 113 伦斯特），所以只排一条步兵装备线，
+### 排两条会和第一条互相挤占工厂、反而降低效率
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "IRE"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

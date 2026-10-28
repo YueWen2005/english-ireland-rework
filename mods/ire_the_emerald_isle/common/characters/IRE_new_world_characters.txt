@@ -15,12 +15,24 @@ characters = {
 			}
 		}
 		corps_commander = {
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 2
+			# 独立战争西科克第三旅指挥官，基尔米克尔伏击的策划者。
+			# A 线专属，给到 4 级技能与四个特质，是全 MOD 最强野战将领。
+			traits = { guerilla_fighter ambusher trickster war_hero }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
 			logistics_skill = 1
 			legacy_id = -1
+		}
+		advisor = {
+			# 兼理论家：「飞行纵队」战术的实践者，核心是机动与速度
+			slot = theorist
+			idea_token = IRE_nw_tom_barry_theorist
+			allowed = { original_tag = IRE }
+			traits = { mobile_warfare_expert }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
 		}
 	}
 
@@ -34,12 +46,24 @@ characters = {
 			}
 		}
 		corps_commander = {
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
+			# 朗福德旅指挥官，布莱克与谭战争中最能打正规战的共和军将领，
+			# 后来历任陆军参谋长与国防部长。
+			traits = { infantry_officer trickster infantry_leader career_officer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
 			planning_skill = 3
 			logistics_skill = 2
 			legacy_id = -1
+		}
+		advisor = {
+			# 兼理论家：主张以火力与工事代替人海
+			slot = theorist
+			idea_token = IRE_nw_sean_mac_eoin_theorist
+			allowed = { original_tag = IRE }
+			traits = { superior_firepower_expert }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
 		}
 	}
 
@@ -53,12 +77,24 @@ characters = {
 			}
 		}
 		corps_commander = {
-			skill = 2
+			# 独立战争期间负责组织与训练，偏参谋型
+			traits = { organizer guerilla_fighter thorough_planner skilled_staffer }
+			skill = 3
 			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 1
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
 			legacy_id = -1
+		}
+		advisor = {
+			# 兼理论家：《另一个人的创伤》《燃烧的火焰》作者，
+			# 爱尔兰唯一真正留下成体系军事著作的人
+			slot = theorist
+			idea_token = IRE_nw_ernie_omalley_theorist
+			allowed = { original_tag = IRE }
+			traits = { well_renowned_military_theorist }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
 		}
 	}
 
@@ -72,12 +108,23 @@ characters = {
 			}
 		}
 		corps_commander = {
-			skill = 3
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+			# 正规军出身，1940 年起任爱尔兰陆军参谋长，防御派
+			traits = { infantry_officer defensive_doctrine career_officer organisational_leader }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
 			legacy_id = -1
+		}
+		advisor = {
+			# 兼理论家：总参谋长出身，长于参谋作业与计划
+			slot = theorist
+			idea_token = IRE_nw_hugo_macneill_theorist
+			allowed = { original_tag = IRE }
+			traits = { grand_battle_plan_expert }
+			cost = 150
+			ai_will_do = { factor = 1.0 }
 		}
 	}
 
