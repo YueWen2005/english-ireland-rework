@@ -137,6 +137,8 @@ gh pr create --repo YueWen2005/english-ireland-rework \
   --title "..." --body-file pr_body.md
 ```
 
+> **例外**：`Origin-XiChen` 这个 fork 允许直接在主分支上提交并推送，不必开功能分支；向上游仍然必须走 PR。其它贡献者按上面的分支流程做。
+
 ### 2.2 分支命名
 
 | 前缀 | 用途 |
