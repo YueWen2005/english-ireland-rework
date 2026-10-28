@@ -116,7 +116,11 @@
 			}
 
 			complete_effect = {
-				119 = { add_compliance = 20 }
+				# add_compliance 只在该州有抵抗时有效，否则会刷 "does not have resistance" 报错
+				if = {
+					limit = { 119 = { has_resistance = yes } }
+					119 = { add_compliance = 20 }
+				}
 				add_stability = 0.02
 				add_war_support = 0.02
 				custom_effect_tooltip = IRE_tt_R_stage_north

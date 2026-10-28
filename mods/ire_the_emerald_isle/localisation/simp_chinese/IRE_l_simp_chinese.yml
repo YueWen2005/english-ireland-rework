@@ -1056,7 +1056,7 @@
 
  IRE_tt_R_stage_land:0 "稳定度 +3%、战争支持 +2%、共产主义支持度 +1%"
  IRE_tt_R_stage_women:0 "获得 6000 人力、1 座离图民用工厂"
- IRE_tt_R_stage_north:0 "北爱尔兰顺从度 +20、稳定度 +2%、战争支持 +2%"
+ IRE_tt_R_stage_north:0 "北爱尔兰顺从度 +20（该州有抵抗时）、稳定度 +2%、战争支持 +2%"
  IRE_tt_X_stage_youth:0 "获得 5000 人力、10 陆军经验、战争支持 +2%"
  IRE_tt_X_stage_blackmarket:0 "获得 1 座离图民用工厂、40 政治点数、暴露度 +3"
  IRE_tt_X_stage_police:0 "稳定度 +4%，允许派遣志愿军"

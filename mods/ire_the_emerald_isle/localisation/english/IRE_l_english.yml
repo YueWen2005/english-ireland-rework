@@ -1054,7 +1054,7 @@
 
  IRE_tt_R_stage_land:0 "Stability +3%, war support +2%, communist support +1%"
  IRE_tt_R_stage_women:0 "Gain 6,000 manpower and 1 off-map civilian factory"
- IRE_tt_R_stage_north:0 "Northern Ireland compliance +20, stability +2%, war support +2%"
+ IRE_tt_R_stage_north:0 "Northern Ireland compliance +20 (if the state has resistance), stability +2%, war support +2%"
  IRE_tt_X_stage_youth:0 "Gain 5,000 manpower, 10 army experience, war support +2%"
  IRE_tt_X_stage_blackmarket:0 "Gain 1 off-map civilian factory, 40 political power, exposure +3"
  IRE_tt_X_stage_police:0 "Stability +4%, may send volunteers"

@@ -1,4 +1,5 @@
-### 红线合并国「不列颠-爱尔兰人民联盟」 / 黑线合并国「爱尔兰-不列颠帝国」的国家颜色
+### 红黑线 cosmetic tag 地图颜色
+### 红：合并国「不列颠-爱尔兰人民联盟」；黑：合并国「爱尔兰-不列颠帝国」
 IRE_union_of_britain = {
 	color = rgb { 140 24 32 }
 	color_ui = rgb { 178 38 48 }
@@ -6,4 +7,28 @@ IRE_union_of_britain = {
 IRE_albion_empire = {
 	color = rgb { 26 26 30 }
 	color_ui = rgb { 190 152 66 }
+}
+
+### 红黑线政权更替后的本国 cosmetic tag
+### 此前只做了旗帜(loc/tga)，缺 color 定义会让地图色回退默认，这里补齐
+### 取色依据：各 tag 旗帜主色，并压暗以适应大地图
+# 爱尔兰社会主义共和国（红地金齿轮）
+IRE_communism = {
+	color = rgb { 176 34 30 }
+	color_ui = rgb { 208 56 48 }
+}
+# 法西斯爱尔兰（白底橙日轮）
+IRE_fascism = {
+	color = rgb { 150 88 30 }
+	color_ui = rgb { 182 118 46 }
+}
+# 军装中立 IRA（深蓝）
+IRE_ira_neutrality = {
+	color = rgb { 52 64 112 }
+	color_ui = rgb { 74 92 150 }
+}
+# 自由邦民主（绿白橙）
+IRE_free_state_democratic = {
+	color = rgb { 68 150 78 }
+	color_ui = rgb { 92 176 104 }
 }
