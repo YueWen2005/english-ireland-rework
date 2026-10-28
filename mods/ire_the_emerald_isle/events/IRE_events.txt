@@ -1091,6 +1091,7 @@ country_event = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
 			}
+			IRE_X_become_albion_empire = yes
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
 			add_political_power = 30
 		}
@@ -1101,6 +1102,7 @@ country_event = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
 			}
+			IRE_X_become_albion_empire = yes
 			GER = { transfer_state = 131 }
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
 			add_stability = -0.02
@@ -1112,6 +1114,7 @@ country_event = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
 			}
+			IRE_X_become_albion_empire = yes
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
 			add_war_support = 0.03
 		}

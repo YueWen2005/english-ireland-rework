@@ -65,6 +65,41 @@ on_actions = {
 					}
 				}
 
+				# ---- C红线：攻入不列颠本土，英国失去本土 → 英国投降，英爱合并为不列颠-爱尔兰人民联盟 ----
+				if = {
+					limit = {
+						has_country_flag = IRE_red_path
+						NOT = { has_country_flag = IRE_red_britain_merged }
+						any_country = {
+							original_tag = ENG
+							exists = yes
+							has_capitulated = no
+							has_civil_war = no
+							NOT = { tag = IRE }
+							NOT = {
+								any_controlled_state = {
+									is_core_of = ENG
+									is_on_continent = europe
+									NOT = { state = 119 }
+								}
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							original_tag = ENG
+							exists = yes
+							has_civil_war = no
+							NOT = { tag = IRE }
+						}
+						IRE = { annex_country = { target = PREV transfer_troops = yes } }
+					}
+					IRE_R_become_british_union = yes
+					add_ideas = IRE_world_revolution_hq
+					set_country_flag = IRE_red_britain_merged
+					country_event = { id = ire.113 days = 1 }
+				}
+
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----
 				if = {
 					limit = {

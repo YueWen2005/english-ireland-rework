@@ -3299,7 +3299,7 @@ focus_tree = {
 				picture = GFX_portrait_IRE_frank_ryan
 				expire = "1965.1.1.1"
 				ideology = marxism
-				traits = { }
+				traits = { communist_revolutionary anti_imperialist_thinker }
 			}
 			add_ideas = IRE_connolly_road
 			add_ideas = IRE_workers_militia
@@ -3556,7 +3556,7 @@ focus_tree = {
 				picture = GFX_portrait_IRE_sean_russell
 				expire = "1965.1.1.1"
 				ideology = fascism_ideology
-				traits = { }
+				traits = { fascist_demagogue adventurous_daredevil }
 			}
 			add_ideas = IRE_shadow_arsenal_idea
 			add_ideas = IRE_abwehr_links
@@ -4297,11 +4297,19 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = IRE_R_end_ignite }
 		available = {
-			any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+			OR = {
+				has_country_flag = IRE_red_britain_merged
+				any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+			}
 		}
 		bypass = {
-			has_completed_focus = IRE_R_end_ignite
-			any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+			OR = {
+				has_country_flag = IRE_red_britain_merged
+				AND = {
+					has_completed_focus = IRE_R_end_ignite
+					any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+				}
+			}
 		}
 		x = 58
 		y = 20
