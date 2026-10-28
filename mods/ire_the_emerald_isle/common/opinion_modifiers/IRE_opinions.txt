@@ -51,6 +51,10 @@ opinion_modifiers = {
 		value = -10
 	}
 
+	IRE_opinion_neg15 = {
+		value = -15
+	}
+
 	IRE_opinion_neg20 = {
 		value = -20
 	}
