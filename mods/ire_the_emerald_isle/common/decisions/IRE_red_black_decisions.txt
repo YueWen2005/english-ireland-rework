@@ -483,8 +483,8 @@
 
 			complete_effect = {
 				random_owned_controlled_state = {
-					limit = { free_building_slots = { building = industrial_complex free_slots > 0 } }
-					add_building_construction = { type = industrial_complex level = 1 instant = yes }
+					limit = { free_building_slots = { building = industrial_complex size > 0 } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 				}
 				country_event = { id = ire.122 days = 1 }
 				custom_effect_tooltip = IRE_tt_R_econ_banks
@@ -515,8 +515,8 @@
 			complete_effect = {
 				add_timed_idea = { idea = IRE_R_war_economy days = 360 }
 				random_owned_controlled_state = {
-					limit = { free_building_slots = { building = industrial_complex free_slots > 0 } }
-					add_building_construction = { type = industrial_complex level = 1 instant = yes }
+					limit = { free_building_slots = { building = industrial_complex size > 0 } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 				}
 				custom_effect_tooltip = IRE_tt_R_econ_arms
 			}
@@ -574,9 +574,9 @@
 				random_owned_controlled_state = {
 					limit = {
 						infrastructure < 5
-						free_building_slots = { building = infrastructure free_slots > 0 }
+						free_building_slots = { building = infrastructure size > 0 }
 					}
-					add_building_construction = { type = infrastructure level = 1 instant = yes }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
 				}
 				custom_effect_tooltip = IRE_tt_R_econ_infra
 			}
