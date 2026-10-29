@@ -3,6 +3,19 @@
 ### 双主线：A《边境公投》 / B《自由邦的巩固》，起点互斥
 ### ============================================================
 
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_ARMY_XP}
+### search_filters = {FOCUS_FILTER_NAVY_XP}
+### search_filters = {FOCUS_FILTER_AIR_XP}
+### search_filters = {FOCUS_FILTER_INTERNATIONAL_TRADE}
+### search_filters = {FOCUS_FILTER_PROPAGANDA}
+
 focus_tree = {
 	id = IRE_focus_tree
 
@@ -52,6 +65,8 @@ focus_tree = {
 		id = IRE_consolidate_free_state
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		x = 88
 		y = 0
 		mutually_exclusive = { focus = IRE_border_plebiscite focus = IRE_ira_council }
@@ -3121,6 +3136,8 @@ focus_tree = {
 		id = IRE_ira_council
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		mutually_exclusive = {
 			focus = IRE_border_plebiscite
 			focus = IRE_consolidate_free_state
@@ -3141,6 +3158,8 @@ focus_tree = {
 		id = IRE_ira_arms_web
 		icon = GFX_goal_generic_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_ira_council }
 		x = 58
 		y = 1
@@ -3158,6 +3177,8 @@ focus_tree = {
 		id = IRE_ira_camps
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_ira_council }
 		x = 60
 		y = 1
@@ -3177,6 +3198,8 @@ focus_tree = {
 		id = IRE_ira_infiltrate
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_ira_council }
 		x = 62
 		y = 1
@@ -3195,6 +3218,8 @@ focus_tree = {
 		id = IRE_ira_coup
 		icon = GFX_goal_generic_major_war
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_ira_arms_web focus = IRE_ira_camps focus = IRE_ira_infiltrate }
 		available = { has_civil_war = no }
 		x = 60
@@ -3248,6 +3273,8 @@ focus_tree = {
 		id = IRE_ira_power
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_ira_coup }
 		available = {
 			custom_trigger_tooltip = {
@@ -3276,6 +3303,8 @@ focus_tree = {
 		id = IRE_R_red_turn
 		icon = GFX_goal_generic_national_unity
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_X_shadow_arsenal }
 		available = {
@@ -3324,6 +3353,8 @@ focus_tree = {
 		id = IRE_R_connolly_column
 		icon = GFX_goal_generic_military_deal
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_R_red_turn }
 		available = { SPA = { has_civil_war = yes } }
 		x = 60
@@ -3351,6 +3382,8 @@ focus_tree = {
 		id = IRE_R_republican_congress
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_R_red_turn }
 		x = 58
 		y = 5
@@ -3370,6 +3403,8 @@ focus_tree = {
 		id = IRE_R_split_1941
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_republican_congress }
 		x = 58
 		y = 6
@@ -3388,6 +3423,8 @@ focus_tree = {
 		id = IRE_R_neutral_labor
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_volunteer_line }
 		x = 58
@@ -3411,6 +3448,8 @@ focus_tree = {
 		id = IRE_R_volunteer_line
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_R_split_1941 }
 		mutually_exclusive = { focus = IRE_R_neutral_labor }
 		x = 60
@@ -3433,6 +3472,8 @@ focus_tree = {
 		id = IRE_R_nationalize
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = {
 			focus = IRE_R_neutral_labor
 			focus = IRE_R_volunteer_line
@@ -3486,6 +3527,8 @@ focus_tree = {
 		id = IRE_R_belfast_strike
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_R_nationalize }
 		available = { 			custom_trigger_tooltip = {
 						tooltip = IRE_tt_red_unity_50
@@ -3508,6 +3551,8 @@ focus_tree = {
 		id = IRE_R_workers_republic
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_belfast_strike }
 		available = {
 			custom_trigger_tooltip = {
@@ -3532,6 +3577,8 @@ focus_tree = {
 		id = IRE_X_shadow_arsenal
 		icon = GFX_goal_generic_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_ira_power }
 		mutually_exclusive = { focus = IRE_R_red_turn }
 		available = {
@@ -3581,6 +3628,8 @@ focus_tree = {
 		id = IRE_X_christmas_raid
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_X_shadow_arsenal }
 		available = {
 			custom_trigger_tooltip = {
@@ -3607,6 +3656,8 @@ focus_tree = {
 		id = IRE_X_s_plan
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_X_christmas_raid }
 		available = {
 			custom_trigger_tooltip = {
@@ -3640,6 +3691,8 @@ focus_tree = {
 		id = IRE_X_abwehr_guests
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_X_s_plan }
 		available = {
 			custom_trigger_tooltip = {
@@ -3671,6 +3724,8 @@ focus_tree = {
 		id = IRE_X_green_action
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_X_abwehr_guests }
 		available = {
 			custom_trigger_tooltip = {
@@ -3698,6 +3753,8 @@ focus_tree = {
 		id = IRE_R_ind_expropriation
 		icon = GFX_goal_generic_national_unity
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_red_turn }
 		available = { NOT = { has_completed_focus = IRE_X_ind_cottage } }
 		x = 54
@@ -3719,6 +3776,8 @@ focus_tree = {
 		id = IRE_R_ind_peat_shannon
 		icon = GFX_goal_generic_oil_refinery
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_R_ind_expropriation }
 		x = 54
 		y = 6
@@ -3740,6 +3799,8 @@ focus_tree = {
 		id = IRE_R_ind_shannon_belt
 		icon = GFX_focus_generic_industry_2
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
 		x = 52
 		y = 7
@@ -3758,6 +3819,8 @@ focus_tree = {
 		id = IRE_R_ind_rural_electrification
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
 		x = 54
 		y = 7
@@ -3775,6 +3838,8 @@ focus_tree = {
 		id = IRE_R_ind_cooperative
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_R_ind_peat_shannon }
 		x = 56
 		y = 7
@@ -3793,6 +3858,8 @@ focus_tree = {
 		id = IRE_R_ind_steel_coop
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_R_ind_cooperative }
 		x = 56
 		y = 8
@@ -3810,6 +3877,8 @@ focus_tree = {
 		id = IRE_R_ind_red_arsenal
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_R_ind_workers_council }
 		x = 54
 		y = 10
@@ -3827,6 +3896,8 @@ focus_tree = {
 		id = IRE_R_ind_arms_drive
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = IRE_R_ind_rural_electrification }
 		x = 54
 		y = 8
@@ -3844,6 +3915,8 @@ focus_tree = {
 		id = IRE_R_ind_limerick_yard
 		icon = GFX_goal_generic_build_navy
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_R_ind_shannon_belt }
 		x = 52
 		y = 8
@@ -3862,6 +3935,8 @@ focus_tree = {
 		id = IRE_R_ind_atlantic_trade
 		icon = GFX_goal_generic_production
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNATIONAL_TRADE }
 		prerequisite = { focus = IRE_R_ind_limerick_yard }
 		x = 52
 		y = 9
@@ -3881,6 +3956,8 @@ focus_tree = {
 		id = IRE_R_ind_workers_council
 		icon = GFX_goal_generic_political_pressure
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_R_ind_arms_drive }
 		available = { 			custom_trigger_tooltip = {
 						tooltip = IRE_tt_red_unity_50
@@ -3904,6 +3981,8 @@ focus_tree = {
 		id = IRE_X_ind_cottage
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 8
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_shadow_arsenal }
 		available = { NOT = { has_completed_focus = IRE_R_ind_expropriation } }
 		x = 68
@@ -3925,6 +4004,8 @@ focus_tree = {
 		id = IRE_X_ind_hidden_cove
 		icon = GFX_goal_generic_military_deal
 		cost = 8
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_cottage }
 		x = 72
 		y = 6
@@ -3945,6 +4026,8 @@ focus_tree = {
 		id = IRE_X_ind_smuggle_net
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 8
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_cottage }
 		x = 68
 		y = 6
@@ -3964,6 +4047,8 @@ focus_tree = {
 		id = IRE_X_ind_border_route
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 8
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
 		x = 70
 		y = 7
@@ -3986,6 +4071,8 @@ focus_tree = {
 		id = IRE_X_ind_dundalk_depot
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_border_route }
 		x = 70
 		y = 8
@@ -4009,6 +4096,8 @@ focus_tree = {
 		id = IRE_X_ind_german_tech
 		icon = GFX_goal_generic_scientific_exchange
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
 		prerequisite = { focus = IRE_X_abwehr_guests }
 		x = 68
@@ -4030,6 +4119,8 @@ focus_tree = {
 		id = IRE_X_ind_s_plan_loot
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_german_tech }
 		prerequisite = { focus = IRE_X_s_plan }
 		x = 66
@@ -4053,6 +4144,8 @@ focus_tree = {
 		id = IRE_X_ind_intel_net
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_ind_german_tech }
 		x = 68
 		y = 8
@@ -4072,6 +4165,8 @@ focus_tree = {
 		id = IRE_X_ind_black_market
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 12
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_X_ind_s_plan_loot }
 		x = 66
 		y = 9
@@ -4095,6 +4190,8 @@ focus_tree = {
 		id = IRE_X_ind_uboat_dock
 		icon = GFX_goal_generic_build_navy
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_X_ind_hidden_cove }
 		x = 72
 		y = 7
@@ -4113,6 +4210,8 @@ focus_tree = {
 		id = IRE_X_ind_assembly
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_dundalk_depot }
 		x = 70
 		y = 9
@@ -4135,6 +4234,8 @@ focus_tree = {
 		id = IRE_R_end_trinity
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_workers_republic }
 		x = 58
 		y = 13
@@ -4153,6 +4254,8 @@ focus_tree = {
 		id = IRE_R_end_radio
 		icon = GFX_goal_generic_propaganda
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_PROPAGANDA }
 		prerequisite = { focus = IRE_R_end_trinity }
 		x = 56
 		y = 14
@@ -4168,6 +4271,8 @@ focus_tree = {
 		id = IRE_R_end_birmingham
 		icon = GFX_goal_generic_production
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_trinity }
 		x = 60
 		y = 14
@@ -4186,6 +4291,8 @@ focus_tree = {
 		id = IRE_R_end_red_britain
 		icon = GFX_goal_generic_national_unity
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_trinity }
 		prerequisite = { focus = IRE_R_end_radio }
 		prerequisite = { focus = IRE_R_end_birmingham }
@@ -4203,6 +4310,8 @@ focus_tree = {
 		id = IRE_R_end_spark
 		icon = GFX_goal_generic_demand_territory
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_red_britain }
 		x = 58
 		y = 16
@@ -4219,6 +4328,8 @@ focus_tree = {
 		id = IRE_R_end_ulster
 		icon = GFX_goal_generic_more_territorial_claims
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_R_end_spark }
 		x = 58
 		y = 17
@@ -4244,6 +4355,8 @@ focus_tree = {
 		id = IRE_R_end_eve
 		icon = GFX_goal_generic_military_deal
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_ulster }
 		x = 58
 		y = 18
@@ -4259,6 +4372,8 @@ focus_tree = {
 		id = IRE_R_end_ignite
 		icon = GFX_focus_generic_strike_at_democracy1
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_R_end_eve }
 		available = {
 			ENG = { exists = yes NOT = { has_government = communism } }
@@ -4295,6 +4410,8 @@ focus_tree = {
 		id = IRE_R_end_union
 		icon = GFX_goal_generic_major_alliance
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_R_end_ignite }
 		available = {
 			OR = {
@@ -4324,6 +4441,8 @@ focus_tree = {
 		id = IRE_R_lib_paris
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			FRA = { exists = yes }
@@ -4347,6 +4466,8 @@ focus_tree = {
 		id = IRE_R_lib_lowlands
 		icon = GFX_goal_generic_major_war
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 OR = {
@@ -4382,6 +4503,8 @@ OR = {
 		id = IRE_R_lib_iberia
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 OR = {
@@ -4412,6 +4535,8 @@ OR = {
 		id = IRE_R_lib_italy
 		icon = GFX_focus_generic_strike_at_democracy2
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			ITA = { exists = yes }
@@ -4435,6 +4560,8 @@ OR = {
 		id = IRE_R_lib_danube
 		icon = GFX_goal_generic_major_war
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			OR = {
@@ -4478,6 +4605,8 @@ OR = {
 		id = IRE_R_lib_balkans
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			OR = {
@@ -4526,6 +4655,8 @@ OR = {
 		id = IRE_R_lib_elbe
 		icon = GFX_goal_generic_army_tanks
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			OR = {
@@ -4579,6 +4710,8 @@ OR = {
 		id = IRE_R_lib_north
 		icon = GFX_goal_generic_military_sphere
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			OR = {
@@ -4627,6 +4760,8 @@ OR = {
 		id = IRE_R_lib_india
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			RAJ = { exists = yes }
@@ -4656,6 +4791,8 @@ OR = {
 		id = IRE_R_lib_africa
 		icon = GFX_goal_generic_small_arms
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 OR = {
@@ -4686,6 +4823,8 @@ OR = {
 		id = IRE_R_lib_asia
 		icon = GFX_goal_generic_production
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			OR = {
@@ -4719,6 +4858,8 @@ OR = {
 		id = IRE_R_lib_mideast
 		icon = GFX_goal_generic_oil_refinery
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			OR = {
@@ -4752,6 +4893,8 @@ OR = {
 		id = IRE_R_lib_canada
 		icon = GFX_goal_generic_demand_territory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			CAN = { exists = yes }
@@ -4781,6 +4924,8 @@ OR = {
 		id = IRE_R_lib_wallstreet
 		icon = GFX_goal_generic_major_war
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 			USA = { exists = yes }
@@ -4804,6 +4949,8 @@ OR = {
 		id = IRE_R_lib_latam
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_R_end_union }
 		available = {
 OR = {
@@ -4839,6 +4986,8 @@ OR = {
 		id = IRE_X_end_planning
 		icon = GFX_goal_generic_army_doctrines
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_green_action }
 		x = 64
 		y = 9
@@ -4855,6 +5004,8 @@ OR = {
 		id = IRE_X_end_sealion
 		icon = GFX_goal_generic_military_sphere
 		cost = 10
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_X_end_planning }
 		x = 64
 		y = 10
@@ -4872,6 +5023,8 @@ OR = {
 		id = IRE_X_end_liverpool
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 15
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_X_end_planning }
 		prerequisite = { focus = IRE_X_end_sealion }
 		available = {
@@ -4896,6 +5049,8 @@ OR = {
 		id = IRE_X_end_westburg
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 15
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_X_end_liverpool }
 		available = {
 			any_country = { original_tag = ENG exists = yes has_capitulated = yes }
@@ -4915,6 +5070,8 @@ OR = {
 		id = IRE_X_ord_west
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			FRA = { exists = yes }
@@ -4938,6 +5095,8 @@ OR = {
 		id = IRE_X_ord_lowlands
 		icon = GFX_goal_generic_major_war
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 OR = {
@@ -4973,6 +5132,8 @@ OR = {
 		id = IRE_X_ord_iberia
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 OR = {
@@ -5003,6 +5164,8 @@ OR = {
 		id = IRE_X_ord_italy
 		icon = GFX_focus_generic_strike_at_democracy2
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			ITA = { exists = yes }
@@ -5026,6 +5189,8 @@ OR = {
 		id = IRE_X_ord_danube
 		icon = GFX_goal_generic_major_war
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			OR = {
@@ -5069,6 +5234,8 @@ OR = {
 		id = IRE_X_ord_balkans
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			OR = {
@@ -5117,6 +5284,8 @@ OR = {
 		id = IRE_X_ord_elbe
 		icon = GFX_goal_generic_army_tanks
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			OR = {
@@ -5165,6 +5334,8 @@ OR = {
 		id = IRE_X_ord_north
 		icon = GFX_goal_generic_military_sphere
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			OR = {
@@ -5213,6 +5384,8 @@ OR = {
 		id = IRE_X_ord_india
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			RAJ = { exists = yes }
@@ -5242,6 +5415,8 @@ OR = {
 		id = IRE_X_ord_africa
 		icon = GFX_goal_generic_small_arms
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 OR = {
@@ -5272,6 +5447,8 @@ OR = {
 		id = IRE_X_ord_asia
 		icon = GFX_goal_generic_production
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			OR = {
@@ -5305,6 +5482,8 @@ OR = {
 		id = IRE_X_ord_mideast
 		icon = GFX_goal_generic_oil_refinery
 		cost = 6
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			OR = {
@@ -5338,6 +5517,8 @@ OR = {
 		id = IRE_X_ord_canada
 		icon = GFX_goal_generic_demand_territory
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			CAN = { exists = yes }
@@ -5367,6 +5548,8 @@ OR = {
 		id = IRE_X_ord_wallstreet
 		icon = GFX_goal_generic_major_war
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 			USA = { exists = yes }
@@ -5390,6 +5573,8 @@ OR = {
 		id = IRE_X_ord_latam
 		icon = GFX_goal_generic_political_pressure
 		cost = 5
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_end_westburg }
 		available = {
 OR = {
