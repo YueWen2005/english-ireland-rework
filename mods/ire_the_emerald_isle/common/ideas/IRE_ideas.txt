@@ -13,6 +13,11 @@ ideas = {
 				stability_factor = -0.10
 				political_power_gain = -0.05
 			}
+			# 开局即允许创建阵营（原版机制：建阵营按钮需要民族精神携带此规则；
+			# 此前只有 A 线北欧同盟国策的 set_rule 能拿到，红黑线全程无法建阵营）
+			rule = {
+				can_create_factions = yes
+			}
 			removal_cost = -1
 		}
 
