@@ -1531,4 +1531,24 @@ ideas = {
 	# 隐藏 / 内部精神
 	# ============================================================
 
+		IRE_R_war_economy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_R_collective_farms = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.06
+			}
+			removal_cost = -1
+		}
+
 }

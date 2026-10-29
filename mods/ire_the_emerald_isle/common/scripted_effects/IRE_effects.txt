@@ -327,7 +327,23 @@ IRE_defend_ireland_check = {
 }
 
 # ============================================================
-# C 红线：英国已社会主义时，英爱合并为新国家
+# C 红线：变身「不列颠-爱尔兰人民联盟」（旗帜/领袖复用不列颠联盟）
+# ============================================================
+IRE_R_become_british_union = {
+	set_cosmetic_tag = IRE_union_of_britain
+	# 领袖复用不列颠联盟：英共领袖哈利·波利特上台
+	create_country_leader = {
+		name = "Harry Pollitt"
+		desc = "POLITICS_IRE_POLLITT_DESC"
+		picture = GFX_portrait_ENG_harry_pollitt
+		expire = "1965.1.1.1"
+		ideology = marxism
+		traits = { staunch_stalinist }
+	}
+}
+
+# ============================================================
+# C 红线：英国已社会主义时，英爱合并为不列颠-爱尔兰人民联盟
 # ============================================================
 IRE_R_merge_red_britain = {
 	if = {
@@ -349,10 +365,31 @@ IRE_R_merge_red_britain = {
 			}
 			IRE = { annex_country = { target = PREV transfer_troops = yes } }
 		}
-		set_cosmetic_tag = IRE_anglo_irish_union
+		IRE_R_become_british_union = yes
 		add_ideas = IRE_world_revolution_hq
 		add_named_threat = { threat = 10 name = IRE_threat_focus }
 		set_country_flag = IRE_red_britain_merged
 		country_event = { id = ire.113 days = 1 }
+	}
+}
+
+# ============================================================
+# D 黑线：变身「爱尔兰-不列颠帝国」（领袖复用莫斯利）
+# ============================================================
+IRE_X_become_albion_empire = {
+	if = {
+		limit = { NOT = { has_country_flag = IRE_dark_britain_merged } }
+		set_country_flag = IRE_dark_britain_merged
+		set_cosmetic_tag = IRE_albion_empire
+		# 领袖复用：奥斯瓦尔德·莫斯利上台
+		create_country_leader = {
+			name = "Oswald Mosley"
+			desc = "POLITICS_IRE_MOSLEY_DESC"
+			picture = GFX_portrait_ENG_oswald_mosley
+			expire = "1965.1.1.1"
+			ideology = fascism_ideology
+			traits = { champion_of_peace_1 economic_reformer }
+		}
+		add_named_threat = { threat = 10 name = IRE_threat_focus }
 	}
 }

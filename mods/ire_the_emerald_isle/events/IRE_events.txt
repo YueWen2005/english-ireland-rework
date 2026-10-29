@@ -1091,6 +1091,7 @@ country_event = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
 			}
+			IRE_X_become_albion_empire = yes
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg10 } }
 			add_political_power = 30
 		}
@@ -1101,6 +1102,7 @@ country_event = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
 			}
+			IRE_X_become_albion_empire = yes
 			GER = { transfer_state = 131 }
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
 			add_stability = -0.02
@@ -1112,6 +1114,7 @@ country_event = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
 			}
+			IRE_X_become_albion_empire = yes
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
 			add_war_support = 0.03
 		}
@@ -1190,3 +1193,27 @@ country_event = {
 		}
 	}
 
+
+	# 银行国有化风波（红线经济决议触发）
+	country_event = {
+		id = ire.122
+		title = ire.122.t
+		desc = ire.122.d
+		picture = GFX_report_event_generic_factory
+
+		is_triggered_only = yes
+
+		option = {
+			name = ire.122.a
+			# 强硬接管：工厂直接充公
+			add_political_power = 50
+			add_stability = -0.02
+			add_popularity = { ideology = communism popularity = 0.03 }
+		}
+		option = {
+			name = ire.122.b
+			# 温和赎买：花钱买稳定
+			add_political_power = -50
+			add_stability = 0.03
+		}
+	}

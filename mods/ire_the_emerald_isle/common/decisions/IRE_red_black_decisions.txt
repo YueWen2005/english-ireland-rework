@@ -12,7 +12,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_red_turn
 			}
 
@@ -43,7 +46,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_republican_congress
 			}
 
@@ -69,7 +75,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_workers_republic
 			}
 
@@ -94,7 +103,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_belfast_strike
 			}
 
@@ -104,7 +116,11 @@
 			}
 
 			complete_effect = {
-				119 = { add_compliance = 20 }
+				# add_compliance 只在该州有抵抗时有效，否则会刷 "does not have resistance" 报错
+				if = {
+					limit = { 119 = { has_resistance = yes } }
+					119 = { add_compliance = 20 }
+				}
 				add_stability = 0.02
 				add_war_support = 0.02
 				custom_effect_tooltip = IRE_tt_R_stage_north
@@ -121,7 +137,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_nationalize
 			}
 
@@ -147,13 +166,19 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_end_red_britain
 				country_exists = ENG
 				ENG = { NOT = { has_government = communism } }
-				OR = {
-					NOT = { has_variable = IRE_radio_offensive }
-					check_variable = { IRE_radio_offensive < 3 }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_repeat_cap_3
+									OR = {
+										NOT = { has_variable = IRE_radio_offensive }
+										check_variable = { IRE_radio_offensive < 3 }
+									}
 				}
 			}
 
@@ -183,7 +208,10 @@
 			fire_only_once = yes
 
 			available = {
-				has_country_flag = IRE_red_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+									has_country_flag = IRE_red_path
+				}
 				has_completed_focus = IRE_R_end_union
 			}
 
@@ -210,7 +238,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_shadow_arsenal
 			}
 
@@ -237,7 +268,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_christmas_raid
 			}
 
@@ -263,9 +297,15 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_ind_smuggle_net
-				NOT = { has_country_flag = IRE_dark_surrender }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_surrender_free
+					NOT = { has_country_flag = IRE_dark_surrender }
+				}
 			}
 
 			visible = {
@@ -291,7 +331,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_shadow_arsenal
 			}
 
@@ -316,9 +359,15 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_s_plan
-				NOT = { has_country_flag = IRE_dark_surrender }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_surrender_free
+					NOT = { has_country_flag = IRE_dark_surrender }
+				}
 			}
 
 			visible = {
@@ -343,12 +392,21 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_abwehr_guests
-				NOT = { has_country_flag = IRE_dark_surrender }
-				OR = {
-					NOT = { has_variable = IRE_german_mission }
-					check_variable = { IRE_german_mission < 3 }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_surrender_free
+					NOT = { has_country_flag = IRE_dark_surrender }
+				}
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_repeat_cap_3
+									OR = {
+										NOT = { has_variable = IRE_german_mission }
+										check_variable = { IRE_german_mission < 3 }
+									}
 				}
 			}
 
@@ -379,7 +437,10 @@
 			fire_only_once = yes
 
 			available = {
-				has_country_flag = IRE_dark_path
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_path_on
+									has_country_flag = IRE_dark_path
+				}
 				has_completed_focus = IRE_X_end_westburg
 			}
 
@@ -393,5 +454,133 @@
 			}
 
 			ai_will_do = { base = 40 }
+		}
+	}
+
+	# ============================================================
+	# 红线·工业与经济决议（工人共和国后解锁）
+	# ============================================================
+
+	IRE_R_econ_cat = {
+
+		# ---- 银行国有化（一次性，触发事件） ----
+		IRE_R_econ_banks = {
+			icon = generic_industry
+			cost = 150
+			fire_only_once = yes
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+					has_country_flag = IRE_red_path
+				}
+				has_completed_focus = IRE_R_workers_republic
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+			}
+
+			complete_effect = {
+				random_owned_controlled_state = {
+					limit = { free_building_slots = { building = industrial_complex free_slots > 0 } }
+					add_building_construction = { type = industrial_complex level = 1 instant = yes }
+				}
+				country_event = { id = ire.122 days = 1 }
+				custom_effect_tooltip = IRE_tt_R_econ_banks
+			}
+
+			ai_will_do = { base = 40 }
+		}
+
+		# ---- 战时经济动员（军备推进后，可重复） ----
+		IRE_R_econ_arms = {
+			icon = generic_industry
+			cost = 200
+			days_re_enable = 240
+			fire_only_once = no
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+					has_country_flag = IRE_red_path
+				}
+				has_completed_focus = IRE_R_ind_arms_drive
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+			}
+
+			complete_effect = {
+				add_timed_idea = { idea = IRE_R_war_economy days = 360 }
+				random_owned_controlled_state = {
+					limit = { free_building_slots = { building = industrial_complex free_slots > 0 } }
+					add_building_construction = { type = industrial_complex level = 1 instant = yes }
+				}
+				custom_effect_tooltip = IRE_tt_R_econ_arms
+			}
+
+			ai_will_do = { base = 40 }
+		}
+
+		# ---- 农业集体化（一次性） ----
+		IRE_R_econ_farms = {
+			icon = generic_industry
+			cost = 120
+			fire_only_once = yes
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+					has_country_flag = IRE_red_path
+				}
+				has_completed_focus = IRE_R_workers_republic
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+			}
+
+			complete_effect = {
+				add_timed_idea = { idea = IRE_R_collective_farms days = 720 }
+				add_manpower = 5000
+				custom_effect_tooltip = IRE_tt_R_econ_farms
+			}
+
+			ai_will_do = { base = 35 }
+		}
+
+		# ---- 基建突击（可重复） ----
+		IRE_R_econ_infra = {
+			icon = generic_construction
+			cost = 100
+			days_re_enable = 180
+			fire_only_once = no
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_red_path_on
+					has_country_flag = IRE_red_path
+				}
+				has_completed_focus = IRE_R_workers_republic
+			}
+
+			visible = {
+				has_country_flag = IRE_red_path
+			}
+
+			complete_effect = {
+				random_owned_controlled_state = {
+					limit = {
+						infrastructure < 5
+						free_building_slots = { building = infrastructure free_slots > 0 }
+					}
+					add_building_construction = { type = infrastructure level = 1 instant = yes }
+				}
+				custom_effect_tooltip = IRE_tt_R_econ_infra
+			}
+
+			ai_will_do = { base = 35 }
 		}
 	}

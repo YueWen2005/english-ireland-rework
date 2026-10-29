@@ -16,17 +16,23 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			113 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_leinster_count }
-				check_variable = { IRE_dev_leinster_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_leinster_count }
+								check_variable = { IRE_dev_leinster_count < 7 }
+							}
 			}
 		}
 
 		visible = {
 			has_idea = IRE_home_development
-			OR = {
-				NOT = { has_variable = IRE_dev_leinster_count }
-				check_variable = { IRE_dev_leinster_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_leinster_count }
+								check_variable = { IRE_dev_leinster_count < 7 }
+							}
 			}
 		}
 		fire_only_once = no
@@ -59,17 +65,23 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			135 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_munster_count }
-				check_variable = { IRE_dev_munster_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_munster_count }
+								check_variable = { IRE_dev_munster_count < 7 }
+							}
 			}
 		}
 
 		visible = {
 			has_idea = IRE_home_development
-			OR = {
-				NOT = { has_variable = IRE_dev_munster_count }
-				check_variable = { IRE_dev_munster_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_munster_count }
+								check_variable = { IRE_dev_munster_count < 7 }
+							}
 			}
 		}
 		fire_only_once = no
@@ -102,17 +114,23 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			134 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_connaught_count }
-				check_variable = { IRE_dev_connaught_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_connaught_count }
+								check_variable = { IRE_dev_connaught_count < 7 }
+							}
 			}
 		}
 
 		visible = {
 			has_idea = IRE_home_development
-			OR = {
-				NOT = { has_variable = IRE_dev_connaught_count }
-				check_variable = { IRE_dev_connaught_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_connaught_count }
+								check_variable = { IRE_dev_connaught_count < 7 }
+							}
 			}
 		}
 		fire_only_once = no
@@ -146,18 +164,24 @@ IRE_home_cat = {
 		available = {
 			has_idea = IRE_home_development
 			119 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_ulster_count }
-				check_variable = { IRE_dev_ulster_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_ulster_count }
+								check_variable = { IRE_dev_ulster_count < 7 }
+							}
 			}
 		}
 
 		visible = {
 			has_idea = IRE_home_development
 			119 = { is_owned_by = ROOT }
-			OR = {
-				NOT = { has_variable = IRE_dev_ulster_count }
-				check_variable = { IRE_dev_ulster_count < 7 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_7
+							OR = {
+								NOT = { has_variable = IRE_dev_ulster_count }
+								check_variable = { IRE_dev_ulster_count < 7 }
+							}
 			}
 		}
 		fire_only_once = no
@@ -417,7 +441,10 @@ IRE_home_cat = {
 		# 研究槽只给一次：fire_only_once + flag 双保险
 		available = {
 			has_idea = IRE_home_development
-			NOT = { has_country_flag = IRE_national_research_done }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_national_research
+							NOT = { has_country_flag = IRE_national_research_done }
+			}
 		}
 		visible = {
 			has_idea = IRE_home_development
@@ -526,9 +553,12 @@ IRE_congress_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_green_dollar
-			OR = {
-				NOT = { has_variable = IRE_bonds_count }
-				check_variable = { IRE_bonds_count < 3 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_3
+							OR = {
+								NOT = { has_variable = IRE_bonds_count }
+								check_variable = { IRE_bonds_count < 3 }
+							}
 			}
 		}
 
@@ -559,9 +589,12 @@ IRE_congress_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_wild_geese_legion
-			OR = {
-				NOT = { has_variable = IRE_wild_geese_calls }
-				check_variable = { IRE_wild_geese_calls < 3 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_3
+							OR = {
+								NOT = { has_variable = IRE_wild_geese_calls }
+								check_variable = { IRE_wild_geese_calls < 3 }
+							}
 			}
 		}
 
@@ -592,9 +625,12 @@ IRE_congress_cat = {
 			has_completed_focus = IRE_A_green_dollar
 			country_exists = USA
 			USA = { has_opinion = { target = ROOT value > 49 } }
-			OR = {
-				NOT = { has_variable = IRE_us_surplus_count }
-				check_variable = { IRE_us_surplus_count < 2 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_2
+							OR = {
+								NOT = { has_variable = IRE_us_surplus_count }
+								check_variable = { IRE_us_surplus_count < 2 }
+							}
 			}
 		}
 
@@ -622,9 +658,12 @@ IRE_congress_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_atlantic_fleet
-			OR = {
-				NOT = { has_variable = IRE_escort_count }
-				check_variable = { IRE_escort_count < 2 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_2
+							OR = {
+								NOT = { has_variable = IRE_escort_count }
+								check_variable = { IRE_escort_count < 2 }
+							}
 			}
 		}
 
@@ -651,9 +690,12 @@ IRE_congress_cat = {
 
 		available = {
 			has_completed_focus = IRE_A_air_bridge
-			OR = {
-				NOT = { has_variable = IRE_ferry_count }
-				check_variable = { IRE_ferry_count < 2 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_2
+							OR = {
+								NOT = { has_variable = IRE_ferry_count }
+								check_variable = { IRE_ferry_count < 2 }
+							}
 			}
 		}
 
@@ -714,9 +756,12 @@ IRE_interference_cat = {
 		available = {
 			has_completed_focus = IRE_A_irish_question
 			country_exists = ENG
-			OR = {
-				NOT = { has_variable = IRE_strike_count }
-				check_variable = { IRE_strike_count < 2 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_2
+							OR = {
+								NOT = { has_variable = IRE_strike_count }
+								check_variable = { IRE_strike_count < 2 }
+							}
 			}
 		}
 
@@ -794,9 +839,12 @@ IRE_interference_cat = {
 			has_completed_focus = IRE_A_tammany_hall
 			country_exists = USA
 			USA = { has_opinion = { target = ROOT value > 49 } }
-			OR = {
-				NOT = { has_variable = IRE_us_volunteers_count }
-				check_variable = { IRE_us_volunteers_count < 3 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_3
+							OR = {
+								NOT = { has_variable = IRE_us_volunteers_count }
+								check_variable = { IRE_us_volunteers_count < 3 }
+							}
 			}
 		}
 
@@ -851,9 +899,12 @@ IRE_interference_cat = {
 			has_completed_focus = IRE_A_wild_geese_paris
 			country_exists = FRA
 			NOT = { FRA = { has_capitulated = yes } }
-			OR = {
-				NOT = { has_variable = IRE_french_arms_count }
-				check_variable = { IRE_french_arms_count < 2 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_2
+							OR = {
+								NOT = { has_variable = IRE_french_arms_count }
+								check_variable = { IRE_french_arms_count < 2 }
+							}
 			}
 		}
 

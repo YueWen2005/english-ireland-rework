@@ -67,3 +67,9 @@ IRE_X_stage_cat = {
 	priority = 88
 	allowed = { original_tag = IRE }
 }
+
+IRE_R_econ_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 88
+	allowed = { original_tag = IRE }
+}

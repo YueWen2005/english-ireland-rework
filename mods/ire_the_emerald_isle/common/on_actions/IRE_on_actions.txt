@@ -44,11 +44,11 @@ on_actions = {
 					}
 				}
 
-				# ---- C红线：吹红途中英国提前对爱宣战 → 英国爆发低强度内战 ----
+				# ---- C红线：吹红途中（三位一体情报网建成后）英国提前对爱宣战 → 英国爆发低强度内战 ----
 				if = {
 					limit = {
 						has_country_flag = IRE_red_path
-						has_completed_focus = IRE_R_end_red_britain
+						has_completed_focus = IRE_R_end_trinity
 						NOT = { has_completed_focus = IRE_R_end_ulster }
 						NOT = { has_country_flag = IRE_eng_early_revolution }
 						country_exists = ENG
@@ -63,6 +63,41 @@ on_actions = {
 					ENG = {
 						start_civil_war = { ideology = communism size = 0.25 }
 					}
+				}
+
+				# ---- C红线：攻入不列颠本土，英国失去本土 → 英国投降，英爱合并为不列颠-爱尔兰人民联盟 ----
+				if = {
+					limit = {
+						has_country_flag = IRE_red_path
+						NOT = { has_country_flag = IRE_red_britain_merged }
+						any_country = {
+							original_tag = ENG
+							exists = yes
+							has_capitulated = no
+							has_civil_war = no
+							NOT = { tag = IRE }
+							NOT = {
+								any_controlled_state = {
+									is_core_of = ENG
+									is_on_continent = europe
+									NOT = { state = 119 }
+								}
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							original_tag = ENG
+							exists = yes
+							has_civil_war = no
+							NOT = { tag = IRE }
+						}
+						IRE = { annex_country = { target = PREV transfer_troops = yes } }
+					}
+					IRE_R_become_british_union = yes
+					add_ideas = IRE_world_revolution_hq
+					set_country_flag = IRE_red_britain_merged
+					country_event = { id = ire.113 days = 1 }
 				}
 
 				# ---- 公投支持度：稳定度 ≥ 60% 一次性 +10 ----

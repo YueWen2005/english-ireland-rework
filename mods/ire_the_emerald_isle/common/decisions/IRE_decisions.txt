@@ -11,7 +11,10 @@
 
 			available = {
 				has_completed_focus = IRE_border_plebiscite
-				NOT = { has_country_flag = IRE_border_done }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_border_not_done
+									NOT = { has_country_flag = IRE_border_done }
+				}
 				check_variable = { IRE_unity_campaign_count < 5 }
 			}
 
@@ -52,7 +55,10 @@
 			days_remove = 60
 
 			available = {
-				has_variable = IRE_diaspora_network
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_diaspora_net
+									has_variable = IRE_diaspora_network
+				}
 			}
 
 			visible = {
@@ -127,7 +133,10 @@
 
 			available = {
 				has_completed_focus = IRE_A_reconciliation
-				NOT = { has_country_flag = IRE_border_done }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_border_not_done
+									NOT = { has_country_flag = IRE_border_done }
+				}
 			}
 
 			visible = {
@@ -245,7 +254,10 @@
 
 			available = {
 				has_completed_focus = IRE_A_newfoundland
-				NOT = { has_country_flag = IRE_nf_resolved }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_nf_not_resolved
+									NOT = { has_country_flag = IRE_nf_resolved }
+				}
 			}
 
 			visible = {
@@ -425,7 +437,10 @@
 			days_remove = 30
 
 			available = {
-				has_country_flag = IRE_ira_tolerated
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_ira_tolerated
+									has_country_flag = IRE_ira_tolerated
+				}
 			}
 
 			visible = {
@@ -551,7 +566,10 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_docks_open
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_docks_open
+									has_country_flag = IRE_docks_open
+				}
 			}
 
 			visible = {
@@ -575,8 +593,14 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_transport_cells
-				NOT = { has_country_flag = IRE_dark_surrender }
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_transport_cells
+									has_country_flag = IRE_transport_cells
+				}
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_dark_surrender_free
+					NOT = { has_country_flag = IRE_dark_surrender }
+				}
 			}
 
 			visible = {
@@ -601,14 +625,29 @@
 			fire_only_once = no
 
 			available = {
-				has_country_flag = IRE_reading_classes
+				custom_trigger_tooltip = {
+					tooltip = IRE_tt_reading_classes
+									has_country_flag = IRE_reading_classes
+				}
 				OR = {
 					AND = {
-						has_country_flag = IRE_unity_cap_high
-						check_variable = { IRE_red_unity < 110 }
+						custom_trigger_tooltip = {
+							tooltip = IRE_tt_unity_cap_high_on
+							has_country_flag = IRE_unity_cap_high
+						}
+						custom_trigger_tooltip = {
+							tooltip = IRE_tt_red_unity_110
+													check_variable = { IRE_red_unity < 110 }
+						}
 					}
 					AND = {
-						NOT = { has_country_flag = IRE_unity_cap_high }
+						custom_trigger_tooltip = {
+							tooltip = IRE_tt_unity_cap_high_off
+													custom_trigger_tooltip = {
+											tooltip = IRE_tt_unity_cap_high_off
+											NOT = { has_country_flag = IRE_unity_cap_high }
+										}
+						}
 						check_variable = { IRE_red_unity < 100 }
 					}
 				}
