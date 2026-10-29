@@ -3236,7 +3236,7 @@ focus_tree = {
 				ideology = democratic
 				size = 0.01
 				states = { 134 135 }
-				capital = 7394
+				capital = 135
 			}
 			# 叛军象征性保留 3 个师（v2.8.0）：规模折算降到最低，由 OOB 补足 3 个师，
 			# 轻降战支稳定削弱但不清场

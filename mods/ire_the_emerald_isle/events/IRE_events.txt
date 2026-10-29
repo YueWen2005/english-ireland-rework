@@ -658,7 +658,7 @@ country_event = {
 				ideology = democratic
 				size = 0.01
 				states = { 134 135 }
-				capital = 7394
+				capital = 135
 			}
 			# 叛军象征性保留 3 个师（v2.8.0）
 			every_other_country = {
