@@ -3980,7 +3980,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_cottage
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 8
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_shadow_arsenal }
@@ -4003,7 +4003,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_hidden_cove
 		icon = GFX_goal_generic_military_deal
-		cost = 8
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_cottage }
@@ -4025,7 +4025,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_smuggle_net
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 8
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_cottage }
@@ -4046,7 +4046,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_border_route
 		icon = GFX_goal_generic_allies_build_infantry
-		cost = 8
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
@@ -4070,7 +4070,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_dundalk_depot
 		icon = GFX_goal_generic_allies_build_infantry
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_border_route }
@@ -4095,7 +4095,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_german_tech
 		icon = GFX_goal_generic_scientific_exchange
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_X_ind_smuggle_net }
@@ -4118,7 +4118,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_s_plan_loot
 		icon = GFX_goal_generic_occupy_start_war
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_german_tech }
@@ -4143,7 +4143,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_intel_net
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_X_ind_german_tech }
@@ -4164,7 +4164,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_black_market
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 12
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_X_ind_s_plan_loot }
@@ -4189,7 +4189,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_uboat_dock
 		icon = GFX_goal_generic_build_navy
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
 		prerequisite = { focus = IRE_X_ind_hidden_cove }
@@ -4209,7 +4209,7 @@ focus_tree = {
 	focus = {
 		id = IRE_X_ind_assembly
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_ind_dundalk_depot }
@@ -4985,7 +4985,7 @@ OR = {
 	focus = {
 		id = IRE_X_end_planning
 		icon = GFX_goal_generic_army_doctrines
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_X_green_action }
@@ -5003,7 +5003,7 @@ OR = {
 	focus = {
 		id = IRE_X_end_sealion
 		icon = GFX_goal_generic_military_sphere
-		cost = 10
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_X_end_planning }
@@ -5022,7 +5022,7 @@ OR = {
 	focus = {
 		id = IRE_X_end_liverpool
 		icon = GFX_goal_generic_occupy_start_war
-		cost = 15
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_X_end_planning }
@@ -5048,7 +5048,7 @@ OR = {
 	focus = {
 		id = IRE_X_end_westburg
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 15
+		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		prerequisite = { focus = IRE_X_end_liverpool }

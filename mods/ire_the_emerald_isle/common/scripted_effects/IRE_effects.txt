@@ -393,3 +393,50 @@ IRE_X_become_albion_empire = {
 		add_named_threat = { threat = 10 name = IRE_threat_focus }
 	}
 }
+
+# ============================================================
+# D 黑线：确保德国由希特勒领导
+# 黑线剧情以纳粹德国为唯一合作对象（S 计划、德国技术组、
+# 新秩序体系都建立在希特勒政权存续的前提上）。原版 WUW
+# 奥地利事件、AI 走非史实路线或政变都可能让希特勒下台，
+# 一旦发生，黑线后半段就会失去叙事支点，因此每月守卫一次。
+# 仅在：德国存在、无内战、未与爱尔兰交战时强行复位。
+# ============================================================
+IRE_X_ensure_hitler = {
+	if = {
+		limit = {
+			country_exists = GER
+			NOT = { has_war_with = GER }
+			GER = {
+				exists = yes
+				has_civil_war = no
+				NOT = { has_country_leader = { character = GER_adolf_hitler } }
+			}
+		}
+		GER = {
+			# 政体被换掉（共产/民主政变）时先拉回法西斯
+			if = {
+				limit = { NOT = { has_government = fascism } }
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+			}
+			# 被 retire 后需重新招募，character 定义自带 country_leader 角色
+			if = {
+				limit = { NOT = { has_character = GER_adolf_hitler } }
+				recruit_character = GER_adolf_hitler
+			}
+			# 重新授职并提拔为执政领袖（纳粹意识形态、元首特性）
+			add_country_leader_role = {
+				character = GER_adolf_hitler
+				promote_leader = yes
+				country_leader = {
+					ideology = nazism
+					expire = "1965.1.1.1"
+					traits = { GER_der_fuhrer }
+				}
+			}
+		}
+	}
+}

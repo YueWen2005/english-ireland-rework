@@ -196,6 +196,16 @@ on_actions = {
 				country_event = { id = ire.65 days = 0 }
 			}
 
+			# ---- 黑线：保证德国由希特勒领导（政变/退休后自动复位）----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					NOT = { has_country_flag = IRE_dark_surrender }
+				}
+				IRE_X_ensure_hitler = yes
+			}
+
 			# ---- 黑线：曝光度月增与阈值（IRA 内战线）----
 			if = {
 				limit = {
