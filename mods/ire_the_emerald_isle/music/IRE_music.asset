@@ -1,0 +1,35 @@
+music = {
+	name = "ire_a_peace"
+	file = "ire_a_peace.ogg"
+	volume = 0.6
+}
+
+music = {
+	name = "ire_a_war"
+	file = "ire_a_war.ogg"
+	volume = 0.6
+}
+
+music = {
+	name = "ire_a_new_world"
+	file = "ire_a_new_world.ogg"
+	volume = 0.6
+}
+
+music = {
+	name = "ire_a_anthem"
+	file = "ire_a_anthem.ogg"
+	volume = 0.6
+}
+
+music = {
+	name = "ire_b_free_state"
+	file = "ire_b_free_state.ogg"
+	volume = 0.6
+}
+
+music = {
+	name = "ire_a_foggy_dew"
+	file = "ire_a_foggy_dew.ogg"
+	volume = 0.6
+}

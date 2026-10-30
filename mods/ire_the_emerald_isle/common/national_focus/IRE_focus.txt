@@ -58,6 +58,10 @@ focus_tree = {
 			set_variable = { IRE_plebiscite_support = 45 }
 			set_country_flag = IRE_campaign_started
 			custom_effect_tooltip = IRE_effect_plebiscite_support_45
+			if = {
+				limit = { is_ai = no }
+				hidden_effect = { play_song = "ire_a_peace" }
+			}
 		}
 	}
 
@@ -1313,6 +1317,10 @@ focus_tree = {
 			add_offsite_building = { type = industrial_complex level = 3 }
 			custom_effect_tooltip = IRE_effect_new_world_ireland
 			country_event = { id = ire_nw.34 days = 1 }
+			if = {
+				limit = { is_ai = no }
+				play_song = "ire_a_new_world"
+			}
 		}
 	}
 
@@ -1356,6 +1364,10 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_final_ascension
 			add_war_support = 0.10
+			if = {
+				limit = { is_ai = no }
+				play_song = "ire_a_new_world"
+			}
 		}
 	}
 
@@ -1640,6 +1652,10 @@ focus_tree = {
 			add_stability = 0.05
 			add_war_support = 0.05
 			country_event = { id = ire.70 days = 1 }
+			if = {
+				limit = { is_ai = no }
+				play_song = "ire_a_new_world"
+			}
 		}
 	}
 

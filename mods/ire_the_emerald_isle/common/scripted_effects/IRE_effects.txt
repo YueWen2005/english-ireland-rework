@@ -255,6 +255,11 @@ IRE_defend_ireland_check = {
 		if = {
 			limit = { has_war = yes }
 			if = {
+				limit = { is_ai = no NOT = { has_country_flag = IRE_foggy_dew_played } surrender_progress > 0.29 }
+				set_country_flag = IRE_foggy_dew_played
+				play_song = "ire_a_foggy_dew"
+			}
+			if = {
 				limit = { surrender_progress > 0.74 }
 				if = {
 					limit = { NOT = { has_idea = IRE_defend_ireland_5 } }
@@ -263,6 +268,11 @@ IRE_defend_ireland_check = {
 					remove_ideas = IRE_defend_ireland_3
 					remove_ideas = IRE_defend_ireland_4
 					add_ideas = IRE_defend_ireland_5
+					if = {
+						limit = { is_ai = no NOT = { has_country_flag = IRE_a_anthem_played } }
+						set_country_flag = IRE_a_anthem_played
+						play_song = "ire_a_anthem"
+					}
 				}
 			}
 			else_if = {

@@ -77,6 +77,7 @@ ideas = {
 				send_volunteer_size = 8
 				send_volunteer_factor = 0.25
 				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -1
 			}
 			removal_cost = -1
 		}

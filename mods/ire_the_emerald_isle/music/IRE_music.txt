@@ -1,0 +1,145 @@
+music_station = "base_music"
+
+# A线和平：只由《边境公投》完成时点播一次，不参与环境随机
+music = {
+	song = "ire_a_peace"
+	chance = {
+		factor = 0
+	}
+}
+
+# A线战争
+music = {
+	song = "ire_a_war"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { original_tag = IRE }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_completed_focus = IRE_border_plebiscite }
+		}
+		modifier = {
+			factor = 0
+			has_war = no
+		}
+		modifier = {
+			factor = 0.4
+			has_cosmetic_tag = IRE_new_world
+		}
+		modifier = {
+			factor = 0.3
+			has_idea = IRE_defend_ireland_5
+		}
+		modifier = {
+			factor = 6
+			has_war = yes
+		}
+	}
+}
+
+# A线新世界
+music = {
+	song = "ire_a_new_world"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { original_tag = IRE }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_cosmetic_tag = IRE_new_world
+					has_completed_focus = IRE_A_masters_new_world
+				}
+			}
+		}
+		modifier = {
+			factor = 12
+			OR = {
+				has_cosmetic_tag = IRE_new_world
+				has_completed_focus = IRE_A_masters_new_world
+			}
+		}
+	}
+}
+
+# 五级保卫爱尔兰：国歌
+music = {
+	song = "ire_a_anthem"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { original_tag = IRE }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_idea = IRE_defend_ireland_5 }
+		}
+		modifier = {
+			factor = 10
+			has_idea = IRE_defend_ireland_5
+		}
+	}
+}
+
+# B线自由邦/中立
+music = {
+	song = "ire_b_free_state"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { original_tag = IRE }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_completed_focus = IRE_consolidate_free_state }
+		}
+		modifier = {
+			factor = 4
+			has_war = no
+		}
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
+	}
+}
+
+# A线三级保卫爱尔兰：The Foggy Dew
+music = {
+	song = "ire_a_foggy_dew"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { original_tag = IRE }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_completed_focus = IRE_border_plebiscite }
+		}
+		modifier = {
+			factor = 0
+			has_war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { surrender_progress > 0.29 }
+		}
+		modifier = {
+			factor = 0
+			has_idea = IRE_defend_ireland_5
+		}
+		modifier = {
+			factor = 4
+			surrender_progress > 0.29
+		}
+	}
+}
