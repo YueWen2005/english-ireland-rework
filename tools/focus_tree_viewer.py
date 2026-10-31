@@ -127,6 +127,79 @@ def strict_intersection(p1, p2, p3, p4):
     return (px, py)
 
 
+def orthogonal_metrics(nodes, edges, by_id):
+    """Approximate HOI4's elbow connectors: vertical, horizontal at child.y-0.5, vertical."""
+    horiz = {}
+    verts = []
+    for a, b in edges:
+        na, nb = by_id[a], by_id[b]
+        xp, yp = na["x"], na["y"]
+        xc, yc = nb["x"], nb["y"]
+        if xp == xc:
+            verts.append((xp, yp, yc, a, b))
+        else:
+            yh = yc - 0.5
+            horiz.setdefault(yh, []).append((min(xp, xc), max(xp, xc), a, b))
+            verts.append((xp, yp, yh, a, b))
+            verts.append((xc, yh, yc, a, b))
+    total = 0.0
+    max_span = 0.0
+    for y, segs in horiz.items():
+        segs.sort()
+        merged = []
+        for s, e, a, b in segs:
+            if merged and s <= merged[-1][1] + 1e-9:
+                merged[-1][1] = max(merged[-1][1], e)
+                merged[-1][2].append((a, b))
+            else:
+                merged.append([s, e, [(a, b)]])
+        for s, e, _ in merged:
+            total += e - s
+            max_span = max(max_span, e - s)
+    crossings = []
+    seen = set()
+    for y, segs in horiz.items():
+        for s, e, a, b in segs:
+            for x, y1, y2, c, d in verts:
+                if y1 < y < y2 and s < x < e and len({a, b, c, d}) == 4:
+                    key = (round(x, 3), round(y, 3), tuple(sorted((a, b))), tuple(sorted((c, d))))
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    crossings.append({"x": round(x, 3), "y": round(y, 3), "a": [a, b], "b": [c, d]})
+    crossings.sort(key=lambda z: (z["y"], z["x"]))
+    vthrough = []
+    seen2 = set()
+    for x, y1, y2, a, b in verts:
+        for n in nodes:
+            if n["id"] in (a, b):
+                continue
+            if n["x"] == x and y1 + 0.01 < n["y"] < y2 - 0.01:
+                key = (n["id"], a, b)
+                if key not in seen2:
+                    seen2.add(key)
+                    vthrough.append({"node": n["id"], "a": a, "b": b})
+    me_seen = set()
+    me_spans = []
+    node_ids = {n["id"] for n in nodes}
+    for n in nodes:
+        for m in n["me"]:
+            if m not in node_ids:
+                continue
+            pair = tuple(sorted((n["id"], m)))
+            if pair in me_seen:
+                continue
+            me_seen.add(pair)
+            me_spans.append(abs(by_id[pair[0]]["x"] - by_id[pair[1]]["x"]))
+    return {
+        "crossings": crossings,
+        "maxSpan": round(max_span, 3),
+        "totalSpan": round(total, 3),
+        "verticalThrough": vthrough,
+        "meMaxSpan": max(me_spans) if me_spans else 0,
+    }
+
+
 def analyse(nodes):
     by_id = {n["id"]: n for n in nodes}
     edges = []
@@ -190,9 +263,15 @@ def analyse(nodes):
         "minY": min(n["y"] for n in nodes),
         "maxY": max(n["y"] for n in nodes),
     }
+    all_ortho = orthogonal_metrics(nodes, edges, by_id)
+    for g, band in bands.items():
+        sub_nodes = [n for n in nodes if n["g"] == g]
+        sub_edges = [(a, b) for a, b in edges if by_id[a]["g"] == g and by_id[b]["g"] == g]
+        band["ortho"] = orthogonal_metrics(sub_nodes, sub_edges, by_id)
     return {
         "edges": edges,
         "crossings": crossings,
+        "ortho": all_ortho,
         "sameRow": same_row,
         "duplicates": duplicates,
         "bands": bands,
@@ -241,7 +320,13 @@ def main():
     nodes = payload["nodes"]
     print(f"wrote {args.out}")
     print(f"  focuses: {len(nodes)}  bands: " + ", ".join(f"{g}={payload['bands'][g]['count']}" for g in BAND_ORDER if g in payload['bands']))
-    print(f"  crossings: {len(payload['crossings'])}  duplicates: {len(payload['duplicates'])}  same-row prereq: {len(payload['sameRow'])}")
+    print(f"  straight crossings: {len(payload['crossings'])}  duplicates: {len(payload['duplicates'])}  same-row prereq: {len(payload['sameRow'])}")
+    o = payload["ortho"]
+    print(f"  elbow crossings: {len(o['crossings'])}  max horizontal span: {o['maxSpan']}  vertical-through: {len(o['verticalThrough'])}  ME max span: {o['meMaxSpan']}")
+    for g in BAND_ORDER:
+        if g in payload["bands"]:
+            bo = payload["bands"][g]["ortho"]
+            print(f"    {g}: elbow crossings {len(bo['crossings'])}, max horizontal {bo['maxSpan']}, vertical-through {len(bo['verticalThrough'])}, ME {bo['meMaxSpan']}")
     print(f"  size: {args.out.stat().st_size / 1024:.1f} KiB")
 
 
@@ -364,7 +449,7 @@ HTML_TEMPLATE = r'''<!doctype html>
   .band-label-C { fill: var(--band-c); }
   .band-label-B { fill: var(--band-b); }
   #tree.detail .band-label { display: none; }
-  .edge { stroke: var(--edge); stroke-width: 1; opacity: .65; vector-effect: non-scaling-stroke; }
+  .edge { stroke: var(--edge); fill: none; stroke-width: 1; opacity: .65; vector-effect: non-scaling-stroke; }
   .edge.related { stroke: var(--accent); stroke-width: 1.6; opacity: 1; }
   .edge.dim { opacity: .12; }
   .edge.flash { stroke: var(--cross); stroke-width: 2.2; opacity: 1; }
@@ -372,7 +457,7 @@ HTML_TEMPLATE = r'''<!doctype html>
   .me-edge.related { opacity: .95; stroke-width: 1.5; }
   .me-edge.dim { opacity: .1; }
   .crossing { fill: none; stroke: var(--cross); stroke-width: 1.4; vector-effect: non-scaling-stroke; opacity: .9; }
-  #me-edges[hidden], #crossings[hidden] { display: none; }
+  #me-edges[hidden], .crossing-group[hidden] { display: none; }
   .node { cursor: pointer; }
   .node .hit { fill: transparent; }
   .node .node-box { stroke: var(--canvas); stroke-width: 1; vector-effect: non-scaling-stroke; }
@@ -466,6 +551,7 @@ HTML_TEMPLATE = r'''<!doctype html>
     </div>
     <div class="group">
       <label class="toggle" title="放大后显示国策名"><input type="checkbox" id="toggle-labels" checked> 名称</label>
+      <label class="toggle" title="按游戏样式绘制折线连接"><input type="checkbox" id="toggle-ortho" checked> 折线</label>
       <label class="toggle"><input type="checkbox" id="toggle-me"> 互斥线</label>
       <label class="toggle"><input type="checkbox" id="toggle-cross" checked> 交叉点</label>
       <label class="toggle"><input type="checkbox" id="toggle-theme"> 深色</label>
@@ -513,7 +599,8 @@ HTML_TEMPLATE = r'''<!doctype html>
   const nodeEls = new Map();
   const edgeEls = new Map();
   const meEls = [];
-  const crossingEls = [];
+  let orthoMode = true;
+  let scopeBand = "all";
   let view = { x: 0, y: 0, w: 100, h: 30 };
   let selectedId = null;
   let hoverId = null;
@@ -534,11 +621,21 @@ HTML_TEMPLATE = r'''<!doctype html>
     return e;
   }
 
+  function edgePath(a, b, ortho) {
+    const na = byId.get(a), nb = byId.get(b);
+    if (!na || !nb) return "";
+    if (!ortho || na.x === nb.x) return "M" + na.x + " " + na.y + "L" + nb.x + " " + nb.y;
+    const yh = nb.y - 0.5;
+    return "M" + na.x + " " + na.y + "L" + na.x + " " + yh + "L" + nb.x + " " + yh + "L" + nb.x + " " + nb.y;
+  }
+
   function buildSvg() {
     const bandsG = el("g", { id: "bands" }, svg);
     const edgesG = el("g", { id: "edges" }, svg);
     const meG = el("g", { id: "me-edges" }, svg);
     const crossG = el("g", { id: "crossings" }, svg);
+    const crossStraightG = el("g", { id: "crossings-straight", "class": "crossing-group" }, crossG);
+    const crossOrthoG = el("g", { id: "crossings-ortho", "class": "crossing-group" }, crossG);
     const nodesG = el("g", { id: "nodes" }, svg);
 
     for (const g of bandOrder) {
@@ -556,8 +653,8 @@ HTML_TEMPLATE = r'''<!doctype html>
     for (const [a, b] of DATA.edges) {
       const na = byId.get(a), nb = byId.get(b);
       if (!na || !nb) continue;
-      const line = el("line", {
-        x1: na.x, y1: na.y, x2: nb.x, y2: nb.y,
+      const line = el("path", {
+        d: edgePath(a, b, orthoMode),
         "class": "edge", "data-from": a, "data-to": b
       }, edgesG);
       edgeEls.set(a + ">" + b, line);
@@ -571,8 +668,12 @@ HTML_TEMPLATE = r'''<!doctype html>
         meSeen.add(key);
         const other = byId.get(m);
         if (!other) continue;
+        const sameX = n.x === other.x;
+        const x1 = Math.min(n.x, other.x), x2 = Math.max(n.x, other.x);
+        const y1 = sameX ? Math.min(n.y, other.y) : Math.max(n.y, other.y);
+        const y2 = sameX ? Math.max(n.y, other.y) : y1;
         const line = el("line", {
-          x1: n.x, y1: n.y, x2: other.x, y2: other.y,
+          x1: x1, y1: y1, x2: x2, y2: y2,
           "class": "me-edge", "data-a": n.id, "data-b": m
         }, meG);
         el("title", {}, line).textContent = "互斥：" + n.name + " / " + other.name;
@@ -580,12 +681,15 @@ HTML_TEMPLATE = r'''<!doctype html>
       }
     }
 
-    DATA.crossings.forEach((c, idx) => {
-      const circle = el("circle", { cx: c.x, cy: c.y, r: 0.22, "class": "crossing" }, crossG);
-      const title = el("title", {}, circle);
-      title.textContent = "交叉 " + (idx + 1) + "：" + c.a[0] + " → " + c.a[1] + " × " + c.b[0] + " → " + c.b[1];
-      crossingEls.push(circle);
-    });
+    function drawCrossings(list, parent, label) {
+      list.forEach((c, idx) => {
+        const circle = el("circle", { cx: c.x, cy: c.y, r: 0.22, "class": "crossing" }, parent);
+        const title = el("title", {}, circle);
+        title.textContent = label + " " + (idx + 1) + "：" + c.a[0] + " → " + c.a[1] + " × " + c.b[0] + " → " + c.b[1];
+      });
+    }
+    drawCrossings(DATA.crossings, crossStraightG, "直线交叉");
+    drawCrossings(DATA.ortho.crossings, crossOrthoG, "折线交叉");
 
     for (const n of DATA.nodes) {
       const g = el("g", {
@@ -701,9 +805,13 @@ HTML_TEMPLATE = r'''<!doctype html>
   }
 
   function setActiveBand(g) {
+    const key = g || "all";
+    const changed = key !== scopeBand;
+    scopeBand = key;
     document.querySelectorAll("#band-buttons .tbtn").forEach(b => {
       b.classList.toggle("active", b.dataset.band === (g || ""));
     });
+    if (changed) updateStats();
   }
 
   function focusBand(g) {
@@ -778,6 +886,43 @@ HTML_TEMPLATE = r'''<!doctype html>
     });
   }
 
+  function currentCrossings() {
+    if (!orthoMode) return DATA.crossings;
+    if (scopeBand !== "all" && bandMeta[scopeBand]) return bandMeta[scopeBand].ortho.crossings;
+    return DATA.ortho.crossings;
+  }
+
+  function updateCrossingVisibility() {
+    const show = $("#toggle-cross").checked;
+    $("#crossings-straight").hidden = !show || orthoMode;
+    $("#crossings-ortho").hidden = !show || !orthoMode;
+  }
+
+  function applyEdgeMode() {
+    orthoMode = $("#toggle-ortho").checked;
+    edgeEls.forEach((pathEl, key) => {
+      const parts = key.split(">");
+      pathEl.setAttribute("d", edgePath(parts[0], parts[1], orthoMode));
+    });
+    updateCrossingVisibility();
+    updateStats();
+  }
+
+  function updateStats() {
+    const inBand = orthoMode && scopeBand !== "all" && bandMeta[scopeBand];
+    const scope = inBand ? bandMeta[scopeBand].label : "全树";
+    let text = DATA.nodes.length + " 个国策 · " + Object.keys(bandMeta).length + " 条线 · " + scope;
+    if (orthoMode) {
+      const bo = inBand ? bandMeta[scopeBand].ortho : DATA.ortho;
+      text += " · 折线 " + bo.crossings.length + " 交叉 · 水平段最长 " + bo.maxSpan + " · 穿图标 " + bo.verticalThrough.length;
+    } else {
+      text += " · 直线 " + DATA.crossings.length + " 处交叉";
+    }
+    text += " · " + DATA.duplicates.length + " 个重复坐标";
+    $("#headline").textContent = text;
+    if (!selectedId) renderOverview();
+  }
+
   function chip(id, text) {
     const n = byId.get(id);
     return '<button class="chip" data-goto="' + esc(id) + '" title="' + esc(n ? n.name + " · " + id : id) + '">' + esc(text || (n ? n.name : id)) + "</button>";
@@ -793,21 +938,26 @@ HTML_TEMPLATE = r'''<!doctype html>
 
   function renderOverview() {
     const b = DATA.bounds;
-    const warn = DATA.crossings.length;
+    const inBand = orthoMode && scopeBand !== "all" && bandMeta[scopeBand];
+    const scopeOrtho = inBand ? bandMeta[scopeBand].ortho : DATA.ortho;
+    const crossingList = currentCrossings();
+    const warn = crossingList.length;
     let bandRows = "";
     for (const g of bandOrder) {
       const band = bandMeta[g];
       if (!band) continue;
       const root = band.roots.length ? byId.get(band.roots[0]) : null;
+      const bo = band.ortho;
       bandRows += '<tr><td><button class="band-row" data-band="' + g + '"><span class="sw" style="background:var(--band-' + g.toLowerCase() + ')"></span>' +
         esc(band.label) + '</button></td><td>' + band.count + " 个 · x " + band.minX + "–" + band.maxX + " · y " + band.minY + "–" + band.maxY +
+        (bo ? " · 水平段 " + bo.maxSpan + " · 穿图标 " + bo.verticalThrough.length + " · 互斥跨度 " + bo.meMaxSpan : "") +
         (root ? "<br><span class=\"muted\">起点：" + esc(root.name) + "</span>" : "") + "</td></tr>";
     }
     let crossRows = "";
-    if (DATA.crossings.length === 0) {
-      crossRows = '<div class="empty">没有线段交叉。</div>';
+    if (crossingList.length === 0) {
+      crossRows = '<div class="empty">没有交叉点。</div>';
     } else {
-      DATA.crossings.forEach((c, i) => {
+      crossingList.forEach((c, i) => {
         const a1 = byId.get(c.a[0]), a2 = byId.get(c.a[1]), b1 = byId.get(c.b[0]), b2 = byId.get(c.b[1]);
         crossRows += '<button class="cross-row" data-cross="' + i + '" title="定位到交叉点">' +
           '<span class="dot"></span>' + esc(a1 ? a1.name : c.a[0]) + " → " + esc(a2 ? a2.name : c.a[1]) +
@@ -834,20 +984,23 @@ HTML_TEMPLATE = r'''<!doctype html>
     panel.innerHTML =
       '<h2>布局总览</h2>' +
       '<div class="mono">' + esc(DATA.source) + "</div>" +
+      '<div class="muted">' + (inBand ? "折线指标范围：" + esc(bandMeta[scopeBand].label) + "（国策/分线为全树）" : "统计范围：全树") + "</div>" +
       '<div class="stat-grid">' +
         "<div><span>国策</span><strong>" + DATA.nodes.length + "</strong></div>" +
         "<div><span>分线</span><strong>" + Object.keys(bandMeta).length + "</strong></div>" +
-        "<div><span>连线交叉</span><strong class=\"" + (warn ? "warn" : "") + "\">" + warn + "</strong></div>" +
+        "<div><span>" + (orthoMode ? "折线交叉" : "直线交叉") + "</span><strong class=\"" + (warn ? "warn" : "") + "\">" + warn + "</strong></div>" +
+        "<div><span>水平段最长</span><strong>" + (orthoMode ? scopeOrtho.maxSpan : "—") + "</strong></div>" +
+        "<div><span>垂线穿图标</span><strong class=\"" + (orthoMode && scopeOrtho.verticalThrough.length ? "warn" : "") + "\">" + (orthoMode ? scopeOrtho.verticalThrough.length : "—") + "</strong></div>" +
         "<div><span>重复坐标</span><strong class=\"" + (DATA.duplicates.length ? "warn" : "") + "\">" + DATA.duplicates.length + "</strong></div>" +
         "<div><span>同排前置</span><strong class=\"" + (DATA.sameRow.length ? "warn" : "") + "\">" + DATA.sameRow.length + "</strong></div>" +
         "<div><span>互斥</span><strong>" + mePairs.size + "</strong></div>" +
         "<div><span>坐标范围</span><strong>" + b.minX + "–" + b.maxX + "</strong></div>" +
       "</div>" +
       "<h3>分线</h3><table class=\"band-table\">" + bandRows + "</table>" +
-      "<h3>交叉点</h3>" + crossRows +
+      "<h3>" + (orthoMode ? "折线交叉点" : "直线交叉点") + "</h3>" + crossRows +
       "<h3>同排前置</h3>" + sameRows +
       (dupRows ? "<h3>重复坐标</h3>" + dupRows : "") +
-      '<h3>操作</h3><div class="empty">粗描边是各线起点；拖动空白处平移，滚轮缩放；点击国策查看前置、后续与互斥；上方搜索可直接定位；勾选「互斥线」可显示全部互斥关系。键盘：方向键平移，+ / − 缩放，0 适应全树。</div>';
+      '<h3>操作</h3><div class="empty">粗描边是各线起点；拖动空白处平移，滚轮缩放；点击国策查看前置、后续与互斥；上方搜索可直接定位；勾选「互斥线」可显示全部互斥关系。「折线」按游戏样式绘制连接线，关闭后为直线示意。键盘：方向键平移，+ / − 缩放，0 适应全树。</div>';
   }
 
   function renderSelected(id) {
@@ -871,7 +1024,7 @@ HTML_TEMPLATE = r'''<!doctype html>
   }
 
   function flashCrossing(idx) {
-    const c = DATA.crossings[idx];
+    const c = currentCrossings()[idx];
     if (!c) return;
     const ar = svgAspect();
     const w = 16, h = w / ar;
@@ -946,9 +1099,8 @@ HTML_TEMPLATE = r'''<!doctype html>
   $("#toggle-me").addEventListener("change", e => {
     $("#me-edges").hidden = !e.target.checked;
   });
-  $("#toggle-cross").addEventListener("change", e => {
-    $("#crossings").hidden = !e.target.checked;
-  });
+  $("#toggle-cross").addEventListener("change", updateCrossingVisibility);
+  $("#toggle-ortho").addEventListener("change", applyEdgeMode);
   const themeBox = $("#toggle-theme");
   function setTheme(theme) {
     document.documentElement.dataset.theme = theme;
@@ -1047,11 +1199,10 @@ HTML_TEMPLATE = r'''<!doctype html>
   // Init
   buildSvg();
   $("#me-edges").hidden = !$("#toggle-me").checked;
-  $("#crossings").hidden = !$("#toggle-cross").checked;
-  $("#headline").textContent = DATA.nodes.length + " 个国策 · " + Object.keys(bandMeta).length + " 条线 · " +
-    DATA.crossings.length + " 处交叉 · " + DATA.duplicates.length + " 个重复坐标";
+  updateCrossingVisibility();
   $("#source").textContent = "源 " + DATA.source + " · 生成 " + DATA.generated;
   renderPanel();
+  updateStats();
   fitAll();
   requestAnimationFrame(() => {
     fitAll();
