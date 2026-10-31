@@ -533,7 +533,45 @@ IRE_royal_navy_defection_effect = {
 	set_country_flag = IRE_navy_defection_done
 	every_country = {
 		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
-		transfer_navy = { target = IRE }
+		# 只带走约四分之一的舰队：2 航母 / 4 战列 / 4 重巡 / 8 轻巡 / 12 驱逐 / 8 潜艇
+		transfer_ship = { type = carrier target = IRE exclude_refitting = yes }
+		transfer_ship = { type = carrier target = IRE exclude_refitting = yes }
+		transfer_ship = { type = battleship target = IRE exclude_refitting = yes }
+		transfer_ship = { type = battleship target = IRE exclude_refitting = yes }
+		transfer_ship = { type = battleship target = IRE exclude_refitting = yes }
+		transfer_ship = { type = battleship target = IRE exclude_refitting = yes }
+		transfer_ship = { type = heavy_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = heavy_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = heavy_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = heavy_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = light_cruiser target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = destroyer target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
+		transfer_ship = { type = submarine target = IRE exclude_refitting = yes }
 		add_ideas = IRE_ENG_navy_purge
 	}
 	country_event = { id = ire_nw.95 days = 0 }
@@ -542,9 +580,9 @@ IRE_royal_navy_defection_effect = {
 IRE_raf_defection_effect = {
 	add_ideas = IRE_raf_defection_idea
 	set_country_flag = IRE_raf_defection_done
-	add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 200 }
-	add_equipment_to_stockpile = { type = cas_equipment_1 amount = 100 }
-	air_experience = 50
+	add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 }
+	add_equipment_to_stockpile = { type = cas_equipment_1 amount = 25 }
+	air_experience = 25
 	every_country = {
 		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
 		add_ideas = IRE_ENG_air_purge

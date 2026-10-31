@@ -1732,40 +1732,47 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = country_event = {
 	id = ire_nw.93
 	title = ire_nw.93.t
 	desc = ire_nw.93.d
 	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
-	option = {
-		name = ire_nw.93.a
+	immediate = {
+		set_country_flag = IRE_france_red_started
 		if = {
 			limit = { FRA = { exists = yes NOT = { has_government = communism } NOT = { has_civil_war = yes } } }
 			FRA = {
-				add_popularity = { ideology = communism popularity = 0.10 }
-				start_civil_war = { ideology = communism size = 0.35 }
+				add_popularity = { ideology = communism popularity = 0.15 }
+				start_civil_war = { ideology = communism size = 0.60 }
+			}
+			every_country = {
+				limit = { original_tag = FRA has_government = communism }
+				add_manpower = 50000
+				add_war_support = 0.10
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 20000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 2000 }
 			}
 		}
-		set_country_flag = IRE_france_red_started
-		add_war_support = 0.02
-		custom_effect_tooltip = IRE_tt_france_red
+	}
+	option = {
+		name = ire_nw.93.a
+		add_war_support = 0.03
+		add_political_power = 25
 	}
 	option = {
 		name = ire_nw.93.b
-		if = {
-			limit = { FRA = { exists = yes } }
-			FRA = {
-				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 }
-				add_stability = 0.02
-			}
+		add_political_power = -25
+		every_country = {
+			limit = { original_tag = FRA has_government = communism }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 1000 }
 		}
-		add_stability = 0.01
 	}
 	option = {
 		name = ire_nw.93.c
-		add_political_power = 25
+		add_stability = 0.02
 	}
 }
 
