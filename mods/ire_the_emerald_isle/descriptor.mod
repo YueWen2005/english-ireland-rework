@@ -5,4 +5,4 @@ tags={
 	"National Focuses"
 	"Historical"
 }
-supported_version="2.13.0"
+supported_version="1.19.*"
