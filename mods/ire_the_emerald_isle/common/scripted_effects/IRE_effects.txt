@@ -569,9 +569,9 @@ IRE_red_sabotage_effect = {
 
 # ============================================================
 # E 吞并大英前的继承处理（ire.114 黑线分赃 / IRE_R_merge_red_britain 红线合并共用）
-#   1) 非洲殖民地（非核心）独立为「英属非洲」BWA
-#   2) 大英将领全部并入爱尔兰军队
-#   3) 大英核心领土同步成为爱尔兰核心
+#   1) 大英将领全部并入爱尔兰军队
+#   2) 大英核心领土同步成为爱尔兰核心
+#   3) 非洲殖民地独立为原生的独立国家（埃及、苏丹、肯尼亚……）
 #   必须在 annex_country 之前调用（否则 ENG 已消亡、将领无法转移）
 # ============================================================
 IRE_annex_britain_inherit = {
@@ -580,14 +580,6 @@ IRE_annex_britain_inherit = {
 			original_tag = ENG
 			NOT = { tag = IRE }
 			exists = yes
-		}
-		# 非洲殖民地独立
-		every_owned_state = {
-			limit = {
-				is_on_continent = africa
-				NOT = { is_core_of = PREV }
-			}
-			set_state_owner_to = BWA
 		}
 		# 将领继承
 		every_unit_leader = {
@@ -598,22 +590,69 @@ IRE_annex_britain_inherit = {
 			limit = { is_core_of = PREV }
 			add_core_of = IRE
 		}
+		# 非洲殖民地独立
+		IRE_eng_africa_transfer = yes
+	}
+}
+
+# ---- 英属非洲：按各州原生核心移交真实国家 ----
+IRE_eng_africa_transfer = {
+	every_owned_state = {
+		limit = {
+			is_on_continent = africa
+			NOT = { is_core_of = ENG }
+		}
+		if = { limit = { is_core_of = EGY } set_state_owner_to = EGY }
+		else_if = { limit = { is_core_of = SUD } set_state_owner_to = SUD }
+		else_if = { limit = { is_core_of = KEN } set_state_owner_to = KEN }
+		else_if = { limit = { is_core_of = UGA } set_state_owner_to = UGA }
+		else_if = { limit = { is_core_of = TZN } set_state_owner_to = TZN }
+		else_if = { limit = { is_core_of = NGA } set_state_owner_to = NGA }
+		else_if = { limit = { is_core_of = SIE } set_state_owner_to = SIE }
+		else_if = { limit = { is_core_of = GAM } set_state_owner_to = GAM }
+		else_if = { limit = { is_core_of = GHA } set_state_owner_to = GHA }
+		else_if = { limit = { is_core_of = MLW } set_state_owner_to = MLW }
+		else_if = { limit = { is_core_of = ZAM } set_state_owner_to = ZAM }
+		else_if = { limit = { is_core_of = ZIM } set_state_owner_to = ZIM }
+		else_if = { limit = { is_core_of = BOT } set_state_owner_to = BOT }
+		else_if = { limit = { is_core_of = SOM } set_state_owner_to = SOM }
+	}
+}
+
+# ---- 法属非洲：按各州原生核心移交真实国家 ----
+IRE_fra_africa_transfer = {
+	every_owned_state = {
+		limit = {
+			is_on_continent = africa
+			NOT = { is_core_of = FRA }
+		}
+		if = { limit = { is_core_of = ALG } set_state_owner_to = ALG }
+		else_if = { limit = { is_core_of = TUN } set_state_owner_to = TUN }
+		else_if = { limit = { is_core_of = MOR } set_state_owner_to = MOR }
+		else_if = { limit = { is_core_of = MRT } set_state_owner_to = MRT }
+		else_if = { limit = { is_core_of = MLI } set_state_owner_to = MLI }
+		else_if = { limit = { is_core_of = NGR } set_state_owner_to = NGR }
+		else_if = { limit = { is_core_of = SEN } set_state_owner_to = SEN }
+		else_if = { limit = { is_core_of = GAB } set_state_owner_to = GAB }
+		else_if = { limit = { is_core_of = CAR } set_state_owner_to = CAR }
+		else_if = { limit = { is_core_of = CHA } set_state_owner_to = CHA }
+		else_if = { limit = { is_core_of = CMR } set_state_owner_to = CMR }
+		else_if = { limit = { is_core_of = DAH } set_state_owner_to = DAH }
+		else_if = { limit = { is_core_of = TOG } set_state_owner_to = TOG }
+		else_if = { limit = { is_core_of = VOL } set_state_owner_to = VOL }
+		else_if = { limit = { is_core_of = IVO } set_state_owner_to = IVO }
+		else_if = { limit = { is_core_of = GNA } set_state_owner_to = GNA }
+		else_if = { limit = { is_core_of = MAD } set_state_owner_to = MAD }
+		else_if = { limit = { is_core_of = DJI } set_state_owner_to = DJI }
 	}
 }
 
 # ============================================================
-# F 法国战败/消亡时，法属非洲殖民地（非核心）独立为「法属非洲」FAF
-#   挂在 on_capitulation（ROOT = 投降国）
+# F 法国战败/消亡时，法属非洲殖民地独立（on_capitulation 钩子，ROOT = 投降国）
 # ============================================================
 IRE_france_colonies_independent = {
 	if = {
 		limit = { original_tag = FRA }
-		every_owned_state = {
-			limit = {
-				is_on_continent = africa
-				NOT = { is_core_of = PREV }
-			}
-			set_state_owner_to = FAF
-		}
+		IRE_fra_africa_transfer = yes
 	}
 }

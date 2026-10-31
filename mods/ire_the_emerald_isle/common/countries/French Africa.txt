@@ -1,4 +1,0 @@
-graphical_culture = african_gfx
-graphical_culture_2d = french_2d
-
-color = { 142 116 88 }

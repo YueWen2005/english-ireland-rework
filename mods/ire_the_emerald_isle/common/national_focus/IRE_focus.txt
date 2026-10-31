@@ -4822,11 +4822,11 @@ OR = {
 
 		completion_reward = {
 			if = {
-				limit = { ENG = { exists = yes NOT = { has_government = communism } } }
+				limit = { ENG = { exists = yes NOT = { has_government = communism } } NOT = { has_wargoal_against = ENG } NOT = { has_war_with = ENG } }
 				create_wargoal = { type = annex_everything target = ENG expire = 0 }
 			}
 			if = {
-				limit = { FRA = { exists = yes NOT = { has_government = communism } } }
+				limit = { FRA = { exists = yes NOT = { has_government = communism } } NOT = { has_wargoal_against = FRA } NOT = { has_war_with = FRA } }
 				create_wargoal = { type = annex_everything target = FRA expire = 0 }
 			}
 			army_experience = 10
@@ -4857,11 +4857,11 @@ OR = {
 
 		completion_reward = {
 			if = {
-				limit = { HOL = { exists = yes NOT = { has_government = communism } } }
+				limit = { HOL = { exists = yes NOT = { has_government = communism } } NOT = { has_wargoal_against = HOL } NOT = { has_war_with = HOL } }
 				create_wargoal = { type = annex_everything target = HOL expire = 0 }
 			}
 			if = {
-				limit = { FRA = { exists = yes NOT = { has_government = communism } } }
+				limit = { FRA = { exists = yes NOT = { has_government = communism } } NOT = { has_wargoal_against = FRA } NOT = { has_war_with = FRA } }
 				create_wargoal = { type = annex_everything target = FRA expire = 0 }
 			}
 			army_experience = 10
