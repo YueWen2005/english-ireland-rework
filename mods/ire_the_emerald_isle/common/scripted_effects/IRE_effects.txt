@@ -616,6 +616,7 @@ IRE_eng_africa_transfer = {
 		else_if = { limit = { is_core_of = ZIM } set_state_owner_to = ZIM }
 		else_if = { limit = { is_core_of = BOT } set_state_owner_to = BOT }
 		else_if = { limit = { is_core_of = SOM } set_state_owner_to = SOM }
+		else_if = { limit = { is_core_of = YEM } set_state_owner_to = YEM }
 	}
 }
 
@@ -633,6 +634,7 @@ IRE_fra_africa_transfer = {
 		else_if = { limit = { is_core_of = MLI } set_state_owner_to = MLI }
 		else_if = { limit = { is_core_of = NGR } set_state_owner_to = NGR }
 		else_if = { limit = { is_core_of = SEN } set_state_owner_to = SEN }
+		else_if = { limit = { is_core_of = RCG } set_state_owner_to = RCG }
 		else_if = { limit = { is_core_of = GAB } set_state_owner_to = GAB }
 		else_if = { limit = { is_core_of = CAR } set_state_owner_to = CAR }
 		else_if = { limit = { is_core_of = CHA } set_state_owner_to = CHA }
