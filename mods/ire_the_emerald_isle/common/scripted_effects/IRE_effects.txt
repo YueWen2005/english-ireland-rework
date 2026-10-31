@@ -366,6 +366,8 @@ IRE_R_merge_red_britain = {
 				NOT = { tag = IRE }
 			}
 		}
+		# 先继承（将领/核心/非洲殖民地独立），再吞并
+		IRE_annex_britain_inherit = yes
 		every_country = {
 			limit = {
 				original_tag = ENG
@@ -562,5 +564,56 @@ IRE_red_sabotage_effect = {
 		add_stability = -0.03
 		add_war_support = -0.03
 		every_owned_state = { add_resistance = 5 }
+	}
+}
+
+# ============================================================
+# E 吞并大英前的继承处理（ire.114 黑线分赃 / IRE_R_merge_red_britain 红线合并共用）
+#   1) 非洲殖民地（非核心）独立为「英属非洲」BWA
+#   2) 大英将领全部并入爱尔兰军队
+#   3) 大英核心领土同步成为爱尔兰核心
+#   必须在 annex_country 之前调用（否则 ENG 已消亡、将领无法转移）
+# ============================================================
+IRE_annex_britain_inherit = {
+	every_country = {
+		limit = {
+			original_tag = ENG
+			NOT = { tag = IRE }
+			exists = yes
+		}
+		# 非洲殖民地独立
+		every_owned_state = {
+			limit = {
+				is_on_continent = africa
+				NOT = { is_core_of = PREV }
+			}
+			set_state_owner_to = BWA
+		}
+		# 将领继承
+		every_unit_leader = {
+			set_nationality = IRE
+		}
+		# 核心继承
+		every_owned_state = {
+			limit = { is_core_of = PREV }
+			add_core_of = IRE
+		}
+	}
+}
+
+# ============================================================
+# F 法国战败/消亡时，法属非洲殖民地（非核心）独立为「法属非洲」FAF
+#   挂在 on_capitulation（ROOT = 投降国）
+# ============================================================
+IRE_france_colonies_independent = {
+	if = {
+		limit = { original_tag = FRA }
+		every_owned_state = {
+			limit = {
+				is_on_continent = africa
+				NOT = { is_core_of = PREV }
+			}
+			set_state_owner_to = FAF
+		}
 	}
 }

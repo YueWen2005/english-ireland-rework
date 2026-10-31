@@ -116,7 +116,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				political_power_gain = 0.03
 			}
 		}
@@ -137,7 +137,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.10
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
 			}
@@ -174,7 +174,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				production_speed_dockyard_factor = 0.12
-				industrial_capacity_dockyard = 0.12
+				industrial_capacity_dockyard = 0.012
 			}
 		}
 
@@ -246,7 +246,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				conscription_factor = 0.08
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 			}
 		}
 
@@ -284,7 +284,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.16
+				industrial_capacity_factory = 0.016
 				conscription_factor = 0.12
 				send_volunteer_factor = 0.5
 			}
@@ -297,7 +297,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.04
-				industrial_capacity_dockyard = 0.06
+				industrial_capacity_dockyard = 0.006
 			}
 		}
 
@@ -318,7 +318,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				consumer_goods_factor = -0.04
 			}
 		}
@@ -443,7 +443,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				research_speed_factor = 0.04
 				consumer_goods_factor = -0.04
 				production_factory_max_efficiency_factor = 0.05
@@ -469,7 +469,7 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.12
 				conscription_factor = 0.08
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				stability_factor = -0.03
 			}
 		}
@@ -482,7 +482,7 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.05
 				production_speed_industrial_complex_factor = 0.10
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_factory_start_efficiency_factor = 0.03
 			}
 		}
@@ -494,7 +494,7 @@ ideas = {
 			modifier = {
 				research_speed_factor = 0.04
 				air_detection = 0.08
-				industrial_capacity_factory = 0.04
+				industrial_capacity_factory = 0.004
 			}
 		}
 
@@ -503,7 +503,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				production_speed_buildings_factor = 0.07
 				research_speed_factor = 0.04
 				production_factory_max_efficiency_factor = 0.05
@@ -516,7 +516,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.12
+				industrial_capacity_dockyard = 0.012
 				naval_detection = 0.05
 			}
 		}
@@ -538,7 +538,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				conscription_factor = 0.05
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				political_power_gain = 0.03
 			}
 		}
@@ -552,7 +552,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				production_speed_buildings_factor = 0.07
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_factory_start_efficiency_factor = 0.03
 			}
 		}
@@ -573,7 +573,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.06
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_factory_efficiency_gain_factor = 0.03
 			}
 		}
@@ -583,7 +583,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.06
+				industrial_capacity_dockyard = 0.006
 				production_speed_dockyard_factor = 0.07
 			}
 		}
@@ -593,7 +593,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				trade_opinion_factor = 0.15
 				production_factory_efficiency_gain_factor = 0.03
 			}
@@ -614,7 +614,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.16
+				industrial_capacity_factory = 0.016
 				consumer_goods_factor = -0.06
 				research_speed_factor = 0.04
 				production_factory_efficiency_gain_factor = 0.05
@@ -715,7 +715,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				army_defence_factor = 0.20
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				war_support_factor = 0.08
 			}
 		}
@@ -727,7 +727,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.04
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 			}
 		}
 
@@ -746,7 +746,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				consumer_goods_factor = 0.03
 				production_speed_buildings_factor = 0.07
 			}
@@ -875,7 +875,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				trade_opinion_factor = 0.10
 				research_speed_factor = 0.04
 			}
@@ -1229,7 +1229,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.01
 				war_support_factor = 0.05
 			}
 		}
@@ -1358,7 +1358,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				consumer_goods_factor = -0.04
 				local_resources_factor = 0.05
 			}
@@ -1393,7 +1393,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.08
+				industrial_capacity_factory = 0.008
 				consumer_goods_factor = -0.03
 			}
 			removal_cost = -1
@@ -1415,7 +1415,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.15
+				industrial_capacity_factory = 0.015
 				stability_factor = -0.03
 				consumer_goods_factor = 0.02
 			}
@@ -1427,7 +1427,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.15
+				industrial_capacity_dockyard = 0.015
 			}
 			removal_cost = -1
 		}
@@ -1437,7 +1437,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.15
+				industrial_capacity_factory = 0.015
 				consumer_goods_factor = -0.05
 				production_speed_buildings_factor = 0.15
 				research_speed_factor = 0.05
@@ -1461,7 +1461,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.10
+				industrial_capacity_dockyard = 0.01
 			}
 			removal_cost = -1
 		}
@@ -1484,7 +1484,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.01
 			}
 			removal_cost = -1
 		}
@@ -1494,7 +1494,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.08
+				industrial_capacity_factory = 0.008
 			}
 			removal_cost = -1
 		}
@@ -1526,7 +1526,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.06
-				industrial_capacity_factory = 0.08
+				industrial_capacity_factory = 0.008
 			}
 			removal_cost = -1
 		}
@@ -1591,7 +1591,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.01
 				political_power_factor = 0.15
 			}
 			removal_cost = -1
@@ -1627,7 +1627,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.01
 			}
 			removal_cost = -1
 		}

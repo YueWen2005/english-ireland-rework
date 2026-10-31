@@ -1,0 +1,4 @@
+# 爱尔兰 MOD：殖民独立新增国家 tag（v2.13.0）
+# 吞并大英/法国消亡时，其非洲殖民地（非核心州）独立为本国
+BWA = "countries/British Africa.txt"
+FAF = "countries/French Africa.txt"

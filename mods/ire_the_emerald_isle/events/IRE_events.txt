@@ -954,10 +954,11 @@ country_event = {
 
 	option = {
 		name = ire.110.a
-		# 如数奉还：花政治点数保名誉
+		# 如数奉还：花政治点数保名誉，苏联的感激带来稳定与军火回报
 		add_political_power = -100
-		add_stability = -0.01
-		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos10 } }
+		add_stability = 0.02
+		SOV = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 producer = SOV }
 	}
 	option = {
 		name = ire.110.b
@@ -1087,6 +1088,7 @@ country_event = {
 		option = {
 			name = ire.114.a
 			# 全部本土归爱尔兰
+			IRE_annex_britain_inherit = yes
 			every_country = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
@@ -1098,6 +1100,7 @@ country_event = {
 		option = {
 			name = ire.114.b
 			# 让出英格兰北部工业带换取柏林信任
+			IRE_annex_britain_inherit = yes
 			every_country = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }
@@ -1110,6 +1113,7 @@ country_event = {
 		option = {
 			name = ire.114.c
 			# 本土归我，海外归德国
+			IRE_annex_britain_inherit = yes
 			every_country = {
 				limit = { original_tag = ENG exists = yes has_capitulated = yes NOT = { tag = IRE } }
 				IRE = { annex_country = { target = PREV transfer_troops = no } }

@@ -13,7 +13,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_speed_buildings_factor = 0.12
 				stability_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
@@ -28,7 +28,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.06
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 			}
 			removal_cost = -1
 		}
@@ -52,7 +52,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.06
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				trade_opinion_factor = 0.15
 			}
 			removal_cost = -1
@@ -89,7 +89,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				conscription_factor = 0.08
 				stability_factor = 0.05
 			}
@@ -101,7 +101,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_speed_arms_factory_factor = 0.12
 				production_speed_industrial_complex_factor = 0.07
 				consumer_goods_factor = -0.02
@@ -116,7 +116,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_factory_max_efficiency_factor = 0.12
 				production_factory_efficiency_gain_factor = 0.12
 				production_factory_start_efficiency_factor = 0.05
@@ -129,7 +129,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.06
+				industrial_capacity_factory = 0.006
 				production_factory_max_efficiency_factor = 0.12
 				production_factory_efficiency_gain_factor = 0.12
 				production_factory_start_efficiency_factor = 0.05
@@ -142,7 +142,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.12
+				industrial_capacity_factory = 0.012
 				production_factory_max_efficiency_factor = 0.18
 				production_factory_efficiency_gain_factor = 0.12
 				production_factory_start_efficiency_factor = 0.05
@@ -157,7 +157,7 @@ ideas = {
 			modifier = {
 				navy_org_factor = 0.12
 				convoy_escort_efficiency = 0.12
-				industrial_capacity_dockyard = 0.12
+				industrial_capacity_dockyard = 0.012
 			}
 			removal_cost = -1
 		}

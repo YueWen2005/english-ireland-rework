@@ -429,4 +429,11 @@ on_actions = {
 			}
 		}
 	}
+
+	on_capitulation = {
+		effect = {
+			# 法国投降/消亡时：法属非洲殖民地（非核心）独立
+			IRE_france_colonies_independent = yes
+		}
+	}
 }

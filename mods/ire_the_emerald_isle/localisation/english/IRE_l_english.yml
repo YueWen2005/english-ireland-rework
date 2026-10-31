@@ -1139,3 +1139,9 @@
  IRE_tt_env_85c:0 "Stand alone: USA opinion -5, UK opinion -5"
  POLITICS_IRE_POLLITT_DESC:0 "Harry Pollitt (1890-1960), General Secretary of the Communist Party of Great Britain. The red isles now share a single helmsman."
  POLITICS_IRE_MOSLEY_DESC:0 "Oswald Mosley (1896-1980), baronet of the British Union of Fascists. Beneath crown and harp, the empire has a new master."
+
+# ---- v2.13.0 殖民独立国家 ----
+BWA:0 "British Africa"
+BWA_ADJ:0 "British African"
+FAF:0 "French Africa"
+FAF_ADJ:0 "French African"
