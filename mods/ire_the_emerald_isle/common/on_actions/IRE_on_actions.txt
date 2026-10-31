@@ -397,6 +397,36 @@ on_actions = {
 				set_country_flag = IRE_env_postwar_done
 				country_event = { id = ire_nw.85 days = 0 }
 			}
+
+			# ---- A线：黑英上台判定 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_black_britain_started
+					NOT = { has_country_flag = IRE_black_britain_formed }
+				}
+				if = {
+					limit = { any_country = { original_tag = ENG has_government = fascism has_civil_war = no } }
+					IRE_black_britain_takeover = yes
+				}
+				else_if = {
+					limit = { NOT = { any_country = { original_tag = ENG has_civil_war = yes } } }
+					set_country_flag = IRE_black_britain_failed
+					remove_country_flag = IRE_black_britain_started
+				}
+			}
+
+			# ---- A线：欧洲希望 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_black_britain_formed
+					has_completed_focus = IRE_border_plebiscite
+					NOT = { has_country_flag = IRE_european_hope_formed }
+				}
+				IRE_form_european_hope = yes
+				country_event = { id = ire_nw.91 days = 0 }
+			}
 		}
 	}
 }

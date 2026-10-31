@@ -1523,3 +1523,276 @@ country_event = {
 		custom_effect_tooltip = IRE_tt_env_85c
 	}
 }
+
+# ============================================================
+# A线：黑英、欧洲希望、红色法国与英国起义
+# ============================================================
+country_event = {
+	id = ire_nw.90
+	title = ire_nw.90.t
+	desc = ire_nw.90.d
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.90.a
+		every_country = {
+			limit = {
+				original_tag = ENG
+				exists = yes
+				has_civil_war = no
+				NOT = { has_government = fascism }
+			}
+			start_civil_war = { ideology = fascism size = 0.45 }
+		}
+		set_country_flag = IRE_black_britain_started
+		set_country_flag = IRE_britain_crisis_resolved
+		add_stability = -0.01
+		add_war_support = 0.02
+	}
+	option = {
+		name = ire_nw.90.b
+		every_country = {
+			limit = {
+				original_tag = ENG
+				exists = yes
+				has_civil_war = no
+				NOT = { has_government = fascism }
+			}
+			start_civil_war = { ideology = fascism size = 0.30 }
+		}
+		if = {
+			limit = { ENG = { exists = yes } }
+			ENG = {
+				add_stability = 0.03
+				add_war_support = 0.03
+			}
+		}
+		set_country_flag = IRE_black_britain_started
+		set_country_flag = IRE_britain_crisis_resolved
+		add_political_power = -25
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = ire_nw.91
+	title = ire_nw.91.t
+	desc = ire_nw.91.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	immediate = {
+		IRE_form_european_hope = yes
+		add_stability = 0.05
+		add_war_support = 0.05
+		add_political_power = 50
+		add_named_threat = { threat = 5 name = IRE_threat_focus }
+	}
+
+	option = {
+		name = ire_nw.91.a
+		add_stability = 0.03
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.91.b
+		add_war_support = 0.03
+		army_experience = 25
+	}
+	option = {
+		name = ire_nw.91.c
+		add_tech_bonus = { name = IRE_european_hope_industry bonus = 0.2 uses = 1 category = industry }
+	}
+}
+
+country_event = {
+	id = ire_nw.92
+	title = ire_nw.92.t
+	desc = ire_nw.92.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.92.a
+		add_tech_bonus = { name = IRE_us_industry bonus = 0.2 uses = 1 category = industry }
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.92.b
+		add_tech_bonus = { name = IRE_us_electronics bonus = 0.2 uses = 1 category = electronics }
+		army_experience = 25
+	}
+	option = {
+		name = ire_nw.92.c
+		add_stability = 0.02
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = ire_nw.93
+	title = ire_nw.93.t
+	desc = ire_nw.93.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.93.a
+		if = {
+			limit = { FRA = { exists = yes NOT = { has_government = communism } NOT = { has_civil_war = yes } } }
+			FRA = {
+				add_popularity = { ideology = communism popularity = 0.10 }
+				start_civil_war = { ideology = communism size = 0.35 }
+			}
+		}
+		set_country_flag = IRE_france_red_started
+		add_war_support = 0.02
+		custom_effect_tooltip = IRE_tt_france_red
+	}
+	option = {
+		name = ire_nw.93.b
+		if = {
+			limit = { FRA = { exists = yes } }
+			FRA = {
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 }
+				add_stability = 0.02
+			}
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = ire_nw.93.c
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = ire_nw.94
+	title = ire_nw.94.t
+	desc = ire_nw.94.d
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+
+	immediate = {
+		add_war_support = 0.05
+		add_stability = -0.01
+	}
+
+	option = {
+		name = ire_nw.94.a
+		army_experience = 25
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.94.b
+		add_manpower = 10000
+	}
+	option = {
+		name = ire_nw.94.c
+		add_stability = 0.02
+	}
+}
+
+country_event = {
+	id = ire_nw.95
+	title = ire_nw.95.t
+	desc = ire_nw.95.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	immediate = {
+		navy_experience = 50
+		add_war_support = 0.02
+	}
+
+	option = {
+		name = ire_nw.95.a
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.95.b
+		add_equipment_to_stockpile = { type = convoy amount = 20 }
+	}
+	option = {
+		name = ire_nw.95.c
+		add_stability = 0.02
+	}
+}
+
+country_event = {
+	id = ire_nw.96
+	title = ire_nw.96.t
+	desc = ire_nw.96.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	immediate = {
+		add_stability = 0.02
+	}
+
+	option = {
+		name = ire_nw.96.a
+		army_experience = 25
+	}
+	option = {
+		name = ire_nw.96.b
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.96.c
+		add_war_support = 0.02
+	}
+}
+
+country_event = {
+	id = ire_nw.97
+	title = ire_nw.97.t
+	desc = ire_nw.97.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	immediate = {
+		add_war_support = 0.03
+		add_stability = 0.02
+	}
+
+	option = {
+		name = ire_nw.97.a
+		army_experience = 50
+	}
+	option = {
+		name = ire_nw.97.b
+		add_political_power = 30
+	}
+	option = {
+		name = ire_nw.97.c
+		add_manpower = 10000
+	}
+}
+
+country_event = {
+	id = ire_nw.98
+	title = ire_nw.98.t
+	desc = ire_nw.98.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	immediate = {
+		air_experience = 50
+		add_war_support = 0.02
+	}
+
+	option = {
+		name = ire_nw.98.a
+		air_experience = 25
+	}
+	option = {
+		name = ire_nw.98.b
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.98.c
+		add_stability = 0.02
+	}
+}

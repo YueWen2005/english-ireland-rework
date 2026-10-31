@@ -1,0 +1,4 @@
+ENG_black_britain = {
+	color = rgb { 40 40 40 }
+	color_ui = rgb { 90 90 90 }
+}

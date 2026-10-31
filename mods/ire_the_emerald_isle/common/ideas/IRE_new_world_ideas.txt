@@ -13,9 +13,11 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
-				production_speed_buildings_factor = 0.10
-				stability_factor = 0.03
+				industrial_capacity_factory = 0.06
+				production_speed_buildings_factor = 0.12
+				stability_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -25,8 +27,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.06
 			}
 			removal_cost = -1
 		}
@@ -38,8 +40,8 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.05
-				stability_factor = 0.05
-				war_support_factor = 0.05
+				stability_factor = 0.08
+				war_support_factor = 0.08
 			}
 			removal_cost = -1
 		}
@@ -49,8 +51,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.06
 				trade_opinion_factor = 0.15
 			}
 			removal_cost = -1
@@ -61,9 +63,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.05
-				army_attack_factor = 0.05
-				army_defence_factor = 0.05
+				conscription_factor = 0.08
+				army_attack_factor = 0.08
+				army_defence_factor = 0.08
 				send_volunteer_factor = 0.25
 			}
 			removal_cost = -1
@@ -87,9 +89,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
-				conscription_factor = 0.05
-				stability_factor = 0.03
+				industrial_capacity_factory = 0.06
+				conscription_factor = 0.08
+				stability_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -99,10 +101,12 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
-				production_speed_arms_factory_factor = 0.10
-				production_speed_industrial_complex_factor = 0.05
+				industrial_capacity_factory = 0.06
+				production_speed_arms_factory_factor = 0.12
+				production_speed_industrial_complex_factor = 0.07
 				consumer_goods_factor = -0.02
+				production_factory_max_efficiency_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.03
 			}
 			removal_cost = -1
 		}
@@ -112,9 +116,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
-				production_factory_max_efficiency_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.10
+				industrial_capacity_factory = 0.06
+				production_factory_max_efficiency_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.12
+				production_factory_start_efficiency_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -124,9 +129,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
-				production_factory_max_efficiency_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.10
+				industrial_capacity_factory = 0.06
+				production_factory_max_efficiency_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.12
+				production_factory_start_efficiency_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -136,9 +142,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
-				production_factory_max_efficiency_factor = 0.15
-				production_factory_efficiency_gain_factor = 0.10
+				industrial_capacity_factory = 0.12
+				production_factory_max_efficiency_factor = 0.18
+				production_factory_efficiency_gain_factor = 0.12
+				production_factory_start_efficiency_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -148,9 +155,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				navy_org_factor = 0.10
-				convoy_escort_efficiency = 0.10
-				industrial_capacity_dockyard = 0.10
+				navy_org_factor = 0.12
+				convoy_escort_efficiency = 0.12
+				industrial_capacity_dockyard = 0.12
 			}
 			removal_cost = -1
 		}
@@ -173,9 +180,9 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.05
-				stability_factor = 0.05
-				war_support_factor = 0.05
-				conscription_factor = 0.02
+				stability_factor = 0.08
+				war_support_factor = 0.08
+				conscription_factor = 0.03
 			}
 			removal_cost = -1
 		}
@@ -186,9 +193,10 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.10
-				stability_factor = 0.05
+				stability_factor = 0.08
 				trade_opinion_factor = 0.20
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.06
+							research_speed_factor = 0.03
 			}
 			removal_cost = -1
 		}
@@ -198,8 +206,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.05
-				war_support_factor = 0.03
+				army_defence_factor = 0.08
+				war_support_factor = 0.05
 				stability_factor = 0.02
 			}
 			removal_cost = -1
@@ -210,8 +218,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				war_support_factor = 0.10
-				army_attack_factor = 0.05
+				war_support_factor = 0.12
+				army_attack_factor = 0.08
 				planning_speed = 0.10
 			}
 			removal_cost = -1
@@ -258,7 +266,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				war_support_factor = 0.05
+				war_support_factor = 0.08
 				stability_factor = 0.02
 				political_power_gain = 0.02
 			}
@@ -276,5 +284,185 @@ ideas = {
 			}
 			removal_cost = -1
 		}
+
+		IRE_european_hope = {
+			picture = generic_democratic_drift_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.10
+				consumer_goods_factor = -0.03
+				research_speed_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.05
+				war_support_factor = 0.05
+				stability_factor = 0.05
+				intel_network_gain_factor = 0.10
+				local_resources_factor = 0.05
+				max_fuel_factor = 0.05
+				fuel_gain_factor = 0.05
+				naval_invasion_prep_speed = 0.10
+				naval_coordination = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_european_hope_us = {
+			picture = generic_flexible_foreign_policy
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.03
+				max_fuel_factor = 0.10
+				fuel_gain_factor = 0.10
+				research_speed_factor = 0.03
+				naval_coordination = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_european_hope_france = {
+			picture = generic_army_europe_5
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+				planning_speed = 0.10
+				intel_network_gain_factor = 0.10
+				local_resources_factor = 0.05
+				war_support_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_european_hope_dominions = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.05
+				local_resources_factor = 0.05
+				naval_coordination = 0.05
+				war_support_factor = 0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_european_hope_nordics = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.03
+				local_resources_factor = 0.05
+				max_fuel_factor = 0.05
+				fuel_gain_factor = 0.05
+				army_defence_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_us_lend_lease = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.03
+				max_fuel_factor = 0.05
+				fuel_gain_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_british_spy_network_idea = {
+			picture = generic_flexible_foreign_policy
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				operative_slot = 1
+				intel_network_gain_factor = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_royal_navy_defection_idea = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				naval_coordination = 0.10
+				naval_invasion_prep_speed = 0.15
+			}
+			removal_cost = -1
+		}
+
+		IRE_raf_defection_idea = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				air_defence_factor = 0.05
+				air_agility_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_red_britain_uprising = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = 0.03
+				intel_network_gain_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_ENG_navy_purge = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				naval_coordination = -0.15
+				naval_invasion_prep_speed = -0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_ENG_air_purge = {
+			picture = generic_air_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				air_defence_factor = -0.10
+				air_agility_factor = -0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_ENG_spy_chaos = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				intel_network_gain_factor = -0.10
+			}
+			removal_cost = -1
+		}
+
 	}
 }

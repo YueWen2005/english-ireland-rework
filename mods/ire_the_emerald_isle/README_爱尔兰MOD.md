@@ -20,8 +20,8 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **A 线**：北爱整合 → 跨海网络 → 纽芬兰/美国/墨西哥/南美四支线 → 凯尔特联邦；另有独立紧急状态分支与外交线（多尼戈尔走廊、港口换统一）
 - **A 线政治**：民主共和路线。开局由德·瓦莱拉领导；《绿色国际》后科斯特洛接任总统。和解线通向《公民共和国》，强硬整合线通向《中央集权共和国》；两条终局均需先完成《野鹅远征军》
 - **A 线强化**：西班牙内战「野鹅远征军」（额外志愿军上限，并解除现役师数量门槛）、国立研究院 +2 研究槽、策动加拿大独立后以拉布拉多边境冲突归并英属北美；本土开发、侨汇与美洲网络国策会持续累积地图外工厂（+工厂产出，不占建筑格）
-- **本土开发**：北爱回归后解锁《开发北爱尔兰》决议；《全国矿脉勘察》改为可重复（180 天冷却），配合原有三州开发决议持续种田；四州开发决议最多 7 期（约 25 建筑格），达到上限后从决议列表消失；新增四州各自的《钢铝铬开发计划》，每 150 天可重复实施；新增《铁路车辆生产计划》，每 120 天交付 10 列火车（需基础火车科技）
-- **爱尔兰团结与工业效率**：《爱尔兰团结计划》可重复实施，每 240 天获得 3 座地图外民用工厂与 2 座地图外军用工厂；「工业标准化 → 流水线革新 → 全国工业动员」三级决议永久提高工厂产出、生产效率上限与爬升速度
+- **本土开发**：北爱回归后解锁《开发北爱尔兰》决议；《全国矿脉勘察》改为可重复（180 天冷却），配合原有三州开发决议持续种田；四州开发决议最多 7 期（约 25 建筑格），达到上限后从决议列表消失；新增四州各自的《钢铝铬开发计划》，每 150 天可重复实施；新增《铁路车辆生产计划》，每 120 天交付 15 列火车（需基础火车科技）
+- **爱尔兰团结与工业效率**：《爱尔兰团结计划》可重复实施，每 240 天获得 3 座地图外民用工厂与 3 座地图外军用工厂；「工业标准化 → 流水线革新 → 全国工业动员」三级决议永久提高工厂产出、生产效率上限与爬升速度
 - **加拿大开发**：归并加拿大后解锁《加拿大国土开发计划》《加拿大资源勘探计划》《加拿大工业冶炼计划》；州判定覆盖加拿大全部 23 个开局州，国土开发每期覆盖 19 个可开发省份，资源勘探覆盖全部 23 州，提供建筑格、基础设施、煤/钢/铝/石油/钨/铬与地图外工厂；三套计划需完全吞并加拿大（全部 23 个开局州归爱尔兰所有）并各限 3 期
 - **无时间门槛**：A/E/B/M 国策与决议不再要求 1948/1958 等年份，只保留战争、外交、前置等状态条件；历史事件仍按史实日期触发
 - **新世界轶事**：吉尼斯出口、福因斯爱尔兰咖啡、香农跨大西洋中转、好莱坞《蓬门今始为君开》、凯尔特之虎等史实梗决议/事件，效果与战争、外交和战后局势挂钩
@@ -32,8 +32,8 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **军事区域**：独立分支，需二战爆发解锁，不依赖任何主线的紧急状态国策；陆军 / 海军 / 空军 / 情报 / 海岸瞭望 / 装甲车
 - **212 个国策节点**
 - **A 线外交环境事件**：美国租借与爱尔兰游说、加拿大归并后的英联邦裂痕、自由法国请求、东线医疗队、美国安全保障、战后欧洲秩序等 6 组事件，会改变美/英/法/苏/德及自治领的态度与外交环境，而不只是给爱尔兰加数值
-- **85 个剧情事件**、**80 个决议**（18 个分类）
-- **160 个国家精神**（含隐藏修正）
+- **103 个剧情事件**、**95 个决议**（22 个分类）
+- **175 个国家精神**（含隐藏修正）
 - 完整简体中文本地化
 
 ### 三个核心变量机制
@@ -149,21 +149,24 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 ire_the_emerald_isle/
 ├── common/
 │   ├── national_focus/IRE_focus.txt          212 国策
-│   ├── ideas/IRE_ideas.txt                   138 精神
-│   ├── ideas/IRE_new_world_ideas.txt         22 精神（A 线）
+│   ├── ideas/IRE_ideas.txt                   140 精神
+│   ├── ideas/IRE_new_world_ideas.txt         35 精神（A 线）
 │   ├── decisions/IRE_decisions.txt           20 决议
 │   ├── decisions/IRE_new_world_decisions.txt 32 决议（A 线）
 │   ├── decisions/IRE_defend_ireland_decisions.txt 6 决议（保卫爱尔兰）
 │   ├── decisions/IRE_new_world_flavour_decisions.txt 5 决议（新世界轶事）
 │   ├── decisions/IRE_canada_decisions.txt    3 决议（加拿大开发）
-│   ├── opinion_modifiers/IRE_opinions.txt    16 观点修正
+│   ├── decisions/IRE_red_black_decisions.txt 18 决议（红黑线）
+│   ├── decisions/IRE_european_hope_decisions.txt 11 决议（欧洲希望）
+│   ├── opinion_modifiers/IRE_opinions.txt    18 观点修正
+│   ├── countries/ENG_black_britain_cosmetic.txt 黑英 cosmetic tag
 │   ├── scripted_effects/
 │   │   ├── IRE_effects.txt                   效果宏（网络/信誉/核心化/紧急状态/保卫爱尔兰分级）
 │   │   └── IRE_init.txt                      变量初始化
 │   ├── scripted_triggers/IRE_canadian_triggers.txt 加拿大州判定
 │   └── on_actions/IRE_on_actions.txt         开局/每日/每月钩子
-├── events/IRE_events.txt                     39 事件
-├── events/IRE_new_world_events.txt           44 事件（A 线）
+├── events/IRE_events.txt                     46 事件
+├── events/IRE_new_world_events.txt           57 事件（A 线）
 ├── history/
 │   ├── countries/IRE - 爱尔兰.txt            开局设定 + oob 引用
 │   └── units/IRE_units.txt                   3 个师模板
@@ -172,5 +175,6 @@ ire_the_emerald_isle/
 │   ├── english/IRE_new_world_l_english.yml   A 线英文文本
 │   ├── simp_chinese/IRE_l_simp_chinese.yml   简体中文（主线）
 │   └── simp_chinese/IRE_new_world_l_simp_chinese.yml 简体中文（A 线）
+├── music/                    音乐 asset/txt/credits（公开版不含 OGG）
 └── descriptor.mod
 ```

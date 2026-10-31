@@ -1,0 +1,357 @@
+IRE_european_hope_cat = {
+
+	IRE_start_black_britain_coup = {
+		icon = generic_political_actions
+		cost = 150
+		days_remove = 1
+
+		available = {
+			has_completed_focus = IRE_border_plebiscite
+			has_completed_focus = IRE_A_belfast
+			119 = { is_owned_by = ROOT }
+			ENG = { exists = yes NOT = { has_government = fascism } NOT = { has_civil_war = yes } }
+			ENG = { has_stability < 0.85 }
+			NOT = { has_war_with = ENG }
+		}
+
+		visible = {
+			has_completed_focus = IRE_border_plebiscite
+			has_completed_focus = IRE_A_belfast
+			NOT = { has_country_flag = IRE_black_britain_started }
+			NOT = { has_country_flag = IRE_black_britain_formed }
+			NOT = { has_country_flag = IRE_black_britain_failed }
+			NOT = { has_country_flag = IRE_britain_crisis_resolved }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = { id = ire_nw.90 days = 0 }
+			custom_effect_tooltip = IRE_tt_black_britain_coup
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_push_france_red = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 1
+
+		available = {
+			has_country_flag = IRE_black_britain_formed
+			FRA = { exists = yes NOT = { has_government = communism } NOT = { has_civil_war = yes } }
+		}
+
+		visible = {
+			has_country_flag = IRE_black_britain_formed
+			FRA = { exists = yes }
+			NOT = { has_country_flag = IRE_france_red_started }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = { id = ire_nw.93 days = 0 }
+			custom_effect_tooltip = IRE_tt_france_red
+		}
+
+		ai_will_do = { base = 10 }
+	}
+
+	IRE_invite_usa = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 1
+
+		available = {
+			has_idea = IRE_european_hope
+			is_faction_leader = yes
+			country_exists = USA
+			has_country_flag = IRE_black_britain_formed
+			USA = { NOT = { is_in_faction = yes } has_opinion = { target = ROOT value > 49 } }
+		}
+
+		visible = {
+			has_idea = IRE_european_hope
+			country_exists = USA
+			NOT = { has_country_flag = IRE_usa_joined }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = { country_exists = USA NOT = { USA = { is_in_faction = yes } } }
+				add_to_faction = USA
+				add_ideas = IRE_european_hope_us
+				add_ideas = IRE_us_lend_lease
+				set_country_flag = IRE_usa_joined
+			}
+			country_event = { id = ire_nw.92 days = 0 }
+			custom_effect_tooltip = IRE_tt_usa_joined
+		}
+
+		ai_will_do = { base = 20 }
+	}
+
+	IRE_invite_red_france = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 1
+
+		available = {
+			has_idea = IRE_european_hope
+			is_faction_leader = yes
+			any_country = {
+				original_tag = FRA
+				has_government = communism
+				has_civil_war = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 49 }
+			}
+		}
+
+		visible = {
+			has_idea = IRE_european_hope
+			any_country = { original_tag = FRA has_government = communism has_civil_war = no }
+			NOT = { has_country_flag = IRE_red_france_joined }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = { any_country = { original_tag = FRA has_government = communism has_civil_war = no NOT = { is_in_faction = yes } } }
+				every_country = {
+					limit = { original_tag = FRA has_government = communism has_civil_war = no NOT = { is_in_faction = yes } }
+					IRE = { add_to_faction = PREV }
+				}
+				add_ideas = IRE_european_hope_france
+				set_country_flag = IRE_red_france_joined
+			}
+			country_event = { id = ire_nw.97 days = 0 }
+			custom_effect_tooltip = IRE_tt_red_france_joined
+		}
+
+		ai_will_do = { base = 20 }
+	}
+
+	IRE_invite_dominions = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 1
+
+		available = {
+			has_idea = IRE_european_hope
+			is_faction_leader = yes
+			any_country = {
+				OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
+				exists = yes
+				is_subject = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 39 }
+			}
+		}
+
+		visible = {
+			has_idea = IRE_european_hope
+			NOT = { has_country_flag = IRE_dominions_joined }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
+					exists = yes
+					is_subject = no
+					NOT = { is_in_faction = yes }
+					has_opinion = { target = ROOT value > 39 }
+				}
+				IRE = { add_to_faction = PREV }
+			}
+			add_ideas = IRE_european_hope_dominions
+			set_country_flag = IRE_dominions_joined
+			custom_effect_tooltip = IRE_tt_dominions_joined
+		}
+
+		ai_will_do = { base = 10 }
+	}
+
+	IRE_invite_nordics = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 1
+
+		available = {
+			has_idea = IRE_european_hope
+			is_faction_leader = yes
+			any_country = {
+				OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+				exists = yes
+				is_subject = no
+				NOT = { is_in_faction = yes }
+				has_opinion = { target = ROOT value > 39 }
+			}
+		}
+
+		visible = {
+			has_idea = IRE_european_hope
+			NOT = { has_country_flag = IRE_nordics_joined }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+					exists = yes
+					is_subject = no
+					NOT = { is_in_faction = yes }
+					has_opinion = { target = ROOT value > 39 }
+				}
+				IRE = { add_to_faction = PREV }
+			}
+			add_ideas = IRE_european_hope_nordics
+			set_country_flag = IRE_nordics_joined
+			custom_effect_tooltip = IRE_tt_nordics_joined
+		}
+
+		ai_will_do = { base = 10 }
+	}
+
+	IRE_british_spy_network = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 1
+
+		available = {
+			has_country_flag = IRE_black_britain_formed
+			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
+		}
+
+		visible = {
+			has_country_flag = IRE_black_britain_formed
+			NOT = { has_country_flag = IRE_spy_network_done }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			IRE_british_spy_network_effect = yes
+			custom_effect_tooltip = IRE_tt_spy_network
+		}
+
+		ai_will_do = { base = 20 }
+	}
+
+	IRE_royal_navy_defection = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 1
+
+		available = {
+			has_country_flag = IRE_black_britain_formed
+			has_idea = IRE_british_spy_network_idea
+			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
+		}
+
+		visible = {
+			has_country_flag = IRE_black_britain_formed
+			has_idea = IRE_british_spy_network_idea
+			NOT = { has_country_flag = IRE_navy_defection_done }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			IRE_royal_navy_defection_effect = yes
+			custom_effect_tooltip = IRE_tt_navy_defection
+		}
+
+		ai_will_do = { base = 20 }
+	}
+
+	IRE_raf_defection = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 1
+
+		available = {
+			has_country_flag = IRE_black_britain_formed
+			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
+		}
+
+		visible = {
+			has_country_flag = IRE_black_britain_formed
+			NOT = { has_country_flag = IRE_raf_defection_done }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			IRE_raf_defection_effect = yes
+			custom_effect_tooltip = IRE_tt_raf_defection
+		}
+
+		ai_will_do = { base = 20 }
+	}
+
+	IRE_red_london_uprising = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 1
+
+		available = {
+			has_idea = IRE_european_hope_france
+			has_idea = IRE_british_spy_network_idea
+			has_country_flag = IRE_black_britain_formed
+			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
+		}
+
+		visible = {
+			has_idea = IRE_european_hope_france
+			has_country_flag = IRE_black_britain_formed
+			NOT = { has_country_flag = IRE_red_uprising_done }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			IRE_red_britain_uprising_effect = yes
+			custom_effect_tooltip = IRE_tt_red_uprising
+		}
+
+		ai_will_do = { base = 10 }
+	}
+
+	IRE_red_sabotage = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_european_hope_france
+			has_idea = IRE_british_spy_network_idea
+			has_country_flag = IRE_black_britain_formed
+			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
+		}
+
+		visible = {
+			has_idea = IRE_european_hope_france
+			has_country_flag = IRE_black_britain_formed
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			IRE_red_sabotage_effect = yes
+			custom_effect_tooltip = IRE_tt_red_sabotage
+		}
+
+		ai_will_do = { base = 10 }
+	}
+}

@@ -125,120 +125,120 @@ IRE_canada_cat = {
 					# 煤
 					if = {
 						limit = { state = 464 }
-						add_resource = { type = coal amount = 1 }
+						add_resource = { type = coal amount = 2 }
 					}
 					if = {
 						limit = { state = 465 }
-						add_resource = { type = coal amount = 1 }
+						add_resource = { type = coal amount = 2 }
 					}
 					if = {
 						limit = { state = 470 }
-						add_resource = { type = coal amount = 1 }
+						add_resource = { type = coal amount = 2 }
 					}
 					if = {
 						limit = { state = 471 }
-						add_resource = { type = coal amount = 1 }
+						add_resource = { type = coal amount = 2 }
 					}
 					if = {
 						limit = { state = 473 }
-						add_resource = { type = coal amount = 1 }
+						add_resource = { type = coal amount = 2 }
 					}
 					if = {
 						limit = { state = 682 }
-						add_resource = { type = coal amount = 1 }
+						add_resource = { type = coal amount = 2 }
 					}
 
 					# 钢
 					if = {
 						limit = { state = 276 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 465 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 467 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 682 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 862 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 865 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 866 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 
 					# 铝
 					if = {
 						limit = { state = 466 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 468 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 682 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 683 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 862 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 866 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 867 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 
 					# 石油与钨
 					if = {
 						limit = { state = 467 }
-						add_resource = { type = oil amount = 1 }
+						add_resource = { type = oil amount = 2 }
 					}
 					if = {
 						limit = { state = 469 }
-						add_resource = { type = oil amount = 1 }
+						add_resource = { type = oil amount = 2 }
 					}
 					if = {
 						limit = { state = 470 }
-						add_resource = { type = oil amount = 1 }
+						add_resource = { type = oil amount = 2 }
 					}
 					if = {
 						limit = { state = 472 }
-						add_resource = { type = oil amount = 1 }
-						add_resource = { type = tungsten amount = 1 }
+						add_resource = { type = oil amount = 2 }
+						add_resource = { type = tungsten amount = 2 }
 					}
 					if = {
 						limit = { state = 473 }
-						add_resource = { type = oil amount = 1 }
+						add_resource = { type = oil amount = 2 }
 					}
 
 					# 铬：与钢同批产出
 					if = {
 						limit = { state = 682 }
-						add_resource = { type = chromium amount = 1 }
+						add_resource = { type = chromium amount = 2 }
 					}
 					if = {
 						limit = { state = 683 }
-						add_resource = { type = chromium amount = 1 }
+						add_resource = { type = chromium amount = 2 }
 					}
 				}
 				if = {
@@ -307,34 +307,34 @@ IRE_canada_cat = {
 					limit = { IRE_canadian_state = yes }
 					if = {
 						limit = { state = 276 }
-						add_resource = { type = steel amount = 1 }
-						add_resource = { type = chromium amount = 1 }
-					}
-					if = {
-						limit = { state = 466 }
-						add_resource = { type = aluminium amount = 1 }
-					}
-					if = {
-						limit = { state = 468 }
-						add_resource = { type = aluminium amount = 1 }
-					}
-					if = {
-						limit = { state = 682 }
-						add_resource = { type = steel amount = 1 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = steel amount = 2 }
 						add_resource = { type = chromium amount = 2 }
 					}
 					if = {
+						limit = { state = 466 }
+						add_resource = { type = aluminium amount = 2 }
+					}
+					if = {
+						limit = { state = 468 }
+						add_resource = { type = aluminium amount = 2 }
+					}
+					if = {
+						limit = { state = 682 }
+						add_resource = { type = steel amount = 2 }
+						add_resource = { type = aluminium amount = 2 }
+						add_resource = { type = chromium amount = 3 }
+					}
+					if = {
 						limit = { state = 683 }
-						add_resource = { type = aluminium amount = 1 }
+						add_resource = { type = aluminium amount = 2 }
 					}
 					if = {
 						limit = { state = 866 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 					if = {
 						limit = { state = 867 }
-						add_resource = { type = steel amount = 1 }
+						add_resource = { type = steel amount = 2 }
 					}
 				}
 				add_offsite_building = { type = arms_factory level = 1 }

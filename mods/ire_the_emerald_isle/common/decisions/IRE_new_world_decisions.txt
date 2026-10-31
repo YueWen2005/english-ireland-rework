@@ -229,30 +229,30 @@ IRE_home_cat = {
 			if = {
 				limit = { 113 = { is_owned_by = ROOT } }
 				113 = {
-					add_resource = { type = coal amount = 2 }
-					add_resource = { type = steel amount = 2 }
+					add_resource = { type = coal amount = 3 }
+					add_resource = { type = steel amount = 3 }
 				}
 			}
 			if = {
 				limit = { 134 = { is_owned_by = ROOT } }
 				134 = {
-					add_resource = { type = steel amount = 2 }
-					add_resource = { type = tungsten amount = 2 }
+					add_resource = { type = steel amount = 3 }
+					add_resource = { type = tungsten amount = 3 }
 				}
 			}
 			if = {
 				limit = { 135 = { is_owned_by = ROOT } }
 				135 = {
-					add_resource = { type = coal amount = 2 }
-					add_resource = { type = steel amount = 1 }
+					add_resource = { type = coal amount = 3 }
+					add_resource = { type = steel amount = 2 }
 				}
 			}
 			if = {
 				limit = { 119 = { is_owned_by = ROOT } }
 				119 = {
-					add_resource = { type = coal amount = 2 }
-					add_resource = { type = steel amount = 2 }
-					add_resource = { type = aluminium amount = 1 }
+					add_resource = { type = coal amount = 3 }
+					add_resource = { type = steel amount = 3 }
+					add_resource = { type = aluminium amount = 2 }
 				}
 			}
 			add_political_power = 25
@@ -281,9 +281,9 @@ IRE_home_cat = {
 
 		complete_effect = {
 			113 = {
-				add_resource = { type = steel amount = 1 }
-				add_resource = { type = aluminium amount = 1 }
-				add_resource = { type = chromium amount = 1 }
+				add_resource = { type = steel amount = 2 }
+				add_resource = { type = aluminium amount = 2 }
+				add_resource = { type = chromium amount = 2 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -310,9 +310,9 @@ IRE_home_cat = {
 
 		complete_effect = {
 			135 = {
-				add_resource = { type = steel amount = 1 }
-				add_resource = { type = aluminium amount = 2 }
-				add_resource = { type = chromium amount = 1 }
+				add_resource = { type = steel amount = 2 }
+				add_resource = { type = aluminium amount = 3 }
+				add_resource = { type = chromium amount = 2 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -339,10 +339,10 @@ IRE_home_cat = {
 
 		complete_effect = {
 			134 = {
-				add_resource = { type = steel amount = 1 }
-				add_resource = { type = aluminium amount = 1 }
-				add_resource = { type = tungsten amount = 1 }
-				add_resource = { type = chromium amount = 1 }
+				add_resource = { type = steel amount = 2 }
+				add_resource = { type = aluminium amount = 2 }
+				add_resource = { type = tungsten amount = 2 }
+				add_resource = { type = chromium amount = 2 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -369,10 +369,10 @@ IRE_home_cat = {
 
 		complete_effect = {
 			119 = {
-				add_resource = { type = steel amount = 2 }
-				add_resource = { type = aluminium amount = 1 }
-				add_resource = { type = coal amount = 1 }
-				add_resource = { type = chromium amount = 1 }
+				add_resource = { type = steel amount = 3 }
+				add_resource = { type = aluminium amount = 2 }
+				add_resource = { type = coal amount = 2 }
+				add_resource = { type = chromium amount = 2 }
 			}
 			add_stability = 0.01
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
@@ -401,7 +401,7 @@ IRE_home_cat = {
 		complete_effect = {
 			hidden_effect = {
 				add_offsite_building = { type = industrial_complex level = 3 }
-				add_offsite_building = { type = arms_factory level = 2 }
+				add_offsite_building = { type = arms_factory level = 3 }
 			}
 			custom_effect_tooltip = IRE_tt_unity_plan_repeat
 		}
@@ -425,7 +425,7 @@ IRE_home_cat = {
 		complete_effect = {
 			add_equipment_to_stockpile = {
 				type = train_equipment_1
-				amount = 10
+				amount = 15
 			}
 			custom_effect_tooltip = IRE_tt_train_production_repeat
 		}

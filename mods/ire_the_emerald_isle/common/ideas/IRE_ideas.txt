@@ -27,7 +27,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.05
-				conscription_factor = 0.02
+				conscription_factor = 0.03
 			}
 			removal_cost = -1
 		}
@@ -107,7 +107,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				production_speed_buildings_factor = 0.05
+				production_speed_buildings_factor = 0.07
 			}
 		}
 
@@ -116,7 +116,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
+				industrial_capacity_factory = 0.06
 				political_power_gain = 0.03
 			}
 		}
@@ -126,7 +126,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.08
+				stability_factor = 0.10
 				political_power_gain = 0.08
 			}
 		}
@@ -137,7 +137,9 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.10
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.12
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
 
@@ -171,8 +173,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				production_speed_dockyard_factor = 0.10
-				industrial_capacity_dockyard = 0.10
+				production_speed_dockyard_factor = 0.12
+				industrial_capacity_dockyard = 0.12
 			}
 		}
 
@@ -182,8 +184,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				navy_org_factor = 0.05
-				convoy_raiding_efficiency_factor = 0.05
+				navy_org_factor = 0.08
+				convoy_raiding_efficiency_factor = 0.08
 			}
 		}
 
@@ -192,7 +194,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.03
+				conscription_factor = 0.05
 			}
 		}
 
@@ -201,7 +203,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				experience_gain_army_factor = 0.05
+				experience_gain_army_factor = 0.08
 			}
 		}
 
@@ -210,8 +212,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_attack_factor = 0.05
-				army_defence_factor = 0.05
+				army_attack_factor = 0.08
+				army_defence_factor = 0.08
 			}
 		}
 
@@ -222,9 +224,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_attack_factor = 0.15
-				army_defence_factor = 0.10
-				army_org_factor = 0.15
+				army_attack_factor = 0.18
+				army_defence_factor = 0.15
+				army_org_factor = 0.18
 			}
 		}
 
@@ -233,8 +235,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.06
 			}
 		}
 
@@ -243,8 +245,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.05
-				industrial_capacity_factory = 0.10
+				conscription_factor = 0.08
+				industrial_capacity_factory = 0.12
 			}
 		}
 
@@ -263,7 +265,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				out_of_supply_factor = -0.15
-				convoy_escort_efficiency = 0.10
+				convoy_escort_efficiency = 0.12
 			}
 		}
 
@@ -282,8 +284,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.15
-				conscription_factor = 0.10
+				industrial_capacity_factory = 0.16
+				conscription_factor = 0.12
 				send_volunteer_factor = 0.5
 			}
 		}
@@ -294,8 +296,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.03
-				industrial_capacity_dockyard = 0.05
+				consumer_goods_factor = -0.04
+				industrial_capacity_dockyard = 0.06
 			}
 		}
 
@@ -316,8 +318,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.05
-				consumer_goods_factor = -0.03
+				industrial_capacity_factory = 0.06
+				consumer_goods_factor = -0.04
 			}
 		}
 
@@ -327,10 +329,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.10
-				conscription_factor = 0.05
-				army_defence_factor = 0.15
-				consumer_goods_factor = 0.05
+				stability_factor = 0.12
+				conscription_factor = 0.08
+				army_defence_factor = 0.20
+				consumer_goods_factor = 0.03
 			}
 			removal_cost = -1
 		}
@@ -340,10 +342,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.10
-				conscription_factor = 0.08
-				army_defence_factor = 0.20
-				consumer_goods_factor = 0.05
+				stability_factor = 0.12
+				conscription_factor = 0.10
+				army_defence_factor = 0.25
+				consumer_goods_factor = 0.03
 			}
 			removal_cost = -1
 		}
@@ -353,10 +355,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.10
-				conscription_factor = 0.10
-				army_defence_factor = 0.25
-				consumer_goods_factor = 0.08
+				stability_factor = 0.12
+				conscription_factor = 0.12
+				army_defence_factor = 0.30
+				consumer_goods_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -366,7 +368,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				air_detection = 0.10
+				air_detection = 0.12
 				naval_detection = 0.10
 			}
 		}
@@ -376,8 +378,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.02
-				army_org_factor = 0.05
+				conscription_factor = 0.03
+				army_org_factor = 0.08
 			}
 		}
 
@@ -387,7 +389,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.10
+				army_defence_factor = 0.15
 			}
 		}
 
@@ -406,10 +408,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.05
-				army_defence_factor = 0.20
-				experience_gain_army_factor = 0.10
-				consumer_goods_factor = 0.10
+				conscription_factor = 0.08
+				army_defence_factor = 0.25
+				experience_gain_army_factor = 0.12
+				consumer_goods_factor = 0.08
 			}
 		}
 
@@ -441,9 +443,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
-				research_speed_factor = 0.03
-				consumer_goods_factor = -0.03
+				industrial_capacity_factory = 0.12
+				research_speed_factor = 0.04
+				consumer_goods_factor = -0.04
+				production_factory_max_efficiency_factor = 0.05
 			}
 		}
 
@@ -453,9 +456,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.05
+				stability_factor = 0.08
 				political_power_gain = 0.10
-				research_speed_factor = 0.03
+				research_speed_factor = 0.04
 			}
 		}
 
@@ -464,9 +467,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				war_support_factor = 0.10
-				conscription_factor = 0.05
-				industrial_capacity_factory = 0.05
+				war_support_factor = 0.12
+				conscription_factor = 0.08
+				industrial_capacity_factory = 0.06
 				stability_factor = -0.03
 			}
 		}
@@ -477,9 +480,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.04
-				production_speed_industrial_complex_factor = 0.08
-				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.10
+				industrial_capacity_factory = 0.06
+				production_factory_start_efficiency_factor = 0.03
 			}
 		}
 
@@ -488,9 +492,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				research_speed_factor = 0.03
-				air_detection = 0.05
-				industrial_capacity_factory = 0.03
+				research_speed_factor = 0.04
+				air_detection = 0.08
+				industrial_capacity_factory = 0.04
 			}
 		}
 
@@ -499,9 +503,11 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
-				production_speed_buildings_factor = 0.05
-				research_speed_factor = 0.03
+				industrial_capacity_factory = 0.12
+				production_speed_buildings_factor = 0.07
+				research_speed_factor = 0.04
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
 
@@ -510,7 +516,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.10
+				industrial_capacity_dockyard = 0.12
 				naval_detection = 0.05
 			}
 		}
@@ -520,9 +526,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_org_factor = 0.05
-				army_defence_factor = 0.10
-				conscription_factor = 0.03
+				army_org_factor = 0.08
+				army_defence_factor = 0.15
+				conscription_factor = 0.05
 			}
 		}
 
@@ -531,8 +537,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.03
-				industrial_capacity_factory = 0.05
+				conscription_factor = 0.05
+				industrial_capacity_factory = 0.06
 				political_power_gain = 0.03
 			}
 		}
@@ -545,8 +551,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				production_speed_buildings_factor = 0.05
-				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.07
+				industrial_capacity_factory = 0.06
+				production_factory_start_efficiency_factor = 0.03
 			}
 		}
 
@@ -555,8 +562,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.05
-				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = -0.06
+				production_speed_industrial_complex_factor = 0.12
 			}
 		}
 
@@ -565,8 +572,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.06
+				production_factory_efficiency_gain_factor = 0.03
 			}
 		}
 
@@ -575,8 +583,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.05
-				production_speed_dockyard_factor = 0.05
+				industrial_capacity_dockyard = 0.06
+				production_speed_dockyard_factor = 0.07
 			}
 		}
 
@@ -585,8 +593,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.12
 				trade_opinion_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.03
 			}
 		}
 
@@ -596,7 +605,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				political_power_gain = 0.08
-				consumer_goods_factor = -0.03
+				consumer_goods_factor = -0.04
 			}
 		}
 
@@ -605,9 +614,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.15
-				consumer_goods_factor = -0.05
-				research_speed_factor = 0.03
+				industrial_capacity_factory = 0.16
+				consumer_goods_factor = -0.06
+				research_speed_factor = 0.04
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
 
@@ -619,9 +629,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.05
-				conscription_factor = 0.03
-				army_defence_factor = 0.10
+				stability_factor = 0.08
+				conscription_factor = 0.05
+				army_defence_factor = 0.15
 			}
 		}
 
@@ -630,8 +640,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.05
-				army_org_factor = 0.05
+				conscription_factor = 0.08
+				army_org_factor = 0.08
 			}
 		}
 
@@ -640,9 +650,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_attack_factor = 0.05
-				army_org_factor = 0.05
-				experience_gain_army_factor = 0.05
+				army_attack_factor = 0.08
+				army_org_factor = 0.08
+				experience_gain_army_factor = 0.08
 			}
 		}
 
@@ -651,7 +661,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.10
+				army_defence_factor = 0.15
 				naval_detection = 0.10
 			}
 		}
@@ -661,8 +671,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				convoy_raiding_efficiency_factor = 0.20
-				navy_org_factor = 0.05
+				convoy_raiding_efficiency_factor = 0.22
+				navy_org_factor = 0.08
 			}
 		}
 
@@ -671,7 +681,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				convoy_escort_efficiency = 0.15
+				convoy_escort_efficiency = 0.18
 				naval_coordination = 0.05
 			}
 		}
@@ -681,9 +691,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				air_detection = 0.10
+				air_detection = 0.12
 				naval_detection = 0.15
-				navy_submarine_detection_factor = 0.10
+				navy_submarine_detection_factor = 0.12
 			}
 		}
 
@@ -704,9 +714,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.15
-				industrial_capacity_factory = 0.05
-				war_support_factor = 0.05
+				army_defence_factor = 0.20
+				industrial_capacity_factory = 0.06
+				war_support_factor = 0.08
 			}
 		}
 
@@ -716,8 +726,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.03
-				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.04
+				industrial_capacity_factory = 0.06
 			}
 		}
 
@@ -726,8 +736,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.03
-				army_org_factor = 0.05
+				conscription_factor = 0.05
+				army_org_factor = 0.08
 			}
 		}
 
@@ -736,9 +746,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
-				consumer_goods_factor = 0.05
-				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.12
+				consumer_goods_factor = 0.03
+				production_speed_buildings_factor = 0.07
 			}
 		}
 
@@ -747,9 +757,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.10
-				navy_submarine_detection_factor = 0.15
-				navy_org_factor = 0.05
+				army_defence_factor = 0.15
+				navy_submarine_detection_factor = 0.18
+				navy_org_factor = 0.08
 			}
 		}
 
@@ -758,8 +768,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.15
-				conscription_factor = 0.03
+				army_defence_factor = 0.20
+				conscription_factor = 0.05
 			}
 		}
 
@@ -769,7 +779,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				planning_speed = 0.10
-				army_attack_factor = 0.05
+				army_attack_factor = 0.08
 			}
 		}
 
@@ -778,9 +788,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_defence_factor = 0.15
-				war_support_factor = 0.05
-				stability_factor = 0.05
+				army_defence_factor = 0.20
+				war_support_factor = 0.08
+				stability_factor = 0.08
 			}
 		}
 
@@ -790,8 +800,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				air_detection = 0.10
-				navy_submarine_detection_factor = 0.05
+				air_detection = 0.12
+				navy_submarine_detection_factor = 0.08
 				naval_detection = 0.05
 			}
 		}
@@ -801,8 +811,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.03
-				army_org_factor = 0.05
+				conscription_factor = 0.05
+				army_org_factor = 0.08
 			}
 		}
 
@@ -811,8 +821,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.05
-				war_support_factor = 0.05
+				stability_factor = 0.08
+				war_support_factor = 0.08
 				political_power_gain = 0.05
 			}
 		}
@@ -834,7 +844,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				monthly_population = 0.05
-				conscription_factor = 0.03
+				conscription_factor = 0.05
 			}
 		}
 
@@ -843,7 +853,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				research_speed_factor = 0.05
+				research_speed_factor = 0.06
 				political_power_gain = 0.05
 			}
 		}
@@ -854,9 +864,9 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				monthly_population = 0.10
-				conscription_factor = 0.05
-				research_speed_factor = 0.05
-				stability_factor = 0.05
+				conscription_factor = 0.08
+				research_speed_factor = 0.06
+				stability_factor = 0.08
 			}
 		}
 
@@ -865,9 +875,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.12
 				trade_opinion_factor = 0.10
-				research_speed_factor = 0.03
+				research_speed_factor = 0.04
 			}
 		}
 
@@ -878,8 +888,8 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				naval_detection = 0.10
-				air_detection = 0.05
-				navy_submarine_detection_factor = 0.10
+				air_detection = 0.08
+				navy_submarine_detection_factor = 0.12
 			}
 		}
 
@@ -888,8 +898,8 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				army_org_factor = 0.05
-				army_defence_factor = 0.05
+				army_org_factor = 0.08
+				army_defence_factor = 0.08
 			}
 		}
 
@@ -907,8 +917,21 @@ ideas = {
 				army_defence_factor = 0.15
 				army_core_defence_factor = 0.05
 				army_core_attack_factor = 0.03
+				army_org_factor = 0.02
 				industrial_capacity_factory = 0.03
 				conscription_factor = 0.02
+				production_factory_max_efficiency_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.03
+				production_factory_start_efficiency_factor = 0.03
+				line_change_production_efficiency_factor = 0.03
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.02
+				research_speed_factor = 0.02
+				intel_network_gain_factor = 0.05
+				local_resources_factor = 0.03
+				max_fuel_factor = 0.03
+				fuel_gain_factor = 0.03
+				naval_invasion_prep_speed = 0.05
 			}
 			removal_cost = -1
 		}
@@ -923,9 +946,24 @@ ideas = {
 				army_defence_factor = 0.25
 				army_core_defence_factor = 0.08
 				army_core_attack_factor = 0.05
+				army_org_factor = 0.03
 				industrial_capacity_factory = 0.06
 				conscription_factor = 0.05
 				army_attack_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.07
+				production_speed_industrial_complex_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.05
+				consumer_goods_factor = -0.03
+				research_speed_factor = 0.03
+				intel_network_gain_factor = 0.08
+				local_resources_factor = 0.05
+				max_fuel_factor = 0.05
+				fuel_gain_factor = 0.05
+				naval_invasion_prep_speed = 0.08
 			}
 			removal_cost = -1
 		}
@@ -940,10 +978,26 @@ ideas = {
 				army_defence_factor = 0.35
 				army_core_defence_factor = 0.12
 				army_core_attack_factor = 0.08
+				army_org_factor = 0.05
 				industrial_capacity_factory = 0.10
 				conscription_factor = 0.10
 				army_attack_factor = 0.10
-				army_org_factor = 0.05
+				production_factory_max_efficiency_factor = 0.07
+				production_factory_efficiency_gain_factor = 0.07
+				production_factory_start_efficiency_factor = 0.07
+				line_change_production_efficiency_factor = 0.07
+				production_speed_buildings_factor = 0.09
+				production_speed_industrial_complex_factor = 0.07
+				production_speed_arms_factory_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.07
+				consumer_goods_factor = -0.04
+				research_speed_factor = 0.04
+				intel_network_gain_factor = 0.10
+				local_resources_factor = 0.07
+				max_fuel_factor = 0.07
+				fuel_gain_factor = 0.07
+				naval_invasion_prep_speed = 0.10
+				naval_coordination = 0.05
 			}
 			removal_cost = -1
 		}
@@ -958,11 +1012,28 @@ ideas = {
 				army_defence_factor = 0.50
 				army_core_defence_factor = 0.18
 				army_core_attack_factor = 0.12
+				army_org_factor = 0.07
 				industrial_capacity_factory = 0.15
 				conscription_factor = 0.20
 				army_attack_factor = 0.15
-				army_org_factor = 0.05
 				surrender_limit = 0.20
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+				line_change_production_efficiency_factor = 0.10
+				production_speed_buildings_factor = 0.12
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_arms_factory_factor = 0.08
+				conversion_cost_civ_to_mil_factor = -0.10
+				consumer_goods_factor = -0.05
+				research_speed_factor = 0.05
+				intel_network_gain_factor = 0.12
+				local_resources_factor = 0.09
+				max_fuel_factor = 0.09
+				fuel_gain_factor = 0.09
+				naval_invasion_prep_speed = 0.15
+				naval_coordination = 0.08
+				air_defence_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -977,12 +1048,29 @@ ideas = {
 				army_defence_factor = 0.65
 				army_core_defence_factor = 0.25
 				army_core_attack_factor = 0.18
+				army_org_factor = 0.10
 				industrial_capacity_factory = 0.20
 				conscription_factor = 0.40
 				army_attack_factor = 0.25
-				army_org_factor = 0.10
 				surrender_limit = 0.50
-				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_start_efficiency_factor = 0.15
+				line_change_production_efficiency_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				production_speed_industrial_complex_factor = 0.12
+				production_speed_arms_factory_factor = 0.10
+				conversion_cost_civ_to_mil_factor = -0.15
+				consumer_goods_factor = -0.07
+				research_speed_factor = 0.06
+				intel_network_gain_factor = 0.15
+				operative_slot = 1
+				local_resources_factor = 0.12
+				max_fuel_factor = 0.12
+				fuel_gain_factor = 0.12
+				naval_invasion_prep_speed = 0.20
+				naval_coordination = 0.10
+				air_defence_factor = 0.10
 			}
 			removal_cost = -1
 		}
@@ -1004,7 +1092,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.05
+				conscription_factor = 0.08
 			}
 		}
 
@@ -1013,7 +1101,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				conscription_factor = 0.03
+				conscription_factor = 0.05
 			}
 		}
 

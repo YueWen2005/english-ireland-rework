@@ -20,7 +20,7 @@ IRE_defend_cat = {
 				count = 2
 				prioritize_location = 11293
 			}
-			add_manpower = 5000
+			add_manpower = 10000
 			add_war_support = 0.02
 		}
 
@@ -42,8 +42,8 @@ IRE_defend_cat = {
 				count = 3
 				prioritize_location = 11293
 			}
-			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = IRE }
-			add_manpower = 5000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = IRE }
+			add_manpower = 10000
 		}
 
 		ai_will_do = { base = 120 }
@@ -64,9 +64,9 @@ IRE_defend_cat = {
 				count = 4
 				prioritize_location = 11293
 			}
-			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
-			add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = IRE }
-			add_manpower = 10000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = IRE }
+			add_manpower = 20000
 			add_war_support = 0.03
 		}
 
@@ -95,9 +95,9 @@ IRE_defend_cat = {
 				prioritize_location = 11293
 			}
 			add_offsite_building = { type = industrial_complex level = 1 }
-			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = IRE }
-			add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = IRE }
-			add_manpower = 10000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 8000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 800 producer = IRE }
+			add_manpower = 20000
 		}
 
 		ai_will_do = { base = 120 }
@@ -132,9 +132,9 @@ IRE_defend_cat = {
 			}
 			add_offsite_building = { type = industrial_complex level = 1 }
 			add_offsite_building = { type = arms_factory level = 1 }
-			add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 producer = IRE }
-			add_equipment_to_stockpile = { type = support_equipment amount = 1000 producer = IRE }
-			add_manpower = 30000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 15000 producer = IRE }
+			add_equipment_to_stockpile = { type = support_equipment amount = 1500 producer = IRE }
+			add_manpower = 45000
 			add_war_support = 0.05
 		}
 
@@ -164,7 +164,7 @@ IRE_defend_cat = {
 				count = 1
 				prioritize_location = 11293
 			}
-			add_manpower = 5000
+			add_manpower = 10000
 			add_war_support = 0.02
 		}
 

@@ -450,3 +450,117 @@ IRE_X_ensure_hitler = {
 		}
 	}
 }
+
+# ============================================================
+# A线：黑英上台、欧洲希望、英国削弱与红色起义
+# ============================================================
+IRE_black_britain_takeover = {
+	every_country = {
+		limit = {
+			original_tag = ENG
+			has_government = fascism
+			has_civil_war = no
+		}
+		set_cosmetic_tag = ENG_black_britain
+		if = {
+			limit = { NOT = { has_country_flag = ENG_black_britain_leader_created } }
+			create_country_leader = {
+				name = "Oswald Mosley"
+				desc = "POLITICS_ENG_BLACK_BRITAIN_MOSLEY_DESC"
+				picture = GFX_portrait_ENG_oswald_mosley
+				expire = "1965.1.1.1"
+				ideology = fascism_ideology
+				traits = { champion_of_peace_1 economic_reformer }
+			}
+			set_country_flag = ENG_black_britain_leader_created
+		}
+		if = { limit = { is_in_faction = yes } leave_faction = yes }
+		if = {
+			limit = { country_exists = GER GER = { is_in_faction = yes } }
+			add_to_faction = GER
+		}
+	}
+	every_country = {
+		limit = {
+			OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
+			exists = yes
+			is_subject = yes
+		}
+		add_autonomy_ratio = { value = 0.35 localization = IRE_european_hope_alliance }
+		add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 }
+	}
+	set_country_flag = IRE_black_britain_formed
+}
+
+IRE_form_european_hope = {
+	set_rule = { can_create_factions = yes }
+	if = {
+		limit = { NOT = { has_idea = IRE_european_hope } }
+		add_ideas = IRE_european_hope
+	}
+	if = {
+		limit = { NOT = { is_in_faction = yes } }
+		create_faction = IRE_european_hope_alliance
+	}
+	else_if = {
+		limit = { is_faction_leader = yes }
+		set_faction_name = IRE_european_hope_alliance
+	}
+	set_country_flag = IRE_european_hope_formed
+}
+
+IRE_british_spy_network_effect = {
+	add_ideas = IRE_british_spy_network_idea
+	set_country_flag = IRE_spy_network_done
+	every_country = {
+		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
+		add_ideas = IRE_ENG_spy_chaos
+		add_stability = -0.03
+		add_war_support = -0.03
+		every_owned_state = { add_resistance = 5 }
+	}
+	country_event = { id = ire_nw.96 days = 0 }
+}
+
+IRE_royal_navy_defection_effect = {
+	add_ideas = IRE_royal_navy_defection_idea
+	set_country_flag = IRE_navy_defection_done
+	every_country = {
+		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
+		transfer_navy = { target = IRE }
+		add_ideas = IRE_ENG_navy_purge
+	}
+	country_event = { id = ire_nw.95 days = 0 }
+}
+
+IRE_raf_defection_effect = {
+	add_ideas = IRE_raf_defection_idea
+	set_country_flag = IRE_raf_defection_done
+	add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 200 }
+	add_equipment_to_stockpile = { type = cas_equipment_1 amount = 100 }
+	air_experience = 50
+	every_country = {
+		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
+		add_ideas = IRE_ENG_air_purge
+	}
+	country_event = { id = ire_nw.98 days = 0 }
+}
+
+IRE_red_britain_uprising_effect = {
+	add_ideas = IRE_red_britain_uprising
+	set_country_flag = IRE_red_uprising_done
+	every_country = {
+		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
+		start_civil_war = { ideology = communism size = 0.30 }
+	}
+	country_event = { id = ire_nw.94 days = 0 }
+}
+
+IRE_red_sabotage_effect = {
+	every_country = {
+		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
+		add_stability = -0.03
+		add_war_support = -0.03
+		every_owned_state = { add_resistance = 5 }
+	}
+}
