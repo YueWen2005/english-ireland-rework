@@ -34,8 +34,8 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 - **军事区域**：独立分支，需二战爆发解锁，不依赖任何主线的紧急状态国策；陆军 / 海军 / 空军 / 情报 / 海岸瞭望 / 装甲车
 - **212 个国策节点**
 - **A 线外交环境事件**：美国租借与爱尔兰游说、加拿大归并后的英联邦裂痕、自由法国请求、东线医疗队、美国安全保障、战后欧洲秩序等 6 组事件，会改变美/英/法/苏/德及自治领的态度与外交环境，而不只是给爱尔兰加数值
-- **103 个剧情事件**、**95 个决议**（22 个分类）
-- **175 个国家精神**（含隐藏修正）
+- **107 个剧情事件**、**94 个决议**（22 个分类）
+- **176 个国家精神**（含隐藏修正）
 - 完整简体中文本地化
 
 ### 三个核心变量机制
@@ -152,14 +152,14 @@ ire_the_emerald_isle/
 ├── common/
 │   ├── national_focus/IRE_focus.txt          212 国策
 │   ├── ideas/IRE_ideas.txt                   140 精神
-│   ├── ideas/IRE_new_world_ideas.txt         35 精神（A 线）
+│   ├── ideas/IRE_new_world_ideas.txt         36 精神（A 线）
 │   ├── decisions/IRE_decisions.txt           20 决议
 │   ├── decisions/IRE_new_world_decisions.txt 32 决议（A 线）
 │   ├── decisions/IRE_defend_ireland_decisions.txt 6 决议（保卫爱尔兰）
 │   ├── decisions/IRE_new_world_flavour_decisions.txt 5 决议（新世界轶事）
 │   ├── decisions/IRE_canada_decisions.txt    3 决议（加拿大开发）
 │   ├── decisions/IRE_red_black_decisions.txt 18 决议（红黑线）
-│   ├── decisions/IRE_european_hope_decisions.txt 11 决议（欧洲希望）
+│   ├── decisions/IRE_european_hope_decisions.txt 10 决议（欧洲希望）
 │   ├── opinion_modifiers/IRE_opinions.txt    18 观点修正
 │   ├── countries/ENG_black_britain_cosmetic.txt 黑英 cosmetic tag
 │   ├── scripted_effects/
@@ -168,7 +168,7 @@ ire_the_emerald_isle/
 │   ├── scripted_triggers/IRE_canadian_triggers.txt 加拿大州判定
 │   └── on_actions/IRE_on_actions.txt         开局/每日/每月钩子
 ├── events/IRE_events.txt                     46 事件
-├── events/IRE_new_world_events.txt           57 事件（A 线）
+├── events/IRE_new_world_events.txt           61 事件（A 线）
 ├── history/
 │   ├── countries/IRE - 爱尔兰.txt            开局设定 + oob 引用
 │   └── units/IRE_units.txt                   3 个师模板

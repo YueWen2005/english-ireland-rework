@@ -398,6 +398,66 @@ on_actions = {
 				country_event = { id = ire_nw.85 days = 0 }
 			}
 
+			# ---- A线：不列颠危机自动计时 ----
+			if = {
+				limit = {
+					tag = IRE
+					NOT = { has_country_flag = IRE_britain_crisis_active }
+					NOT = { has_country_flag = IRE_britain_crisis_resolved }
+					NOT = { has_country_flag = IRE_black_britain_started }
+					NOT = { has_country_flag = IRE_black_britain_formed }
+					NOT = { has_country_flag = IRE_black_britain_failed }
+					has_completed_focus = IRE_border_plebiscite
+					has_completed_focus = IRE_A_belfast
+					119 = { is_owned_by = ROOT }
+					ENG = { exists = yes NOT = { has_government = fascism } NOT = { has_civil_war = yes } }
+					NOT = { has_war_with = ENG }
+				}
+				set_country_flag = IRE_britain_crisis_active
+				set_variable = { IRE_britain_crisis_months = 0 }
+				country_event = { id = ire_nw.86 days = 0 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_britain_crisis_active
+				}
+				if = {
+					limit = { ENG = { exists = yes } }
+					ENG = { add_stability = -0.01 }
+				}
+				add_to_variable = { IRE_britain_crisis_months = 1 }
+				if = {
+					limit = {
+						check_variable = { IRE_britain_crisis_months > 2 }
+						NOT = { has_country_flag = IRE_crisis_evt_87 }
+					}
+					set_country_flag = IRE_crisis_evt_87
+					country_event = { id = ire_nw.87 days = 0 }
+				}
+				if = {
+					limit = {
+						check_variable = { IRE_britain_crisis_months > 5 }
+						NOT = { has_country_flag = IRE_crisis_evt_88 }
+					}
+					set_country_flag = IRE_crisis_evt_88
+					country_event = { id = ire_nw.88 days = 0 }
+				}
+				if = {
+					limit = {
+						check_variable = { IRE_britain_crisis_months > 8 }
+						NOT = { has_country_flag = IRE_crisis_evt_89 }
+					}
+					set_country_flag = IRE_crisis_evt_89
+					country_event = { id = ire_nw.89 days = 0 }
+				}
+				if = {
+					limit = { check_variable = { IRE_britain_crisis_months > 11 } }
+					remove_country_flag = IRE_britain_crisis_active
+					country_event = { id = ire_nw.90 days = 0 }
+				}
+			}
+
 			# ---- A线：黑英上台判定 ----
 			if = {
 				limit = {
@@ -411,6 +471,10 @@ on_actions = {
 				}
 				else_if = {
 					limit = { NOT = { any_country = { original_tag = ENG has_civil_war = yes } } }
+					every_country = {
+						limit = { original_tag = ENG }
+						if = { limit = { has_idea = IRE_ENG_britain_crisis } remove_ideas = IRE_ENG_britain_crisis }
+					}
 					set_country_flag = IRE_black_britain_failed
 					remove_country_flag = IRE_black_britain_started
 				}

@@ -464,5 +464,17 @@ ideas = {
 			removal_cost = -1
 		}
 
+		IRE_ENG_britain_crisis = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = -0.05
+				political_power_gain = -0.10
+			}
+			removal_cost = -1
+		}
+
 	}
 }

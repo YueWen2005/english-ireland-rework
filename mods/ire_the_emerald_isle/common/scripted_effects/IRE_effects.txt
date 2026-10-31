@@ -481,6 +481,10 @@ IRE_black_britain_takeover = {
 			limit = { country_exists = GER GER = { is_in_faction = yes } }
 			add_to_faction = GER
 		}
+		if = {
+			limit = { has_idea = IRE_ENG_britain_crisis }
+			remove_ideas = IRE_ENG_britain_crisis
+		}
 	}
 	every_country = {
 		limit = {

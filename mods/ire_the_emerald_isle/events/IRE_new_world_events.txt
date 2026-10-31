@@ -1528,11 +1528,113 @@ country_event = {
 # A线：黑英、欧洲希望、红色法国与英国起义
 # ============================================================
 country_event = {
+	id = ire_nw.86
+	title = ire_nw.86.t
+	desc = ire_nw.86.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { ENG = { exists = yes } }
+			ENG = {
+				if = { limit = { NOT = { has_idea = IRE_ENG_britain_crisis } } add_ideas = IRE_ENG_britain_crisis }
+				add_stability = -0.04
+				add_war_support = -0.02
+			}
+		}
+	}
+	option = {
+		name = ire_nw.86.a
+		add_political_power = 10
+		add_stability = 0.01
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.02 } }
+	}
+	option = {
+		name = ire_nw.86.b
+		add_war_support = 0.02
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.01 } }
+	}
+}
+
+country_event = {
+	id = ire_nw.87
+	title = ire_nw.87.t
+	desc = ire_nw.87.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.05 } }
+	}
+	option = {
+		name = ire_nw.87.a
+		add_political_power = -15
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = 0.02 } }
+	}
+	option = {
+		name = ire_nw.87.b
+		add_war_support = 0.02
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.03 } }
+	}
+}
+
+country_event = {
+	id = ire_nw.88
+	title = ire_nw.88.t
+	desc = ire_nw.88.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.05 } }
+	}
+	option = {
+		name = ire_nw.88.a
+		add_political_power = -10
+		add_stability = 0.01
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.01 } }
+	}
+	option = {
+		name = ire_nw.88.b
+		add_war_support = 0.02
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.03 } }
+	}
+}
+
+country_event = {
+	id = ire_nw.89
+	title = ire_nw.89.t
+	desc = ire_nw.89.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { ENG = { exists = yes } } ENG = { add_stability = -0.04 } }
+	}
+	option = {
+		name = ire_nw.89.a
+		add_war_support = 0.02
+		add_political_power = 10
+	}
+}
+
+country_event = {
 	id = ire_nw.90
 	title = ire_nw.90.t
 	desc = ire_nw.90.d
 	picture = GFX_report_event_generic_riot
 	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { ENG = { exists = yes } }
+			ENG = {
+				if = { limit = { NOT = { has_idea = IRE_ENG_britain_crisis } } add_ideas = IRE_ENG_britain_crisis }
+				add_stability = -0.03
+			}
+		}
+	}
 
 	option = {
 		name = ire_nw.90.a
