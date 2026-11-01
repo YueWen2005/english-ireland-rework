@@ -1179,7 +1179,10 @@ focus_tree = {
 				tooltip = IRE_tt_canada_not_annexed
 				NOT = { has_country_flag = IRE_canada_annexed }
 			}
-			NOT = { ENG = { has_war_with = ROOT } }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_canada_independence_war
+				has_war_with = GER
+			}
 		}
 		ai_will_do = { base = 50 }
 
@@ -1788,7 +1791,7 @@ focus_tree = {
 						NOT = { is_in_faction = yes }
 						has_opinion = { target = ROOT value > 39 }
 					}
-					ROOT = { add_to_faction = PREV }
+					IRE_force_join_faction = yes
 				}
 			}
 			every_country = {

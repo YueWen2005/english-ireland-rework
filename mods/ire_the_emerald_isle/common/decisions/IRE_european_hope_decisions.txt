@@ -24,7 +24,7 @@ IRE_european_hope_cat = {
 		complete_effect = {
 			if = {
 				limit = { country_exists = USA NOT = { USA = { is_in_faction = yes } } }
-				add_to_faction = USA
+				USA = { IRE_force_join_faction = yes }
 				add_ideas = IRE_european_hope_us
 				add_ideas = IRE_us_lend_lease
 				set_country_flag = IRE_usa_joined
@@ -69,7 +69,7 @@ IRE_european_hope_cat = {
 					NOT = { is_in_faction = yes }
 					has_opinion = { target = ROOT value > 39 }
 				}
-				IRE = { add_to_faction = PREV }
+				IRE_force_join_faction = yes
 			}
 			add_ideas = IRE_european_hope_dominions
 			set_country_flag = IRE_dominions_joined
@@ -112,7 +112,7 @@ IRE_european_hope_cat = {
 					NOT = { is_in_faction = yes }
 					has_opinion = { target = ROOT value > 39 }
 				}
-				IRE = { add_to_faction = PREV }
+				IRE_force_join_faction = yes
 			}
 			add_ideas = IRE_european_hope_nordics
 			set_country_flag = IRE_nordics_joined

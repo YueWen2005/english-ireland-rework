@@ -1005,7 +1005,7 @@ IRE_nordic_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			add_to_faction = SWE
+			SWE = { IRE_force_join_faction = yes }
 			add_political_power = 10
 		}
 
@@ -1031,7 +1031,7 @@ IRE_nordic_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			add_to_faction = NOR
+			NOR = { IRE_force_join_faction = yes }
 			add_political_power = 10
 		}
 
@@ -1057,7 +1057,7 @@ IRE_nordic_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			add_to_faction = DEN
+			DEN = { IRE_force_join_faction = yes }
 			add_political_power = 10
 		}
 
@@ -1083,7 +1083,7 @@ IRE_nordic_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			add_to_faction = FIN
+			FIN = { IRE_force_join_faction = yes }
 			add_political_power = 10
 		}
 

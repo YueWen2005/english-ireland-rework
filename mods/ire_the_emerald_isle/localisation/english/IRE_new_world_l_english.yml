@@ -15,7 +15,7 @@
  IRE_A_spanish_volunteers:0 "The Wild Geese Expedition"
  IRE_A_spanish_volunteers_desc:0 "Franco's rebellion has torn Spain apart. Dublin sends the descendants of the Wild Geese to Iberia under the banner of a volunteer expedition. It is not a national war, but it will give Ireland a real expeditionary army. Whatever the state of the Spanish war, the name of the Wild Geese can still serve Ireland. After completion, sending volunteers is no longer restricted by world tension."
  IRE_A_canada_independence:0 "Inciting Canadian Independence"
- IRE_A_canada_independence_desc:0 "The bond between Ottawa and London is loosening. Requires Canada to exist and not have capitulated, and requires that Britain is not at war with us. Canada leaves any faction, becomes fully independent if it was a British subject, and is forbidden from joining a faction again."
+ IRE_A_canada_independence_desc:0 "The link between Ottawa and London is loosening. Requires Canada to exist and not have capitulated, and Germany to be at war with Ireland. Canada leaves any faction; if still a British dominion it becomes independent and is barred from rejoining."
  IRE_A_atlantic_fleet:0 "Atlantic Fleet"
  IRE_A_atlantic_fleet_desc:0 "From Newfoundland to Cork, a small but sharp fleet begins to escort the Atlantic routes."
  IRE_A_air_bridge:0 "Transatlantic Air Bridge"
@@ -622,3 +622,4 @@
  ire_nw.98.b:0 "Receive the aircraft."
  ire_nw.98.c:0 "Let them choose."
  IRE_tt_red_uprising_conditions:0 "Red France must have actually joined European Hope, and Germany must be at war with Ireland."
+ IRE_tt_canada_independence_war:0 "Requires Germany to be at war with Ireland."
