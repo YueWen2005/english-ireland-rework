@@ -504,8 +504,11 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_belfast }
 		x = 65
 		y = 4
-				available = {
-			any_other_country = { is_major = yes has_war = yes }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_european_major_war
+				IRE_european_major_war = yes
+			}
 		}
 		ai_will_do = { base = 60 }
 
@@ -772,7 +775,10 @@ focus_tree = {
 		x = 59
 		y = 5
 		available = {
-			any_country = { is_major = yes has_war = yes }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_european_major_war
+				IRE_european_major_war = yes
+			}
 		}
 		ai_will_do = { base = 40 }
 
@@ -1179,10 +1185,7 @@ focus_tree = {
 				tooltip = IRE_tt_canada_not_annexed
 				NOT = { has_country_flag = IRE_canada_annexed }
 			}
-			custom_trigger_tooltip = {
-				tooltip = IRE_tt_canada_independence_war
-				has_war_with = GER
-			}
+			NOT = { ENG = { has_war_with = ROOT } }
 		}
 		ai_will_do = { base = 50 }
 
@@ -2093,8 +2096,11 @@ focus_tree = {
 
 		x = 132
 		y = 12
-				available = {
-			any_other_country = { is_major = yes has_war = yes }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_european_major_war
+				IRE_european_major_war = yes
+			}
 		}
 		ai_will_do = { base = 120 }
 
@@ -2282,7 +2288,10 @@ focus_tree = {
 		x = 136
 		y = 22
 		available = {
-			any_country = { has_war = yes is_major = yes }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_european_major_war
+				IRE_european_major_war = yes
+			}
 		}
 		ai_will_do = { base = 120 }
 
@@ -2380,7 +2389,7 @@ focus_tree = {
 		x = 138
 		y = 25
 		available = {
-			NOT = { any_country = { has_war = yes is_major = yes } }
+			NOT = { IRE_european_major_war = yes }
 		}
 		ai_will_do = { base = 120 }
 
@@ -2871,7 +2880,10 @@ focus_tree = {
 		x = 10
 		y = 0
 		available = {
-			any_country = { is_major = yes has_war = yes }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_european_major_war
+				IRE_european_major_war = yes
+			}
 		}
 		ai_will_do = { base = 80 }
 

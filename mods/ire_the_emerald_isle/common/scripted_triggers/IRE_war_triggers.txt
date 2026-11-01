@@ -1,0 +1,15 @@
+# 欧洲大国之间的战争：两个欧洲主要国家互相开战。
+# 不包含意大利-埃塞俄比亚这类殖民战争，也不要求爱尔兰参战。
+IRE_european_major_war = {
+	any_country = {
+		is_major = yes
+		has_war = yes
+		is_on_same_continent_as = ROOT
+		any_country = {
+			is_major = yes
+			has_war = yes
+			is_on_same_continent_as = ROOT
+			has_war_with = PREV
+		}
+	}
+}

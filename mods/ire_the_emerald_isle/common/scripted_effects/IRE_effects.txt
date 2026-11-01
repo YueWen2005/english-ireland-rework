@@ -189,7 +189,7 @@ IRE_emergency_tier_check = {
 		limit = {
 			has_idea = IRE_emergency_powers
 			has_war = no
-			any_other_country = { is_major = yes has_war = yes }
+			IRE_european_major_war = yes
 			date > 1939.6.1
 		}
 		remove_ideas = IRE_emergency_powers
