@@ -205,14 +205,26 @@ IRE_european_hope_cat = {
 		days_remove = 1
 
 		available = {
+			has_country_flag = IRE_red_france_joined
 			has_idea = IRE_european_hope_france
 			has_idea = IRE_british_spy_network_idea
 			has_country_flag = IRE_black_britain_formed
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_red_uprising_conditions
+				has_war_with = GER
+				any_country = {
+					original_tag = FRA
+					has_government = communism
+					has_civil_war = no
+					is_in_faction_with = ROOT
+				}
+			}
 			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
 		}
 
 		visible = {
-			has_idea = IRE_european_hope_france
+			has_country_flag = IRE_red_france_joined
+			has_idea = IRE_british_spy_network_idea
 			has_country_flag = IRE_black_britain_formed
 			NOT = { has_country_flag = IRE_red_uprising_done }
 		}

@@ -185,7 +185,7 @@
  IRE_effect_canada_annex:0 "Canada is annexed together with its army: 2 off-map civilian factories, 2 off-map military factories and 1 off-map dockyard. Britain and the USA are angered."
  IRE_effect_new_world_ireland:0 "All 23 Canadian states become cores of Ireland, plus 3 off-map civilian factories. The country is renamed New World Ireland."
  IRE_effect_nordic_bridge:0 "+40 opinion with every independent Nordic state."
- IRE_effect_nordic_alliance:0 "Founds the New World Alliance (or, if Ireland already leads a faction, uses it). Friendly Nordic states join immediately; the rest receive an Irish guarantee."
+ IRE_effect_nordic_alliance:0 "Founds the New World Alliance with open membership rules (or, if Ireland already leads a faction, uses it). Friendly Nordic states join immediately; the rest receive an Irish guarantee."
 
  # ===== Nordic decisions =====
  IRE_nordic_aid:0 "Nordic Aid Package"
@@ -546,7 +546,7 @@
  IRE_raf_defection:0 "Turn the RAF"
  IRE_raf_defection_desc:0 "Persuade about a quarter of the RAF squadrons to fly to Ireland with their aircraft and experience, weakening Black Britain's air defence."
  IRE_red_london_uprising:0 "Ignite an Uprising in London"
- IRE_red_london_uprising_desc:0 "Red France and Irish intelligence prepare to ignite an uprising in Britain itself, forcing Black Britain to fight a second front in its own capital."
+ IRE_red_london_uprising_desc:0 "Red France and Irish intelligence prepare to ignite an uprising in Britain itself, forcing Black Britain to fight a second front in its own capital. Requires Red France to have actually joined European Hope, and Germany to be at war with Ireland."
  IRE_red_sabotage:0 "Red Sabotage in Britain"
  IRE_red_sabotage_desc:0 "Keep sabotaging railways, ports, and armament factories across Britain to create windows for a landing."
  IRE_tt_usa_joined:0 "The United States joins the Irish-led Hope of Europe and grants American industry/naval cooperation."
@@ -621,3 +621,4 @@
  ire_nw.98.a:0 "Welcome the pilots."
  ire_nw.98.b:0 "Receive the aircraft."
  ire_nw.98.c:0 "Let them choose."
+ IRE_tt_red_uprising_conditions:0 "Red France must have actually joined European Hope, and Germany must be at war with Ireland."

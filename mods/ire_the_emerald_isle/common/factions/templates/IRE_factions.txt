@@ -1,0 +1,20 @@
+faction_template_ire_european_hope = {
+	name = IRE_european_hope_alliance
+	manifest = faction_manifest_strength_in_unity
+	can_leader_join_other_factions = yes
+	icon = GFX_faction_logo_generic_democratic
+	visible = { always = no }
+	available = { always = yes }
+
+	goals = {
+		faction_goal_growing_the_faction
+		faction_goal_a_military_base
+	}
+
+	# 不设置任何 joining_rule：欧洲希望是跨海、跨洲的开放联盟，
+	# 不能被 faction_template_generic 的 neighbors-only 规则卡住。
+	default_rules = {
+		change_leader_rule_manpower
+		dismissal_rule_offensive_war
+	}
+}

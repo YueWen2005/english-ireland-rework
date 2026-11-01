@@ -8,7 +8,7 @@
 > 如果你认为本文件某一条是错的，**先按本文件做**，再向人类提出修改建议，不要自行绕过。
 
 **适用对象**：所有接手本仓库的 AI 代理、协作者、以及人类维护者。
-**对应版本**：v2.14.1 · **最后更新**：2026-11-01
+**对应版本**：v2.14.2 · **最后更新**：2026-11-01
 
 ---
 
@@ -389,7 +389,7 @@ grep -c "focus = {" mods/ire_the_emerald_isle/common/national_focus/IRE_focus.tx
 grep -n "id = IRE_A_" mods/ire_the_emerald_isle/common/national_focus/IRE_focus.txt
 ```
 
-### 7.2 当前规模（v2.14.1）
+### 7.2 当前规模（v2.14.2）
 
 | 项目 | 数量 |
 |---|---|

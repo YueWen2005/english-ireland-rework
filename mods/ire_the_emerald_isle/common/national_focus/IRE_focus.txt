@@ -1773,7 +1773,9 @@ focus_tree = {
 			set_rule = { can_create_factions = yes }
 			if = {
 				limit = { is_in_faction = no }
-				create_faction = IRE_new_world_alliance
+				create_faction_from_template = faction_template_ire_european_hope
+				set_faction_name = IRE_new_world_alliance
+				set_country_flag = IRE_european_hope_template_fixed
 			}
 			# 友好且未入阵营的北欧国家直接加入；其余给予安全保证
 			if = {

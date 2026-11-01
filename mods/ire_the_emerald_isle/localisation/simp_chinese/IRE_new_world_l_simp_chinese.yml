@@ -181,7 +181,7 @@
  IRE_effect_canada_annex:0 "加拿大及其军队整体并入：获得 2 座地图外民用工厂、2 座地图外军用工厂、1 座地图外船坞。英国与美国将记恨我国。"
  IRE_effect_new_world_ireland:0 "加拿大 23 个州全部成为爱尔兰核心，并获得 3 座地图外民用工厂；国名改为新世界爱尔兰。"
  IRE_effect_nordic_bridge:0 "所有独立的北欧国家好感 +40。"
- IRE_effect_nordic_alliance:0 "成立新世界爱尔兰联盟（若爱尔兰已是阵营领袖，则直接使用现有阵营）：友好的北欧国家立即入盟，其余获得爱尔兰的安全保证。"
+ IRE_effect_nordic_alliance:0 "成立新世界爱尔兰联盟（开放入盟规则；若爱尔兰已是阵营领袖，则直接使用现有阵营）：友好的北欧国家立即入盟，其余获得爱尔兰的安全保证。"
 
  # ===== 北欧决议 =====
  IRE_nordic_aid:0 "北欧援助包"
@@ -544,7 +544,7 @@
  IRE_raf_defection:0 "策动皇家空军倒戈"
  IRE_raf_defection_desc:0 "说服约四分之一的皇家空军中队带着飞机与经验飞往爱尔兰，削弱黑英的防空。"
  IRE_red_london_uprising:0 "在伦敦点燃起义"
- IRE_red_london_uprising_desc:0 "红色法国与爱尔兰情报机构准备在英国本土引爆起义，让黑英在自己的首都面对第二个战场。"
+ IRE_red_london_uprising_desc:0 "红色法国与爱尔兰情报机构准备在英国本土引爆起义，让黑英在自己的首都面对第二个战场。需要红色法国真正加入欧洲希望，且德国已对爱尔兰宣战。"
  IRE_red_sabotage:0 "不列颠红色破坏"
  IRE_red_sabotage_desc:0 "在英国境内持续破坏铁路、港口与军工厂，为登陆创造窗口。"
  IRE_tt_usa_joined:0 "美国加入爱尔兰主导的欧洲希望联盟，并获得美国工业/海军合作精神。"
@@ -619,3 +619,4 @@
  ire_nw.98.a:0 "接纳飞行员。"
  ire_nw.98.b:0 "接收飞机。"
  ire_nw.98.c:0 "让他们自己选。"
+ IRE_tt_red_uprising_conditions:0 "红色法国必须真正加入欧洲希望，且德国已对爱尔兰宣战。"

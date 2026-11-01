@@ -509,7 +509,9 @@ IRE_form_european_hope = {
 	}
 	if = {
 		limit = { NOT = { is_in_faction = yes } }
-		create_faction = IRE_european_hope_alliance
+		create_faction_from_template = faction_template_ire_european_hope
+		set_faction_name = IRE_european_hope_alliance
+		set_country_flag = IRE_european_hope_template_fixed
 	}
 	else_if = {
 		limit = { is_faction_leader = yes }
