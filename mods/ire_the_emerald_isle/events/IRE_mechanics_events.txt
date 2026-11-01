@@ -1,0 +1,141 @@
+# ============================================================
+# 开局隐藏机制说明书（ire.130 - ire.136）
+#   - 仅玩家可见（on_startup 中 is_ai = no 限定）
+#   - 每页可选「下一页」或「跳过」，跳过后不再出现
+#   - 存档重载时由旗标 IRE_mech_intro_shown / IRE_mech_intro_done 防重复
+#   - 文本在 localisation 的 IRE_mech_* 键，配套文档 docs/隐藏机制说明.md
+# ============================================================
+
+# ---------- 第 1 页：总览 ----------
+country_event = {
+	id = ire.130
+	title = IRE_mech_t1
+	desc = IRE_mech_p1
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = IRE_mech_intro_shown
+	}
+
+	option = {
+		name = IRE_mech_opt_next
+		country_event = { id = ire.131 }
+	}
+	option = {
+		name = IRE_mech_opt_skip
+		set_country_flag = IRE_mech_intro_done
+	}
+}
+
+# ---------- 第 2 页：红色团结 ----------
+country_event = {
+	id = ire.131
+	title = IRE_mech_t2
+	desc = IRE_mech_p2
+	picture = GFX_report_event_generic_military_parade
+
+	is_triggered_only = yes
+
+	option = {
+		name = IRE_mech_opt_next
+		country_event = { id = ire.132 }
+	}
+	option = {
+		name = IRE_mech_opt_skip
+		set_country_flag = IRE_mech_intro_done
+	}
+}
+
+# ---------- 第 3 页：暴露度 ----------
+country_event = {
+	id = ire.132
+	title = IRE_mech_t3
+	desc = IRE_mech_p3
+	picture = GFX_report_event_generic_ruins
+
+	is_triggered_only = yes
+
+	option = {
+		name = IRE_mech_opt_next
+		country_event = { id = ire.133 }
+	}
+	option = {
+		name = IRE_mech_opt_skip
+		set_country_flag = IRE_mech_intro_done
+	}
+}
+
+# ---------- 第 4 页：公投线 ----------
+country_event = {
+	id = ire.133
+	title = IRE_mech_t4
+	desc = IRE_mech_p4
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = {
+		name = IRE_mech_opt_next
+		country_event = { id = ire.134 }
+	}
+	option = {
+		name = IRE_mech_opt_skip
+		set_country_flag = IRE_mech_intro_done
+	}
+}
+
+# ---------- 第 5 页：侨民网络与中立信誉 ----------
+country_event = {
+	id = ire.134
+	title = IRE_mech_t5
+	desc = IRE_mech_p5
+	picture = GFX_report_event_ast_navy
+
+	is_triggered_only = yes
+
+	option = {
+		name = IRE_mech_opt_next
+		country_event = { id = ire.135 }
+	}
+	option = {
+		name = IRE_mech_opt_skip
+		set_country_flag = IRE_mech_intro_done
+	}
+}
+
+# ---------- 第 6 页：决议计数器 ----------
+country_event = {
+	id = ire.135
+	title = IRE_mech_t6
+	desc = IRE_mech_p6
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = IRE_mech_opt_next
+		country_event = { id = ire.136 }
+	}
+	option = {
+		name = IRE_mech_opt_skip
+		set_country_flag = IRE_mech_intro_done
+	}
+}
+
+# ---------- 第 7 页：规则备忘（终页） ----------
+country_event = {
+	id = ire.136
+	title = IRE_mech_t7
+	desc = IRE_mech_p7
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = IRE_mech_opt_done
+		set_country_flag = IRE_mech_intro_done
+	}
+}
