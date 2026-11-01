@@ -1080,12 +1080,6 @@ ideas = {
 		# ============================================================
 
 
-		IRE_border_plebiscite_support_1 = {
-			picture = generic_political_support
-			allowed = { always = yes }
-			visible = { always = yes }
-			modifier = { }
-		}
 
 		IRE_mobilisation_drive = {
 			picture = generic_women_in_the_army

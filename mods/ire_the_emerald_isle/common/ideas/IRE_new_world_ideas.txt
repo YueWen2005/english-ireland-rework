@@ -370,6 +370,21 @@ ideas = {
 			removal_cost = -1
 		}
 
+		IRE_european_hope_britain = {
+			picture = generic_navy_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				naval_coordination = 0.05
+				naval_invasion_prep_speed = 0.10
+				intel_network_gain_factor = 0.10
+				war_support_factor = 0.03
+				research_speed_factor = 0.03
+				production_speed_buildings_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
 		IRE_us_lend_lease = {
 			picture = generic_production_bonus
 			allowed = { always = yes }

@@ -1960,3 +1960,29 @@ country_event = {
 		add_stability = 0.02
 	}
 }
+
+country_event = {
+	id = ire_nw.99
+	title = ire_nw.99.t
+	desc = ire_nw.99.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+
+	immediate = {
+		add_war_support = 0.03
+		add_stability = 0.02
+	}
+
+	option = {
+		name = ire_nw.99.a
+		navy_experience = 50
+	}
+	option = {
+		name = ire_nw.99.b
+		add_political_power = 30
+	}
+	option = {
+		name = ire_nw.99.c
+		add_stability = 0.02
+	}
+}

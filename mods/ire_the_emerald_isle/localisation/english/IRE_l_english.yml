@@ -61,7 +61,6 @@
  IRE_haaland_wolff_desc:0 "建造过泰坦尼克号的船坞，如今为爱尔兰造船。"
  IRE_reserve_defence:0 "后备国防军"
  IRE_reserve_defence_desc:0 "一支平时务农、战时持枪的部队。"
- IRE_border_plebiscite_support_1:0 "公投支持度"
 
  IRE_focus_tree:0 "翡翠岛的抉择"
  IRE_border_plebiscite:0 "边境公投"
@@ -234,7 +233,6 @@
  ire.50.d:0 "3月17日。全世界的爱尔兰人都在这一天想起故乡。"
  ire.50.a:0 "为圣帕特里克干杯。"
 
- IRE_decisions:0 "翡翠岛事务"
  IRE_unity_campaign_cat:0 "统一宣传运动"
  IRE_unity_campaign:0 "发起统一宣传"
  IRE_unity_campaign_desc:0 "在北方与海外组织集会、募捐与宣传，为公投积累民意基础。"
@@ -472,13 +470,11 @@
  ire.66.a:0 "Announce it to the nation."
  ire.66.a_tt:0 "+50 political power, +2% stability."
  ire.66.b:0 "No comment."
- ire.66.b_tt:0 "+4% stability."
  ire.67.t:0 "The Noose of Mountjoy"
  ire.67.d:0 "Six in the morning: the bell of Mountjoy Prison, then footsteps. The condemned IRA men refused clemency - 'I am a prisoner of war, not a criminal.' The newspapers gave it a corner of one page, but all of Dublin was whispering about it."
  ire.67.a:0 "Carry out the sentence. All of them."
  ire.67.a_tt:0 "+2% war support."
  ire.67.b:0 "Commute to hard labour."
- ire.67.b_tt:0 "+25 political power."
 
  # ================= IRA Civil War Branch: Focuses =================
  IRE_ira_council:0 "Reorganising the Staff"
@@ -552,8 +548,6 @@
  IRE_london_sanctions_desc:0 "Westminster's reprisal list has forty-seven entries - from coal to insurance, each one precisely at Ireland's throat."
  IRE_ira_training_camps:0 "Training Camps"
  IRE_ira_training_camps_desc:0 "The camps drill by night in the hills. Every name on the muster roll is half a soldier."
- IRE_church_hostility:0 "Church Hostility"
- IRE_church_hostility_desc:0 "The bishops have declared war on the workers' republic from their pulpits. Every Sunday, Mass is a political lesson."
  IRE_red_militia:0 "Workers' Militia"
  IRE_red_militia_desc:0 "Officers elected in the shops, companies drilling after hours - organisation is a weapon."
  IRE_intl_solidarity:0 "International Solidarity"
@@ -964,8 +958,6 @@
  ire_nw.74.d:0 "The lights of the Shannon Free Zone burn all night, and foreign factories rise on the outskirts of Dublin. Economists begin to use a new phrase for Ireland: the Celtic Tiger."
  ire_nw.74.a:0 "Let the Celtic Tiger run."
 
- IRE_defend_factory_tt:0 "Adds 1 off-map civilian factory in Dublin."
- IRE_defend_factory_arms_tt:0 "Adds 1 off-map civilian factory and 1 off-map military factory in Dublin."
  IRE_threat_focus:0 "Irish Military Action"
  IRE_opinion_pos5:0 "Mild goodwill"
  IRE_opinion_pos10:0 "Diplomatic goodwill"
@@ -975,7 +967,6 @@
  IRE_opinion_pos30:0 "Important partner"
  IRE_opinion_pos40:0 "Firm ally"
  IRE_opinion_pos50:0 "Brother nation"
- IRE_opinion_pos60:0 "Blood alliance"
  IRE_opinion_neg5:0 "Mild displeasure"
  IRE_opinion_neg10:0 "Diplomatic friction"
  IRE_opinion_neg15:0 "Diplomatic rebuff"
@@ -1076,10 +1067,8 @@
  IRE_tt_unity_cap_high_off:0 "Red unity cap has not been raised (100)"
  IRE_tt_red_unity_50:0 "Red unity is above 50"
  IRE_tt_red_unity_110:0 "Red unity is below 110"
- IRE_tt_red_unity_100:0 "Red unity is below 100"
  IRE_tt_repeat_cap_2:0 "Usage count below limit (2 times)"
  IRE_tt_repeat_cap_3:0 "Usage count below limit (3 times)"
- IRE_tt_repeat_cap_5:0 "Usage count below limit (5 times)"
  IRE_tt_repeat_cap_7:0 "Usage count below limit (7 times)"
  IRE_tt_neutral_cred_40:0 "Neutrality credibility inactive, or already above 40"
 

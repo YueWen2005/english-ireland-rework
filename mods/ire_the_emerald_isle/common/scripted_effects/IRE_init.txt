@@ -13,8 +13,3 @@ IRE_init_variables = {
 		set_variable = { IRE_neutral_credibility = 50 }
 	}
 }
-
-### 决议用的小效果
-IRE_add_plebiscite_support_12 = {
-	add_to_variable = { IRE_plebiscite_support = 12 }
-}

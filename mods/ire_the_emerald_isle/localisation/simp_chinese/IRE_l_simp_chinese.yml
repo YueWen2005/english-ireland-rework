@@ -61,7 +61,6 @@
  IRE_haaland_wolff_desc:0 "建造过泰坦尼克号的船坞，如今为爱尔兰造船。"
  IRE_reserve_defence:0 "后备国防军"
  IRE_reserve_defence_desc:0 "一支平时务农、战时持枪的部队。"
- IRE_border_plebiscite_support_1:0 "公投支持度"
 
  IRE_focus_tree:0 "翡翠岛的抉择"
  IRE_border_plebiscite:0 "边境公投"
@@ -234,7 +233,6 @@
  ire.50.d:0 "3月17日。全世界的爱尔兰人都在这一天想起故乡。"
  ire.50.a:0 "为圣帕特里克干杯。"
 
- IRE_decisions:0 "翡翠岛事务"
  IRE_unity_campaign_cat:0 "统一宣传运动"
  IRE_unity_campaign:0 "发起统一宣传"
  IRE_unity_campaign_desc:0 "在北方与海外组织集会、募捐与宣传，为公投积累民意基础。"
@@ -474,13 +472,11 @@
  ire.66.a:0 "公开通报全国。"
  ire.66.a_tt:0 "政治点数 +50，稳定度 +2%。"
  ire.66.b:0 "不予置评。"
- ire.66.b_tt:0 "稳定度 +4%。"
  ire.67.t:0 "蒙特乔伊的绞索"
  ire.67.d:0 "清晨六点，蒙特乔伊监狱的钟声之后是脚步声。被判处死刑的 IRA 成员拒绝赦免——『我是战俘，不是罪犯。』报纸只登了一小块角落，但整个都柏林都在低声谈论它。"
  ire.67.a:0 "依法行刑，一个不留。"
  ire.67.a_tt:0 "战争支持度 +2%。"
  ire.67.b:0 "改判苦役吧。"
- ire.67.b_tt:0 "政治点数 +25。"
 
  # ================= IRA 内战线：国策 =================
  IRE_ira_council:0 "参谋部重组"
@@ -554,8 +550,6 @@
  IRE_london_sanctions_desc:0 "威斯敏斯特的报复清单上有四十七项——从煤炭到保险，每一样都精确地卡着爱尔兰的脖子。"
  IRE_ira_training_camps:0 "训练营"
  IRE_ira_training_camps_desc:0 "山里的营地在夜里操练。列兵册上的每一个名字，都是半个士兵。"
- IRE_church_hostility:0 "教会敌视"
- IRE_church_hostility_desc:0 "主教们的讲道台向工人共和国宣战了。每个礼拜日，弥撒都是一场政治课。"
  IRE_red_militia:0 "工人民兵"
  IRE_red_militia_desc:0 "车间选出的指挥官、下班后操练的营队——组织度就是武器。"
  IRE_intl_solidarity:0 "国际团结"
@@ -966,8 +960,6 @@
  ire_nw.74.d:0 "香农自由区的灯火彻夜不熄，外资工厂在都柏林郊外拔地而起。经济学家开始用一个新词形容爱尔兰：凯尔特之虎。"
  ire_nw.74.a:0 "让凯尔特之虎奔跑。"
 
- IRE_defend_factory_tt:0 "在都柏林新增 1 座地图外民用工厂。"
- IRE_defend_factory_arms_tt:0 "在都柏林新增 1 座地图外民用工厂和 1 座地图外军工厂。"
  IRE_threat_focus:0 "爱尔兰的军事动员"
  IRE_opinion_pos5:0 "温和善意"
  IRE_opinion_pos10:0 "外交好感"
@@ -977,7 +969,6 @@
  IRE_opinion_pos30:0 "重要伙伴"
  IRE_opinion_pos40:0 "坚定盟友"
  IRE_opinion_pos50:0 "兄弟民族"
- IRE_opinion_pos60:0 "血盟之谊"
  IRE_opinion_neg5:0 "轻微不满"
  IRE_opinion_neg10:0 "外交摩擦"
  IRE_opinion_neg15:0 "外交冷遇"
@@ -1076,10 +1067,8 @@
  IRE_tt_unity_cap_high_off:0 "红色团结度上限未提升（100）"
  IRE_tt_red_unity_50:0 "红色团结度高于 50"
  IRE_tt_red_unity_110:0 "红色团结度低于 110"
- IRE_tt_red_unity_100:0 "红色团结度低于 100"
  IRE_tt_repeat_cap_2:0 "执行次数未达上限（2 次）"
  IRE_tt_repeat_cap_3:0 "执行次数未达上限（3 次）"
- IRE_tt_repeat_cap_5:0 "执行次数未达上限（5 次）"
  IRE_tt_repeat_cap_7:0 "执行次数未达上限（7 次）"
  IRE_tt_neutral_cred_40:0 "中立信誉未激活，或已达到 40 以上"
 

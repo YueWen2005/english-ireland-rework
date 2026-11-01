@@ -1683,6 +1683,7 @@ focus_tree = {
 					OR = { tag = USA tag = FRA tag = MEX tag = ARG }
 					exists = yes
 					NOT = { has_capitulated = yes }
+					NOT = { is_in_faction_with = ROOT }
 					has_opinion = { target = ROOT value > 49 }
 				}
 				give_guarantee = ROOT
@@ -1721,6 +1722,7 @@ focus_tree = {
 				limit = {
 					country_exists = ENG
 					119 = { NOT = { is_owned_by = ROOT } }
+					NOT = { has_country_flag = IRE_red_britain_joined }
 				}
 				create_wargoal = { type = take_state target = ENG generator = { 119 } }
 			}

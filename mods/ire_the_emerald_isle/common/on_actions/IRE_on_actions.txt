@@ -653,6 +653,36 @@ on_actions = {
 					country_event = { id = ire_nw.97 days = 0 }
 				}
 			}
+
+			# ---- A线：红色英国胜利后自动加入欧洲希望 ----
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_uprising_done
+					NOT = { has_country_flag = IRE_red_britain_joined }
+					has_idea = IRE_european_hope
+					is_faction_leader = yes
+					any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+				}
+				every_country = {
+					limit = { original_tag = ENG has_government = communism has_civil_war = no }
+					IRE_force_join_faction = yes
+				}
+				if = {
+					limit = {
+						any_country = {
+							original_tag = ENG
+							has_government = communism
+							has_civil_war = no
+							is_in_faction_with = ROOT
+						}
+					}
+					if = { limit = { has_idea = IRE_red_britain_uprising } remove_ideas = IRE_red_britain_uprising }
+					add_ideas = IRE_european_hope_britain
+					set_country_flag = IRE_red_britain_joined
+					country_event = { id = ire_nw.99 days = 0 }
+				}
+			}
 		}
 	}
 
