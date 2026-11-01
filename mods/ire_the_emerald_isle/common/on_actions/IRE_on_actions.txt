@@ -7,6 +7,15 @@ on_actions = {
 				IRE_init_variables = yes
 				# 民主议会制开局：确保德·瓦莱拉是执政领袖
 				IRE_Éamon_de_valera = { promote_leader = yes }
+				# 开局隐藏机制说明书（仅玩家，每页可跳过，ire.130-136）
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_country_flag = IRE_mech_intro_shown }
+						NOT = { has_country_flag = IRE_mech_intro_done }
+					}
+					country_event = { id = ire.130 days = 1 }
+				}
 			}
 		}
 	}

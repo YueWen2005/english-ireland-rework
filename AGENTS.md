@@ -8,7 +8,7 @@
 > 如果你认为本文件某一条是错的，**先按本文件做**，再向人类提出修改建议，不要自行绕过。
 
 **适用对象**：所有接手本仓库的 AI 代理、协作者、以及人类维护者。
-**对应版本**：v2.13.4 · **最后更新**：2026-11-01
+**对应版本**：v2.14.1 · **最后更新**：2026-11-01
 
 ---
 
@@ -19,8 +19,8 @@
 | 这是什么 | 《钢铁雄心 IV》1.19 的**纯脚本 MOD**：爱尔兰国策树重制「翡翠岛的抉择」 |
 | 技术性质 | 无 DLL、无 DLC 依赖、**不含任何自定义美术**（全部沿用原版资源） |
 | 仓库结构 | 一个仓库只放一个 MOD，源码在 `mods/ire_the_emerald_isle/` |
-| 规模 | 212 国策 / 176 精神 / 92 决议 / 107 事件 / 18 观点修正 |
-| 改动方式 | **一律走 Pull Request**，不直接推上游 main |
+| 规模 | 212 国策 / 176 精神 / 92 决议 / 106 事件 / 18 观点修正 |
+| 改动方式 | 发布期可直接推上游 main；非发布期走 Pull Request |
 | 最大风险点 | `.txt` 文件的 UTF-8 BOM（已因此出过两次事故） |
 
 **读到这里还不够，继续往下读第 1 节。**
@@ -89,13 +89,17 @@ C 线由**其他人负责**，本项目的主要维护者只管 C 线以外的�
 
 拿不准时，先问。
 
-### 1.4 不要直接 push 到 upstream/main
+### 1.4 发布期可直接 push 到 upstream/main
 
-上游有协作权限，但**仍然必须走 Pull Request**。理由是人类要看 diff。
+发布期（2026-11 起）经维护者授权，可直接推送 `upstream/main`，不必开 PR。
+推送前必须 `git fetch upstream`，检查上游新提交、冲突和重复版本号；推送后确认
+`upstream/main` 与本地一致。
+
+非发布期或未经授权时，仍按 2.1 的 PR 流程执行。
 
 ```
 origin   = https://github.com/Origin-XiChen/english-ireland-rework.git   （自己的 fork，随便推）
-upstream = https://github.com/YueWen2005/english-ireland-rework.git      （协作仓库，只走 PR）
+upstream = https://github.com/YueWen2005/english-ireland-rework.git      （发布期可直推，其余时间走 PR）
 ```
 
 ### 1.5 不要把设计意图当 bug 修
@@ -137,7 +141,9 @@ gh pr create --repo YueWen2005/english-ireland-rework \
   --title "..." --body-file pr_body.md
 ```
 
-> **例外**：`Origin-XiChen` 这个 fork 允许直接在主分支上提交并推送，不必开功能分支；向上游仍然必须走 PR。其它贡献者按上面的分支流程做。
+> **发布期例外（2026-11 起）**：维护者可直接 `git push upstream main`，无需 PR；
+> 前提是先 fetch 上游、解决冲突、跑完第 5 节自检。非发布期仍走 PR。
+> `Origin-XiChen` 这个 fork 允许直接在主分支上提交并推送，不必开功能分支；其它贡献者按上面的分支流程做。
 
 ### 2.2 分支命名
 
@@ -260,7 +266,7 @@ MOD 加了炮兵营却没给科技，等于这些精锐师的炮兵营永远补�
 | 效果提示 | `IRE_effect_xxx`（配合 `custom_effect_tooltip`） |
 | 顾问 / 人物 | `idea_token` 同时作为条目标题；`name` 可以是同一个 key，也可以是字面量 |
 
-**中英双语必须同步**，任何新增 key 都要在两个文件里都加。当前 1635 个 key（中英各一套）。
+**中英双语必须同步**，任何新增 key 都要在两个文件里都加。当前 1652 个 key（中英各一套）。
 
 ### 4.5 顾问（内阁）定义机制
 
@@ -383,16 +389,16 @@ grep -c "focus = {" mods/ire_the_emerald_isle/common/national_focus/IRE_focus.tx
 grep -n "id = IRE_A_" mods/ire_the_emerald_isle/common/national_focus/IRE_focus.txt
 ```
 
-### 7.2 当前规模（v2.13.4）
+### 7.2 当前规模（v2.14.1）
 
 | 项目 | 数量 |
 |---|---|
 | 国策 | 212 |
 | 精神 | 176 |
 | 决议 | 92 |
-| 事件 | 107 |
+| 事件 | 106 |
 | 观点修正 | 18 |
-| 本地化 | 1635 键 × 中英（3342 条） |
+| 本地化 | 1652 键 × 中英（3376 条） |
 | 人物（MOD 新增） | 15（10 名内阁与顾问 + 5 名新世界人物） |
 
 ### 7.3 游戏本体与工具
