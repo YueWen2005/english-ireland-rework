@@ -1228,9 +1228,18 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = ENG }
-			ENG = {
-				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 }
-				add_stability = -0.02
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = {
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 }
+					add_stability = -0.03
+				}
+			}
+			else = {
+				ENG = {
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 }
+					add_stability = -0.02
+				}
 			}
 		}
 		add_political_power = 25
@@ -1241,7 +1250,16 @@ country_event = {
 		name = ire_nw.81.b
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = {
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 }
+					add_stability = -0.02
+				}
+			}
+			else = {
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+			}
 		}
 		every_country = {
 			limit = {
@@ -1265,9 +1283,18 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = ENG }
-			ENG = {
-				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 }
-				add_stability = -0.03
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = {
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 }
+					add_stability = -0.04
+				}
+			}
+			else = {
+				ENG = {
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 }
+					add_stability = -0.03
+				}
 			}
 		}
 		add_war_support = 0.02
@@ -1294,7 +1321,13 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+			}
+			else = {
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+			}
 		}
 		if = {
 			limit = { country_exists = GER }
@@ -1410,7 +1443,13 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg15 } }
+			}
+			else = {
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos15 } }
+			}
 		}
 		if = {
 			limit = { country_exists = GER }
@@ -1476,7 +1515,13 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+			}
+			else = {
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+			}
 		}
 		add_stability = 0.03
 		custom_effect_tooltip = IRE_tt_env_85a
@@ -1494,7 +1539,13 @@ country_event = {
 		}
 		if = {
 			limit = { country_exists = ENG }
-			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+			if = {
+				limit = { ENG = { has_government = fascism } }
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+			}
+			else = {
+				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
+			}
 		}
 		if = {
 			limit = { country_exists = GER }
@@ -1625,8 +1676,11 @@ country_event = {
 	desc = ire_nw.90.d
 	picture = GFX_report_event_generic_riot
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	immediate = {
+		clr_country_flag = IRE_britain_crisis_active
+		set_country_flag = IRE_britain_crisis_resolved
 		if = {
 			limit = { ENG = { exists = yes } }
 			ENG = {
@@ -1732,7 +1786,7 @@ country_event = {
 	}
 }
 
-country_event = country_event = {
+country_event = {
 	id = ire_nw.93
 	title = ire_nw.93.t
 	desc = ire_nw.93.d
@@ -1740,13 +1794,14 @@ country_event = country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_country_flag = IRE_france_red_started
 		if = {
 			limit = { FRA = { exists = yes NOT = { has_government = communism } NOT = { has_civil_war = yes } } }
+			set_country_flag = IRE_france_red_started
 			FRA = {
 				add_popularity = { ideology = communism popularity = 0.15 }
 				start_civil_war = { ideology = communism size = 0.60 }
 			}
+			set_country_flag = IRE_france_red_war_started
 			every_country = {
 				limit = { original_tag = FRA has_government = communism }
 				add_manpower = 50000

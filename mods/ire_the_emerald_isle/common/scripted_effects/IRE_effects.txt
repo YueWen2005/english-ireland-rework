@@ -490,11 +490,14 @@ IRE_black_britain_takeover = {
 		limit = {
 			OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
 			exists = yes
-			is_subject = yes
 		}
-		add_autonomy_ratio = { value = 0.35 localization = IRE_european_hope_alliance }
 		add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 }
+		if = {
+			limit = { is_subject = yes }
+			overlord = { set_autonomy = { target = PREV autonomy_state = autonomy_free } }
+		}
 	}
+	set_country_flag = IRE_black_britain_dominions_freed
 	set_country_flag = IRE_black_britain_formed
 }
 
