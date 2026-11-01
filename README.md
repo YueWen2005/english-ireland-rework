@@ -89,7 +89,7 @@ mods/ire_the_emerald_isle/
 
 | 版本 | 日期 | 内容 |
 |---|---|---|
-| **2.14.3** | 11-01 | 新增 `IRE_force_join_faction`：从入盟国作用域直接 `add_to_faction = ROOT`（与控制台 `eval_effect <joiner> = { add_to_faction = <leader> }` 同款），入盟前自动解除附庸、退出旧阵营、必要时与爱尔兰停战。欧洲希望、北欧、美国、自治领的邀请全部改用该效果；法国只有真正进入阵营后才写 `IRE_red_france_joined` / 精神 / 触发 `ire_nw.97`。`IRE_A_canada_independence`（策动加拿大独立）增加“德国已对爱尔兰宣战”门槛，移除“英国未与爱尔兰交战”限制；未宣战前节点灰显锁定 |
+| **2.14.3** | 11-01 | 新增 `IRE_force_join_faction`：从入盟国作用域直接 `add_to_faction = ROOT`（与控制台 `eval_effect <joiner> = { add_to_faction = <leader> }` 同款），入盟前自动解除附庸、退出旧阵营、必要时与爱尔兰停战。欧洲希望、北欧、美国、自治领的邀请全部改用该效果；法国只有真正进入阵营后才写 `IRE_red_france_joined` / 精神 / 触发 `ire_nw.97`。`IRE_A_canada_independence`（策动加拿大独立）增加“德国已对爱尔兰宣战”门槛，移除“英国未与爱尔兰交战”限制；未宣战前节点灰显锁定。合并上游 v2.14.3 红线解放线重排（欧洲 8 并列 → 亚非 4 → 美洲 3）与已社会主义目标自动跳过、中英判定 tooltip，及说明书第 7 页/隐藏机制文档同步 |
 
 ### v2.14.2 — 欧洲希望开放入盟与伦敦起义时机
 
