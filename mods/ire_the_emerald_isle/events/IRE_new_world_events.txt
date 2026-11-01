@@ -1732,7 +1732,7 @@ country_event = {
 	}
 }
 
-country_event = country_event = {
+country_event = {
 	id = ire_nw.93
 	title = ire_nw.93.t
 	desc = ire_nw.93.d
