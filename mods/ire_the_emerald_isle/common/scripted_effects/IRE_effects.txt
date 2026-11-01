@@ -366,8 +366,9 @@ IRE_R_merge_red_britain = {
 				NOT = { tag = IRE }
 			}
 		}
-		# 先继承（将领/核心/非洲殖民地独立），再吞并
-		IRE_annex_britain_inherit = yes
+		# 和平合并：英国已自行完成社会主义革命、自愿并入——只继承将领与核心，
+		# 殖民地随红色联盟保留（不触发非洲殖民地独立）；武力吞并路径(ire.114)仍释放殖民地
+		IRE_annex_britain_inherit_peaceful = yes
 		every_country = {
 			limit = {
 				original_tag = ENG
@@ -637,6 +638,26 @@ IRE_red_sabotage_effect = {
 #   3) 非洲殖民地独立为原生的独立国家（埃及、苏丹、肯尼亚……）
 #   必须在 annex_country 之前调用（否则 ENG 已消亡、将领无法转移）
 # ============================================================
+# 和平版继承（红色英国自愿并入）：只继承将领与核心，殖民地随联盟保留、不独立
+IRE_annex_britain_inherit_peaceful = {
+	every_country = {
+		limit = {
+			original_tag = ENG
+			NOT = { tag = IRE }
+			exists = yes
+		}
+		# 将领继承
+		every_unit_leader = {
+			set_nationality = IRE
+		}
+		# 核心继承
+		every_owned_state = {
+			limit = { is_core_of = PREV }
+			add_core_of = IRE
+		}
+	}
+}
+
 IRE_annex_britain_inherit = {
 	every_country = {
 		limit = {
