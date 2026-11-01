@@ -4487,7 +4487,7 @@ focus_tree = {
 		available = {
 			FRA = { exists = yes }
 		}
-		x = 90
+		x = 94
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4524,7 +4524,7 @@ OR = {
 			LUX = { exists = yes }
 			}
 		}
-		x = 92
+		x = 98
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4567,7 +4567,7 @@ OR = {
 			POR = { exists = yes }
 			}
 		}
-		x = 94
+		x = 100
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4602,7 +4602,7 @@ OR = {
 		available = {
 			ITA = { exists = yes }
 		}
-		x = 96
+		x = 104
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4647,8 +4647,8 @@ OR = {
 			CZE = { exists = yes }
 			}
 		}
-		x = 98
-		y = 22
+		x = 94
+		y = 23
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4702,8 +4702,8 @@ OR = {
 			GRE = { exists = yes }
 			}
 		}
-		x = 100
-		y = 22
+		x = 98
+		y = 23
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4763,8 +4763,8 @@ OR = {
 			EST = { exists = yes }
 			}
 		}
-		x = 102
-		y = 22
+		x = 100
+		y = 23
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4827,7 +4827,7 @@ OR = {
 			}
 		}
 		x = 104
-		y = 22
+		y = 23
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4861,14 +4861,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_paris
-			focus = IRE_R_lib_lowlands
-			focus = IRE_R_lib_iberia
-			focus = IRE_R_lib_italy
-			focus = IRE_R_lib_danube
-			focus = IRE_R_lib_balkans
-			focus = IRE_R_lib_elbe
-			focus = IRE_R_lib_north
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			RAJ = { OR = { exists = no has_government = communism } }
@@ -4876,7 +4869,7 @@ OR = {
 		available = {
 			RAJ = { exists = yes }
 		}
-		x = 93
+		x = 94
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4905,14 +4898,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_paris
-			focus = IRE_R_lib_lowlands
-			focus = IRE_R_lib_iberia
-			focus = IRE_R_lib_italy
-			focus = IRE_R_lib_danube
-			focus = IRE_R_lib_balkans
-			focus = IRE_R_lib_elbe
-			focus = IRE_R_lib_north
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			ENG = { OR = { exists = no has_government = communism } }
@@ -4924,7 +4910,7 @@ OR = {
 			FRA = { exists = yes }
 			}
 		}
-		x = 96
+		x = 98
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4951,14 +4937,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_paris
-			focus = IRE_R_lib_lowlands
-			focus = IRE_R_lib_iberia
-			focus = IRE_R_lib_italy
-			focus = IRE_R_lib_danube
-			focus = IRE_R_lib_balkans
-			focus = IRE_R_lib_elbe
-			focus = IRE_R_lib_north
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			FRA = { OR = { exists = no has_government = communism } }
@@ -4973,7 +4952,7 @@ OR = {
 			FRA = { exists = yes }
 			}
 		}
-		x = 99
+		x = 100
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -5000,14 +4979,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_paris
-			focus = IRE_R_lib_lowlands
-			focus = IRE_R_lib_iberia
-			focus = IRE_R_lib_italy
-			focus = IRE_R_lib_danube
-			focus = IRE_R_lib_balkans
-			focus = IRE_R_lib_elbe
-			focus = IRE_R_lib_north
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			IRQ = { OR = { exists = no has_government = communism } }
@@ -5022,7 +4994,7 @@ OR = {
 			PER = { exists = yes }
 			}
 		}
-		x = 102
+		x = 104
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -5049,10 +5021,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_india
-			focus = IRE_R_lib_africa
-			focus = IRE_R_lib_asia
-			focus = IRE_R_lib_mideast
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			CAN = { OR = { exists = no has_government = communism } }
@@ -5061,7 +5030,7 @@ OR = {
 			CAN = { exists = yes }
 		}
 		x = 96
-		y = 26
+		y = 25
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5089,10 +5058,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_india
-			focus = IRE_R_lib_africa
-			focus = IRE_R_lib_asia
-			focus = IRE_R_lib_mideast
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			USA = { OR = { exists = no has_government = communism } }
@@ -5101,7 +5067,7 @@ OR = {
 			USA = { exists = yes }
 		}
 		x = 99
-		y = 26
+		y = 25
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -5123,10 +5089,7 @@ OR = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		prerequisite = {
-			focus = IRE_R_lib_india
-			focus = IRE_R_lib_africa
-			focus = IRE_R_lib_asia
-			focus = IRE_R_lib_mideast
+			focus = IRE_R_end_union
 		}
 		bypass = {
 			ARG = { OR = { exists = no has_government = communism } }
@@ -5141,7 +5104,7 @@ OR = {
 			}
 		}
 		x = 102
-		y = 26
+		y = 25
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
