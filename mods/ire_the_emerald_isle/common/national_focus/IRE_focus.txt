@@ -4464,15 +4464,21 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_end_union }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			FRA = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			FRA = { exists = yes }
 		}
-		x = 94
+		x = 90
 		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { FRA = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = FRA expire = 0 }
@@ -4489,7 +4495,14 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_paris }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			BEL = { OR = { exists = no has_government = communism } }
+			HOL = { OR = { exists = no has_government = communism } }
+			LUX = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 OR = {
 			HOL = { exists = yes }
@@ -4497,11 +4510,12 @@ OR = {
 			LUX = { exists = yes }
 			}
 		}
-		x = 98
+		x = 92
 		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { HOL = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = HOL expire = 0 }
@@ -4526,18 +4540,25 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_lowlands }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			POR = { OR = { exists = no has_government = communism } }
+			SPR = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 OR = {
 			SPR = { exists = yes }
 			POR = { exists = yes }
 			}
 		}
-		x = 100
+		x = 94
 		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { SPR = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = SPR expire = 0 }
@@ -4558,15 +4579,21 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_iberia }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			ITA = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			ITA = { exists = yes }
 		}
-		x = 104
+		x = 96
 		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { ITA = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = ITA expire = 0 }
@@ -4583,7 +4610,14 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_italy }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			AUS = { OR = { exists = no has_government = communism } }
+			CZE = { OR = { exists = no has_government = communism } }
+			HUN = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4599,11 +4633,12 @@ OR = {
 			CZE = { exists = yes }
 			}
 		}
-		x = 94
-		y = 23
+		x = 98
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { AUS = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = AUS expire = 0 }
@@ -4628,7 +4663,15 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_danube }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			BUL = { OR = { exists = no has_government = communism } }
+			GRE = { OR = { exists = no has_government = communism } }
+			ROM = { OR = { exists = no has_government = communism } }
+			YUG = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4645,11 +4688,12 @@ OR = {
 			GRE = { exists = yes }
 			}
 		}
-		x = 98
-		y = 23
+		x = 100
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { YUG = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = YUG expire = 0 }
@@ -4678,7 +4722,16 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_balkans }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			EST = { OR = { exists = no has_government = communism } }
+			GER = { OR = { exists = no has_government = communism } }
+			LAT = { OR = { exists = no has_government = communism } }
+			LIT = { OR = { exists = no has_government = communism } }
+			POL = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4696,11 +4749,12 @@ OR = {
 			EST = { exists = yes }
 			}
 		}
-		x = 100
-		y = 23
+		x = 102
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { GER = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = GER expire = 0 }
@@ -4733,7 +4787,15 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_elbe }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
+		bypass = {
+			DEN = { OR = { exists = no has_government = communism } }
+			FIN = { OR = { exists = no has_government = communism } }
+			NOR = { OR = { exists = no has_government = communism } }
+			SWE = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4751,10 +4813,11 @@ OR = {
 			}
 		}
 		x = 104
-		y = 23
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { NOR = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = NOR expire = 0 }
@@ -4783,15 +4846,28 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_north }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
+		bypass = {
+			RAJ = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			RAJ = { exists = yes }
 		}
-		x = 94
+		x = 93
 		y = 24
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { RAJ = { is_subject_of = IRE } }
 				set_autonomy = { target = RAJ autonomy_state = autonomy_free }
@@ -4814,18 +4890,32 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_india }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
+		bypass = {
+			ENG = { OR = { exists = no has_government = communism } }
+			FRA = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 OR = {
 			ENG = { exists = yes }
 			FRA = { exists = yes }
 			}
 		}
-		x = 98
+		x = 96
 		y = 24
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { ENG = { exists = yes NOT = { has_government = communism } } NOT = { has_wargoal_against = ENG } NOT = { has_war_with = ENG } }
 				create_wargoal = { type = annex_everything target = ENG expire = 0 }
@@ -4846,7 +4936,20 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_africa }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
+		bypass = {
+			FRA = { OR = { exists = no has_government = communism } }
+			HOL = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_india has_completed_focus = IRE_R_lib_africa }
@@ -4856,11 +4959,12 @@ OR = {
 			FRA = { exists = yes }
 			}
 		}
-		x = 100
+		x = 99
 		y = 24
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { HOL = { exists = yes NOT = { has_government = communism } } NOT = { has_wargoal_against = HOL } NOT = { has_war_with = HOL } }
 				create_wargoal = { type = annex_everything target = HOL expire = 0 }
@@ -4881,7 +4985,20 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_asia }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
+		bypass = {
+			IRQ = { OR = { exists = no has_government = communism } }
+			PER = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_india has_completed_focus = IRE_R_lib_africa }
@@ -4891,11 +5008,12 @@ OR = {
 			PER = { exists = yes }
 			}
 		}
-		x = 104
+		x = 102
 		y = 24
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { IRQ = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = IRQ expire = 0 }
@@ -4916,15 +5034,24 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_mideast }
+		prerequisite = {
+			focus = IRE_R_lib_india
+			focus = IRE_R_lib_africa
+			focus = IRE_R_lib_asia
+			focus = IRE_R_lib_mideast
+		}
+		bypass = {
+			CAN = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			CAN = { exists = yes }
 		}
 		x = 96
-		y = 25
+		y = 26
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { CAN = { is_subject_of = IRE } }
 				set_autonomy = { target = CAN autonomy_state = autonomy_free }
@@ -4947,15 +5074,24 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_canada }
+		prerequisite = {
+			focus = IRE_R_lib_india
+			focus = IRE_R_lib_africa
+			focus = IRE_R_lib_asia
+			focus = IRE_R_lib_mideast
+		}
+		bypass = {
+			USA = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 			USA = { exists = yes }
 		}
 		x = 99
-		y = 25
+		y = 26
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { USA = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = USA expire = 0 }
@@ -4972,7 +5108,17 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_wallstreet }
+		prerequisite = {
+			focus = IRE_R_lib_india
+			focus = IRE_R_lib_africa
+			focus = IRE_R_lib_asia
+			focus = IRE_R_lib_mideast
+		}
+		bypass = {
+			ARG = { OR = { exists = no has_government = communism } }
+			BRA = { OR = { exists = no has_government = communism } }
+			MEX = { OR = { exists = no has_government = communism } }
+		}
 		available = {
 OR = {
 			MEX = { exists = yes }
@@ -4981,10 +5127,11 @@ OR = {
 			}
 		}
 		x = 102
-		y = 25
+		y = 26
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_R_lib_judge_tt
 			if = {
 				limit = { MEX = { exists = yes NOT = { has_government = communism } } }
 				create_wargoal = { type = annex_everything target = MEX expire = 0 }
