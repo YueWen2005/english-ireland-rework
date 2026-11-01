@@ -4461,11 +4461,13 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_end_union }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 			FRA = { exists = yes }
 		}
-		x = 94
+		x = 90
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4486,7 +4488,9 @@ focus_tree = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_paris }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 OR = {
 			HOL = { exists = yes }
@@ -4494,7 +4498,7 @@ OR = {
 			LUX = { exists = yes }
 			}
 		}
-		x = 98
+		x = 92
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4523,14 +4527,16 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_lowlands }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 OR = {
 			SPR = { exists = yes }
 			POR = { exists = yes }
 			}
 		}
-		x = 100
+		x = 94
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4555,11 +4561,13 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_iberia }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 			ITA = { exists = yes }
 		}
-		x = 104
+		x = 96
 		y = 22
 		ai_will_do = { base = 10 }
 
@@ -4580,7 +4588,9 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_italy }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4596,8 +4606,8 @@ OR = {
 			CZE = { exists = yes }
 			}
 		}
-		x = 94
-		y = 23
+		x = 98
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4625,7 +4635,9 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_danube }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4642,8 +4654,8 @@ OR = {
 			GRE = { exists = yes }
 			}
 		}
-		x = 98
-		y = 23
+		x = 100
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4675,7 +4687,9 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_balkans }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4693,8 +4707,8 @@ OR = {
 			EST = { exists = yes }
 			}
 		}
-		x = 100
-		y = 23
+		x = 102
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4730,7 +4744,9 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_elbe }
+		prerequisite = {
+			focus = IRE_R_end_union
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_paris has_completed_focus = IRE_R_lib_lowlands }
@@ -4748,7 +4764,7 @@ OR = {
 			}
 		}
 		x = 104
-		y = 23
+		y = 22
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4780,11 +4796,20 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_north }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
 		available = {
 			RAJ = { exists = yes }
 		}
-		x = 94
+		x = 93
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4811,14 +4836,23 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_india }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
 		available = {
 OR = {
 			ENG = { exists = yes }
 			FRA = { exists = yes }
 			}
 		}
-		x = 98
+		x = 96
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4843,7 +4877,16 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_africa }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_india has_completed_focus = IRE_R_lib_africa }
@@ -4853,7 +4896,7 @@ OR = {
 			FRA = { exists = yes }
 			}
 		}
-		x = 100
+		x = 99
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4878,7 +4921,16 @@ OR = {
 		cost = 6
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_asia }
+		prerequisite = {
+			focus = IRE_R_lib_paris
+			focus = IRE_R_lib_lowlands
+			focus = IRE_R_lib_iberia
+			focus = IRE_R_lib_italy
+			focus = IRE_R_lib_danube
+			focus = IRE_R_lib_balkans
+			focus = IRE_R_lib_elbe
+			focus = IRE_R_lib_north
+		}
 		available = {
 			OR = {
 			AND = { has_completed_focus = IRE_R_lib_india has_completed_focus = IRE_R_lib_africa }
@@ -4888,7 +4940,7 @@ OR = {
 			PER = { exists = yes }
 			}
 		}
-		x = 104
+		x = 102
 		y = 24
 		ai_will_do = { base = 10 }
 
@@ -4913,12 +4965,17 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_mideast }
+		prerequisite = {
+			focus = IRE_R_lib_india
+			focus = IRE_R_lib_africa
+			focus = IRE_R_lib_asia
+			focus = IRE_R_lib_mideast
+		}
 		available = {
 			CAN = { exists = yes }
 		}
 		x = 96
-		y = 25
+		y = 26
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4944,12 +5001,17 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_canada }
+		prerequisite = {
+			focus = IRE_R_lib_india
+			focus = IRE_R_lib_africa
+			focus = IRE_R_lib_asia
+			focus = IRE_R_lib_mideast
+		}
 		available = {
 			USA = { exists = yes }
 		}
 		x = 99
-		y = 25
+		y = 26
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
@@ -4969,7 +5031,12 @@ OR = {
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = IRE_R_lib_wallstreet }
+		prerequisite = {
+			focus = IRE_R_lib_india
+			focus = IRE_R_lib_africa
+			focus = IRE_R_lib_asia
+			focus = IRE_R_lib_mideast
+		}
 		available = {
 OR = {
 			MEX = { exists = yes }
@@ -4978,7 +5045,7 @@ OR = {
 			}
 		}
 		x = 102
-		y = 25
+		y = 26
 		ai_will_do = { base = 10 }
 
 		completion_reward = {
