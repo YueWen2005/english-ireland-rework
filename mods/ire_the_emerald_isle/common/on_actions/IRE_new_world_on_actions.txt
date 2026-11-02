@@ -564,6 +564,47 @@ on_actions = {
 					}
 				}
 			}
+
+			# ============================================================
+			# A线：世界反应事件（黑英/红法/红英）
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_black_britain_formed
+					NOT = { has_country_flag = IRE_world_135_done }
+				}
+				set_country_flag = IRE_world_135_done
+				country_event = { id = ire_nw.135 days = 7 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_black_britain_formed
+					NOT = { has_country_flag = IRE_world_136_done }
+				}
+				set_country_flag = IRE_world_136_done
+				country_event = { id = ire_nw.136 days = 14 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_france_joined
+					NOT = { has_country_flag = IRE_world_137_done }
+				}
+				set_country_flag = IRE_world_137_done
+				country_event = { id = ire_nw.137 days = 7 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_european_hope_formed
+					has_country_flag = IRE_red_britain_joined
+					NOT = { has_country_flag = IRE_world_138_done }
+				}
+				set_country_flag = IRE_world_138_done
+				country_event = { id = ire_nw.138 days = 7 }
+			}
 		}
 	}
 }
