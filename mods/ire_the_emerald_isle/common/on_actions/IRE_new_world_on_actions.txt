@@ -639,6 +639,38 @@ on_actions = {
 				set_country_flag = IRE_home_141_done
 				country_event = { id = ire_nw.141 days = 7 }
 			}
+
+			# ============================================================
+			# 德国投降前：欧洲希望成员不允许退盟
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_european_hope
+					is_faction_leader = yes
+					NOT = { IRE_germany_defeated = yes }
+				}
+				every_country = {
+					limit = {
+						exists = yes
+						is_in_faction_with = ROOT
+						NOT = { has_capitulated = yes }
+						is_subject = no
+					}
+					set_country_flag = IRE_european_hope_member
+				}
+				every_country = {
+					limit = {
+						exists = yes
+						has_country_flag = IRE_european_hope_member
+						NOT = { is_in_faction_with = ROOT }
+						NOT = { has_capitulated = yes }
+						is_subject = no
+						NOT = { has_war_with = ROOT }
+					}
+					IRE_force_join_faction = yes
+				}
+			}
 		}
 	}
 }

@@ -658,6 +658,7 @@ on_actions = {
 					NOT = { has_country_flag = IRE_red_france_joined }
 					has_idea = IRE_european_hope
 					is_faction_leader = yes
+					NOT = { IRE_germany_defeated = yes }
 					any_country = { original_tag = FRA has_government = communism has_civil_war = no }
 				}
 				every_country = {

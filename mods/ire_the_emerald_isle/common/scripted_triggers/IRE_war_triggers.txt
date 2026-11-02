@@ -34,3 +34,11 @@ IRE_germany_widespread_war = {
 		}
 	}
 }
+
+# 德国已投降/消亡：欧洲希望进入战后阶段。
+IRE_germany_defeated = {
+	OR = {
+		NOT = { country_exists = GER }
+		GER = { has_capitulated = yes }
+	}
+}

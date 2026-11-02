@@ -616,6 +616,10 @@ IRE_force_join_faction = {
 		ROOT = { white_peace = PREV }
 	}
 	add_to_faction = ROOT
+	if = {
+		limit = { is_in_faction_with = ROOT }
+		set_country_flag = IRE_european_hope_member
+	}
 }
 
 IRE_british_spy_network_effect = {
