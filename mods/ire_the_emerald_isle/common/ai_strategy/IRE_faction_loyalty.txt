@@ -1,0 +1,24 @@
+FRA_stay_in_european_hope = {
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		is_in_faction_with = IRE
+		IRE = {
+			has_idea = IRE_european_hope
+			NOT = { IRE_germany_defeated = yes }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = IRE
+		value = 200
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = become_faction_leader
+		value = -1000
+	}
+}

@@ -604,12 +604,15 @@ IRE_force_join_faction = {
 		overlord = { set_autonomy = { target = PREV autonomy_state = autonomy_free } }
 	}
 	if = {
-		limit = { is_faction_leader = yes }
-		dismantle_faction = yes
-	}
-	else_if = {
-		limit = { is_in_faction = yes }
-		leave_faction = yes
+		limit = { NOT = { is_in_faction_with = ROOT } }
+		if = {
+			limit = { is_faction_leader = yes }
+			dismantle_faction = yes
+		}
+		else_if = {
+			limit = { is_in_faction = yes }
+			leave_faction = yes
+		}
 	}
 	if = {
 		limit = { has_war_with = ROOT }

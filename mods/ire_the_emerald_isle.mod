@@ -1,5 +1,5 @@
 name="翡翠岛的抉择 - 爱尔兰国策树"
-version="2.15.17"
+version="2.15.18"
 tags={
         "Alternative History"
         "National Focuses"
