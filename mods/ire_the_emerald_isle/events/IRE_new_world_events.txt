@@ -1700,7 +1700,35 @@ country_event = {
 				NOT = { has_government = fascism }
 			}
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
-			start_civil_war = { ideology = fascism size = 0.50 }
+			start_civil_war = {
+				ideology = fascism
+				size = 0.58
+				save_event_target_as = IRE_black_britain_rebel
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					original_tag = ENG
+					has_government = fascism
+					has_civil_war = yes
+				}
+				save_event_target_as = IRE_black_britain_rebel
+			}
+			if = {
+				limit = {
+					country_exists = GER
+					GER = { has_government = fascism }
+				}
+				GER = {
+					set_rule = { can_send_volunteers = yes }
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = event_target:IRE_black_britain_rebel
+						value = 250
+					}
+				}
+			}
 		}
 		set_country_flag = IRE_black_britain_started
 		set_country_flag = IRE_britain_crisis_resolved
@@ -1717,7 +1745,35 @@ country_event = {
 				NOT = { has_government = fascism }
 			}
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
-			start_civil_war = { ideology = fascism size = 0.35 }
+			start_civil_war = {
+				ideology = fascism
+				size = 0.42
+				save_event_target_as = IRE_black_britain_rebel
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					original_tag = ENG
+					has_government = fascism
+					has_civil_war = yes
+				}
+				save_event_target_as = IRE_black_britain_rebel
+			}
+			if = {
+				limit = {
+					country_exists = GER
+					GER = { has_government = fascism }
+				}
+				GER = {
+					set_rule = { can_send_volunteers = yes }
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = event_target:IRE_black_britain_rebel
+						value = 250
+					}
+				}
+			}
 		}
 		if = {
 			limit = { ENG = { exists = yes } }
