@@ -206,11 +206,22 @@ on_actions = {
 			}
 
 			# ---- 黑线：保证德国由希特勒领导（政变/退休后自动复位）----
+			# v2.15.0：AI 史实锁自红黑线最初始国策 IRE_ira_council 点下即生效
+			# （见 IRE_ger_lock_needed）；本守卫负责黑线选定后的人事复位，
+			# 故从黑线分支国策（IRE_X_shadow_arsenal）一点下就生效、不必等
+			# 其完成。红线不跑守卫（红线可能刻意推动德国变红，复位希特勒
+			# 会干扰该玩法）
 			if = {
 				limit = {
 					tag = IRE
-					has_country_flag = IRE_dark_path
 					NOT = { has_country_flag = IRE_dark_surrender }
+					OR = {
+						has_country_flag = IRE_dark_path
+						focus_progress = {
+							focus = IRE_X_shadow_arsenal
+							progress > 0
+						}
+					}
 				}
 				IRE_X_ensure_hitler = yes
 			}

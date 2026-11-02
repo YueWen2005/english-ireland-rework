@@ -1,0 +1,37 @@
+# ============================================================
+# 德国史实锁定判定（v2.15.0 新增）
+# 背景：此前守卫与 AI 计划覆盖都以「黑线国策完成（IRE_dark_path）」
+# 为前提，而德国在非史实模式下可能在 1936-37 年、玩家还没走到
+# 黑线分支时就已跑偏（反对希特勒/君主/民主路线），等黑线选定
+# 木已成舟，黑线后半段功能性死亡。
+# 现改为：玩家**点下红黑线（IRA 武装斗争线）最初始国策
+# IRE_ira_council 的那一刻**就锁定德国 AI 沿史实时间线推进
+# ——该线走向：IRE_ira_council → 军备网/训练营/渗透（三选一）
+# → IRE_ira_coup → IRE_ira_power → 红线 IRE_R_red_turn /
+#   黑线 IRE_X_shadow_arsenal。
+#   - 红线（IRE_red_path）一经选定永久锁定；
+#   - 黑线（IRE_dark_path）若发生黑线投降（IRE_dark_surrender）则解锁；
+#   - 国策进行中（focus_progress > 0）或已完成均视为已锁定。
+# 供 ai_strategy_plans/GER_*_strategy_plan.txt（史实计划启用、
+# 非史实计划抑制）与 on_actions（希特勒守卫）共用。
+# ============================================================
+IRE_ger_lock_needed = {
+	OR = {
+		has_country_flag = IRE_red_path
+		AND = {
+			has_country_flag = IRE_dark_path
+			NOT = { has_country_flag = IRE_dark_surrender }
+		}
+		# 红黑线最初始国策一点下（进行中或已完成）即锁定
+		AND = {
+			OR = {
+				focus_progress = {
+					focus = IRE_ira_council
+					progress > 0
+				}
+				has_completed_focus = IRE_ira_council
+			}
+			NOT = { has_country_flag = IRE_dark_surrender }
+		}
+	}
+}

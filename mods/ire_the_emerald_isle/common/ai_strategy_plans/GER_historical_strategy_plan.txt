@@ -1,9 +1,11 @@
 # ============================================================
 # 【MOD 覆盖文件】原版 common/ai_strategy_plans/GER_historical_strategy_plan.txt
 # 来源：HOI4 1.19.4。仅作两处改动，其余与原版完全一致：
-#   ① enable 增加黑线分支：爱尔兰走 IRA 黑线时无条件启用德国史实计划
-#   ② abort 增加黑线豁免：黑线期间不再因德国政体/世界局势变化而退出
-# 非黑线局面下行为与原版一致（红线/A 线不干预德国）。
+#   ① enable 增加锁定分支：玩家点下红黑线最初始国策 IRE_ira_council
+#      时（判定见 scripted_triggers/IRE_ger_lock_triggers.txt 的
+#      IRE_ger_lock_needed）无条件启用德国史实计划，直至黑线投降
+#   ② abort 增加锁定豁免：锁定期间不再因德国政体/世界局势变化而退出
+# 未锁定的局面下行为与原版一致（A 线不干预德国）。
 # 原版更新后如需同步，重新复制该文件并重做这两处改动。
 # ============================================================
 German_historical = {
@@ -17,8 +19,7 @@ German_historical = {
 		OR = {
 			# 黑线专属：爱尔兰走上 IRA 黑线期间，德国必须沿史实时间线推进
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 			AND = {
 				is_historical_focus_on = yes
@@ -41,8 +42,7 @@ German_historical = {
 		# 黑线专属：黑线期间不因德国政体/世界局势变化而退出史实计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {

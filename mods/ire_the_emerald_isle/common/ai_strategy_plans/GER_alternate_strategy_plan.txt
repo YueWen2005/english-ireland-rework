@@ -2,9 +2,11 @@
 # 【MOD 覆盖文件】原版 common/ai_strategy_plans/GER_alternate_strategy_plan.txt
 # 来源：HOI4 1.19.4。仅作一处改动，其余与原版完全一致：
 #   全部 7 个非史实计划（凯撒/民主/民主战争/凯撒-GD/斯大林/斯巴达克/法西斯）
-#   的 enable 增加黑线抑制条件——爱尔兰走 IRA 黑线期间，德国不得启用任何
-#   非史实 AI 计划，确保它沿史实时间线推进。
-# 非黑线局面下行为与原版一致（红线/A 线不干预德国）。
+#   的 enable 增加锁定抑制条件——玩家点下红黑线最初始国策
+#   IRE_ira_council 后（判定见 scripted_triggers/IRE_ger_lock_triggers.txt
+#   的 IRE_ger_lock_needed），德国不得启用任何非史实 AI 计划，确保它沿
+#   史实时间线推进。
+# 未锁定的局面下行为与原版一致（A 线不干预德国）。
 # ============================================================
 # German monarchist plan (without Götterdämerrung)
 German_alternate_kaiser = {
@@ -21,8 +23,7 @@ German_alternate_kaiser = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
@@ -134,8 +135,7 @@ German_alternate_democratic = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
@@ -244,8 +244,7 @@ German_alternate_democratic_ww = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
@@ -394,8 +393,7 @@ German_alternate_kaiser_GD = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
@@ -556,8 +554,7 @@ German_alternate_stalinist = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
@@ -718,8 +715,7 @@ German_alternate_spartacist = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
@@ -881,8 +877,7 @@ German_alternate_fascist = {
 		# 黑线专属：黑线期间禁用德国的非史实 AI 计划
 		NOT = {
 			IRE = {
-				has_country_flag = IRE_dark_path
-				NOT = { has_country_flag = IRE_dark_surrender }
+				IRE_ger_lock_needed = yes
 			}
 		}
 		OR = {
