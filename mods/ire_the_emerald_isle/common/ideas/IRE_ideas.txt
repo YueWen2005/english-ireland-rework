@@ -715,7 +715,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				army_defence_factor = 0.20
-				industrial_capacity_factory = 0.024
+				industrial_capacity_factory = 0.036
 				war_support_factor = 0.08
 			}
 		}
@@ -1223,7 +1223,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.04
+				industrial_capacity_factory = 0.06
 				war_support_factor = 0.05
 			}
 		}
@@ -1455,7 +1455,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_dockyard = 0.04
+				industrial_capacity_dockyard = 0.06
 			}
 			removal_cost = -1
 		}
@@ -1478,7 +1478,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.04
+				industrial_capacity_factory = 0.06
 			}
 			removal_cost = -1
 		}
@@ -1488,7 +1488,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.032
+				industrial_capacity_factory = 0.048
 			}
 			removal_cost = -1
 		}
@@ -1520,7 +1520,7 @@ ideas = {
 			visible = { always = yes }
 			modifier = {
 				consumer_goods_factor = -0.06
-				industrial_capacity_factory = 0.032
+				industrial_capacity_factory = 0.048
 			}
 			removal_cost = -1
 		}
@@ -1585,7 +1585,7 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				industrial_capacity_factory = 0.04
+				industrial_capacity_factory = 0.06
 				political_power_factor = 0.15
 			}
 			removal_cost = -1
