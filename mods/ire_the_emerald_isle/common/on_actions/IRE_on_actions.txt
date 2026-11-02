@@ -499,11 +499,27 @@ on_actions = {
 					limit = { NOT = { any_country = { original_tag = ENG has_civil_war = yes } } }
 					every_country = {
 						limit = { original_tag = ENG }
-						if = { limit = { has_idea = IRE_ENG_britain_crisis } remove_ideas = IRE_ENG_britain_crisis }
+						IRE_restore_britain_after_black = yes
 					}
 					set_country_flag = IRE_black_britain_failed
 					clr_country_flag = IRE_black_britain_started
 				}
+			}
+
+			# 纽芬兰/拉布拉多核心补漏（旧存档或战争夺取）
+			if = {
+				limit = {
+					tag = IRE
+					331 = { is_owned_by = ROOT NOT = { is_core_of = ROOT } }
+				}
+				331 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					332 = { is_owned_by = ROOT NOT = { is_core_of = ROOT } }
+				}
+				332 = { add_core_of = ROOT }
 			}
 
 			# 旧存档修复：黑英已成形，但自治领仍被旧版本留在帝国体系内
@@ -665,6 +681,26 @@ on_actions = {
 				}
 			}
 
+			# 红色英国已建立：黑英状态结束（即使尚未加入欧洲希望）
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_red_uprising_done
+					has_country_flag = IRE_black_britain_formed
+					any_country = { original_tag = ENG has_government = communism has_civil_war = no }
+				}
+				clr_country_flag = IRE_black_britain_formed
+				clr_country_flag = IRE_black_britain_dominions_freed
+				clr_country_flag = IRE_black_britain_started
+				clr_country_flag = IRE_black_britain_failed
+				every_country = {
+					limit = { original_tag = ENG has_government = communism has_civil_war = no }
+					if = { limit = { has_idea = IRE_eng_dock_strike } remove_ideas = IRE_eng_dock_strike }
+					if = { limit = { has_idea = IRE_eng_ira_campaign } remove_ideas = IRE_eng_ira_campaign }
+					set_cosmetic_tag = ENG
+				}
+			}
+
 			# ---- A线：红色英国胜利后自动加入欧洲希望 ----
 			if = {
 				limit = {
@@ -677,6 +713,7 @@ on_actions = {
 				}
 				every_country = {
 					limit = { original_tag = ENG has_government = communism has_civil_war = no }
+					set_cosmetic_tag = ENG
 					IRE_force_join_faction = yes
 				}
 				if = {
@@ -692,6 +729,29 @@ on_actions = {
 					add_ideas = IRE_european_hope_britain
 					set_country_flag = IRE_red_britain_joined
 					country_event = { id = ire_nw.99 days = 0 }
+				}
+			}
+
+			# 黑英已成形但英国既不是法西斯也不是共产主义（政权更迭/内战失败）：清理残留
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_black_britain_formed
+					NOT = { any_country = { original_tag = ENG has_government = fascism } }
+					NOT = { any_country = { original_tag = ENG has_government = communism } }
+					NOT = { any_country = { original_tag = ENG has_civil_war = yes } }
+				}
+				clr_country_flag = IRE_black_britain_formed
+				clr_country_flag = IRE_black_britain_dominions_freed
+				clr_country_flag = IRE_black_britain_started
+				clr_country_flag = IRE_red_uprising_done
+				clr_country_flag = IRE_red_britain_joined
+				if = { limit = { has_idea = IRE_european_hope_britain } remove_ideas = IRE_european_hope_britain }
+				set_country_flag = IRE_black_britain_failed
+				every_country = {
+					limit = { original_tag = ENG }
+					set_cosmetic_tag = ENG
+					IRE_restore_britain_after_black = yes
 				}
 			}
 		}

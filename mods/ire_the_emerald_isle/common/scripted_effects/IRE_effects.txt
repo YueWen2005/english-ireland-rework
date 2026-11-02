@@ -172,6 +172,10 @@ IRE_annex_newfoundland = {
 		limit = { 332 = { is_owned_by = ENG } }
 		ROOT = { transfer_state = 332 }
 	}
+	if = {
+		limit = { 332 = { is_owned_by = ROOT } }
+		332 = { add_core_of = ROOT }
+	}
 }
 
 IRE_emergency_tier_check = {
@@ -478,14 +482,49 @@ IRE_black_britain_takeover = {
 			set_country_flag = ENG_black_britain_leader_created
 		}
 		if = { limit = { is_in_faction = yes } leave_faction = yes }
+		# 内战中可能继承了对德战争；先白和再入轴，否则 add_to_faction 会失败
+		if = {
+			limit = { country_exists = GER has_war_with = GER }
+			white_peace = GER
+		}
+		if = {
+			limit = { country_exists = GER }
+			every_country = {
+				limit = {
+					is_in_faction_with = GER
+					has_war_with = PREV
+				}
+				white_peace = PREV
+			}
+		}
 		if = {
 			limit = { country_exists = GER GER = { is_in_faction = yes } }
 			add_to_faction = GER
+		}
+		# 与自治领的战争也一并结束，避免黑英上台后仍与旧自治领交战
+		every_country = {
+			limit = {
+				OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
+				exists = yes
+				has_war_with = PREV
+			}
+			white_peace = PREV
 		}
 		if = {
 			limit = { has_idea = IRE_ENG_britain_crisis }
 			remove_ideas = IRE_ENG_britain_crisis
 		}
+		if = {
+			limit = { has_idea = IRE_eng_dock_strike }
+			remove_ideas = IRE_eng_dock_strike
+		}
+		if = {
+			limit = { has_idea = IRE_eng_ira_campaign }
+			remove_ideas = IRE_eng_ira_campaign
+		}
+		add_stability = 0.10
+		add_war_support = 0.05
+		add_political_power = 50
 	}
 	every_country = {
 		limit = {
@@ -500,6 +539,41 @@ IRE_black_britain_takeover = {
 	}
 	set_country_flag = IRE_black_britain_dominions_freed
 	set_country_flag = IRE_black_britain_formed
+	clr_country_flag = IRE_black_britain_started
+	clr_country_flag = IRE_black_britain_failed
+}
+
+# 黑英失败后的英国清理：恢复稳定与阵营，并移除危机/干涉精神。
+# 当前作用域必须是英国。
+IRE_restore_britain_after_black = {
+	if = {
+		limit = { has_idea = IRE_ENG_britain_crisis }
+		remove_ideas = IRE_ENG_britain_crisis
+	}
+	if = {
+		limit = { has_idea = IRE_eng_dock_strike }
+		remove_ideas = IRE_eng_dock_strike
+	}
+	if = {
+		limit = { has_idea = IRE_eng_ira_campaign }
+		remove_ideas = IRE_eng_ira_campaign
+	}
+	add_stability = 0.10
+	add_war_support = 0.05
+	if = {
+		limit = { NOT = { is_in_faction = yes } }
+		if = {
+			limit = { USA = { exists = yes is_faction_leader = yes } NOT = { has_war_with = USA } }
+			add_to_faction = USA
+		}
+		else_if = {
+			limit = { FRA = { exists = yes is_faction_leader = yes } NOT = { has_war_with = FRA } }
+			add_to_faction = FRA
+		}
+		else = {
+			create_faction_from_template = faction_template_allies
+		}
+	}
 }
 
 IRE_form_european_hope = {

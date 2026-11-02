@@ -1214,6 +1214,10 @@ focus_tree = {
 					}
 					ROOT = { transfer_state = 332 }
 				}
+				if = {
+					limit = { 332 = { is_owned_by = ROOT } }
+					332 = { add_core_of = ROOT }
+				}
 			}
 			if = {
 				limit = { country_exists = ENG }
@@ -1316,6 +1320,9 @@ focus_tree = {
 			865 = { add_core_of = ROOT }
 			866 = { add_core_of = ROOT }
 			867 = { add_core_of = ROOT }
+			# 纽芬兰与拉布拉多原版是加拿大的核心；若已在本国手中，一并核心化
+			if = { limit = { 331 = { is_owned_by = ROOT } } 331 = { add_core_of = ROOT } }
+			if = { limit = { 332 = { is_owned_by = ROOT } } 332 = { add_core_of = ROOT } }
 			set_cosmetic_tag = IRE_new_world
 			add_manpower = 45000
 			add_political_power = 125

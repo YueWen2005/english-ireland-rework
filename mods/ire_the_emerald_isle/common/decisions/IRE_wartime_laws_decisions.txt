@@ -1,0 +1,161 @@
+# ============================================================
+# 战时法案：民主爱尔兰的战时经济/人力动员
+# 民主政体在战争支持度不足时无法通过正常 UI 切到高级法案；
+# 这里用政治点数强行通过，费用与法案本身一致。
+# ============================================================
+IRE_wartime_laws_cat = {
+
+	IRE_wartime_war_economy = {
+		icon = generic_industry
+		cost = 150
+		days_remove = 1
+
+		available = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			NOT = { has_idea = war_economy }
+			NOT = { has_idea = tot_economic_mobilisation }
+		}
+
+		visible = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			NOT = { has_idea = war_economy }
+			NOT = { has_idea = tot_economic_mobilisation }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_ideas = war_economy
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_wartime_total_economy = {
+		icon = generic_industry
+		cost = 200
+		days_remove = 1
+
+		available = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			has_idea = war_economy
+			NOT = { has_idea = tot_economic_mobilisation }
+		}
+
+		visible = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			has_idea = war_economy
+			NOT = { has_idea = tot_economic_mobilisation }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_ideas = tot_economic_mobilisation
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_wartime_service = {
+		icon = generic_army
+		cost = 150
+		days_remove = 1
+
+		available = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			NOT = { has_idea = service_by_requirement }
+			NOT = { has_idea = all_adults_serve }
+			NOT = { has_idea = scraping_the_barrel }
+		}
+
+		visible = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			NOT = { has_idea = service_by_requirement }
+			NOT = { has_idea = all_adults_serve }
+			NOT = { has_idea = scraping_the_barrel }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_ideas = service_by_requirement
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_wartime_all_adults = {
+		icon = generic_army
+		cost = 200
+		days_remove = 1
+
+		available = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			has_idea = service_by_requirement
+			NOT = { has_idea = all_adults_serve }
+			NOT = { has_idea = scraping_the_barrel }
+		}
+
+		visible = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			has_idea = service_by_requirement
+			NOT = { has_idea = all_adults_serve }
+			NOT = { has_idea = scraping_the_barrel }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_ideas = all_adults_serve
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_wartime_scraping = {
+		icon = generic_army
+		cost = 250
+		days_remove = 1
+
+		available = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			has_idea = all_adults_serve
+			NOT = { has_idea = scraping_the_barrel }
+		}
+
+		visible = {
+			original_tag = IRE
+			has_government = democratic
+			has_war = yes
+			has_idea = all_adults_serve
+			NOT = { has_idea = scraping_the_barrel }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_ideas = scraping_the_barrel
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}
