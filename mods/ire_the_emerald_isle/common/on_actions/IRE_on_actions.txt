@@ -642,7 +642,6 @@ on_actions = {
 						any_country = {
 							original_tag = FRA
 							has_government = communism
-							has_civil_war = no
 							is_in_faction_with = ROOT
 						}
 					}
