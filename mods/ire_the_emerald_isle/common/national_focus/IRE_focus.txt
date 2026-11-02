@@ -777,6 +777,8 @@ focus_tree = {
 				tooltip = IRE_tt_european_major_war
 				IRE_european_major_war = yes
 			}
+			NOT = { has_war_with = ENG }
+			ENG = { NOT = { has_government = fascism } }
 		}
 		ai_will_do = { base = 40 }
 
@@ -3774,6 +3776,9 @@ focus_tree = {
 				tooltip = IRE_tt_dark_surrender_free
 				NOT = { has_country_flag = IRE_dark_surrender }
 			}
+			country_exists = GER
+			NOT = { has_war_with = GER }
+			GER = { is_faction_leader = yes }
 		}
 		x = 108
 		y = 8
@@ -3783,7 +3788,24 @@ focus_tree = {
 			army_experience = 50
 			add_war_support = 0.10
 			give_military_access = GER
-			GER = { add_to_faction = IRE }
+			if = {
+				limit = { NOT = { is_in_faction_with = GER } }
+				if = {
+					limit = { is_faction_leader = yes }
+					dismantle_faction = yes
+				}
+				else_if = {
+					limit = { is_in_faction = yes }
+					leave_faction = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = GER }
+					GER = { is_faction_leader = yes }
+				}
+				add_to_faction = GER
+			}
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			create_wargoal = { type = annex_everything target = ENG expire = 0 }
 			set_country_flag = IRE_green_action
@@ -4885,7 +4907,7 @@ OR = {
 			if = {
 				limit = { RAJ = { is_subject_of = IRE } }
 				set_autonomy = { target = RAJ autonomy_state = autonomy_free }
-				add_to_faction = RAJ
+				RAJ = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
@@ -5045,7 +5067,7 @@ OR = {
 			if = {
 				limit = { CAN = { is_subject_of = IRE } }
 				set_autonomy = { target = CAN autonomy_state = autonomy_free }
-				add_to_faction = CAN
+				CAN = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
@@ -5550,7 +5572,7 @@ OR = {
 			if = {
 				limit = { RAJ = { is_subject_of = IRE } }
 				set_autonomy = { target = RAJ autonomy_state = autonomy_free }
-				add_to_faction = RAJ
+				RAJ = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
@@ -5683,7 +5705,7 @@ OR = {
 			if = {
 				limit = { CAN = { is_subject_of = IRE } }
 				set_autonomy = { target = CAN autonomy_state = autonomy_free }
-				add_to_faction = CAN
+				CAN = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
