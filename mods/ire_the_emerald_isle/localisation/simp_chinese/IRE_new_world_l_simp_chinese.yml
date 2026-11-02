@@ -546,6 +546,7 @@
  IRE_red_sabotage:0 "不列颠红色破坏"
  IRE_red_sabotage_desc:0 "在英国境内持续破坏铁路、港口与军工厂，为登陆创造窗口。"
  IRE_tt_usa_joined:0 "美国加入爱尔兰主导的欧洲希望联盟，并获得美国工业/海军合作精神。"
+ IRE_tt_invite_red_france:0 "法兰西公社退出原有阵营，加入爱尔兰主导的欧洲希望联盟，并获得法兰西公社合作精神。"
  IRE_tt_dominions_joined:0 "符合条件的英联邦国家加入联盟，并获得英联邦残片精神。"
  IRE_tt_nordics_joined:0 "符合条件的北欧国家加入联盟，并获得北欧伙伴精神。"
  IRE_tt_spy_network:0 "获得不列颠内部网络精神；黑英稳定/战争支持下降。"

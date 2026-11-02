@@ -548,6 +548,7 @@
  IRE_red_sabotage:0 "Red Sabotage in Britain"
  IRE_red_sabotage_desc:0 "Keep sabotaging railways, ports, and armament factories across Britain to create windows for a landing."
  IRE_tt_usa_joined:0 "The United States joins the Irish-led Hope of Europe and grants American industry/naval cooperation."
+ IRE_tt_invite_red_france:0 "The French Commune leaves its current faction, joins the Irish-led Hope of Europe, and grants the French Commune cooperation spirit."
  IRE_tt_dominions_joined:0 "Eligible Commonwealth nations join the alliance and grant the Commonwealth Remnants spirit."
  IRE_tt_nordics_joined:0 "Eligible Nordic states join the alliance and grant the Nordic Partners spirit."
  IRE_tt_spy_network:0 "Gain the British Internal Network spirit; Black Britain's stability and war support fall."

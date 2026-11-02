@@ -615,7 +615,8 @@ IRE_force_join_faction = {
 		limit = { has_war_with = ROOT }
 		ROOT = { white_peace = PREV }
 	}
-	add_to_faction = ROOT
+	# 切到领袖作用域加入，避免自动提示把加入方显示成领袖
+	ROOT = { add_to_faction = PREV }
 	if = {
 		limit = { is_in_faction_with = ROOT }
 		set_country_flag = IRE_european_hope_member
