@@ -2335,3 +2335,159 @@ country_event = {
 		army_experience = 25
 	}
 }
+
+country_event = {
+	id = ire_nw.139
+	title = ire_nw.139.t
+	desc = ire_nw.139.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.139.a
+		add_stability = 0.05
+		add_political_power = 25
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		set_country_flag = IRE_home_unionist_compromise
+	}
+	option = {
+		name = ire_nw.139.b
+		add_war_support = 0.05
+		add_stability = -0.03
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		set_country_flag = IRE_home_unionist_coerced
+	}
+	option = {
+		name = ire_nw.139.c
+		add_political_power = 25
+		add_stability = -0.04
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
+		}
+		set_country_flag = IRE_home_unionist_ira
+	}
+}
+
+country_event = {
+	id = ire_nw.140
+	title = ire_nw.140.t
+	desc = ire_nw.140.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.140.a
+		add_manpower = 15000
+		army_experience = 50
+		add_political_power = -25
+		if = {
+			limit = { has_completed_focus = IRE_A_spanish_volunteers }
+			add_manpower = 5000
+			army_experience = 25
+		}
+		set_country_flag = IRE_home_ira_integrated
+	}
+	option = {
+		name = ire_nw.140.b
+		add_stability = 0.03
+		add_political_power = -25
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		set_country_flag = IRE_home_ira_suppressed
+	}
+	option = {
+		name = ire_nw.140.c
+		trigger = { has_country_flag = IRE_black_britain_formed }
+		army_experience = 75
+		add_political_power = 25
+		add_stability = -0.02
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		set_country_flag = IRE_home_ira_black_britain
+	}
+	option = {
+		name = ire_nw.140.e
+		add_stability = 0.02
+		add_political_power = 10
+		set_country_flag = IRE_home_ira_ignored
+	}
+}
+
+country_event = {
+	id = ire_nw.141
+	title = ire_nw.141.t
+	desc = ire_nw.141.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.141.a
+		add_stability = 0.05
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
+		}
+		every_country = {
+			limit = { original_tag = FRA has_government = communism }
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 }
+		}
+		every_country = {
+			limit = { original_tag = ENG has_government = communism }
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 }
+		}
+		set_country_flag = IRE_home_church_reassured
+	}
+	option = {
+		name = ire_nw.141.b
+		add_stability = -0.03
+		if = {
+			limit = { country_exists = USA }
+			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } }
+		}
+		every_country = {
+			limit = { original_tag = FRA has_government = communism }
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
+		}
+		every_country = {
+			limit = { original_tag = ENG has_government = communism }
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
+		}
+		set_country_flag = IRE_home_church_secular
+	}
+	option = {
+		name = ire_nw.141.c
+		add_political_power = -50
+		add_stability = 0.02
+		set_country_flag = IRE_home_church_balanced
+	}
+}

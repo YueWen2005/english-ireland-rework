@@ -605,6 +605,40 @@ on_actions = {
 				set_country_flag = IRE_world_138_done
 				country_event = { id = ire_nw.138 days = 7 }
 			}
+
+			# ============================================================
+			# A线：内部环境（联合派/老 IRA/教会）
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					has_country_flag = IRE_border_done
+					119 = { is_owned_by = ROOT }
+					NOT = { has_country_flag = IRE_home_139_done }
+				}
+				set_country_flag = IRE_home_139_done
+				country_event = { id = ire_nw.139 days = 14 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_home_139_done
+					NOT = { has_country_flag = IRE_home_140_done }
+				}
+				set_country_flag = IRE_home_140_done
+				country_event = { id = ire_nw.140 days = 14 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_european_hope_formed
+					OR = { has_country_flag = IRE_red_france_joined has_country_flag = IRE_red_britain_joined }
+					NOT = { has_country_flag = IRE_home_141_done }
+				}
+				set_country_flag = IRE_home_141_done
+				country_event = { id = ire_nw.141 days = 7 }
+			}
 		}
 	}
 }
