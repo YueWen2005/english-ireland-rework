@@ -2162,3 +2162,22 @@ country_event = {
 		add_political_power = 25
 	}
 }
+
+country_event = {
+	id = ire_nw.134
+	title = ire_nw.134.t
+	desc = ire_nw.134.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+
+	option = {
+		name = ire_nw.134.a
+		add_political_power = 25
+		add_stability = 0.02
+	}
+	option = {
+		name = ire_nw.134.b
+		army_experience = 25
+		add_war_support = 0.02
+	}
+}

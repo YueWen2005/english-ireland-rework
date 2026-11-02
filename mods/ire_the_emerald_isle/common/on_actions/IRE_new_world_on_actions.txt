@@ -518,6 +518,52 @@ on_actions = {
 				set_country_flag = IRE_abwher_plot_started
 				country_event = { id = ire_nw.130 days = 0 }
 			}
+
+			# ============================================================
+			# A线：德国多线大战后的欧洲希望扩员与德国隐藏补强
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_european_hope
+					is_faction_leader = yes
+					IRE_germany_widespread_war = yes
+					NOT = { has_country_flag = IRE_german_last_stand_added }
+					country_exists = GER
+				}
+				set_country_flag = IRE_german_last_stand_added
+				GER = { add_ideas = IRE_german_last_stand }
+			}
+
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_european_hope
+					is_faction_leader = yes
+					IRE_germany_widespread_war = yes
+				}
+				every_country = {
+					limit = {
+						exists = yes
+						is_ai = yes
+						NOT = { tag = ROOT }
+						NOT = { tag = GER }
+						has_war_with = GER
+						is_subject = no
+						NOT = { is_in_faction = yes }
+						NOT = { has_war_with = ROOT }
+					}
+					random = {
+						chance = 10
+						IRE_force_join_faction = yes
+						if = {
+							limit = { NOT = { ROOT = { has_country_flag = IRE_coalition_news_cd } } }
+							ROOT = { set_country_flag = { flag = IRE_coalition_news_cd days = 180 value = 1 } }
+							ROOT = { country_event = { id = ire_nw.134 days = 1 } }
+						}
+					}
+				}
+			}
 		}
 	}
 }
