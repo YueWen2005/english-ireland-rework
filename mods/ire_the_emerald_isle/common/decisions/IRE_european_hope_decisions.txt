@@ -1,5 +1,48 @@
 IRE_european_hope_cat = {
 
+	IRE_invite_red_france = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 1
+
+		available = {
+			has_country_flag = IRE_france_red_started
+			NOT = { has_country_flag = IRE_red_france_joined }
+			has_idea = IRE_european_hope
+			is_in_faction = yes
+			any_country = { original_tag = FRA has_government = communism }
+		}
+
+		visible = {
+			has_country_flag = IRE_france_red_started
+			NOT = { has_country_flag = IRE_red_france_joined }
+			any_country = { original_tag = FRA has_government = communism }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			every_country = {
+				limit = { original_tag = FRA has_government = communism }
+				IRE_force_join_faction = yes
+			}
+			if = {
+				limit = {
+					any_country = {
+						original_tag = FRA
+						has_government = communism
+						is_in_faction_with = ROOT
+					}
+				}
+				add_ideas = IRE_european_hope_france
+				set_country_flag = IRE_red_france_joined
+				country_event = { id = ire_nw.97 days = 0 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
 	IRE_invite_usa = {
 		icon = generic_political_actions
 		cost = 100
