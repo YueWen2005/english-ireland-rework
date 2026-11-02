@@ -71,6 +71,10 @@ ideas = {
 			picture = generic_political_support
 			allowed = { always = yes }
 			visible = { always = yes }
+			# 取代条约伤痕时保留建阵营能力
+			rule = {
+				can_create_factions = yes
+			}
 			modifier = {
 				stability_factor = -0.05
 				political_power_gain = -0.02

@@ -532,7 +532,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_emergency }
 		x = 62
-		y = 5
+		y = 7
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -675,7 +675,7 @@ focus_tree = {
 		}
 	}
 
-	# ---- 北爱政治路线：和解后的公民共和国 / 强硬整合后的中央集权共和国 ----
+	# ---- 北爱政治路线：温和治理后的公民共和国 / 强硬统治后的中央集权共和国 ----
 	focus = {
 		id = IRE_A_civic_republic
 		icon = GFX_focus_generic_election
@@ -683,8 +683,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_reconciliation }
-		prerequisite = { focus = IRE_A_spanish_volunteers }
-		x = 50
+		x = 52
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -703,9 +702,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_firm_integration }
-		x = 53
+		x = 56
 		y = 6
-		available = { has_completed_focus = IRE_A_spanish_volunteers }
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -744,7 +742,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 62
+		x = 68
 		y = 4
 		available = {
 			OR = {
@@ -772,7 +770,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 59
+		x = 62
 		y = 5
 		available = {
 			custom_trigger_tooltip = {
@@ -795,7 +793,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 56
+		x = 59
 		y = 5
 		ai_will_do = { base = 40 }
 
@@ -803,6 +801,8 @@ focus_tree = {
 			remove_ideas = IRE_treatys_scar
 			remove_ideas = IRE_british_sanctions
 			add_ideas = IRE_settled_treaty
+			# 条约伤痕本身带建阵营规则，移除时补回，避免锁死建阵营
+			set_rule = { can_create_factions = yes }
 			add_stability = 0.12
 		}
 	}
@@ -814,7 +814,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_settle_treaty }
-		x = 56
+		x = 59
 		y = 6
 		ai_will_do = { base = 40 }
 
