@@ -722,8 +722,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 59
-		y = 4
+		x = 56
+		y = 8
 		mutually_exclusive = { focus = IRE_A_newfoundland }
 		ai_will_do = { base = 30 }
 
@@ -770,8 +770,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 62
-		y = 5
+		x = 56
+		y = 9
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_european_major_war
@@ -793,8 +793,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 59
-		y = 5
+		x = 53
+		y = 9
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -814,8 +814,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_settle_treaty }
-		x = 59
-		y = 6
+		x = 53
+		y = 10
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
