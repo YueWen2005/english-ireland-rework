@@ -497,6 +497,27 @@ on_actions = {
 				set_country_flag = IRE_nw_convoy_61
 				country_event = { id = ire_nw.61 days = 0 }
 			}
+
+			# ============================================================
+			# Abwehr 的爱尔兰之门（A 线专属）
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					NOT = { has_country_flag = IRE_abwher_plot_started }
+					NOT = { has_country_flag = IRE_abwher_resolved }
+					date > 1939.9.1
+					IRE_european_major_war = yes
+					country_exists = GER
+					GER = { NOT = { has_war_with = ROOT } }
+					ENG = { exists = yes has_war = yes NOT = { has_government = fascism } }
+					NOT = { has_war_with = ENG }
+					NOT = { is_in_faction_with = ENG }
+				}
+				set_country_flag = IRE_abwher_plot_started
+				country_event = { id = ire_nw.130 days = 0 }
+			}
 		}
 	}
 }

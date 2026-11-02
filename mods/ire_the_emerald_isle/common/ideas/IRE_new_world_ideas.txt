@@ -492,5 +492,30 @@ ideas = {
 			removal_cost = -1
 		}
 
+		# ---- Abwehr 的爱尔兰之门（A 线事件链） ----
+		IRE_abwher_network = {
+			picture = generic_secret_police
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				intel_network_gain_factor = 0.10
+				decryption_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_abwher_exposed = {
+			picture = generic_disjointed_gov
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.05
+				political_power_gain = -0.05
+				intel_network_gain_factor = -0.10
+			}
+			removal_cost = -1
+		}
+
 	}
 }
