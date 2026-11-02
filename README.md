@@ -83,7 +83,13 @@ mods/ire_the_emerald_isle/
 
 ## 版本进度
 
-按版本倒序。当前最新 **v2.15.13**（2026-11-02）。
+按版本倒序。当前最新 **v2.15.14**（2026-11-02）。
+
+### v2.15.14 — 修正国策节点压在连线上的问题
+
+| 版本 | 日期 | 内容 |
+|---|---|---|
+| **2.15.14** | 11-02 | 移动 `IRE_A_london_note`、`IRE_A_wartime_economy`、`IRE_A_green_dollar`、`IRE_A_new_world_expedition`、`IRE_B_plan_w`、`IRE_B_famine_echo` 的坐标，消除前置长线从其他国策节点背后穿过造成的“虚空激活”错觉 |
 
 ### v2.15.13 — 欧洲希望退盟门槛
 
