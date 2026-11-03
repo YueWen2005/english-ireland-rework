@@ -755,6 +755,7 @@
  IRE_nu_test_cat:0 "National Union (Test)"
  IRE_nu_test_form:0 "[Test] Convene the National Union"
  IRE_nu_test_form_desc:0 "Adds the national union spirit and initializes the four blocs and two confidence values for testing the decision-page dashboard. The release version is triggered by the A-line preparation focus."
+ IRE_nu_test_form_tt:0 "Test tool: immediately form the National Union, set the four blocs to 75/45/30/15, unionist confidence to 72 and Church confidence to 45, and unlock all four method decision groups."
 
  # ===== Irish National Union: preparation and formation events =====
  ire_nw.142.t:0 "The National Accord"
