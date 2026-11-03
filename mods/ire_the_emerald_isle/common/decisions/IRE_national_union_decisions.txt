@@ -18,3 +18,36 @@ IRE_national_union_cat = {
 		ai_will_do = { base = 0 }
 	}
 }
+
+# 临时测试：正式版由 A 线准备国策 + 成立枢纽替代
+IRE_nu_test_cat = {
+
+	IRE_nu_test_form = {
+		icon = generic_political_actions
+		cost = 0
+
+		available = {
+			is_ai = no
+			NOT = { has_idea = IRE_national_union_government }
+		}
+		visible = {
+			is_ai = no
+			NOT = { has_idea = IRE_national_union_government }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_ideas = IRE_national_union_government
+			set_country_flag = IRE_national_union_formed
+			set_variable = { IRE_nu_parliament = 75 }
+			set_variable = { IRE_nu_labour = 45 }
+			set_variable = { IRE_nu_security = 30 }
+			set_variable = { IRE_nu_ira = 15 }
+			set_variable = { IRE_nu_unionist = 72 }
+			set_variable = { IRE_nu_church = 45 }
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}

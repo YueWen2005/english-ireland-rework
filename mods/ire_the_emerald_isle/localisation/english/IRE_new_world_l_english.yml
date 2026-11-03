@@ -744,3 +744,6 @@
  IRE_nu_internal_tension:0 "Friction"
  IRE_nu_internal_deadlock:0 "Deadlock"
  IRE_nu_status_tt:0 "Parliament [?IRE.IRE_nu_parliament|0] / Labour [?IRE.IRE_nu_labour|0] / Security [?IRE.IRE_nu_security|0] / IRA [?IRE.IRE_nu_ira|0]\nUnionist confidence [?IRE.IRE_nu_unionist|0] / Church confidence [?IRE.IRE_nu_church|0]\nA bloc above 60 with a 30-point gap to the lowest triggers a coalition crisis."
+ IRE_nu_test_cat:0 "National Union (Test)"
+ IRE_nu_test_form:0 "[Test] Convene the National Union"
+ IRE_nu_test_form_desc:0 "Adds the national union spirit and initializes the four blocs and two confidence values for testing the decision-page dashboard. The release version is triggered by the A-line preparation focus."

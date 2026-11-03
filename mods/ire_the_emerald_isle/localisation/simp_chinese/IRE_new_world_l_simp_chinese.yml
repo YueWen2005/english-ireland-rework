@@ -742,3 +742,6 @@
  IRE_nu_internal_tension:0 "摩擦"
  IRE_nu_internal_deadlock:0 "僵局"
  IRE_nu_status_tt:0 "议会 [?IRE.IRE_nu_parliament|0] / 工人 [?IRE.IRE_nu_labour|0] / 安全 [?IRE.IRE_nu_security|0] / 共和军 [?IRE.IRE_nu_ira|0]\n联合派信心 [?IRE.IRE_nu_unionist|0] / 教会信心 [?IRE.IRE_nu_church|0]\n某派 >60 且与最低派差 >30 会触发联盟危机。"
+ IRE_nu_test_cat:0 "民族联盟（测试）"
+ IRE_nu_test_form:0 "【测试】召集民族联盟"
+ IRE_nu_test_form_desc:0 "一键添加联盟精神并初始化四派/两信心，用于测试决议页仪表盘。正式版本由 A 线准备国策触发。"
