@@ -21,7 +21,7 @@ IRE_defend_cat = {
 				prioritize_location = 11293
 			}
 			add_manpower = 10000
-			add_war_support = 0.02
+			add_war_support = 0.05
 		}
 
 		ai_will_do = { base = 120 }
@@ -67,7 +67,7 @@ IRE_defend_cat = {
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 producer = IRE }
 			add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = IRE }
 			add_manpower = 20000
-			add_war_support = 0.03
+			add_war_support = 0.05
 		}
 
 		ai_will_do = { base = 120 }
@@ -165,7 +165,7 @@ IRE_defend_cat = {
 				prioritize_location = 11293
 			}
 			add_manpower = 10000
-			add_war_support = 0.02
+			add_war_support = 0.05
 		}
 
 		ai_will_do = { base = 100 }

@@ -1,0 +1,505 @@
+IRE_national_union_cat = {
+
+	# 仪表盘的回退入口：GUI 异常时也能看到四派与两信心
+	IRE_nu_status = {
+		icon = generic_political_actions
+		cost = 0
+		days_remove = 1
+
+		available = { has_idea = IRE_national_union_government }
+		visible = { has_idea = IRE_national_union_government }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_status_tt
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 议会派方法 ----
+	IRE_nu_parliament_convention = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_parliament_convention_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_parliament = 8 }
+				add_to_variable = { IRE_nu_unionist = 3 }
+				add_timed_idea = { idea = IRE_nu_parliament_spirit days = 180 }
+				add_political_power = 10
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_parliament_diaspora = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_parliament_diaspora_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_parliament = 6 }
+				add_timed_idea = { idea = IRE_nu_diaspora_spirit days = 180 }
+				add_political_power = 10
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 工人派方法 ----
+	IRE_nu_labour_councils = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_labour_councils_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_labour = 8 }
+				add_to_variable = { IRE_nu_church = -2 }
+				add_timed_idea = { idea = IRE_nu_labour_spirit days = 180 }
+				add_political_power = 10
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_labour_public_works = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_labour_public_works_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_labour = 6 }
+				add_manpower = 5000
+				add_timed_idea = { idea = IRE_nu_works_spirit days = 180 }
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 安全派方法 ----
+	IRE_nu_security_special_branch = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_security_special_branch_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_security = 8 }
+				add_to_variable = { IRE_nu_ira = -3 }
+				add_timed_idea = { idea = IRE_nu_security_spirit days = 180 }
+				add_political_power = 10
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_security_army_loyalty = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_security_army_loyalty_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_security = 6 }
+				army_experience = 25
+				add_timed_idea = { idea = IRE_nu_army_spirit days = 180 }
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 共和军派方法 ----
+	IRE_nu_ira_volunteer_network = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_ira }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_ira }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_ira_volunteer_network_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_ira = 8 }
+				add_manpower = 5000
+				add_timed_idea = { idea = IRE_nu_volunteer_spirit days = 180 }
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_ira_cross_border = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = {
+			has_idea = IRE_national_union_government
+			has_country_flag = IRE_nu_pillar_ira
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_nu_cross_border
+				OR = {
+					has_country_flag = IRE_black_britain_formed
+					any_owned_state = {
+						is_core_of = ROOT
+						controller = { has_war_with = ROOT }
+					}
+				}
+			}
+		}
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_ira }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_ira_cross_border_tt
+			hidden_effect = {
+				add_to_variable = { IRE_nu_ira = 6 }
+				army_experience = 25
+				add_timed_idea = { idea = IRE_nu_cross_border_spirit days = 180 }
+				IRE_national_union_init = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# 脆弱复兴 → 完整复兴（玩家后来把四派拉回平衡时使用）
+	IRE_nu_repair_revival = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_national_union_government
+			has_idea = IRE_national_revival_fragile
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_nu_revival_conditions
+				check_variable = { IRE_nu_parliament > 19 }
+				check_variable = { IRE_nu_parliament < 61 }
+				check_variable = { IRE_nu_labour > 19 }
+				check_variable = { IRE_nu_labour < 61 }
+				check_variable = { IRE_nu_security > 19 }
+				check_variable = { IRE_nu_security < 61 }
+				check_variable = { IRE_nu_ira > 19 }
+				check_variable = { IRE_nu_ira < 61 }
+				check_variable = { IRE_nu_unionist > 59 }
+				check_variable = { IRE_nu_church > 59 }
+			}
+		}
+		visible = { has_idea = IRE_national_revival_fragile }
+
+		fire_only_once = yes
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_effect_nu_repair_revival
+			hidden_effect = {
+				remove_ideas = IRE_national_revival_fragile
+				add_ideas = IRE_national_revival
+				set_country_flag = IRE_nu_revival_done
+				clr_country_flag = IRE_nu_revival_fragile
+				add_stability = 0.05
+				IRE_nu_update_modifier_summary = yes
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}
+
+# 战后 2B：三条对外路线的具体政策
+IRE_nu_postwar_cat = {
+
+	IRE_nu_red_economic_mission = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_red_economic_mission_tt
+			hidden_effect = {
+				add_political_power = 25
+				if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+				every_country = {
+					limit = { original_tag = FRA has_government = communism }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
+				}
+				every_country = {
+					limit = { original_tag = ENG has_government = communism }
+					add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
+				}
+				add_timed_idea = { idea = IRE_nu_red_cooperation days = 240 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_red_military_mission = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_red_military_mission_tt
+			hidden_effect = {
+				army_experience = 50
+				add_manpower = 5000
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+				if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+				add_timed_idea = { idea = IRE_nu_red_cooperation days = 240 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_atlantic_loan = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_atlantic_loan_tt
+			hidden_effect = {
+				add_political_power = 25
+				if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+				add_timed_idea = { idea = IRE_nu_atlantic_cooperation days = 240 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_atlantic_defence = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_atlantic_defence_tt
+			hidden_effect = {
+				navy_experience = 25
+				air_experience = 25
+				add_manpower = 5000
+				if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+				add_timed_idea = { idea = IRE_nu_atlantic_cooperation days = 240 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_third_force_summit = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_third_force_summit_tt
+			hidden_effect = {
+				add_political_power = 25
+				add_stability = 0.05
+				add_timed_idea = { idea = IRE_nu_third_force_cooperation days = 240 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_third_force_armed = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_third_force_armed_tt
+			hidden_effect = {
+				add_war_support = 0.05
+				army_experience = 50
+				add_manpower = 5000
+				add_timed_idea = { idea = IRE_nu_third_force_cooperation days = 240 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}
+
+# 战后重建：国内外环境包的常驻手段
+IRE_nu_postwar_env_cat = {
+
+	IRE_nu_postwar_housing = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_housing_tt
+			hidden_effect = {
+				add_stability = 0.05
+				add_timed_idea = { idea = IRE_nu_postwar_reconstruction_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_postwar_veterans = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_veterans_tt
+			hidden_effect = {
+				add_manpower = 5000
+				add_war_support = 0.05
+				add_timed_idea = { idea = IRE_nu_postwar_veterans_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_postwar_industry = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 120
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_industry_tt
+			hidden_effect = {
+				add_political_power = 25
+				add_timed_idea = { idea = IRE_nu_postwar_industry_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_postwar_trade = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_trade_tt
+			hidden_effect = {
+				add_political_power = 25
+				add_timed_idea = { idea = IRE_nu_postwar_trade_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}

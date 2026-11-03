@@ -528,6 +528,11 @@ on_actions = {
 					has_idea = IRE_european_hope
 					is_faction_leader = yes
 					IRE_germany_widespread_war = yes
+					# 仅黑英成功/红色英国在盟时启用；黑英失败或英国仍在同盟国时不抢人
+					OR = {
+						has_country_flag = IRE_black_britain_formed
+						has_country_flag = IRE_red_britain_joined
+					}
 					NOT = { has_country_flag = IRE_german_last_stand_added }
 					country_exists = GER
 				}
@@ -541,6 +546,11 @@ on_actions = {
 					has_idea = IRE_european_hope
 					is_faction_leader = yes
 					IRE_germany_widespread_war = yes
+					# 仅黑英成功/红色英国在盟时扩员；黑英失败时让位给同盟国
+					OR = {
+						has_country_flag = IRE_black_britain_formed
+						has_country_flag = IRE_red_britain_joined
+					}
 				}
 				every_country = {
 					limit = {
@@ -563,6 +573,203 @@ on_actions = {
 						}
 					}
 				}
+			}
+
+			# ============================================================
+			# 民族联盟：状态修复与异常线路清理
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_national_union_government
+				}
+				if = {
+					limit = { NOT = { has_country_flag = IRE_national_union_formed } }
+					set_country_flag = IRE_national_union_formed
+				}
+				if = {
+					limit = {
+						has_idea = IRE_national_revival
+						NOT = { has_country_flag = IRE_nu_revival_done }
+					}
+					set_country_flag = IRE_nu_revival_done
+				}
+			}
+			if = {
+				limit = {
+					tag = IRE
+					NOT = { has_idea = IRE_national_union_government }
+					has_country_flag = IRE_national_union_formed
+				}
+				if = {
+					limit = { has_cosmetic_tag = IRE_national_union }
+					set_cosmetic_tag = IRE
+				}
+				IRE_nu_clear_dynamic_state = yes
+				clr_country_flag = IRE_national_union_formed
+				clr_country_flag = IRE_national_union_initialized
+				clr_country_flag = IRE_nu_prep_done
+				clr_country_flag = IRE_nu_revival_done
+				clr_country_flag = IRE_nu_postwar_red
+				clr_country_flag = IRE_nu_postwar_new_world
+				clr_country_flag = IRE_nu_postwar_neutral
+				clr_country_flag = IRE_nu_crisis_now
+				clr_country_flag = IRE_nu_confidence_low
+				clr_country_flag = IRE_nu_crisis_cd
+				clr_country_flag = IRE_nu_confidence_cd
+				clr_country_flag = IRE_nu_world_reaction_done
+				clr_country_flag = IRE_nu_charter_parliament
+				clr_country_flag = IRE_nu_charter_labour
+				clr_country_flag = IRE_nu_charter_security
+				clr_country_flag = IRE_nu_charter_ira
+				clr_country_flag = IRE_nu_pillar_parliament
+				clr_country_flag = IRE_nu_pillar_labour
+				clr_country_flag = IRE_nu_pillar_security
+				clr_country_flag = IRE_nu_pillar_ira
+				clr_country_flag = IRE_nu_prep_roundtable
+				clr_country_flag = IRE_nu_prep_firm
+				clr_country_flag = IRE_nu_prep_republican
+				clr_country_flag = IRE_nu_red_deep
+				clr_country_flag = IRE_nu_red_limited
+				clr_country_flag = IRE_nu_new_world_deep
+				clr_country_flag = IRE_nu_new_world_limited
+				clr_country_flag = IRE_nu_third_force_armed
+				clr_country_flag = IRE_nu_pure_union
+				clr_country_flag = IRE_nu_revival_fragile
+				clr_country_flag = IRE_nu_north_lost_done
+				clr_country_flag = IRE_nu_government_changed_done
+				if = { limit = { has_idea = IRE_national_revival } remove_ideas = IRE_national_revival }
+				if = { limit = { has_idea = IRE_national_revival_fragile } remove_ideas = IRE_national_revival_fragile }
+				if = { limit = { has_idea = IRE_nu_red_partnership } remove_ideas = IRE_nu_red_partnership }
+				if = { limit = { has_idea = IRE_nu_new_world_partnership } remove_ideas = IRE_nu_new_world_partnership }
+				if = { limit = { has_idea = IRE_nu_third_force } remove_ideas = IRE_nu_third_force }
+				clear_variable = IRE_nu_parliament
+				clear_variable = IRE_nu_labour
+				clear_variable = IRE_nu_security
+				clear_variable = IRE_nu_ira
+				clear_variable = IRE_nu_unionist
+				clear_variable = IRE_nu_church
+				clear_variable = IRE_nu_parliament_frame
+				clear_variable = IRE_nu_labour_frame
+				clear_variable = IRE_nu_security_frame
+				clear_variable = IRE_nu_ira_frame
+				clear_variable = IRE_nu_unionist_frame
+				clear_variable = IRE_nu_church_frame
+			}
+
+			# 北爱回归后自动完成民族团结纲领，直接解锁后续联盟国策
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					has_country_flag = IRE_border_done
+					119 = { is_owned_by = ROOT }
+					NOT = { has_completed_focus = IRE_A_national_accord }
+					NOT = { has_idea = IRE_national_union_government }
+				}
+				complete_national_focus = { focus = IRE_A_national_accord use_side_message = yes }
+			}
+
+			# ============================================================
+			# 民族联盟：仪表盘同步、月度平衡与政治危机
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_national_union_government
+				}
+				IRE_national_union_init = yes
+				IRE_nu_evaluate_balance = yes
+				IRE_nu_update_modifier_summary = yes
+
+				if = {
+					limit = {
+						NOT = { has_country_flag = IRE_nu_north_lost_done }
+						NOT = { 119 = { is_owned_by = ROOT } }
+					}
+					set_country_flag = IRE_nu_north_lost_done
+					country_event = { id = ire_nw.165 days = 0 }
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = IRE_nu_government_changed_done }
+						NOT = { has_government = democratic }
+					}
+					set_country_flag = IRE_nu_government_changed_done
+					country_event = { id = ire_nw.166 days = 0 }
+				}
+
+				# 每 90 天一次自然漂移；随后重新评估危机与主导派系
+				IRE_nu_monthly_drift = yes
+				IRE_national_union_init = yes
+				IRE_nu_evaluate_balance = yes
+				IRE_nu_update_dominant = yes
+
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_crisis_now
+						NOT = { has_country_flag = IRE_nu_crisis_cd }
+					}
+					set_country_flag = { flag = IRE_nu_crisis_cd days = 180 value = 1 }
+					country_event = { id = ire_nw.151 days = 0 }
+				}
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_confidence_low
+						NOT = { has_country_flag = IRE_nu_confidence_cd }
+					}
+					set_country_flag = { flag = IRE_nu_confidence_cd days = 180 value = 1 }
+					country_event = { id = ire_nw.153 days = 0 }
+				}
+
+				# 内阁重心转移优先于随机事件池，避免同月双事件
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_cabinet_shift_now
+						NOT = { has_country_flag = IRE_nu_cabinet_shift_cd }
+						NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
+						NOT = { has_country_flag = IRE_nu_grace_cd }
+						NOT = { has_country_flag = IRE_nu_crisis_now }
+					}
+					country_event = { id = ire_nw.188 days = 0 }
+				}
+
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_scandal_pending
+						NOT = { has_country_flag = IRE_nu_scandal_delay }
+						NOT = { has_country_flag = IRE_nu_scandal_cd }
+						NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
+						NOT = { has_country_flag = IRE_nu_crisis_now }
+						NOT = { has_country_flag = IRE_nu_confidence_low }
+					}
+					country_event = { id = ire_nw.187 days = 0 }
+				}
+
+				IRE_nu_dynamic_event_roll = yes
+
+				# 战后环境包：德国投降后启动，90 天池
+				if = {
+					limit = {
+						IRE_germany_defeated = yes
+						NOT = { has_country_flag = IRE_nu_postwar_env_started }
+					}
+					set_country_flag = IRE_nu_postwar_env_started
+					country_event = { id = ire_nw.190 days = 7 }
+				}
+				IRE_nu_postwar_env_roll = yes
+			}
+
+			# 民族联盟：成立后的世界回响（一次）
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_national_union_formed
+					NOT = { has_country_flag = IRE_nu_world_reaction_done }
+					date > 1936.6.1
+				}
+				set_country_flag = IRE_nu_world_reaction_done
+				country_event = { id = ire_nw.164 days = 7 }
 			}
 
 			# ============================================================

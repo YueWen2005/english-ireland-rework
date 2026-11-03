@@ -51,10 +51,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = -20
-			add_stability = 0.08
+			add_stability = 0.10
 			# 不在开局触发公投事件：给玩家留出宣传/稳定度窗口，
 			# 公投由 IRE_A_belfast 完成后触发 ire.1
-			add_war_support = 0.08
+			add_war_support = 0.10
 			set_variable = { IRE_plebiscite_support = 45 }
 			set_country_flag = IRE_campaign_started
 			custom_effect_tooltip = IRE_effect_plebiscite_support_45
@@ -78,7 +78,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 125
-			add_stability = 0.08
+			add_stability = 0.10
 			remove_ideas = IRE_treatys_scar
 			add_ideas = IRE_free_framework
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos30 } }
@@ -374,7 +374,7 @@ focus_tree = {
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			}
-			add_stability = 0.08
+			add_stability = 0.10
 		}
 	}
 
@@ -516,7 +516,7 @@ focus_tree = {
 			add_ideas = IRE_emergency_powers
 			add_ideas = IRE_atlantic_emergency
 			add_political_power = 50
-			add_war_support = 0.08
+			add_war_support = 0.10
 			army_experience = 75
 			# A 线专属将领：独立战争期间负责组织与训练，动员体系靠他
 			recruit_character = IRE_nw_ernie_omalley
@@ -541,7 +541,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
 			}
-			add_war_support = 0.08
+			add_war_support = 0.10
 			add_offsite_building = { type = arms_factory level = 2 }
 		}
 	}
@@ -588,7 +588,7 @@ focus_tree = {
 					add_building_construction = { type = coastal_bunker level = 2 instant_build = yes }
 				}
 			}
-			add_war_support = 0.08
+			add_war_support = 0.10
 			army_experience = 75
 		}
 	}
@@ -628,7 +628,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_fortress_ireland
 			add_political_power = 75
-			add_stability = 0.08
+			add_stability = 0.10
 			add_manpower = 30000
 		}
 	}
@@ -668,7 +668,7 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = IRE_north_unintegrated
 			add_ideas = IRE_sectarian_rift
-			add_war_support = 0.18
+			add_war_support = 0.20
 			add_ideas = IRE_mobilisation_drive
 			custom_effect_tooltip = IRE_effect_mobilisation_drive
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
@@ -690,7 +690,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = IRE_civic_republic
 			add_political_power = 125
-			add_stability = 0.08
+			add_stability = 0.10
 			add_tech_bonus = { name = IRE_civic_research_bonus bonus = 0.3 uses = 1 category = industry }
 		}
 	}
@@ -708,9 +708,403 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_centralised_republic
-			add_war_support = 0.08
+			add_war_support = 0.10
 			add_manpower = 20000
 			army_experience = 75
+		}
+	}
+
+	# ---- 民族治理独立分支（A 线下方，不挂 A 线连线） ----
+	focus = {
+		id = IRE_A_national_accord
+		icon = GFX_focus_generic_public_meetings
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		available = {
+			has_country_flag = IRE_campaign_started
+			has_country_flag = IRE_border_done
+			NOT = { has_idea = IRE_national_union_government }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_national_union_north
+				119 = { is_owned_by = ROOT }
+			}
+		}
+		x = 60
+		y = 17
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_accord
+			hidden_effect = {
+				add_political_power = 50
+				add_stability = 0.05
+				set_country_flag = IRE_nu_prep_done
+				country_event = { id = ire_nw.142 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_convene
+		icon = GFX_focus_generic_conference
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_national_accord }
+		available = { NOT = { has_idea = IRE_national_union_government } }
+		x = 60
+		y = 18
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_convene
+			hidden_effect = {
+				IRE_national_union_init = yes
+				set_cosmetic_tag = IRE_national_union
+				add_ideas = IRE_national_union_government
+				set_country_flag = IRE_national_union_formed
+				add_political_power = 100
+				IRE_nu_update_modifier_summary = yes
+				country_event = { id = ire_nw.150 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_parliament
+		icon = GFX_focus_generic_election
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 54
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_pillar_parliament
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_parliament
+				add_to_variable = { IRE_nu_parliament = 10 }
+				add_to_variable = { IRE_nu_unionist = 5 }
+				add_political_power = 50
+				add_stability = 0.05
+				IRE_national_union_init = yes
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_labour
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 58
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_pillar_labour
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_labour
+				add_to_variable = { IRE_nu_labour = 10 }
+				add_to_variable = { IRE_nu_church = -3 }
+				add_political_power = 25
+				add_manpower = 5000
+				IRE_national_union_init = yes
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_security
+		icon = GFX_focus_generic_national_security
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 62
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_pillar_security
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_security
+				add_to_variable = { IRE_nu_security = 10 }
+				add_to_variable = { IRE_nu_ira = -3 }
+				add_war_support = 0.05
+				army_experience = 25
+				IRE_national_union_init = yes
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_ira
+		icon = GFX_goal_generic_military_deal
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 66
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_pillar_ira
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_ira
+				add_to_variable = { IRE_nu_ira = 10 }
+				add_to_variable = { IRE_nu_unionist = -3 }
+				add_manpower = 5000
+				army_experience = 25
+				IRE_national_union_init = yes
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_nu_charter_parliament
+		icon = GFX_focus_generic_public_meetings
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_national_union_parliament }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 54
+		y = 20
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_charter_parliament
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_parliament
+				add_political_power = 100
+				add_stability = 0.05
+				country_event = { id = ire_nw.160 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_nu_charter_labour
+		icon = GFX_focus_generic_land_redistribution
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_A_national_union_labour }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 58
+		y = 20
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_charter_labour
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_labour
+				add_manpower = 10000
+				add_political_power = 50
+				country_event = { id = ire_nw.161 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_nu_charter_security
+		icon = GFX_focus_generic_national_security
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = IRE_A_national_union_security }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 62
+		y = 20
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_charter_security
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_security
+				add_war_support = 0.05
+				army_experience = 50
+				country_event = { id = ire_nw.162 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_nu_charter_ira
+		icon = GFX_goal_generic_military_deal
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+		prerequisite = { focus = IRE_A_national_union_ira }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
+		x = 66
+		y = 20
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_charter_ira
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_ira
+				add_manpower = 10000
+				army_experience = 50
+				country_event = { id = ire_nw.163 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_revival
+		icon = GFX_focus_generic_world_peace
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_nu_charter_parliament }
+		prerequisite = { focus = IRE_A_nu_charter_labour }
+		prerequisite = { focus = IRE_A_nu_charter_security }
+		prerequisite = { focus = IRE_A_nu_charter_ira }
+		available = { has_idea = IRE_national_union_government }
+		bypass = { has_country_flag = IRE_nu_revival_done }
+		x = 60
+		y = 21
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_revival_branch
+			hidden_effect = {
+				add_political_power = 100
+				add_stability = 0.05
+				if = {
+					limit = {
+						check_variable = { IRE_nu_parliament > 19 }
+						check_variable = { IRE_nu_parliament < 61 }
+						check_variable = { IRE_nu_labour > 19 }
+						check_variable = { IRE_nu_labour < 61 }
+						check_variable = { IRE_nu_security > 19 }
+						check_variable = { IRE_nu_security < 61 }
+						check_variable = { IRE_nu_ira > 19 }
+						check_variable = { IRE_nu_ira < 61 }
+						check_variable = { IRE_nu_unionist > 59 }
+						check_variable = { IRE_nu_church > 59 }
+					}
+					add_ideas = IRE_national_revival
+					set_country_flag = IRE_nu_revival_done
+				}
+				else = {
+					add_ideas = IRE_national_revival_fragile
+					set_country_flag = IRE_nu_revival_fragile
+					country_event = { id = ire_nw.168 days = 1 }
+				}
+				IRE_nu_update_modifier_summary = yes
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_postwar_red
+		icon = GFX_focus_generic_red_flags
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = IRE_A_national_union_revival }
+		mutually_exclusive = { focus = IRE_A_postwar_new_world focus = IRE_A_postwar_neutral }
+		available = {
+			IRE_germany_defeated = yes
+			has_idea = IRE_national_union_government
+		}
+		cancel = {
+			NOT = { has_idea = IRE_national_union_government }
+		}
+		x = 56
+		y = 22
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_postwar_red
+			hidden_effect = {
+				set_country_flag = IRE_nu_postwar_red
+				add_ideas = IRE_nu_red_partnership
+				IRE_nu_update_modifier_summary = yes
+				country_event = { id = ire_nw.154 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_postwar_new_world
+		icon = GFX_focus_generic_american_investments
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = IRE_A_national_union_revival }
+		mutually_exclusive = { focus = IRE_A_postwar_red focus = IRE_A_postwar_neutral }
+		available = {
+			IRE_germany_defeated = yes
+			has_idea = IRE_national_union_government
+		}
+		cancel = {
+			NOT = { has_idea = IRE_national_union_government }
+		}
+		x = 60
+		y = 22
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_postwar_new_world
+			hidden_effect = {
+				set_country_flag = IRE_nu_postwar_new_world
+				add_ideas = IRE_nu_new_world_partnership
+				IRE_nu_update_modifier_summary = yes
+				country_event = { id = ire_nw.155 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = IRE_A_postwar_neutral
+		icon = GFX_focus_generic_world_peace
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = IRE_A_national_union_revival }
+		mutually_exclusive = { focus = IRE_A_postwar_red focus = IRE_A_postwar_new_world }
+		available = {
+			IRE_germany_defeated = yes
+			has_idea = IRE_national_union_government
+		}
+		cancel = {
+			NOT = { has_idea = IRE_national_union_government }
+		}
+		x = 64
+		y = 22
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			custom_effect_tooltip = IRE_effect_nu_postwar_neutral
+			hidden_effect = {
+				set_country_flag = IRE_nu_postwar_neutral
+				add_ideas = IRE_nu_third_force
+				IRE_nu_update_modifier_summary = yes
+				country_event = { id = ire_nw.156 days = 1 }
+			}
 		}
 	}
 
@@ -805,7 +1199,7 @@ focus_tree = {
 			add_ideas = IRE_settled_treaty
 			# 条约伤痕本身带建阵营规则，移除时补回，避免锁死建阵营
 			set_rule = { can_create_factions = yes }
-			add_stability = 0.12
+			add_stability = 0.15
 		}
 	}
 
@@ -1109,7 +1503,7 @@ focus_tree = {
 
 		completion_reward = {
 			ARG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos50 } }
-			add_stability = 0.08
+			add_stability = 0.10
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
@@ -1261,8 +1655,8 @@ focus_tree = {
 				set_country_flag = IRE_canada_annexed
 				add_ideas = IRE_british_north_america
 				add_political_power = 125
-				add_stability = 0.08
-				add_war_support = 0.08
+				add_stability = 0.10
+				add_war_support = 0.10
 				add_offsite_building = { type = industrial_complex level = 2 }
 				add_offsite_building = { type = arms_factory level = 2 }
 				add_offsite_building = { type = dockyard level = 1 }
@@ -1328,7 +1722,7 @@ focus_tree = {
 			set_cosmetic_tag = IRE_new_world
 			add_manpower = 45000
 			add_political_power = 125
-			add_stability = 0.08
+			add_stability = 0.10
 			add_offsite_building = { type = industrial_complex level = 3 }
 			custom_effect_tooltip = IRE_effect_new_world_ireland
 			country_event = { id = ire_nw.34 days = 1 }
@@ -1359,8 +1753,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_celtic_world
-			add_stability = 0.18
-			add_war_support = 0.12
+			add_stability = 0.20
+			add_war_support = 0.15
 			add_offsite_building = { type = industrial_complex level = 2 }
 		}
 	}
@@ -1378,7 +1772,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_final_ascension
-			add_war_support = 0.12
+			add_war_support = 0.15
 			if = {
 				limit = { is_ai = no }
 				play_song = "ire_a_new_world"
@@ -1664,8 +2058,8 @@ focus_tree = {
 			hidden_effect = { retire_country_leader = yes }
 			custom_effect_tooltip = IRE_effect_green_international_tag
 			add_political_power = 100
-			add_stability = 0.08
-			add_war_support = 0.08
+			add_stability = 0.10
+			add_war_support = 0.10
 			country_event = { id = ire.70 days = 1 }
 			if = {
 				limit = { is_ai = no }
@@ -1700,7 +2094,7 @@ focus_tree = {
 				}
 				give_guarantee = ROOT
 			}
-			add_stability = 0.12
+			add_stability = 0.15
 			add_political_power = 125
 			add_offsite_building = { type = industrial_complex level = 1 }
 		}
@@ -1723,7 +2117,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_new_world_expedition
-			add_war_support = 0.12
+			add_war_support = 0.15
 			add_manpower = 30000
 			capital_scope = {
 				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
@@ -1818,7 +2212,7 @@ focus_tree = {
 				ROOT = { give_guarantee = PREV }
 			}
 			add_political_power = 125
-			add_stability = 0.08
+			add_stability = 0.10
 			custom_effect_tooltip = IRE_effect_nordic_alliance
 		}
 	}
@@ -1839,7 +2233,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 75
-			add_stability = 0.08
+			add_stability = 0.10
 					add_research_slot = 1
 			add_war_support = 0.05
 		}
@@ -1858,7 +2252,7 @@ focus_tree = {
 
 		completion_reward = {
 			remove_ideas = IRE_civil_war_embers
-			add_stability = 0.12
+			add_stability = 0.15
 					add_manpower = 20000
 			add_war_support = 0.05
 		}
@@ -1877,7 +2271,7 @@ focus_tree = {
 		ai_will_do = { base = 120 }
 
 		completion_reward = {
-			add_stability = 0.12
+			add_stability = 0.15
 			army_experience = 75
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos25 } }
 					add_political_power = 75
@@ -1900,7 +2294,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 200
 			add_ideas = IRE_mobilisation_drive
-			add_stability = -0.08
+			add_stability = -0.10
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg30 } }
 			set_country_flag = IRE_ira_tolerated
 					add_manpower = 30000
@@ -1922,7 +2316,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = -50
-			add_stability = 0.08
+			add_stability = 0.10
 			add_ideas = IRE_internment_camps
 			set_country_flag = IRE_ira_crushed
 					add_equipment_to_stockpile = { type = support_equipment amount = 600 producer = IRE }
@@ -1941,8 +2335,8 @@ focus_tree = {
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
-			add_stability = 0.08
-			add_war_support = 0.03
+			add_stability = 0.10
+			add_war_support = 0.05
 			country_event = { id = ire.66 days = 1 }
 		}
 	}
@@ -1960,7 +2354,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 125
-			add_stability = 0.08
+			add_stability = 0.10
 			add_ideas = IRE_noose_years
 			country_event = { id = ire.67 days = 1 }
 		}
@@ -1983,7 +2377,7 @@ focus_tree = {
 			remove_ideas = IRE_agrarian_poverty
 			add_ideas = IRE_agrarian_poverty_lite
 			ENG = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
-			add_stability = 0.08
+			add_stability = 0.10
 					add_offsite_building = { type = industrial_complex level = 1 }
 			add_political_power = 100
 		}
@@ -2089,7 +2483,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 125
-			add_stability = 0.08
+			add_stability = 0.10
 					add_war_support = 0.05
 			add_offsite_building = { type = industrial_complex level = 1 }
 		}
@@ -2262,7 +2656,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_armed_neutrality_idea
-			add_war_support = 0.08
+			add_war_support = 0.10
 					add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
@@ -2362,7 +2756,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
-			add_stability = 0.08
+			add_stability = 0.10
 					add_offsite_building = { type = industrial_complex level = 1 }
 			add_manpower = 30000
 		}
@@ -2381,8 +2775,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_free_country
-			add_stability = 0.18
-			add_war_support = 0.12
+			add_stability = 0.20
+			add_war_support = 0.15
 					add_offsite_building = { type = industrial_complex level = 2 }
 			add_political_power = 125
 		}
@@ -2430,7 +2824,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = ire.30 days = 1 }
 					add_manpower = 75000
-			add_stability = 0.12
+			add_stability = 0.15
 		}
 	}
 
@@ -2450,7 +2844,7 @@ focus_tree = {
 			add_ideas = IRE_bord_na_mona
 			add_offsite_building = { type = industrial_complex level = 1 }
 			add_manpower = 20000
-			add_stability = 0.03
+			add_stability = 0.05
 		}
 	}
 
@@ -2607,7 +3001,7 @@ focus_tree = {
 			}
 			add_offsite_building = { type = industrial_complex level = 1 }
 			add_manpower = 20000
-			add_stability = 0.03
+			add_stability = 0.05
 		}
 	}
 
@@ -2652,7 +3046,7 @@ focus_tree = {
 			remove_ideas = IRE_agrarian_poverty_lite
 			add_ideas = IRE_modern_agriculture
 			add_manpower = 30000
-			add_stability = 0.06
+			add_stability = 0.10
 		}
 	}
 
@@ -2771,7 +3165,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
 			add_equipment_to_stockpile = { type = support_equipment amount = 1000 producer = IRE }
 			add_manpower = 40000
-			add_stability = 0.08
+			add_stability = 0.10
 		}
 	}
 
@@ -2808,7 +3202,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_public_health
-			add_stability = 0.03
+			add_stability = 0.05
 			add_manpower = 60000
 		}
 	}
@@ -2900,7 +3294,7 @@ focus_tree = {
 			add_ideas = IRE_war_cabinet
 			add_political_power = 75
 			army_experience = 150
-			add_war_support = 0.08
+			add_war_support = 0.10
 		}
 	}
 
@@ -3165,7 +3559,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = IRE_total_defence
-			add_war_support = 0.08
+			add_war_support = 0.10
 			add_stability = 0.05
 		}
 	}

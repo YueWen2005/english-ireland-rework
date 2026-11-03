@@ -25,3 +25,9 @@ IRE_new_world_neutrality = {
 	color = rgb { 18 112 92 }
 	color_ui = rgb { 24 138 112 }
 }
+
+### 爱尔兰民族联盟
+IRE_national_union = {
+	color = rgb { 18 112 92 }
+	color_ui = rgb { 24 138 112 }
+}

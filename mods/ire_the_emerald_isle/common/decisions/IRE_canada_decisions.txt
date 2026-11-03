@@ -60,7 +60,7 @@ IRE_canada_cat = {
 				}
 				add_offsite_building = { type = industrial_complex level = 1 }
 				add_manpower = 10000
-				add_stability = 0.02
+				add_stability = 0.05
 				if = {
 					limit = { check_variable = { IRE_canada_dev_count = 3 } }
 					add_offsite_building = { type = arms_factory level = 1 }

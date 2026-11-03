@@ -468,12 +468,12 @@
  ire.66.t:0 "A Funeral in the Atlantic"
  ire.66.d:0 "The U-65's watch officer wrote one line in the log: 'The Chief of Staff died this morning. Buried at sea.' Sean Russell, Chief of Staff of the IRA, never set foot on Irish soil again. The last radio link between Berlin and the underground in Dublin fell silent."
  ire.66.a:0 "Announce it to the nation."
- ire.66.a_tt:0 "+50 political power, +2% stability."
+ ire.66.a_tt:0 "+50 political power, +5% stability."
  ire.66.b:0 "No comment."
  ire.67.t:0 "The Noose of Mountjoy"
  ire.67.d:0 "Six in the morning: the bell of Mountjoy Prison, then footsteps. The condemned IRA men refused clemency - 'I am a prisoner of war, not a criminal.' The newspapers gave it a corner of one page, but all of Dublin was whispering about it."
  ire.67.a:0 "Carry out the sentence. All of them."
- ire.67.a_tt:0 "+2% war support."
+ ire.67.a_tt:0 "+5% war support."
  ire.67.b:0 "Commute to hard labour."
 
  # ================= IRA Civil War Branch: Focuses =================

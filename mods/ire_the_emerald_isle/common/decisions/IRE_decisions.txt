@@ -147,7 +147,7 @@
 			fire_only_once = no
 
 			complete_effect = {
-				add_stability = 0.02
+				add_stability = 0.05
 				add_political_power = 10
 				add_to_variable = { IRE_plebiscite_support = 2 }
 				IRE_add_neutral_credibility_1 = yes
@@ -306,7 +306,7 @@
 
 			complete_effect = {
 				add_political_power = 25
-				add_stability = 0.01
+				add_stability = 0.05
 			}
 
 			ai_will_do = { base = 30 }
@@ -369,7 +369,7 @@
 				}
 				else = {
 					add_political_power = 40
-					add_stability = -0.01
+					add_stability = -0.05
 				}
 				IRE_add_neutral_credibility_neg2 = yes
 				custom_effect_tooltip = IRE_effect_neutral_credibility_neg2
@@ -423,7 +423,7 @@
 			fire_only_once = no
 
 			complete_effect = {
-				add_war_support = 0.02
+				add_war_support = 0.05
 				army_experience = 15
 			}
 
@@ -451,7 +451,7 @@
 
 			complete_effect = {
 				army_experience = 25
-				add_war_support = 0.01
+				add_war_support = 0.05
 				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg5 } }
 				IRE_add_neutral_credibility_neg4 = yes
 				custom_effect_tooltip = IRE_effect_neutral_credibility_neg4
