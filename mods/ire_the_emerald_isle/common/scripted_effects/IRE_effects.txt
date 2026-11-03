@@ -576,6 +576,52 @@ IRE_restore_britain_after_black = {
 	}
 }
 
+# 民族联盟：把 0-100 的影响力换算成美国国会圆弧的 1-21 帧
+IRE_nu_refresh_gauges = {
+	if = { limit = { NOT = { has_variable = IRE_nu_parliament } } set_variable = { IRE_nu_parliament = 20 } }
+	if = { limit = { NOT = { has_variable = IRE_nu_labour } } set_variable = { IRE_nu_labour = 20 } }
+	if = { limit = { NOT = { has_variable = IRE_nu_security } } set_variable = { IRE_nu_security = 20 } }
+	if = { limit = { NOT = { has_variable = IRE_nu_ira } } set_variable = { IRE_nu_ira = 20 } }
+	if = { limit = { NOT = { has_variable = IRE_nu_unionist } } set_variable = { IRE_nu_unionist = 50 } }
+	if = { limit = { NOT = { has_variable = IRE_nu_church } } set_variable = { IRE_nu_church = 50 } }
+
+	set_temp_variable = { nu_frame_temp = IRE_nu_parliament }
+	divide_temp_variable = { nu_frame_temp = 5 }
+	add_to_temp_variable = { nu_frame_temp = 1 }
+	clamp_temp_variable = { var = nu_frame_temp min = 1 max = 21 }
+	set_variable = { IRE_nu_parliament_frame = nu_frame_temp }
+
+	set_temp_variable = { nu_frame_temp = IRE_nu_labour }
+	divide_temp_variable = { nu_frame_temp = 5 }
+	add_to_temp_variable = { nu_frame_temp = 1 }
+	clamp_temp_variable = { var = nu_frame_temp min = 1 max = 21 }
+	set_variable = { IRE_nu_labour_frame = nu_frame_temp }
+
+	set_temp_variable = { nu_frame_temp = IRE_nu_security }
+	divide_temp_variable = { nu_frame_temp = 5 }
+	add_to_temp_variable = { nu_frame_temp = 1 }
+	clamp_temp_variable = { var = nu_frame_temp min = 1 max = 21 }
+	set_variable = { IRE_nu_security_frame = nu_frame_temp }
+
+	set_temp_variable = { nu_frame_temp = IRE_nu_ira }
+	divide_temp_variable = { nu_frame_temp = 5 }
+	add_to_temp_variable = { nu_frame_temp = 1 }
+	clamp_temp_variable = { var = nu_frame_temp min = 1 max = 21 }
+	set_variable = { IRE_nu_ira_frame = nu_frame_temp }
+
+	set_temp_variable = { nu_frame_temp = IRE_nu_unionist }
+	divide_temp_variable = { nu_frame_temp = 5 }
+	add_to_temp_variable = { nu_frame_temp = 1 }
+	clamp_temp_variable = { var = nu_frame_temp min = 1 max = 21 }
+	set_variable = { IRE_nu_unionist_frame = nu_frame_temp }
+
+	set_temp_variable = { nu_frame_temp = IRE_nu_church }
+	divide_temp_variable = { nu_frame_temp = 5 }
+	add_to_temp_variable = { nu_frame_temp = 1 }
+	clamp_temp_variable = { var = nu_frame_temp min = 1 max = 21 }
+	set_variable = { IRE_nu_church_frame = nu_frame_temp }
+}
+
 IRE_form_european_hope = {
 	set_rule = { can_create_factions = yes }
 	if = {

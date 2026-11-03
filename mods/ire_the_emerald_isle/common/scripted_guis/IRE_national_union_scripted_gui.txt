@@ -3,6 +3,15 @@ scripted_gui = {
 	ire_national_union_decision_ui = {
 		context_type = decision_category
 		window_name = "ire_national_union_decision_ui_window"
+
+		properties = {
+			nu_parliament_gauge = { frame = IRE_nu_parliament_frame }
+			nu_labour_gauge = { frame = IRE_nu_labour_frame }
+			nu_security_gauge = { frame = IRE_nu_security_frame }
+			nu_ira_gauge = { frame = IRE_nu_ira_frame }
+			nu_unionist_gauge = { frame = IRE_nu_unionist_frame }
+			nu_church_gauge = { frame = IRE_nu_church_frame }
+		}
 	}
 
 }
