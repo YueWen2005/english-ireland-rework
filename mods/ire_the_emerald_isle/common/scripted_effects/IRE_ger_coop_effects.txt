@@ -28,6 +28,9 @@ IRE_X_coop_advisors_accept = {
 	GER = {
 		add_timed_idea = { idea = IRE_G_dark_hand days = 360 }
 		add_political_power = 25
+	
+		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
+		set_country_flag = IRE_G_coop_1_unlocked
 	}
 }
 IRE_X_coop_advisors_refuse = {
@@ -54,6 +57,9 @@ IRE_X_coop_guests_accept = {
 	}
 	GER = {
 		add_timed_idea = { idea = IRE_G_guest_training days = 360 }
+	
+		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
+		set_country_flag = IRE_G_coop_2_unlocked
 	}
 }
 IRE_X_coop_guests_refuse = {
@@ -79,6 +85,9 @@ IRE_X_coop_arms_accept = {
 	}
 	GER = {
 		add_timed_idea = { idea = IRE_G_export_order days = 360 }
+	
+		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
+		set_country_flag = IRE_G_coop_3_unlocked
 	}
 }
 IRE_X_coop_arms_refuse = {
@@ -106,6 +115,9 @@ IRE_X_coop_uboat_accept = {
 	GER = {
 		navy_experience = 15
 		add_timed_idea = { idea = IRE_G_wolf_pack days = 540 }
+	
+		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
+		set_country_flag = IRE_G_coop_4_unlocked
 	}
 }
 IRE_X_coop_uboat_refuse = {
@@ -133,6 +145,9 @@ IRE_X_coop_sealion_accept = {
 	GER = {
 		army_experience = 20
 		add_timed_idea = { idea = IRE_G_sealion_prep days = 360 }
+	
+		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
+		set_country_flag = IRE_G_coop_5_unlocked
 	}
 }
 IRE_X_coop_sealion_refuse = {
@@ -165,6 +180,9 @@ IRE_X_coop_treaty_accept = {
 			}
 		}
 		add_to_faction = ROOT
+	
+		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
+		set_country_flag = IRE_G_coop_6_unlocked
 	}
 	IRE = {
 		add_ideas = IRE_T_treaty_ally
