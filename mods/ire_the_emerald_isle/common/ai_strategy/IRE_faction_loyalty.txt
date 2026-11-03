@@ -3,22 +3,42 @@ FRA_stay_in_european_hope = {
 		original_tag = FRA
 	}
 	enable = {
-		is_in_faction_with = IRE
 		IRE = {
+			exists = yes
 			has_idea = IRE_european_hope
 			NOT = { IRE_germany_defeated = yes }
 		}
+		NOT = { has_war_with = IRE }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = alliance
 		id = IRE
-		value = 200
+		value = 1000
 	}
 	ai_strategy = {
 		type = pp_spend_priority
 		id = become_faction_leader
 		value = -1000
+	}
+	# 红法不要被共产国际拉走；德国投降前优先留在欧洲希望
+	ai_strategy = {
+		type = diplo_action_desire
+		id = IRE
+		target = join_allies
+		value = 1000
+	}
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = IRE
+		target = join_allies
+		value = 1000
+	}
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = SOV
+		target = join_allies
+		value = -99999
 	}
 }

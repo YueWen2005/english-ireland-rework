@@ -877,6 +877,21 @@ on_actions = {
 					}
 					IRE_force_join_faction = yes
 				}
+				# 法国兜底：即使成员旗标丢失，德国投降前也拉回欧洲希望
+				if = {
+					limit = {
+						country_exists = FRA
+						FRA = {
+							has_government = communism
+							has_civil_war = no
+							NOT = { is_in_faction_with = ROOT }
+							NOT = { has_capitulated = yes }
+							is_subject = no
+							NOT = { has_war_with = ROOT }
+						}
+					}
+					FRA = { IRE_force_join_faction = yes }
+				}
 			}
 		}
 	}
