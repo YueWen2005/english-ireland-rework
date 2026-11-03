@@ -719,5 +719,112 @@ ideas = {
 			removal_cost = -1
 		}
 
+		# ---- 爱尔兰民族联盟：外部干涉与派系擅动（365 天） ----
+		IRE_nu_british_funding_spirit = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_soviet_advisors_spirit = {
+			picture = generic_army_europe_5
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_attack_factor = 0.03
+				intel_network_gain_factor = 0.10
+				political_power_gain = -0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_american_loan_spirit = {
+			picture = generic_economic_increase
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.03
+				trade_opinion_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_german_arms_spirit = {
+			picture = generic_army_europe_3
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_attack_factor = 0.03
+				intel_network_gain_factor = 0.10
+				stability_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_vatican_pressure_spirit = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.03
+				political_power_gain = -0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_foreign_volunteers_spirit = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.02
+				army_attack_factor = 0.03
+				stability_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_border_campaign_spirit = {
+			picture = generic_army_europe_5
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_attack_factor = 0.03
+				army_defence_factor = 0.03
+				stability_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_emergency_powers_spirit = {
+			picture = generic_secret_police
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.03
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_political_scandal_spirit = {
+			picture = generic_disjointed_gov
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.05
+			}
+			removal_cost = -1
+		}
+
 	}
 }

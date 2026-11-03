@@ -372,3 +372,61 @@ defined_text = {
 	}
 	text = { localization_key = IRE_nu_bar_church_0 }
 }
+
+defined_text = {
+	name = GetIRENuLastExternal
+	text = {
+		trigger = { check_variable = { IRE_nu_last_external = 1 } }
+		localization_key = IRE_nu_external_british
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_external = 2 } }
+		localization_key = IRE_nu_external_soviet
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_external = 3 } }
+		localization_key = IRE_nu_external_american
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_external = 4 } }
+		localization_key = IRE_nu_external_german
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_external = 5 } }
+		localization_key = IRE_nu_external_vatican
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_external = 6 } }
+		localization_key = IRE_nu_external_red
+	}
+	text = { localization_key = IRE_nu_external_none }
+}
+
+defined_text = {
+	name = GetIRENuLastInitiative
+	text = {
+		trigger = { check_variable = { IRE_nu_last_initiative = 1 } }
+		localization_key = IRE_nu_initiative_labour
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_initiative = 2 } }
+		localization_key = IRE_nu_initiative_ira
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_initiative = 3 } }
+		localization_key = IRE_nu_initiative_security
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_initiative = 4 } }
+		localization_key = IRE_nu_initiative_parliament
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_initiative = 5 } }
+		localization_key = IRE_nu_initiative_unionist
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_last_initiative = 6 } }
+		localization_key = IRE_nu_initiative_church
+	}
+	text = { localization_key = IRE_nu_initiative_none }
+}

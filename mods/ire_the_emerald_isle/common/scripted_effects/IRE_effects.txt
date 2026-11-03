@@ -665,6 +665,12 @@ IRE_national_union_init = {
 	clamp_variable = { var = IRE_nu_church min = 0 max = 100 }
 
 	IRE_nu_refresh_gauges = yes
+
+	if = {
+		limit = { NOT = { has_country_flag = IRE_nu_grace_started } }
+		set_country_flag = IRE_nu_grace_started
+		set_country_flag = { flag = IRE_nu_grace_cd days = 180 value = 1 }
+	}
 }
 
 # 民族联盟：月度平衡评估（只产生政治危机，不触发内战）
@@ -956,4 +962,431 @@ IRE_france_colonies_independent = {
 		limit = { original_tag = FRA }
 		IRE_fra_africa_transfer = yes
 	}
+}
+
+# ============================================================
+# 民族联盟：主导派系、月度漂移、动态事件池与清理
+# ============================================================
+IRE_nu_update_dominant = {
+	set_temp_variable = { nu_dom = 1 }
+	set_temp_variable = { nu_dom_val = IRE_nu_parliament }
+	if = {
+		limit = { check_variable = { IRE_nu_labour > nu_dom_val } }
+		set_temp_variable = { nu_dom = 2 }
+		set_temp_variable = { nu_dom_val = IRE_nu_labour }
+	}
+	if = {
+		limit = { check_variable = { IRE_nu_security > nu_dom_val } }
+		set_temp_variable = { nu_dom = 3 }
+		set_temp_variable = { nu_dom_val = IRE_nu_security }
+	}
+	if = {
+		limit = { check_variable = { IRE_nu_ira > nu_dom_val } }
+		set_temp_variable = { nu_dom = 4 }
+		set_temp_variable = { nu_dom_val = IRE_nu_ira }
+	}
+
+	clr_country_flag = IRE_nu_dominant_changed
+	if = {
+		limit = {
+			check_variable = { nu_dom < 2 }
+			NOT = { has_country_flag = IRE_nu_dominant_parliament }
+			OR = {
+				has_country_flag = IRE_nu_dominant_labour
+				has_country_flag = IRE_nu_dominant_security
+				has_country_flag = IRE_nu_dominant_ira
+			}
+		}
+		set_country_flag = IRE_nu_dominant_changed
+	}
+	if = {
+		limit = {
+			check_variable = { nu_dom > 1 }
+			check_variable = { nu_dom < 3 }
+			NOT = { has_country_flag = IRE_nu_dominant_labour }
+			OR = {
+				has_country_flag = IRE_nu_dominant_parliament
+				has_country_flag = IRE_nu_dominant_security
+				has_country_flag = IRE_nu_dominant_ira
+			}
+		}
+		set_country_flag = IRE_nu_dominant_changed
+	}
+	if = {
+		limit = {
+			check_variable = { nu_dom > 2 }
+			check_variable = { nu_dom < 4 }
+			NOT = { has_country_flag = IRE_nu_dominant_security }
+			OR = {
+				has_country_flag = IRE_nu_dominant_parliament
+				has_country_flag = IRE_nu_dominant_labour
+				has_country_flag = IRE_nu_dominant_ira
+			}
+		}
+		set_country_flag = IRE_nu_dominant_changed
+	}
+	if = {
+		limit = {
+			check_variable = { nu_dom > 3 }
+			NOT = { has_country_flag = IRE_nu_dominant_ira }
+			OR = {
+				has_country_flag = IRE_nu_dominant_parliament
+				has_country_flag = IRE_nu_dominant_labour
+				has_country_flag = IRE_nu_dominant_security
+			}
+		}
+		set_country_flag = IRE_nu_dominant_changed
+	}
+
+	clr_country_flag = IRE_nu_dominant_parliament
+	clr_country_flag = IRE_nu_dominant_labour
+	clr_country_flag = IRE_nu_dominant_security
+	clr_country_flag = IRE_nu_dominant_ira
+	if = { limit = { check_variable = { nu_dom < 2 } } set_country_flag = IRE_nu_dominant_parliament }
+	if = { limit = { check_variable = { nu_dom > 1 } check_variable = { nu_dom < 3 } } set_country_flag = IRE_nu_dominant_labour }
+	if = { limit = { check_variable = { nu_dom > 2 } check_variable = { nu_dom < 4 } } set_country_flag = IRE_nu_dominant_security }
+	if = { limit = { check_variable = { nu_dom > 3 } } set_country_flag = IRE_nu_dominant_ira }
+
+	if = {
+		limit = {
+			has_country_flag = IRE_nu_dominant_changed
+			check_variable = { nu_max > 55 }
+			check_variable = { nu_gap > 10 }
+			NOT = { has_country_flag = IRE_nu_crisis_now }
+			NOT = { has_country_flag = IRE_nu_confidence_low }
+			NOT = { has_country_flag = IRE_nu_grace_cd }
+		}
+		set_country_flag = IRE_nu_cabinet_shift_now
+	}
+	clr_country_flag = IRE_nu_dominant_changed
+}
+
+IRE_nu_monthly_drift = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = IRE_nu_drift_cd }
+			NOT = { has_country_flag = IRE_nu_grace_cd }
+		}
+		set_country_flag = { flag = IRE_nu_drift_cd days = 90 value = 1 }
+
+		if = { limit = { check_variable = { IRE_nu_parliament < 20 } } add_to_variable = { IRE_nu_parliament = 1 } }
+		if = { limit = { check_variable = { IRE_nu_labour < 20 } } add_to_variable = { IRE_nu_labour = 1 } }
+		if = { limit = { check_variable = { IRE_nu_security < 20 } } add_to_variable = { IRE_nu_security = 1 } }
+		if = { limit = { check_variable = { IRE_nu_ira < 20 } } add_to_variable = { IRE_nu_ira = 1 } }
+
+		if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = -1 } }
+		if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = -1 } }
+		if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = -1 } }
+		if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = -1 } }
+
+		if = {
+			limit = { has_war = yes }
+			add_to_variable = { IRE_nu_security = 1 }
+			add_to_variable = { IRE_nu_ira = 1 }
+		}
+		if = {
+			limit = { has_country_flag = IRE_black_britain_formed }
+			add_to_variable = { IRE_nu_security = 1 }
+			add_to_variable = { IRE_nu_unionist = -1 }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = IRE_red_france_joined
+					has_country_flag = IRE_red_britain_joined
+				}
+			}
+			add_to_variable = { IRE_nu_labour = 1 }
+			add_to_variable = { IRE_nu_church = -1 }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = IRE_nu_new_world_deep
+					has_country_flag = IRE_nu_new_world_limited
+				}
+			}
+			add_to_variable = { IRE_nu_parliament = 1 }
+			add_to_variable = { IRE_nu_unionist = 1 }
+		}
+		if = {
+			limit = { has_country_flag = IRE_nu_red_deep }
+			add_to_variable = { IRE_nu_labour = 1 }
+			add_to_variable = { IRE_nu_ira = 1 }
+		}
+		if = {
+			limit = { has_country_flag = IRE_nu_third_force_armed }
+			add_to_variable = { IRE_nu_security = 1 }
+			add_to_variable = { IRE_nu_ira = 1 }
+		}
+		if = {
+			limit = { has_stability > 0.7 }
+			add_to_variable = { IRE_nu_parliament = 1 }
+			add_to_variable = { IRE_nu_unionist = 1 }
+		}
+		if = {
+			limit = { has_stability < 0.4 }
+			add_to_variable = { IRE_nu_labour = 1 }
+			add_to_variable = { IRE_nu_ira = 1 }
+		}
+	}
+}
+
+IRE_nu_boost_weakest = {
+	set_temp_variable = { nu_min = IRE_nu_parliament }
+	set_temp_variable = { nu_min_id = 1 }
+	if = {
+		limit = { check_variable = { IRE_nu_labour < nu_min } }
+		set_temp_variable = { nu_min = IRE_nu_labour }
+		set_temp_variable = { nu_min_id = 2 }
+	}
+	if = {
+		limit = { check_variable = { IRE_nu_security < nu_min } }
+		set_temp_variable = { nu_min = IRE_nu_security }
+		set_temp_variable = { nu_min_id = 3 }
+	}
+	if = {
+		limit = { check_variable = { IRE_nu_ira < nu_min } }
+		set_temp_variable = { nu_min = IRE_nu_ira }
+		set_temp_variable = { nu_min_id = 4 }
+	}
+	if = { limit = { check_variable = { nu_min_id < 2 } } add_to_variable = { IRE_nu_parliament = 5 } }
+	if = { limit = { check_variable = { nu_min_id > 1 } check_variable = { nu_min_id < 3 } } add_to_variable = { IRE_nu_labour = 5 } }
+	if = { limit = { check_variable = { nu_min_id > 2 } check_variable = { nu_min_id < 4 } } add_to_variable = { IRE_nu_security = 5 } }
+	if = { limit = { check_variable = { nu_min_id > 3 } } add_to_variable = { IRE_nu_ira = 5 } }
+	IRE_national_union_init = yes
+}
+
+IRE_nu_dynamic_event_roll = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
+			NOT = { has_country_flag = IRE_nu_grace_cd }
+			NOT = { has_country_flag = IRE_nu_crisis_now }
+			NOT = { has_country_flag = IRE_nu_confidence_low }
+		}
+		random_list = {
+			40 = { add_political_power = 0 }
+
+			10 = {
+				modifier = {
+					factor = 0
+					OR = { has_country_flag = IRE_nu_evt_170_done NOT = { country_exists = ENG } }
+				}
+				modifier = { factor = 2 has_country_flag = IRE_black_britain_formed }
+				modifier = { factor = 1.5 check_variable = { IRE_nu_unionist < 50 } }
+				country_event = { id = ire_nw.170 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = { has_country_flag = IRE_nu_evt_171_done NOT = { country_exists = SOV } }
+				}
+				modifier = {
+					factor = 1.5
+					OR = { has_country_flag = IRE_nu_red_deep has_country_flag = IRE_nu_red_limited check_variable = { IRE_nu_labour > 50 } }
+				}
+				country_event = { id = ire_nw.171 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = { has_country_flag = IRE_nu_evt_172_done NOT = { country_exists = USA } }
+				}
+				modifier = {
+					factor = 1.5
+					OR = { has_country_flag = IRE_nu_new_world_deep has_country_flag = IRE_nu_new_world_limited has_war = yes }
+				}
+				country_event = { id = ire_nw.172 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_173_done
+						NOT = { country_exists = GER }
+						IRE_germany_defeated = yes
+					}
+				}
+				modifier = {
+					factor = 1.5
+					OR = { has_war = yes check_variable = { IRE_nu_ira > 40 } }
+				}
+				country_event = { id = ire_nw.173 days = 0 }
+			}
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_174_done }
+				modifier = {
+					factor = 1.5
+					OR = { check_variable = { IRE_nu_church < 60 } check_variable = { IRE_nu_labour > 50 } }
+				}
+				country_event = { id = ire_nw.174 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_175_done
+						AND = {
+							NOT = { has_country_flag = IRE_red_france_joined }
+							NOT = { has_country_flag = IRE_red_britain_joined }
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					OR = { check_variable = { IRE_nu_labour > 50 } has_country_flag = IRE_nu_red_deep }
+				}
+				country_event = { id = ire_nw.175 days = 0 }
+			}
+
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_180_done
+						check_variable = { IRE_nu_labour < 35 }
+						AND = {
+							NOT = { has_war = yes }
+							NOT = { has_country_flag = IRE_red_france_joined }
+							NOT = { has_country_flag = IRE_red_britain_joined }
+						}
+					}
+				}
+				modifier = { factor = 1.5 check_variable = { IRE_nu_labour > 50 } }
+				country_event = { id = ire_nw.180 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_181_done
+						check_variable = { IRE_nu_ira < 35 }
+						AND = {
+							NOT = { has_war = yes }
+							NOT = { has_country_flag = IRE_black_britain_formed }
+							NOT = {
+								any_owned_state = {
+									is_core_of = ROOT
+									controller = { has_war_with = ROOT }
+								}
+							}
+						}
+					}
+				}
+				modifier = { factor = 1.5 check_variable = { IRE_nu_ira > 50 } }
+				country_event = { id = ire_nw.181 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = { has_country_flag = IRE_nu_evt_182_done check_variable = { IRE_nu_security < 40 } NOT = { has_war = yes } }
+				}
+				modifier = { factor = 1.5 check_variable = { IRE_nu_security > 50 } }
+				country_event = { id = ire_nw.182 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_183_done
+						check_variable = { IRE_nu_parliament < 40 }
+						AND = {
+							NOT = { country_exists = ENG }
+							NOT = { country_exists = USA }
+							NOT = { has_war = yes }
+						}
+					}
+				}
+				modifier = { factor = 1.5 check_variable = { IRE_nu_parliament > 50 } }
+				country_event = { id = ire_nw.183 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_184_done
+						NOT = { country_exists = ENG }
+						AND = {
+							NOT = { check_variable = { IRE_nu_unionist < 45 } }
+							NOT = { check_variable = { IRE_nu_parliament > 50 } }
+						}
+					}
+				}
+				modifier = { factor = 1.5 check_variable = { IRE_nu_unionist < 40 } }
+				country_event = { id = ire_nw.184 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_185_done
+						AND = {
+							NOT = { check_variable = { IRE_nu_church < 55 } }
+							NOT = { check_variable = { IRE_nu_labour > 50 } }
+						}
+					}
+				}
+				modifier = { factor = 1.5 check_variable = { IRE_nu_church < 45 } }
+				country_event = { id = ire_nw.185 days = 0 }
+			}
+		}
+		set_country_flag = { flag = IRE_nu_dynamic_event_cd days = 120 value = 1 }
+	}
+}
+
+IRE_nu_clear_dynamic_state = {
+	clr_country_flag = IRE_nu_grace_cd
+	clr_country_flag = IRE_nu_grace_started
+	clr_country_flag = IRE_nu_drift_cd
+	clr_country_flag = IRE_nu_dynamic_event_cd
+	clr_country_flag = IRE_nu_cabinet_shift_now
+	clr_country_flag = IRE_nu_cabinet_shift_cd
+	clr_country_flag = IRE_nu_dominant_changed
+	clr_country_flag = IRE_nu_dominant_parliament
+	clr_country_flag = IRE_nu_dominant_labour
+	clr_country_flag = IRE_nu_dominant_security
+	clr_country_flag = IRE_nu_dominant_ira
+	clr_country_flag = IRE_nu_scandal_pending
+	clr_country_flag = IRE_nu_scandal_delay
+	clr_country_flag = IRE_nu_scandal_cd
+	clr_country_flag = IRE_nu_scandal_labour
+	clr_country_flag = IRE_nu_scandal_security
+	clr_country_flag = IRE_nu_british_funding
+	clr_country_flag = IRE_nu_soviet_advisors
+	clr_country_flag = IRE_nu_american_loan
+	clr_country_flag = IRE_nu_german_arms
+	clr_country_flag = IRE_nu_vatican_pressure
+	clr_country_flag = IRE_nu_red_request
+	clr_country_flag = IRE_nu_evt_170_done
+	clr_country_flag = IRE_nu_evt_171_done
+	clr_country_flag = IRE_nu_evt_172_done
+	clr_country_flag = IRE_nu_evt_173_done
+	clr_country_flag = IRE_nu_evt_174_done
+	clr_country_flag = IRE_nu_evt_175_done
+	clr_country_flag = IRE_nu_evt_180_done
+	clr_country_flag = IRE_nu_evt_181_done
+	clr_country_flag = IRE_nu_evt_182_done
+	clr_country_flag = IRE_nu_evt_183_done
+	clr_country_flag = IRE_nu_evt_184_done
+	clr_country_flag = IRE_nu_evt_185_done
+	clear_variable = IRE_nu_last_external
+	clear_variable = IRE_nu_last_initiative
+	if = { limit = { has_idea = IRE_nu_british_funding_spirit } remove_ideas = IRE_nu_british_funding_spirit }
+	if = { limit = { has_idea = IRE_nu_soviet_advisors_spirit } remove_ideas = IRE_nu_soviet_advisors_spirit }
+	if = { limit = { has_idea = IRE_nu_american_loan_spirit } remove_ideas = IRE_nu_american_loan_spirit }
+	if = { limit = { has_idea = IRE_nu_german_arms_spirit } remove_ideas = IRE_nu_german_arms_spirit }
+	if = { limit = { has_idea = IRE_nu_vatican_pressure_spirit } remove_ideas = IRE_nu_vatican_pressure_spirit }
+	if = { limit = { has_idea = IRE_nu_foreign_volunteers_spirit } remove_ideas = IRE_nu_foreign_volunteers_spirit }
+	if = { limit = { has_idea = IRE_nu_border_campaign_spirit } remove_ideas = IRE_nu_border_campaign_spirit }
+	if = { limit = { has_idea = IRE_nu_emergency_powers_spirit } remove_ideas = IRE_nu_emergency_powers_spirit }
+	if = { limit = { has_idea = IRE_nu_political_scandal_spirit } remove_ideas = IRE_nu_political_scandal_spirit }
+	if = { limit = { has_idea = IRE_nu_parliament_spirit } remove_ideas = IRE_nu_parliament_spirit }
+	if = { limit = { has_idea = IRE_nu_diaspora_spirit } remove_ideas = IRE_nu_diaspora_spirit }
+	if = { limit = { has_idea = IRE_nu_labour_spirit } remove_ideas = IRE_nu_labour_spirit }
+	if = { limit = { has_idea = IRE_nu_works_spirit } remove_ideas = IRE_nu_works_spirit }
+	if = { limit = { has_idea = IRE_nu_security_spirit } remove_ideas = IRE_nu_security_spirit }
+	if = { limit = { has_idea = IRE_nu_army_spirit } remove_ideas = IRE_nu_army_spirit }
+	if = { limit = { has_idea = IRE_nu_volunteer_spirit } remove_ideas = IRE_nu_volunteer_spirit }
+	if = { limit = { has_idea = IRE_nu_cross_border_spirit } remove_ideas = IRE_nu_cross_border_spirit }
 }

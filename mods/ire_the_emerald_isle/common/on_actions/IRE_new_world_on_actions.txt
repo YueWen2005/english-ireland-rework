@@ -605,6 +605,7 @@ on_actions = {
 					limit = { has_cosmetic_tag = IRE_national_union }
 					set_cosmetic_tag = IRE
 				}
+				IRE_nu_clear_dynamic_state = yes
 				clr_country_flag = IRE_national_union_formed
 				clr_country_flag = IRE_national_union_initialized
 				clr_country_flag = IRE_nu_prep_done
@@ -684,6 +685,12 @@ on_actions = {
 					country_event = { id = ire_nw.166 days = 0 }
 				}
 
+				# 每 90 天一次自然漂移；随后重新评估危机与主导派系
+				IRE_nu_monthly_drift = yes
+				IRE_national_union_init = yes
+				IRE_nu_evaluate_balance = yes
+				IRE_nu_update_dominant = yes
+
 				if = {
 					limit = {
 						has_country_flag = IRE_nu_crisis_now
@@ -700,6 +707,32 @@ on_actions = {
 					set_country_flag = { flag = IRE_nu_confidence_cd days = 180 value = 1 }
 					country_event = { id = ire_nw.153 days = 0 }
 				}
+
+				# 内阁重心转移优先于随机事件池，避免同月双事件
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_cabinet_shift_now
+						NOT = { has_country_flag = IRE_nu_cabinet_shift_cd }
+						NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
+						NOT = { has_country_flag = IRE_nu_grace_cd }
+						NOT = { has_country_flag = IRE_nu_crisis_now }
+					}
+					country_event = { id = ire_nw.188 days = 0 }
+				}
+
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_scandal_pending
+						NOT = { has_country_flag = IRE_nu_scandal_delay }
+						NOT = { has_country_flag = IRE_nu_scandal_cd }
+						NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
+						NOT = { has_country_flag = IRE_nu_crisis_now }
+						NOT = { has_country_flag = IRE_nu_confidence_low }
+					}
+					country_event = { id = ire_nw.187 days = 0 }
+				}
+
+				IRE_nu_dynamic_event_roll = yes
 			}
 
 			# 民族联盟：成立后的世界回响（一次）

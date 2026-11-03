@@ -86,14 +86,6 @@ IRE_national_union_cat = {
 	scripted_gui = ire_national_union_decision_ui
 }
 
-### 临时测试分类：一键召集联盟（正式版由 A 线准备国策/成立枢纽替代）
-IRE_nu_test_cat = {
-	icon = GFX_decision_category_generic_political_actions
-	priority = 78
-	allowed = { original_tag = IRE }
-	visible = { NOT = { has_idea = IRE_national_union_government } }
-}
-
 ### 民族联盟：战后对外路线
 IRE_nu_postwar_cat = {
 	icon = GFX_decision_category_generic_political_actions
