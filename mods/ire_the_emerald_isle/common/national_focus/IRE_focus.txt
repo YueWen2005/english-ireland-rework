@@ -4670,6 +4670,8 @@ focus_tree = {
 			add_offsite_building = { type = dockyard level = 1 }
 			add_equipment_to_stockpile = { type = convoy amount = 15 }
 			navy_experience = 20
+			# 柏林-都柏林轴心：联动派发（德国玩家史实线弹事件，AI 自动结算）
+			IRE_X_coop_uboat = yes
 		}
 	}
 
@@ -5593,6 +5595,8 @@ OR = {
 			GER = { give_military_access = IRE }
 			create_wargoal = { type = annex_everything target = ENG expire = 0 }
 			add_named_threat = { threat = 15 name = IRE_threat_focus }
+			# 柏林-都柏林轴心：联动派发（德国玩家史实线弹事件，AI 自动结算）
+			IRE_X_coop_sealion = yes
 		}
 	}
 
@@ -5640,6 +5644,8 @@ OR = {
 			add_ideas = IRE_berlin_partner
 			add_ideas = IRE_atlantic_fortress
 			country_event = { id = ire.114 days = 1 }
+			# 柏林-都柏林轴心：条约终局联动（德国玩家史实线弹事件，AI 自动入轴）
+			IRE_X_coop_treaty = yes
 		}
 	}
 

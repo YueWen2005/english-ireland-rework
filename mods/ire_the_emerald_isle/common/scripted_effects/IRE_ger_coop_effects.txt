@@ -87,3 +87,95 @@ IRE_X_coop_arms_refuse = {
 		add_political_power = 25
 	}
 }
+
+# ---- ④ 潜艇坞：《大西洋的燃料库》----
+IRE_X_coop_uboat = {
+	if = {
+		limit = { IRE_ger_coop_active = yes }
+		GER = { country_event = { id = ire_ger_coop.4 hours = 6 } }
+	}
+	else = {
+		IRE_X_coop_uboat_accept = yes
+	}
+}
+IRE_X_coop_uboat_accept = {
+	IRE = {
+		navy_experience = 25
+		add_timed_idea = { idea = IRE_coop_atlantic_port days = 720 }
+	}
+	GER = {
+		navy_experience = 15
+		add_timed_idea = { idea = IRE_G_wolf_pack days = 540 }
+	}
+}
+IRE_X_coop_uboat_refuse = {
+	IRE = {
+		navy_experience = 10
+		add_political_power = 25
+	}
+}
+
+# ---- ⑤ 终局·登陆计划：《绿色海岸行动》----
+IRE_X_coop_sealion = {
+	if = {
+		limit = { IRE_ger_coop_active = yes }
+		GER = { country_event = { id = ire_ger_coop.5 hours = 6 } }
+	}
+	else = {
+		IRE_X_coop_sealion_accept = yes
+	}
+}
+IRE_X_coop_sealion_accept = {
+	IRE = {
+		army_experience = 30
+		add_timed_idea = { idea = IRE_coop_green_shore days = 540 }
+	}
+	GER = {
+		army_experience = 20
+		add_timed_idea = { idea = IRE_G_sealion_prep days = 360 }
+	}
+}
+IRE_X_coop_sealion_refuse = {
+	IRE = {
+		army_experience = 15
+		add_political_power = 25
+	}
+}
+
+# ---- ⑥ 柏林伙伴终局：《柏林-都柏林条约》----
+# 接受 = 爱尔兰加入德国阵营（无阵营则先以区域反民主模板建立），
+# 双方各得一份永久盟约精神；婉拒 = 爱方拿补偿、保持独立。
+# 单人模式（德国 AI）自动按接受结算，与第一批派发器行为一致。
+IRE_X_coop_treaty = {
+	if = {
+		limit = { IRE_ger_coop_active = yes }
+		GER = { country_event = { id = ire_ger_coop.6 hours = 6 } }
+	}
+	else = {
+		IRE_X_coop_treaty_accept = yes
+	}
+}
+IRE_X_coop_treaty_accept = {
+	GER = {
+		if = {
+			limit = { is_in_faction = no }
+			create_faction_from_template = {
+				template = faction_template_regional_anti_democratic
+				name = IRE_G_ger_dublin_axis
+			}
+		}
+		add_to_faction = ROOT
+	}
+	IRE = {
+		add_ideas = IRE_T_treaty_ally
+	}
+	GER = {
+		add_ideas = IRE_G_dublin_treaty
+	}
+}
+IRE_X_coop_treaty_refuse = {
+	IRE = {
+		add_political_power = 50
+		add_war_support = 0.05
+	}
+}

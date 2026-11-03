@@ -1,10 +1,12 @@
 # ============================================================
 # 柏林-都柏林轴心（黑线联机线）—— 联动事件
-# v2.19.1 第一批：ire_ger_coop.1~3
-# 全部 is_triggered_only，由 IRE_ger_coop_effects 派发器定向
-# 发给德国玩家；仅当德国为玩家史实线时触发（见
+# v2.19.1 第一批：ire_ger_coop.1~3（弹给德国玩家）
+# v2.19.2 第二批：4~6（弹给德国玩家）、7~11（德国里程碑，
+#   弹给爱尔兰）、12（开局黑线联机说明，弹给爱尔兰玩家）
+# 联动事件全部 is_triggered_only，由 IRE_ger_coop_effects
+# 派发器定向发送；仅当德国为玩家史实线时触发（见
 # scripted_triggers/IRE_ger_coop_triggers.txt）。
-# 选项一 = 深度合作（双方都拿），选项二 = 婉拒（爱方拿补偿）。
+# 联动事件选项一 = 深度合作（双方都拿），选项二 = 婉拒（爱方拿补偿）。
 # ============================================================
 
 add_namespace = ire_ger_coop
@@ -69,5 +71,173 @@ country_event = {
 		name = ire_ger_coop.3.b
 		# 婉拒：爱方获得少量补偿
 		IRE_X_coop_arms_refuse = yes
+	}
+}
+
+# ---- ④ 大西洋的燃料库（潜艇坞）----
+country_event = {
+	id = ire_ger_coop.4
+	title = ire_ger_coop.4.t
+	desc = ire_ger_coop.4.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.4.a
+		# 开放港口：爱方获得船坞产出与海军经验，德方获得狼群补给
+		IRE_X_coop_uboat_accept = yes
+	}
+	option = {
+		name = ire_ger_coop.4.b
+		# 婉拒：爱方获得少量补偿
+		IRE_X_coop_uboat_refuse = yes
+	}
+}
+
+# ---- ⑤ 绿色海岸行动（终局·登陆计划）----
+country_event = {
+	id = ire_ger_coop.5
+	title = ire_ger_coop.5.t
+	desc = ire_ger_coop.5.d
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.5.a
+		# 共享计划：爱方获得登陆与计划加成，德方获得海狮准备度
+		IRE_X_coop_sealion_accept = yes
+	}
+	option = {
+		name = ire_ger_coop.5.b
+		# 婉拒：爱方获得少量补偿
+		IRE_X_coop_sealion_refuse = yes
+	}
+}
+
+# ---- ⑥ 柏林-都柏林条约（柏林伙伴终局）----
+country_event = {
+	id = ire_ger_coop.6
+	title = ire_ger_coop.6.t
+	desc = ire_ger_coop.6.d
+	picture = GFX_report_event_generic_handshake
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.6.a
+		# 签约：爱尔兰加入我方阵营，双方互得永久盟约精神
+		IRE_X_coop_treaty_accept = yes
+	}
+	option = {
+		name = ire_ger_coop.6.b
+		# 婉拒：爱方获得补偿，保持独立
+		IRE_X_coop_treaty_refuse = yes
+	}
+}
+
+# ============================================================
+# 德国里程碑反向联动（ire_ger_coop.7~11）
+# 黑线期间德国（AI 或玩家）每完成一个史实里程碑，
+# 爱尔兰收到小事件并获得对应 timed 加成——让爱方全程
+# 有「德国在动」的实感。仅要求德国完成对应国策。
+# ============================================================
+
+# ---- ⑦ 莱茵兰 ----
+country_event = {
+	id = ire_ger_coop.7
+	title = ire_ger_coop.7.t
+	desc = ire_ger_coop.7.d
+	picture = GFX_report_event_generic_military_parade
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.7.a
+		army_experience = 25
+		add_timed_idea = { idea = IRE_GM_mil days = 180 }
+	}
+}
+
+# ---- ⑧ 四年计划 ----
+country_event = {
+	id = ire_ger_coop.8
+	title = ire_ger_coop.8.t
+	desc = ire_ger_coop.8.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.8.a
+		add_political_power = 25
+		add_timed_idea = { idea = IRE_GM_ind days = 360 }
+	}
+}
+
+# ---- ⑨ 安施鲁斯 ----
+country_event = {
+	id = ire_ger_coop.9
+	title = ire_ger_coop.9.t
+	desc = ire_ger_coop.9.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.9.a
+		army_experience = 15
+		add_timed_idea = { idea = IRE_GM_recruit days = 360 }
+	}
+}
+
+# ---- ⑩ 慕尼黑（苏台德）----
+country_event = {
+	id = ire_ger_coop.10
+	title = ire_ger_coop.10.t
+	desc = ire_ger_coop.10.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.10.a
+		add_timed_idea = { idea = IRE_GM_intel days = 360 }
+	}
+}
+
+# ---- ⑪ 但泽或战争 ----
+country_event = {
+	id = ire_ger_coop.11
+	title = ire_ger_coop.11.t
+	desc = ire_ger_coop.11.d
+	picture = GFX_report_event_generic_rally2
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.11.a
+		add_war_support = 0.10
+		add_timed_idea = { idea = IRE_GM_mobil days = 180 }
+	}
+}
+
+# ============================================================
+# 开局说明：黑线联机（ire_ger_coop.12）
+# 与隐藏机制说明书（ire.130-136）相互独立，开局第 4 天弹出，
+# 一次性（IRE_coop_intro_shown 旗标）。
+# ============================================================
+country_event = {
+	id = ire_ger_coop.12
+	title = ire_ger_coop.12.t
+	desc = ire_ger_coop.12.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.12.a
+		# 说明事件，无效果
 	}
 }
