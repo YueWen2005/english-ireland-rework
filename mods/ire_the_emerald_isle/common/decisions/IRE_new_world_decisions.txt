@@ -429,9 +429,13 @@ IRE_home_cat = {
 		cost = 50
 		days_remove = 120
 
-		visible = { has_idea = IRE_home_development }
+		visible = {
+			has_idea = IRE_home_development
+			has_completed_focus = IRE_A_infrastructure_programme
+		}
 		available = {
 			has_idea = IRE_home_development
+			has_completed_focus = IRE_A_infrastructure_programme
 			has_tech = basic_train
 		}
 		fire_only_once = no
