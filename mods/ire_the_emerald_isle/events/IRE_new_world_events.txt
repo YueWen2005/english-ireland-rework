@@ -2576,21 +2576,30 @@ country_event = {
 
 	option = {
 		name = ire_nw.142.a
-		add_stability = 0.03
-		add_political_power = 25
-		set_country_flag = IRE_nu_prep_roundtable
+		custom_effect_tooltip = ire_nw.142.a_tt
+		hidden_effect = {
+			add_stability = 0.03
+			add_political_power = 25
+			set_country_flag = IRE_nu_prep_roundtable
+		}
 	}
 	option = {
 		name = ire_nw.142.b
-		add_war_support = 0.03
-		add_stability = -0.02
-		set_country_flag = IRE_nu_prep_firm
+		custom_effect_tooltip = ire_nw.142.b_tt
+		hidden_effect = {
+			add_war_support = 0.03
+			add_stability = -0.02
+			set_country_flag = IRE_nu_prep_firm
+		}
 	}
 	option = {
 		name = ire_nw.142.c
-		add_manpower = 5000
-		add_stability = -0.02
-		set_country_flag = IRE_nu_prep_republican
+		custom_effect_tooltip = ire_nw.142.c_tt
+		hidden_effect = {
+			add_manpower = 5000
+			add_stability = -0.02
+			set_country_flag = IRE_nu_prep_republican
+		}
 	}
 }
 
@@ -2625,31 +2634,43 @@ country_event = {
 
 	option = {
 		name = ire_nw.150.a
-		add_to_variable = { IRE_nu_parliament = 5 }
-		add_to_variable = { IRE_nu_unionist = 3 }
-		add_to_variable = { IRE_nu_labour = -3 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.150.a_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_parliament = 6 }
+			add_to_variable = { IRE_nu_unionist = 2 }
+			add_to_variable = { IRE_nu_labour = -2 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.150.b
-		add_to_variable = { IRE_nu_labour = 5 }
-		add_to_variable = { IRE_nu_church = -3 }
-		add_to_variable = { IRE_nu_security = -3 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.150.b_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_labour = 6 }
+			add_to_variable = { IRE_nu_church = -3 }
+			add_to_variable = { IRE_nu_security = -2 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.150.c
-		add_to_variable = { IRE_nu_security = 5 }
-		add_to_variable = { IRE_nu_ira = -3 }
-		add_to_variable = { IRE_nu_parliament = -3 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.150.c_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_security = 6 }
+			add_to_variable = { IRE_nu_ira = -3 }
+			add_to_variable = { IRE_nu_parliament = -2 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.150.e
-		add_to_variable = { IRE_nu_ira = 5 }
-		add_to_variable = { IRE_nu_unionist = -5 }
-		add_to_variable = { IRE_nu_church = -3 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.150.e_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_ira = 6 }
+			add_to_variable = { IRE_nu_unionist = -3 }
+			add_to_variable = { IRE_nu_church = -3 }
+			IRE_national_union_init = yes
+		}
 	}
 }
 
@@ -2665,38 +2686,47 @@ country_event = {
 
 	option = {
 		name = ire_nw.151.a
-		add_political_power = -50
-		add_stability = 0.02
-		if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = -10 } }
-		if = { limit = { check_variable = { IRE_nu_parliament < 30 } } add_to_variable = { IRE_nu_parliament = 8 } }
-		if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = -10 } }
-		if = { limit = { check_variable = { IRE_nu_labour < 30 } } add_to_variable = { IRE_nu_labour = 8 } }
-		if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = -10 } }
-		if = { limit = { check_variable = { IRE_nu_security < 30 } } add_to_variable = { IRE_nu_security = 8 } }
-		if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = -10 } }
-		if = { limit = { check_variable = { IRE_nu_ira < 30 } } add_to_variable = { IRE_nu_ira = 8 } }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.151.a_tt
+		hidden_effect = {
+			add_political_power = -50
+			add_stability = 0.02
+			if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = -10 } }
+			if = { limit = { check_variable = { IRE_nu_parliament < 30 } } add_to_variable = { IRE_nu_parliament = 8 } }
+			if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = -10 } }
+			if = { limit = { check_variable = { IRE_nu_labour < 30 } } add_to_variable = { IRE_nu_labour = 8 } }
+			if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = -10 } }
+			if = { limit = { check_variable = { IRE_nu_security < 30 } } add_to_variable = { IRE_nu_security = 8 } }
+			if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = -10 } }
+			if = { limit = { check_variable = { IRE_nu_ira < 30 } } add_to_variable = { IRE_nu_ira = 8 } }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.151.b
-		add_stability = -0.05
-		add_war_support = 0.05
-		if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = 5 } }
-		if = { limit = { NOT = { check_variable = { IRE_nu_parliament > 60 } } } add_to_variable = { IRE_nu_parliament = -8 } }
-		if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = 5 } }
-		if = { limit = { NOT = { check_variable = { IRE_nu_labour > 60 } } } add_to_variable = { IRE_nu_labour = -8 } }
-		if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = 5 } }
-		if = { limit = { NOT = { check_variable = { IRE_nu_security > 60 } } } add_to_variable = { IRE_nu_security = -8 } }
-		if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = 5 } }
-		if = { limit = { NOT = { check_variable = { IRE_nu_ira > 60 } } } add_to_variable = { IRE_nu_ira = -8 } }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.151.b_tt
+		hidden_effect = {
+			add_stability = -0.05
+			add_war_support = 0.05
+			if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = 5 } }
+			if = { limit = { NOT = { check_variable = { IRE_nu_parliament > 60 } } } add_to_variable = { IRE_nu_parliament = -8 } }
+			if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = 5 } }
+			if = { limit = { NOT = { check_variable = { IRE_nu_labour > 60 } } } add_to_variable = { IRE_nu_labour = -8 } }
+			if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = 5 } }
+			if = { limit = { NOT = { check_variable = { IRE_nu_security > 60 } } } add_to_variable = { IRE_nu_security = -8 } }
+			if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = 5 } }
+			if = { limit = { NOT = { check_variable = { IRE_nu_ira > 60 } } } add_to_variable = { IRE_nu_ira = -8 } }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.151.c
-		add_stability = -0.10
-		add_political_power = -25
-		add_war_support = 0.03
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.151.c_tt
+		hidden_effect = {
+			add_stability = -0.10
+			add_political_power = -25
+			add_war_support = 0.03
+			IRE_national_union_init = yes
+		}
 	}
 }
 
@@ -2712,24 +2742,33 @@ country_event = {
 
 	option = {
 		name = ire_nw.153.a
-		add_political_power = -50
-		add_to_variable = { IRE_nu_unionist = 10 }
-		add_to_variable = { IRE_nu_church = 10 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.153.a_tt
+		hidden_effect = {
+			add_political_power = -50
+			add_to_variable = { IRE_nu_unionist = 10 }
+			add_to_variable = { IRE_nu_church = 10 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.153.b
-		add_stability = 0.03
-		add_war_support = 0.03
-		add_to_variable = { IRE_nu_unionist = -5 }
-		add_to_variable = { IRE_nu_church = -5 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.153.b_tt
+		hidden_effect = {
+			add_stability = 0.03
+			add_war_support = 0.03
+			add_to_variable = { IRE_nu_unionist = -5 }
+			add_to_variable = { IRE_nu_church = -5 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.153.c
-		add_stability = -0.08
-		add_manpower = -2500
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.153.c_tt
+		hidden_effect = {
+			add_stability = -0.08
+			add_manpower = -2500
+			IRE_national_union_init = yes
+		}
 	}
 }
 
@@ -2744,23 +2783,29 @@ country_event = {
 
 	option = {
 		name = ire_nw.154.a
-		add_political_power = 50
-		if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } } }
-		every_country = {
-			limit = { original_tag = FRA has_government = communism }
-			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+		custom_effect_tooltip = ire_nw.154.a_tt
+		hidden_effect = {
+			add_political_power = 50
+			if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } } }
+			every_country = {
+				limit = { original_tag = FRA has_government = communism }
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+			}
+			every_country = {
+				limit = { original_tag = ENG has_government = communism }
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+			}
+			set_country_flag = IRE_nu_red_deep
 		}
-		every_country = {
-			limit = { original_tag = ENG has_government = communism }
-			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
-		}
-		set_country_flag = IRE_nu_red_deep
 	}
 	option = {
 		name = ire_nw.154.b
-		add_stability = 0.03
-		if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
-		set_country_flag = IRE_nu_red_limited
+		custom_effect_tooltip = ire_nw.154.b_tt
+		hidden_effect = {
+			add_stability = 0.03
+			if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+			set_country_flag = IRE_nu_red_limited
+		}
 	}
 }
 
@@ -2775,16 +2820,22 @@ country_event = {
 
 	option = {
 		name = ire_nw.155.a
-		add_political_power = 50
-		if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } } }
-		if = { limit = { country_exists = ENG } ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
-		set_country_flag = IRE_nu_new_world_deep
+		custom_effect_tooltip = ire_nw.155.a_tt
+		hidden_effect = {
+			add_political_power = 50
+			if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } } }
+			if = { limit = { country_exists = ENG } ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+			set_country_flag = IRE_nu_new_world_deep
+		}
 	}
 	option = {
 		name = ire_nw.155.b
-		add_stability = 0.05
-		add_war_support = 0.03
-		set_country_flag = IRE_nu_new_world_limited
+		custom_effect_tooltip = ire_nw.155.b_tt
+		hidden_effect = {
+			add_stability = 0.05
+			add_war_support = 0.03
+			set_country_flag = IRE_nu_new_world_limited
+		}
 	}
 }
 
@@ -2800,10 +2851,13 @@ country_event = {
 
 	option = {
 		name = ire_nw.156.a
-		add_war_support = 0.05
-		add_stability = 0.03
-		army_experience = 50
-		set_country_flag = IRE_nu_third_force_armed
+		custom_effect_tooltip = ire_nw.156.a_tt
+		hidden_effect = {
+			add_war_support = 0.05
+			add_stability = 0.03
+			army_experience = 50
+			set_country_flag = IRE_nu_third_force_armed
+		}
 	}
 	option = {
 		name = ire_nw.156.b
@@ -2819,9 +2873,12 @@ country_event = {
 			check_variable = { IRE_nu_unionist > 59 }
 			check_variable = { IRE_nu_church > 59 }
 		}
-		add_stability = 0.08
-		add_political_power = 100
-		set_country_flag = IRE_nu_pure_union
+		custom_effect_tooltip = ire_nw.156.b_tt
+		hidden_effect = {
+			add_stability = 0.08
+			add_political_power = 100
+			set_country_flag = IRE_nu_pure_union
+		}
 	}
 }
 
@@ -2840,16 +2897,22 @@ country_event = {
 
 	option = {
 		name = ire_nw.160.a
-		add_to_variable = { IRE_nu_unionist = 5 }
-		add_stability = 0.03
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.160.a_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_unionist = 5 }
+			add_stability = 0.03
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.160.b
-		add_to_variable = { IRE_nu_parliament = 5 }
-		add_to_variable = { IRE_nu_unionist = -3 }
-		add_political_power = 25
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.160.b_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_parliament = 5 }
+			add_to_variable = { IRE_nu_unionist = -3 }
+			add_political_power = 25
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.160.c
@@ -2859,18 +2922,21 @@ country_event = {
 				has_country_flag = IRE_red_britain_joined
 			}
 		}
-		add_political_power = 20
-		add_to_variable = { IRE_nu_church = -3 }
-		every_country = {
-			limit = {
-				OR = {
-					AND = { original_tag = FRA has_government = communism }
-					AND = { original_tag = ENG has_government = communism }
+		custom_effect_tooltip = ire_nw.160.c_tt
+		hidden_effect = {
+			add_political_power = 20
+			add_to_variable = { IRE_nu_church = -3 }
+			every_country = {
+				limit = {
+					OR = {
+						AND = { original_tag = FRA has_government = communism }
+						AND = { original_tag = ENG has_government = communism }
+					}
 				}
+				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
 			}
-			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
+			IRE_national_union_init = yes
 		}
-		IRE_national_union_init = yes
 	}
 }
 
@@ -2886,15 +2952,21 @@ country_event = {
 
 	option = {
 		name = ire_nw.161.a
-		add_to_variable = { IRE_nu_labour = 5 }
-		add_manpower = 5000
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.161.a_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_labour = 5 }
+			add_manpower = 5000
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.161.b
-		add_to_variable = { IRE_nu_church = 5 }
-		add_stability = 0.03
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.161.b_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_church = 5 }
+			add_stability = 0.03
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.161.c
@@ -2904,9 +2976,12 @@ country_event = {
 				has_country_flag = IRE_black_britain_formed
 			}
 		}
-		add_to_variable = { IRE_nu_labour = 5 }
-		add_war_support = 0.03
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.161.c_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_labour = 5 }
+			add_war_support = 0.03
+			IRE_national_union_init = yes
+		}
 	}
 }
 
@@ -2922,24 +2997,33 @@ country_event = {
 
 	option = {
 		name = ire_nw.162.a
-		add_to_variable = { IRE_nu_security = 5 }
-		add_stability = 0.03
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.162.a_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_security = 5 }
+			add_stability = 0.03
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.162.b
-		add_to_variable = { IRE_nu_parliament = 5 }
-		add_to_variable = { IRE_nu_unionist = 3 }
-		add_to_variable = { IRE_nu_security = -2 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.162.b_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_parliament = 5 }
+			add_to_variable = { IRE_nu_unionist = 3 }
+			add_to_variable = { IRE_nu_security = -2 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.162.c
 		trigger = { has_country_flag = IRE_black_britain_formed }
-		add_to_variable = { IRE_nu_security = 5 }
-		add_to_variable = { IRE_nu_ira = -2 }
-		add_war_support = 0.03
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.162.c_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_security = 5 }
+			add_to_variable = { IRE_nu_ira = -2 }
+			add_war_support = 0.03
+			IRE_national_union_init = yes
+		}
 	}
 }
 
@@ -2955,15 +3039,21 @@ country_event = {
 
 	option = {
 		name = ire_nw.163.a
-		add_to_variable = { IRE_nu_ira = 5 }
-		add_manpower = 5000
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.163.a_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_ira = 5 }
+			add_manpower = 5000
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.163.b
-		add_to_variable = { IRE_nu_unionist = 5 }
-		add_to_variable = { IRE_nu_ira = -3 }
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.163.b_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_unionist = 5 }
+			add_to_variable = { IRE_nu_ira = -3 }
+			IRE_national_union_init = yes
+		}
 	}
 	option = {
 		name = ire_nw.163.c
@@ -2976,9 +3066,12 @@ country_event = {
 				}
 			}
 		}
-		add_to_variable = { IRE_nu_ira = 5 }
-		army_experience = 25
-		IRE_national_union_init = yes
+		custom_effect_tooltip = ire_nw.163.c_tt
+		hidden_effect = {
+			add_to_variable = { IRE_nu_ira = 5 }
+			army_experience = 25
+			IRE_national_union_init = yes
+		}
 	}
 }
 
@@ -2993,19 +3086,28 @@ country_event = {
 
 	option = {
 		name = ire_nw.164.a
-		add_stability = 0.03
-		if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+		custom_effect_tooltip = ire_nw.164.a_tt
+		hidden_effect = {
+			add_stability = 0.03
+			if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+		}
 	}
 	option = {
 		name = ire_nw.164.b
-		add_political_power = 25
-		if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
-		if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } } }
+		custom_effect_tooltip = ire_nw.164.b_tt
+		hidden_effect = {
+			add_political_power = 25
+			if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+			if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } } }
+		}
 	}
 	option = {
 		name = ire_nw.164.c
-		add_stability = 0.05
-		add_war_support = 0.03
+		custom_effect_tooltip = ire_nw.164.c_tt
+		hidden_effect = {
+			add_stability = 0.05
+			add_war_support = 0.03
+		}
 	}
 }
 
@@ -3020,21 +3122,30 @@ country_event = {
 
 	option = {
 		name = ire_nw.165.a
-		add_political_power = -50
-		add_stability = 0.03
+		custom_effect_tooltip = ire_nw.165.a_tt
+		hidden_effect = {
+			add_political_power = -50
+			add_stability = 0.03
+		}
 	}
 	option = {
 		name = ire_nw.165.b
-		if = {
-			limit = { has_cosmetic_tag = IRE_national_union }
-			set_cosmetic_tag = IRE
+		custom_effect_tooltip = ire_nw.165.b_tt
+		hidden_effect = {
+			if = {
+				limit = { has_cosmetic_tag = IRE_national_union }
+				set_cosmetic_tag = IRE
+			}
+			remove_ideas = IRE_national_union_government
 		}
-		remove_ideas = IRE_national_union_government
 	}
 	option = {
 		name = ire_nw.165.c
-		add_war_support = 0.05
-		army_experience = 25
+		custom_effect_tooltip = ire_nw.165.c_tt
+		hidden_effect = {
+			add_war_support = 0.05
+			army_experience = 25
+		}
 	}
 }
 
@@ -3049,22 +3160,31 @@ country_event = {
 
 	option = {
 		name = ire_nw.166.a
-		add_stability = 0.03
-		add_political_power = 25
+		custom_effect_tooltip = ire_nw.166.a_tt
+		hidden_effect = {
+			add_stability = 0.03
+			add_political_power = 25
+		}
 	}
 	option = {
 		name = ire_nw.166.b
-		if = {
-			limit = { has_cosmetic_tag = IRE_national_union }
-			set_cosmetic_tag = IRE
+		custom_effect_tooltip = ire_nw.166.b_tt
+		hidden_effect = {
+			if = {
+				limit = { has_cosmetic_tag = IRE_national_union }
+				set_cosmetic_tag = IRE
+			}
+			remove_ideas = IRE_national_union_government
 		}
-		remove_ideas = IRE_national_union_government
 	}
 	option = {
 		name = ire_nw.166.c
-		add_stability = -0.03
-		add_war_support = 0.03
-		add_political_power = 25
+		custom_effect_tooltip = ire_nw.166.c_tt
+		hidden_effect = {
+			add_stability = -0.03
+			add_war_support = 0.03
+			add_political_power = 25
+		}
 	}
 }
 
@@ -3080,21 +3200,30 @@ country_event = {
 
 	option = {
 		name = ire_nw.168.a
-		add_stability = 0.02
-		add_war_support = 0.03
+		custom_effect_tooltip = ire_nw.168.a_tt
+		hidden_effect = {
+			add_stability = 0.02
+			add_war_support = 0.03
+		}
 	}
 	option = {
 		name = ire_nw.168.b
 		trigger = { has_political_power > 74 }
-		add_political_power = -75
-		remove_ideas = IRE_national_revival_fragile
-		add_ideas = IRE_national_revival
-		set_country_flag = IRE_nu_revival_done
-		clr_country_flag = IRE_nu_revival_fragile
+		custom_effect_tooltip = ire_nw.168.b_tt
+		hidden_effect = {
+			add_political_power = -75
+			remove_ideas = IRE_national_revival_fragile
+			add_ideas = IRE_national_revival
+			set_country_flag = IRE_nu_revival_done
+			clr_country_flag = IRE_nu_revival_fragile
+		}
 	}
 	option = {
 		name = ire_nw.168.c
-		add_political_power = 25
-		add_stability = -0.03
+		custom_effect_tooltip = ire_nw.168.c_tt
+		hidden_effect = {
+			add_political_power = 25
+			add_stability = -0.03
+		}
 	}
 }

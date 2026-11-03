@@ -735,10 +735,13 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.03
-			set_country_flag = IRE_nu_prep_done
-			country_event = { id = ire_nw.142 days = 1 }
+			custom_effect_tooltip = IRE_effect_nu_accord
+			hidden_effect = {
+				add_political_power = 50
+				add_stability = 0.03
+				set_country_flag = IRE_nu_prep_done
+				country_event = { id = ire_nw.142 days = 1 }
+			}
 		}
 	}
 
@@ -755,12 +758,15 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			IRE_national_union_init = yes
-			set_cosmetic_tag = IRE_national_union
-			add_ideas = IRE_national_union_government
-			set_country_flag = IRE_national_union_formed
-			add_political_power = 100
-			country_event = { id = ire_nw.150 days = 1 }
+			custom_effect_tooltip = IRE_effect_nu_convene
+			hidden_effect = {
+				IRE_national_union_init = yes
+				set_cosmetic_tag = IRE_national_union
+				add_ideas = IRE_national_union_government
+				set_country_flag = IRE_national_union_formed
+				add_political_power = 100
+				country_event = { id = ire_nw.150 days = 1 }
+			}
 		}
 	}
 
@@ -778,13 +784,15 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_pillar_parliament
-			add_to_variable = { IRE_nu_parliament = 10 }
-			add_to_variable = { IRE_nu_unionist = 5 }
-			add_political_power = 50
-			add_stability = 0.03
-			IRE_national_union_init = yes
 			custom_effect_tooltip = IRE_effect_nu_pillar_parliament
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_parliament
+				add_to_variable = { IRE_nu_parliament = 10 }
+				add_to_variable = { IRE_nu_unionist = 5 }
+				add_political_power = 50
+				add_stability = 0.03
+				IRE_national_union_init = yes
+			}
 		}
 	}
 
@@ -802,13 +810,15 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_pillar_labour
-			add_to_variable = { IRE_nu_labour = 10 }
-			add_to_variable = { IRE_nu_church = -3 }
-			add_political_power = 25
-			add_manpower = 5000
-			IRE_national_union_init = yes
 			custom_effect_tooltip = IRE_effect_nu_pillar_labour
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_labour
+				add_to_variable = { IRE_nu_labour = 10 }
+				add_to_variable = { IRE_nu_church = -3 }
+				add_political_power = 25
+				add_manpower = 5000
+				IRE_national_union_init = yes
+			}
 		}
 	}
 
@@ -826,19 +836,21 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_pillar_security
-			add_to_variable = { IRE_nu_security = 10 }
-			add_to_variable = { IRE_nu_ira = -3 }
-			add_war_support = 0.03
-			army_experience = 25
-			IRE_national_union_init = yes
 			custom_effect_tooltip = IRE_effect_nu_pillar_security
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_security
+				add_to_variable = { IRE_nu_security = 10 }
+				add_to_variable = { IRE_nu_ira = -3 }
+				add_war_support = 0.03
+				army_experience = 25
+				IRE_national_union_init = yes
+			}
 		}
 	}
 
 	focus = {
 		id = IRE_A_national_union_ira
-		icon = GFX_focus_generic_military_deal
+		icon = GFX_goal_generic_military_deal
 		cost = 5
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
@@ -850,13 +862,15 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_pillar_ira
-			add_to_variable = { IRE_nu_ira = 10 }
-			add_to_variable = { IRE_nu_unionist = -3 }
-			add_manpower = 5000
-			army_experience = 25
-			IRE_national_union_init = yes
 			custom_effect_tooltip = IRE_effect_nu_pillar_ira
+			hidden_effect = {
+				set_country_flag = IRE_nu_pillar_ira
+				add_to_variable = { IRE_nu_ira = 10 }
+				add_to_variable = { IRE_nu_unionist = -3 }
+				add_manpower = 5000
+				army_experience = 25
+				IRE_national_union_init = yes
+			}
 		}
 	}
 
@@ -874,11 +888,13 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_charter_parliament
-			add_political_power = 100
-			add_stability = 0.05
-			country_event = { id = ire_nw.160 days = 1 }
 			custom_effect_tooltip = IRE_effect_nu_charter_parliament
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_parliament
+				add_political_power = 100
+				add_stability = 0.05
+				country_event = { id = ire_nw.160 days = 1 }
+			}
 		}
 	}
 
@@ -896,11 +912,13 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_charter_labour
-			add_manpower = 10000
-			add_political_power = 50
-			country_event = { id = ire_nw.161 days = 1 }
 			custom_effect_tooltip = IRE_effect_nu_charter_labour
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_labour
+				add_manpower = 10000
+				add_political_power = 50
+				country_event = { id = ire_nw.161 days = 1 }
+			}
 		}
 	}
 
@@ -918,17 +936,19 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_charter_security
-			add_war_support = 0.05
-			army_experience = 50
-			country_event = { id = ire_nw.162 days = 1 }
 			custom_effect_tooltip = IRE_effect_nu_charter_security
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_security
+				add_war_support = 0.05
+				army_experience = 50
+				country_event = { id = ire_nw.162 days = 1 }
+			}
 		}
 	}
 
 	focus = {
 		id = IRE_A_nu_charter_ira
-		icon = GFX_focus_generic_military_deal
+		icon = GFX_goal_generic_military_deal
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
@@ -940,11 +960,13 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_charter_ira
-			add_manpower = 10000
-			army_experience = 50
-			country_event = { id = ire_nw.163 days = 1 }
 			custom_effect_tooltip = IRE_effect_nu_charter_ira
+			hidden_effect = {
+				set_country_flag = IRE_nu_charter_ira
+				add_manpower = 10000
+				army_experience = 50
+				country_event = { id = ire_nw.163 days = 1 }
+			}
 		}
 	}
 
@@ -965,30 +987,31 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.05
-			if = {
-				limit = {
-					check_variable = { IRE_nu_parliament > 19 }
-					check_variable = { IRE_nu_parliament < 61 }
-					check_variable = { IRE_nu_labour > 19 }
-					check_variable = { IRE_nu_labour < 61 }
-					check_variable = { IRE_nu_security > 19 }
-					check_variable = { IRE_nu_security < 61 }
-					check_variable = { IRE_nu_ira > 19 }
-					check_variable = { IRE_nu_ira < 61 }
-					check_variable = { IRE_nu_unionist > 59 }
-					check_variable = { IRE_nu_church > 59 }
+			custom_effect_tooltip = IRE_effect_nu_revival_branch
+			hidden_effect = {
+				add_political_power = 100
+				add_stability = 0.05
+				if = {
+					limit = {
+						check_variable = { IRE_nu_parliament > 19 }
+						check_variable = { IRE_nu_parliament < 61 }
+						check_variable = { IRE_nu_labour > 19 }
+						check_variable = { IRE_nu_labour < 61 }
+						check_variable = { IRE_nu_security > 19 }
+						check_variable = { IRE_nu_security < 61 }
+						check_variable = { IRE_nu_ira > 19 }
+						check_variable = { IRE_nu_ira < 61 }
+						check_variable = { IRE_nu_unionist > 59 }
+						check_variable = { IRE_nu_church > 59 }
+					}
+					add_ideas = IRE_national_revival
+					set_country_flag = IRE_nu_revival_done
 				}
-				add_ideas = IRE_national_revival
-				set_country_flag = IRE_nu_revival_done
-				custom_effect_tooltip = IRE_effect_nu_revival
-			}
-			else = {
-				add_ideas = IRE_national_revival_fragile
-				set_country_flag = IRE_nu_revival_fragile
-				country_event = { id = ire_nw.168 days = 1 }
-				custom_effect_tooltip = IRE_effect_nu_revival_fragile
+				else = {
+					add_ideas = IRE_national_revival_fragile
+					set_country_flag = IRE_nu_revival_fragile
+					country_event = { id = ire_nw.168 days = 1 }
+				}
 			}
 		}
 	}
@@ -1013,9 +1036,12 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_postwar_red
-			add_ideas = IRE_nu_red_partnership
-			country_event = { id = ire_nw.154 days = 1 }
+			custom_effect_tooltip = IRE_effect_nu_postwar_red
+			hidden_effect = {
+				set_country_flag = IRE_nu_postwar_red
+				add_ideas = IRE_nu_red_partnership
+				country_event = { id = ire_nw.154 days = 1 }
+			}
 		}
 	}
 
@@ -1039,9 +1065,12 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_postwar_new_world
-			add_ideas = IRE_nu_new_world_partnership
-			country_event = { id = ire_nw.155 days = 1 }
+			custom_effect_tooltip = IRE_effect_nu_postwar_new_world
+			hidden_effect = {
+				set_country_flag = IRE_nu_postwar_new_world
+				add_ideas = IRE_nu_new_world_partnership
+				country_event = { id = ire_nw.155 days = 1 }
+			}
 		}
 	}
 
@@ -1065,9 +1094,12 @@ focus_tree = {
 		ai_will_do = { base = 0 }
 
 		completion_reward = {
-			set_country_flag = IRE_nu_postwar_neutral
-			add_ideas = IRE_nu_third_force
-			country_event = { id = ire_nw.156 days = 1 }
+			custom_effect_tooltip = IRE_effect_nu_postwar_neutral
+			hidden_effect = {
+				set_country_flag = IRE_nu_postwar_neutral
+				add_ideas = IRE_nu_third_force
+				country_event = { id = ire_nw.156 days = 1 }
+			}
 		}
 	}
 
