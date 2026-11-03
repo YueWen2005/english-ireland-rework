@@ -179,7 +179,9 @@ IRE_X_coop_treaty_accept = {
 				name = IRE_G_ger_dublin_axis
 			}
 		}
-		add_to_faction = ROOT
+		# 注意：本效果会被 ire_ger_coop.6（弹给德国的事件）调用，
+		# 届时 ROOT = 德国，必须显式写 IRE，不能用 ROOT。
+		add_to_faction = IRE
 	
 		# 联动国策解锁旗标（德国树最右侧 GER_IRE_* 列）
 		set_country_flag = IRE_G_coop_6_unlocked

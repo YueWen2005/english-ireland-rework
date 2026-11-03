@@ -52,7 +52,7 @@ IRE_coop_atlantic_port = {
 	allowed = { always = yes }
 	visible = { always = yes }
 	modifier = {
-		industrial_capacity_dockyard = 0.06
+		industrial_capacity_dockyard = 0.05
 	}
 }
 
@@ -134,7 +134,7 @@ IRE_GM_recruit = {
 	allowed = { always = yes }
 	visible = { always = yes }
 	modifier = {
-		conscription_factor = 0.02
+		conscription_factor = 0.05
 	}
 }
 
@@ -157,7 +157,7 @@ IRE_GM_mobil = {
 }
 
 # ---- 第三批（v2.19.3）：德国联动国策（树最右列 GER_IRE_*）的永久精神 ----
-# 由联动事件「接受」解锁，数值刻意克制（2.5%~5%），与 timed 增益并存。
+# 由联动事件「接受」解锁，数值克制（5% 档），与 timed 增益并存。
 
 IRE_G_dublin_link_intel = {
 	picture = generic_intel_bonus
@@ -183,7 +183,7 @@ IRE_G_dublin_link_arms = {
 	allowed = { always = yes }
 	visible = { always = yes }
 	modifier = {
-		industrial_capacity_factory = 0.025
+		industrial_capacity_factory = 0.05
 	}
 }
 

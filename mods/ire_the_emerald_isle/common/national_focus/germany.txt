@@ -38958,6 +38958,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_IRE_abwehr_academy
+		prerequisite = { focus = GER_IRE_shadow_link }
 		icon = GFX_focus_generic_secret_service_agency
 		x = 155
 		y = 2
@@ -38975,6 +38976,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_IRE_arms_corridor
+		prerequisite = { focus = GER_IRE_abwehr_academy }
 		icon = GFX_focus_generic_license_production
 		x = 155
 		y = 3
@@ -38992,6 +38994,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_IRE_atlantic_gateway
+		prerequisite = { focus = GER_IRE_arms_corridor }
 		icon = GFX_focus_GER_navy
 		x = 155
 		y = 4
@@ -39009,6 +39012,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_IRE_green_shore_joint
+		prerequisite = { focus = GER_IRE_atlantic_gateway }
 		icon = GFX_focus_ger_strike_at_the_source
 		x = 155
 		y = 5
@@ -39026,6 +39030,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_IRE_dublin_pact
+		prerequisite = { focus = GER_IRE_green_shore_joint }
 		icon = GFX_focus_GER_SOV_treaty
 		x = 155
 		y = 6
