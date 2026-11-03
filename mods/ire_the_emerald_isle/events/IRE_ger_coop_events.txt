@@ -1,0 +1,73 @@
+# ============================================================
+# 柏林-都柏林轴心（黑线联机线）—— 联动事件
+# v2.19.1 第一批：ire_ger_coop.1~3
+# 全部 is_triggered_only，由 IRE_ger_coop_effects 派发器定向
+# 发给德国玩家；仅当德国为玩家史实线时触发（见
+# scripted_triggers/IRE_ger_coop_triggers.txt）。
+# 选项一 = 深度合作（双方都拿），选项二 = 婉拒（爱方拿补偿）。
+# ============================================================
+
+add_namespace = ire_ger_coop
+
+# ---- ① 都柏林的暗手（影子兵工厂）----
+country_event = {
+	id = ire_ger_coop.1
+	title = ire_ger_coop.1.t
+	desc = ire_ger_coop.1.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.1.a
+		# 派出顾问团：爱方获得经验与德械，德方获得对英情报与经验加成
+		IRE_X_coop_advisors_accept = yes
+	}
+	option = {
+		name = ire_ger_coop.1.b
+		# 婉拒：爱方获得少量补偿
+		IRE_X_coop_advisors_refuse = yes
+	}
+}
+
+# ---- ② 来自爱尔兰的客人（阿勃维尔的客人）----
+country_event = {
+	id = ire_ger_coop.2
+	title = ire_ger_coop.2.t
+	desc = ire_ger_coop.2.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.2.a
+		# 全面训练：爱方获得特工槽，德方获得密码破译加成
+		IRE_X_coop_guests_accept = yes
+	}
+	option = {
+		name = ire_ger_coop.2.b
+		# 婉拒：爱方获得补偿
+		IRE_X_coop_guests_refuse = yes
+	}
+}
+
+# ---- ③ 军火出口订单（德械标准）----
+country_event = {
+	id = ire_ger_coop.3
+	title = ire_ger_coop.3.t
+	desc = ire_ger_coop.3.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.3.a
+		# 接受订单：爱方获得 1500 德械，德方获得出口生产加成
+		IRE_X_coop_arms_accept = yes
+	}
+	option = {
+		name = ire_ger_coop.3.b
+		# 婉拒：爱方获得少量补偿
+		IRE_X_coop_arms_refuse = yes
+	}
+}

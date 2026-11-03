@@ -1,0 +1,89 @@
+# ============================================================
+# 柏林-都柏林轴心（黑线联机线）—— 联动派发器
+# v2.19.1 第一批：暗手 / 客人 / 军火
+#
+# 每个派发器在爱尔兰完成对应国策时调用：
+#   - 德国玩家史实线（IRE_ger_coop_active）→ 定向弹事件给德国玩家
+#   - 否则（德国 AI / 非史实）→ 自动按「接受」分支结算
+# 接受/婉拒结算写成独立效果，事件选项与 AI 自动分支共用，
+# 全部使用显式 IRE/GER 作用域，从任何 scope 调用都安全。
+# 接受 = 双向所得；婉拒 = 爱方拿小额补偿，德方无所得。
+# ============================================================
+
+# ---- ① 影子兵工厂：《都柏林的暗手》----
+IRE_X_coop_advisors = {
+	if = {
+		limit = { IRE_ger_coop_active = yes }
+		GER = { country_event = { id = ire_ger_coop.1 hours = 6 } }
+	}
+	else = {
+		IRE_X_coop_advisors_accept = yes
+	}
+}
+IRE_X_coop_advisors_accept = {
+	IRE = {
+		army_experience = 25
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 500 producer = GER }
+	}
+	GER = {
+		add_timed_idea = { idea = IRE_G_dark_hand days = 360 }
+		add_political_power = 25
+	}
+}
+IRE_X_coop_advisors_refuse = {
+	IRE = {
+		army_experience = 10
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 250 producer = IRE }
+	}
+}
+
+# ---- ② 阿勃维尔的客人：《来自爱尔兰的客人》----
+IRE_X_coop_guests = {
+	if = {
+		limit = { IRE_ger_coop_active = yes }
+		GER = { country_event = { id = ire_ger_coop.2 hours = 6 } }
+	}
+	else = {
+		IRE_X_coop_guests_accept = yes
+	}
+}
+IRE_X_coop_guests_accept = {
+	IRE = {
+		add_timed_idea = { idea = IRE_coop_operative_slot days = 730 }
+		army_experience = 15
+	}
+	GER = {
+		add_timed_idea = { idea = IRE_G_guest_training days = 360 }
+	}
+}
+IRE_X_coop_guests_refuse = {
+	IRE = {
+		army_experience = 10
+		add_political_power = 25
+	}
+}
+
+# ---- ③ 德械标准：《军火出口订单》----
+IRE_X_coop_arms = {
+	if = {
+		limit = { IRE_ger_coop_active = yes }
+		GER = { country_event = { id = ire_ger_coop.3 hours = 6 } }
+	}
+	else = {
+		IRE_X_coop_arms_accept = yes
+	}
+}
+IRE_X_coop_arms_accept = {
+	IRE = {
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 producer = GER }
+	}
+	GER = {
+		add_timed_idea = { idea = IRE_G_export_order days = 360 }
+	}
+}
+IRE_X_coop_arms_refuse = {
+	IRE = {
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 500 producer = IRE }
+		add_political_power = 25
+	}
+}

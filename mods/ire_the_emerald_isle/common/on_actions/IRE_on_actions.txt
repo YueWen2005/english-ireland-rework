@@ -312,14 +312,16 @@ on_actions = {
 			}
 
 			# ---- 红线：西班牙黄金（1936.10 起比斯开湾航线，红线开局后触发）----
+			# 设计确认：必须实际派出志愿军（部队抵达西班牙前线）才会触发；
+			# 只完成国策不派兵不弹事件。窗口 1936.10.14～1939.4.1。
 			if = {
 				limit = {
 					tag = IRE
 					has_country_flag = IRE_red_path
 					has_completed_focus = IRE_R_connolly_column
-					SPA = { has_volunteers_amount_from = { tag = ROOT count > 0 } }
+					SPA = { exists = yes has_civil_war = yes has_volunteers_amount_from = { tag = ROOT count > 0 } }
 					date > 1936.10.14
-					date < 1939.1.1
+					date < 1939.4.1
 					NOT = { has_country_flag = IRE_gold_done }
 				}
 				set_country_flag = IRE_gold_done

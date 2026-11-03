@@ -4059,6 +4059,9 @@ focus_tree = {
 				country_event = { id = ire.90 days = 1 }
 			}
 			custom_effect_tooltip = IRE_effect_exposure_10
+		
+			# 柏林-都柏林轴心：联动派发（德国玩家史实线弹事件，AI 自动结算）
+			IRE_X_coop_advisors = yes
 		}
 	}
 
@@ -4155,6 +4158,9 @@ focus_tree = {
 			add_ideas = IRE_ira_shadow
 			country_event = { id = ire.96 days = 1 }
 			custom_effect_tooltip = IRE_effect_exposure_15
+		
+			# 柏林-都柏林轴心：联动派发（德国玩家史实线弹事件，AI 自动结算）
+			IRE_X_coop_guests = yes
 		}
 	}
 
@@ -4570,6 +4576,9 @@ focus_tree = {
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos20 } }
 			add_to_variable = { IRE_exposure = 15 }
 			custom_effect_tooltip = IRE_effect_exposure_15
+		
+			# 柏林-都柏林轴心：联动派发（德国玩家史实线弹事件，AI 自动结算）
+			IRE_X_coop_arms = yes
 		}
 	}
 

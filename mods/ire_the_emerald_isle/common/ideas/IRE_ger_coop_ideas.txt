@@ -1,0 +1,45 @@
+# ============================================================
+# 柏林-都柏林轴心（黑线联机线）—— 联动精神
+# v2.19.1 第一批
+# 德方增益全部为 timed idea（360 天），不永久堆叠；
+# 爱方特工槽为联机专属补偿（730 天）。
+# 仅通过联动事件/派发器授予，永远不会自然出现在其他国家身上。
+# ============================================================
+
+IRE_G_dark_hand = {
+	picture = generic_intelligence_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		intel_network_gain_factor = 0.10
+		experience_gain_army_factor = 0.05
+	}
+}
+
+IRE_G_guest_training = {
+	picture = generic_intelligence_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		decryption_power_factor = 0.10
+	}
+}
+
+IRE_G_export_order = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+	}
+}
+
+IRE_coop_operative_slot = {
+	picture = generic_intelligence_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		operative_slot = 1
+		intel_network_gain_factor = 0.05
+	}
+}
