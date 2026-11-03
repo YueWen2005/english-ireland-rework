@@ -528,6 +528,11 @@ on_actions = {
 					has_idea = IRE_european_hope
 					is_faction_leader = yes
 					IRE_germany_widespread_war = yes
+					# 仅黑英成功/红色英国在盟时启用；黑英失败或英国仍在同盟国时不抢人
+					OR = {
+						has_country_flag = IRE_black_britain_formed
+						has_country_flag = IRE_red_britain_joined
+					}
 					NOT = { has_country_flag = IRE_german_last_stand_added }
 					country_exists = GER
 				}
@@ -541,6 +546,11 @@ on_actions = {
 					has_idea = IRE_european_hope
 					is_faction_leader = yes
 					IRE_germany_widespread_war = yes
+					# 仅黑英成功/红色英国在盟时扩员；黑英失败时让位给同盟国
+					OR = {
+						has_country_flag = IRE_black_britain_formed
+						has_country_flag = IRE_red_britain_joined
+					}
 				}
 				every_country = {
 					limit = {
