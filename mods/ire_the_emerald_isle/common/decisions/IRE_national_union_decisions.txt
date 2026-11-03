@@ -413,3 +413,92 @@ IRE_nu_postwar_cat = {
 		ai_will_do = { base = 0 }
 	}
 }
+
+# 战后重建：国内外环境包的常驻手段
+IRE_nu_postwar_env_cat = {
+
+	IRE_nu_postwar_housing = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_housing_tt
+			hidden_effect = {
+				add_stability = 0.02
+				add_timed_idea = { idea = IRE_nu_postwar_reconstruction_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_postwar_veterans = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_veterans_tt
+			hidden_effect = {
+				add_manpower = 5000
+				add_war_support = 0.02
+				add_timed_idea = { idea = IRE_nu_postwar_veterans_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_postwar_industry = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 120
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_industry_tt
+			hidden_effect = {
+				add_political_power = 25
+				add_timed_idea = { idea = IRE_nu_postwar_industry_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_postwar_trade = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 90
+
+		available = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+		visible = { has_idea = IRE_national_union_government IRE_germany_defeated = yes }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_postwar_trade_tt
+			hidden_effect = {
+				add_political_power = 25
+				add_timed_idea = { idea = IRE_nu_postwar_trade_spirit days = 365 }
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}

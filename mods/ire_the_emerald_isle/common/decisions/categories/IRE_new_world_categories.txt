@@ -86,6 +86,17 @@ IRE_national_union_cat = {
 	scripted_gui = ire_national_union_decision_ui
 }
 
+### 民族联盟：战后重建
+IRE_nu_postwar_env_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 76
+	allowed = { original_tag = IRE }
+	visible = {
+		has_idea = IRE_national_union_government
+		IRE_germany_defeated = yes
+	}
+}
+
 ### 民族联盟：战后对外路线
 IRE_nu_postwar_cat = {
 	icon = GFX_decision_category_generic_political_actions

@@ -826,5 +826,62 @@ ideas = {
 			removal_cost = -1
 		}
 
+		# ---- 爱尔兰民族联盟：战后重建（365 天） ----
+		IRE_nu_postwar_reconstruction_spirit = {
+			picture = generic_economic_increase
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				construction_speed_factor = 0.10
+				consumer_goods_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_postwar_veterans_spirit = {
+			picture = generic_army_europe_3
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				conscription_factor = 0.02
+				stability_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_postwar_industry_spirit = {
+			picture = generic_improved_industries
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_postwar_trade_spirit = {
+			picture = generic_economic_increase
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				trade_opinion_factor = 0.10
+				consumer_goods_factor = -0.02
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_postwar_neutrality_spirit = {
+			picture = generic_army_europe_5
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				army_defence_factor = 0.05
+				war_support_factor = 0.03
+				stability_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
 	}
 }

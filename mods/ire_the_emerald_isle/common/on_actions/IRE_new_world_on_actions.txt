@@ -733,6 +733,17 @@ on_actions = {
 				}
 
 				IRE_nu_dynamic_event_roll = yes
+
+				# 战后环境包：德国投降后启动，90 天池
+				if = {
+					limit = {
+						IRE_germany_defeated = yes
+						NOT = { has_country_flag = IRE_nu_postwar_env_started }
+					}
+					set_country_flag = IRE_nu_postwar_env_started
+					country_event = { id = ire_nw.190 days = 7 }
+				}
+				IRE_nu_postwar_env_roll = yes
 			}
 
 			# 民族联盟：成立后的世界回响（一次）

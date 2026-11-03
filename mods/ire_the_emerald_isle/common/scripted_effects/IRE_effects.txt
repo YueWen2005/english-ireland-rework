@@ -1335,6 +1335,81 @@ IRE_nu_dynamic_event_roll = {
 	}
 }
 
+IRE_nu_postwar_env_roll = {
+	if = {
+		limit = {
+			has_country_flag = IRE_nu_postwar_env_started
+			NOT = { has_country_flag = IRE_nu_postwar_env_cd }
+			NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
+			NOT = { has_country_flag = IRE_nu_crisis_now }
+			NOT = { has_country_flag = IRE_nu_confidence_low }
+		}
+		random_list = {
+			30 = { add_political_power = 0 }
+
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_191_done }
+				country_event = { id = ire_nw.191 days = 0 }
+			}
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_192_done }
+				country_event = { id = ire_nw.192 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_193_done
+						AND = {
+							NOT = { has_country_flag = IRE_nu_postwar_red }
+							NOT = { has_country_flag = IRE_red_france_joined }
+							NOT = { has_country_flag = IRE_red_britain_joined }
+						}
+					}
+				}
+				country_event = { id = ire_nw.193 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_194_done
+						NOT = { has_country_flag = IRE_nu_postwar_new_world }
+					}
+				}
+				country_event = { id = ire_nw.194 days = 0 }
+			}
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_195_done }
+				country_event = { id = ire_nw.195 days = 0 }
+			}
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_196_done }
+				country_event = { id = ire_nw.196 days = 0 }
+			}
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_197_done }
+				country_event = { id = ire_nw.197 days = 0 }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_country_flag = IRE_nu_evt_198_done
+						NOT = { has_country_flag = IRE_nu_postwar_neutral }
+					}
+				}
+				country_event = { id = ire_nw.198 days = 0 }
+			}
+			10 = {
+				modifier = { factor = 0 has_country_flag = IRE_nu_evt_199_done }
+				country_event = { id = ire_nw.199 days = 0 }
+			}
+		}
+		set_country_flag = { flag = IRE_nu_postwar_env_cd days = 90 value = 1 }
+	}
+}
+
 IRE_nu_clear_dynamic_state = {
 	clr_country_flag = IRE_nu_grace_cd
 	clr_country_flag = IRE_nu_grace_started
@@ -1370,6 +1445,27 @@ IRE_nu_clear_dynamic_state = {
 	clr_country_flag = IRE_nu_evt_183_done
 	clr_country_flag = IRE_nu_evt_184_done
 	clr_country_flag = IRE_nu_evt_185_done
+	clr_country_flag = IRE_nu_postwar_env_started
+	clr_country_flag = IRE_nu_postwar_env_cd
+	clr_country_flag = IRE_nu_evt_190_done
+	clr_country_flag = IRE_nu_evt_191_done
+	clr_country_flag = IRE_nu_evt_192_done
+	clr_country_flag = IRE_nu_evt_193_done
+	clr_country_flag = IRE_nu_evt_194_done
+	clr_country_flag = IRE_nu_evt_195_done
+	clr_country_flag = IRE_nu_evt_196_done
+	clr_country_flag = IRE_nu_evt_197_done
+	clr_country_flag = IRE_nu_evt_198_done
+	clr_country_flag = IRE_nu_evt_199_done
+	clr_country_flag = IRE_nu_postwar_tone_reconciliation
+	clr_country_flag = IRE_nu_postwar_tone_greatpowers
+	clr_country_flag = IRE_nu_postwar_tone_ireland
+	clr_country_flag = IRE_nu_postwar_germany_west
+	clr_country_flag = IRE_nu_postwar_germany_east
+	clr_country_flag = IRE_nu_postwar_germany_neutral
+	clr_country_flag = IRE_nu_postwar_cold_west
+	clr_country_flag = IRE_nu_postwar_cold_east
+	clr_country_flag = IRE_nu_postwar_cold_neutral
 	clear_variable = IRE_nu_last_external
 	clear_variable = IRE_nu_last_initiative
 	if = { limit = { has_idea = IRE_nu_british_funding_spirit } remove_ideas = IRE_nu_british_funding_spirit }
@@ -1389,4 +1485,9 @@ IRE_nu_clear_dynamic_state = {
 	if = { limit = { has_idea = IRE_nu_army_spirit } remove_ideas = IRE_nu_army_spirit }
 	if = { limit = { has_idea = IRE_nu_volunteer_spirit } remove_ideas = IRE_nu_volunteer_spirit }
 	if = { limit = { has_idea = IRE_nu_cross_border_spirit } remove_ideas = IRE_nu_cross_border_spirit }
+	if = { limit = { has_idea = IRE_nu_postwar_reconstruction_spirit } remove_ideas = IRE_nu_postwar_reconstruction_spirit }
+	if = { limit = { has_idea = IRE_nu_postwar_veterans_spirit } remove_ideas = IRE_nu_postwar_veterans_spirit }
+	if = { limit = { has_idea = IRE_nu_postwar_industry_spirit } remove_ideas = IRE_nu_postwar_industry_spirit }
+	if = { limit = { has_idea = IRE_nu_postwar_trade_spirit } remove_ideas = IRE_nu_postwar_trade_spirit }
+	if = { limit = { has_idea = IRE_nu_postwar_neutrality_spirit } remove_ideas = IRE_nu_postwar_neutrality_spirit }
 }
