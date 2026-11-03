@@ -612,9 +612,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.05
-				political_power_gain = 0.05
-				war_support_factor = 0.05
+				stability_factor = 0.08
+				political_power_gain = 0.08
+				war_support_factor = 0.08
 			}
 			removal_cost = -1
 		}
@@ -624,9 +624,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.02
-				political_power_gain = 0.02
-				war_support_factor = 0.02
+				stability_factor = 0.03
+				political_power_gain = 0.03
+				war_support_factor = 0.03
 				consumer_goods_factor = 0.02
 			}
 			removal_cost = -1
@@ -638,9 +638,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.03
-				political_power_gain = 0.05
-				war_support_factor = 0.03
+				stability_factor = 0.05
+				political_power_gain = 0.08
+				war_support_factor = 0.05
 			}
 			removal_cost = -1
 		}
@@ -650,9 +650,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				consumer_goods_factor = -0.03
-				industrial_capacity_factory = 0.05
-				trade_opinion_factor = 0.10
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.08
+				trade_opinion_factor = 0.15
 			}
 			removal_cost = -1
 		}
@@ -662,9 +662,9 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.08
-				war_support_factor = 0.05
-				army_defence_factor = 0.05
+				stability_factor = 0.10
+				war_support_factor = 0.08
+				army_defence_factor = 0.08
 			}
 			removal_cost = -1
 		}
@@ -711,10 +711,10 @@ ideas = {
 			allowed = { always = yes }
 			visible = { always = yes }
 			modifier = {
-				stability_factor = 0.08
-				political_power_gain = 0.05
-				war_support_factor = 0.05
-				consumer_goods_factor = -0.03
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				war_support_factor = 0.08
+				consumer_goods_factor = -0.05
 			}
 			removal_cost = -1
 		}

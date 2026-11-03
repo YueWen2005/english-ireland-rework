@@ -747,9 +747,9 @@
  IRE_nu_internal_cooperation:0 "合作"
  IRE_nu_internal_tension:0 "摩擦"
  IRE_nu_internal_deadlock:0 "僵局"
- IRE_nu_status_tt:0 "议会 [?IRE.IRE_nu_parliament|0] / 工人 [?IRE.IRE_nu_labour|0] / 安全 [?IRE.IRE_nu_security|0] / 共和军 [?IRE.IRE_nu_ira|0]\n联合派信心 [?IRE.IRE_nu_unionist|0] / 教会信心 [?IRE.IRE_nu_church|0]\n外部压力：[GetIRENuLastExternal] / 派系动向：[GetIRENuLastInitiative]\n某派 >60 且与最低派差 >30 会触发联盟危机。"
- IRE_nu_status:0 "联盟态势"
- IRE_nu_status_desc:0 "查看四派影响力、联合派/教会信心，以及最近的外部干涉与派系擅自行动；某派 >60 且与最低派差 >30 会触发联盟危机。"
+ IRE_nu_status_tt:0 "议会 [?IRE.IRE_nu_parliament|0] / 工人 [?IRE.IRE_nu_labour|0] / 安全 [?IRE.IRE_nu_security|0] / 共和军 [?IRE.IRE_nu_ira|0]\n联合派信心 [?IRE.IRE_nu_unionist|0] / 教会信心 [?IRE.IRE_nu_church|0]\n外部压力：[GetIRENuLastExternal] / 派系动向：[GetIRENuLastInitiative]\n联盟修正（永久）：稳定 +[?IRE.IRE_nu_mod_stability|0]% / 政治点 +[?IRE.IRE_nu_mod_pp|0]% / 战争支持 +[?IRE.IRE_nu_mod_ws|0]% / 消费品 [?IRE.IRE_nu_mod_cg|0]%\n某派 >60 且与最低派差 >30 会触发联盟危机。"
+ IRE_nu_status:0 "联盟态势与修正"
+ IRE_nu_status_desc:0 "查看四派影响力、联合派/教会信心、外部压力/派系动向，以及当前永久联盟修正（不含临时精神）；某派 >60 且与最低派差 >30 会触发联盟危机。"
  # ===== 爱尔兰民族联盟：准备与成立事件 =====
  ire_nw.142.t:0 "民族团结纲领"
  ire_nw.142.d_civic:0 "北爱回归后，公民共和国的议会、工会与地方议会开始讨论一个更宽的联合。联合派要求保证，工人要求席位，老 IRA 要求名分。都柏林必须决定这场圆桌的调子。"

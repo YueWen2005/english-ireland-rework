@@ -708,6 +708,51 @@ IRE_nu_evaluate_balance = {
 	}
 }
 
+# 民族联盟：永久修正汇总（供仪表盘/状态决议悬浮提示显示）
+# 数值需与 IRE_new_world_ideas.txt 中对应精神保持一致
+IRE_nu_update_modifier_summary = {
+	set_variable = { IRE_nu_mod_stability = 0 }
+	set_variable = { IRE_nu_mod_pp = 0 }
+	set_variable = { IRE_nu_mod_ws = 0 }
+	set_variable = { IRE_nu_mod_cg = 0 }
+
+	if = {
+		limit = { has_idea = IRE_national_union_government }
+		add_to_variable = { IRE_nu_mod_stability = 10 }
+		add_to_variable = { IRE_nu_mod_pp = 10 }
+		add_to_variable = { IRE_nu_mod_ws = 8 }
+		add_to_variable = { IRE_nu_mod_cg = -5 }
+	}
+	if = {
+		limit = { has_idea = IRE_national_revival }
+		add_to_variable = { IRE_nu_mod_stability = 8 }
+		add_to_variable = { IRE_nu_mod_pp = 8 }
+		add_to_variable = { IRE_nu_mod_ws = 8 }
+	}
+	if = {
+		limit = { has_idea = IRE_national_revival_fragile }
+		add_to_variable = { IRE_nu_mod_stability = 3 }
+		add_to_variable = { IRE_nu_mod_pp = 3 }
+		add_to_variable = { IRE_nu_mod_ws = 3 }
+		add_to_variable = { IRE_nu_mod_cg = 2 }
+	}
+	if = {
+		limit = { has_idea = IRE_nu_red_partnership }
+		add_to_variable = { IRE_nu_mod_stability = 5 }
+		add_to_variable = { IRE_nu_mod_pp = 8 }
+		add_to_variable = { IRE_nu_mod_ws = 5 }
+	}
+	if = {
+		limit = { has_idea = IRE_nu_new_world_partnership }
+		add_to_variable = { IRE_nu_mod_cg = -5 }
+	}
+	if = {
+		limit = { has_idea = IRE_nu_third_force }
+		add_to_variable = { IRE_nu_mod_stability = 10 }
+		add_to_variable = { IRE_nu_mod_ws = 8 }
+	}
+}
+
 IRE_form_european_hope = {
 	set_rule = { can_create_factions = yes }
 	if = {
@@ -1468,6 +1513,10 @@ IRE_nu_clear_dynamic_state = {
 	clr_country_flag = IRE_nu_postwar_cold_neutral
 	clear_variable = IRE_nu_last_external
 	clear_variable = IRE_nu_last_initiative
+	clear_variable = IRE_nu_mod_stability
+	clear_variable = IRE_nu_mod_pp
+	clear_variable = IRE_nu_mod_ws
+	clear_variable = IRE_nu_mod_cg
 	if = { limit = { has_idea = IRE_nu_british_funding_spirit } remove_ideas = IRE_nu_british_funding_spirit }
 	if = { limit = { has_idea = IRE_nu_soviet_advisors_spirit } remove_ideas = IRE_nu_soviet_advisors_spirit }
 	if = { limit = { has_idea = IRE_nu_american_loan_spirit } remove_ideas = IRE_nu_american_loan_spirit }

@@ -765,6 +765,7 @@ focus_tree = {
 				add_ideas = IRE_national_union_government
 				set_country_flag = IRE_national_union_formed
 				add_political_power = 100
+				IRE_nu_update_modifier_summary = yes
 				country_event = { id = ire_nw.150 days = 1 }
 			}
 		}
@@ -1012,6 +1013,7 @@ focus_tree = {
 					set_country_flag = IRE_nu_revival_fragile
 					country_event = { id = ire_nw.168 days = 1 }
 				}
+				IRE_nu_update_modifier_summary = yes
 			}
 		}
 	}
@@ -1040,6 +1042,7 @@ focus_tree = {
 			hidden_effect = {
 				set_country_flag = IRE_nu_postwar_red
 				add_ideas = IRE_nu_red_partnership
+				IRE_nu_update_modifier_summary = yes
 				country_event = { id = ire_nw.154 days = 1 }
 			}
 		}
@@ -1069,6 +1072,7 @@ focus_tree = {
 			hidden_effect = {
 				set_country_flag = IRE_nu_postwar_new_world
 				add_ideas = IRE_nu_new_world_partnership
+				IRE_nu_update_modifier_summary = yes
 				country_event = { id = ire_nw.155 days = 1 }
 			}
 		}
@@ -1098,6 +1102,7 @@ focus_tree = {
 			hidden_effect = {
 				set_country_flag = IRE_nu_postwar_neutral
 				add_ideas = IRE_nu_third_force
+				IRE_nu_update_modifier_summary = yes
 				country_event = { id = ire_nw.156 days = 1 }
 			}
 		}

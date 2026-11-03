@@ -257,6 +257,7 @@ IRE_national_union_cat = {
 				set_country_flag = IRE_nu_revival_done
 				clr_country_flag = IRE_nu_revival_fragile
 				add_stability = 0.03
+				IRE_nu_update_modifier_summary = yes
 			}
 		}
 

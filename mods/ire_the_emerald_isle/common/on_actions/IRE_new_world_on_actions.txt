@@ -680,6 +680,7 @@ on_actions = {
 				}
 				IRE_national_union_init = yes
 				IRE_nu_evaluate_balance = yes
+				IRE_nu_update_modifier_summary = yes
 
 				if = {
 					limit = {

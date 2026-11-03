@@ -749,9 +749,9 @@
  IRE_nu_internal_cooperation:0 "Cooperation"
  IRE_nu_internal_tension:0 "Friction"
  IRE_nu_internal_deadlock:0 "Deadlock"
- IRE_nu_status_tt:0 "Parliament [?IRE.IRE_nu_parliament|0] / Labour [?IRE.IRE_nu_labour|0] / Security [?IRE.IRE_nu_security|0] / IRA [?IRE.IRE_nu_ira|0]\nUnionist confidence [?IRE.IRE_nu_unionist|0] / Church confidence [?IRE.IRE_nu_church|0]\nExternal pressure: [GetIRENuLastExternal] / Faction activity: [GetIRENuLastInitiative]\nA bloc above 60 with a 30-point gap to the lowest triggers a coalition crisis."
- IRE_nu_status:0 "Coalition Balance"
- IRE_nu_status_desc:0 "View the four blocs, unionist/Church confidence, and the latest external interference or unauthorised faction action. A bloc above 60 with a 30-point gap to the lowest triggers a coalition crisis."
+ IRE_nu_status_tt:0 "Parliament [?IRE.IRE_nu_parliament|0] / Labour [?IRE.IRE_nu_labour|0] / Security [?IRE.IRE_nu_security|0] / IRA [?IRE.IRE_nu_ira|0]\nUnionist confidence [?IRE.IRE_nu_unionist|0] / Church confidence [?IRE.IRE_nu_church|0]\nExternal pressure: [GetIRENuLastExternal] / Faction activity: [GetIRENuLastInitiative]\nPermanent union modifiers: stability +[?IRE.IRE_nu_mod_stability|0]% / political power +[?IRE.IRE_nu_mod_pp|0]% / war support +[?IRE.IRE_nu_mod_ws|0]% / consumer goods [?IRE.IRE_nu_mod_cg|0]%\nA bloc above 60 with a 30-point gap to the lowest triggers a coalition crisis."
+ IRE_nu_status:0 "Coalition Balance & Modifiers"
+ IRE_nu_status_desc:0 "View the four blocs, unionist/Church confidence, external pressure/faction activity, and the current permanent union modifiers (excluding timed spirits). A bloc above 60 with a 30-point gap to the lowest triggers a coalition crisis."
  # ===== Irish National Union: preparation and formation events =====
  ire_nw.142.t:0 "The National Accord"
  ire_nw.142.d_civic:0 "With Northern Ireland back in the Republic, the parliament, unions and local assemblies of the Civic Republic begin to discuss a wider union. Unionists demand guarantees, labour demands seats, and the old IRA demands recognition. Dublin must set the tone of the round table."
