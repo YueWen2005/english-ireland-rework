@@ -102,3 +102,273 @@ defined_text = {
 	}
 	text = { localization_key = IRE_nu_internal_cooperation }
 }
+
+defined_text = {
+	name = GetIREParliamentBar
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 89 } }
+		localization_key = IRE_nu_bar_parliament_10
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 79 } }
+		localization_key = IRE_nu_bar_parliament_9
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 69 } }
+		localization_key = IRE_nu_bar_parliament_8
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 59 } }
+		localization_key = IRE_nu_bar_parliament_7
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 49 } }
+		localization_key = IRE_nu_bar_parliament_6
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 39 } }
+		localization_key = IRE_nu_bar_parliament_5
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 29 } }
+		localization_key = IRE_nu_bar_parliament_4
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 19 } }
+		localization_key = IRE_nu_bar_parliament_3
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 9 } }
+		localization_key = IRE_nu_bar_parliament_2
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 0 } }
+		localization_key = IRE_nu_bar_parliament_1
+	}
+	text = { localization_key = IRE_nu_bar_parliament_0 }
+}
+
+defined_text = {
+	name = GetIRELabourBar
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 89 } }
+		localization_key = IRE_nu_bar_labour_10
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 79 } }
+		localization_key = IRE_nu_bar_labour_9
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 69 } }
+		localization_key = IRE_nu_bar_labour_8
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 59 } }
+		localization_key = IRE_nu_bar_labour_7
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 49 } }
+		localization_key = IRE_nu_bar_labour_6
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 39 } }
+		localization_key = IRE_nu_bar_labour_5
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 29 } }
+		localization_key = IRE_nu_bar_labour_4
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 19 } }
+		localization_key = IRE_nu_bar_labour_3
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 9 } }
+		localization_key = IRE_nu_bar_labour_2
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 0 } }
+		localization_key = IRE_nu_bar_labour_1
+	}
+	text = { localization_key = IRE_nu_bar_labour_0 }
+}
+
+defined_text = {
+	name = GetIRESecurityBar
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 89 } }
+		localization_key = IRE_nu_bar_security_10
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 79 } }
+		localization_key = IRE_nu_bar_security_9
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 69 } }
+		localization_key = IRE_nu_bar_security_8
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 59 } }
+		localization_key = IRE_nu_bar_security_7
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 49 } }
+		localization_key = IRE_nu_bar_security_6
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 39 } }
+		localization_key = IRE_nu_bar_security_5
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 29 } }
+		localization_key = IRE_nu_bar_security_4
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 19 } }
+		localization_key = IRE_nu_bar_security_3
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 9 } }
+		localization_key = IRE_nu_bar_security_2
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 0 } }
+		localization_key = IRE_nu_bar_security_1
+	}
+	text = { localization_key = IRE_nu_bar_security_0 }
+}
+
+defined_text = {
+	name = GetIREIraBar
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 89 } }
+		localization_key = IRE_nu_bar_ira_10
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 79 } }
+		localization_key = IRE_nu_bar_ira_9
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 69 } }
+		localization_key = IRE_nu_bar_ira_8
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 59 } }
+		localization_key = IRE_nu_bar_ira_7
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 49 } }
+		localization_key = IRE_nu_bar_ira_6
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 39 } }
+		localization_key = IRE_nu_bar_ira_5
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 29 } }
+		localization_key = IRE_nu_bar_ira_4
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 19 } }
+		localization_key = IRE_nu_bar_ira_3
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 9 } }
+		localization_key = IRE_nu_bar_ira_2
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 0 } }
+		localization_key = IRE_nu_bar_ira_1
+	}
+	text = { localization_key = IRE_nu_bar_ira_0 }
+}
+
+defined_text = {
+	name = GetIREUnionistBar
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 89 } }
+		localization_key = IRE_nu_bar_unionist_10
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 79 } }
+		localization_key = IRE_nu_bar_unionist_9
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 69 } }
+		localization_key = IRE_nu_bar_unionist_8
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 59 } }
+		localization_key = IRE_nu_bar_unionist_7
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 49 } }
+		localization_key = IRE_nu_bar_unionist_6
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 39 } }
+		localization_key = IRE_nu_bar_unionist_5
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 29 } }
+		localization_key = IRE_nu_bar_unionist_4
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 19 } }
+		localization_key = IRE_nu_bar_unionist_3
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 9 } }
+		localization_key = IRE_nu_bar_unionist_2
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 0 } }
+		localization_key = IRE_nu_bar_unionist_1
+	}
+	text = { localization_key = IRE_nu_bar_unionist_0 }
+}
+
+defined_text = {
+	name = GetIREChurchBar
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 89 } }
+		localization_key = IRE_nu_bar_church_10
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 79 } }
+		localization_key = IRE_nu_bar_church_9
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 69 } }
+		localization_key = IRE_nu_bar_church_8
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 59 } }
+		localization_key = IRE_nu_bar_church_7
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 49 } }
+		localization_key = IRE_nu_bar_church_6
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 39 } }
+		localization_key = IRE_nu_bar_church_5
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 29 } }
+		localization_key = IRE_nu_bar_church_4
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 19 } }
+		localization_key = IRE_nu_bar_church_3
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 9 } }
+		localization_key = IRE_nu_bar_church_2
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 0 } }
+		localization_key = IRE_nu_bar_church_1
+	}
+	text = { localization_key = IRE_nu_bar_church_0 }
+}

@@ -16,8 +16,8 @@ guiTypes = {
 
 		iconType = {
 			name = "nu_parliament_icon"
-			spriteType = "GFX_idea_generic_political_advisor_europe_1"
-			scale = 0.6
+			spriteType = "GFX_ideology_democratic_group"
+			scale = 0.7
 			position = { x = 10 y = 30 }
 		}
 		instantTextBoxType = {
@@ -26,21 +26,30 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_parliament"
 			format = left
-			maxWidth = 130
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_parliament_value"
-			position = { x = 190 y = 34 }
+			position = { x = 175 y = 34 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_parliament_value"
 			format = left
-			maxWidth = 50
+			maxWidth = 40
+			maxHeight = 20
+		}
+		instantTextBoxType = {
+			name = "nu_parliament_bar"
+			position = { x = 220 y = 34 }
+			font = "hoi_16mbs"
+			text = "IRE_nu_ui_parliament_bar"
+			format = left
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_parliament_status"
-			position = { x = 245 y = 34 }
+			position = { x = 350 y = 34 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_parliament_status"
 			format = left
@@ -50,8 +59,8 @@ guiTypes = {
 
 		iconType = {
 			name = "nu_labour_icon"
-			spriteType = "GFX_idea_generic_political_advisor_europe_3"
-			scale = 0.6
+			spriteType = "GFX_ideology_communism_group"
+			scale = 0.7
 			position = { x = 10 y = 68 }
 		}
 		instantTextBoxType = {
@@ -60,21 +69,30 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_labour"
 			format = left
-			maxWidth = 130
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_labour_value"
-			position = { x = 190 y = 72 }
+			position = { x = 175 y = 72 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_labour_value"
 			format = left
-			maxWidth = 50
+			maxWidth = 40
+			maxHeight = 20
+		}
+		instantTextBoxType = {
+			name = "nu_labour_bar"
+			position = { x = 220 y = 72 }
+			font = "hoi_16mbs"
+			text = "IRE_nu_ui_labour_bar"
+			format = left
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_labour_status"
-			position = { x = 245 y = 72 }
+			position = { x = 350 y = 72 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_labour_status"
 			format = left
@@ -84,8 +102,8 @@ guiTypes = {
 
 		iconType = {
 			name = "nu_security_icon"
-			spriteType = "GFX_idea_generic_army_europe_1"
-			scale = 0.6
+			spriteType = "GFX_ideology_fascism_group"
+			scale = 0.7
 			position = { x = 10 y = 106 }
 		}
 		instantTextBoxType = {
@@ -94,21 +112,30 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_security"
 			format = left
-			maxWidth = 130
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_security_value"
-			position = { x = 190 y = 110 }
+			position = { x = 175 y = 110 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_security_value"
 			format = left
-			maxWidth = 50
+			maxWidth = 40
+			maxHeight = 20
+		}
+		instantTextBoxType = {
+			name = "nu_security_bar"
+			position = { x = 220 y = 110 }
+			font = "hoi_16mbs"
+			text = "IRE_nu_ui_security_bar"
+			format = left
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_security_status"
-			position = { x = 245 y = 110 }
+			position = { x = 350 y = 110 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_security_status"
 			format = left
@@ -118,8 +145,8 @@ guiTypes = {
 
 		iconType = {
 			name = "nu_ira_icon"
-			spriteType = "GFX_idea_generic_army_europe_5"
-			scale = 0.6
+			spriteType = "GFX_ideology_neutrality_group"
+			scale = 0.7
 			position = { x = 10 y = 144 }
 		}
 		instantTextBoxType = {
@@ -128,21 +155,30 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_ira"
 			format = left
-			maxWidth = 130
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_ira_value"
-			position = { x = 190 y = 148 }
+			position = { x = 175 y = 148 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_ira_value"
 			format = left
-			maxWidth = 50
+			maxWidth = 40
+			maxHeight = 20
+		}
+		instantTextBoxType = {
+			name = "nu_ira_bar"
+			position = { x = 220 y = 148 }
+			font = "hoi_16mbs"
+			text = "IRE_nu_ui_ira_bar"
+			format = left
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_ira_status"
-			position = { x = 245 y = 148 }
+			position = { x = 350 y = 148 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_ira_status"
 			format = left
@@ -152,8 +188,8 @@ guiTypes = {
 
 		iconType = {
 			name = "nu_unionist_icon"
-			spriteType = "GFX_idea_generic_political_advisor_europe_4"
-			scale = 0.6
+			spriteType = "GFX_ideology_democratic_group"
+			scale = 0.7
 			position = { x = 10 y = 185 }
 		}
 		instantTextBoxType = {
@@ -162,21 +198,30 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_unionist"
 			format = left
-			maxWidth = 130
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_unionist_value"
-			position = { x = 190 y = 189 }
+			position = { x = 175 y = 189 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_unionist_value"
 			format = left
-			maxWidth = 50
+			maxWidth = 40
+			maxHeight = 20
+		}
+		instantTextBoxType = {
+			name = "nu_unionist_bar"
+			position = { x = 220 y = 189 }
+			font = "hoi_16mbs"
+			text = "IRE_nu_ui_unionist_bar"
+			format = left
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_unionist_status"
-			position = { x = 245 y = 189 }
+			position = { x = 350 y = 189 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_unionist_status"
 			format = left
@@ -186,8 +231,8 @@ guiTypes = {
 
 		iconType = {
 			name = "nu_church_icon"
-			spriteType = "GFX_idea_generic_political_advisor_europe_5"
-			scale = 0.6
+			spriteType = "GFX_ideology_neutrality_group"
+			scale = 0.7
 			position = { x = 10 y = 220 }
 		}
 		instantTextBoxType = {
@@ -196,21 +241,30 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_church"
 			format = left
-			maxWidth = 130
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_church_value"
-			position = { x = 190 y = 224 }
+			position = { x = 175 y = 224 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_church_value"
 			format = left
-			maxWidth = 50
+			maxWidth = 40
+			maxHeight = 20
+		}
+		instantTextBoxType = {
+			name = "nu_church_bar"
+			position = { x = 220 y = 224 }
+			font = "hoi_16mbs"
+			text = "IRE_nu_ui_church_bar"
+			format = left
+			maxWidth = 120
 			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "nu_church_status"
-			position = { x = 245 y = 224 }
+			position = { x = 350 y = 224 }
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_church_status"
 			format = left
@@ -224,7 +278,7 @@ guiTypes = {
 			font = "hoi_16mbs"
 			text = "IRE_nu_ui_footer"
 			format = left
-			maxWidth = 400
+			maxWidth = 450
 			maxHeight = 20
 		}
 	}
