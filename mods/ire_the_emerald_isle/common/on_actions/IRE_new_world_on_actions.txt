@@ -657,6 +657,19 @@ on_actions = {
 				clear_variable = IRE_nu_church_frame
 			}
 
+			# 北爱回归后自动完成民族团结纲领，直接解锁后续联盟国策
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_campaign_started
+					has_country_flag = IRE_border_done
+					119 = { is_owned_by = ROOT }
+					NOT = { has_completed_focus = IRE_A_national_accord }
+					NOT = { has_idea = IRE_national_union_government }
+				}
+				complete_national_focus = { focus = IRE_A_national_accord use_side_message = yes }
+			}
+
 			# ============================================================
 			# 民族联盟：仪表盘同步、月度平衡与政治危机
 			# ============================================================

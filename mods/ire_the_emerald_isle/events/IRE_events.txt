@@ -28,6 +28,14 @@ country_event = {
 			check_variable = { IRE_plebiscite_support > 69 }
 		}
 		IRE_core_northern_ireland = yes
+		if = {
+			limit = {
+				has_country_flag = IRE_campaign_started
+				NOT = { has_completed_focus = IRE_A_national_accord }
+				NOT = { has_idea = IRE_national_union_government }
+			}
+			complete_national_focus = { focus = IRE_A_national_accord use_side_message = yes }
+		}
 		# 伦敦震怒：经济制裁（支持度不足 90 时）
 		if = {
 			limit = { check_variable = { IRE_plebiscite_support < 90 } }
