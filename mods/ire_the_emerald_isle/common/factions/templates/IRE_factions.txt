@@ -11,10 +11,6 @@ faction_template_ire_european_hope = {
 		faction_goal_a_military_base
 	}
 
-	# 不设置任何 joining_rule：欧洲希望是跨海、跨洲的开放联盟，
-	# 不能被 faction_template_generic 的 neighbors-only 规则卡住。
-	default_rules = {
-		change_leader_rule_manpower
-		dismissal_rule_offensive_war
-	}
+	# 不设置 joining_rule / default_rules：欧洲希望是跨海、跨洲的开放联盟，
+	# 不能被 neighbors-only 卡住；也不让成员因进攻战被开除或按人力换领袖。
 }

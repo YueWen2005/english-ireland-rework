@@ -1,0 +1,20 @@
+# ============================================================
+# 德国在“四处宣战”后的隐藏补强
+# 只在 A 线欧洲希望扩员机制启动时添加，不显示在界面上
+# ============================================================
+ideas = {
+	country = {
+		IRE_german_last_stand = {
+			picture = generic_war_preparation
+			allowed = { tag = GER }
+			visible = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.06
+				conscription_factor = 0.08
+				war_support_factor = 0.05
+				stability_factor = 0.05
+			}
+			removal_cost = -1
+		}
+	}
+}

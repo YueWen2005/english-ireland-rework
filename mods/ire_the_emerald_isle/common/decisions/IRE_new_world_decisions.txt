@@ -749,13 +749,14 @@ IRE_congress_cat = {
 IRE_interference_cat = {
 
 	IRE_liverpool_strike = {
-		icon = generic_guerilla_base
+		icon = generic_political_actions
 		cost = 75
 		days_remove = 90
 
 		available = {
 			has_completed_focus = IRE_A_irish_question
 			country_exists = ENG
+			ENG = { has_government = democratic has_civil_war = no }
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_repeat_cap_2
 							OR = {
@@ -765,7 +766,10 @@ IRE_interference_cat = {
 			}
 		}
 
-		visible = { has_completed_focus = IRE_A_irish_question }
+		visible = {
+			has_completed_focus = IRE_A_irish_question
+			ENG = { exists = yes has_government = democratic has_civil_war = no }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -801,9 +805,13 @@ IRE_interference_cat = {
 		available = {
 			has_completed_focus = IRE_A_irish_question
 			country_exists = ENG
+			ENG = { has_government = democratic has_civil_war = no }
 		}
 
-		visible = { has_completed_focus = IRE_A_irish_question }
+		visible = {
+			has_completed_focus = IRE_A_irish_question
+			ENG = { exists = yes has_government = democratic has_civil_war = no }
+		}
 		fire_only_once = yes
 
 		complete_effect = {
@@ -811,8 +819,8 @@ IRE_interference_cat = {
 				65 = {
 					ENG = {
 						add_timed_idea = { idea = IRE_eng_ira_campaign days = 365 }
-						add_stability = -0.05
-						add_war_support = -0.05
+						add_stability = -0.03
+						add_war_support = -0.03
 					}
 					add_war_support = 0.03
 				}

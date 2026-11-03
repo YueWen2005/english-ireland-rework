@@ -1,5 +1,51 @@
 IRE_european_hope_cat = {
 
+	IRE_invite_red_france = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 1
+
+		available = {
+			has_country_flag = IRE_france_red_started
+			NOT = { has_country_flag = IRE_red_france_joined }
+			has_idea = IRE_european_hope
+			is_faction_leader = yes
+			any_country = { original_tag = FRA has_government = communism }
+		}
+
+		visible = {
+			has_country_flag = IRE_france_red_started
+			NOT = { has_country_flag = IRE_red_france_joined }
+			any_country = { original_tag = FRA has_government = communism }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			hidden_effect = {
+				every_country = {
+					limit = { original_tag = FRA has_government = communism }
+					IRE_force_join_faction = yes
+				}
+				if = {
+					limit = {
+						any_country = {
+							original_tag = FRA
+							has_government = communism
+							is_in_faction_with = ROOT
+						}
+					}
+					add_ideas = IRE_european_hope_france
+					set_country_flag = IRE_red_france_joined
+					country_event = { id = ire_nw.97 days = 0 }
+				}
+			}
+			custom_effect_tooltip = IRE_tt_invite_red_france
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
 	IRE_invite_usa = {
 		icon = generic_political_actions
 		cost = 100
@@ -22,14 +68,16 @@ IRE_european_hope_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			if = {
-				limit = { country_exists = USA NOT = { USA = { is_in_faction = yes } } }
-				USA = { IRE_force_join_faction = yes }
-				add_ideas = IRE_european_hope_us
-				add_ideas = IRE_us_lend_lease
-				set_country_flag = IRE_usa_joined
+			hidden_effect = {
+				if = {
+					limit = { country_exists = USA NOT = { USA = { is_in_faction = yes } } }
+					USA = { IRE_force_join_faction = yes }
+					add_ideas = IRE_european_hope_us
+					add_ideas = IRE_us_lend_lease
+					set_country_flag = IRE_usa_joined
+				}
+				country_event = { id = ire_nw.92 days = 0 }
 			}
-			country_event = { id = ire_nw.92 days = 0 }
 			custom_effect_tooltip = IRE_tt_usa_joined
 		}
 
@@ -61,18 +109,20 @@ IRE_european_hope_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			every_country = {
-				limit = {
-					OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
-					exists = yes
-					is_subject = no
-					NOT = { is_in_faction = yes }
-					has_opinion = { target = ROOT value > 39 }
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = { tag = CAN tag = AST tag = NZL tag = SAF tag = RAJ }
+						exists = yes
+						is_subject = no
+						NOT = { is_in_faction = yes }
+						has_opinion = { target = ROOT value > 39 }
+					}
+					IRE_force_join_faction = yes
 				}
-				IRE_force_join_faction = yes
+				add_ideas = IRE_european_hope_dominions
+				set_country_flag = IRE_dominions_joined
 			}
-			add_ideas = IRE_european_hope_dominions
-			set_country_flag = IRE_dominions_joined
 			custom_effect_tooltip = IRE_tt_dominions_joined
 		}
 
@@ -104,18 +154,20 @@ IRE_european_hope_cat = {
 		fire_only_once = yes
 
 		complete_effect = {
-			every_country = {
-				limit = {
-					OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
-					exists = yes
-					is_subject = no
-					NOT = { is_in_faction = yes }
-					has_opinion = { target = ROOT value > 39 }
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = { tag = SWE tag = NOR tag = DEN tag = FIN }
+						exists = yes
+						is_subject = no
+						NOT = { is_in_faction = yes }
+						has_opinion = { target = ROOT value > 39 }
+					}
+					IRE_force_join_faction = yes
 				}
-				IRE_force_join_faction = yes
+				add_ideas = IRE_european_hope_nordics
+				set_country_flag = IRE_nordics_joined
 			}
-			add_ideas = IRE_european_hope_nordics
-			set_country_flag = IRE_nordics_joined
 			custom_effect_tooltip = IRE_tt_nordics_joined
 		}
 
@@ -218,6 +270,17 @@ IRE_european_hope_cat = {
 					has_civil_war = no
 					is_in_faction_with = ROOT
 				}
+				OR = {
+					any_country = {
+						original_tag = ENG
+						has_government = fascism
+						has_war_with = ROOT
+					}
+					any_owned_state = {
+						is_core_of = ROOT
+						controller = { has_war_with = ROOT }
+					}
+				}
 			}
 			any_country = { original_tag = ENG has_government = fascism has_civil_war = no }
 		}
@@ -227,6 +290,17 @@ IRE_european_hope_cat = {
 			has_idea = IRE_british_spy_network_idea
 			has_country_flag = IRE_black_britain_formed
 			NOT = { has_country_flag = IRE_red_uprising_done }
+			OR = {
+				any_country = {
+					original_tag = ENG
+					has_government = fascism
+					has_war_with = ROOT
+				}
+				any_owned_state = {
+					is_core_of = ROOT
+					controller = { has_war_with = ROOT }
+				}
+			}
 		}
 
 		fire_only_once = yes

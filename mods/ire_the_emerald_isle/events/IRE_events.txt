@@ -216,7 +216,11 @@ country_event = {
 			119 = { add_core_of = ROOT }
 		}
 		if = {
-			limit = { country_exists = ENG }
+			limit = {
+				country_exists = ENG
+				NOT = { has_war_with = ENG }
+				ENG = { is_in_faction = yes NOT = { has_government = fascism } }
+			}
 			add_to_faction = ENG
 		}
 		add_ideas = IRE_unity_for_ports

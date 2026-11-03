@@ -1,0 +1,61 @@
+# ============================================================
+# Abwehr 秘密行动（A 线事件链）
+# 只在 IRE_abwher_network 存在、玩家选择合作时可见
+# ============================================================
+IRE_covert_cat = {
+
+	IRE_abwher_arms_run = {
+		icon = generic_intelligence_operation
+		cost = 50
+		days_remove = 30
+
+		available = {
+			has_country_flag = IRE_abwher_plot_started
+			NOT = { has_country_flag = IRE_abwher_resolved }
+			has_idea = IRE_abwher_network
+			check_variable = { IRE_abwher_choice = 4 }
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_repeat_cap_3
+				OR = {
+					NOT = { has_variable = IRE_abwher_arms_count }
+					check_variable = { IRE_abwher_arms_count < 3 }
+				}
+			}
+		}
+
+		visible = {
+			has_country_flag = IRE_abwher_plot_started
+			NOT = { has_country_flag = IRE_abwher_resolved }
+			has_idea = IRE_abwher_network
+			check_variable = { IRE_abwher_choice = 4 }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_variable = IRE_abwher_arms_count } }
+				set_variable = { IRE_abwher_arms_count = 0 }
+			}
+			add_to_variable = { IRE_abwher_arms_count = 1 }
+			if = {
+				limit = { NOT = { has_variable = IRE_abwher_exposure } }
+				set_variable = { IRE_abwher_exposure = 0 }
+			}
+			add_to_variable = { IRE_abwher_exposure = 10 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 600 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 24 }
+			army_experience = 25
+			if = {
+				limit = { check_variable = { IRE_abwher_exposure > 39 } }
+				country_event = { id = ire_nw.132 days = 1 }
+			}
+			else_if = {
+				limit = { check_variable = { IRE_abwher_arms_count > 2 } }
+				set_country_flag = IRE_abwher_resolved
+			}
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}

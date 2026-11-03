@@ -675,7 +675,7 @@ focus_tree = {
 		}
 	}
 
-	# ---- 北爱政治路线：和解后的公民共和国 / 强硬整合后的中央集权共和国 ----
+	# ---- 北爱政治路线：温和治理后的公民共和国 / 强硬统治后的中央集权共和国 ----
 	focus = {
 		id = IRE_A_civic_republic
 		icon = GFX_focus_generic_election
@@ -683,8 +683,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = IRE_A_reconciliation }
-		prerequisite = { focus = IRE_A_spanish_volunteers }
-		x = 50
+		x = 52
 		y = 6
 		ai_will_do = { base = 55 }
 
@@ -703,9 +702,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_firm_integration }
-		x = 53
+		x = 56
 		y = 6
-		available = { has_completed_focus = IRE_A_spanish_volunteers }
 		ai_will_do = { base = 55 }
 
 		completion_reward = {
@@ -724,8 +722,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 59
-		y = 4
+		x = 58
+		y = 8
 		mutually_exclusive = { focus = IRE_A_newfoundland }
 		ai_will_do = { base = 30 }
 
@@ -744,7 +742,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
 		prerequisite = { focus = IRE_A_belfast }
-		x = 62
+		x = 68
 		y = 4
 		available = {
 			OR = {
@@ -772,13 +770,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 59
-		y = 5
+		x = 56
+		y = 9
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_european_major_war
 				IRE_european_major_war = yes
 			}
+			NOT = { has_war_with = ENG }
+			ENG = { NOT = { has_government = fascism } }
 		}
 		ai_will_do = { base = 40 }
 
@@ -795,14 +795,16 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_london_note }
-		x = 56
-		y = 5
+		x = 53
+		y = 9
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
 			remove_ideas = IRE_treatys_scar
 			remove_ideas = IRE_british_sanctions
 			add_ideas = IRE_settled_treaty
+			# 条约伤痕本身带建阵营规则，移除时补回，避免锁死建阵营
+			set_rule = { can_create_factions = yes }
 			add_stability = 0.12
 		}
 	}
@@ -814,8 +816,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_settle_treaty }
-		x = 56
-		y = 6
+		x = 53
+		y = 10
 		ai_will_do = { base = 40 }
 
 		completion_reward = {
@@ -1214,6 +1216,10 @@ focus_tree = {
 					}
 					ROOT = { transfer_state = 332 }
 				}
+				if = {
+					limit = { 332 = { is_owned_by = ROOT } }
+					332 = { add_core_of = ROOT }
+				}
 			}
 			if = {
 				limit = { country_exists = ENG }
@@ -1316,6 +1322,9 @@ focus_tree = {
 			865 = { add_core_of = ROOT }
 			866 = { add_core_of = ROOT }
 			867 = { add_core_of = ROOT }
+			# 纽芬兰与拉布拉多原版是加拿大的核心；若已在本国手中，一并核心化
+			if = { limit = { 331 = { is_owned_by = ROOT } } 331 = { add_core_of = ROOT } }
+			if = { limit = { 332 = { is_owned_by = ROOT } } 332 = { add_core_of = ROOT } }
 			set_cosmetic_tag = IRE_new_world
 			add_manpower = 45000
 			add_political_power = 125
@@ -1418,7 +1427,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_world_congress }
-		x = 71
+		x = 69
 		y = 14
 		available = {
 			custom_trigger_tooltip = {
@@ -1708,7 +1717,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_masters_new_world }
 		prerequisite = { focus = IRE_A_new_world_ireland }
 		mutually_exclusive = { focus = IRE_A_atlantic_charter }
-		x = 60
+		x = 62
 		y = 15
 		ai_will_do = { base = 60 }
 
@@ -2166,8 +2175,8 @@ focus_tree = {
 		prerequisite = { focus = IRE_B_emergency }
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL }
 
-		x = 134
-		y = 14
+		x = 136
+		y = 16
 		available = {
 			OR = {
 				has_opinion = { target = ENG value > 24 }
@@ -2343,7 +2352,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 
-		x = 136
+		x = 134
 		y = 23
 		ai_will_do = { base = 120 }
 
@@ -3767,6 +3776,9 @@ focus_tree = {
 				tooltip = IRE_tt_dark_surrender_free
 				NOT = { has_country_flag = IRE_dark_surrender }
 			}
+			country_exists = GER
+			NOT = { has_war_with = GER }
+			GER = { is_faction_leader = yes }
 		}
 		x = 108
 		y = 8
@@ -3776,7 +3788,24 @@ focus_tree = {
 			army_experience = 50
 			add_war_support = 0.10
 			give_military_access = GER
-			GER = { add_to_faction = IRE }
+			if = {
+				limit = { NOT = { is_in_faction_with = GER } }
+				if = {
+					limit = { is_faction_leader = yes }
+					dismantle_faction = yes
+				}
+				else_if = {
+					limit = { is_in_faction = yes }
+					leave_faction = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = GER }
+					GER = { is_faction_leader = yes }
+				}
+				add_to_faction = GER
+			}
 			GER = { add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 } }
 			create_wargoal = { type = annex_everything target = ENG expire = 0 }
 			set_country_flag = IRE_green_action
@@ -4878,7 +4907,7 @@ OR = {
 			if = {
 				limit = { RAJ = { is_subject_of = IRE } }
 				set_autonomy = { target = RAJ autonomy_state = autonomy_free }
-				add_to_faction = RAJ
+				RAJ = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
@@ -5038,7 +5067,7 @@ OR = {
 			if = {
 				limit = { CAN = { is_subject_of = IRE } }
 				set_autonomy = { target = CAN autonomy_state = autonomy_free }
-				add_to_faction = CAN
+				CAN = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
@@ -5543,7 +5572,7 @@ OR = {
 			if = {
 				limit = { RAJ = { is_subject_of = IRE } }
 				set_autonomy = { target = RAJ autonomy_state = autonomy_free }
-				add_to_faction = RAJ
+				RAJ = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
@@ -5676,7 +5705,7 @@ OR = {
 			if = {
 				limit = { CAN = { is_subject_of = IRE } }
 				set_autonomy = { target = CAN autonomy_state = autonomy_free }
-				add_to_faction = CAN
+				CAN = { add_to_faction = ROOT }
 			}
 			else = {
 				if = {
