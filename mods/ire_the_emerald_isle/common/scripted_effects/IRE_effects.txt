@@ -541,6 +541,7 @@ IRE_black_britain_takeover = {
 	set_country_flag = IRE_black_britain_formed
 	clr_country_flag = IRE_black_britain_started
 	clr_country_flag = IRE_black_britain_failed
+	clr_country_flag = IRE_black_britain_axis_joined
 }
 
 # 黑英失败后的英国清理：恢复稳定与阵营，并移除危机/干涉精神。

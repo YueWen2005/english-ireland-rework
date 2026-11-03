@@ -4818,3 +4818,87 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = ire_nw.200
+	title = ire_nw.200.t
+	desc = ire_nw.200.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.200.a
+		custom_effect_tooltip = ire_nw.200.a_tt
+		ai_chance = { base = 70 }
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = SOV }
+					exists = yes
+					NOT = { has_capitulated = yes }
+					OR = {
+						is_subject_of = SOV
+						is_in_faction_with = SOV
+					}
+				}
+				set_country_flag = IRE_soviet_hope_minion
+			}
+			if = {
+				limit = { NOT = { is_in_faction_with = IRE } }
+				if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
+				else_if = { limit = { is_in_faction = yes } leave_faction = yes }
+				IRE = { add_to_faction = PREV }
+			}
+			if = { limit = { is_in_faction_with = IRE } set_country_flag = IRE_european_hope_member }
+			every_country = {
+				limit = { has_country_flag = IRE_soviet_hope_minion }
+				if = {
+					limit = { NOT = { is_in_faction_with = IRE } }
+					if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
+					else_if = { limit = { is_in_faction = yes } leave_faction = yes }
+					if = { limit = { has_war_with = IRE } IRE = { white_peace = PREV } }
+					IRE = { add_to_faction = PREV }
+				}
+				if = {
+					limit = { NOT = { is_in_faction_with = IRE } is_subject = yes }
+					overlord = { set_autonomy = { target = PREV autonomy_state = autonomy_free } }
+					IRE = { add_to_faction = PREV }
+				}
+				if = { limit = { is_in_faction_with = IRE } set_country_flag = IRE_european_hope_member }
+				clr_country_flag = IRE_soviet_hope_minion
+			}
+			add_stability = 0.05
+			add_war_support = 0.10
+			add_political_power = -25
+			add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos40 }
+		}
+	}
+	option = {
+		name = ire_nw.200.b
+		custom_effect_tooltip = ire_nw.200.b_tt
+		ai_chance = { base = 20 }
+		hidden_effect = {
+			if = {
+				limit = { NOT = { is_in_faction_with = IRE } }
+				if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
+				else_if = { limit = { is_in_faction = yes } leave_faction = yes }
+				IRE = { add_to_faction = PREV }
+			}
+			if = { limit = { is_in_faction_with = IRE } set_country_flag = IRE_european_hope_member }
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_opinion_modifier = { target = IRE modifier = IRE_opinion_pos25 }
+		}
+	}
+	option = {
+		name = ire_nw.200.c
+		custom_effect_tooltip = ire_nw.200.c_tt
+		ai_chance = { base = 10 }
+		hidden_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_opinion_modifier = { target = IRE modifier = IRE_opinion_neg20 }
+		}
+	}
+}

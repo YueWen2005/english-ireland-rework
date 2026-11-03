@@ -893,6 +893,27 @@ on_actions = {
 					FRA = { IRE_force_join_faction = yes }
 				}
 			}
+
+			# 莫斯科陷落：向苏联提供带着卫星国加入欧洲希望的选择
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_european_hope
+					is_faction_leader = yes
+					country_exists = SOV
+					NOT = { has_country_flag = IRE_soviet_hope_offered }
+					SOV = {
+						has_war = yes
+						NOT = { has_capitulated = yes }
+						NOT = { is_subject = yes }
+						NOT = { is_in_faction_with = ROOT }
+						NOT = { has_war_with = ROOT }
+					}
+					219 = { NOT = { controller = SOV } }
+				}
+				set_country_flag = IRE_soviet_hope_offered
+				SOV = { country_event = { id = ire_nw.200 days = 1 } }
+			}
 		}
 	}
 }

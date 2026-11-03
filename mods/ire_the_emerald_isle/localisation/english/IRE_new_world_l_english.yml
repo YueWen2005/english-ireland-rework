@@ -1388,3 +1388,12 @@
  ire_nw.199.b_tt:0 "Stability +5%, war support +5%; US/Soviet opinion -10."
  ire_nw.199.c:0 "Promote a European neutral zone."
  ire_nw.199.c_tt:0 "Political power -50, stability +5%; US/Soviet opinion -5, Nordic and Low Countries opinion +15."
+
+ ire_nw.200.t:0 "The Fall of Moscow"
+ ire_nw.200.d:0 "Moscow has fallen, and the Soviet line in Europe is collapsing. Dublin extends an offer: the European Hope will take in the Soviet Union and its satellites."
+ ire_nw.200.a:0 "Join the European Hope with all our satellites."
+ ire_nw.200.a_tt:0 "The Soviet Union, its satellites and allies join the European Hope; political power -25, stability +5%, war support +10%; Irish opinion +40."
+ ire_nw.200.b:0 "Only the Soviet Union joins."
+ ire_nw.200.b_tt:0 "Only the Soviet Union joins the European Hope; stability +5%, war support +5%; Irish opinion +25."
+ ire_nw.200.c:0 "Refuse and fight on alone."
+ ire_nw.200.c_tt:0 "Stability +5%, war support +5%; Irish opinion -20."
