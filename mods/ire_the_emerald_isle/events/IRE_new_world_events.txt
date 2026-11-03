@@ -2813,3 +2813,178 @@ country_event = {
 		set_country_flag = IRE_nu_pure_union
 	}
 }
+
+# ============================================================
+# 爱尔兰民族联盟：四派宪章与环境回响
+# ============================================================
+country_event = {
+	id = ire_nw.160
+	title = ire_nw.160.t
+	desc = ire_nw.160.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.160.a
+		add_to_variable = { IRE_nu_unionist = 5 }
+		add_stability = 0.03
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.160.b
+		add_to_variable = { IRE_nu_parliament = 5 }
+		add_to_variable = { IRE_nu_unionist = -3 }
+		add_political_power = 25
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.160.c
+		trigger = {
+			OR = {
+				has_country_flag = IRE_red_france_joined
+				has_country_flag = IRE_red_britain_joined
+			}
+		}
+		add_political_power = 20
+		add_to_variable = { IRE_nu_church = -3 }
+		every_country = {
+			limit = {
+				OR = {
+					AND = { original_tag = FRA has_government = communism }
+					AND = { original_tag = ENG has_government = communism }
+				}
+			}
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 }
+		}
+		IRE_national_union_init = yes
+	}
+}
+
+country_event = {
+	id = ire_nw.161
+	title = ire_nw.161.t
+	desc = ire_nw.161.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.161.a
+		add_to_variable = { IRE_nu_labour = 5 }
+		add_manpower = 5000
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.161.b
+		add_to_variable = { IRE_nu_church = 5 }
+		add_stability = 0.03
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.161.c
+		trigger = {
+			OR = {
+				has_war = yes
+				has_country_flag = IRE_black_britain_formed
+			}
+		}
+		add_to_variable = { IRE_nu_labour = 5 }
+		add_war_support = 0.03
+		IRE_national_union_init = yes
+	}
+}
+
+country_event = {
+	id = ire_nw.162
+	title = ire_nw.162.t
+	desc = ire_nw.162.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.162.a
+		add_to_variable = { IRE_nu_security = 5 }
+		add_stability = 0.03
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.162.b
+		add_to_variable = { IRE_nu_parliament = 5 }
+		add_to_variable = { IRE_nu_unionist = 3 }
+		add_to_variable = { IRE_nu_security = -2 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.162.c
+		trigger = { has_country_flag = IRE_black_britain_formed }
+		add_to_variable = { IRE_nu_security = 5 }
+		add_to_variable = { IRE_nu_ira = -2 }
+		add_war_support = 0.03
+		IRE_national_union_init = yes
+	}
+}
+
+country_event = {
+	id = ire_nw.163
+	title = ire_nw.163.t
+	desc = ire_nw.163.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.163.a
+		add_to_variable = { IRE_nu_ira = 5 }
+		add_manpower = 5000
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.163.b
+		add_to_variable = { IRE_nu_unionist = 5 }
+		add_to_variable = { IRE_nu_ira = -3 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.163.c
+		trigger = {
+			OR = {
+				has_country_flag = IRE_black_britain_formed
+				any_owned_state = {
+					is_core_of = ROOT
+					controller = { has_war_with = ROOT }
+				}
+			}
+		}
+		add_to_variable = { IRE_nu_ira = 5 }
+		army_experience = 25
+		IRE_national_union_init = yes
+	}
+}
+
+country_event = {
+	id = ire_nw.164
+	title = ire_nw.164.t
+	desc = ire_nw.164.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.164.a
+		add_stability = 0.03
+		if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+	}
+	option = {
+		name = ire_nw.164.b
+		add_political_power = 25
+		if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+		if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg10 } } }
+	}
+	option = {
+		name = ire_nw.164.c
+		add_stability = 0.05
+		add_war_support = 0.03
+	}
+}

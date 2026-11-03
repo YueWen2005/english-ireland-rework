@@ -604,6 +604,18 @@ on_actions = {
 				}
 			}
 
+			# 民族联盟：成立后的世界回响（一次）
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_national_union_formed
+					NOT = { has_country_flag = IRE_nu_world_reaction_done }
+					date > 1936.6.1
+				}
+				set_country_flag = IRE_nu_world_reaction_done
+				country_event = { id = ire_nw.164 days = 7 }
+			}
+
 			# ============================================================
 			# A线：世界反应事件（黑英/红法/红英）
 			# ============================================================
