@@ -7,6 +7,7 @@
 # ============================================================
 
 ideas = {
+	country = {
 IRE_G_dark_hand = {
 	picture = generic_intel_bonus
 	allowed = { always = yes }
@@ -216,3 +217,4 @@ IRE_G_dublin_link_pact = {
 	}
 }
 }
+	}
