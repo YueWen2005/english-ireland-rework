@@ -725,6 +725,7 @@ focus_tree = {
 			has_country_flag = IRE_campaign_started
 			has_country_flag = IRE_border_done
 			has_government = democratic
+			NOT = { has_idea = IRE_national_union_government }
 			OR = {
 				has_completed_focus = IRE_A_civic_republic
 				has_completed_focus = IRE_A_centralised_republic
@@ -732,6 +733,15 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_national_union_north
 				119 = { is_owned_by = ROOT }
+			}
+		}
+		cancel = {
+			OR = {
+				NOT = { has_country_flag = IRE_campaign_started }
+				NOT = { has_country_flag = IRE_border_done }
+				NOT = { has_government = democratic }
+				NOT = { 119 = { is_owned_by = ROOT } }
+				has_idea = IRE_national_union_government
 			}
 		}
 		x = 60
@@ -754,6 +764,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_national_accord }
 		available = { NOT = { has_idea = IRE_national_union_government } }
+		cancel = {
+			OR = {
+				NOT = { has_country_flag = IRE_nu_prep_done }
+				NOT = { has_government = democratic }
+				NOT = { 119 = { is_owned_by = ROOT } }
+				has_idea = IRE_national_union_government
+			}
+		}
 		x = 60
 		y = 18
 		ai_will_do = { base = 0 }
@@ -775,6 +793,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 54
 		y = 19
 		ai_will_do = { base = 0 }
@@ -797,6 +817,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 58
 		y = 19
 		ai_will_do = { base = 0 }
@@ -819,6 +841,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 62
 		y = 19
 		ai_will_do = { base = 0 }
@@ -841,6 +865,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_national_union_convene }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 66
 		y = 19
 		ai_will_do = { base = 0 }
@@ -863,6 +889,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = IRE_A_national_union_parliament }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 54
 		y = 20
 		ai_will_do = { base = 0 }
@@ -883,6 +911,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = IRE_A_national_union_labour }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 58
 		y = 20
 		ai_will_do = { base = 0 }
@@ -903,6 +933,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = IRE_A_national_union_security }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 62
 		y = 20
 		ai_will_do = { base = 0 }
@@ -923,6 +955,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_A_national_union_ira }
+		available = { has_idea = IRE_national_union_government }
+		cancel = { NOT = { has_idea = IRE_national_union_government } }
 		x = 66
 		y = 20
 		ai_will_do = { base = 0 }
@@ -947,6 +981,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_A_nu_charter_security }
 		prerequisite = { focus = IRE_A_nu_charter_ira }
 		available = {
+			has_idea = IRE_national_union_government
 			custom_trigger_tooltip = {
 				tooltip = IRE_tt_nu_revival_conditions
 				check_variable = { IRE_nu_parliament > 19 }
@@ -961,6 +996,22 @@ focus_tree = {
 				check_variable = { IRE_nu_church > 59 }
 			}
 		}
+		cancel = {
+			OR = {
+				NOT = { has_idea = IRE_national_union_government }
+				check_variable = { IRE_nu_parliament < 20 }
+				check_variable = { IRE_nu_parliament > 60 }
+				check_variable = { IRE_nu_labour < 20 }
+				check_variable = { IRE_nu_labour > 60 }
+				check_variable = { IRE_nu_security < 20 }
+				check_variable = { IRE_nu_security > 60 }
+				check_variable = { IRE_nu_ira < 20 }
+				check_variable = { IRE_nu_ira > 60 }
+				check_variable = { IRE_nu_unionist < 60 }
+				check_variable = { IRE_nu_church < 60 }
+			}
+		}
+		bypass = { has_country_flag = IRE_nu_revival_done }
 		x = 60
 		y = 21
 		ai_will_do = { base = 0 }
@@ -982,7 +1033,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_national_union_revival }
 		mutually_exclusive = { focus = IRE_A_postwar_new_world focus = IRE_A_postwar_neutral }
-		available = { IRE_germany_defeated = yes }
+		available = {
+			IRE_germany_defeated = yes
+			has_idea = IRE_national_union_government
+			has_country_flag = IRE_nu_revival_done
+		}
+		cancel = {
+			OR = {
+				NOT = { has_idea = IRE_national_union_government }
+				NOT = { has_country_flag = IRE_nu_revival_done }
+			}
+		}
 		x = 56
 		y = 22
 		ai_will_do = { base = 0 }
@@ -1002,7 +1063,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_national_union_revival }
 		mutually_exclusive = { focus = IRE_A_postwar_red focus = IRE_A_postwar_neutral }
-		available = { IRE_germany_defeated = yes }
+		available = {
+			IRE_germany_defeated = yes
+			has_idea = IRE_national_union_government
+			has_country_flag = IRE_nu_revival_done
+		}
+		cancel = {
+			OR = {
+				NOT = { has_idea = IRE_national_union_government }
+				NOT = { has_country_flag = IRE_nu_revival_done }
+			}
+		}
 		x = 60
 		y = 22
 		ai_will_do = { base = 0 }
@@ -1022,7 +1093,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = IRE_A_national_union_revival }
 		mutually_exclusive = { focus = IRE_A_postwar_red focus = IRE_A_postwar_new_world }
-		available = { IRE_germany_defeated = yes }
+		available = {
+			IRE_germany_defeated = yes
+			has_idea = IRE_national_union_government
+			has_country_flag = IRE_nu_revival_done
+		}
+		cancel = {
+			OR = {
+				NOT = { has_idea = IRE_national_union_government }
+				NOT = { has_country_flag = IRE_nu_revival_done }
+			}
+		}
 		x = 64
 		y = 22
 		ai_will_do = { base = 0 }

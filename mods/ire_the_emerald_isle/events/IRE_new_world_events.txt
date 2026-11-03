@@ -2571,6 +2571,7 @@ country_event = {
 	}
 	picture = GFX_report_event_generic_conference
 	is_triggered_only = yes
+	trigger = { has_country_flag = IRE_campaign_started }
 	fire_only_once = yes
 
 	option = {
@@ -2618,7 +2619,9 @@ country_event = {
 	}
 	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
+	trigger = { has_country_flag = IRE_national_union_formed }
 	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.150.a
@@ -2656,7 +2659,9 @@ country_event = {
 	desc = ire_nw.151.d
 	picture = GFX_report_event_generic_riot
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = no
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.151.a
@@ -2701,7 +2706,9 @@ country_event = {
 	desc = ire_nw.153.d
 	picture = GFX_report_event_generic_riot
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = no
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.153.a
@@ -2732,6 +2739,7 @@ country_event = {
 	desc = ire_nw.154.d
 	picture = GFX_report_event_generic_conference
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
 
 	option = {
@@ -2762,6 +2770,7 @@ country_event = {
 	desc = ire_nw.155.d
 	picture = GFX_report_event_generic_conference
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
 
 	option = {
@@ -2785,7 +2794,9 @@ country_event = {
 	desc = ire_nw.156.d
 	picture = GFX_report_event_generic_conference
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.156.a
@@ -2823,7 +2834,9 @@ country_event = {
 	desc = ire_nw.160.d
 	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.160.a
@@ -2867,7 +2880,9 @@ country_event = {
 	desc = ire_nw.161.d
 	picture = GFX_report_event_generic_rally
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.161.a
@@ -2901,7 +2916,9 @@ country_event = {
 	desc = ire_nw.162.d
 	picture = GFX_report_event_generic_military_parade
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.162.a
@@ -2932,7 +2949,9 @@ country_event = {
 	desc = ire_nw.163.d
 	picture = GFX_report_event_generic_military_parade
 	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
 	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
 
 	option = {
 		name = ire_nw.163.a
@@ -2969,6 +2988,7 @@ country_event = {
 	desc = ire_nw.164.d
 	picture = GFX_report_event_generic_conference
 	is_triggered_only = yes
+	trigger = { has_country_flag = IRE_national_union_formed }
 	fire_only_once = yes
 
 	option = {

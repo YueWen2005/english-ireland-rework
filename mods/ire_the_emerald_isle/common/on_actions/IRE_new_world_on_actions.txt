@@ -576,6 +576,83 @@ on_actions = {
 			}
 
 			# ============================================================
+			# 民族联盟：状态修复与异常线路清理
+			# ============================================================
+			if = {
+				limit = {
+					tag = IRE
+					has_idea = IRE_national_union_government
+				}
+				if = {
+					limit = { NOT = { has_country_flag = IRE_national_union_formed } }
+					set_country_flag = IRE_national_union_formed
+				}
+				if = {
+					limit = {
+						has_idea = IRE_national_revival
+						NOT = { has_country_flag = IRE_nu_revival_done }
+					}
+					set_country_flag = IRE_nu_revival_done
+				}
+			}
+			if = {
+				limit = {
+					tag = IRE
+					NOT = { has_idea = IRE_national_union_government }
+					has_country_flag = IRE_national_union_formed
+				}
+				if = {
+					limit = { has_cosmetic_tag = IRE_national_union }
+					set_cosmetic_tag = IRE
+				}
+				clr_country_flag = IRE_national_union_formed
+				clr_country_flag = IRE_national_union_initialized
+				clr_country_flag = IRE_nu_prep_done
+				clr_country_flag = IRE_nu_revival_done
+				clr_country_flag = IRE_nu_postwar_red
+				clr_country_flag = IRE_nu_postwar_new_world
+				clr_country_flag = IRE_nu_postwar_neutral
+				clr_country_flag = IRE_nu_crisis_now
+				clr_country_flag = IRE_nu_confidence_low
+				clr_country_flag = IRE_nu_crisis_cd
+				clr_country_flag = IRE_nu_confidence_cd
+				clr_country_flag = IRE_nu_world_reaction_done
+				clr_country_flag = IRE_nu_charter_parliament
+				clr_country_flag = IRE_nu_charter_labour
+				clr_country_flag = IRE_nu_charter_security
+				clr_country_flag = IRE_nu_charter_ira
+				clr_country_flag = IRE_nu_pillar_parliament
+				clr_country_flag = IRE_nu_pillar_labour
+				clr_country_flag = IRE_nu_pillar_security
+				clr_country_flag = IRE_nu_pillar_ira
+				clr_country_flag = IRE_nu_prep_roundtable
+				clr_country_flag = IRE_nu_prep_firm
+				clr_country_flag = IRE_nu_prep_republican
+				clr_country_flag = IRE_nu_red_deep
+				clr_country_flag = IRE_nu_red_limited
+				clr_country_flag = IRE_nu_new_world_deep
+				clr_country_flag = IRE_nu_new_world_limited
+				clr_country_flag = IRE_nu_third_force_armed
+				clr_country_flag = IRE_nu_pure_union
+				if = { limit = { has_idea = IRE_national_revival } remove_ideas = IRE_national_revival }
+				if = { limit = { has_idea = IRE_nu_red_partnership } remove_ideas = IRE_nu_red_partnership }
+				if = { limit = { has_idea = IRE_nu_new_world_partnership } remove_ideas = IRE_nu_new_world_partnership }
+				if = { limit = { has_idea = IRE_nu_third_force } remove_ideas = IRE_nu_third_force }
+				clear_variable = IRE_nu_parliament
+				clear_variable = IRE_nu_labour
+				clear_variable = IRE_nu_security
+				clear_variable = IRE_nu_ira
+				clear_variable = IRE_nu_unionist
+				clear_variable = IRE_nu_church
+				clear_variable = IRE_nu_parliament_frame
+				clear_variable = IRE_nu_labour_frame
+				clear_variable = IRE_nu_security_frame
+				clear_variable = IRE_nu_ira_frame
+				clear_variable = IRE_nu_unionist_frame
+				clear_variable = IRE_nu_church_frame
+			}
+
+			# ============================================================
 			# 民族联盟：仪表盘同步、月度平衡与政治危机
 			# ============================================================
 			if = {

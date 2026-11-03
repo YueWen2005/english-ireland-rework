@@ -243,8 +243,8 @@ IRE_nu_postwar_cat = {
 		cost = 50
 		days_remove = 45
 
-		available = { has_country_flag = IRE_nu_postwar_red }
-		visible = { has_country_flag = IRE_nu_postwar_red }
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
 
 		fire_only_once = no
 
@@ -270,8 +270,8 @@ IRE_nu_postwar_cat = {
 		cost = 75
 		days_remove = 60
 
-		available = { has_country_flag = IRE_nu_postwar_red }
-		visible = { has_country_flag = IRE_nu_postwar_red }
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_red }
 
 		fire_only_once = no
 
@@ -291,8 +291,8 @@ IRE_nu_postwar_cat = {
 		cost = 50
 		days_remove = 45
 
-		available = { has_country_flag = IRE_nu_postwar_new_world }
-		visible = { has_country_flag = IRE_nu_postwar_new_world }
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
 
 		fire_only_once = no
 
@@ -311,8 +311,8 @@ IRE_nu_postwar_cat = {
 		cost = 75
 		days_remove = 60
 
-		available = { has_country_flag = IRE_nu_postwar_new_world }
-		visible = { has_country_flag = IRE_nu_postwar_new_world }
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_new_world }
 
 		fire_only_once = no
 
@@ -332,8 +332,8 @@ IRE_nu_postwar_cat = {
 		cost = 50
 		days_remove = 45
 
-		available = { has_country_flag = IRE_nu_postwar_neutral }
-		visible = { has_country_flag = IRE_nu_postwar_neutral }
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
 
 		fire_only_once = no
 
@@ -351,8 +351,8 @@ IRE_nu_postwar_cat = {
 		cost = 75
 		days_remove = 60
 
-		available = { has_country_flag = IRE_nu_postwar_neutral }
-		visible = { has_country_flag = IRE_nu_postwar_neutral }
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_postwar_neutral }
 
 		fire_only_once = no
 
