@@ -622,6 +622,51 @@ IRE_nu_refresh_gauges = {
 	set_variable = { IRE_nu_church_frame = nu_frame_temp }
 }
 
+# 民族联盟：按 A 线既有选择初始化四派与两信心
+IRE_national_union_init = {
+	if = {
+		limit = { NOT = { has_country_flag = IRE_national_union_initialized } }
+
+		if = { limit = { NOT = { has_variable = IRE_nu_parliament } } set_variable = { IRE_nu_parliament = 20 } }
+		if = { limit = { NOT = { has_variable = IRE_nu_labour } } set_variable = { IRE_nu_labour = 20 } }
+		if = { limit = { NOT = { has_variable = IRE_nu_security } } set_variable = { IRE_nu_security = 20 } }
+		if = { limit = { NOT = { has_variable = IRE_nu_ira } } set_variable = { IRE_nu_ira = 20 } }
+		if = { limit = { NOT = { has_variable = IRE_nu_unionist } } set_variable = { IRE_nu_unionist = 50 } }
+		if = { limit = { NOT = { has_variable = IRE_nu_church } } set_variable = { IRE_nu_church = 50 } }
+
+		if = { limit = { has_completed_focus = IRE_A_civic_republic } add_to_variable = { IRE_nu_parliament = 15 } }
+		if = { limit = { has_completed_focus = IRE_A_centralised_republic } add_to_variable = { IRE_nu_security = 15 } }
+		if = { limit = { has_completed_focus = IRE_A_london_note } add_to_variable = { IRE_nu_parliament = 8 } }
+		if = { limit = { has_completed_focus = IRE_A_newfoundland } add_to_variable = { IRE_nu_parliament = 10 } }
+
+		if = { limit = { has_country_flag = IRE_home_unionist_compromise } add_to_variable = { IRE_nu_unionist = 15 } add_to_variable = { IRE_nu_parliament = 5 } }
+		if = { limit = { has_country_flag = IRE_home_unionist_coerced } add_to_variable = { IRE_nu_unionist = -15 } add_to_variable = { IRE_nu_security = 5 } }
+		if = { limit = { has_country_flag = IRE_home_unionist_ira } add_to_variable = { IRE_nu_unionist = -20 } add_to_variable = { IRE_nu_ira = 5 } }
+		if = { limit = { has_country_flag = IRE_home_ira_integrated } add_to_variable = { IRE_nu_ira = 15 } add_to_variable = { IRE_nu_security = -3 } }
+		if = { limit = { has_country_flag = IRE_home_ira_suppressed } add_to_variable = { IRE_nu_security = 10 } add_to_variable = { IRE_nu_ira = -10 } }
+		if = { limit = { has_country_flag = IRE_home_ira_black_britain } add_to_variable = { IRE_nu_ira = 10 } add_to_variable = { IRE_nu_security = 3 } }
+		if = { limit = { has_country_flag = IRE_home_ira_ignored } add_to_variable = { IRE_nu_ira = 5 } add_to_variable = { IRE_nu_security = -3 } }
+		if = { limit = { has_country_flag = IRE_home_church_reassured } add_to_variable = { IRE_nu_church = 15 } add_to_variable = { IRE_nu_parliament = 3 } }
+		if = { limit = { has_country_flag = IRE_home_church_secular } add_to_variable = { IRE_nu_church = -15 } add_to_variable = { IRE_nu_labour = 5 } }
+		if = { limit = { has_country_flag = IRE_home_church_balanced } add_to_variable = { IRE_nu_church = 5 } }
+
+		if = { limit = { has_country_flag = IRE_nu_prep_roundtable } add_to_variable = { IRE_nu_unionist = 5 } add_to_variable = { IRE_nu_parliament = 3 } }
+		if = { limit = { has_country_flag = IRE_nu_prep_firm } add_to_variable = { IRE_nu_security = 5 } add_to_variable = { IRE_nu_unionist = -3 } }
+		if = { limit = { has_country_flag = IRE_nu_prep_republican } add_to_variable = { IRE_nu_ira = 5 } add_to_variable = { IRE_nu_unionist = -5 } }
+
+		set_country_flag = IRE_national_union_initialized
+	}
+
+	clamp_variable = { var = IRE_nu_parliament min = 0 max = 100 }
+	clamp_variable = { var = IRE_nu_labour min = 0 max = 100 }
+	clamp_variable = { var = IRE_nu_security min = 0 max = 100 }
+	clamp_variable = { var = IRE_nu_ira min = 0 max = 100 }
+	clamp_variable = { var = IRE_nu_unionist min = 0 max = 100 }
+	clamp_variable = { var = IRE_nu_church min = 0 max = 100 }
+
+	IRE_nu_refresh_gauges = yes
+}
+
 IRE_form_european_hope = {
 	set_rule = { can_create_factions = yes }
 	if = {

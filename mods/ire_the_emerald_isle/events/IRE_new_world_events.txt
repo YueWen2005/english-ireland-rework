@@ -2547,3 +2547,105 @@ country_event = {
 		set_country_flag = IRE_home_church_balanced
 	}
 }
+
+# ============================================================
+# 爱尔兰民族联盟：准备与成立
+# ============================================================
+country_event = {
+	id = ire_nw.142
+	title = ire_nw.142.t
+	desc = {
+		text = ire_nw.142.d_civic
+		trigger = { has_completed_focus = IRE_A_civic_republic }
+	}
+	desc = {
+		text = ire_nw.142.d_firm
+		trigger = { has_completed_focus = IRE_A_centralised_republic }
+	}
+	desc = {
+		text = ire_nw.142.d
+		trigger = {
+			NOT = { has_completed_focus = IRE_A_civic_republic }
+			NOT = { has_completed_focus = IRE_A_centralised_republic }
+		}
+	}
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.142.a
+		add_stability = 0.03
+		add_political_power = 25
+		set_country_flag = IRE_nu_prep_roundtable
+	}
+	option = {
+		name = ire_nw.142.b
+		add_war_support = 0.03
+		add_stability = -0.02
+		set_country_flag = IRE_nu_prep_firm
+	}
+	option = {
+		name = ire_nw.142.c
+		add_manpower = 5000
+		add_stability = -0.02
+		set_country_flag = IRE_nu_prep_republican
+	}
+}
+
+country_event = {
+	id = ire_nw.150
+	title = ire_nw.150.t
+	desc = {
+		text = ire_nw.150.d_roundtable
+		trigger = { has_country_flag = IRE_nu_prep_roundtable }
+	}
+	desc = {
+		text = ire_nw.150.d_firm
+		trigger = { has_country_flag = IRE_nu_prep_firm }
+	}
+	desc = {
+		text = ire_nw.150.d_republican
+		trigger = { has_country_flag = IRE_nu_prep_republican }
+	}
+	desc = {
+		text = ire_nw.150.d
+		trigger = {
+			NOT = { has_country_flag = IRE_nu_prep_roundtable }
+			NOT = { has_country_flag = IRE_nu_prep_firm }
+			NOT = { has_country_flag = IRE_nu_prep_republican }
+		}
+	}
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.150.a
+		add_to_variable = { IRE_nu_parliament = 5 }
+		add_to_variable = { IRE_nu_unionist = 3 }
+		add_to_variable = { IRE_nu_labour = -3 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.150.b
+		add_to_variable = { IRE_nu_labour = 5 }
+		add_to_variable = { IRE_nu_church = -3 }
+		add_to_variable = { IRE_nu_security = -3 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.150.c
+		add_to_variable = { IRE_nu_security = 5 }
+		add_to_variable = { IRE_nu_ira = -3 }
+		add_to_variable = { IRE_nu_parliament = -3 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.150.e
+		add_to_variable = { IRE_nu_ira = 5 }
+		add_to_variable = { IRE_nu_unionist = -5 }
+		add_to_variable = { IRE_nu_church = -3 }
+		IRE_national_union_init = yes
+	}
+}

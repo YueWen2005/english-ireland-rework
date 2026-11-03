@@ -46,6 +46,7 @@ IRE_nu_test_cat = {
 			set_variable = { IRE_nu_ira = 15 }
 			set_variable = { IRE_nu_unionist = 72 }
 			set_variable = { IRE_nu_church = 45 }
+			set_country_flag = IRE_national_union_initialized
 			IRE_nu_refresh_gauges = yes
 		}
 

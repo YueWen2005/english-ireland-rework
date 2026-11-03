@@ -714,6 +714,54 @@ focus_tree = {
 		}
 	}
 
+	# ---- 爱尔兰民族联盟：准备 → 成立 ----
+	focus = {
+		id = IRE_A_national_accord
+		icon = GFX_focus_generic_public_meetings
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_civic_republic focus = IRE_A_centralised_republic }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_national_union_north
+				119 = { is_owned_by = ROOT }
+			}
+		}
+		x = 50
+		y = 9
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.03
+			set_country_flag = IRE_nu_prep_done
+			country_event = { id = ire_nw.142 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_convene
+		icon = GFX_focus_generic_conference
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_national_accord }
+		available = { NOT = { has_idea = IRE_national_union_government } }
+		x = 50
+		y = 10
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			IRE_national_union_init = yes
+			set_cosmetic_tag = IRE_national_union
+			add_ideas = IRE_national_union_government
+			set_country_flag = IRE_national_union_formed
+			add_political_power = 100
+			country_event = { id = ire_nw.150 days = 1 }
+		}
+	}
+
 	# ---- 对英线（与纽芬兰互斥） ----
 	focus = {
 		id = IRE_A_london_note
