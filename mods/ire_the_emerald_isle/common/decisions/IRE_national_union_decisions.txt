@@ -194,6 +194,45 @@ IRE_national_union_cat = {
 
 		ai_will_do = { base = 0 }
 	}
+
+	# 脆弱复兴 → 完整复兴（玩家后来把四派拉回平衡时使用）
+	IRE_nu_repair_revival = {
+		icon = generic_political_actions
+		cost = 100
+		days_remove = 90
+
+		available = {
+			has_idea = IRE_national_union_government
+			has_idea = IRE_national_revival_fragile
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_nu_revival_conditions
+				check_variable = { IRE_nu_parliament > 19 }
+				check_variable = { IRE_nu_parliament < 61 }
+				check_variable = { IRE_nu_labour > 19 }
+				check_variable = { IRE_nu_labour < 61 }
+				check_variable = { IRE_nu_security > 19 }
+				check_variable = { IRE_nu_security < 61 }
+				check_variable = { IRE_nu_ira > 19 }
+				check_variable = { IRE_nu_ira < 61 }
+				check_variable = { IRE_nu_unionist > 59 }
+				check_variable = { IRE_nu_church > 59 }
+			}
+		}
+		visible = { has_idea = IRE_national_revival_fragile }
+
+		fire_only_once = yes
+
+		complete_effect = {
+			remove_ideas = IRE_national_revival_fragile
+			add_ideas = IRE_national_revival
+			set_country_flag = IRE_nu_revival_done
+			clr_country_flag = IRE_nu_revival_fragile
+			add_stability = 0.03
+			custom_effect_tooltip = IRE_effect_nu_repair_revival
+		}
+
+		ai_will_do = { base = 0 }
+	}
 }
 
 # 临时测试：正式版由 A 线准备国策 + 成立枢纽替代

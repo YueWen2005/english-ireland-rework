@@ -634,7 +634,11 @@ on_actions = {
 				clr_country_flag = IRE_nu_new_world_limited
 				clr_country_flag = IRE_nu_third_force_armed
 				clr_country_flag = IRE_nu_pure_union
+				clr_country_flag = IRE_nu_revival_fragile
+				clr_country_flag = IRE_nu_north_lost_done
+				clr_country_flag = IRE_nu_government_changed_done
 				if = { limit = { has_idea = IRE_national_revival } remove_ideas = IRE_national_revival }
+				if = { limit = { has_idea = IRE_national_revival_fragile } remove_ideas = IRE_national_revival_fragile }
 				if = { limit = { has_idea = IRE_nu_red_partnership } remove_ideas = IRE_nu_red_partnership }
 				if = { limit = { has_idea = IRE_nu_new_world_partnership } remove_ideas = IRE_nu_new_world_partnership }
 				if = { limit = { has_idea = IRE_nu_third_force } remove_ideas = IRE_nu_third_force }
@@ -662,6 +666,23 @@ on_actions = {
 				}
 				IRE_national_union_init = yes
 				IRE_nu_evaluate_balance = yes
+
+				if = {
+					limit = {
+						NOT = { has_country_flag = IRE_nu_north_lost_done }
+						NOT = { 119 = { is_owned_by = ROOT } }
+					}
+					set_country_flag = IRE_nu_north_lost_done
+					country_event = { id = ire_nw.165 days = 0 }
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = IRE_nu_government_changed_done }
+						NOT = { has_government = democratic }
+					}
+					set_country_flag = IRE_nu_government_changed_done
+					country_event = { id = ire_nw.166 days = 0 }
+				}
 
 				if = {
 					limit = {

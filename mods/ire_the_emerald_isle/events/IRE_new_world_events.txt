@@ -3008,3 +3008,93 @@ country_event = {
 		add_war_support = 0.03
 	}
 }
+
+country_event = {
+	id = ire_nw.165
+	title = ire_nw.165.t
+	desc = ire_nw.165.d
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.165.a
+		add_political_power = -50
+		add_stability = 0.03
+	}
+	option = {
+		name = ire_nw.165.b
+		if = {
+			limit = { has_cosmetic_tag = IRE_national_union }
+			set_cosmetic_tag = IRE
+		}
+		remove_ideas = IRE_national_union_government
+	}
+	option = {
+		name = ire_nw.165.c
+		add_war_support = 0.05
+		army_experience = 25
+	}
+}
+
+country_event = {
+	id = ire_nw.166
+	title = ire_nw.166.t
+	desc = ire_nw.166.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	trigger = { has_idea = IRE_national_union_government }
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.166.a
+		add_stability = 0.03
+		add_political_power = 25
+	}
+	option = {
+		name = ire_nw.166.b
+		if = {
+			limit = { has_cosmetic_tag = IRE_national_union }
+			set_cosmetic_tag = IRE
+		}
+		remove_ideas = IRE_national_union_government
+	}
+	option = {
+		name = ire_nw.166.c
+		add_stability = -0.03
+		add_war_support = 0.03
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = ire_nw.168
+	title = ire_nw.168.t
+	desc = ire_nw.168.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	trigger = { has_country_flag = IRE_nu_revival_fragile }
+	fire_only_once = yes
+	immediate = { IRE_national_union_init = yes }
+
+	option = {
+		name = ire_nw.168.a
+		add_stability = 0.02
+		add_war_support = 0.03
+	}
+	option = {
+		name = ire_nw.168.b
+		trigger = { has_political_power > 74 }
+		add_political_power = -75
+		remove_ideas = IRE_national_revival_fragile
+		add_ideas = IRE_national_revival
+		set_country_flag = IRE_nu_revival_done
+		clr_country_flag = IRE_nu_revival_fragile
+	}
+	option = {
+		name = ire_nw.168.c
+		add_political_power = 25
+		add_stability = -0.03
+	}
+}
