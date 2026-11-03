@@ -656,6 +656,42 @@ ideas = {
 			removal_cost = -1
 		}
 
+		IRE_nu_red_cooperation = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				political_power_gain = 0.05
+				trade_opinion_factor = 0.10
+				industrial_capacity_factory = 0.03
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_atlantic_cooperation = {
+			picture = generic_economic_increase
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				consumer_goods_factor = -0.03
+				industrial_capacity_factory = 0.05
+				trade_opinion_factor = 0.10
+			}
+			removal_cost = -1
+		}
+
+		IRE_nu_third_force_cooperation = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.03
+				army_defence_factor = 0.03
+			}
+			removal_cost = -1
+		}
+
 		# ---- 爱尔兰民族联盟：联合政府 ----
 		IRE_national_union_government = {
 			picture = generic_political_support

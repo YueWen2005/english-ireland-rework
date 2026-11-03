@@ -93,3 +93,17 @@ IRE_nu_test_cat = {
 	allowed = { original_tag = IRE }
 	visible = { NOT = { has_idea = IRE_national_union_government } }
 }
+
+### 民族联盟：战后对外路线
+IRE_nu_postwar_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 77
+	allowed = { original_tag = IRE }
+	visible = {
+		OR = {
+			has_country_flag = IRE_nu_postwar_red
+			has_country_flag = IRE_nu_postwar_new_world
+			has_country_flag = IRE_nu_postwar_neutral
+		}
+	}
+}
