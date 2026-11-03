@@ -9,8 +9,8 @@ ideas = {
 			allowed = { tag = GER }
 			visible = { always = no }
 			modifier = {
-				industrial_capacity_factory = 0.06
-				conscription_factor = 0.08
+				industrial_capacity_factory = 0.10
+				conscription_factor = 0.10
 				war_support_factor = 0.05
 				stability_factor = 0.05
 			}

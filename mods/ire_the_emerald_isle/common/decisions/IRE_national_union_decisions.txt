@@ -256,7 +256,7 @@ IRE_national_union_cat = {
 				add_ideas = IRE_national_revival
 				set_country_flag = IRE_nu_revival_done
 				clr_country_flag = IRE_nu_revival_fragile
-				add_stability = 0.03
+				add_stability = 0.05
 				IRE_nu_update_modifier_summary = yes
 			}
 		}
@@ -383,7 +383,7 @@ IRE_nu_postwar_cat = {
 			custom_effect_tooltip = IRE_nu_third_force_summit_tt
 			hidden_effect = {
 				add_political_power = 25
-				add_stability = 0.03
+				add_stability = 0.05
 				add_timed_idea = { idea = IRE_nu_third_force_cooperation days = 240 }
 			}
 		}
@@ -404,7 +404,7 @@ IRE_nu_postwar_cat = {
 		complete_effect = {
 			custom_effect_tooltip = IRE_nu_third_force_armed_tt
 			hidden_effect = {
-				add_war_support = 0.03
+				add_war_support = 0.05
 				army_experience = 50
 				add_manpower = 5000
 				add_timed_idea = { idea = IRE_nu_third_force_cooperation days = 240 }
@@ -431,7 +431,7 @@ IRE_nu_postwar_env_cat = {
 		complete_effect = {
 			custom_effect_tooltip = IRE_nu_postwar_housing_tt
 			hidden_effect = {
-				add_stability = 0.02
+				add_stability = 0.05
 				add_timed_idea = { idea = IRE_nu_postwar_reconstruction_spirit days = 365 }
 			}
 		}
@@ -453,7 +453,7 @@ IRE_nu_postwar_env_cat = {
 			custom_effect_tooltip = IRE_nu_postwar_veterans_tt
 			hidden_effect = {
 				add_manpower = 5000
-				add_war_support = 0.02
+				add_war_support = 0.05
 				add_timed_idea = { idea = IRE_nu_postwar_veterans_spirit days = 365 }
 			}
 		}

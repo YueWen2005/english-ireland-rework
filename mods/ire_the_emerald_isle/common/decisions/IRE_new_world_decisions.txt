@@ -51,7 +51,7 @@ IRE_home_cat = {
 					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
 				}
 			}
-			add_stability = 0.02
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 45 }
@@ -100,7 +100,7 @@ IRE_home_cat = {
 					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
 				}
 			}
-			add_stability = 0.02
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 45 }
@@ -150,7 +150,7 @@ IRE_home_cat = {
 					add_building_construction = { type = air_base level = 1 instant_build = yes }
 				}
 			}
-			add_stability = 0.02
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 45 }
@@ -201,7 +201,7 @@ IRE_home_cat = {
 					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
 				}
 			}
-			add_stability = 0.02
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 50 }
@@ -285,7 +285,7 @@ IRE_home_cat = {
 				add_resource = { type = aluminium amount = 2 }
 				add_resource = { type = chromium amount = 2 }
 			}
-			add_stability = 0.01
+			add_stability = 0.05
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
 		}
 
@@ -314,7 +314,7 @@ IRE_home_cat = {
 				add_resource = { type = aluminium amount = 3 }
 				add_resource = { type = chromium amount = 2 }
 			}
-			add_stability = 0.01
+			add_stability = 0.05
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
 		}
 
@@ -344,7 +344,7 @@ IRE_home_cat = {
 				add_resource = { type = tungsten amount = 2 }
 				add_resource = { type = chromium amount = 2 }
 			}
-			add_stability = 0.01
+			add_stability = 0.05
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
 		}
 
@@ -374,7 +374,7 @@ IRE_home_cat = {
 				add_resource = { type = coal amount = 2 }
 				add_resource = { type = chromium amount = 2 }
 			}
-			add_stability = 0.01
+			add_stability = 0.05
 			custom_effect_tooltip = IRE_tt_state_mining_repeat
 		}
 
@@ -456,7 +456,7 @@ IRE_home_cat = {
 			set_country_flag = IRE_national_research_done
 			add_research_slot = 2
 			add_tech_bonus = { name = IRE_home_research_bonus bonus = 0.3 uses = 2 category = industry }
-			add_stability = 0.02
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 40 }
@@ -486,7 +486,7 @@ IRE_eff_cat = {
 
 		complete_effect = {
 			add_ideas = IRE_industrial_standardisation
-			add_stability = 0.01
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 45 }
@@ -510,7 +510,7 @@ IRE_eff_cat = {
 
 		complete_effect = {
 			add_ideas = IRE_assembly_line
-			add_stability = 0.01
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 50 }
@@ -534,7 +534,7 @@ IRE_eff_cat = {
 
 		complete_effect = {
 			add_ideas = IRE_total_industrial_mobilisation
-			add_stability = 0.01
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 55 }
@@ -576,7 +576,7 @@ IRE_congress_cat = {
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 			add_timed_idea = { idea = IRE_diaspora_bond_drive days = 180 }
-			add_stability = 0.01
+			add_stability = 0.05
 		}
 
 		ai_will_do = { base = 45 }
@@ -782,15 +782,15 @@ IRE_interference_cat = {
 				75 = {
 					ENG = {
 						add_timed_idea = { idea = IRE_eng_dock_strike days = 180 }
-						add_stability = -0.03
-						add_war_support = -0.03
+						add_stability = -0.05
+						add_war_support = -0.05
 					}
 					add_political_power = 25
 				}
 				25 = {
 					ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
 					add_political_power = -25
-					add_stability = -0.02
+					add_stability = -0.05
 				}
 			}
 		}
@@ -819,10 +819,10 @@ IRE_interference_cat = {
 				65 = {
 					ENG = {
 						add_timed_idea = { idea = IRE_eng_ira_campaign days = 365 }
-						add_stability = -0.03
-						add_war_support = -0.03
+						add_stability = -0.05
+						add_war_support = -0.05
 					}
-					add_war_support = 0.03
+					add_war_support = 0.05
 				}
 				35 = {
 					ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg50 } }
@@ -830,7 +830,7 @@ IRE_interference_cat = {
 						limit = { NOT = { has_idea = IRE_british_sanctions } }
 						add_ideas = IRE_british_sanctions
 					}
-					add_stability = -0.03
+					add_stability = -0.05
 				}
 			}
 		}
@@ -890,7 +890,7 @@ IRE_interference_cat = {
 			USA = {
 				add_war_support = 0.05
 				add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
-				add_stability = -0.02
+				add_stability = -0.05
 			}
 			add_political_power = 50
 		}

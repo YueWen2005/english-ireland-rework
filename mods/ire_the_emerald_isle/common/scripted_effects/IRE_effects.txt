@@ -720,26 +720,26 @@ IRE_nu_update_modifier_summary = {
 		limit = { has_idea = IRE_national_union_government }
 		add_to_variable = { IRE_nu_mod_stability = 10 }
 		add_to_variable = { IRE_nu_mod_pp = 10 }
-		add_to_variable = { IRE_nu_mod_ws = 8 }
+		add_to_variable = { IRE_nu_mod_ws = 10 }
 		add_to_variable = { IRE_nu_mod_cg = -5 }
 	}
 	if = {
 		limit = { has_idea = IRE_national_revival }
-		add_to_variable = { IRE_nu_mod_stability = 8 }
-		add_to_variable = { IRE_nu_mod_pp = 8 }
-		add_to_variable = { IRE_nu_mod_ws = 8 }
+		add_to_variable = { IRE_nu_mod_stability = 10 }
+		add_to_variable = { IRE_nu_mod_pp = 10 }
+		add_to_variable = { IRE_nu_mod_ws = 10 }
 	}
 	if = {
 		limit = { has_idea = IRE_national_revival_fragile }
-		add_to_variable = { IRE_nu_mod_stability = 3 }
-		add_to_variable = { IRE_nu_mod_pp = 3 }
-		add_to_variable = { IRE_nu_mod_ws = 3 }
-		add_to_variable = { IRE_nu_mod_cg = 2 }
+		add_to_variable = { IRE_nu_mod_stability = 5 }
+		add_to_variable = { IRE_nu_mod_pp = 5 }
+		add_to_variable = { IRE_nu_mod_ws = 5 }
+		add_to_variable = { IRE_nu_mod_cg = 5 }
 	}
 	if = {
 		limit = { has_idea = IRE_nu_red_partnership }
 		add_to_variable = { IRE_nu_mod_stability = 5 }
-		add_to_variable = { IRE_nu_mod_pp = 8 }
+		add_to_variable = { IRE_nu_mod_pp = 10 }
 		add_to_variable = { IRE_nu_mod_ws = 5 }
 	}
 	if = {
@@ -749,7 +749,7 @@ IRE_nu_update_modifier_summary = {
 	if = {
 		limit = { has_idea = IRE_nu_third_force }
 		add_to_variable = { IRE_nu_mod_stability = 10 }
-		add_to_variable = { IRE_nu_mod_ws = 8 }
+		add_to_variable = { IRE_nu_mod_ws = 10 }
 	}
 }
 
@@ -809,8 +809,8 @@ IRE_british_spy_network_effect = {
 	every_country = {
 		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
 		add_ideas = IRE_ENG_spy_chaos
-		add_stability = -0.03
-		add_war_support = -0.03
+		add_stability = -0.05
+		add_war_support = -0.05
 		every_owned_state = { add_resistance = 5 }
 	}
 	country_event = { id = ire_nw.96 days = 0 }
@@ -891,8 +891,8 @@ IRE_red_britain_uprising_effect = {
 IRE_red_sabotage_effect = {
 	every_country = {
 		limit = { original_tag = ENG has_government = fascism has_civil_war = no }
-		add_stability = -0.03
-		add_war_support = -0.03
+		add_stability = -0.05
+		add_war_support = -0.05
 		every_owned_state = { add_resistance = 5 }
 	}
 }

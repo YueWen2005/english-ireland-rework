@@ -50,7 +50,7 @@ country_event = {
 			check_variable = { IRE_plebiscite_support < 70 }
 		}
 		add_political_power = 50
-		add_stability = -0.03
+		add_stability = -0.05
 		add_ideas = IRE_north_unintegrated
 	}
 }
@@ -116,7 +116,7 @@ country_event = {
 			50 = {
 				custom_effect_tooltip = ire.10_fail_tt
 				ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg40 } }
-				add_stability = -0.03
+				add_stability = -0.05
 				set_country_flag = IRE_nf_failed
 			}
 		}
@@ -196,7 +196,7 @@ country_event = {
 	option = {
 		name = ire.50.a
 		add_political_power = 50
-		add_stability = 0.03
+		add_stability = 0.05
 	}
 }
 
@@ -239,7 +239,7 @@ country_event = {
 	option = {
 		name = ire.60.b
 		add_political_power = 50
-		add_stability = 0.03
+		add_stability = 0.05
 	}
 }
 
@@ -257,7 +257,7 @@ country_event = {
 	option = {
 		name = ire.61.a
 		add_political_power = -20
-		add_stability = 0.03
+		add_stability = 0.05
 		if = {
 			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
@@ -284,7 +284,7 @@ country_event = {
 	option = {
 		name = ire.62.a
 		add_war_support = 0.05
-		add_stability = 0.02
+		add_stability = 0.05
 		if = {
 			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg30 } }
@@ -294,7 +294,7 @@ country_event = {
 	option = {
 		name = ire.62.b
 		add_political_power = 30
-		add_stability = -0.02
+		add_stability = -0.05
 		if = {
 			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
@@ -316,7 +316,7 @@ country_event = {
 	option = {
 		name = ire.63.a
 		add_political_power = 25
-		add_stability = 0.03
+		add_stability = 0.05
 		if = {
 			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos10 } }
@@ -327,7 +327,7 @@ country_event = {
 		name = ire.63.b
 		add_command_power = 25
 		army_experience = 25
-		add_stability = -0.03
+		add_stability = -0.05
 	}
 }
 
@@ -345,7 +345,7 @@ country_event = {
 	option = {
 		name = ire.64.a
 		add_political_power = 25
-		add_stability = -0.03
+		add_stability = -0.05
 		if = {
 			limit = { country_exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
@@ -359,8 +359,8 @@ country_event = {
 	option = {
 		name = ire.64.b
 		add_political_power = 40
-		add_stability = 0.03
-		add_war_support = 0.03
+		add_stability = 0.05
+		add_war_support = 0.05
 		if = {
 			limit = { country_exists = USA }
 			USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_neg20 } }
@@ -384,7 +384,7 @@ country_event = {
 		name = ire.65.a
 		trigger = { NOT = { has_war_with = GER } }
 		add_political_power = 25
-		add_stability = 0.03
+		add_stability = 0.05
 		if = {
 			limit = { country_exists = GER }
 			GER = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 } }
@@ -402,7 +402,7 @@ country_event = {
 	option = {
 		name = ire.65.b
 		add_political_power = 20
-		add_stability = -0.02
+		add_stability = -0.05
 		if = {
 			limit = { country_exists = ENG }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
@@ -432,13 +432,13 @@ country_event = {
 		name = ire.66.a
 		# 公开通报：展示政府铁腕，进一步稳固后方
 		add_political_power = 50
-		add_stability = 0.02
+		add_stability = 0.05
 		custom_effect_tooltip = ire.66.a_tt
 	}
 	option = {
 		name = ire.66.b
 		# 低调处理：避免 martyrs（烈士）效应
-		add_stability = 0.04
+		add_stability = 0.05
 	}
 }
 
@@ -459,7 +459,7 @@ country_event = {
 	option = {
 		name = ire.67.a
 		# 依法严办：震慑残余分子
-		add_war_support = 0.02
+		add_war_support = 0.05
 		custom_effect_tooltip = ire.67.a_tt
 	}
 	option = {
@@ -1003,7 +1003,7 @@ country_event = {
 	option = {
 		name = ire.70.a
 		add_political_power = 50
-		add_war_support = 0.03
+		add_war_support = 0.05
 	}
 }
 
