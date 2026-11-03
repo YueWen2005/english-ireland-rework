@@ -1436,9 +1436,9 @@ focus_tree = {
 			army_experience = 75
 			# 3 个已训练完毕的步兵师（美洲爱尔兰裔志愿师）
 			capital_scope = {
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 	}
@@ -2916,6 +2916,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		prerequisite = { focus = IRE_B_ldf }
+		available = {
+			113 = { is_controlled_by = ROOT }
+		}
 		x = 126
 		y = 17
 		ai_will_do = { base = 140 }
@@ -2924,11 +2927,12 @@ focus_tree = {
 			add_ideas = IRE_national_army
 			army_experience = 200
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
-			create_unit = {
-				division = "name = \"National Army\" division_template = \"IRE_Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
-				owner = IRE
-				count = 2
-				prioritize_location = 11293
+			capital_scope = {
+				create_unit = {
+					division = "name = \"National Army\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					owner = IRE
+					count = 2
+				}
 			}
 		}
 	}

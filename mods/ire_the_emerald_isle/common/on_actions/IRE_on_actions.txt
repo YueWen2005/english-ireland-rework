@@ -148,6 +148,7 @@ on_actions = {
 					date < 1940.9.1
 					NOT = { has_country_flag = IRE_goertz_done }
 					NOT = { has_war_with = GER }
+					NOT = { IRE_germany_defeated = yes }
 				}
 				set_country_flag = IRE_goertz_done
 				country_event = { id = ire.63 days = 0 }
@@ -162,6 +163,7 @@ on_actions = {
 					NOT = { has_country_flag = IRE_belfast_blitz_done }
 					119 = { is_owned_by = ENG }
 					ENG = { has_war = yes }
+					NOT = { IRE_germany_defeated = yes }
 				}
 				set_country_flag = IRE_belfast_blitz_done
 				country_event = { id = ire.61 days = 0 }
@@ -175,6 +177,7 @@ on_actions = {
 					date < 1941.9.1
 					NOT = { has_country_flag = IRE_north_strand_done }
 					NOT = { has_war_with = GER }
+					NOT = { IRE_germany_defeated = yes }
 				}
 				set_country_flag = IRE_north_strand_done
 				country_event = { id = ire.62 days = 0 }
@@ -194,6 +197,7 @@ on_actions = {
 			}
 
 			# ---- 1945 年 5 月：希特勒之死 ----
+			# 德国已投降/消亡时不再补放该事件，避免战后延迟弹出。
 			if = {
 				limit = {
 					tag = IRE
@@ -201,8 +205,14 @@ on_actions = {
 					date < 1945.9.1
 					NOT = { has_country_flag = IRE_hitler_death_done }
 				}
-				set_country_flag = IRE_hitler_death_done
-				country_event = { id = ire.65 days = 0 }
+				if = {
+					limit = { NOT = { IRE_germany_defeated = yes } }
+					set_country_flag = IRE_hitler_death_done
+					country_event = { id = ire.65 days = 0 }
+				}
+				else = {
+					set_country_flag = IRE_hitler_death_done
+				}
 			}
 
 			# ---- 黑线：保证德国由希特勒领导（政变/退休后自动复位）----
@@ -819,6 +829,14 @@ on_actions = {
 		effect = {
 			# 法国投降/消亡时：法属非洲殖民地（非核心）独立
 			IRE_france_colonies_independent = yes
+			# 爱尔兰投降/流亡：清理已解散欧洲希望的成员旗标与精神
+			if = {
+				limit = { tag = IRE }
+				clr_country_flag = IRE_red_france_joined
+				clr_country_flag = IRE_red_britain_joined
+				if = { limit = { has_idea = IRE_european_hope_france } remove_ideas = IRE_european_hope_france }
+				if = { limit = { has_idea = IRE_european_hope_britain } remove_ideas = IRE_european_hope_britain }
+			}
 		}
 	}
 
