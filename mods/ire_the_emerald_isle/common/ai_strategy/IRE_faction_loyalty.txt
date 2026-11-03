@@ -24,12 +24,6 @@ FRA_stay_in_european_hope = {
 	}
 	# 红法不要被共产国际拉走；德国投降前优先留在欧洲希望
 	ai_strategy = {
-		type = diplo_action_desire
-		id = IRE
-		target = join_allies
-		value = 1000
-	}
-	ai_strategy = {
 		type = diplo_action_acceptance
 		id = IRE
 		target = join_allies
