@@ -1,0 +1,8 @@
+# 本仓库统一使用 LF 行尾（游戏 mod 文件同步到本地游戏目录时不允许被转成 CRLF）
+*.txt text eol=lf
+*.yml text eol=lf
+*.gfx text eol=lf
+*.gui text eol=lf
+*.csv text eol=lf
+*.mod text eol=lf
+*.md text eol=lf

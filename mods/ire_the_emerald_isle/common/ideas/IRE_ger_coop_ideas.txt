@@ -1,0 +1,220 @@
+# ============================================================
+# 柏林-都柏林轴心（黑线联机线）—— 联动精神
+# v2.19.1 第一批
+# 德方增益全部为 timed idea（360 天），不永久堆叠；
+# 爱方特工槽为联机专属补偿（730 天）。
+# 仅通过联动事件/派发器授予，永远不会自然出现在其他国家身上。
+# ============================================================
+
+ideas = {
+	country = {
+IRE_G_dark_hand = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		intel_network_gain_factor = 0.10
+		experience_gain_army_factor = 0.05
+	}
+}
+
+IRE_G_guest_training = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		decryption_power_factor = 0.10
+	}
+}
+
+IRE_G_export_order = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+	}
+}
+
+IRE_coop_operative_slot = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		operative_slot = 1
+		intel_network_gain_factor = 0.05
+	}
+}
+
+# ---- 第二批（v2.19.2）：潜艇坞 / 登陆计划 / 柏林条约 ----
+
+# 爱方：开放大西洋港口（潜艇坞联动，720 天）
+IRE_coop_atlantic_port = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_dockyard = 0.05
+	}
+}
+
+# 德方：狼群补给（潜艇坞联动，540 天）
+IRE_G_wolf_pack = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		convoy_raiding_efficiency_factor = 0.10
+	}
+}
+
+# 爱方：绿色海岸（登陆计划联动，540 天）
+IRE_coop_green_shore = {
+	picture = generic_war_preparation
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		amphibious_invasion = 0.10
+		planning_speed = 0.10
+	}
+}
+
+# 德方：海狮准备度（登陆计划联动，360 天）
+IRE_G_sealion_prep = {
+	picture = generic_war_preparation
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		planning_speed = 0.15
+	}
+}
+
+# 爱方：柏林-都柏林条约（条约终局，永久）
+IRE_T_treaty_ally = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+		political_power_gain = 0.10
+	}
+}
+
+# 德方：都柏林盟约（条约终局，永久）
+IRE_G_dublin_treaty = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+		intel_network_gain_factor = 0.10
+	}
+}
+
+# ---- 第二批：德国里程碑反向联动（爱方 timed 加成）----
+
+IRE_GM_mil = {
+	picture = generic_war_preparation
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		experience_gain_army_factor = 0.10
+	}
+}
+
+IRE_GM_ind = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+	}
+}
+
+IRE_GM_recruit = {
+	picture = generic_war_preparation
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		conscription_factor = 0.05
+	}
+}
+
+IRE_GM_intel = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		intel_network_gain_factor = 0.10
+	}
+}
+
+IRE_GM_mobil = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+	}
+}
+
+# ---- 第三批（v2.19.3）：德国联动国策（树最右列 GER_IRE_*）的永久精神 ----
+# 由联动事件「接受」解锁，数值克制（5% 档），与 timed 增益并存。
+
+IRE_G_dublin_link_intel = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		intel_network_gain_factor = 0.05
+		experience_gain_army_factor = 0.05
+	}
+}
+
+IRE_G_dublin_link_cipher = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		decryption_power_factor = 0.05
+	}
+}
+
+IRE_G_dublin_link_arms = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.05
+	}
+}
+
+IRE_G_dublin_link_navy = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		convoy_raiding_efficiency_factor = 0.05
+	}
+}
+
+IRE_G_dublin_link_plan = {
+	picture = generic_war_preparation
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		planning_speed = 0.05
+		amphibious_invasion = 0.05
+	}
+}
+
+IRE_G_dublin_link_pact = {
+	picture = generic_intel_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		political_power_gain = 0.05
+	}
+}
+}
+	}

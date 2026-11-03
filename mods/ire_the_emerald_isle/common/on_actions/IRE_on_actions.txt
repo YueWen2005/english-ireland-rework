@@ -16,6 +16,26 @@ on_actions = {
 					}
 					country_event = { id = ire.130 days = 1 }
 				}
+				# 柏林-都柏林轴心：黑线联机说明（独立事件，开局第 0 天弹出，
+				# 早于隐藏机制说明书 ire.130 的第 1 天；一次性）
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_country_flag = IRE_coop_intro_shown }
+					}
+					set_country_flag = IRE_coop_intro_shown
+					country_event = { id = ire_ger_coop.12 days = 0 }
+				}
+			}
+			# 柏林-都柏林轴心：德国侧联机说明（德国玩家开局第 0 天，一次性）
+			every_country = {
+				limit = {
+					tag = GER
+					is_ai = no
+					NOT = { has_country_flag = IRE_ger_coop_intro_shown }
+				}
+				set_country_flag = IRE_ger_coop_intro_shown
+				country_event = { id = ire_ger_coop.13 days = 0 }
 			}
 		}
 	}
@@ -236,6 +256,60 @@ on_actions = {
 				IRE_X_ensure_hitler = yes
 			}
 
+			# ---- 柏林-都柏林轴心：德国里程碑反向联动（黑线）----
+			# 德国（AI 或玩家）每完成一个史实里程碑，爱尔兰收到小事件
+			# 并获得对应 timed 加成；旗标保证每个里程碑只触发一次
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					GER = { exists = yes has_completed_focus = GER_remilitarize_the_rhineland }
+					NOT = { has_country_flag = IRE_gm_rhineland }
+				}
+				set_country_flag = IRE_gm_rhineland
+				country_event = { id = ire_ger_coop.7 days = 0 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					GER = { exists = yes has_completed_focus = GER_the_four_year_plan }
+					NOT = { has_country_flag = IRE_gm_four_year }
+				}
+				set_country_flag = IRE_gm_four_year
+				country_event = { id = ire_ger_coop.8 days = 0 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					GER = { exists = yes has_completed_focus = GER_anschluss }
+					NOT = { has_country_flag = IRE_gm_anschluss }
+				}
+				set_country_flag = IRE_gm_anschluss
+				country_event = { id = ire_ger_coop.9 days = 0 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					GER = { exists = yes has_completed_focus = GER_demand_sudetenland }
+					NOT = { has_country_flag = IRE_gm_sudetenland }
+				}
+				set_country_flag = IRE_gm_sudetenland
+				country_event = { id = ire_ger_coop.10 days = 0 }
+			}
+			if = {
+				limit = {
+					tag = IRE
+					has_country_flag = IRE_dark_path
+					GER = { exists = yes has_completed_focus = GER_danzig_or_war }
+					NOT = { has_country_flag = IRE_gm_danzig }
+				}
+				set_country_flag = IRE_gm_danzig
+				country_event = { id = ire_ger_coop.11 days = 0 }
+			}
+
 			# ---- 黑线：曝光度月增与阈值（IRA 内战线）----
 			if = {
 				limit = {
@@ -322,14 +396,16 @@ on_actions = {
 			}
 
 			# ---- 红线：西班牙黄金（1936.10 起比斯开湾航线，红线开局后触发）----
+			# 设计确认：必须实际派出志愿军（部队抵达西班牙前线）才会触发；
+			# 只完成国策不派兵不弹事件。窗口 1936.10.14～1939.4.1。
 			if = {
 				limit = {
 					tag = IRE
 					has_country_flag = IRE_red_path
 					has_completed_focus = IRE_R_connolly_column
-					SPA = { has_volunteers_amount_from = { tag = ROOT count > 0 } }
+					SPA = { exists = yes has_civil_war = yes has_volunteers_amount_from = { tag = ROOT count > 0 } }
 					date > 1936.10.14
-					date < 1939.1.1
+					date < 1939.4.1
 					NOT = { has_country_flag = IRE_gold_done }
 				}
 				set_country_flag = IRE_gold_done
