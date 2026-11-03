@@ -667,6 +667,41 @@ IRE_national_union_init = {
 	IRE_nu_refresh_gauges = yes
 }
 
+# 民族联盟：月度平衡评估（只产生政治危机，不触发内战）
+IRE_nu_evaluate_balance = {
+	clr_country_flag = IRE_nu_crisis_now
+	clr_country_flag = IRE_nu_confidence_low
+
+	set_temp_variable = { nu_max = IRE_nu_parliament }
+	set_temp_variable = { nu_min = IRE_nu_parliament }
+	if = { limit = { check_variable = { IRE_nu_labour > nu_max } } set_temp_variable = { nu_max = IRE_nu_labour } }
+	if = { limit = { check_variable = { IRE_nu_labour < nu_min } } set_temp_variable = { nu_min = IRE_nu_labour } }
+	if = { limit = { check_variable = { IRE_nu_security > nu_max } } set_temp_variable = { nu_max = IRE_nu_security } }
+	if = { limit = { check_variable = { IRE_nu_security < nu_min } } set_temp_variable = { nu_min = IRE_nu_security } }
+	if = { limit = { check_variable = { IRE_nu_ira > nu_max } } set_temp_variable = { nu_max = IRE_nu_ira } }
+	if = { limit = { check_variable = { IRE_nu_ira < nu_min } } set_temp_variable = { nu_min = IRE_nu_ira } }
+
+	set_temp_variable = { nu_gap = nu_max }
+	subtract_from_temp_variable = { nu_gap = nu_min }
+
+	if = {
+		limit = {
+			check_variable = { nu_max > 60 }
+			check_variable = { nu_gap > 30 }
+		}
+		set_country_flag = IRE_nu_crisis_now
+	}
+	if = {
+		limit = {
+			OR = {
+				check_variable = { IRE_nu_unionist < 30 }
+				check_variable = { IRE_nu_church < 30 }
+			}
+		}
+		set_country_flag = IRE_nu_confidence_low
+	}
+}
+
 IRE_form_european_hope = {
 	set_rule = { can_create_factions = yes }
 	if = {

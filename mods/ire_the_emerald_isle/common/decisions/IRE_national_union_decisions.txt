@@ -17,6 +17,183 @@ IRE_national_union_cat = {
 
 		ai_will_do = { base = 0 }
 	}
+
+	# ---- 议会派方法 ----
+	IRE_nu_parliament_convention = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_parliament = 8 }
+			add_to_variable = { IRE_nu_unionist = 3 }
+			add_timed_idea = { idea = IRE_nu_parliament_spirit days = 180 }
+			add_political_power = 10
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_parliament_diaspora = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_parliament }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_parliament = 6 }
+			add_timed_idea = { idea = IRE_nu_diaspora_spirit days = 180 }
+			add_political_power = 10
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 工人派方法 ----
+	IRE_nu_labour_councils = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_labour = 8 }
+			add_to_variable = { IRE_nu_church = -2 }
+			add_timed_idea = { idea = IRE_nu_labour_spirit days = 180 }
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_labour_public_works = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_labour }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_labour = 6 }
+			add_manpower = 5000
+			add_timed_idea = { idea = IRE_nu_works_spirit days = 180 }
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 安全派方法 ----
+	IRE_nu_security_special_branch = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_security = 8 }
+			add_to_variable = { IRE_nu_ira = -3 }
+			add_timed_idea = { idea = IRE_nu_security_spirit days = 180 }
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_security_army_loyalty = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_security }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_security = 6 }
+			add_timed_idea = { idea = IRE_nu_army_spirit days = 180 }
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	# ---- 共和军派方法 ----
+	IRE_nu_ira_volunteer_network = {
+		icon = generic_political_actions
+		cost = 50
+		days_remove = 45
+
+		available = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_ira }
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_ira }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_ira = 8 }
+			add_manpower = 5000
+			add_timed_idea = { idea = IRE_nu_volunteer_spirit days = 180 }
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
+
+	IRE_nu_ira_cross_border = {
+		icon = generic_political_actions
+		cost = 75
+		days_remove = 60
+
+		available = {
+			has_idea = IRE_national_union_government
+			has_country_flag = IRE_nu_pillar_ira
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_nu_cross_border
+				OR = {
+					has_country_flag = IRE_black_britain_formed
+					any_owned_state = {
+						is_core_of = ROOT
+						controller = { has_war_with = ROOT }
+					}
+				}
+			}
+		}
+		visible = { has_idea = IRE_national_union_government has_country_flag = IRE_nu_pillar_ira }
+
+		fire_only_once = no
+
+		complete_effect = {
+			add_to_variable = { IRE_nu_ira = 6 }
+			army_experience = 25
+			add_timed_idea = { idea = IRE_nu_cross_border_spirit days = 180 }
+			IRE_national_union_init = yes
+		}
+
+		ai_will_do = { base = 0 }
+	}
 }
 
 # 临时测试：正式版由 A 线准备国策 + 成立枢纽替代
@@ -47,6 +224,10 @@ IRE_nu_test_cat = {
 			set_variable = { IRE_nu_unionist = 72 }
 			set_variable = { IRE_nu_church = 45 }
 			set_country_flag = IRE_national_union_initialized
+			set_country_flag = IRE_nu_pillar_parliament
+			set_country_flag = IRE_nu_pillar_labour
+			set_country_flag = IRE_nu_pillar_security
+			set_country_flag = IRE_nu_pillar_ira
 			IRE_nu_refresh_gauges = yes
 		}
 

@@ -2649,3 +2649,167 @@ country_event = {
 		IRE_national_union_init = yes
 	}
 }
+
+country_event = {
+	id = ire_nw.151
+	title = ire_nw.151.t
+	desc = ire_nw.151.d
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = ire_nw.151.a
+		add_political_power = -50
+		add_stability = 0.02
+		if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = -10 } }
+		if = { limit = { check_variable = { IRE_nu_parliament < 30 } } add_to_variable = { IRE_nu_parliament = 8 } }
+		if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = -10 } }
+		if = { limit = { check_variable = { IRE_nu_labour < 30 } } add_to_variable = { IRE_nu_labour = 8 } }
+		if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = -10 } }
+		if = { limit = { check_variable = { IRE_nu_security < 30 } } add_to_variable = { IRE_nu_security = 8 } }
+		if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = -10 } }
+		if = { limit = { check_variable = { IRE_nu_ira < 30 } } add_to_variable = { IRE_nu_ira = 8 } }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.151.b
+		add_stability = -0.05
+		add_war_support = 0.05
+		if = { limit = { check_variable = { IRE_nu_parliament > 60 } } add_to_variable = { IRE_nu_parliament = 5 } }
+		if = { limit = { NOT = { check_variable = { IRE_nu_parliament > 60 } } } add_to_variable = { IRE_nu_parliament = -8 } }
+		if = { limit = { check_variable = { IRE_nu_labour > 60 } } add_to_variable = { IRE_nu_labour = 5 } }
+		if = { limit = { NOT = { check_variable = { IRE_nu_labour > 60 } } } add_to_variable = { IRE_nu_labour = -8 } }
+		if = { limit = { check_variable = { IRE_nu_security > 60 } } add_to_variable = { IRE_nu_security = 5 } }
+		if = { limit = { NOT = { check_variable = { IRE_nu_security > 60 } } } add_to_variable = { IRE_nu_security = -8 } }
+		if = { limit = { check_variable = { IRE_nu_ira > 60 } } add_to_variable = { IRE_nu_ira = 5 } }
+		if = { limit = { NOT = { check_variable = { IRE_nu_ira > 60 } } } add_to_variable = { IRE_nu_ira = -8 } }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.151.c
+		add_stability = -0.10
+		add_political_power = -25
+		add_war_support = 0.03
+		IRE_national_union_init = yes
+	}
+}
+
+country_event = {
+	id = ire_nw.153
+	title = ire_nw.153.t
+	desc = ire_nw.153.d
+	picture = GFX_report_event_generic_riot
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = ire_nw.153.a
+		add_political_power = -50
+		add_to_variable = { IRE_nu_unionist = 10 }
+		add_to_variable = { IRE_nu_church = 10 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.153.b
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_to_variable = { IRE_nu_unionist = -5 }
+		add_to_variable = { IRE_nu_church = -5 }
+		IRE_national_union_init = yes
+	}
+	option = {
+		name = ire_nw.153.c
+		add_stability = -0.08
+		add_manpower = -2500
+		IRE_national_union_init = yes
+	}
+}
+
+country_event = {
+	id = ire_nw.154
+	title = ire_nw.154.t
+	desc = ire_nw.154.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.154.a
+		add_political_power = 50
+		if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } } }
+		every_country = {
+			limit = { original_tag = FRA has_government = communism }
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+		}
+		every_country = {
+			limit = { original_tag = ENG has_government = communism }
+			add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos30 }
+		}
+		set_country_flag = IRE_nu_red_deep
+	}
+	option = {
+		name = ire_nw.154.b
+		add_stability = 0.03
+		if = { limit = { country_exists = SOV } SOV = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+		set_country_flag = IRE_nu_red_limited
+	}
+}
+
+country_event = {
+	id = ire_nw.155
+	title = ire_nw.155.t
+	desc = ire_nw.155.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.155.a
+		add_political_power = 50
+		if = { limit = { country_exists = USA } USA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos40 } } }
+		if = { limit = { country_exists = ENG } ENG = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } } }
+		set_country_flag = IRE_nu_new_world_deep
+	}
+	option = {
+		name = ire_nw.155.b
+		add_stability = 0.05
+		add_war_support = 0.03
+		set_country_flag = IRE_nu_new_world_limited
+	}
+}
+
+country_event = {
+	id = ire_nw.156
+	title = ire_nw.156.t
+	desc = ire_nw.156.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.156.a
+		add_war_support = 0.05
+		add_stability = 0.03
+		army_experience = 50
+		set_country_flag = IRE_nu_third_force_armed
+	}
+	option = {
+		name = ire_nw.156.b
+		trigger = {
+			check_variable = { IRE_nu_parliament > 19 }
+			check_variable = { IRE_nu_parliament < 61 }
+			check_variable = { IRE_nu_labour > 19 }
+			check_variable = { IRE_nu_labour < 61 }
+			check_variable = { IRE_nu_security > 19 }
+			check_variable = { IRE_nu_security < 61 }
+			check_variable = { IRE_nu_ira > 19 }
+			check_variable = { IRE_nu_ira < 61 }
+			check_variable = { IRE_nu_unionist > 59 }
+			check_variable = { IRE_nu_church > 59 }
+		}
+		add_stability = 0.08
+		add_political_power = 100
+		set_country_flag = IRE_nu_pure_union
+	}
+}

@@ -576,14 +576,32 @@ on_actions = {
 			}
 
 			# ============================================================
-			# 民族联盟：同步仪表盘圆弧帧
+			# 民族联盟：仪表盘同步、月度平衡与政治危机
 			# ============================================================
 			if = {
 				limit = {
 					tag = IRE
 					has_idea = IRE_national_union_government
 				}
-				IRE_nu_refresh_gauges = yes
+				IRE_national_union_init = yes
+				IRE_nu_evaluate_balance = yes
+
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_crisis_now
+						NOT = { has_country_flag = IRE_nu_crisis_cd }
+					}
+					set_country_flag = { flag = IRE_nu_crisis_cd days = 180 value = 1 }
+					country_event = { id = ire_nw.151 days = 0 }
+				}
+				if = {
+					limit = {
+						has_country_flag = IRE_nu_confidence_low
+						NOT = { has_country_flag = IRE_nu_confidence_cd }
+					}
+					set_country_flag = { flag = IRE_nu_confidence_cd days = 180 value = 1 }
+					country_event = { id = ire_nw.153 days = 0 }
+				}
 			}
 
 			# ============================================================

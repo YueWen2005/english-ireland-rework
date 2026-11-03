@@ -768,6 +768,192 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = IRE_A_national_union_parliament
+		icon = GFX_focus_generic_election
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		x = 54
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_pillar_parliament
+			add_to_variable = { IRE_nu_parliament = 10 }
+			add_to_variable = { IRE_nu_unionist = 5 }
+			add_political_power = 50
+			add_stability = 0.03
+			IRE_national_union_init = yes
+			custom_effect_tooltip = IRE_effect_nu_pillar_parliament
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_labour
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		x = 58
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_pillar_labour
+			add_to_variable = { IRE_nu_labour = 10 }
+			add_to_variable = { IRE_nu_church = -3 }
+			add_political_power = 25
+			add_manpower = 5000
+			IRE_national_union_init = yes
+			custom_effect_tooltip = IRE_effect_nu_pillar_labour
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_security
+		icon = GFX_focus_generic_national_security
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		x = 62
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_pillar_security
+			add_to_variable = { IRE_nu_security = 10 }
+			add_to_variable = { IRE_nu_ira = -3 }
+			add_war_support = 0.03
+			army_experience = 25
+			IRE_national_union_init = yes
+			custom_effect_tooltip = IRE_effect_nu_pillar_security
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_ira
+		icon = GFX_focus_generic_military_deal
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+		prerequisite = { focus = IRE_A_national_union_convene }
+		x = 66
+		y = 19
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_pillar_ira
+			add_to_variable = { IRE_nu_ira = 10 }
+			add_to_variable = { IRE_nu_unionist = -3 }
+			add_manpower = 5000
+			army_experience = 25
+			IRE_national_union_init = yes
+			custom_effect_tooltip = IRE_effect_nu_pillar_ira
+		}
+	}
+
+	focus = {
+		id = IRE_A_national_union_revival
+		icon = GFX_focus_generic_world_peace
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		prerequisite = { focus = IRE_A_national_union_parliament }
+		prerequisite = { focus = IRE_A_national_union_labour }
+		prerequisite = { focus = IRE_A_national_union_security }
+		prerequisite = { focus = IRE_A_national_union_ira }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IRE_tt_nu_revival_conditions
+				check_variable = { IRE_nu_parliament > 19 }
+				check_variable = { IRE_nu_parliament < 61 }
+				check_variable = { IRE_nu_labour > 19 }
+				check_variable = { IRE_nu_labour < 61 }
+				check_variable = { IRE_nu_security > 19 }
+				check_variable = { IRE_nu_security < 61 }
+				check_variable = { IRE_nu_ira > 19 }
+				check_variable = { IRE_nu_ira < 61 }
+				check_variable = { IRE_nu_unionist > 59 }
+				check_variable = { IRE_nu_church > 59 }
+			}
+		}
+		x = 60
+		y = 20
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			add_ideas = IRE_national_revival
+			set_country_flag = IRE_nu_revival_done
+			add_political_power = 100
+			add_stability = 0.05
+			custom_effect_tooltip = IRE_effect_nu_revival
+		}
+	}
+
+	focus = {
+		id = IRE_A_postwar_red
+		icon = GFX_focus_generic_red_flags
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = IRE_A_national_union_revival }
+		mutually_exclusive = { focus = IRE_A_postwar_new_world focus = IRE_A_postwar_neutral }
+		available = { IRE_germany_defeated = yes }
+		x = 56
+		y = 21
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_postwar_red
+			add_ideas = IRE_nu_red_partnership
+			country_event = { id = ire_nw.154 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_A_postwar_new_world
+		icon = GFX_focus_generic_american_investments
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = IRE_A_national_union_revival }
+		mutually_exclusive = { focus = IRE_A_postwar_red focus = IRE_A_postwar_neutral }
+		available = { IRE_germany_defeated = yes }
+		x = 60
+		y = 21
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_postwar_new_world
+			add_ideas = IRE_nu_new_world_partnership
+			country_event = { id = ire_nw.155 days = 1 }
+		}
+	}
+
+	focus = {
+		id = IRE_A_postwar_neutral
+		icon = GFX_focus_generic_world_peace
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = IRE_A_national_union_revival }
+		mutually_exclusive = { focus = IRE_A_postwar_red focus = IRE_A_postwar_new_world }
+		available = { IRE_germany_defeated = yes }
+		x = 64
+		y = 21
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			set_country_flag = IRE_nu_postwar_neutral
+			add_ideas = IRE_nu_third_force
+			country_event = { id = ire_nw.156 days = 1 }
+		}
+	}
+
 	# ---- 对英线（与纽芬兰互斥） ----
 	focus = {
 		id = IRE_A_london_note
