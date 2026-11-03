@@ -213,7 +213,6 @@ IRE_emergency_tier_check = {
 		limit = {
 			has_idea = IRE_emergency_powers_3
 			has_war = no
-			date > 1945.1.1
 		}
 		remove_ideas = IRE_emergency_powers_3
 		add_ideas = IRE_emergency_powers_2

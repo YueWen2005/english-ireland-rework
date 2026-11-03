@@ -421,8 +421,7 @@ on_actions = {
 					tag = IRE
 					has_country_flag = IRE_campaign_started
 					has_completed_focus = IRE_A_green_international
-					date > 1944.1.1
-					NOT = { any_country = { has_war = yes is_major = yes } }
+					IRE_germany_defeated = yes
 					NOT = { has_idea = IRE_national_union_government }
 					NOT = { has_country_flag = IRE_env_postwar_done }
 				}
