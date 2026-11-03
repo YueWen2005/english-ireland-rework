@@ -1,0 +1,104 @@
+defined_text = {
+	name = GetIREParliamentStatus
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament > 59 } }
+		localization_key = IRE_nu_status_dominant
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_parliament < 21 } }
+		localization_key = IRE_nu_status_marginal
+	}
+	text = { localization_key = IRE_nu_status_balanced }
+}
+
+defined_text = {
+	name = GetIRELabourStatus
+	text = {
+		trigger = { check_variable = { IRE_nu_labour > 59 } }
+		localization_key = IRE_nu_status_dominant
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_labour < 21 } }
+		localization_key = IRE_nu_status_marginal
+	}
+	text = { localization_key = IRE_nu_status_balanced }
+}
+
+defined_text = {
+	name = GetIRESecurityStatus
+	text = {
+		trigger = { check_variable = { IRE_nu_security > 59 } }
+		localization_key = IRE_nu_status_dominant
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_security < 21 } }
+		localization_key = IRE_nu_status_marginal
+	}
+	text = { localization_key = IRE_nu_status_balanced }
+}
+
+defined_text = {
+	name = GetIREIraStatus
+	text = {
+		trigger = { check_variable = { IRE_nu_ira > 59 } }
+		localization_key = IRE_nu_status_dominant
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_ira < 21 } }
+		localization_key = IRE_nu_status_marginal
+	}
+	text = { localization_key = IRE_nu_status_balanced }
+}
+
+defined_text = {
+	name = GetIREUnionistStatus
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist > 69 } }
+		localization_key = IRE_nu_status_high
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_unionist < 31 } }
+		localization_key = IRE_nu_status_low
+	}
+	text = { localization_key = IRE_nu_status_balanced }
+}
+
+defined_text = {
+	name = GetIREChurchStatus
+	text = {
+		trigger = { check_variable = { IRE_nu_church > 69 } }
+		localization_key = IRE_nu_status_high
+	}
+	text = {
+		trigger = { check_variable = { IRE_nu_church < 31 } }
+		localization_key = IRE_nu_status_low
+	}
+	text = { localization_key = IRE_nu_status_balanced }
+}
+
+defined_text = {
+	name = GetIREInternalState
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { IRE_nu_parliament > 70 }
+				check_variable = { IRE_nu_labour > 70 }
+				check_variable = { IRE_nu_security > 70 }
+				check_variable = { IRE_nu_ira > 70 }
+			}
+		}
+		localization_key = IRE_nu_internal_tension
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { IRE_nu_parliament < 10 }
+				check_variable = { IRE_nu_labour < 10 }
+				check_variable = { IRE_nu_security < 10 }
+				check_variable = { IRE_nu_ira < 10 }
+			}
+		}
+		localization_key = IRE_nu_internal_deadlock
+	}
+	text = { localization_key = IRE_nu_internal_cooperation }
+}

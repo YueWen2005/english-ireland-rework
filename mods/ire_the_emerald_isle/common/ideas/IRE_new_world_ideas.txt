@@ -517,5 +517,19 @@ ideas = {
 			removal_cost = -1
 		}
 
+		# ---- 爱尔兰民族联盟：联合政府 ----
+		IRE_national_union_government = {
+			picture = generic_political_support
+			allowed = { always = yes }
+			visible = { always = yes }
+			modifier = {
+				stability_factor = 0.08
+				political_power_gain = 0.05
+				war_support_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+			removal_cost = -1
+		}
+
 	}
 }

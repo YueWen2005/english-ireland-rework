@@ -1,0 +1,20 @@
+IRE_national_union_cat = {
+
+	# 仪表盘的回退入口：GUI 异常时也能看到四派与两信心
+	IRE_nu_status = {
+		icon = generic_political_actions
+		cost = 0
+		days_remove = 1
+
+		available = { has_idea = IRE_national_union_government }
+		visible = { has_idea = IRE_national_union_government }
+
+		fire_only_once = no
+
+		complete_effect = {
+			custom_effect_tooltip = IRE_nu_status_tt
+		}
+
+		ai_will_do = { base = 0 }
+	}
+}
