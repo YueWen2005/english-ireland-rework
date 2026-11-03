@@ -545,12 +545,6 @@ on_actions = {
 					tag = IRE
 					has_idea = IRE_european_hope
 					is_faction_leader = yes
-					IRE_germany_widespread_war = yes
-					# 仅黑英成功/红色英国在盟时扩员；黑英失败时让位给同盟国
-					OR = {
-						has_country_flag = IRE_black_britain_formed
-						has_country_flag = IRE_red_britain_joined
-					}
 				}
 				every_country = {
 					limit = {
@@ -558,7 +552,13 @@ on_actions = {
 						is_ai = yes
 						NOT = { tag = ROOT }
 						NOT = { tag = GER }
-						has_war_with = GER
+						OR = {
+							has_war_with = GER
+							any_country = {
+								is_in_faction_with = GER
+								has_war_with = PREV
+							}
+						}
 						is_subject = no
 						NOT = { is_in_faction = yes }
 						NOT = { has_war_with = ROOT }

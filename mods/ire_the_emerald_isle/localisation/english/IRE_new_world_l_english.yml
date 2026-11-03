@@ -1397,3 +1397,11 @@
  ire_nw.200.b_tt:0 "Only the Soviet Union joins the European Hope; stability +5%, war support +5%; Irish opinion +25."
  ire_nw.200.c:0 "Refuse and fight on alone."
  ire_nw.200.c_tt:0 "Stability +5%, war support +5%; Irish opinion -20."
+
+ ire_nw.201.t:0 "An Invitation from the European Hope"
+ ire_nw.201.d:0 "Dublin invites Washington to join the Irish-led European Hope against the Axis."
+ ire_nw.201.a:0 "Join the European Hope."
+ ire_nw.201.a_tt:0 "The United States joins the European Hope; Ireland gains American industry and Lend-Lease cooperation."
+ ire_nw.201.b:0 "Decline the invitation."
+ ire_nw.201.b_tt:0 "The United States keeps its current position."
+ IRE_tt_usa_invite:0 "Send the United States an invitation to join the European Hope; the USA decides whether to accept. Can be sent again after 90 days."

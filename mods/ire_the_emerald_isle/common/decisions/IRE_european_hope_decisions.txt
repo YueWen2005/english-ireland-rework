@@ -55,8 +55,9 @@ IRE_european_hope_cat = {
 			has_idea = IRE_european_hope
 			is_faction_leader = yes
 			country_exists = USA
-			has_country_flag = IRE_black_britain_formed
-			USA = { NOT = { is_in_faction = yes } has_opinion = { target = ROOT value > 49 } }
+			NOT = { has_country_flag = IRE_usa_joined }
+			NOT = { has_country_flag = IRE_usa_invite_cd }
+			USA = { NOT = { is_in_faction = yes } }
 		}
 
 		visible = {
@@ -65,20 +66,14 @@ IRE_european_hope_cat = {
 			NOT = { has_country_flag = IRE_usa_joined }
 		}
 
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			hidden_effect = {
-				if = {
-					limit = { country_exists = USA NOT = { USA = { is_in_faction = yes } } }
-					USA = { IRE_force_join_faction = yes }
-					add_ideas = IRE_european_hope_us
-					add_ideas = IRE_us_lend_lease
-					set_country_flag = IRE_usa_joined
-				}
-				country_event = { id = ire_nw.92 days = 0 }
+				set_country_flag = { flag = IRE_usa_invite_cd days = 90 value = 1 }
+				USA = { country_event = { id = ire_nw.201 days = 0 } }
 			}
-			custom_effect_tooltip = IRE_tt_usa_joined
+			custom_effect_tooltip = IRE_tt_usa_invite
 		}
 
 		ai_will_do = { base = 20 }
