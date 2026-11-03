@@ -1339,8 +1339,8 @@ IRE_nu_postwar_env_roll = {
 	if = {
 		limit = {
 			has_country_flag = IRE_nu_postwar_env_started
+			has_country_flag = IRE_nu_evt_190_done
 			NOT = { has_country_flag = IRE_nu_postwar_env_cd }
-			NOT = { has_country_flag = IRE_nu_dynamic_event_cd }
 			NOT = { has_country_flag = IRE_nu_crisis_now }
 			NOT = { has_country_flag = IRE_nu_confidence_low }
 		}
