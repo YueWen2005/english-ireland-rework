@@ -6,6 +6,7 @@
 # 仅通过联动事件/派发器授予，永远不会自然出现在其他国家身上。
 # ============================================================
 
+ideas = {
 IRE_G_dark_hand = {
 	picture = generic_intel_bonus
 	allowed = { always = yes }
@@ -213,4 +214,5 @@ IRE_G_dublin_link_pact = {
 	modifier = {
 		political_power_gain = 0.05
 	}
+}
 }
