@@ -3,6 +3,7 @@
 # v2.19.1 第一批：ire_ger_coop.1~3（弹给德国玩家）
 # v2.19.2 第二批：4~6（弹给德国玩家）、7~11（德国里程碑，
 #   弹给爱尔兰）、12（开局黑线联机说明，弹给爱尔兰玩家）
+# v2.19.5：13（开局黑线联机说明·德国侧，弹给德国玩家）
 # 联动事件全部 is_triggered_only，由 IRE_ger_coop_effects
 # 派发器定向发送；仅当德国为玩家史实线时触发（见
 # scripted_triggers/IRE_ger_coop_triggers.txt）。
@@ -225,8 +226,8 @@ country_event = {
 
 # ============================================================
 # 开局说明：黑线联机（ire_ger_coop.12）
-# 与隐藏机制说明书（ire.130-136）相互独立，开局第 4 天弹出，
-# 一次性（IRE_coop_intro_shown 旗标）。
+# 与隐藏机制说明书（ire.130-136）相互独立，开局第 0 天弹出
+# （早于 ire.130 的第 1 天），一次性（IRE_coop_intro_shown 旗标）。
 # ============================================================
 country_event = {
 	id = ire_ger_coop.12
@@ -238,6 +239,25 @@ country_event = {
 
 	option = {
 		name = ire_ger_coop.12.a
+		# 说明事件，无效果
+	}
+}
+
+# ============================================================
+# 开局说明：黑线联机·德国侧（ire_ger_coop.13）
+# 德国玩家开局第 0 天弹出（一次性，IRE_ger_coop_intro_shown 旗标），
+# 说明联机规则与史实线前提。即使爱尔兰是 AI 也照常弹出。
+# ============================================================
+country_event = {
+	id = ire_ger_coop.13
+	title = ire_ger_coop.13.t
+	desc = ire_ger_coop.13.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ire_ger_coop.13.a
 		# 说明事件，无效果
 	}
 }

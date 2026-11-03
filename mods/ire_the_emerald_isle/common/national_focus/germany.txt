@@ -38947,7 +38947,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_ai = no
-			has_country_flag = IRE_G_coop_1_unlocked
+			custom_trigger_tooltip = {
+				tooltip = GER_IRE_coop_1_tt
+				has_country_flag = IRE_G_coop_1_unlocked
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -38965,7 +38968,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_ai = no
-			has_country_flag = IRE_G_coop_2_unlocked
+			custom_trigger_tooltip = {
+				tooltip = GER_IRE_coop_2_tt
+				has_country_flag = IRE_G_coop_2_unlocked
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -38983,7 +38989,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_ai = no
-			has_country_flag = IRE_G_coop_3_unlocked
+			custom_trigger_tooltip = {
+				tooltip = GER_IRE_coop_3_tt
+				has_country_flag = IRE_G_coop_3_unlocked
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -39001,7 +39010,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_ai = no
-			has_country_flag = IRE_G_coop_4_unlocked
+			custom_trigger_tooltip = {
+				tooltip = GER_IRE_coop_4_tt
+				has_country_flag = IRE_G_coop_4_unlocked
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -39019,7 +39031,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_ai = no
-			has_country_flag = IRE_G_coop_5_unlocked
+			custom_trigger_tooltip = {
+				tooltip = GER_IRE_coop_5_tt
+				has_country_flag = IRE_G_coop_5_unlocked
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -39037,7 +39052,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_ai = no
-			has_country_flag = IRE_G_coop_6_unlocked
+			custom_trigger_tooltip = {
+				tooltip = GER_IRE_coop_6_tt
+				has_country_flag = IRE_G_coop_6_unlocked
+			}
 		}
 		ai_will_do = {
 			factor = 0

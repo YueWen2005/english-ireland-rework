@@ -16,15 +16,26 @@ on_actions = {
 					}
 					country_event = { id = ire.130 days = 1 }
 				}
-				# 柏林-都柏林轴心：黑线联机说明（独立事件，开局第 4 天，一次性）
+				# 柏林-都柏林轴心：黑线联机说明（独立事件，开局第 0 天弹出，
+				# 早于隐藏机制说明书 ire.130 的第 1 天；一次性）
 				if = {
 					limit = {
 						is_ai = no
 						NOT = { has_country_flag = IRE_coop_intro_shown }
 					}
 					set_country_flag = IRE_coop_intro_shown
-					country_event = { id = ire_ger_coop.12 days = 4 }
+					country_event = { id = ire_ger_coop.12 days = 0 }
 				}
+			}
+			# 柏林-都柏林轴心：德国侧联机说明（德国玩家开局第 0 天，一次性）
+			every_country = {
+				limit = {
+					tag = GER
+					is_ai = no
+					NOT = { has_country_flag = IRE_ger_coop_intro_shown }
+				}
+				set_country_flag = IRE_ger_coop_intro_shown
+				country_event = { id = ire_ger_coop.13 days = 0 }
 			}
 		}
 	}
