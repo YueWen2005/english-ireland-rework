@@ -180,6 +180,5 @@ ire_the_emerald_isle/
 │   ├── english/IRE_new_world_l_english.yml   A 线英文文本
 │   ├── simp_chinese/IRE_l_simp_chinese.yml   简体中文（主线）
 │   └── simp_chinese/IRE_new_world_l_simp_chinese.yml 简体中文（A 线）
-├── music/                    音乐 asset/txt/credits（公开版不含 OGG）
 └── descriptor.mod
 ```
