@@ -216,5 +216,46 @@ IRE_G_dublin_link_pact = {
 		political_power_gain = 0.05
 	}
 }
+
+# ---- 第四批（v2.20.8）：工业化联动支线的永久精神 ----
+# 由柏林-都柏林轴心的工业化国策（GER_IRE_ind_*）授予，只加在德国身上。
+# 数值克制：单项不超过原版单一工业国策，且分散在不同维度，避免堆叠。
+
+IRE_G_link_industry = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		production_speed_buildings_factor = 0.05
+	}
+}
+
+IRE_G_link_shannon = {
+	picture = generic_economic_increase
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		industrial_capacity_factory = 0.03
+	}
+}
+
+IRE_G_link_peat = {
+	picture = generic_production_bonus
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		production_factory_max_efficiency_factor = 0.04
+	}
+}
+
+IRE_G_link_barter = {
+	picture = generic_economic_increase
+	allowed = { always = yes }
+	visible = { always = yes }
+	modifier = {
+		local_resources_factor = 0.05
+	}
+}
+
 }
 	}

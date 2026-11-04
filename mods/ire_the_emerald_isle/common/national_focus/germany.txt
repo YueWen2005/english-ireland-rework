@@ -38933,16 +38933,29 @@ focus_tree = {
 
 
 	# ============================================================
-	# 柏林-都柏林轴心：德国联动国策（x=76，紧邻德国树最右列 x=72）
+	# 柏林-都柏林轴心：德国联动国策
+	#
+	# 主链（x=18, y=1..6）：嵌入德国树空军段内部，左邻 x=17 的
+	# 空军研究线、右邻 x=19/20 的轰炸机线，不再孤悬于树外空白带。
+	# 该列的原版跨列连线只有三条（y0..1 / y1..2 / y5..6），
+	# 恰好从节点之间的缝隙穿过，不会压住图标。
+	#
+	# 工业化支线（v2.20.8 新增，x=15/16, y=4..6）：自军火走廊
+	# 向左分叉，经工业代表团分出「香农水电 / 泥炭工业」两路，
+	# 再合流为补偿贸易。x=16 仅有 y1..2 一条原版连线穿过，
+	# x=15 无任何跨列连线，故支线本体不与原版走线冲突。
+	#
 	# 由爱尔兰黑线联动事件「接受」后解锁（IRE_G_coop_N_unlocked
 	# 旗标，见 scripted_effects/IRE_ger_coop_effects.txt）。
 	# 仅玩家德国可见可用（is_ai = no）；单人模式德国 AI 由事件
 	# 自动结算，无需这些国策。奖励为克制的小型永久精神。
+	# 工业化支线的前置是主链国策本身，旗标必然已满足，故不再
+	# 重复挂 custom_trigger_tooltip。
 	# ============================================================
 	focus = {
 		id = GER_IRE_shadow_link
 		icon = GFX_focus_generic_military_mission
-		x = 76
+		x = 18
 		y = 1
 		cost = 5
 		available = {
@@ -38963,7 +38976,7 @@ focus_tree = {
 		id = GER_IRE_abwehr_academy
 		prerequisite = { focus = GER_IRE_shadow_link }
 		icon = GFX_focus_generic_secret_service_agency
-		x = 76
+		x = 18
 		y = 2
 		cost = 5
 		available = {
@@ -38984,7 +38997,7 @@ focus_tree = {
 		id = GER_IRE_arms_corridor
 		prerequisite = { focus = GER_IRE_abwehr_academy }
 		icon = GFX_focus_generic_license_production
-		x = 76
+		x = 18
 		y = 3
 		cost = 5
 		available = {
@@ -39005,7 +39018,7 @@ focus_tree = {
 		id = GER_IRE_atlantic_gateway
 		prerequisite = { focus = GER_IRE_arms_corridor }
 		icon = GFX_focus_GER_navy
-		x = 76
+		x = 18
 		y = 4
 		cost = 5
 		available = {
@@ -39026,7 +39039,7 @@ focus_tree = {
 		id = GER_IRE_green_shore_joint
 		prerequisite = { focus = GER_IRE_atlantic_gateway }
 		icon = GFX_focus_ger_strike_at_the_source
-		x = 76
+		x = 18
 		y = 5
 		cost = 5
 		available = {
@@ -39047,7 +39060,7 @@ focus_tree = {
 		id = GER_IRE_dublin_pact
 		prerequisite = { focus = GER_IRE_green_shore_joint }
 		icon = GFX_focus_GER_SOV_treaty
-		x = 76
+		x = 18
 		y = 6
 		cost = 5
 		available = {
@@ -39063,6 +39076,80 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.05
 			add_ideas = IRE_G_dublin_link_pact
+		}
+	}
+
+	# ---- 工业化联动支线（v2.20.8）----
+	# 军火走廊 → 工业代表团 →（香农水电 / 泥炭工业）→ 补偿贸易。
+	# 每一项都是德国把爱尔兰纳入本国工业分工的一步，奖励为本国
+	# 的小额永久工业加成，数值控制在原版单一国策之下。
+	focus = {
+		id = GER_IRE_ind_mission
+		prerequisite = { focus = GER_IRE_arms_corridor }
+		icon = GFX_focus_generic_industry_1
+		x = 16
+		y = 4
+		cost = 5
+		available = {
+			is_ai = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_ideas = IRE_G_link_industry
+		}
+	}
+	focus = {
+		id = GER_IRE_ind_shannon
+		prerequisite = { focus = GER_IRE_ind_mission }
+		icon = GFX_focus_generic_industry_2
+		x = 16
+		y = 5
+		cost = 5
+		available = {
+			is_ai = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_ideas = IRE_G_link_shannon
+		}
+	}
+	focus = {
+		id = GER_IRE_ind_peat
+		prerequisite = { focus = GER_IRE_ind_mission }
+		icon = GFX_focus_generic_steel_mill
+		x = 15
+		y = 5
+		cost = 5
+		available = {
+			is_ai = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_ideas = IRE_G_link_peat
+		}
+	}
+	focus = {
+		id = GER_IRE_ind_barter
+		prerequisite = { focus = GER_IRE_ind_shannon }
+		prerequisite = { focus = GER_IRE_ind_peat }
+		icon = GFX_focus_generic_industry_investment
+		x = 16
+		y = 6
+		cost = 5
+		available = {
+			is_ai = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_ideas = IRE_G_link_barter
 		}
 	}
 }
