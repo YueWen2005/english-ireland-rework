@@ -46,6 +46,7 @@ IRE_european_hope_cat = {
 		ai_will_do = { base = 0 }
 	}
 
+	# 美国入盟：完成坦慕尼协会后最早 1941 年；或世界紧张度达到 100%
 	IRE_invite_usa = {
 		icon = generic_political_actions
 		cost = 100
@@ -56,12 +57,26 @@ IRE_european_hope_cat = {
 			is_faction_leader = yes
 			country_exists = USA
 			NOT = { has_country_flag = IRE_usa_joined }
+			OR = {
+				AND = {
+					has_completed_focus = IRE_A_tammany_hall
+					date > 1941.1.1
+				}
+				world_tension > 0.99
+			}
 		}
 
 		visible = {
 			has_idea = IRE_european_hope
 			country_exists = USA
 			NOT = { has_country_flag = IRE_usa_joined }
+			OR = {
+				AND = {
+					has_completed_focus = IRE_A_tammany_hall
+					date > 1941.1.1
+				}
+				world_tension > 0.99
+			}
 		}
 
 		fire_only_once = yes
@@ -80,7 +95,10 @@ IRE_european_hope_cat = {
 			custom_effect_tooltip = IRE_tt_usa_joined
 		}
 
-		ai_will_do = { base = 20 }
+		ai_will_do = {
+			base = 20
+			modifier = { add = 80 world_tension > 0.99 }
+		}
 	}
 
 	IRE_invite_dominions = {

@@ -1989,6 +1989,7 @@ focus_tree = {
 			}
 			set_variable = { IRE_us_volunteers_count = 0 }
 			add_political_power = 75
+			custom_effect_tooltip = IRE_tt_tammany_usa_invite
 		}
 	}
 
