@@ -172,6 +172,7 @@
 
  # ===== Trigger tooltips =====
  IRE_tt_nf_support_50:0 "Newfoundland support above 49 (the Fishermen's Brotherhood decision adds +8 each time)"
+ IRE_tt_nf_plebiscite_odds:0 "If Britain is at war or Newfoundland support is above 79, the referendum passes automatically; otherwise it is a 50% chance."
  IRE_tt_diaspora_60:0 "Celtic diaspora network above 59"
  IRE_tt_diaspora_100:0 "Celtic diaspora network above 99"
  IRE_tt_canada_annexed:0 "British North America has been annexed"
@@ -834,7 +835,7 @@
  IRE_A_postwar_new_world:0 "New World Democracy"
  IRE_A_postwar_new_world_desc:0 "The foreign weight returns to the United States and the democratic camp, with an Atlantic framework of trade and security in place of the old empire, while the national union stands at home. The draft agreement awaits the approval of the cabinet."
  IRE_A_postwar_neutral:0 "Third Force"
- IRE_A_postwar_neutral_desc:0 "Both blocs are refused, and the National Union becomes an independent third force. Dublin says the same words to Washington and to Moscow: Ireland joins no camp and guards no gate. The line can be held only while the four blocs balance one another."
+ IRE_A_postwar_neutral_desc:0 "Both blocs are refused, and the National Union becomes an independent third force. Dublin says the same words to Washington and to Moscow: Ireland joins no camp and guards no gate. The line can be held only while the four blocs remain balanced."
  IRE_nu_red_partnership:0 "Red Partnership"
  IRE_nu_red_partnership_desc:0 "Dublin and the red bloc exchange envoys; the trade and military agreements are signed in separate instruments, deposited with the treaty division of External Affairs, and copied to Defence and Finance. A joint commission reviews the working of these clauses each quarter."
  IRE_nu_new_world_partnership:0 "New World Partnership"
@@ -1327,7 +1328,7 @@
 
  ire_nw.193.t:0 "The Red Bloc Splits"
  ire_nw.193.d_red:0 "The red bloc splits for the first time after the war: Moscow demands obedience, while the Western red allies want their own road. Dublin must choose a side."
- ire_nw.193.d:0 "Red France and Red Britain fall out with Moscow over the postwar road; each convenes its own conference and exchanges restrained letters. Dublin has not gone red in form, yet it is asked to take a position between them. The foreign ministry holds two notes, both requesting an answer before long, and the cabinet is to settle the wording."
+ ire_nw.193.d:0 "Red France or Red Britain falls out with Moscow over the postwar road; the two sides convene their own conferences and exchange restrained letters. Dublin has not gone red in form, yet it is asked to take a position between them. The foreign ministry holds two notes, both requesting an answer before long, and the cabinet is to settle the wording."
  ire_nw.193.a:0 "Stand with Moscow."
  ire_nw.193.a_tt:0 "Labour influence +4, IRA influence +3, stability -5%; Soviet opinion +25, red France/Britain opinion -15."
  ire_nw.193.b:0 "Stand with the Western allies."
@@ -1390,7 +1391,7 @@
  ire_nw.199.c_tt:0 "Political power -50, stability +5%; US/Soviet opinion -5, Nordic and Low Countries opinion +15."
 
  ire_nw.200.t:0 "The Fall of Moscow"
- ire_nw.200.d:0 "Moscow has fallen and the Soviet line in Europe is collapsing. Dublin has extended an offer: the Hope of Europe will take in the Soviet Union and its satellites. Draft terms have gone to the member states, Moscow's reply is still in transit, and the cabinet has entered accession on its agenda, details to follow."
+ ire_nw.200.d:0 "Moscow has fallen and the Soviet line in Europe is collapsing. Dublin has extended an offer: the Hope of Europe will take in the Soviet Union and its satellites. The draft terms have gone to the member states, and Dublin awaits Moscow's answer."
  ire_nw.200.a:0 "Join with all the satellites."
  ire_nw.200.a_tt:0 "The Soviet Union, its satellites and allies join the European Hope; political power -25, stability +5%, war support +10%; Irish opinion +40."
  ire_nw.200.b:0 "Admit the Soviet Union alone."
@@ -1399,7 +1400,7 @@
  ire_nw.200.c_tt:0 "Stability +5%, war support +5%; Irish opinion -20."
 
  ire_nw.201.t:0 "The Next Step for National Unity"
- ire_nw.201.d:0 "The National Unity Programme is complete, but the National Unity Government has not yet convened. The four factions are still waiting for Dublin's invitation, and seats and offices are unsettled. The Taoiseach's office has fixed the delegates and the date, and the draft agenda, with the reservations of each faction, is before the cabinet; it may be convened at once."
+ ire_nw.201.d:0 "The National Unity Programme is complete, but the National Unity Government has not yet convened. The four factions are still waiting for Dublin's invitation, and seats and offices are unsettled. The Taoiseach's office has fixed the delegates and the date, and the draft agenda, with the reservations of each faction, is before the cabinet; it may be convened directly here."
  ire_nw.201.a:0 "Convene the National Unity Government now."
  ire_nw.201.a_tt:0 "Complete the focus 'Convene the National Unity Government', form the National Union, and trigger its formation event."
  ire_nw.201.b:0 "Take it up later."

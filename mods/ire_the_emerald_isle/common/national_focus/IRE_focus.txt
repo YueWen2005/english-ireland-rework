@@ -1308,6 +1308,7 @@ focus_tree = {
 		ai_will_do = { base = 60 }
 
 		completion_reward = {
+			custom_effect_tooltip = IRE_tt_nf_plebiscite_odds
 			country_event = { id = ire.10 days = 1 }
 		}
 	}
