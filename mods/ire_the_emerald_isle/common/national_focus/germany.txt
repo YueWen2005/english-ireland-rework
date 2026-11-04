@@ -38935,15 +38935,18 @@ focus_tree = {
 	# ============================================================
 	# 柏林-都柏林轴心：德国联动国策
 	#
-	# 主链（x=18, y=1..6）：嵌入德国树空军段内部，左邻 x=17 的
+	# 主链（x=18, y=3..8）：嵌入德国树空军段内部，左邻 x=17 的
 	# 空军研究线、右邻 x=19/20 的轰炸机线，不再孤悬于树外空白带。
-	# 该列的原版跨列连线只有三条（y0..1 / y1..2 / y5..6），
-	# 恰好从节点之间的缝隙穿过，不会压住图标。
+	# v2.20.9 整体下移两行（原 y=1..6）：原坐标使 y=1 出现 17-18、
+	# y=2 出现 17-18-19 的连排，与本列一同把空军段挤成整面墙。
+	# 下移后 y=1（仅 17）、y=2（15/17/19，空出 16、18）恢复原版
+	# 棋盘状间隔，本列只剩 y=5 与「火箭创新」两两相邻。
 	#
-	# 工业化支线（v2.20.8 新增，x=15/16, y=4..6）：自军火走廊
-	# 向左分叉，经工业代表团分出「香农水电 / 泥炭工业」两路，
-	# 再合流为补偿贸易。x=16 仅有 y1..2 一条原版连线穿过，
-	# x=15 无任何跨列连线，故支线本体不与原版走线冲突。
+	# 工业化支线（v2.20.9 重排，x=14/15/16, y=6..9）：自军火走廊
+	# 向左下分叉，工业代表团 →（香农水电 / 泥炭工业）→ 补偿贸易，
+	# 呈阶梯下行，不再与 x=17 的火箭线共行（原 x=15/16 在 y=5 与
+	# 火箭、绿色海岸连成 15-18 四连排）。新坐标各处均空，
+	# 且无原版跨列连线经过。
 	#
 	# 由爱尔兰黑线联动事件「接受」后解锁（IRE_G_coop_N_unlocked
 	# 旗标，见 scripted_effects/IRE_ger_coop_effects.txt）。
@@ -38956,7 +38959,7 @@ focus_tree = {
 		id = GER_IRE_shadow_link
 		icon = GFX_focus_generic_military_mission
 		x = 18
-		y = 1
+		y = 3
 		cost = 5
 		available = {
 			is_ai = no
@@ -38977,7 +38980,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_shadow_link }
 		icon = GFX_focus_generic_secret_service_agency
 		x = 18
-		y = 2
+		y = 4
 		cost = 5
 		available = {
 			is_ai = no
@@ -38998,7 +39001,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_abwehr_academy }
 		icon = GFX_focus_generic_license_production
 		x = 18
-		y = 3
+		y = 5
 		cost = 5
 		available = {
 			is_ai = no
@@ -39019,7 +39022,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_arms_corridor }
 		icon = GFX_focus_GER_navy
 		x = 18
-		y = 4
+		y = 6
 		cost = 5
 		available = {
 			is_ai = no
@@ -39040,7 +39043,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_atlantic_gateway }
 		icon = GFX_focus_ger_strike_at_the_source
 		x = 18
-		y = 5
+		y = 7
 		cost = 5
 		available = {
 			is_ai = no
@@ -39061,7 +39064,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_green_shore_joint }
 		icon = GFX_focus_GER_SOV_treaty
 		x = 18
-		y = 6
+		y = 8
 		cost = 5
 		available = {
 			is_ai = no
@@ -39088,7 +39091,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_arms_corridor }
 		icon = GFX_focus_generic_industry_1
 		x = 16
-		y = 4
+		y = 6
 		cost = 5
 		available = {
 			is_ai = no
@@ -39105,7 +39108,7 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_ind_mission }
 		icon = GFX_focus_generic_industry_2
 		x = 16
-		y = 5
+		y = 7
 		cost = 5
 		available = {
 			is_ai = no
@@ -39121,8 +39124,8 @@ focus_tree = {
 		id = GER_IRE_ind_peat
 		prerequisite = { focus = GER_IRE_ind_mission }
 		icon = GFX_focus_generic_steel_mill
-		x = 15
-		y = 5
+		x = 14
+		y = 8
 		cost = 5
 		available = {
 			is_ai = no
@@ -39139,8 +39142,8 @@ focus_tree = {
 		prerequisite = { focus = GER_IRE_ind_shannon }
 		prerequisite = { focus = GER_IRE_ind_peat }
 		icon = GFX_focus_generic_industry_investment
-		x = 16
-		y = 6
+		x = 15
+		y = 9
 		cost = 5
 		available = {
 			is_ai = no
