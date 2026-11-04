@@ -181,7 +181,7 @@
  IRE_tt_atlantic_fleet_ports:0 "Requires Newfoundland or the Treaty Ports"
  IRE_tt_air_bridge_partner:0 "Requires Newfoundland or the Boston branch"
  IRE_tt_tammany_partner:0 "Requires the Boston branch"
- IRE_tt_tammany_usa_invite:0 "After this focus, the decision 'Invite the United States' becomes available once the Hope of Europe exists and the date is after 1 January 1941; it also becomes available if world tension reaches 100%."
+ IRE_tt_tammany_usa_invite:0 "After this focus, the decision 'Invite the United States' becomes available once the Hope of Europe exists and the date is after 1 January 1941; after that date, it also becomes available if world tension reaches 100%."
 
  # ===== New focus effect tooltips =====
  IRE_effect_canada_annex:0 "Canada is annexed together with its army: 2 off-map civilian factories, 2 off-map military factories and 1 off-map dockyard. Britain and the USA are angered."

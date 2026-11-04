@@ -6,7 +6,7 @@
 ### 圣帕特里克营：9 步 + 1 炮 + 支援（工兵 / 侦察 / 野战医院）
 ### 对应文档「精英师模板『圣帕特里克营』」
 division_template = {
-	name = "San Patricio Bn"
+	name = "San_Patricio_Bn"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -29,7 +29,7 @@ division_template = {
 ### 地方防卫军：3 步民兵
 ### 对应文档「《地方防卫军》+3 个民兵师」
 division_template = {
-	name = "LDF Militia"
+	name = "LDF_Militia"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -42,7 +42,7 @@ division_template = {
 
 ### 标准步兵师：6 步（用于《租借的爱尔兰师》）
 division_template = {
-	name = "IRE Infantry"
+	name = "IRE_Infantry"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -59,7 +59,7 @@ division_template = {
 ### 野鹅军团：9 步 + 1 炮 + 支援（工兵 / 侦察 / 野战医院）
 ### 对应 A 线「野鹅军团」「新世界远征」与海外志愿兵决议
 division_template = {
-	name = "Wild Geese Brigade"
+	name = "Wild_Geese_Brigade"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -89,7 +89,7 @@ units = {
 	division = {
 		name = "1st Division"
 		location = 11293
-		division_template = "IRE Infantry"
+		division_template = "IRE_Infantry"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -97,7 +97,7 @@ units = {
 	division = {
 		name = "2nd Division"
 		location = 11293
-		division_template = "IRE Infantry"
+		division_template = "IRE_Infantry"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}

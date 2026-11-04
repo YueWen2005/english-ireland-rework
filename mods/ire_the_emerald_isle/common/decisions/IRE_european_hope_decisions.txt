@@ -46,7 +46,7 @@ IRE_european_hope_cat = {
 		ai_will_do = { base = 0 }
 	}
 
-	# 美国入盟：完成坦慕尼协会后最早 1941 年；或世界紧张度达到 100%
+	# 美国入盟：最早 1941 年；完成坦慕尼协会，或世界紧张度达到 100%
 	IRE_invite_usa = {
 		icon = generic_political_actions
 		cost = 100
@@ -62,7 +62,10 @@ IRE_european_hope_cat = {
 					has_completed_focus = IRE_A_tammany_hall
 					date > 1941.1.1
 				}
-				threat > 0.99
+				AND = {
+					threat > 0.99
+					date > 1941.1.1
+				}
 			}
 		}
 
@@ -75,7 +78,10 @@ IRE_european_hope_cat = {
 					has_completed_focus = IRE_A_tammany_hall
 					date > 1941.1.1
 				}
-				threat > 0.99
+				AND = {
+					threat > 0.99
+					date > 1941.1.1
+				}
 			}
 		}
 

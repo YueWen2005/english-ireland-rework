@@ -635,7 +635,7 @@ IRE_congress_cat = {
 			add_to_variable = { IRE_wild_geese_calls = 1 }
 			add_manpower = 6000
 			capital_scope = {
-				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.6 start_equipment_factor = 0.9" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.6 start_equipment_factor = 0.9" owner = IRE }
 			}
 		}
 
@@ -893,7 +893,7 @@ IRE_interference_cat = {
 			add_to_variable = { IRE_us_volunteers_count = 1 }
 			add_manpower = 6000
 			capital_scope = {
-				create_unit = { division = "name = \"Irish-American Volunteers\" division_template = \"IRE Infantry\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish-American Volunteers\" division_template = \"IRE_Infantry\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 
@@ -975,7 +975,7 @@ IRE_interference_cat = {
 		complete_effect = {
 			add_manpower = 5000
 			capital_scope = {
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
 			}
 			FRA = { add_opinion_modifier = { target = ROOT modifier = IRE_opinion_pos20 } }
 		}

@@ -94,12 +94,12 @@ C:\Users\<用户名>\Documents\Paradox Interactive\Hearts of Iron IV\mod\
 ### 4. 自定义师模板
 
 `history/units/IRE_units.txt` 定义了四个模板：
-- `San Patricio Bn`（9步+1炮+工兵/侦察/野战医院）
-- `LDF Militia`（3步+工兵）
-- `IRE Infantry`（6步+工兵）
-- `Wild Geese Brigade`（9步+1炮+工兵/侦察/野战医院，对应 A 线《野鹅军团》《新世界远征》与海外志愿兵决议）
+- `San_Patricio_Bn`（9步+1炮+工兵/侦察/野战医院）
+- `LDF_Militia`（3步+工兵）
+- `IRE_Infantry`（6步+工兵）
+- `Wild_Geese_Brigade`（9步+1炮+工兵/侦察/野战医院，对应 A 线《野鹅军团》《新世界远征》与海外志愿兵决议）
 
-由 `history/countries/IRE - Ireland.txt` 的 `oob = "IRE_units"` 加载，开局编成 2 个 `IRE Infantry`，均驻都柏林。
+由 `history/countries/IRE - Ireland.txt` 的 `oob = "IRE_units"` 加载，开局编成 2 个 `IRE_Infantry`，均驻都柏林。
 
 ### 5. 公投时序
 

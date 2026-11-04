@@ -1435,9 +1435,9 @@ focus_tree = {
 			army_experience = 75
 			# 3 个已训练完毕的步兵师（美洲爱尔兰裔志愿师）
 			capital_scope = {
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE_Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 	}
@@ -1463,8 +1463,8 @@ focus_tree = {
 			# 替代为直接给予 2 个圣帕特里克营模板师 + 精英修正精神
 			add_ideas = IRE_san_patricio_elite
 			capital_scope = {
-				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Bn\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Bn\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San_Patricio_Bn\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San_Patricio_Bn\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 	}
@@ -1860,8 +1860,8 @@ focus_tree = {
 			add_manpower = 20000
 			set_variable = { IRE_wild_geese_calls = 0 }
 			capital_scope = {
-				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 	}
@@ -2108,9 +2108,9 @@ focus_tree = {
 			add_war_support = 0.15
 			add_manpower = 30000
 			capital_scope = {
-				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = IRE }
 			}
 			if = {
 				limit = {
@@ -2543,7 +2543,7 @@ focus_tree = {
 			# 文档「+3 个民兵师（已部署于海岸）」：在沿海州各造一个 LDF 民兵师
 			every_owned_state = {
 				limit = { is_coastal = yes }
-				create_unit = { division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8" owner = IRE }
+				create_unit = { division = "name = \"Local Defence Force\" division_template = \"LDF_Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8" owner = IRE }
 			}
 					add_manpower = 30000
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
@@ -2917,7 +2917,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
 			capital_scope = {
 				create_unit = {
-					division = "name = \"National Army\" division_template = \"IRE Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					division = "name = \"National Army\" division_template = \"IRE_Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 2
 				}

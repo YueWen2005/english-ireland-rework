@@ -16,7 +16,7 @@ IRE_defend_cat = {
 		complete_effect = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
+					division = "name = \"Local Defence Force\" division_template = \"LDF_Militia\" start_experience_factor = 0.2 start_equipment_factor = 0.8"
 					owner = IRE
 					count = 2
 				}
@@ -39,7 +39,7 @@ IRE_defend_cat = {
 		complete_effect = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"National Army\" division_template = \"IRE Infantry\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					division = "name = \"National Army\" division_template = \"IRE_Infantry\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 3
 				}
@@ -62,7 +62,7 @@ IRE_defend_cat = {
 		complete_effect = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+					division = "name = \"Local Defence Force\" division_template = \"LDF_Militia\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
 					owner = IRE
 					count = 4
 				}
@@ -87,14 +87,14 @@ IRE_defend_cat = {
 		complete_effect = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"National Army\" division_template = \"IRE Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					division = "name = \"National Army\" division_template = \"IRE_Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 4
 				}
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 1
 				}
@@ -119,21 +119,21 @@ IRE_defend_cat = {
 		complete_effect = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"National Army\" division_template = \"IRE Infantry\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					division = "name = \"National Army\" division_template = \"IRE_Infantry\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 6
 				}
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					division = "name = \"Local Defence Force\" division_template = \"LDF_Militia\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 4
 				}
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Wild Geese Brigade\" division_template = \"Wild Geese Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0"
+					division = "name = \"Wild Geese Brigade\" division_template = \"Wild_Geese_Brigade\" start_experience_factor = 0.7 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 1
 				}
@@ -162,14 +162,14 @@ IRE_defend_cat = {
 		complete_effect = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Local Defence Force\" division_template = \"LDF Militia\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					division = "name = \"Local Defence Force\" division_template = \"LDF_Militia\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 2
 				}
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"National Army\" division_template = \"IRE Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					division = "name = \"National Army\" division_template = \"IRE_Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 1
 				}
