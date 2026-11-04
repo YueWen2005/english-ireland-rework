@@ -6,7 +6,7 @@
 ### 圣帕特里克营：9 步 + 1 炮 + 支援（工兵 / 侦察 / 野战医院）
 ### 对应文档「精英师模板『圣帕特里克营』」
 division_template = {
-	name = "San Patricio Battalion"
+	name = "San Patricio Bn"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -42,7 +42,7 @@ division_template = {
 
 ### 标准步兵师：6 步（用于《租借的爱尔兰师》）
 division_template = {
-	name = "IRE Infantry Division"
+	name = "IRE Infantry"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -89,7 +89,7 @@ units = {
 	division = {
 		name = "1st Division"
 		location = 11293
-		division_template = "IRE Infantry Division"
+		division_template = "IRE Infantry"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -97,7 +97,7 @@ units = {
 	division = {
 		name = "2nd Division"
 		location = 11293
-		division_template = "IRE Infantry Division"
+		division_template = "IRE Infantry"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}

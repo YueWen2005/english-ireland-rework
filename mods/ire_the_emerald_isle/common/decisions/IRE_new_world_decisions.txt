@@ -893,7 +893,7 @@ IRE_interference_cat = {
 			add_to_variable = { IRE_us_volunteers_count = 1 }
 			add_manpower = 6000
 			capital_scope = {
-				create_unit = { division = "name = \"Irish-American Volunteers\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish-American Volunteers\" division_template = \"IRE Infantry\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 

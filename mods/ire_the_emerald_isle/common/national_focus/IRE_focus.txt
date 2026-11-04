@@ -1435,9 +1435,9 @@ focus_tree = {
 			army_experience = 75
 			# 3 个已训练完毕的步兵师（美洲爱尔兰裔志愿师）
 			capital_scope = {
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"Irish Brigade\" division_template = \"IRE Infantry\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 	}
@@ -1463,8 +1463,8 @@ focus_tree = {
 			# 替代为直接给予 2 个圣帕特里克营模板师 + 精英修正精神
 			add_ideas = IRE_san_patricio_elite
 			capital_scope = {
-				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
-				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Bn\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
+				create_unit = { division = "name = \"San Patricio Battalion\" division_template = \"San Patricio Bn\" start_experience_factor = 0.6 start_equipment_factor = 1.0" owner = IRE }
 			}
 		}
 	}
@@ -2917,7 +2917,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 producer = IRE }
 			capital_scope = {
 				create_unit = {
-					division = "name = \"National Army\" division_template = \"IRE Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					division = "name = \"National Army\" division_template = \"IRE Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
 					owner = IRE
 					count = 2
 				}

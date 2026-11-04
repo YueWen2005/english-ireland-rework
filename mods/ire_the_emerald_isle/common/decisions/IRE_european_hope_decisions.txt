@@ -62,7 +62,7 @@ IRE_european_hope_cat = {
 					has_completed_focus = IRE_A_tammany_hall
 					date > 1941.1.1
 				}
-				world_tension > 0.99
+				threat > 0.99
 			}
 		}
 
@@ -75,7 +75,7 @@ IRE_european_hope_cat = {
 					has_completed_focus = IRE_A_tammany_hall
 					date > 1941.1.1
 				}
-				world_tension > 0.99
+				threat > 0.99
 			}
 		}
 
@@ -97,7 +97,7 @@ IRE_european_hope_cat = {
 
 		ai_will_do = {
 			base = 20
-			modifier = { add = 80 world_tension > 0.99 }
+			modifier = { add = 80 threat > 0.99 }
 		}
 	}
 
