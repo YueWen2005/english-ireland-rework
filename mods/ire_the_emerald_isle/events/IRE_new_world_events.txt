@@ -4902,3 +4902,35 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = ire_nw.201
+	title = ire_nw.201.t
+	desc = ire_nw.201.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_completed_focus = IRE_A_national_accord
+		NOT = { has_idea = IRE_national_union_government }
+		NOT = { has_completed_focus = IRE_A_national_union_convene }
+		NOT = { has_country_flag = IRE_national_union_formed }
+	}
+	fire_only_once = yes
+
+	option = {
+		name = ire_nw.201.a
+		custom_effect_tooltip = ire_nw.201.a_tt
+		trigger = {
+			NOT = { has_idea = IRE_national_union_government }
+			NOT = { has_completed_focus = IRE_A_national_union_convene }
+		}
+		hidden_effect = {
+			complete_national_focus = { focus = IRE_A_national_union_convene use_side_message = yes }
+		}
+	}
+	option = {
+		name = ire_nw.201.b
+		custom_effect_tooltip = ire_nw.201.b_tt
+	}
+}

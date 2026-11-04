@@ -1397,3 +1397,10 @@
  ire_nw.200.b_tt:0 "Only the Soviet Union joins the European Hope; stability +5%, war support +5%; Irish opinion +25."
  ire_nw.200.c:0 "Refuse and fight on alone."
  ire_nw.200.c_tt:0 "Stability +5%, war support +5%; Irish opinion -20."
+
+ ire_nw.201.t:0 "The Next Step for National Unity"
+ ire_nw.201.d:0 "The National Unity Programme is complete, but the National Unity Government has not yet convened. The four factions are still waiting for Dublin's invitation; you can convene it directly here."
+ ire_nw.201.a:0 "Convene the National Unity Government now."
+ ire_nw.201.a_tt:0 "Complete the focus 'Convene the National Unity Government', form the National Union, and trigger its formation event."
+ ire_nw.201.b:0 "Discuss it later."
+ ire_nw.201.b_tt:0 "Do not form it immediately; the focus can still be completed manually."

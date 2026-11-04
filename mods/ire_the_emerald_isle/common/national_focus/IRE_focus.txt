@@ -740,6 +740,8 @@ focus_tree = {
 				add_political_power = 50
 				add_stability = 0.05
 				set_country_flag = IRE_nu_prep_done
+				set_country_flag = IRE_nu_accord_grace_started
+				set_country_flag = { flag = IRE_nu_accord_cd days = 90 value = 1 }
 				country_event = { id = ire_nw.142 days = 1 }
 			}
 		}
